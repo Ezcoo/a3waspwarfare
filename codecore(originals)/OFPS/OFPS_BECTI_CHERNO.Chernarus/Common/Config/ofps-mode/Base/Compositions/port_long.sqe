@@ -1,0 +1,175 @@
+version=53;
+center[]={1544.401,5.5,5076.5229};
+class items
+{
+	items=10;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.40100098,-17.3741,-1.5229492};
+			angles[]={0,1.8325958,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=13;
+		type="Land_nav_pier_m_F";
+		atlOffset=0.5;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-10.753784,-17.3741,-40.160156};
+			angles[]={0,1.8325958,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=14;
+		type="Land_nav_pier_m_F";
+		atlOffset=0.5;
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={9.9517822,-17.3741,37.114258};
+			angles[]={0,1.8325958,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=15;
+		type="Land_nav_pier_m_F";
+		atlOffset=0.5;
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={20.304565,-17.3741,75.750977};
+			angles[]={0,1.8325958,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=16;
+		type="Land_nav_pier_m_F";
+		atlOffset=0.5;
+	};
+	class Item4
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={30.657349,-17.3741,114.38818};
+			angles[]={0,1.8325958,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=17;
+		type="Land_nav_pier_m_F";
+		atlOffset=0.5;
+	};
+	class Item5
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={41.01001,-17.3741,153.02539};
+			angles[]={0,1.8325958,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=18;
+		type="Land_nav_pier_m_F";
+		atlOffset=0.5;
+	};
+	class Item6
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-23.794067,-0.27608442,-88.663086};
+			angles[]={0,1.8325958,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=19;
+		type="Land_Canal_Dutch_01_bridge_F";
+		atlOffset=2.2220464;
+	};
+	class Item7
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-17.655762,1.5449529,-65.882324};
+			angles[]={0,0.2617994,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=20;
+		type="Land_PierConcrete_01_16m_F";
+		atlOffset=5.6518822;
+	};
+	class Item8
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-21.655762,1.5449529,-80.882324};
+			angles[]={0,0.2617994,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=21;
+		type="Land_PierConcrete_01_16m_F";
+		atlOffset=5.6518822;
+	};
+	class Item9
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-27.662476,-3.3816352,-103.16992};
+			angles[]={0,1.8325958,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=22;
+		type="Land_Canal_Dutch_01_bridge_F";
+	};
+};

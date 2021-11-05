@@ -1,0 +1,40 @@
+version=53;
+center[]={1561.0322,5.6363463,4986.7148};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-1.7241211,12.886209,-0.4140625};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=55;
+		type="Land_Cargo_Tower_V2_F";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={1.7241211,21.715519,0.41357422};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			receiveRemoteTargets=1;
+			reportOwnPosition=1;
+			aiRadarUsage=1;
+		};
+		id=57;
+		type="B_SAM_System_03_F";
+		atlOffset=0.0019893646;
+	};
+};

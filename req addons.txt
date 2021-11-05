@@ -1,0 +1,24 @@
+a3vanilla
+
+@CUP Terrains - Core
+@CUP Terrains - Maps
+@CUP Units
+@CUP Vehicles
+@CUP Weapons
+
+@Enhanced Movement
+@Cold War Rearmed III
+@IFA3_AIO_LITE
+@Unsung
+
+(maybe rhs not bad for relodable aa weapons,some grenades,the good nv  and heavy ru arty/was not sure with delete it at the end)
+@RHSUSAF
+@RHSAFRF
+
+not implemented atm (plan was, make sportscars buyable for 20k+ at towncenter)
+
+@Marcheur_V12
+
+
+last idea was, change to ofps gearmenu and implement ofpsunitcam(has remote ai option implemented) at rolemenu position, but it seems im to stupid for that.
+ofps bulldozerfeature at buildmenu maybe not bad too.

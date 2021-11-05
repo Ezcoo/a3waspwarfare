@@ -1,0 +1,1 @@
+[WFBE_Client_Team, _this] Call WFBE_CO_FNC_ChangeTeamFunds;

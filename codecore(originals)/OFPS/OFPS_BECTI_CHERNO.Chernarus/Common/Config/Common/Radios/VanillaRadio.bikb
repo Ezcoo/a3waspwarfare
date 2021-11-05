@@ -1,0 +1,69 @@
+#define SENTENCE(NAME) \
+	class NAME \
+	{ \
+		text = ""; \
+		speech[] = {%1,##NAME##,%2}; \
+		class Arguments {class 1 {type = "simple";};class 2 {type = "simple";};}; \
+	};
+	
+#define SENTENCE1(NAME) \
+class NAME \
+{ \
+	text = ""; \
+	speech[] = {##NAME##,%1,%2}; \
+	class Arguments {class 1 {type = "simple";};class 2 {type = "simple";};}; \
+};
+
+
+#define SENTENCE_KEY(NAME,KEY) \
+	class NAME \
+	{ \
+		text = ""; \
+		speech[] = {%1, ##NAME##, %2}; \
+		class Arguments {class 1 {type = "simple";};class 2 {type = "simple";};}; \
+	};
+
+class Sentences
+{
+	class RequestFireSupport
+	{ 
+		text = ""; // Target: %NameSound from Grid: %Grid. Distance: %Distance. Direction: %Bearing. %Request
+		speech[] = {%Opening, %NameSound, pause, pause, pause, pause, pause, pause, %Grid, %Distance, %Bearing, %Request}; 
+		class Arguments {
+			class Opening {type = "simple";};
+			class NameSound {type = "simple";};
+			class Grid {type = "simple";};
+			class Distance {type = "simple";};
+			class Bearing {type = "simple";};
+			class Request {type = "simple";};
+		}; 
+	};
+	class CASSupportRequest
+	{
+		text = "$STR_A3_Requesting_immediate_airstrike_at_the_transmitted_coordinates__Over_"; 
+		speech[] = {"SupportRequestRGCASBombing"}; 
+		class Arguments {}; 
+	};
+	class CASSupportAcknowledged
+	{
+		text = "$STR_A3_Copy_that__strike_aircraft_on_the_way__Out_"; 
+		speech[] = {"RequestAcknowledgedSGCASBombing"}; 
+		class Arguments {}; 
+	};
+	class CASSupportLostContact
+	{
+		text = "$STR_A3_Be_advised__we_ve_lost_contact_with_the_aircraft__Out_"; 
+		speech[] = {"UnitDestroyedHQCASBombing"}; 
+		class Arguments {}; 
+	};
+	class CASSupportAccomplished
+	{
+		text = "$STR_A3_Payload_delivered__We_re_RTB__Out_"; 
+		speech[] = {"RequestAccomplishedSGCASBombing"}; 
+		class Arguments {}; 
+	};
+};
+class Arguments{};
+class Special{};
+startWithVocal[] = {hour};
+startWithConsonant[] = {europe, university};

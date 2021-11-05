@@ -1,0 +1,2483 @@
+﻿desert
+
+CUP_B_USMC_Soldier_des			0
+CUP_B_USMC_Soldier_LAT_des		0
+CUP_B_USMC_Soldier_MG_des		0
+CUP_B_USMC_Soldier_AR_des		1
+CUP_B_USMC_Engineer_des			1
+CUP_B_USMC_Medic_des			1
+CUP_B_USMC_Sniper_M40A3_des		1
+CUP_B_USMC_Soldier_AT_des		1
+CUP_B_USMC_Soldier_AA_des		2
+CUP_B_USMC_Spotter_des			2
+CUP_B_GER_Soldier_AT			2
+CUP_B_BAF_Soldier_RiflemanAT_DDPM	2
+CUP_B_US_Sniper_OCP				2
+CUP_B_USMC_Soldier_HAT_des		3
+CUP_B_USMC_SpecOps_des			3
+CUP_B_USMC_Sniper_M107_des		3
+CUP_B_BAF_Sniper_AS50_TWS_DDPM	3
+
+
+LIB_US_NAC_rifleman
+LIB_US_NAC_AT_soldier
+LIB_US_NAC_mgunner
+LIB_US_NAC_medic
+LIB_US_NAC_sniper
+LIB_US_NAC_engineer
+
+LIB_UK_DR_AT_Soldier
+
+
+
+
+
+
+
+
+
+
+ru inf
+
+
+CUP_O_RU_Soldier_Ratnik_BeigeDigital	0
+CUP_O_RU_Soldier_AR_Ratnik_BeigeDigital	0
+CUP_O_sla_Soldier_LAT_desert			0
+CUP_O_RU_Soldier_MG_Ratnik_BeigeDigital	1
+CUP_O_RU_Soldier_Medic_Ratnik_BeigeDigital	1
+CUP_O_RU_Soldier_Engineer_Ratnik_BeigeDigital	1
+CUP_O_TK_Sniper			1
+CUP_O_TK_Soldier_AT					1
+CUP_O_INS_Soldier_AA				1
+CUP_O_TK_Spotter	1
+CUP_O_TK_Sniper_SVD_Night	2
+
+CUP_O_RU_Soldier_AT_Ratnik_BeigeDigital	2
+CUP_O_RU_Soldier_AA_Ratnik_BeigeDigital	2
+CUP_O_TK_Soldier_FNFAL_Night		2
+CUP_O_RU_Recon_LAT_Ratnik_BeigeDigital	2
+
+CUP_O_TK_Sniper_KSVK	3
+CUP_O_RU_Soldier_HAT_Ratnik_BeigeDigital	3
+
+
+
+light ru
+
+
+cwr3_c_bicycle	0	10
+CUP_O_UAZ_Open_CHDKZ	0 60
+CUP_O_Kamaz_Open_RU		0	250
+uns_Type55				0	200
+CUP_O_Datsun_PK			0	150
+uns_nvatruck_mg			0	180
+LIB_DAK_Kfz1_MG42		0	155
+CUP_O_UAZ_MG_RU			0	230
+
+LIB_SdKfz_7				1	180
+CUP_O_UAZ_AGS30_RU		1	280
+CUP_O_UAZ_SPG9_RU		1	320
+CUP_O_UAZ_METIS_RU		1	600
+LIB_SdKfz251_captured	1	320
+uns_Type55_LMG			1	250
+uns_BTR152_DSHK			1	300
+uns_Type55_RR57			1	450
+CUP_O_Kamaz_Reammo_RU	1	700
+LIB_Zis5V_Med			1	1100
+
+CUP_O_UAZ_AMB_RU		2	1500
+cwr3_o_uaz452_mev		2	1650
+CUP_O_Kamaz_Repair_RU	2	2650
+CUP_O_GAZ_Vodnik_AGS_RU	2	320
+LIB_SOV_M3_Halftrack	2	350
+uns_Type55_patrol		2	315
+LIB_Scout_M3			2	280
+LIB_SdKfz251_captured_FFV	2	325
+CUP_O_Ural_ZU23_RU			2	400
+uns_nvatruck_zu23			2	500
+CUP_O_BRDM2_RUS				2	610
+
+uns_Type55_ZU			3	480
+uns_nvatruck_zpu			3	650
+CUP_O_GAZ_Vodnik_MedEvac_RU	3	2100
+LIB_Zis5v_61K				3	300
+uns_Type55_twinMG			2	400
+CUP_O_GAZ_Vodnik_BPPU_RU	3	1250
+CUP_O_BTR80A_DESERT_RU		3	1550
+CUP_O_BRDM2_ATGM_RUS		3	2075
+uns_BTR152_ZPU				3	850
+
+CUP_O_UAZ_AA_RU				4	1350
+LIB_US6_BM13				4	3000
+uns_Type63_amb				4	2250
+CUP_O_BM21_RU				4	5500
+CUP_O_BTR90_RU				4	2575
+uns_nvatruck_s60			4	975
+uns_nvatruck_type65			4	900
+CUP_O_Hilux_armored_MLRS_OPF_G_F	4	4200
+CUP_O_Hilux_podnos_OPF_G_F			4	1875
+CUP_O_Hilux_armored_BMP1_OPF_G_F	4	1075
+uns_Type55_M40						4	950
+uns_Type55_mortar					4	2100
+
+
+
+
+light us
+
+cwr3_c_bicycle				0	10
+uns_willys_2				0	60
+cwr3_b_m939_open			0	250
+LIB_UK_DR_Willys_MB_M1919	0	160
+uns_willysmg				0	170
+CUP_B_M1165_GMV_USA			0	220
+uns_willysmg50				0	230
+
+uns_willys_2_m1919		1	200
+uns_m37b1_m1919			1	210
+LIB_US_Scout_M3_FFV		1	300
+uns_willysm40			1	500
+CUP_B_M1151_M2_USA		1	245
+CUP_B_M1151_Mk19_USA	1	295
+CUP_B_HMMWV_TOW_USA		1	620
+CUP_B_MTRV_Ammo_USA		1	700
+LIB_OpelBlitz_Ambulance	1	1100
+
+LIB_US_Willys_MB_Ambulance	2	1500
+CUP_B_HMMWV_Ambulance_USA	2	1650
+CUP_B_MTVR_Repair_USA		2	2650
+uns_xm706e2					2	325
+LIB_DAK_M3_Halftrack		2	350
+LIB_DAK_SdKfz251_FFV		2	320
+CUP_B_M1167_USA				2	750
+CUP_B_HMMWV_Crows_MK19_USA	2	495
+CUP_B_HMMWV_Crows_M2_USA	2	445
+uns_M113_30cal				2	550
+LIB_SdKfz_7_AA				2	650
+LIB_M8_Greyhound			2	580
+uns_xm706e1					2	645
+
+CUP_B_M1133_MEV_Desert		3	2100
+CUP_B_RG31E_M2_USA			3	455
+CUP_B_RG31_Mk19_USA			3	505
+CUP_B_M1130_CV_M2_Desert	3	770
+CUP_B_M1135_ATGMV_Desert	3	1100
+CUP_B_M1126_ICV_MK19_Desert	3	820
+CUP_B_LAV25M240_desert_USMC	3	1150
+uns_M113_M2					3	675
+uns_M113A1_M134				3	680
+uns_M113A1_XM182			3	700
+uns_M132					3	855
+
+CUP_B_M1128_MGS_Desert		4	2675
+CUP_B_M1129_MC_MK19_Desert	4	5750
+CUP_B_HMMWV_Avenger_USA		4	1750
+uns_M113_M30				4	6775
+uns_M577_amb				4	2075
+
+
+
+statics blu
+
+LIB_leFH18
+LIB_leFH18_AT
+LIB_FlaK_30
+LIB_FlaK_36
+LIB_FlaK_36_ARTY
+LIB_Flakvierling_38
+LIB_GrWr34
+LIB_MG34_Lafette_Deployed
+LIB_MG34_Lafette_low_Deployed
+LIB_MG42_Lafette_Deployed
+LIB_MG42_Lafette_low_Deployed
+LIB_Pak40
+LIB_GER_SearchLight
+LIB_M1919_M2
+LIB_M2_60
+uns_m1919_low
+uns_m2_high
+uns_m2_low
+uns_M40_106mm_US
+uns_m60_high
+uns_m60_low
+uns_m60_bunker_large
+uns_m60_bunker_small
+uns_US_MK18_low
+uns_US_SearchLight
+uns_M1_81mm_mortar
+uns_M1_81mm_mortar_arty
+Uns_M102_artillery
+Uns_M114_artillery
+uns_M2_60mm_mortar
+Uns_M55_Quad
+
+CUP_B_Type072_Turret
+CUP_WV_B_CRAM
+CUP_WV_B_SS_Launcher
+CUP_B_RBS70_ACR
+CUP_B_SearchLight_static_ACR
+CUP_B_L111A1_BAF_MPT
+CUP_B_L111A1_MiniTripod_BAF_MPT
+CUP_B_L134A1_TriPod_BAF_WDL
+CUP_B_CUP_Stinger_AA_pod_US
+CUP_B_M119_US
+CUP_B_M2StaticMG_US
+CUP_B_TOW_TriPod_US
+CUP_B_TOW2_TriPod_US
+CUP_B_M252_US
+CUP_B_M2StaticMG_MiniTripod_US
+CUP_B_MK19_TriPod_US
+CUP_WV_B_RAM_Launcher
+LIB_FlaK_36_AA
+B_T_Mortar_01_F
+
+B_SAM_System_01_F //spartan
+B_SAM_System_02_F //centurion
+
+
+
+statics opfor
+
+LIB_61k
+LIB_Zis3
+LIB_BM37
+LIB_Maxim_M30_Trench
+LIB_Maxim_M30_base
+LIB_SU_SearchLight
+Uns_D20_artillery
+Uns_D30_artillery
+uns_m1941_82mm_mortarNVA_arty
+uns_m1941_82mm_mortarNVA
+uns_dshk_armoured_NVA
+uns_dshk_high_NVA
+uns_dshk_low_NVA
+uns_dshk_twin_NVA
+
+uns_dshk_wheeled_NVA
+uns_dshk_bunker_closed_NVA
+uns_dshk_bunker_open_NVA
+uns_M40_106mm_NVA
+uns_mg42_low_NVA
+uns_pk_high_NVA
+uns_pk_low_NVA
+uns_pk_bunker_closed_NVA
+uns_pk_bunker_low_NVA
+uns_NVA_SearchLight
+uns_SPG9_73mm_NVA
+uns_spiderhole_NVA
+uns_spiderhole_leanto_NVA
+uns_dshk_twin_bunker_closed_NVA
+uns_dshk_twin_bunker_open_NVA
+uns_Type36_57mm_NVA
+uns_KS12_NVA
+uns_sa2_static_NVA
+uns_SON9_NVA
+uns_Type74_NVA
+uns_ZPU4_NVA
+uns_ZU23_NVA
+uns_ZPU2_VC
+CUP_O_AGS_RU
+CUP_O_D30_RU
+CUP_O_D30_AT_RU
+CUP_O_Igla_AA_pod_RU
+CUP_O_KORD_high_RU
+CUP_O_KORD_RU
+CUP_O_Kornet_RU
+CUP_O_Metis_RU
+CUP_O_2b14_82mm_RU
+CUP_O_SearchLight_static_RU
+CUP_O_ZU23_RU
+CUP_O_SPG9_ChDKZ
+cwr3_o_nsv_high
+cwr3_o_nsv_low
+CUP_O_Type072_Turret
+uns_KS19_NVA
+O_G_Mortar_01_F
+O_SAM_System_04_F
+O_Radar_System_02_F
+uns_S60_NVA
+cwr3_o_konkurs_tripod
+
+
+
+
+
+
+
+camo ru uaz
+4 cdf
+7 grün
+8 gelber streifen
+6 flecktarn gräulich
+2 cdhkz grün
+3 cdhkz desertgrün
+5 digital
+9 taki army
+10 desert
+
+
+
+
+beispiel inf
+
+class TAG_Gen_Soldier_Green: B_GEN_Soldier_F
+{
+	side = 2;
+	faction ="TAG_Gen_Green";
+};
+
+beispiel vehicle
+
+class TAG_Gen_Van_02_transport_Green: B_GEN_Van_02_transport_F
+{
+	crew="TAG_Gen_Soldier_Green";
+	typicalCargo[]=
+	{
+		"TAG_Gen_Soldier_Green"
+	};
+	side=2;
+	faction = "TAG_Gen_Green";
+};
+
+beispiel faction (0=east,1=west,2=res)
+
+class CfgFactionClasses
+{
+	class TAG_Gen_Green
+	{
+		displayName="$STR_A3_CfgFactionClasses_BLU_GEN_F0";
+		priority=500;
+		icon="\a3\Data_F_Exp\FactionIcons\icon_GEN_CA.paa";
+		flag="\a3\Data_F_Exp\Flags\flag_GEN_CO.paa";
+		side = 2;
+	};
+};
+
+
+
+ofps bulldozer feature
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Bulldozer Terrain (10m)',
+	/*Class*/["Land_JumpTarget_F", [["Bulldozer","terrain",10]]],
+	/*Price*/100,
+	/*Placement*/[0, 7],
+	/*Tags*/["Bulldozer"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Bulldozer Terrain (25m)',
+	/*Class*/["ProtectionZone_F", [["Bulldozer","terrain",25]]],
+	/*Price*/500,
+	/*Placement*/[0, 7],
+	/*Tags*/["Bulldozer"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Bulldozer Terrain (100m)',
+	/*Class*/["ProtectionZone_F", [["Bulldozer","terrain",100]]],
+	/*Price*/1000,
+	/*Placement*/[0, 7],
+	/*Tags*/["Bulldozer"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Bulldozer Buildings (10m)',
+	/*Class*/["Land_JumpTarget_F", [["Bulldozer","buildings",10]]],
+	/*Price*/500,
+	/*Placement*/[0, 7],
+	/*Tags*/["Bulldozer"],
+	/*Location*/["HQ", "RepairTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Bulldozer Buildings (25m)',
+	/*Class*/["ProtectionZone_F", [["Bulldozer","buildings",25]]],
+	/*Price*/2000,
+	/*Placement*/[0, 7],
+	/*Tags*/["Bulldozer"],
+	/*Location*/["HQ", "RepairTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Bulldozer Buildings (100m)',
+	/*Class*/["ProtectionZone_F", [["Bulldozer","buildings",100]]],
+	/*Price*/5000,
+	/*Placement*/[0, 7],
+	/*Tags*/["Bulldozer"],
+	/*Location*/["HQ", "RepairTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Demolition (5m)',
+	/*Class*/["Land_JumpTarget_F", [["Demolition",5]]],
+	/*Price*/500,
+	/*Placement*/[0, 7],
+	/*Tags*/["Bulldozer"],
+	/*Location*/["HQ", "RepairTruck","DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Demolition (25m)',
+	/*Class*/["Land_JumpTarget_F", [["Demolition",25]]],
+	/*Price*/1000,
+	/*Placement*/[0, 7],
+	/*Tags*/["Bulldozer"],
+	/*Location*/["HQ", "RepairTruck","DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+spawn
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Infantry Spawn Pad',
+	/*Class*/"Land_MobileLandingPlatform_01_F",
+	/*Price*/100,
+	/*Placement*/[0, 7],
+	/*Tags*/["Markers"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Pods/Crates Spawn Pad',
+	/*Class*/"Land_JumpTarget_F",
+	/*Price*/100,
+	/*Placement*/[0, 7],
+	/*Tags*/["Markers"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Light Vehicle Spawn Pad',
+	/*Class*/"Land_HelipadSquare_F",
+	/*Price*/100,
+	/*Placement*/[0, 7],
+	/*Tags*/["Markers"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Heavy Vehicle Spawn Pad',
+	/*Class*/"Land_HelipadRescue_F",
+	/*Price*/100,
+	/*Placement*/[0, 7],
+	/*Tags*/["Markers"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Rotary Air Spawn Pad',
+	/*Class*/"Land_HelipadCircle_F",
+	/*Price*/100,
+	/*Placement*/[180, 7],
+	/*Tags*/["Markers"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+_u pushBack [
+	/*Enabled*/true,
+	/*Name*/'Fixed Air Spawn Pad',
+	/*Class*/"Land_HelipadCivil_F",
+	/*Price*/100,
+	/*Placement*/[180, 7],
+	/*Tags*/["Markers"],
+	/*Location*/["HQ", "RepairTruck", "DefenseTruck"],
+	/*Blacklist*/[],
+	/*Upgrade*/0,
+	/*MaxCount*/-1,
+	/*Cooldown*/-1,
+	/*Dismantle*/-1,
+	/*Specials*/[]
+];
+
+
+MINIdefenseTestcolection UNISIDE
+
+feldbefestigung
+
+Fort_Nest
+//Land_BagBunker_01_small_green_F
+TK_WarfareBBarrier10xTall_EP1
+//Land_HBarrier_01_big_4_green_F
+TK_WarfareBBarrier5x_EP1
+//Land_HBarrier_01_line_5_green_F
+pook_Land_fort_rampart_DES
+Hhedgehog_concreteBig
+//LAND_uns_eastbunker1
+//land_cwr3_fortress_small
+//LAND_uns_westbunker1
+Land_fort_artillery_nest_EP1
+//uns_sbagcircle
+//LAND_mortarpit_sb
+//Land_WW2_Fortification_Trench_Wide
+//Land_SandbagBarricade_01_hole_F
+cwr3_excercisedtrack3
+//LAND_uns_westbunker2
+LAND_uns_vccache1e
+//LAND_uns_eastbunker3
+//wx_logbunker02
+
+
+csj_VCbunk01
+LAND_UNS_GuardHouse
+Land_pristresek_mensi
+LAND_uns_vccache1
+Land_HBarrier_large
+Land_HBarrier5
+cwr3_bagfence_corner
+cwr3_bagfence
+LAND_t_2_FOP2
+csj_shelter01
+LAND_uns_leanto1
+LAND_uns_vcshelter6
+land_cwr3_vez
+Land_Wood_Tower
+LAND_uns_vctower2
+Land_Cargo_Patrol_V2_F
+
+
+strategic
+
+land_cwr3_lampa_sidl_3
+land_cwr3_tent1_mash
+Land_Illum_Tower
+LIB_MINE_US_M1A1_ATMINE_Field_30x30
+LIB_MINE_TM44_Field_70x30
+cwr3_target_grenade
+Land_CamoNetB_NATO_EP1
+CamoNet_wdl_big_F
+Land_CamoNetVar_NATO_EP1
+CamoNet_wdl_open_F
+Land_IRMaskingCover_01_F
+Land_IRMaskingCover_02_F
+Land_Setka_Carwwwwwwwwwwwwwww
+cwr3_shed_big
+csj_VCshelter01
+Land_I44_Object_Tent_Zeltbahn_16
+Land_RampConcreteHigh_F
+Land_RampConcrete_F
+Land_Platform_Stairs_20
+Land_Platform_Stairs_30
+WW2_BET_Traegersperre_Closed
+
+//strategic neu
+Land_radar_EP1
+LAND_fort
+
+Land_Cargo_Tower_V4_F
+Land_fortified_nest_big
+Land_Fort_Watchtower_EP1
+Land_Fort_Watchtower
+
+Land_Ind_Shed_02_EP1
+Land_smallhangaropen
+Land_Ind_Shed_01_EP1
+Land_TentHangar_V1_F
+land_cwr3_hangar
+land_cwr3_hangar_2
+Land_Mil_hangar_EP1
+Land_Dome_Big_F
+
+
+list statics opfor
+
+O_Static_Designator_02_F			150
+uns_spiderhole_NVA					120
+uns_spiderhole_leanto_NVA   		150
+uns_dshk_twin_bunker_closed_NVA 	400  
+uns_dshk_twin_bunker_open_NVA		410
+uns_pk_bunker_low_NVA				250
+uns_dshk_bunker_closed_NVA			315
+uns_dshk_bunker_open_NVA			300
+uns_pk_bunker_closed_NVA			220
+
+uns_mg42_low_NVA					100
+LIB_Maxim_M30_Trench				115
+LIB_Maxim_M30_base					120
+uns_pk_high_NVA						130
+uns_pk_low_NVA						125
+uns_dshk_high_NVA					150
+uns_dshk_low_NVA					140
+uns_dshk_wheeled_NVA				155
+uns_dshk_armoured_NVA				170
+cwr3_o_nsv_high						165
+cwr3_o_nsv_low						145
+CUP_O_KORD_high_RU					170
+CUP_O_KORD_RU						150
+uns_dshk_twin_NVA					355
+CUP_O_AGS_RU						265
+
+LIB_Pak40							1175
+
+CUP_O_ZU23_RU						400
+uns_ZU23_NVA						445
+uns_ZPU2_VC							395
+uns_Type74_NVA						565
+uns_ZPU4_NVA						620
+CUP_O_Igla_AA_pod_RU				1355
+uns_sa2_static_NVA					2435
+uns_SON9_NVA						200
+CUP_O_Type072_Turret				975
+uns_S60_NVA							725
+uns_KS12_NVA						875
+uns_KS19_NVA						1000
+O_SAM_System_04_F					12375
+O_Radar_System_02_F					650
+
+B_AAA_System_01_F					1675
+B_SAM_System_01_F					5775
+
+
+
+
+LIB_Zis3							975
+CUP_O_SPG9_ChDKZ					700
+uns_Type36_57mm_NVA					800
+uns_SPG9_73mm_NVA					925
+uns_M40_106mm_NVA					1100
+LIB_61k								850
+CUP_O_D30_AT_RU						1375
+cwr3_o_konkurs_tripod				1400
+CUP_O_Metis_RU						1750
+CUP_O_Kornet_RU						2150
+Uns_D30_artillery					4375
+Uns_D20_artillery					5850
+CUP_O_D30_RU						5800
+uns_m1941_82mm_mortarNVA			2800
+uns_m1941_82mm_mortarNVA_arty		3700
+CUP_O_2b14_82mm_RU					1990
+LIB_M2_60							1500
+LIB_BM37							1800
+O_G_Mortar_01_F						3225
+CUP_O_SearchLight_static_RU			50
+LIB_SU_SearchLight					40
+uns_NVA_SearchLight					45
+
+
+_c = _c + ['O_Static_Designator_02_F'];_i = _i + [['','',150,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_spiderhole_NVA'];_i = _i + [['','',120,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_spiderhole_leanto_NVA'];_i = _i + [['','',150,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_dshk_twin_bunker_closed_NVA'];_i = _i + [['','',400,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_dshk_twin_bunker_open_NVA'];_i = _i + [['','',410,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_pk_bunker_low_NVA'];_i = _i + [['','',250,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_dshk_bunker_closed_NVA'];_i = _i + [['','',315,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_dshk_bunker_open_NVA'];_i = _i + [['','',300,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_pk_bunker_closed_NVA'];_i = _i + [['','',220,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['uns_mg42_low_NVA'];_i = _i + [['','',100,0,1,0,'Defense',0,'OPFOR',[]]];
+_c = _c + ['LIB_Maxim_M30_Trench'];_i = _i + [['','',115,0,1,0,'Defense',0,'OPFOR',[]]];
+
+
+_c = _c + ['LIB_Maxim_M30_base'];_i = _i + [['','',120,0,1,0,'Defense',0,'Russia',[]]];
+_c = _c + ['uns_pk_high_NVA'];_i = _i + [['','',130,0,1,0,'Defense',0,'Russia',[]]];
+_c = _c + ['uns_pk_low_NVA'];_i = _i + [['','',125,0,1,0,'Defense',0,'Russia',[]]];
+_c = _c + ['uns_dshk_high_NVA'];_i = _i + [['','',150,0,1,0,'Defense',0,'Russia',[]]];
+_c = _c + ['uns_dshk_low_NVA'];_i = _i + [['','',140,0,1,0,'Defense',0,'Russia',[]]];
+_c = _c + ['uns_dshk_wheeled_NVA'];_i = _i + [['','',155,0,1,0,'Defense',0,'Russia',[]]];
+_c = _c + ['uns_dshk_armoured_NVA'];_i = _i + [['','',170,0,1,0,'Defense',0,'Russia',[]]];
+_c = _c + ['cwr3_o_nsv_high'];_i = _i + [['','',165,0,1,0,'Defense',0,'Russia',[]]];
+
+_c = _c + ['cwr3_o_nsv_low'];	_i = _i + [['','',145,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['CUP_O_KORD_high_RU'];	_i = _i + [['','',170,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['CUP_O_KORD_RU'];	_i = _i + [['','',150,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['uns_dshk_twin_NVA'];	_i = _i + [['','',355,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['CUP_O_AGS_RU'];	_i = _i + [['','',265,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['CUP_O_ZU23_RU'];	_i = _i + [['','',400,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['uns_ZU23_NVA'];	_i = _i + [['','',445,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['uns_ZPU2_VC'];	_i = _i + [['','',395,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['uns_Type74_NVA'];	_i = _i + [['','',565,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['uns_ZPU4_NVA'];	_i = _i + [['','',620,0,1,0,'Defense',0,'US',[]]];
+_c = _c + ['CUP_O_Igla_AA_pod_RU'];	_i = _i + [['','',1355,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['uns_sa2_static_NVA'];	_i = _i + [['','',2435,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['uns_SON9_NVA'];	_i = _i + [['','',200,0,1,0,'Defense',0,'Germany',[]]];
+_c = _c + ['CUP_O_Type072_Turret'];	_i = _i + [['','',975,0,1,0,'Defense',0,'RU',[]]];
+_c = _c + ['uns_S60_NVA'];	_i = _i + [['','',725,0,1,0,'Defense',0,'RU',[]]];
+_c = _c + ['uns_KS12_NVA'];	_i = _i + [['MG Maxim','',875,0,1,0,'Defense',0,'RU',[]]];
+_c = _c + ['uns_KS19_NVA'];	_i = _i + [['MG Maxim (Trench)','',1000,0,1,0,'Defense',0,'RU',[]]];
+_c = _c + ['O_SAM_System_04_F'];	_i = _i + [['','',12375,0,1,0,'Defense',0,'RU',[]]];
+_c = _c + ['O_Radar_System_02_F'];	_i = _i + [['','',650,0,1,0,'Defense',0,'RU',[]]];
+
+
+
+_c = _c + ['B_AAA_System_01_F'];	_i = _i + [['','',1675,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['B_SAM_System_01_F'];	_i = _i + [['','',5775,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['B_SAM_System_02_F'];	_i = _i + [['','',7950,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_WV_B_RAM_Launcher'];	_i = _i + [['','',14950,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_WV_B_SS_Launcher'];	_i = _i + [['','',19300,0,1,0,'Defense',0,'NVA',[]]];
+
+_c = _c + ['LIB_Zis3'];	_i = _i + [['','',975,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_O_SPG9_ChDKZ'];	_i = _i + [['','',700,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['uns_Type36_57mm_NVA'];	_i = _i + [['','',800,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['uns_SPG9_73mm_NVA'];	_i = _i + [['','',925,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['uns_M40_106mm_NVA'];	_i = _i + [['','',1100,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['LIB_61k'];	_i = _i + [['','',850,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_O_D30_AT_RU'];	_i = _i + [['','',1375,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['cwr3_o_konkurs_tripod'];	_i = _i + [['','',1400,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_O_Metis_RU'];	_i = _i + [['','',1750,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_O_Kornet_RU'];	_i = _i + [['','',2150,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['Uns_D30_artillery'];	_i = _i + [['','',4375,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['Uns_D20_artillery'];	_i = _i + [['','',5850,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_O_D30_RU'];	_i = _i + [['','',5800,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['uns_m1941_82mm_mortarNVA'];	_i = _i + [['','',2800,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['uns_m1941_82mm_mortarNVA_arty']; _i = _i + [['','',3700,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_O_2b14_82mm_RU'];	_i = _i + [['','',1990,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['LIB_BM37'];	_i = _i + [['','',1800,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['O_G_Mortar_01_F'];	_i = _i + [['','',3225,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['CUP_O_SearchLight_static_RU'];	_i = _i + [['','',50,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['LIB_SU_SearchLight'];	_i = _i + [['','',40,0,1,0,'Defense',0,'NVA',[]]];
+_c = _c + ['uns_NVA_SearchLight'];	_i = _i + [['','',45,0,1,0,'Defense',0,'NVA',[]]];
+
+
+
+_n = ["O_Static_Designator_02_F"];
+_n = _n + ["uns_spiderhole_NVA"];
+_n = _n + ["uns_spiderhole_leanto_NVA"];
+_n = _n + ["uns_dshk_twin_bunker_closed_NVA"];
+_n = _n + ["uns_dshk_twin_bunker_open_NVA"];
+_n = _n + ["uns_pk_bunker_low_NVA"];
+_n = _n + ["uns_dshk_bunker_closed_NVA"];
+_n = _n + ["uns_dshk_bunker_open_NVA"];
+_n = _n + ["uns_pk_bunker_closed_NVA"];
+_n = _n + ["uns_mg42_low_NVA"];
+_n = _n + ["LIB_Maxim_M30_Trench"];
+
+_n = _n + ["LIB_Maxim_M30_base"];
+_n = _n + ["uns_pk_high_NVA"];
+_n = _n + ["uns_pk_low_NVA"];
+_n = _n + ["uns_dshk_high_NVA"];
+_n = _n + ["uns_dshk_low_NVA"];
+_n = _n + ["uns_dshk_wheeled_NVA"];
+_n = _n + ["uns_dshk_armoured_NVA"];
+
+_n = _n + ["cwr3_o_nsv_high"];
+_n = _n + ["cwr3_o_nsv_low"];
+_n = _n + ["CUP_O_KORD_high_RU"];
+_n = _n + ["CUP_O_KORD_RU"];
+_n = _n + ["uns_dshk_twin_NVA"];
+
+_n = _n + ["CUP_O_AGS_RU"];
+_n = _n + ["CUP_O_ZU23_RU"];
+_n = _n + ["uns_ZU23_NVA"];
+_n = _n + ["uns_ZPU2_VC"];
+_n = _n + ["uns_Type74_NVA"];
+_n = _n + ["uns_ZPU4_NVA"];
+_n = _n + ["CUP_O_Igla_AA_pod_RU"];
+_n = _n + ["uns_sa2_static_NVA"];
+_n = _n + ["uns_SON9_NVA"];
+_n = _n + ["CUP_O_Type072_Turret"];
+_n = _n + ['uns_S60_NVA'];
+_n = _n + ['uns_KS12_NVA'];
+_n = _n + ['uns_KS19_NVA'];
+_n = _n + ['O_SAM_System_04_F'];
+_n = _n + ['O_Radar_System_02_F'];
+
+_n = _n + ['B_AAA_System_01_F'];
+_n = _n + ['B_SAM_System_01_F'];
+_n = _n + ['B_SAM_System_02_F'];
+_n = _n + ['CUP_WV_B_RAM_Launcher'];
+_n = _n + ['CUP_WV_B_SS_Launcher'];
+
+_n = _n + ['LIB_Zis3'];
+_n = _n + ['CUP_O_SPG9_ChDKZ'];
+_n = _n + ['uns_Type36_57mm_NVA'];
+_n = _n + ['uns_SPG9_73mm_NVA'];
+_n = _n + ['uns_M40_106mm_NVA'];
+_n = _n + ['LIB_61k'];
+_n = _n + ['CUP_O_D30_AT_RU'];
+_n = _n + ['cwr3_o_konkurs_tripod'];
+_n = _n + ['CUP_O_Metis_RU'];
+_n = _n + ['CUP_O_Kornet_RU'];
+_n = _n + ['Uns_D30_artillery'];
+_n = _n + ['Uns_D20_artillery'];
+_n = _n + ['CUP_O_D30_RU'];
+
+_n = _n + ['uns_m1941_82mm_mortarNVA'];
+_n = _n + ['uns_m1941_82mm_mortarNVA_arty'];
+_n = _n + ['CUP_O_2b14_82mm_RU'];
+_n = _n + ['LIB_BM37'];
+_n = _n + ['O_G_Mortar_01_F'];
+_n = _n + ['CUP_O_SearchLight_static_RU'];
+_n = _n + ['LIB_SU_SearchLight'];
+_n = _n + ['uns_NVA_SearchLight'];
+
+
+--------------------------------
+
+statics blu
+
+B_Static_Designator_01_F		150
+uns_spiderhole_NVA				120
+LIB_M1919_M2					100
+uns_m1919_low					110
+LIB_MG34_Lafette_Deployed		135
+LIB_MG34_Lafette_low_Deployed	115
+LIB_MG42_Lafette_Deployed		145
+LIB_MG42_Lafette_low_Deployed	120
+CUP_B_M2StaticMG_US				225
+CUP_B_M2StaticMG_MiniTripod_US	200
+uns_m2_high						235
+uns_m2_low						210
+CUP_B_L111A1_BAF_MPT			255
+CUP_B_L111A1_MiniTripod_BAF_MPT	245
+uns_US_MK18_low					335
+CUP_B_MK19_TriPod_US			375
+CUP_B_L134A1_TriPod_BAF_WDL		430
+
+CUP_B_TOW_TriPod_US				1150
+CUP_B_TOW2_TriPod_US			1200
+CUP_B_RBS70_ACR					1400
+LIB_Pak40						1175
+uns_M40_106mm_US				1050
+
+LIB_leFH18_AT					1350
+LIB_FlaK_36						1775
+
+LIB_FlaK_30						400
+LIB_Flakvierling_38				750
+Uns_M55_Quad					475
+LIB_FlaK_36_AA					1375
+CUP_B_CUP_Stinger_AA_pod_US		1400
+
+
+uns_US_SearchLight				45
+LIB_GER_SearchLight				40
+CUP_B_SearchLight_static_ACR	50
+
+LIB_M2_60						1500
+uns_M2_60mm_mortar				1950
+LIB_GrWr34						1700
+CUP_B_M252_US					2200
+uns_M1_81mm_mortar				2450
+uns_M1_81mm_mortar_arty			3600
+uns_M30_107mm_mortar			3500
+B_T_Mortar_01_F					3275
+CUP_B_M119_US					5650
+LIB_IeFH18						3600
+Uns_M102_artillery				4200
+Uns_M114_artillery				4575
+LIB_FlaK_36_ARTY				5700
+
+
+CUP_B_Type072_Turret			975
+B_AAA_System_01_F				1675
+B_SAM_System_02_F				4775
+
+B_SAM_System_03_F				12050
+B_Radar_System_01_F				675
+
+B_SAM_System_01_F				5775
+
+
+
+LIST FORTIFICATION AND STRATEGIC
+
+csj_VCbunk01			100
+csj_VCshelter01			120
+LAND_UNS_GuardHouse		125
+Land_pristresek_mensi	90
+Fort_Nest				115
+LAND_uns_vccache1e		110
+TK_WarfareBBarrier10xTall_EP1	275
+TK_WarfareBBarrier5x_EP1		175
+Land_HBarrier_large				220
+Land_HBarrier5					150
+Land_HBarrier3					130
+Land_HBarrier1					100
+cwr3_bagfence_corner			80
+cwr3_bagfence					50
+pook_Land_fort_rampart_DES		120
+Land_fort_artillery_nest_EP1	235
+pook_Land_fort_artillery_nest_DES	255
+Hhedgehog_concreteBig			435
+
+LAND_t_2_FOP2					155
+csj_shelter01					95
+LAND_uns_leanto1				90
+LAND_uns_vcshelter6				45
+cwr3_excercisedtrack3			85
+Land_Wood_Tower					250
+LAND_uns_vctower2				260
+land_cwr3_vez					275
+Land_Cargo_Patrol_V2_F			345
+LAND_fort						795
+
+STRATEGIC
+TK_GUE_WarfareBVehicleServicePoint_Base_EP1	5600
+land_cwr3_lampa_sidl_3			75
+land_cwr3_tent1_mash			200
+Land_radar_EP1					370
+Land_Illum_Tower				435
+cwr3_target_grenade				150
+Land_CamoNetB_NATO_EP1			175
+CamoNet_wdl_big_F				175
+Land_CamoNetVar_NATO_EP1		145
+CamoNet_wdl_open_F				145
+Land_IRMaskingCover_01_F		375
+Land_IRMaskingCover_02_F		275
+Land_Setka_Car					155
+cwr3_shed_big					120
+Land_I44_Object_Tent_Zeltbahn_16	50
+
+Land_Ind_Shed_02_EP1			2000
+Land_smallhangaropen			2350
+Land_Ind_Shed_01_EP1			2450
+Land_TentHangar_V1_F			2975
+land_cwr3_hangar				3500
+land_cwr3_hangar_2				3475
+Land_Mil_hangar_EP1				5600
+Land_Dome_Big_F					6750
+
+Land_Bunker_01_blocks_1_F		855
+Land_Bunker_01_blocks_3_F		1750
+WW2_BET_PZ_Mauer				1875
+Land_Platform_Stairs_20			2650
+Land_Platform_Stairs_30			3475
+Land_RampConcrete_F				2400
+Land_RampConcreteHigh_F			4550
+WW2_BET_Traegersperre_Closed	4200
+Land_WW2_BET_Walzsperre			4100
+concretecover					16750
+Land_BasaltWall_01_gate_F		4800
+Land_WW2_BET_MG_Nest_Splinter_A	5250
+Land_WW2_BET_RGB669_Pak_R_Splinter	9950
+Land_WW2_BET_RGB669_Pak_L_Splinter	9950
+Land_WX_japbunker02					10400
+
+Land_WW2_BET_Regelbau_D2_B			13600
+land_cwr3_ammostore2				17800
+Land_WW2_BET_Tobruk_Splinter		15200
+Land_I44_Buildings_Bunker_AA		16350
+Land_WX_japbunker01					17875
+Land_WW2_BET_Pillbox				16350
+Land_WW2_Bunker_Mg					18300
+Land_WW2_Bunker_Gun_L				21600
+Land_I44_Bunker_01					20575
+
+Land_WW2_Bunker_H679				22050
+Land_WW2_BET_Regelbau10				27800
+Land_PillboxBunker_01_big_F			34775
+Land_WW2_BET_RGB_667_Com_B			42750
+Land_Bunker_01_tall_F				44500
+Land_WW2_BET_RGB_671				50150
+
+
+
+_u = _u + ['B_LIB_US_M2Flamethrower'];	_i = _i + [['','','CfgVehicles','BackpackA3',300,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_M2_Flamethrower'];	_i = _i + [['','','CfgWeapons','Primary',300,3,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_TMI_42_MINE_mag'];	_i = _i + [['','','CfgMagazines','magazine',45,0,true,false,0,0,true,0,0,0,0,0,0]];
+
+_u = _u + ['U_LIB_US_Tank_Crew'];	_i = _i + [['','','CfgWeapons','Uniform',35,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['U_LIB_SOV_Tank_private_field'];	_i = _i + [['','','CfgWeapons','Uniform',35,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['U_LIB_GER_Tank_crew_private'];	_i = _i + [['','','CfgWeapons','Uniform',35,0,true,false,0,0,true,0,0,0,0,0,0]];
+
+_u = _u + ['H_LIB_US_AB_Helmet'];	_i = _i + [['','','CfgWeapons','Headgear',15,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['H_LIB_SOV_RA_Helmet'];	_i = _i + [['','','CfgWeapons','Headgear',15,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['H_LIB_GER_Helmet'];	_i = _i + [['','','CfgWeapons','Headgear',15,0,true,false,0,0,true,0,0,0,0,0,0]];
+
+_u = _u + ['H_LIB_US_Helmet_Tank'];	_i = _i + [['','','CfgWeapons','Headgear',15,0,true,false,0,0,true,0,0,0,0,0,0]];
+
+/example
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+
+this removeItemFromPrimaryWeapon "optic_acro";
+
+/requip blu
+
+B_Survivor_F
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+this addGoggles "G_LIB_Dust_Goggles";
+this addbackpack "B_LIB_US_M2Flamethrower";
+this addWeapon "LIB_M2_Flamethrower";
+
+OPFOR
+
+LIB_SOV_LC_rifleman
+
+removeAllWeapons this; 
+removeuniform this;  
+removevest this; 
+removebackpack this; 
+removeGoggles this;  
+this adduniform "U_LIB_NKVD_Efreitor"; 
+this addheadgear "H_LIB_SOV_RA_Helmet"; 
+this addGoggles "G_LIB_Dust_Goggles"; 
+this addbackpack "B_LIB_US_M2Flamethrower"; 
+this addWeapon "LIB_M2_Flamethrower";
+
+res
+
+ CUP_I_TK_GUE_Soldier
+   
+removevest this;  
+removeGoggles this;   
+removeAllWeapons this; 
+  
+this adduniform "CUP_O_TKI_Khet_Partug_04";  
+this addheadgear "CUP_H_TKI_Lungee_Open_06";  
+this addGoggles "CUP_G_Scarf_Face_Tan";  
+this addbackpack "B_LIB_US_M2Flamethrower";  
+this addWeapon "LIB_M2_Flamethrower"; 
+
+
+/list ru ifa inf
+
+LIB_SOV_LC_rifleman				30
+LIB_SOV_smgunner				45
+LIB_SOV_mgunner					60
+LIB_SOV_scout_sniper_spring		75
+LIB_SOV_medic					65
+LIB_SOV_sapper					95	requip
+LIB_SOV_LAT_Soldier				110
+LIB_SOV_AT_soldier				140	requip
+LIB_SOV_scout_atrifle_gunner	100
+
+/ru ifa at
+
+LIB_SOV_AT_soldier
+
+removebackpack this;  
+this addbackpack "cwr3_i_bergen_backpack_khaki";  
+this addItemToBackpack "LIB_1Rnd_RPzB";
+this addItemToBackpack "LIB_1Rnd_RPzB";
+this addItemToBackpack "LIB_1Rnd_RPzB";
+
+
+/ru ifa ingeneer
+
+LIB_SOV_sapper
+
+removebackpack this;  
+this addbackpack "cwr3_i_bergen_backpack_khaki";  
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+
+//scope mg
+//LIB_SOV_mggunner
+CUP_launch_FIM92Stinger
+B_Bergen_mcamo_F
+CUP_Stinger_M
+
+
+this addWeapon "CUP_launch_FIM92Stinger"; 
+this addbackpack "B_Bergen_mcamo_F";  
+
+
+
+//LIB_DT_OPTICs
+
+/ru list unsung inf
+
+uns_men_NVA_65_RF3		100 requip
+uns_men_NVA_65_AS2		120	requip
+uns_men_NVA_65_LMG		140	requip
+uns_men_NVA_65_HMG		200 re
+uns_men_NVA_recon_65_MRK	240 re
+uns_men_NVA_65_MED		260 re
+uns_men_NVA_65_SAP		295 re
+uns_men_NVA_daccong_AT2		420 re
+uns_men_NVA_65_AT		480 re
+uns_men_NVA_65_AT2		600 re
+
+
+'uns_men_NVA_65_RF3','uns_men_NVA_65_AS2','uns_men_NVA_65_LMG','uns_men_NVA_65_HMG','uns_men_NVA_recon_65_MRK',
+'uns_men_NVA_65_MED','uns_men_NVA_65_SAP','uns_men_NVA_daccong_AT2','uns_men_NVA_65_AT','uns_men_NVA_65_AT2',
+
+'LIB_SOV_AT_soldier','LIB_SOV_sapper',
+
+'uns_men_NVA_65_RF3','uns_men_NVA_65_AS2','uns_men_NVA_65_LMG','uns_men_NVA_65_HMG','uns_men_NVA_recon_65_MRK',
+'uns_men_NVA_65_MED','uns_men_NVA_65_SAP','uns_men_NVA_daccong_AT2','uns_men_NVA_65_AT','uns_men_NVA_65_AT2',
+
+/ru unsung gunner
+uns_men_NVA_65_RF3
+
+removebackpack this;  
+
+/ru unsung lmg
+uns_men_NVA_65_AS2
+
+removeAllWeapons this; 
+removebackpack this; 
+this addMagazine "lib_35Rnd_762x25";
+this addWeapon "LIB_PPSh41_m"; 
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+
+this addItemToVest "FirstAidKit";
+
+
+//UNS_NVA_R1
+/ru unsung lmg
+uns_men_NVA_65_LMG
+
+removeAllWeapons this; 
+removebackpack this; 
+this addMagazine "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M";
+this addWeapon "CUP_arifle_RPK74"; 
+
+this addItemToVest "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M";
+this addItemToVest "FirstAidKit";
+this addItemToVest "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+
+/ru uns hmg
+uns_men_NVA_65_HMG
+
+removeAllWeapons this; 
+this addMagazine "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
+this addWeapon "CUP_lmg_PKM"; 
+this addItemToVest "FirstAidKit";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+
+
+
+/ru uns sniper
+//uns_menNVA_65_MRK
+uns_men_NVA_recon_65_MRK
+
+removeAllWeapons this; 
+this addMagazine "CUP_10Rnd_762x54_SVD_M";
+this addWeapon "CUP_srifle_SVD_des"; 
+this addPrimaryWeaponItem "CUP_optic_PSO_1";
+this addPrimaryWeaponItem "CUP_SVD_camo_d";
+
+this addItemToVest "CUP_10Rnd_762x54_SVD_M";
+this addItemToVest "CUP_10Rnd_762x54_SVD_M";
+this addItemToVest "CUP_10Rnd_762x54_SVD_M";
+this addItemToVest "CUP_10Rnd_762x54_SVD_M";
+this addItemToVest "CUP_10Rnd_762x54_SVD_M";
+this addItemToVest "CUP_10Rnd_762x54_SVD_M";
+this addItemToVest "FirstAidKit";
+this addItemToBackpack "CUP_10Rnd_762x54_SVD_M";
+this addItemToBackpack "CUP_10Rnd_762x54_SVD_M";
+this addItemToBackpack "CUP_10Rnd_762x54_SVD_M";
+this addItemToBackpack "CUP_10Rnd_762x54_SVD_M";
+this addItemToBackpack "CUP_10Rnd_762x54_SVD_M";
+this addItemToBackpack "CUP_10Rnd_762x54_SVD_M";
+this addItemToBackpack "CUP_10Rnd_762x54_SVD_M";
+this addItemToBackpack "uns_rg42gren";
+this addItemToBackpack "uns_rg42gren";
+this addItemToBackpack "uns_rg42gren";
+
+
+
+
+/ru uns medic
+uns_men_NVA_65_MED
+
+this addItemToBackpack "MediKit";
+
+/ru uns ingeener
+uns_men_NVA_65_SAP
+
+removeAllWeapons this; 
+this addMagazine "CUP_30Rnd_762x39_AK47_M";
+this addWeapon "CUP_arifle_AKM"; 
+
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+
+removebackpack this;  
+this addbackpack "cwr3_i_bergen_backpack_khaki";  
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+
+/ru uns lat
+uns_men_NVA_daccong_AT2
+
+removeAllWeapons this; 
+this addMagazine "CUP_30Rnd_762x39_AK47_M";
+this addWeapon "CUP_arifle_AKM"; 
+
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "CUP_30Rnd_762x39_AK47_M";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addMagazine "uns_rpg2grenade";
+this addWeapon "uns_rpg2"; 
+removebackpack this;  
+this addbackpack "CUP_B_RPGPack_Khaki"; 
+this addItemToBackpack "uns_rpg2grenade";
+this addItemToBackpack "uns_rpg2grenade";
+this addItemToBackpack "uns_rpg2grenade";
+this addItemToBackpack "uns_rpg2grenade";
+
+/ru uns lat he
+uns_men_NVA_65_AT
+
+removeAllWeapons this; 
+removebackpack this; 
+this addMagazine "lib_35Rnd_762x25";
+this addWeapon "LIB_PPSh41_m"; 
+this addMagazine "uns_B40grenade";
+this addWeapon "uns_B40"; 
+this addbackpack "CUP_B_RPGPack_Khaki"; 
+this addItemToBackpack "uns_B40grenade";
+this addItemToBackpack "uns_B40grenade";
+this addItemToBackpack "uns_B40grenade";
+this addItemToBackpack "uns_B40grenade";
+this addItemToBackpack "uns_B40grenade";
+this addItemToBackpack "uns_B40grenade";
+
+
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "lib_35Rnd_762x25";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "FirstAidKit";
+
+/ru uns hat
+uns_men_NVA_65_AT2
+
+removeAllWeapons this; 
+removebackpack this; 
+this addMagazine "uns_sksmag";
+this addWeapon "uns_sks"; 
+this addMagazine "CUP_PG7V_M";
+this addWeapon "CUP_launch_RPG7V"; 
+this addbackpack "CUP_B_RPGPack_Khaki"; 
+this addItemToBackpack "CUP_PG7V_M";
+this addItemToBackpack "CUP_PG7V_M";
+this addItemToBackpack "CUP_PG7V_M";
+
+this addItemToVest "uns_sksmag";
+this addItemToVest "uns_sksmag";
+this addItemToVest "uns_sksmag";
+this addItemToVest "uns_sksmag";
+this addItemToVest "uns_sksmag";
+this addItemToVest "uns_sksmag";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "uns_rg42gren";
+this addItemToVest "FirstAidKit";
+
+
+
+----------------------------------------
+BLU vanilla convert
+
+
+_u = _u + ['LIB_M1_Garand'];	_i = _i + [['','','CfgWeapons','Primary',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1903A3_Springfield'];	_i = _i + [['','','CfgWeapons','Primary',200,2,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1903A4_Springfield'];	_i = _i + [['','','CfgWeapons','Primary',300,3,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1918A2_BAR'];	_i = _i + [['','','CfgWeapons','Primary',200,2,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1919A4'];	_i = _i + [['','','CfgWeapons','Primary',300,3,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1919A6'];	_i = _i + [['','','CfgWeapons','Primary',300,3,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1928_Thompson'];	_i = _i + [['','','CfgWeapons','Primary',100,1,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1928A1_Thompson'];	_i = _i + [['','','CfgWeapons','Primary',100,1,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1A1_Carbine'];	_i = _i + [['','','CfgWeapons','Primary',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1A1_Thompson'];	_i = _i + [['','','CfgWeapons','Primary',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M3_GreaseGun'];	_i = _i + [['','','CfgWeapons','Primary',200,2,true,false,0,0,true,[],[],[],[],[],0]];
+-----------------------------
+launcher
+_u = _u + ['LIB_M1A1_Bazooka'];	_i = _i + [['','','CfgWeapons','Secondary',300,0,true,false,0,0,true,[],[],[],[],[],0]];
+LIB_1Rnd_60mm_M6
+_u = _u + ['LIB_ToolKit'];	_i = _i + [['','','CfgWeapons','',45,0,true,false,0,0,true,0,0,0,0,0,0]];
+magazine
+-------------
+_u = _u + ['LIB_US_M18_Green'];	_i = _i + [['','','CfgMagazines','magazine',3,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_US_M18_Red'];	_i = _i + [['','','CfgMagazines','magazine',3,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_US_M18_Yellow'];	_i = _i + [['','','CfgMagazines','magazine',3,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_US_M18'];	_i = _i + [['','','CfgMagazines','magazine',3,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_US_Mk_2'];	_i = _i + [['','','CfgMagazines','magazine',3,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_5Rnd_762x63'];	_i = _i + [['','','CfgMagazines','magazine',2.5,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['lib_5Rnd_762x54'];	_i = _i + [['','','CfgMagazines','magazine',2.5,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['lib_5Rnd_792x57'];	_i = _i + [['','','CfgMagazines','magazine',2.5,0,true,false,0,0,true,0,0,0,0,0,0]];
+LIB_8Rnd_762x63_t "LIB_8Rnd_762x63"; m1garand
+"FirstAidKit";
+_u = _u + ['lib_rg42'];	_i = _i + [['','','CfgMagazines','magazine',45,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['lib_rpg6'];	_i = _i + [['','','CfgMagazines','magazine',45,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_US_M18'];	_i = _i + [['','','CfgMagazines','magazine',3,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_US_Mk_2'];	_i = _i + [['','','CfgMagazines','magazine',3,0,true,false,0,0,true,0,0,0,0,0,0]];
+
+V_LIB_US_Assault_Vest_light   (goße weste)
+V_LIB_US_AB_Vest_Padded_Asst_MG
+
+--------
+sidearm
+_u = _u + ['LIB_FLARE_PISTOL'];	_i = _i + [['','','CfgWeapons','Sidearm',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1896'];	_i = _i + [['','','CfgWeapons','Sidearm',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_P08'];	_i = _i + [['','','CfgWeapons','Sidearm',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_P38'];	_i = _i + [['','','CfgWeapons','Sidearm',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_WaltherPPK'];	_i = _i + [['','','CfgWeapons','Sidearm',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_M1895'];	_i = _i + [['','','CfgWeapons','Sidearm',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_TT33'];	_i = _i + [['','','CfgWeapons','Sidearm',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_Colt_M1911'];	_i = _i + [['','','CfgWeapons','Sidearm',50,0,true,false,0,0,true,[],[],[],[],[],0]];
+_u = _u + ['LIB_1Rnd_flare_yellow'];	_i = _i + [['','','CfgMagazines','magazine',1,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_1Rnd_flare_green'];	_i = _i + [['','','CfgMagazines','magazine',1,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_1Rnd_flare_red'];	_i = _i + [['','','CfgMagazines','magazine',1,0,true,false,0,0,true,0,0,0,0,0,0]];
+_u = _u + ['LIB_1Rnd_flare_white'];	_i = _i + [['','','CfgMagazines','magazine',1,0,true,false,0,0,true,0,0,0,0,0,0]];
+
+/soldier
+B_Soldier_F
+
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+
+
+this addMagazine "LIB_8Rnd_762x63_t";
+this addWeapon "LIB_M1_Garand";
+
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "LIB_US_Mk_2";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "FirstAidKit";
+
+/grenadier
+B_Soldier_GL_F
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+this addMagazine "LIB_8Rnd_762x63";
+this addWeapon "LIB_M1_Garand_M7";
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "LIB_1Rnd_G_M9A1";
+this addItemToVest "LIB_1Rnd_G_M9A1";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "FirstAidKit";
+
+/lmg
+B_Soldier_lite_F
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+this addMagazine "LIB_30Rnd_45ACP";
+this addWeapon "LIB_M1A1_Thompson";
+this addMagazine "LIB_1Rnd_flare_white";
+this addWeapon "LIB_FLARE_PISTOL";
+
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "LIB_1Rnd_flare_red";
+this addItemToVest "LIB_30Rnd_45ACP";
+this addItemtoUniform "LIB_30Rnd_45ACP";
+this addItemtoUniform "LIB_30Rnd_45ACP";
+this addItemtoUniform "LIB_30Rnd_45ACP";
+this addItemtoUniform "LIB_30Rnd_45ACP";
+
+this addItemtoUniform "FirstAidKit";
+
+
+/medium mg
+B_soldier_AR_F
+
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+this addMagazine "LIB_20Rnd_762x63";
+this addWeapon "LIB_M1918A2_BAR";
+
+
+
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "FirstAidKit";
+
+this addItemToVest "LIB_20Rnd_762x63";
+this addItemtoUniform "LIB_20Rnd_762x63";
+this addItemtoUniform "LIB_20Rnd_762x63";
+this addItemtoUniform "LIB_20Rnd_762x63";
+this addItemtoUniform "LIB_20Rnd_762x63";
+
+/hmg
+B_Soldier_A_F
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+this addMagazine "LIB_50Rnd_762x63";
+this addWeapon "LIB_M1919A4";
+
+
+
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+this addItemToVest "LIB_US_Mk_2";
+
+
+
+this addItemToVest "LIB_50Rnd_762x63";
+this addItemToVest "LIB_50Rnd_762x63";
+this addItemToVest "LIB_50Rnd_762x63";
+this addItemtoUniform "FirstAidKit";
+
+/sniper
+B_soldier_M_F
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+this addMagazine "LIB_5Rnd_762x63";
+this addWeapon "LIB_M1903A4_Springfield";
+this addMagazine "LIB_7Rnd_45ACP";
+this addWeapon "LIB_Colt_M1911";
+this addWeapon "LIB_Binocular_US";
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "LIB_7Rnd_45ACP";
+this addItemToVest "LIB_7Rnd_45ACP";
+this addItemToVest "LIB_7Rnd_45ACP";
+this addItemToVest "LIB_7Rnd_45ACP";
+this addItemToVest "LIB_7Rnd_45ACP";
+this addItemToVest "LIB_5Rnd_762x63";
+this addItemToVest "LIB_5Rnd_762x63";
+this addItemToVest "LIB_5Rnd_762x63";
+
+this addItemtoUniform "LIB_US_M18";
+this addItemtoUniform "FirstAidKit";
+this addItemtoUniform "LIB_5Rnd_762x63";
+this addItemtoUniform "LIB_5Rnd_762x63";
+
+/medic
+B_medic_F
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet_Med";
+
+
+this addMagazine "LIB_8Rnd_762x63_t";
+this addWeapon "LIB_M1_Garand";
+
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "MediKit";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+
+/ingeneer
+B_engineer_F
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+this addMagazine "LIB_8Rnd_762x63_t";
+this addWeapon "LIB_M1_Garand";
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+this addItemToVest "LIB_US_Mk_2";
+this addItemToVest "ToolKit";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addItemtoUniform "LIB_8Rnd_762x63";
+this addbackpack "cwr3_i_bergen_backpack_khaki";  
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemToBackpack "LIB_TMI_42_MINE_mag";
+this addItemtoUniform "FirstAidKit";
+
+/lat
+B_soldier_LAT_F
+
+B_LIB_US_M36
+
+removeAllWeapons this;
+removeuniform this; 
+removevest this;
+removebackpack this;
+removeGoggles this; 
+this unassignItem "NVGoggles";
+this removeItem "NVGoggles";
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+this addMagazine "LIB_15Rnd_762x33";
+this addWeapon "LIB_M1A1_Carbine";
+
+
+this addWeapon "LIB_M1A1_Bazooka";
+this addVest "V_LIB_US_AB_Vest_Padded_Asst_MG";
+
+
+this addItemToVest "LIB_15Rnd_762x33";
+this addItemToVest "LIB_15Rnd_762x33";
+this addItemtoUniform "LIB_15Rnd_762x33";
+this addItemtoUniform "LIB_15Rnd_762x33";
+this addItemtoUniform "LIB_15Rnd_762x33";
+this addItemtoUniform "LIB_US_Mk_2";
+this addItemtoUniform "FirstAidKit";
+this addbackpack "B_LIB_US_RocketBag_Empty";  
+this addItemToBackpack "LIB_1Rnd_60mm_M6";
+this addItemToBackpack "LIB_1Rnd_60mm_M6";
+this addItemToBackpack "LIB_1Rnd_60mm_M6";
+
+----------------------------------
+/vehicle res
+
+CUP_I_Hilux_metis_TK
+//LIB_DAK_M3_Halftrack ggf. nicht
+
+CUP_I_BTR40_MG_TKG
+CUP_I_Hilux_armored_AGS30_TK
+CUP_I_Hilux_armored_DSHKM_TK
+CUP_I_Hilux_armored_SPG9_TK
+CUP_I_Hilux_armored_zu23_TK
+
+light
+
+CUP_O_M113_TKA
+CUP_I_BRDM2_TK_Gue
+CUP_I_BRDM2_ATGM_TK_Gue
+
+aa
+
+CUP_I_Ural_ZU23_TK_Gue
+LIB_SdKfz_7_AA
+CUP_I_Hilux_igla_TK
+LIB_FlakPanzerIV_Wirbelwind
+
+heavy
+
+CUP_I_BMP1_TK_GUE
+CUP_I_T34_TK_GUE
+LIB_T34_76_captured
+CUP_I_T55_TK_GUE
+
+LIB_PzKpfwV
+LIB_PzKpfwVI_B
+LIB_PzKpfwIV_H
+LIB_PzKpfwVI_E_1
+
+res aa inf
+
+CUP_I_TK_GUE_Soldier_AA
+cwr3_i_soldier_aa_strela
+CUP_I_GUE_Soldier_AA
+CUP_I_GUE_Soldier_AA2
+
+
+//GEAR
+/ru level_0
+MG1/
+"LIB_DP28"
+"LIB_47Rnd_762x54"
+"LIB_47Rnd_762x54d"
+
+
+
+MG2/
+"LIB_DT_OPTIC"
+"LIB_DT"
+"LIB_63Rnd_762x54"
+"LIB_63Rnd_762x54d"
+
+LMG/
+"LIB_PPSh41_m"
+
+
+"LIB_35Rnd_762x25"
+"LIB_35Rnd_762x25_t"
+"LIB_35Rnd_762x25_t2"
+"LIB_35Rnd_762x25_ap"
+"LIB_71Rnd_762x25"
+"LIB_71Rnd_762x25_t"
+"LIB_71Rnd_762x25_t2"
+"LIB_71Rnd_762x25_ap"
+
+
+mosin/
+"LIB_M9130PU"
+"LIB_M9130"
+"LIB_M9130_DYAKONOV"
+
+"LIB_5Rnd_762x54"
+"LIB_5Rnd_762x54"
+"LIB_5Rnd_762x54_t46"
+"LIB_5Rnd_762x54_t30"
+"LIB_5Rnd_762x54_D"
+"LIB_5Rnd_762x54_b30"
+"LIB_1Rnd_G_DYAKONOV"
+
+"LIB_ACC_M1891_Bayo"
+"LIB_ACC_GL_DYAKONOV_Empty"
+
+
+svt/
+"LIB_SVT_40"
+
+"LIB_10Rnd_762x54"
+"LIB_10Rnd_762x54_t46"
+"LIB_10Rnd_762x54_t30"
+"LIB_10Rnd_762x54_t462"
+"LIB_10Rnd_762x54_t302"
+"LIB_10Rnd_762x54_d"
+"LIB_10Rnd_762x54_b30"
+
+SCHROT/
+"uns_baikal"
+"uns_baikal_sawnoff"
+"uns_12gaugemag_2"
+
+
+
+AK
+"CUP_arifle_AK105_1p63"
+"CUP_arifle_AKS74U"
+"CUP_arifle_AK74",
+"CUP_arifle_RPK74M_1p78"
+
+"CUP_optic_PechenegScope"
+"CUP_optic_ekp_8_02"
+"CUP_optic_Kobra"
+"CUP_optic_1p63"
+
+*"CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"
+"CUP_30Rnd_545x39_AK74M_M"
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK_M"
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK_camo_M"
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK_desert_M"
+"CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M"
+"CUP_60Rnd_545x39_AK74M_M"
+"CUP_60Rnd_TE1_Red_Tracer_545x39_AK74M_M"
+"CUP_20Rnd_545x39_AKSU_M"
+"CUP_20Rnd_Subsonic_545x39_AKSU_M"
+"CUP_30Rnd_Subsonic_545x39_AK74M_M"
+"CUP_30Rnd_545x39_AK_M"
+
+handgun
+"hgun_Rook40_F"
+"16Rnd_9x21_Mag"
+
+
+AT
+"CUP_launch_RPG18_Loaded"
+"LIB_PzFaust_30m"
+"LIB_PzFaust_60m"
+"LIB_PIAT_Rifle","LIB_PIAT"
+
+
+
+"LIB_RPzB"
+"LIB_1Rnd_RPzB"
+
+"LIB_1Rnd_89m_PIAT"
+
+
+BINO
+"LIB_Binocular_SU"
+"Binocular"
+
+uniform
+"CUP_U_O_RUS_Ratnik_BeigeDigital"
+"CUP_U_O_SLA_Desert"
+"U_LIB_NKVD_Efreitor"
+"U_LIB_SOV_Sniper_spring"
+
+vest
+"CUP_Vest_RUS_6B45_Sh117_BeigeDigital"
+"CUP_V_O_SLA_6B3_1_DES"
+"V_LIB_SOV_RAZV_PPShBelt"
+"V_LIB_SOV_RA_SniperVest"
+
+"uns_V_Simc_mk56"
+"uns_vc_chestrig"
+
+"cwr3_o_vest_6b2"
+"V_LIB_SOV_IShBrVestMG" (armor)
+"CUP_V_O_SLA_Flak_Vest03"
+
+,"CUP_V_RUS_6B45_4","CUP_V_RUS_6B45_4_BeigeDigital","CUP_V_O_SLA_6B3_3_URB"
+"V_PlateCarrierIAGL_oli" (max armor)
+
+backpack
+"B_LIB_SOV_RA_MGAmmoBag_Empty"
+"B_LIB_SOV_RA_Rucksack"
+"UNS_NVA_R1"
+"UNS_NVA_RC"  (getarnt)
+"CUP_B_RPGPack_Khaki","cwr3_o_backpack_rpg7"
+
+
+"UNS_Alice_1"
+
+"CUP_B_RUS_Backpack"
+"CUP_O_RUS_Patrol_bag_BeigeDigital"
+"CUP_B_HikingPack_Civ"
+helmet
+"CUP_H_RUS_6B47_v2_GogglesUp_BeigeDigital"
+"CUP_H_SLA_Helmet_DES"
+"H_LIB_SOV_RA_Helmet"
+
+goggles
+"G_LIB_Dust_Goggles"
+
+
+nv
+"CUP_NVG_HMNVS_Hide"
+
+throw
+"CUP_HandGrenade_RGD5"
+"SmokeShell"
+"SmokeShellRed"
+"Chemlight_red"
+
+med
+"FirstAidKit"
+
+/both sides
+wp
+"LIB_No77"
+"uns_m34gren"
+
+normal
+"LIB_F1"
+
+
+"LIB_FLARE_PISTOL"
+"LIB_1Rnd_flare_red"
+"LIB_1Rnd_flare_green"
+"LIB_1Rnd_flare_yellow"
+"LIB_1Rnd_flare_white"
+
+
+
+-----------------------------
+heavy ru
+level0
+
+LIB_SU85			1400
+uns_t34_76_vc		3200
+LIB_T34_76			2650
+uns_Type63_mg		1100
+CUP_O_BMP1_TKA		1950
+CUP_O_MTLB_pk_TKA	1000
+
+level1
+
+CUP_O_T34_TKA		3350
+LIB_T34_85			3475
+uns_ot34_85_nva		3700
+LIB_JS2_43			4000
+uns_ZSU57_NVA		2950
+CUP_O_BMP2_TKA		2600
+CUP_O_BMP1P_TKA		2300
+s
+level2
+
+CUP_O_BMP3_RU			3900
+uns_pt76				3850
+CUP_O_ZSU23_Afghan_CSAT	3150
+CUP_O_T55_TK			4300
+uns_t55_nva				4600
+
+level3
+
+CUP_O_ZSU23_CSAT		3650
+uns_ZSU23_NVA			3750
+
+cwr3_o_mtlb_sa13		5000
+uns_to55_nva			4950
+uns_t54_nva				4850
+cwr3_o_t55amv			5300
+CUP_O_T72_RU			5700
+cwr3_o_t64b				5900
+
+level4
+
+CUP_O_2S6_RU			7800
+O_MBT_02_arty_F			8750
+CUP_O_T90_RU			6900
+cwr3_o_t64bv			6100
+cwr3_o_t72b1			6400
+LIB_SdKfz124_DLV		7300
+------------
+heavy us
+
+level0
+
+LIB_StuG_III_G			1400
+LIB_M3A3_Stuart			2800
+uns_M113A1_M40			1650
+CUP_B_AAV_USMC			1350
+CUP_B_M7Bradley_USA_D	2100
+
+level1	
+
+CUP_B_M2Bradley_USA_D				2800
+CUP_B_MCV80_GB_D_SLAT				2500
+LIB_FlakPanzerIV_Wirbelwind_w		3150
+uns_M67A							2000
+LIB_Churchill_Mk7_AVRE_desert		1850
+LIB_Churchill_Mk7_Howitzer_desert	2250	
+LIB_UK_Italy_M4A3_75				3000
+LIB_Cromwell_Mk4					3250
+LIB_M4A4_FIREFLY					3500
+
+
+level2
+
+CUP_B_FV510_GB_D					3000
+CUP_B_M2A3Bradley_USA_D				3250
+CUP_B_M60A3_USMC					4750
+CUP_B_M163_USA						3400
+LIB_Churchill_Mk7_Crocodile_desert	3950
+uns_m48a3							4550
+
+
+level3
+
+
+CUP_B_FV510_GB_D_SLAT				3200
+uns_m163							3500
+
+CUP_B_M60A3_TTS_USMC				4900
+uns_m551							5400
+cwr3_b_m1							5900
+
+
+level4
+
+CUP_B_M1A1_DES_US_Army				6900
+CUP_B_M6LineBacker_USA_D			7650
+CUP_B_M270_DPICM_USA				9000
+CUP_B_M270_HE_USA					8900
+uns_m107sp							8650
+uns_m110sp							8950
+
+-----------------------------
+air ru
+
+level0
+
+CUP_O_AN2_TK		6050
+LIB_Li2				8200
+CUP_O_UH1H_SLA		5400
+
+level1
+
+cwr3_o_camel			4050
+uns_an2_cas				9750
+CUP_O_Mi8_medevac_RU	9500
+CUP_O_Mi8AMT_RU			7950
+CUP_O_Ka50_DL_RU		11700
+LIB_RA_P39_3			10950
+
+level2
+
+LIB_FW190F8_5			12300
+LIB_ARR_Ju87			16500
+CUP_O_Ka60_Grey_RU		13750
+LIB_Pe2					14700
+
+level3
+
+CUP_O_Mi24_P_Dynamic_RU	 23500
+CUP_O_Mi8_RU			 17850
+CUP_O_L39_TK				20400
+uns_Mig21_CAS				25650
+
+level4
+
+CUP_O_Mi24_V_Dynamic_RU		26800
+CUP_O_Su25_Dyn_RU			37800
+CUP_O_Ka52_RU				45850
+
+level5
+
+CUP_B_Mi24_D_MEV_Dynamic_CDF	30700
+CUP_I_Mi24_Mk4_ION				33650
+CUP_O_SU34_RU					58900
+
+O_UAV_02_dynamicLoadout_F		20000
+----------------------------
+air us
+
+level0
+
+CUP_B_C130J_USMC			9300
+uns_H13_gunship_Army		4200
+uns_UH1H_m60				5300
+
+level1
+
+CUP_B_UH1Y_MEV_USMC			8950
+uns_UH1C_M21_M200_1AC		10500
+LIB_RAF_P39					11000
+CUP_B_MV22_USMC				13050
+CUP_B_UH60M_FFV_US			8700
+cwr3_b_uh60_mev				9800
+
+level2
+
+LIB_ARR_Ju87				16500
+LIB_FW190F8_5				12300
+cwr3_b_kiowa_dyn			18575
+CUP_UH1Y_Gunship_Dynamic_USMC	17450
+LIB_P47						14700
+UNS_AH1G					12300
+
+level3
+
+uns_ach47_m134				10075
+uns_A4_skyhawk_CAP			23550
+cwr3_b_ah11					21000
+uns_f100b_AGM				26900
+UNS_UH1B_TOW				19200
+CUP_B_MH60L_DAP_4x_US		18150
+
+level4	
+
+CUP_B_AH64D_DL_USA			44800
+uns_A7N_AGM					50850
+
+level5
+
+CUP_B_AH1Z_Dynamic_USMC		48000
+CUP_B_F35B_Stealth_USMC		50000
+CUP_B_AV8B_DYN_USMC			53500
+uns_F4J_AGM					63500
+uns_A6_Intruder_AGM			55775
+uns_pil1					52350
+
+CUP_B_USMC_DYN_MQ9			20000
+
+
+
+--------------minen "MineE"
+"UNS_TrapKit","LIB_ToolKit"
+
+"LIB_SMI_35_MINE_mag"
+,"LIB_shumine_42_MINE_mag"
+,"uns_traps_nade_mag6"
+,"uns_traps_nade_mag4"
+,"uns_traps_nade_mag5"
+,"uns_traps_punj5_mag"
+,"uns_traps_punj4_mag"
+,"uns_traps_punj1_mag"
+,"uns_traps_punj2_mag"
+,"uns_traps_nade_mag"
+,"uns_traps_m7_mag"
+,"uns_traps_nade_mag3"
+,"uns_traps_flare_mag"
+,"uns_traps_nade_mag7"
+,"uns_traps_claymore_mag"
+,"uns_traps_arty_mag"
+,"uns_traps_nade_mag2"
+,"LIB_TMI_42_MINE_mag"
+,"CUP_MineE_M"
+,"LIB_TM44_MINE_mag"
+,"LIB_STMI_MINE_mag"
+,"LIB_SMI_35_1_MINE_mag"
+"APERSTripMine_Wire_Mag"
+,"LIB_pomzec_MINE_mag"
+,"LIB_PMD6_MINE_mag"
+,"ATMine_Range_Mag"
+,"uns_mine_IN_mag"
+,"uns_mine_AT_mag"
+,"uns_mine_AV_mag"
+,"uns_mine_AP_mag"
+,"uns_traps_mine_mag"
+,"uns_mine_m14_mag"
+,"SLAMDirectionalMine_Wire_Mag"
+,"LIB_US_M3_MINE_mag"
+,"LIB_M3_MINE_mag"
+,"LIB_US_M1A1_ATMINE_mag"
+"uns_mine_radio_mag"
+,"uns_mine_guitar_mag"
+,"uns_mine_fuel_mag"
+,"uns_mine_fkit_mag"
+,"uns_mine_cigs_mag"
+,"uns_mine_beer_mag"
+,"uns_mine_ammo_mag"
+,"CUP_Mine_M"
+,"APERSBoundingMine_Range_Mag"
+,"APERSMine_Range_Mag"
+
+------------charges
+,"uns_traps_claymore_remote_mag"
+
+
+,"LIB_Ladung_Small_MINE_mag"
+,"LIB_Ladung_Big_MINE_mag"
+,"DemoCharge_Remote_Mag"
+
+,"SatchelCharge_Remote_Mag"
+,"IEDUrbanSmall_Remote_Mag"
+,"CUP_IED_V1_M","IEDLandSmall_Remote_Mag"
+,"CUP_IED_V3_M"
+
+
+
+
+,"ClaymoreDirectionalMine_Remote_Mag"
+,"LIB_US_TNT_4pound_mag"
+
+---------teuer
+"CUP_PipeBomb_M"		11		1000
+,"PipeBomb"				13		1400
+,"uns_mine_TM_mag"		13		1500
+"uns_M118_mag_remote"  96!
+,"CUP_IED_V4_M"			6		500
+,"CUP_IED_V2_M"			6		500
+
+--------trow
+
+
+
+----beide
+"LIB_No77" 200
+"uns_m34gren" 300
+
+"uns_molotov_mag" 10
+"uns_m308gren" 35
+
+"uns_m7gren" 500
+
+
+"LIB_No82" 80
+
+"uns_rkg3gren" PARA  600
+
+,"LIB_Shg24" 12
+,"LIB_Shg24x7" 100
+
+,
+,
+
+"MiniGrenade"
+-------us
+"LIB_F1" 50
+"LIB_Pwm" 65
+------ru
+"LIB_Rg42" 50
+"LIB_Rpg6" 65
+
+--------g0 us
+
+
+"LIB_Webley_Flare"
+
+,"LIB_1Rnd_flare_white"
+,"LIB_1Rnd_flare_red"
+,"LIB_1Rnd_flare_green"
+,"LIB_1Rnd_flare_yellow"};
+
+
+
+"LIB_FLARE_PISTOL"
+
+"LIB_1Rnd_flare_white"
+,"LIB_1Rnd_flare_red"
+,"LIB_1Rnd_flare_green"
+,"LIB_1Rnd_flare_yellow"};
+
+
+
+this adduniform "U_LIB_US_NAC_Uniform";
+this addheadgear "H_LIB_US_Helmet";
+
+
+
+
+
+
+"LIB_M1903A4_Springfield"
+"LIB_5Rnd_762x63"
+"LIB_5Rnd_762x63_t"
+"LIB_5Rnd_762x63_M1"
+
+"LIB_M1_Garand_M7"
+"LIB_8Rnd_762x63"
+"LIB_8Rnd_762x63_t"
+"LIB_8Rnd_762x63_M1"
+"LIB_1Rnd_G_M9A1"
+"LIB_1Rnd_G_Mk2"}
+
+
+"LIB_M1928_Thompson"
+"LIB_50Rnd_45ACP"
+"LIB_30Rnd_45ACP"
+"LIB_30Rnd_45ACP_t"
+
+
+"LIB_M1919A4"  0
+"LIB_50Rnd_762x63"
+"LIB_50Rnd_762x63_M1"};
+"LIB_M1919A6"  1
+
+"LIB_M1A1_Bazooka"
+"LIB_1Rnd_60mm_M6"
+
+
+"LIB_M1918A2_BAR"
+"LIB_20Rnd_762x63"
+"LIB_20Rnd_762x63_M1"};
+
+
+"LIB_Bren_Mk2"
+"LIB_30Rnd_770x56"
+"LIB_30Rnd_770x56_MKVIII"
+
+
+"uns_m2carbine"
+"uns_m2carbine_gl"
+"uns_o_M84"
+
+"uns_m2carbinemag"
+"uns_m2carbinemag_T"
+"uns_m2carbinemag_NT"
+"Uns_1Rnd_22mm_M1a2_FRAG"
+"uns_1Rnd_22mm_lume" 
+"Uns_1Rnd_22mm_smoke"
+
+
+"Uns_1Rnd_22mm_AT" 1
+"Uns_1Rnd_22mm_HEAT" 1
+
+"Uns_1Rnd_22mm_WP" 1
+
+
+
+"uns_mat49p" hg
+"uns_mat49"
+
+"uns_mat49_20_mag"
+"uns_mat49mag"
+"uns_mat49mag_T"
+"uns_mat49mag_NT"
+
+
+"uns_model12"
+"uns_12gaugemag_6"
+"uns_12gaugemag_6f"
+
+-------------g1 us
+rhsusf_army_ucp_aa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------
+rhs_vdv_des_aa
+
+
+
+-------------
+/rhs nv
+
+"rhs_1PN138" ru
+"rhsusf_ANPVS_14" us
+
+
+/scopes ru
+
+
+
+
+
+
+
+/aim 1
+"rhs_acc_ekp8_02"
+"CUP_optic_Kobra"
+"rhs_acc_pkas"
+"rhs_acc_nita"
+"CUP_optic_PechenegScope"
+"rhs_acc_ekp1"
+"rhs_acc_okp7_dovetail"&&
+
+/scopes 2
+"rhs_acc_pgo7v"
+"rhs_acc_pgo7v3"
+"CUP_optic_PSO_1_AK"
+"rhs_acc_1p29"
+"CUP_optic_PSO_3"
+
+/nv,thermal 3
+"CUP_optic_GOSHAWK" 
+"rhs_acc_1pn93_1"
+"rhs_acc_1pn93_2"
+"CUP_optic_NSPU"
+
+
+-----rpg2
+"uns_rpg2" 1	225
+
+"uns_rpg2grenade"1	170
+-----b40
+"uns_B40" 2		230	
+
+"uns_B40grenade"2	190
+
+----rpg7 
+
+
+"rhs_weap_rpg7" 2	300
+
+
+"rhs_rpg7_PG7VS_mag" 2	160
+"rhs_rpg7_PG7V_mag" 2	180
+"RPG7_F" 2				200
+"rhs_rpg7_PG7VL_mag" 3	250
+"rhs_rpg7_PG7VR_mag" 3	300
+
+/he
+
+"CUP_OG7_M" 3			100
+"rhs_rpg7_OG7V_mag" 3 	120
+"rhs_rpg7_TBG7V_mag" 3	200
+"rhs_rpg7_type69_airburst_mag" 3	210
+
+
+-----rhs ak
+"rhs_weap_ak74n"
+
+
+
+
+
+
+"rhs_weap_ak74m_gp25"
+"rhs_VOG25"
+
+
+/ap
+"rhs_30Rnd_545x39_7N22_desert_AK"
+"rhs_45Rnd_545X39_7N22_AK"
+"rhs_60Rnd_545X39_7N22_AK"
+
+
+
+
+
+
+"rhs_VOG25",
+
+"rhs_VG40OP_white"
+"rhs_VG40OP_green"
+"rhs_VG40OP_red"
+
+
+"rhs_VOG25P"
+"rhs_VG40TB"
+"rhs_GDM40"
+"rhs_VG40MD"
+--smoke
+"rhs_GRD40_White"
+"rhs_GRD40_Green"
+"rhs_GRD40_Red"
+

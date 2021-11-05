@@ -1,0 +1,54 @@
+version=53;
+center[]={1566.9301,5.5,5051.8955};
+class items
+{
+	items=3;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-4.1040039,-17.13271,-15.358887};
+			angles[]={0,0.2617994,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=22;
+		type="Land_PierWooden_01_16m_F";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.0013427734,-17.13271,-0.0068359375};
+			angles[]={0,0.2617994,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=23;
+		type="Land_PierWooden_01_16m_F";
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.1049805,-17.13271,15.365234};
+			angles[]={0,0.2617994,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=24;
+		type="Land_PierWooden_01_16m_F";
+	};
+};

@@ -1,0 +1,203 @@
+/*
+	BECTI: By Benny (benny_boy66@hotmail.fr)
+	  "Praise the bugs!"
+*/
+
+#include "Rsc\Game.hpp"
+#include "Rsc\Resources.hpp"
+#include "Rsc\Dialogs.hpp"
+#include "Rsc\Titles.hpp"
+#include "Rsc\Notifications.hpp"
+#include "Rsc\Debriefing.hpp"
+#include "Rsc\Parameters.hpp"
+#include "Rsc\Sounds.hpp"
+#include "Client\Functions\Externals\ATM_airdrop\ATM_airdrop.hpp"
+
+//--- Player Name tag
+class CfgFunctions
+{
+	#include "Common\Functions\External\LARs\LARs_spawnComp.cpp"
+};
+//--- Set Composition Classes 
+class CfgCompositions
+{
+	//#include "Common\Config\vanilla-mode\Base\Compositions\compositions.cfg"
+	//#include "Common\Config\vanilla-mode\Base\Compositions\compositions_west.cfg"
+	//#include "Common\Config\vanilla-mode\Base\Compositions\compositions_east.cfg"
+	#include "Common\Config\ofps-mode\Base\Compositions\compositions.cfg"
+	#include "Common\Config\ofps-mode\Base\Compositions\compositions_west.cfg"
+	#include "Common\Config\ofps-mode\Base\Compositions\compositions_east.cfg"
+	//#include "Common\Config\Guerrilla\Base\Compositions\compositions.cfg"
+	//#include "Common\Config\Guerrilla\Base\Compositions\compositions_west.cfg"
+	//#include "Common\Config\Guerrilla\Base\Compositions\compositions_east.cfg"
+};
+//#include "Common\Config\Common\Compositions\compositions.cfg"
+
+//VON Modification
+//channel, disableChat, disableVoice
+//0=global, 1=side, 2=command, 3=group, 4=vehicle, 5=direct, 6=system
+disableChannels[] = { {0,true,true}, {2,true,true}, {6,true,true} };
+
+
+// https://community.bistudio.com/wiki/Description.ext#corpseManagerMode
+// keep minPlayerDistance at 0, otherwise if they make base near a town, the bodies will stay (potentially for the entire game)
+minPlayerDistance     = 0;
+corpseManagerMode     = 1;
+
+
+corpseLimit           = 25;
+corpseRemovalMinTime  = 0;
+corpseRemovalMaxTime  = 30;
+
+
+// https://community.bistudio.com/wiki/Description.ext#wreckManagerMode
+wreckManagerMode    = 1;
+
+// Hit the limit immediately so wreckRemovalMinTime works
+wreckLimit          = 10;
+wreckRemovalMinTime = 0;
+wreckRemovalMaxTime = 200;
+
+
+// For Headless Client
+joinUnassigned = 0;
+
+// Debug Enable
+//enableDebugConsole = 1; // Not usable with obusqf packer
+enableDebugConsole[] = {"76561197963729019", "76561198033007765", "76561198034106257","76561197987488573","76561198002521967","76561197994945391","76561198007029852"};
+
+// Advanced Hints
+
+class CfgHints
+{
+	class CTI_Common
+	{
+		//UnitType_CA
+		// Topic title (displayed only in topic listbox in Field Manual)
+		displayName = "General Gameplay";
+		
+		// In-game hint
+		class CTI_Subordinate
+		{
+			displayName = "The Subordinate";
+			description = "As a member of your team, you may be tasked with any of the following:%1%2Capturing Front-line %3Towns%4%1%2Capturing %3Towns%4 Behind Friendly Lines (aka %3Backcapping%4)%1%2%3Towns%4 Defense%1%2%3Base%4 Defense%1%2Attacking the %3Enemy Base%4%1Whether your task is assigned, or you choose it yourself, it is important that you do what you can to accomplish it";
+			tip = "If you have no idea of what you should be doing, ask your Team Commander";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\Miss_icon_ca.paa";
+		};
+		class CTI_Command
+		{
+			displayName = "Commanding";
+			description = "The %3Commander%4, or Comm, is arguably the most important player on a team%1It is their job to manage base defenses, upgrades, and construction of base facilities and factories%1The commander should also be periodically distributing money to other players, as they get a significantly greater income than other players";
+			tip = "The commander cannot initiate a vote, but they can pass off their role to a person of their choosing";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\Commanding_ca.paa";
+			
+			// In-game hint
+			class CTI_Command_VoteEnd
+			{
+				displayName = "Commanding";
+				description = "You have been selected as the team %3Commander%4!%1It is now your job to manage base defenses, upgrades, and construction of base facilities and factories%1Make sure to periodically distribute money to other players, as you now get a significantly greater income than other players";
+				tip = "While you are the Commander, you cannot initiate a vote, but you can pass off your role to any person of your choosing";
+				arguments[] = {};
+				image = "\a3\ui_f\data\gui\cfg\hints\Commanding_ca.paa";
+			};
+		};
+		// In-game hint
+		class CTI_Holstering
+		{
+			// Hint title, filled by arguments from 'arguments' param
+			displayName = "Holstering";
+			// Structured text, filled by arguments from 'arguments' param
+			description = "Press and hold [%3TAB%4] to put away your weapon.";
+			tip = "You can sprint faster without a weapon in your hand, and you can also go into third person";
+			arguments[] = {};
+			// Optional image
+			image = "\a3\ui_f\data\gui\cfg\hints\ActionMenu_ca.paa";
+			// optional parameter for not showing of image in context hint in mission (default false))
+			noImage = false;
+		};
+		class CTI_Repairing
+		{
+			displayName = "Repairing";
+			description = "A vehicle can be repaired with a %3Toolkit%4%1All you need to do is jump out and select one of the repair actions.%1%3Mobility Repair%4:%1%2Partially repairs everything but the hull and turret%1%3Turret Repair%4:%1%2Partially repairs the main turret1%3Turret Repair%4:%1%2Repairs the entire vehicle to 40% health";
+			tip = "Moving around will disrupt your repair";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\VehicleRepair_CA.paa";
+		};
+		class CTI_Lockpicking
+		{
+			displayName = "Repairing";
+			description = "A locked vehicle can be lockpicked with a %3Toolkit%4%1This can be done through the Lockpick action, though you may have to try a few times";
+			tip = "You will not be able to lockpick anything until you get a high enough rank";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\VehicleRepair_CA.paa";
+		};
+	};
+	class CTI_Towns
+	{
+		displayName = "Towns";
+		class CTI_Camp
+		{
+			displayName = "Camps";
+			description = "A camp is a small concrete bunker that is an important part of capturing towns. Once captured, players from your team can spawn on them provided that they died while near it%1Enemy AI will try to retake any camps you capture in their assigned Town%1In order to capture an enemy camp, you will need to have a unit near it within the radius shown on the map.%1If the camp's capture bar is not going down, it is recommended that you make sure the immediate area is clear of enemies%1Camps are marked on the map with <img size='1'  image='\A3\ui_f\data\map\markers\military\marker_CA.paa' />%1When a Camp is captured, all players on the capturing side that have units in the camp's capture zone will receive money";
+			tip = "The more units you have near the camp, the quicker it will cap";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\Tasks_ca.paa";
+		};
+		class CTI_Town
+		{
+			displayName = "Towns";
+			description = "Throughout the map you will find numerous towns%1These towns are guarded by units from whatever faction owns it%1When captured, towns provide periodic supply and income%1%1In order to capture an enemy %3Town%4 after capturing all the %3Camps%4, you will need to have a unit near the center %3Flag%4 within the radius shown on the map.%1If the town's capture bar is not going down, it is recommended that you make sure the area within the zone is clear of enemies%1%3Town Centers%4 are marked on the map with <img size='1'  image='\A3\ui_f\data\map\markers\military\flag_CA.paa' />%1When the Town is captured, all players on the capturing side that have units in the town's zone will receive money";
+			tip = "Make sure you do not lose any of the town's camps, otherwise your capping progress will be halted";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\Tasks_ca.paa";
+			// In-game Hint
+			class CTI_Town_CampCaptured
+			{
+				displayName = "Capture the Town";
+				description = "Congratulations on capturing all of the camps in the Town!%1In order to finish capturing the enemy %3Town%4, you or someone else will need to head to the center %3Flag%4 within the radius shown on the map.%1If the town's capture bar is not going down, it is recommended that you make sure the area within the zone is clear of enemies%1%3Town Centers%4 are marked on the map with <img size='1'  image='\A3\ui_f\data\map\markers\military\flag_CA.paa' />%1Make sure to stay within the town's radius to receive bonus money upon capturing";
+				tip = "Make sure you do not lose any of the town's camps, otherwise your capping progress will be halted";
+				arguments[] = {};
+				image = "\a3\ui_f\data\gui\cfg\hints\Tasks_ca.paa";
+			};
+		};
+		class CTI_Depot
+		{
+			displayName = "Depots";
+			description = "A %3Depot%4 is a large, black concrete bunker at a town center that serves as a low-level barracks and light vehicle factory.%1You can upgrade %3Forward Logistics%4 to increase the upgrade level of gear and units that can be purchased.";
+			tip = "The depot can only be used if all the camps are owned by your team in that town";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\Miss_icon_ca.paa";
+		};
+	};
+	class CTI_Base
+	{
+		displayName = "Bases";
+		class CTI_HQ
+		{
+			displayName = "The HQ";
+			description = "The Headquarters is a team's most important asset.%1When deployed, the commander can use it to place base %3Structures%4 and place defenses%1Try not to let it get destroyed, and do not let it get towed away or stolen by the enemy";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\Miss_icon_ca.paa";
+		};
+		class CTI_HQRepair
+		{
+			displayName = "Repairing the HQ";
+			description = "When your HQ is destroyed, you will probably want to repair it as soon as possible%1To repair it, you will need to:%1%2Get into a %3Repair Truck%4%1%2Drive to the %3HQ Wreck%4 (It will be marked on your map)%1%2Select the %3REPAIR HQ%4 action%1%2Wait for the HQ to be repaired";
+			tip = "You can get a Repair Truck from a repair factory. You can also try to steal one from the enemy team.";
+			arguments[] = {};
+			image = "\a3\ui_f\data\gui\cfg\hints\NormalDamage_ca.paa";
+			
+			// In-game hint
+			class CTI_HQRepair_Destroyed
+			{
+				displayName = "Repairing the HQ";
+				description = "Your %3HQ%4 Has been destroyed!%1To repair it, you will need to:%1%2Get into a %3Repair Truck%4%1%2Drive to the %3HQ Wreck%4 (It will be marked on your map)%1%2Select the %3REPAIR HQ%4 action%1%2Wait for the HQ to be repaired";
+				arguments[] = {};
+				image = "\a3\ui_f\data\gui\cfg\hints\NormalDamage_ca.paa";
+				tip = "You can get a Repair Truck from a repair factory";
+			};
+		};
+	};
+};

@@ -1,0 +1,54 @@
+version=53;
+center[]={1543.6167,5.5,5022.9844};
+class items
+{
+	items=3;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-4.1405029,-4.1069293,-15.459473};
+			angles[]={0,0.2617994,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=12;
+		type="Land_PierConcrete_01_16m_F";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.0021972656,-4.1069293,0.009765625};
+			angles[]={0,0.2617994,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=13;
+		type="Land_PierConcrete_01_16m_F";
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.1427002,-4.1069293,15.449707};
+			angles[]={0,0.2617994,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=14;
+		type="Land_PierConcrete_01_16m_F";
+	};
+};

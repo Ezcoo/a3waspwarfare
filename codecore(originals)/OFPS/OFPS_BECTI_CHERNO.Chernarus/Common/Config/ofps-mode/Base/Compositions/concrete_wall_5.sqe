@@ -1,0 +1,82 @@
+version=53;
+center[]={8007.4663,29.629894,10137.608};
+class items
+{
+	items=5;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={10.408203,1.7646351,0.0068359375};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=0;
+		type="Land_CncWall4_F";
+		atlOffset=0.00021362305;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={5.2163086,1.7644081,0.022460938};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=1;
+		type="Land_CncWall4_F";
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.0063476563,1.768446,0.00390625};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=2;
+		type="Land_CncWall4_F";
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-5.2050781,1.7726212,-0.005859375};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=3;
+		type="Land_CncWall4_F";
+	};
+	class Item4
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-10.42627,1.7767582,-0.03125};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=4;
+		type="Land_CncWall4_F";
+	};
+};

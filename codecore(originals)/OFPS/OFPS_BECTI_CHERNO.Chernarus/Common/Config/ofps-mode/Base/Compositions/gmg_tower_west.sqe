@@ -1,0 +1,36 @@
+version=53;
+center[]={1946.4625,5,3546.7139};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.14770508,3.6950207,-0.49291992};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=25;
+		type="Land_Vez";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.14770508,6.7170277,0.49316406};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=34;
+		type="B_GMG_01_high_F";
+	};
+};

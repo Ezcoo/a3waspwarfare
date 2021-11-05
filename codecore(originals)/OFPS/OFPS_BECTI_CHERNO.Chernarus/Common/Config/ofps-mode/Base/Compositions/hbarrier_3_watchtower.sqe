@@ -1,0 +1,67 @@
+version=53;
+center[]={23444.879,3.1900001,18605.258};
+class items
+{
+	items=4;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={12.306641,0.76340699,0.16992188};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=122;
+		type="Land_HBarrierWall6_F";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={3.96875,0.76340699,-0.095703125};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=123;
+		type="Land_HBarrierWall6_F";
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-4.3320313,0.76340699,-0.26367188};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=124;
+		type="Land_HBarrierWall6_F";
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-11.939453,2.1850123,0.18554688};
+			angles[]={-0,3.0729802,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=137;
+		type="Land_HBarrierTower_F";
+	};
+};

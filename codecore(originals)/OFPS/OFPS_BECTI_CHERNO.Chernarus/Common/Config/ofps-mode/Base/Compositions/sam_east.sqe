@@ -1,0 +1,57 @@
+version=53;
+center[]={1590.583,5.5,4960.4932};
+class items
+{
+	items=3;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.0030517578,0.75133991,-0.29199219};
+			angles[]={0,1.5707964,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=49;
+		type="BlockConcrete_F";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.00012207031,2.7403803,-0.30126953};
+			angles[]={0,1.5707964,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=51;
+		type="BlockConcrete_F";
+		atlOffset=4.7683716e-007;
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.0029296875,6.1550007,0.59228516};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			receiveRemoteTargets=1;
+			reportOwnPosition=1;
+			aiRadarUsage=1;
+		};
+		id=52;
+		type="O_SAM_System_04_F";
+	};
+};

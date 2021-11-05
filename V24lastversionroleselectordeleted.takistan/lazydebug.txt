@@ -1,0 +1,47 @@
+-defensesystem rework
+
+-campmode rework to normal
+
+-classchoice rework to normal slotchoice
+
+-menu rework to original
+
+-implement mod units finaly
+
+-implement all artyunits
+---------------
+6.9. staticmanning works
+
+debug ann manning geht
+
+---------
+statics fixed
+
+-damage structures
+
+minefield spawn
+
+--------------
+bugs:
+
+-still no static limit
+- manning units need other weapon&
+
+--------------
+fix gear
+
+minefield and bulldozer implement
+
+ammoboxes
+
+add roles like a2
+
+add ofps remote unitcam at placeholder pos
+
+get original campmode back
+
+implement all arty units
+
+"downgrade" to zetacargo
+
+implement halo and parajump script

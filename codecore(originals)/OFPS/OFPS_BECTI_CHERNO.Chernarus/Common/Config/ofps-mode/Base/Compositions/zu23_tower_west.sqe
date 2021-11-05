@@ -1,0 +1,36 @@
+version=53;
+center[]={1968.9368,5,3560.3823};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.065551758,1.2842684,-0.29980469};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=124;
+		type="Misc_cargo_cont_small_EP1";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.065429688,4.5548658,0.29931641};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=126;
+		type="CUP_B_ZU23_CDF";
+	};
+};

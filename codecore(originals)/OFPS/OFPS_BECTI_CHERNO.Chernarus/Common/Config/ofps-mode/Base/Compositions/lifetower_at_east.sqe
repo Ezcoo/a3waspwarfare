@@ -1,0 +1,38 @@
+version=53;
+center[]={23880.273,3.1900001,17465.172};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.19921875,3.0186491,-0.095703125};
+			angles[]={0,3.141593,0};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=0;
+		type="Land_LifeguardTower_01_F";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.19921875,5.151793,0.087890625};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=3;
+		type="O_static_AT_F";
+
+	};
+};

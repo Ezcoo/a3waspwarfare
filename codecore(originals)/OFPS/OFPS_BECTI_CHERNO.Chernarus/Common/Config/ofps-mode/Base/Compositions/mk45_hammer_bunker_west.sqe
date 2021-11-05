@@ -1,0 +1,39 @@
+version=53;
+center[]={1585.0435,7.6429572,5229.8213};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.0085449219,0.10386515,0.92382813};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=0;
+		type="Land_Bunker_01_big_F";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.0084228516,6.0674148,-0.92333984};
+			angles[]={-0,3.1454394,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			reportRemoteTargets=1;
+			receiveRemoteTargets=1;
+		};
+		id=4;
+		type="OFPS_MK45_CANNON_B";
+	};
+};

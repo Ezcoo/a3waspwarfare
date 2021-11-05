@@ -1,0 +1,98 @@
+version=53;
+center[]={1836.3192,339,1561.5378};
+class items
+{
+	items=6;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.35327148,9.9707642,-0.1973877};
+			angles[]={-0,1.0455142,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=360;
+		type="Land_Ind_IlluminantTower";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.34753418,21.302155,-0.19213867};
+			angles[]={-0,4.1646814,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=361;
+		type="ofps_O_Van_static_AT_F";
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-1.5321045,19.630859,-0.91015625};
+			angles[]={0,1.0449672,0};
+		};
+		side="Empty";
+		class Attributes
+		{
+		};
+		id=440;
+		type="Fence_corrugated_plate";
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.80529785,19.72995,1.8065186};
+			angles[]={0,2.5884559,0};
+		};
+		side="Empty";
+		class Attributes
+		{
+		};
+		id=447;
+		type="Fence_corrugated_plate";
+	};
+	class Item4
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={1.1513672,19.729614,-1.6049805};
+			angles[]={0,5.7602282,0};
+		};
+		side="Empty";
+		class Attributes
+		{
+		};
+		id=450;
+		type="Fence_corrugated_plate";
+	};
+	class Item5
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={1.887207,19.72995,1.0974121};
+			angles[]={0,4.1916451,0};
+		};
+		side="Empty";
+		class Attributes
+		{
+		};
+		id=453;
+		type="Fence_corrugated_plate";
+	};
+};
