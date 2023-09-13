@@ -29,8 +29,16 @@ _HEAVY = "USMC_WarfareBHeavyFactory";
 _AIR = "USMC_WarfareBAircraftFactory";
 _SP = "USMC_WarfareBVehicleServicePoint";
 _AAR = "USMC_WarfareBAntiAirRadar";
+cti_WESTBARRACKSTYPE = _BAR;
+cti_WESTLIGHTTYPE = _LVF;
+cti_WESTCOMMANDCENTERTYPE = _CC;
+cti_WESTHEAVYTYPE = _HEAVY;
+cti_WESTAIRCRAFTTYPE = _AIR;
+cti_WESTSERVICEPOINTTYPE = _SP;
+cti_WESTAARADARTYPE = _AAR;
 //arr unused, just spot enemy arty or move to other position
 _ARR = "US_WarfareBArtilleryRadar_Base_EP1";
+cti_WESTArtyRadarTYPE = _ARR;
 
 
 
