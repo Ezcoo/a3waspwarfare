@@ -1,1 +1,0 @@
-_vehicle enablesimulationglobal true;

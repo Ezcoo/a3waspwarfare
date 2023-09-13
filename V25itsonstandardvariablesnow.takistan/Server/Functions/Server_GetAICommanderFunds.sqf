@@ -1,1 +1,0 @@
-(_this Call CTI_CO_FNC_GetSideLogic) getVariable "CTI_aicom_funds"

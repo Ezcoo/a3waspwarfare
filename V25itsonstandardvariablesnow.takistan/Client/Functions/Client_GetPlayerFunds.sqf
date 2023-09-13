@@ -1,1 +1,0 @@
-(CTI_Client_Team) Call CTI_CO_FNC_GetTeamFunds

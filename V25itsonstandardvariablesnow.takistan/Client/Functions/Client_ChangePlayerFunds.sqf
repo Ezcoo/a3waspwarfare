@@ -1,1 +1,0 @@
-[CTI_Client_Team, _this] Call CTI_CO_FNC_ChangeTeamFunds;

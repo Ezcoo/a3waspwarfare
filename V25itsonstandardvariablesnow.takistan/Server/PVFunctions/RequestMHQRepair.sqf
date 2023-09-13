@@ -1,1 +1,0 @@
-[_this] Spawn CTI_SE_FNC_MHQRepair;
