@@ -97,8 +97,11 @@ while {!cti_GameOver} do {
 		_checks = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1AARADARTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
 		if (count _checks > 0) then {antiAirRadarInRange = true;} else {antiAirRadarInRange = false;};
 		
+		/* Disable ARR for now
+
 		_checks = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1ArtyRadarTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
 		if (count _checks > 0) then {antiArtyRadarInRange = true;} else {antiArtyRadarInRange = false;};
+		*/
 		
 		//--- Town Depot.
 		depotInRange = if !(isNull ([vehicle player, _tcr] Call cti_CL_FNC_GetClosestDepot)) then {true} else {false};
