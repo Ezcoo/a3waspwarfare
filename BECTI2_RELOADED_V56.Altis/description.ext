@@ -31,7 +31,7 @@
 //--- Include Identities (OA/CO Only).
 #include "Rsc\Identities.hpp"
 
-disabledAI=1;
+disabledAI=0;
 
 loadScreen = "Rsc\Pictures\logo1.paa";
 
