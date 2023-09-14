@@ -10,4 +10,5 @@ _towns = [0,0,0] nearEntities [["LocationLogicDepot"], 100000];
 
 townInit = true;
 
-["INITIALIZATION", "Init_Towns.sqf: Towns initialization is done."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Towns.sqf: Towns initialization is done."] Call EZC_fnc_Functions_Common_LogContent
+;

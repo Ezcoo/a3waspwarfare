@@ -18,4 +18,5 @@ for '_i' from 0 to (count _k)-1 do {
 	};
 };
 
-["INITIALIZATION", "Config_Groups.sqf: Initialization is done."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Config_Groups.sqf: Initialization is done."] Call EZC_fnc_Functions_Common_LogContent
+;

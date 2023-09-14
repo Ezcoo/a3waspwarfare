@@ -35,10 +35,10 @@ if (count _camps == 0) exitWith {hint (parseText(localize "STR_WF_Destroy_Camp_N
 //--- Check if the repair is free or if it need to be paid.
 if ((missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") > 0) then {
 	//--- Check that the player has enough funds for a repair.
-	if ((Call cti_CL_FNC_GetPlayerFunds) < (missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE")) exitWith {hint Format [parseText(localize "STR_WF_Repair_Camp_NoFunds"), (missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") - (Call cti_CL_FNC_GetPlayerFunds)]};
+	if ((CallEZC_fnc_Functions_Client_GetPlayerFunds) < (missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE")) exitWith {hint Format [parseText(localize "STR_WF_Repair_Camp_NoFunds"), (missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") - (CallEZC_fnc_Functions_Client_GetPlayerFunds)]};
 
 	//--- Purchase a repair.
-	-(missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") Call cti_CL_FNC_ChangePlayerFunds;
+	-(missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 };
 	
 //--- Get the closest camp then.
@@ -62,7 +62,7 @@ if (! (alive (_camp getVariable 'cti_camp_bunker'))) exitWith {
 	hint (parseText(localize "STR_WF_Destroy_Camp_IsAlive"));
 	
 	//--- Refunds the player.
-	(missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") Call cti_CL_FNC_ChangePlayerFunds;
+	(missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 };
 
 //--- Repair order is sent to the server.

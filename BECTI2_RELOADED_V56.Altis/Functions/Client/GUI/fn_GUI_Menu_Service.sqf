@@ -164,7 +164,7 @@ while {true} do {
 
 	if (_curSel != -1) then {
 		_veh = (vehicle (_effective select _curSel));
-		_funds = Call cti_CL_FNC_GetPlayerFunds;
+		_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 		
 		if (_veh isKindOf "Man") then {
 			{ctrlEnable [_x,false]} forEach [20003,20004,20005];
@@ -283,7 +283,7 @@ while {true} do {
 		//--- Rearm.
 		if (WF_MenuAction == 1) then {
 			WF_MenuAction = -1;
-			-_rearmPrice Call cti_CL_FNC_ChangePlayerFunds;
+			-_rearmPrice Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			
 			//--- Spawn a Rearm thread.
 			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn cti_CL_FNC_SupportRearm;
@@ -292,7 +292,7 @@ while {true} do {
 		//--- Repair.
 		if (WF_MenuAction == 2) then {
 			WF_MenuAction = -1;
-			-_repairPrice Call cti_CL_FNC_ChangePlayerFunds;
+			-_repairPrice Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			
 			//--- Spawn a Repair thread.
 			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn cti_CL_FNC_SupportRepair;
@@ -301,7 +301,7 @@ while {true} do {
 		//--- Refuel.
 		if (WF_MenuAction == 3) then {
 			WF_MenuAction = -1;
-			-_refuelPrice Call cti_CL_FNC_ChangePlayerFunds;
+			-_refuelPrice Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			
 			//--- Spawn a Refuel thread.
 			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn cti_CL_FNC_SupportRefuel;
@@ -310,7 +310,7 @@ while {true} do {
 		//--- Heal.
 		if (WF_MenuAction == 5) then {
 			WF_MenuAction = -1;
-			-_healPrice Call cti_CL_FNC_ChangePlayerFunds;
+			-_healPrice Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			
 			//--- Spawn a Healing thread.
 			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn cti_CL_FNC_SupportHeal;

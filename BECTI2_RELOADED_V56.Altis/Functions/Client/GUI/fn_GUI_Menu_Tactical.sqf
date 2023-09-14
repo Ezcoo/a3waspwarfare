@@ -116,7 +116,7 @@ while {alive player && dialog} do {
 		_forceReload = false;
 		_controlEnable = false;
 		
-		_funds = Call cti_CL_FNC_GetPlayerFunds;
+		_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 		
 		//ctrlSetText[17021,Format ["%1: $%2",localize 'STR_WF_Price',_currentFee]]; //---old
 		ctrlSetText[17021,Format ["$%1",_currentFee]]; //---added-MrNiceGuy
@@ -237,7 +237,7 @@ while {alive player && dialog} do {
 			_callPos = _map posScreenToWorld[mouseX,mouseY];
 			if (!surfaceIsWater _callPos) then {
 				lastParaCall = time;
-				-(_currentFee) Call cti_CL_FNC_ChangePlayerFunds;
+				-(_currentFee) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 				["Paratroops",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
 				hint (localize "STR_WF_INFO_Paratroop_Info");
 			};
@@ -249,7 +249,7 @@ while {alive player && dialog} do {
 			if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
 			[17022] Call cti_CL_FNC_SetControlFadeAnimStop;
 			WF_MenuAction = -1;
-			-_currentFee Call cti_CL_FNC_ChangePlayerFunds;
+			-_currentFee Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
 			_obj = "HeliHEmpty" createVehicle _callPos;
 			_nukeMarker = createMarkerLocal ["icbmstrike", _callPos];
@@ -266,7 +266,7 @@ while {alive player && dialog} do {
 			[17022] Call cti_CL_FNC_SetControlFadeAnimStop;
 			WF_MenuAction = -1;
 			lastSupplyCall = time;
-			-_currentFee Call cti_CL_FNC_ChangePlayerFunds;
+			-_currentFee Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
 			["ParaVehi",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
 		};
@@ -277,7 +277,7 @@ while {alive player && dialog} do {
 			[17022] Call cti_CL_FNC_SetControlFadeAnimStop;
 			WF_MenuAction = -1;
 			lastSupplyCall = time;
-			-_currentFee Call cti_CL_FNC_ChangePlayerFunds;
+			-_currentFee Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
 			["ParaAmmo",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
 		};

@@ -50,9 +50,10 @@ while {!cti_GameOver} do {
 
 		//--- Boundaries are limited ?
 		if (_boundaries_enabled) then {
-			_isOnMap = Call cti_CL_FNC_BoundariesIsOnMap;
+			_isOnMap = Call EZC_fnc_Functions_Client_IsOnMap
+;
 			if (!_isOnMap && alive player && !cti_Client_IsRespawning) then {
-				if !(paramBoundariesRunning) then {_handle = [] Spawn cti_CL_FNC_BoundariesHandleOnMap;};
+				if !(paramBoundariesRunning) then {_handle = [] Spawn EZC_fnc_Functions_Client_HandleOnMap;};
 			} else {
 				if !(isNil '_handle') then {terminate _handle;_handle = nil;};
 				paramBoundariesRunning = false;

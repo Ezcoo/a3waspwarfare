@@ -430,7 +430,7 @@ switch (_action) do {
 	};
 
 	case "onPurchase": {
-		_funds = Call CTI_CL_FNC_GetPlayerFunds;
+		_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 		_cost = uiNamespace getVariable "CTI_dialog_ui_gear_tradein";
 		if (_funds >= _cost) then {
 			if (uiNamespace getVariable "CTI_dialog_ui_gear_target" isKindOf "Man") then {
@@ -444,7 +444,7 @@ switch (_action) do {
 			uiNamespace setVariable ["CTI_dialog_ui_gear_target_staticgear", +(uiNamespace getVariable "CTI_dialog_ui_gear_target_gear")];
 			
 			call CTI_UI_Gear_UpdatePrice;
-			-(_cost) Call CTI_CL_FNC_ChangePlayerFunds
+			-(_cost) Call EZC_fnc_Functions_Client_ChangePlayerFunds
 		} else {
 			hint "not enough funds";
 		};

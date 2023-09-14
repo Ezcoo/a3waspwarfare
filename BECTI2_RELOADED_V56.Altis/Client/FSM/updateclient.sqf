@@ -49,7 +49,8 @@ while {!cti_GameOver} do {
 				
 				
 				[Localize "STR_WF_CHAT_PlayerCommander"] Call cti_CL_FNC_TitleTextMessage;
-				["INFORMATION", Format ["Player %1 has become a new commander in %2 team).", name player, side player]] Call cti_CO_FNC_LogContent;
+				["INFORMATION", Format ["Player %1 has become a new commander in %2 team).", name player, side player]] Call EZC_fnc_Functions_Common_LogContent
+;
 				//player addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1001, false, true, "", "(!(alive ((cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ)))&&(leader  (cti_Client_SideJoined call cti_CO_FNC_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];
 			} else {
 				if (!isNil "HQAction") then {player removeAction HQAction};

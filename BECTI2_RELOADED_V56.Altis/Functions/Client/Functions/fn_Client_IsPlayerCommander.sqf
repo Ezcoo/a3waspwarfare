@@ -1,7 +1,8 @@
 /*
   # HEADER #
 	Script: 		Client\Functions\Client_IsPlayerCommander.sqf
-	Alias:			CTI_CL_FNC_IsPlayerCommander
+	Alias:			EZC_fnc_Functions_Client_IsPlayerCommander
+
 	Description:	Determine whether the player is the commander or not
 	Author: 		Benny
 	Creation Date:	19-09-2013
@@ -14,13 +15,15 @@
 	[Boolean]: True if the player is the commander
 	
   # SYNTAX #
-	call CTI_CL_FNC_IsPlayerCommander
+	call EZC_fnc_Functions_Client_IsPlayerCommander
+
 	
   # DEPENDENCIES #
 	Common Function: CTI_CO_FNC_GetSideCommanderTeam
 	
   # EXAMPLE #
-    call CTI_CL_FNC_IsPlayerCommander
+    call EZC_fnc_Functions_Client_IsPlayerCommander
+
 	  -> Returns true if the player is the current commander
 */
 

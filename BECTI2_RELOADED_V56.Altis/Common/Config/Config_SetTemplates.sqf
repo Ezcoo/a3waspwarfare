@@ -13,7 +13,8 @@ _side = _this select 1;
 _skiponexist = if (count _this > 2) then {_this select 2} else {true};
 
 if (_skiponexist && !isNil {missionNamespace getVariable Format ["cti_%1_Template", _side]}) exitWith {
-	["TRIVIAL", Format ["Config_SetTemplates.sqf : [%1] Templates were skipped since a template already exists, use an extra false parameter on the call of this script to include this template.", _side]] Call cti_CO_FNC_LogContent;
+	["TRIVIAL", Format ["Config_SetTemplates.sqf : [%1] Templates were skipped since a template already exists, use an extra false parameter on the call of this script to include this template.", _side]] Call EZC_fnc_Functions_Common_LogContent
+;
 };
 
 _s = [];
@@ -44,7 +45,8 @@ for '_h' from 0 to count(_u)-1 do {
 				case (_u_belong == 200): {_u_backpack = _u_weap select _i};
 			};
 		} else {
-			["ERROR", Format["Config_SetTemplate.sqf : [%1] Item [%2] is not a defined within any Gear files",_side,(_u_weap select _i)], 3] Call cti_CO_FNC_LogContent;
+			["ERROR", Format["Config_SetTemplate.sqf : [%1] Item [%2] is not a defined within any Gear files",_side,(_u_weap select _i)], 3] Call EZC_fnc_Functions_Common_LogContent
+;
 			_u_weap deleteAt _i;
 		};
 	};
@@ -60,7 +62,8 @@ for '_h' from 0 to count(_u)-1 do {
 				if (_u_label == "") then {_u_label = (_get select 1)};
 				_u_price = _u_price + ((_get select 2)*(_counts select _i));
 			} else {
-				["ERROR", Format["Config_SetTemplate.sqf : [%1] Magazine [%2] is not a defined within any Gear files",_side,(_mags select _i)], 3] Call cti_CO_FNC_LogContent;
+				["ERROR", Format["Config_SetTemplate.sqf : [%1] Magazine [%2] is not a defined within any Gear files",_side,(_mags select _i)], 3] Call EZC_fnc_Functions_Common_LogContent
+;
 				_mags deleteAt _i;
 				_counts deleteAt _i;
 			};
@@ -92,7 +95,8 @@ for '_h' from 0 to count(_u)-1 do {
 						if (_u_label == "") then {_u_label = (_get select 1)};
 						_u_price = _u_price + ((_get select 2)*(_counts_b select _j));
 					} else {
-						["ERROR", Format["Config_SetTemplate.sqf : [%1] Backpack item [%2] is not a defined within any Gear files",_side,(_items select _j)],3] Call cti_CO_FNC_LogContent;
+						["ERROR", Format["Config_SetTemplate.sqf : [%1] Backpack item [%2] is not a defined within any Gear files",_side,(_items select _j)],3] Call EZC_fnc_Functions_Common_LogContent
+;
 						_items deleteAt _j;
 						_counts_b deleteAt _j;
 					};
@@ -114,10 +118,12 @@ for '_h' from 0 to count(_u)-1 do {
 
 	_s = _s + [_set];
 	
-	["INFORMATION", Format ["Config_SetTemplates.sqf : [%1] Template [%2] was defined for [$%3] using upgrade level [%4].", _side, _u_label, _u_price, _u_upgrade]] Call cti_CO_FNC_LogContent;
+	["INFORMATION", Format ["Config_SetTemplates.sqf : [%1] Template [%2] was defined for [$%3] using upgrade level [%4].", _side, _u_label, _u_price, _u_upgrade]] Call EZC_fnc_Functions_Common_LogContent
+;
 };
 
-["INFORMATION", Format ["Config_SetTemplates.sqf : [%1] [%2] Templates were defined.", _side, count _s],1] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["Config_SetTemplates.sqf : [%1] [%2] Templates were defined.", _side, count _s],1] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- Set or update.
 if (isNil {missionNamespace getVariable Format ["cti_%1_Template", _side]}) then {

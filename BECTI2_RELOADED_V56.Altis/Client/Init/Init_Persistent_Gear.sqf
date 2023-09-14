@@ -8,13 +8,15 @@ private _side_gear = [];
 //--- Attempt to load the "proper" templates
 private _list = [];
 if (_templates isEqualType []) then { //--- The variable itself is an array
-	["INFORMATION", "FILE: Client\Init\Init_Persistent_Gear.sqf", format["The client has [%1] templates in it's profile", count _templates]] call CTI_CO_FNC_LogContent;
+	["INFORMATION", "FILE: Client\Init\Init_Persistent_Gear.sqf", format["The client has [%1] templates in it's profile", count _templates]] call EZC_fnc_Functions_Common_LogContent
+;
 
 	{
 		// [_label, _picture, _cost, _x]
 
 		private _err_reason = "";
-		["INFORMATION", "FILE: Client\Init\Init_Persistent_Gear.sqf", format["Attempting to load persistent template number [%1]", _forEachIndex]] call CTI_CO_FNC_LogContent;
+		["INFORMATION", "FILE: Client\Init\Init_Persistent_Gear.sqf", format["Attempting to load persistent template number [%1]", _forEachIndex]] call EZC_fnc_Functions_Common_LogContent
+;
 
 		if (_x isEqualType []) then { //--- Each items are arrays >> [_label, _picture, _cost, _x, upgrade]
 			private _gear = _x select 3;
@@ -228,7 +230,8 @@ if (_templates isEqualType []) then { //--- The variable itself is an array
 								_x set [4, _upgrade_max];
 
 								if (CTI_LogLevel >= CTI_Log_Information) then {
-									["INFORMATION", "FILE: Client\Init\Init_Persistent_Gear.sqf", format["A persistent template has been loaded with the label [%1], cost of [%2], upgrade level of [%3]", _x select 0, _cost, _upgrade_max]] call CTI_CO_FNC_LogContent;
+									["INFORMATION", "FILE: Client\Init\Init_Persistent_Gear.sqf", format["A persistent template has been loaded with the label [%1], cost of [%2], upgrade level of [%3]", _x select 0, _cost, _upgrade_max]] call EZC_fnc_Functions_Common_LogContent
+;
 								};
 
 								_list pushBack _x;
@@ -246,11 +249,13 @@ if (_templates isEqualType []) then { //--- The variable itself is an array
 		};
 
 		if !(_err_reason isEqualTo "") then {
-			["ERROR", "FILE: Client\Init\Init_Persistent_Gear.sqf", format["The persistent template number [%1] could not be loaded due to the following error [%2]", _forEachIndex, _err_reason]] call CTI_CO_FNC_LogContent;
+			["ERROR", "FILE: Client\Init\Init_Persistent_Gear.sqf", format["The persistent template number [%1] could not be loaded due to the following error [%2]", _forEachIndex, _err_reason]] call EZC_fnc_Functions_Common_LogContent
+;
 		};
 	} forEach _templates;
 } else {
-	["ERROR", "FILE: Client\Init\Init_Persistent_Gear.sqf", "The persistent gear variable type does not match the expected ARRAY type, the persistent gear will not be loaded."] call CTI_CO_FNC_LogContent;
+	["ERROR", "FILE: Client\Init\Init_Persistent_Gear.sqf", "The persistent gear variable type does not match the expected ARRAY type, the persistent gear will not be loaded."] call EZC_fnc_Functions_Common_LogContent
+;
 };
 
 

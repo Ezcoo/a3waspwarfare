@@ -446,7 +446,7 @@ if (typeOf _preview =="M2StaticMGPreview") then { _color = _colorGreen; };
 _coin setVariable ["BIS_COIN_areasize", _area];
 _coin setVariable ["BIS_COIN_fundsDescription",["$"]];
 if (_extra == "") then {
-	_coin setVariable ["BIS_COIN_funds",[(cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply, Call cti_CL_FNC_GetPlayerFunds]];
+	_coin setVariable ["BIS_COIN_funds",[(cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply, CallEZC_fnc_Functions_Client_GetPlayerFunds]];
 	_coin setVariable ["BIS_COIN_fundsDescription",["S ","$ "]];
 };
 
@@ -466,7 +466,7 @@ _updateDefenses = false;
 _emptyStructures = false;
 
 if (_isHQdeployed && _extra == "") then {_i = 1;_updateStructures = true; _updateDefenses = true};
-if (_extra == "REPAIR") then {_updateDefenses = true; _emptyStructures = true;_coin setVariable ["BIS_COIN_funds",Call cti_CL_FNC_GetPlayerFunds]};
+if (_extra == "REPAIR") then {_updateDefenses = true; _emptyStructures = true;_coin setVariable ["BIS_COIN_funds",CallEZC_fnc_Functions_Client_GetPlayerFunds]};
 
 if (_updateStructures) then {
 	_structures = missionNamespace getVariable Format["cti_%1STRUCTURENAMES",cti_Client_SideJoinedText];

@@ -7,7 +7,8 @@ _side = _args select 1;
 _sideID = _side Call cti_CO_FNC_GetSideID;
 
 _playerTeam = (_args select 3);
-["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent
+;
 _ranPos = [];
 _ranDir = [];
 
@@ -58,7 +59,8 @@ while {true} do {
 	_side = _this select 1;
 	
 	_ammos = missionNamespace getVariable Format["cti_%1PARAAMMO",_side];
-	if (typeName _ammos != 'ARRAY') exitWith {["WARNING", Format ["Server_HandleSpecial.sqf: Expected array, given [%1] for ammunitions", typeName _ammos]] Call cti_CO_FNC_LogContent};
+	if (typeName _ammos != 'ARRAY') exitWith {["WARNING", Format ["Server_HandleSpecial.sqf: Expected array, given [%1] for ammunitions", typeName _ammos]] Call EZC_fnc_Functions_Common_LogContent
+};
 	
 	{
 		_ammo = _x createVehicle [0,0,0];
@@ -116,7 +118,8 @@ _side = _args select 1;
 _sideID = (_side) Call cti_CO_FNC_GetSideID;
 
 _playerTeam = (_args select 3);
-["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent
+;
 _ranPos = [];
 _ranDir = [];
 

@@ -82,7 +82,7 @@ while {true} do {
 		if (_health <= 0.08) then {_textControl5 ctrlSetTextColor [0.45, 0.25, 0.25, 1]};
 		
 		//UPTIME
-		_uptime = Call cti_CL_FNC_GetTime; //added-MrNiceGuy
+		_uptime = Call EZC_fnc_Functions_Client_GetTime; //added-MrNiceGuy
 		_textControl4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1349;
 		_textControl4 ctrlShow true;
 		_textControl4 ctrlSetTextColor [0.7, 0.7, 0.7, 1];_textControl4 ctrlSetText Format ["%1:%2:%3",_uptime select 1,_uptime select 2, _uptime select 3];
@@ -99,10 +99,10 @@ while {true} do {
 		//MONEY
 		_textControl2 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1351;
 		_textControl2 ctrlShow true;
-		_textControl2 ctrlSetTextColor [0, 0.825294, 0.449803, 1];_textControl2 ctrlSetText Format ["%1 $",Call cti_CL_FNC_GetPlayerFunds];
+		_textControl2 ctrlSetTextColor [0, 0.825294, 0.449803, 1];_textControl2 ctrlSetText Format ["%1 $",CallEZC_fnc_Functions_Client_GetPlayerFunds];
 		_textControl3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1353;
 		_textControl3 ctrlShow true;
-		_textControl3 ctrlSetTextColor [0, 0.825294, 0.449803, 1];_textControl3 ctrlSetText Format ["+ %1 $",cti_Client_SideJoined Call cti_CL_FNC_GetIncome];
+		_textControl3 ctrlSetTextColor [0, 0.825294, 0.449803, 1];_textControl3 ctrlSetText Format ["+ %1 $",cti_Client_SideJoined Call EZC_fnc_Functions_Client_GetIncome];
 		
 		//SUPPLY
 		_textControl7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1355;

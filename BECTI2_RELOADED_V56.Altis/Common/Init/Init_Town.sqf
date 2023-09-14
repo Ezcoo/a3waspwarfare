@@ -10,7 +10,8 @@ _town_type = _this select 6;
 _townRange = 600;
 
 if ((missionNamespace getVariable "cti_DEBUG_DISABLE_TOWN_INIT") == 1) exitWith {
-	["DEBUG", "Init_Town.sqf init is disabled"] Call cti_CO_FNC_LogContent;
+	["DEBUG", "Init_Town.sqf init is disabled"] Call EZC_fnc_Functions_Common_LogContent
+;
 };
 
 //--- Prevent the isServer bug on the client.
@@ -43,7 +44,8 @@ if (isServer) then {
         if (!isNil {_synced getVariable "cti_defense_kind"}) then {_defenses pushBack _synced};
     };
 
-    ["INITIALIZATION",Format ["Init_Town.sqf : Found [%1] synchronized camps in [%2].", count _camps, _town getVariable "name"]] call cti_CO_FNC_LogContent;
+    ["INITIALIZATION",Format ["Init_Town.sqf : Found [%1] synchronized camps in [%2].", count _camps, _town getVariable "name"]] call EZC_fnc_Functions_Common_LogContent
+;
 
     _town setVariable ["camps", _camps, true];
     _town setVariable ["cti_town_defenses", _defenses];
@@ -182,7 +184,8 @@ if (isServer) then {
                 _towns_camps pushBack _x;
             };
             _town_camp_flags pushBack _flag;
-            ["INITIALIZATION",Format ["Init_Town.sqf : Initialized Camp in [%1].", _town getVariable "name"]] call cti_CO_FNC_LogContent;
+            ["INITIALIZATION",Format ["Init_Town.sqf : Initialized Camp in [%1].", _town getVariable "name"]] call EZC_fnc_Functions_Common_LogContent
+;
             _camp_counter = _camp_counter + 1;
         } forEach _camps;
 
@@ -213,9 +216,11 @@ if (local player) then {
         _camp setVariable ["town", _town];
     };
 
-    ["INITIALIZATION",Format ["Init_Town.sqf : (Client) Initialized Camps [%1] for town [%2].", count _camps, _townName]] call cti_CO_FNC_LogContent;
+    ["INITIALIZATION",Format ["Init_Town.sqf : (Client) Initialized Camps [%1] for town [%2].", count _camps, _townName]] call EZC_fnc_Functions_Common_LogContent
+;
 };
 
-["INITIALIZATION",Format ["Init_Town.sqf : Initialized town [%1].", _townName]] call cti_CO_FNC_LogContent;
+["INITIALIZATION",Format ["Init_Town.sqf : Initialized town [%1].", _townName]] call EZC_fnc_Functions_Common_LogContent
+;
 
 towns pushBack _town;

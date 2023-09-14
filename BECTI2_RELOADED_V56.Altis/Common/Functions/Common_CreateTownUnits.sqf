@@ -44,7 +44,8 @@ for '_i' from 0 to count(_groups)-1 do {
 
 	_team = createGroup [_side, true];
 	
-	["INFORMATION", Format["Common_CreateTownUnits.sqf: Town [%1] [%2] will create a team template %3 at %4", _town, _team, _groups select _i,_position]] Call cti_CO_FNC_LogContent;
+	["INFORMATION", Format["Common_CreateTownUnits.sqf: Town [%1] [%2] will create a team template %3 at %4", _town, _team, _groups select _i,_position]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 	_retVal = [_groups select _i, _position, _side, _lock, _team, true, 90, _town] call cti_CO_FNC_CreateTeam;
 	_units = _retVal select 0;
@@ -93,7 +94,8 @@ for '_i' from 0 to count(_groups)-1 do {
 if (_built > 0) then {[str _side,'UnitsCreated',_built] call cti_CO_FNC_UpdateStatistics};
 if (_builtveh > 0) then {[str _side,'VehiclesCreated',_builtveh] call cti_CO_FNC_UpdateStatistics};
 
-["INFORMATION", Format["Common_CreateTownUnits.sqf: Town [%1] held by [%2] was activated witha total of [%3] units.", _town, _side, _built + _builtveh]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format["Common_CreateTownUnits.sqf: Town [%1] held by [%2] was activated witha total of [%3] units.", _town, _side, _built + _builtveh]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 _town setVariable ['cti_active_vehicles', (_town getVariable 'cti_active_vehicles') + _town_vehicles];
 _town setVariable ['cti_town_teams', (_town getVariable 'cti_town_teams') + _town_teams];

@@ -1,11 +1,11 @@
 
 _BulldozerPrice = 1000;
-_currency = Call cti_CL_FNC_GetPlayerFunds;
+_currency = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 _currencySym = "$";
 
 if (_currency < _BulldozerPrice) exitWith {hint Format [localize "STR_WF_INFO_Bulldozer_Funds",_currencySym,_BulldozerPrice - _currency]};
 
--(_BulldozerPrice) Call cti_CL_FNC_ChangePlayerFunds;
+-(_BulldozerPrice) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 
 player groupChat format ["YOU PAID 1000$ FOR BULLDOZER"];
 

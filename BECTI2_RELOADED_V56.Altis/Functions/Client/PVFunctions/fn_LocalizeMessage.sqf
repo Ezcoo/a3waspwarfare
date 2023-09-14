@@ -9,11 +9,11 @@ switch (_localize) do {
 	case "Teamstack": {_txt = Format [Localize "STR_WF_CHAT_Teamstack",_this select 1, _this select 2, _this select 3, _this select 4]};
 	case "CommanderDisconnected": {_txt = Localize "strwfcommanderdisconnected"};
 	case "TacticalLaunch": {_txt = Localize "STR_WF_CHAT_ICBM_Launch"};
-	case "Teamkill": {_txt = Format [Localize "STR_WF_CHAT_Teamkill",(missionNamespace getVariable "cti_C_PLAYERS_PENALTY_TEAMKILL")]; -(missionNamespace getVariable "cti_C_PLAYERS_PENALTY_TEAMKILL") Call cti_CL_FNC_ChangePlayerFunds};
+	case "Teamkill": {_txt = Format [Localize "STR_WF_CHAT_Teamkill",(missionNamespace getVariable "cti_C_PLAYERS_PENALTY_TEAMKILL")]; -(missionNamespace getVariable "cti_C_PLAYERS_PENALTY_TEAMKILL") Call EZC_fnc_Functions_Client_ChangePlayerFunds};
 	case "FundsTransfer": {_txt = Format [Localize "STR_WF_CHAT_FundsTransfer",_this select 1,_this select 2];_commandChat = false;};
 	case "StructureSold": {_txt = Format [Localize "STR_WF_CHAT_Structure_Sold",([_this select 1,'displayName'] Call cti_CO_FNC_GetConfigInfo)]};
 	case "StructureSell": {_txt = Format [Localize "STR_WF_CHAT_Structure_Sell",([_this select 1,'displayName'] Call cti_CO_FNC_GetConfigInfo),_this select 2]};
-	case "SecondaryAward": {_txt = Format [Localize "STR_WF_CHAT_Secondary_Award",_this select 1, _this select 2];(_this select 2) Call cti_CL_FNC_ChangePlayerFunds};
+	case "SecondaryAward": {_txt = Format [Localize "STR_WF_CHAT_Secondary_Award",_this select 1, _this select 2];(_this select 2) Call EZC_fnc_Functions_Client_ChangePlayerFunds};
 	case "StructureTK": {_txt = Format [Localize "STR_WF_CHAT_SatchelTK",_this select 1, _this select 2, [_this select 3, 'displayName'] Call cti_CO_FNC_GetConfigInfo, _this select 4]};
 
 
@@ -27,7 +27,7 @@ switch (_localize) do {
         if ((name player) == _killer_name) then
         {
             _txt = format [localize "STR_WF_HeadHunterReceiveBounty", _bounty, ([_structure_kind, "displayName"] call cti_CO_FNC_GetConfigInfo)];
-            _bounty call cti_CL_FNC_ChangePlayerFunds;
+            _bounty call EZC_fnc_Functions_Client_ChangePlayerFunds;
             _commandChat = false;
         }
         else
@@ -74,7 +74,7 @@ switch (_localize) do {
     };
 };
 if (_commandChat) then {
-	_txt Call cti_CL_FNC_CommandChatMessage;
+	_txt Call EZC_fnc_Functions_Client_CommandChatMessage;
 } else {
 	_txt Call cti_CL_FNC_GroupChatMessage;
 };

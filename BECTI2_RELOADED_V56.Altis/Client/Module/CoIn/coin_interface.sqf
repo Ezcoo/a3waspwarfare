@@ -223,7 +223,7 @@ BIS_CONTROL_CAM_Handler = {
 		if ((_key in (actionKeys "BuldTurbo")) && count lastBuilt > 0) then {
 			_deployed = true;
 			if (cti_COIN_Root == "HQ") then {_deployed = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQDeployStatus};
-			_currentCash = Call cti_CL_FNC_GetPlayerFunds;
+			_currentCash = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			if (_currentCash > (lastBuilt select 2) select 1 && _deployed) then {
 				showCommandingMenu '';
 				_logic setVariable ["BIS_COIN_params",lastBuilt];
@@ -258,7 +258,7 @@ BIS_CONTROL_CAM_Handler = {
 						if (!isNil '_get' && isNil '_sold') then {
 							_closest setVariable ['sold',true];
 							_price = _get select QUERYUNITPRICE;
-							round(_price/2.5) Call cti_CL_FNC_ChangePlayerFunds;
+							round(_price/2.5) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 							_area = [getPos (_closest),((cti_Client_SideJoined) Call cti_CO_FNC_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2;
 							_get = _area getVariable 'avail';
 
@@ -460,10 +460,10 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 			_funds = _logic getVariable "BIS_COIN_funds";
 			if (typename _funds == "ARRAY") then {
 				_a = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply;
-				_b = Call cti_CL_FNC_GetPlayerFunds;
+				_b = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 				_funds = [_a]+[_b];
 			} else {
-				_funds = [Call cti_CL_FNC_GetPlayerFunds];
+				_funds = [CallEZC_fnc_Functions_Client_GetPlayerFunds];
 			};
 			_itemFunds = _funds select _itemcash;
 			_itemname = if (count _params > 3) then {_params select 3} else {getText (configFile >> "CfgVehicles" >> _itemclass >> "displayName")};
@@ -757,7 +757,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 					_get = missionNamespace getVariable _itemclass;
 					if !(isNil '_get') then {
 						_price = _get select QUERYUNITPRICE;
-						-(_price) Call cti_CL_FNC_ChangePlayerFunds;
+						-(_price) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 					};
 
 					//--- Execute designer defined code On Construct
@@ -955,10 +955,10 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 		_funds = _logic getVariable "BIS_COIN_funds";
 		if (typename _funds == "ARRAY") then {
 			_a = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply;
-			_b = Call cti_CL_FNC_GetPlayerFunds;
+			_b = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			_funds = [_a]+[_b];
 		} else {
-			_funds = [Call cti_CL_FNC_GetPlayerFunds];
+			_funds = [CallEZC_fnc_Functions_Client_GetPlayerFunds];
 		};
 		_fundsDescription = _logic getVariable "BIS_COIN_fundsDescription";
 		_cashValues = [];

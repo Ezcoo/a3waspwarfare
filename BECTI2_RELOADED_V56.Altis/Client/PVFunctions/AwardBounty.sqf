@@ -40,4 +40,4 @@ if (_assist) then {
 	Format[Localize "STR_WF_CHAT_Award_Bounty", _bounty, _name] Call cti_CL_FNC_GroupChatMessage;
 };
 
-(_bounty) Call cti_CL_FNC_ChangePlayerFunds;
+(_bounty) Call EZC_fnc_Functions_Client_ChangePlayerFunds;

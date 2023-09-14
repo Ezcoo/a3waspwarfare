@@ -67,7 +67,8 @@ if (!_deployed) then {
 		};
 	};
 	
-	["INFORMATION", Format ["Construction_HQSite.sqf: [%1] MHQ has been deployed.", _sideText]] Call cti_CO_FNC_LogContent;
+	["INFORMATION", Format ["Construction_HQSite.sqf: [%1] MHQ has been deployed.", _sideText]] Call EZC_fnc_Functions_Common_LogContent
+;
 	
 	deleteVehicle _HQ;
 } else {
@@ -96,7 +97,8 @@ if (!_deployed) then {
 	};
 
 	//_MHQ addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call cti_SE_FNC_BuildingHandleDamages}];
-	["INFORMATION", Format ["Construction_HQSite.sqf: [%1] MHQ has been mobilized.", _sideText]] Call cti_CO_FNC_LogContent;
+	["INFORMATION", Format ["Construction_HQSite.sqf: [%1] MHQ has been mobilized.", _sideText]] Call EZC_fnc_Functions_Common_LogContent
+;
 	_MHQ addAction [localize "STR_WF_Unlock_MHQ","Client\Action\Action_ToggleLock.sqf", [], 95, false, true, '', 'alive _target && (locked _target == 2)'];
     _MHQ addAction [localize "STR_WF_Lock_MHQ","Client\Action\Action_ToggleLock.sqf", [], 94, false, true, '', 'alive _target && (locked _target == 0)'];
 	deleteVehicle _HQ;

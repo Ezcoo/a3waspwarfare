@@ -110,7 +110,8 @@ switch (_action) do {
 		{((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl _x) ctrlSetPosition [SafeZoneX + (SafeZoneW * 0.805), SafeZoneY + (SafezoneH * 0.45), SafeZoneW * 0.18, SafeZoneH * 0.15]; ((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl _x) ctrlCommit 0} forEach [180006, 180101];
 		
 		/*unflip not needed,we have 2 unitcams now
-		if (call CTI_CL_FNC_IsPlayerCommander) then {
+		if (call EZC_fnc_Functions_Client_IsPlayerCommander
+) then {
 			((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180022) ctrlSetPosition [SafeZoneX + (SafeZoneW * 0.01), SafeZoneY + (SafeZoneH * 0.75), SafeZoneW * 0.14, SafeZoneH * 0.04]; ((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180022) ctrlCommit 0; //--- Bring back the button!
 		};
 		*/
@@ -132,7 +133,7 @@ switch (_action) do {
 		
 		// Remote Control
 		//((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180024) ctrlEnable false;
-		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180024) ctrlEnable (_ai call CTI_CL_FNC_CanRemoteUnit);
+		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180024) ctrlEnable (_ai call EZC_fnc_Functions_Client_AddRemoteActionsToUnit);
 		
 		
 		/*
@@ -185,7 +186,7 @@ switch (_action) do {
 		
 		// Remote Control
 		//((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180024) ctrlEnable false;
-		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180024) ctrlEnable (_ai call CTI_CL_FNC_CanRemoteUnit);
+		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180024) ctrlEnable (_ai call EZC_fnc_Functions_Client_AddRemoteActionsToUnit);
 		
 		
 		/*
@@ -212,7 +213,7 @@ switch (_action) do {
 			[_ai, "cti_dialog_ui_unitscam", 180017] call CTI_UI_SatelitteCamera_LoadEntityInformation;
 		};
 		// Remote Control
-		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180024) ctrlEnable (_ai call CTI_CL_FNC_CanRemoteUnit);
+		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180024) ctrlEnable (_ai call EZC_fnc_Functions_Client_AddRemoteActionsToUnit);
 		/*
 		//disable unflip key
 		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180022) ctrlEnable false;
@@ -291,9 +292,9 @@ switch (_action) do {
 	};
 	case "onRemote": {
 		_who = uiNamespace getVariable "cti_dialog_ui_unitscam_focus";
-		if (_who call CTI_CL_FNC_CanRemoteUnit) then {
+		if (_who call EZC_fnc_Functions_Client_AddRemoteActionsToUnit) then {
 			closeDialog 0;
-			(_who) spawn CTI_CL_FNC_RemoteControl;
+			(_who) spawn EZC_fnc_Functions_Client_RemoteControl;
 		};
 	};
 	case "onParadrop": {
@@ -312,7 +313,7 @@ switch (_action) do {
 				_dropPoint = (_vehicle call CTI_CL_FNC_MarkParadropLocation);
 				if (!isNil "_dropPoint" && _vehicle == vehicle _this && alive _this) then {
 					_price = _this call CTI_UI_UnitsCam_CalculatePodCost;
-					if (call CTI_CL_FNC_GetPlayerFunds >= _price) then {
+					if (callEZC_fnc_Functions_Client_GetPlayerFunds >= _price) then {
 						{
 							_x setVariable ["cti_last_pos", [(_dropPoint) select 0, (_dropPoint) select 1, 0], true];
 							_x setVariable ["cti_last_town", _dropPoint call CTI_CO_FNC_GetClosestTown, true];
@@ -371,7 +372,8 @@ switch (_action) do {
 		_who_vehicle = vehicle _who;
 		if (alive _who && speed _who_vehicle < 5 && (getPos _who_vehicle select 2) < 5 && !isPlayer _who) then {
 			_unflip = false;
-			if (call CTI_CL_FNC_IsPlayerCommander) then {
+			if (call EZC_fnc_Functions_Client_IsPlayerCommander
+) then {
 				_unflip = true
 			} else {
 				if (_who in units player) then {_unflip = true};

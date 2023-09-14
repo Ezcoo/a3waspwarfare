@@ -2,7 +2,8 @@ if (!isServer || time > 30) exitWith {
 	diag_log Format["[WFBE (WARNING)][frameno:%1 | ticktime:%2] Init_Server: The server initialization cannot be called more than once.",diag_frameno,diag_tickTime]
 };
 
-["INITIALIZATION", Format ["Init_Server.sqf: Server initialization begins at [%1]", time]] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", Format ["Init_Server.sqf: Server initialization begins at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- Allow resistance and civilian group to be spawned without a placeholder.
 createCenter resistance;
@@ -167,11 +168,13 @@ radioChannelCreate [[0.96, 0.34, 0.13, 0.8], "UK TEAM 2", "%UNIT_NAME", [BTeamle
 
 //--- Server Init is now complete.
 serverInitComplete = true;
-["INITIALIZATION", "Init_Server.sqf: Functions are loaded."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Server.sqf: Functions are loaded."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- Getting all locations.
 startingLocations = [0,0,0] nearEntities ["LocationArea_F", 100000];
-["INITIALIZATION", "Init_Server.sqf: Initializing starting locations."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Server.sqf: Initializing starting locations."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- Waiting for the common part to be executed.
 waitUntil {commonInitComplete && townInit};
@@ -192,7 +195,8 @@ if (!(isNil "cti_SE_FNC_Server_RunWeatherEnvironment")) then {
 	};
 };
 
-["INITIALIZATION", "Init_Server.sqf: Weather module is loaded."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Server.sqf: Weather module is loaded."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- Static defenses groups in main towns.
 {
@@ -208,7 +212,8 @@ if ((missionNamespace getVariable "cti_C_BASE_START_TOWN") > 0) then {
 		if (count _nearLogics > 0) then {{if !(_x in _locationLogics) then {_locationLogics pushBack _x;}} forEach _nearLogics};
 	} forEach towns;
 	if (count _locationLogics < 3) then {_locationLogics = startingLocations;};
-	["INITIALIZATION", Format ["Init_Server.sqf: Spawn locations were refined [%1].",count _locationLogics]] Call cti_CO_FNC_LogContent;
+	["INITIALIZATION", Format ["Init_Server.sqf: Spawn locations were refined [%1].",count _locationLogics]] Call EZC_fnc_Functions_Common_LogContent
+;
 } else {
 	_locationLogics = startingLocations;
 };
@@ -273,7 +278,8 @@ switch (missionNamespace getVariable "cti_C_BASE_STARTING_MODE") do {
 
 if (_use_random) then {
 	while {true} do {
-		if (!_setWest && !_setEast && !_setGuer) exitWith {["INITIALIZATION", "Init_Server.sqf : All sides were placed [Random]."] Call cti_CO_FNC_LogContent};
+		if (!_setWest && !_setEast && !_setGuer) exitWith {["INITIALIZATION", "Init_Server.sqf : All sides were placed [Random]."] Call EZC_fnc_Functions_Common_LogContent
+};
 
 		//--- Determine west starting location if necessary.
 		if (_setWest) then {
@@ -315,12 +321,14 @@ if (_use_random) then {
 			if (_present_east && !_skip_e) then {_startE = _eastDefault;};
 			if (_present_west && !_skip_w) then {_startW = _westDefault;};
 
-			["INITIALIZATION", "Init_Server.sqf : All sides were placed by force after that the attempts limit was reached."] Call cti_CO_FNC_LogContent;
+			["INITIALIZATION", "Init_Server.sqf : All sides were placed by force after that the attempts limit was reached."] Call EZC_fnc_Functions_Common_LogContent
+;
 		};
 	};
 };
 
-["INITIALIZATION", Format ["Init_Server.sqf: Starting location mode is on [%1].",missionNamespace getVariable "cti_C_BASE_STARTING_MODE"]] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", Format ["Init_Server.sqf: Starting location mode is on [%1].",missionNamespace getVariable "cti_C_BASE_STARTING_MODE"]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 emptyQueu = [];
 
@@ -489,7 +497,8 @@ emptyQueu = [];
 					[_group, [0,0,0]] Call cti_CO_FNC_SetTeamMovePos;
 					(leader _group) enableSimulationGlobal true;
 
-					["INITIALIZATION", Format["Init_Server.sqf: [%1] Team [%2] was initialized.", _side, _group]] Call cti_CO_FNC_LogContent;
+					["INITIALIZATION", Format["Init_Server.sqf: [%1] Team [%2] was initialized.", _side, _group]] Call EZC_fnc_Functions_Common_LogContent
+;
 				};
 
 			};
@@ -533,22 +542,27 @@ WF_Logic setVariable ["emptyVehicles",[],true];
 [] Spawn {
 	waitUntil {townInit};
 		[] execVM "Server\FSM\server_victory_threeway.sqf";
-		["INITIALIZATION", "Init_Server.sqf: Victory Condition FSM is initialized."] Call cti_CO_FNC_LogContent;
+		["INITIALIZATION", "Init_Server.sqf: Victory Condition FSM is initialized."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 	[] ExecVM "Server\FSM\updateresources.sqf";
-	["INITIALIZATION", "Init_Server.sqf: Resources FSM is initialized."] Call cti_CO_FNC_LogContent;
+	["INITIALIZATION", "Init_Server.sqf: Resources FSM is initialized."] Call EZC_fnc_Functions_Common_LogContent
+;
 };
 
 [] ExecVM "Server\FSM\server_collector_garbage.sqf";
-["INITIALIZATION", "Init_Server.sqf: Garbage Collector is defined."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Server.sqf: Garbage Collector is defined."] Call EZC_fnc_Functions_Common_LogContent
+;
 [] ExecVM "Server\FSM\emptyvehiclescollector.sqf";
-["INITIALIZATION", "Init_Server.sqf: Empty Vehicle Collector is defined."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Server.sqf: Empty Vehicle Collector is defined."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 /////////////////////////////////////////////////////////////////////////////////// map cleaners
 
 // object cleaner on map
 [] ExecVM "Server\FSM\cleaners\Server_ObjectCleaner.sqf";
-["INITIALIZATION", "Server_ObjectCleaner.sqf: cleaner for dropped items is defined."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Server_ObjectCleaner.sqf: cleaner for dropped items is defined."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 
 /////////////////////////////////////////////////////////////////////////////////// end of map cleaners
@@ -581,7 +595,8 @@ for [{_c = 0;},{_c < (count _start_location_array)},{_c = _c + 1;}] do {
 };
 
 
-["INITIALIZATION", Format ["Init_Server.sqf: Server initialization ended at [%1]", time]] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", Format ["Init_Server.sqf: Server initialization ended at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- Waiting until that the game is launched.
 waitUntil {time > 0};

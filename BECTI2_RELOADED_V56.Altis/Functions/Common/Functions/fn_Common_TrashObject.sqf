@@ -25,7 +25,8 @@ if !(isNull _object) then {
 	sleep _delay;
 
     if !(isNull _object) then {
-	["INFORMATION", Format["Server_TrashObject.sqf: Deleting [%1], it has been [%2] seconds.", _object, _delay]] Call cti_CO_FNC_LogContent;
+	["INFORMATION", Format["Server_TrashObject.sqf: Deleting [%1], it has been [%2] seconds.", _object, _delay]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 	deleteVehicle _object;
 

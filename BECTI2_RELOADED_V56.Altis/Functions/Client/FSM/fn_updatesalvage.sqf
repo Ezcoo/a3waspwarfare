@@ -39,7 +39,7 @@ while {!cti_GameOver || !(alive _vehicle)} do {
 			};
 		} foreach _wrecks;
 
-		if (_overAllCost > 0) then {(_overAllCost) Call cti_CL_FNC_ChangePlayerFunds};
+		if (_overAllCost > 0) then {(_overAllCost) Call EZC_fnc_Functions_Client_ChangePlayerFunds};
 	};
 	sleep 5;
 };

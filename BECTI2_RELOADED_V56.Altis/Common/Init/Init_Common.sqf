@@ -1,4 +1,5 @@
-["INITIALIZATION", Format ["Init_Common.sqf: Common initialization begins at [%1]", time]] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", Format ["Init_Common.sqf: Common initialization begins at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 Private ['_count'];
 
@@ -167,7 +168,8 @@ cti_CO_FNC_UPDATE_CLIENT_TEAMS = Compile preprocessFileLineNumbers "Common\Funct
 cti_CO_FNC_Change_Vehicle_Texture = Compile preprocessFile "Common\Functions\Common_ChangeVehicleTexture.sqf";
 cti_CO_FNC_CreateComposition = Compile preprocessFile "Common\Functions\Common_CreateComposition.sqf";
 cti_CO_FNC_CleanResBaseArea = Compile preprocessFile "Common\Functions\Common_CleanResBaseArea.sqf";
-["INITIALIZATION", "Init_Common.sqf: Functions are initialized."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Common.sqf: Functions are initialized."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 varQueu = random(10)+random(100)+random(1000); //clt, to remove with new sys later on.
 unitMarker = 0;
@@ -237,14 +239,16 @@ switch (true) do {
 		_team_east = 'RU';
 };
 
-["INITIALIZATION", "Init_Common.sqf: Core Files are loaded."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Common.sqf: Core Files are loaded."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- new system.
 _grpWest = (missionNamespace getVariable 'cti_C_UNITS_FACTIONS_WEST') select (missionNamespace getVariable 'cti_C_UNITS_FACTION_WEST');
 _grpEast = (missionNamespace getVariable 'cti_C_UNITS_FACTIONS_EAST') select (missionNamespace getVariable 'cti_C_UNITS_FACTION_EAST');
 _grpRes = (missionNamespace getVariable 'cti_C_UNITS_FACTIONS_GUER') select (missionNamespace getVariable 'cti_C_UNITS_FACTION_GUER');
 
-["INITIALIZATION", Format["Init_Common.sqf: Using groups - West [%1], East [%2], Resistance [%3].",_grpWest,_grpEast,_grpRes]] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", Format["Init_Common.sqf: Using groups - West [%1], East [%2], Resistance [%3].",_grpWest,_grpEast,_grpRes]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 /* CORE SYSTEM - End */
 
@@ -286,11 +290,13 @@ if (isServer) then {
 //--- Airports Init.
 ExecVM "Common\Init\Init_Airports.sqf";
 
-["INITIALIZATION", "Init_Common.sqf: Config Files are loaded."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Common.sqf: Config Files are loaded."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- Boundaries, use setPos to find the perfect spot on other islands and worldName to determine the island name (editor: diag_log worldName; player setPos [0,5120,0]; ).
 Call Compile preprocessFileLineNumbers "Common\Init\Init_Boundaries.sqf";
-["INITIALIZATION", "Init_Common.sqf: Boundaries are loaded."] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", "Init_Common.sqf: Boundaries are loaded."] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- ICBM.
 if ((missionNamespace getVariable "cti_C_MODULE_cti_ICBM") > 0) then {
@@ -343,7 +349,8 @@ missionNamespace setVariable ["cti_REPAIRTRUCKS", _repairs];
 //cti_CO_FNC_SetUpsPatrol = Compile preprocessFile "Common\Module\UPSMON\UPSMON.sqf";
 
 //--- Common initilization is complete at this point.
-["INITIALIZATION", Format ["Init_Common.sqf: Common initialization ended at [%1]", time]] Call cti_CO_FNC_LogContent;
+["INITIALIZATION", Format ["Init_Common.sqf: Common initialization ended at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //_igiload =  execVM "Client\Module\IgiLoad\IgiLoadInit.sqf";
 

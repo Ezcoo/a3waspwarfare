@@ -42,7 +42,7 @@ if (cti_Client_SideJoined == west) then {
 [cti_Client_SideJoinedText,'UnitsCreated',_built] Call cti_CO_FNC_UpdateStatistics;
 [cti_Client_SideJoinedText,'VehiclesCreated',1] Call cti_CO_FNC_UpdateStatistics;
 
--12500 Call cti_CL_FNC_ChangePlayerFunds;
+-12500 Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 
 ["uav",cti_Client_SideJoined,_uav,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
 

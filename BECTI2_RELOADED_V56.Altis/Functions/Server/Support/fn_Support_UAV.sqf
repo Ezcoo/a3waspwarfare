@@ -8,7 +8,8 @@ _driver = driver _uav;
 _gunner = gunner _uav;
 _playerTeam = (_args select 3);
 
-["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an UAV.", str _side, _playerTeam, name (leader _playerTeam)]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an UAV.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 while {true} do {
 	sleep 5;

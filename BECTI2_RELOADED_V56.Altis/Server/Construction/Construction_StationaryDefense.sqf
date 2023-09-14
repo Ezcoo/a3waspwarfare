@@ -17,7 +17,8 @@ _defense = createVehicle [_type, _position, [], 0, "NONE"];
 _defense setDir _direction;
 _defense setPos _position;
 _defense setVariable ["side" ,_side];
-["INFORMATION", Format ["Construction_StationaryDefense.sqf: [%1] Defense [%2] has been constructed.", str _side, _type]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["Construction_StationaryDefense.sqf: [%1] Defense [%2] has been constructed.", str _side, _type]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- If it's a minefield, we exit the script while spawning it.
 if (_type == 'Sign_Danger') exitWith {

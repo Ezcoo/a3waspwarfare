@@ -103,7 +103,7 @@ while {alive player && dialog} do {
 			_currentCost = _currentCost + ((missionNamespace getVariable "CTI_C_UNITS_CREW_COST") * _extra);
 		};
 		if ((_currentRow) != -1) then {
-			_funds = Call CTI_CL_FNC_GetPlayerFunds;
+			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			_skip = false;
 			if (_funds < _currentCost) then {
 			    _skip = true;
@@ -154,8 +154,8 @@ while {alive player && dialog} do {
 					if (!isNil '_queu') then {if (count _queu > 0) then {_txt = parseText(Format [localize 'STR_WF_INFO_Queu',_currentUnit select QUERYUNITLABEL])}};
 					hint _txt;
 					_params = if (_isInfantry) then {[_closest,_unit,[],_type,_cpt]} else {[_closest,_unit,[_driver,_gunner,_commander,_extracrew,_isLocked],_type,_cpt]};
-					_params Spawn CTI_CL_FNC_BuildUnit;
-					-(_currentCost) Call CTI_CL_FNC_ChangePlayerFunds;
+					_params Spawn EZC_fnc_Functions_Client_BuildUnit;
+					-(_currentCost) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 				} else {
 					hint parseText(Format [localize 'STR_WF_INFO_Queu_Max',missionNamespace getVariable Format["CTI_C_QUEUE_%1_MAX",_type]]);
 				};
@@ -190,7 +190,7 @@ while {alive player && dialog} do {
 	if (WF_MenuAction == 401) then {WF_MenuAction = -1;_isLocked = if (_isLocked) then {false} else {true};_updateDetails = true};
 	
 	//--- Player funds.
-	ctrlSetText [12019,Format [localize 'STR_WF_UNITS_Cash',Call CTI_CL_FNC_GetPlayerFunds]];
+	ctrlSetText [12019,Format [localize 'STR_WF_UNITS_Cash',CallEZC_fnc_Functions_Client_GetPlayerFunds]];
 	
 	//--- Update tabs.
 	if (_update) then {

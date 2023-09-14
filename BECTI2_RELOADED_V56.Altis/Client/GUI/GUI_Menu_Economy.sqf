@@ -33,7 +33,7 @@
 			if (side player != cti_Client_SideJoined) exitWith {closeDialog 0};
 			if !(dialog) exitWith {};
 			
-			_funds = Call cti_CL_FNC_GetPlayerFunds;
+			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			
 			//--- Income System.			
 			_currentPercent = floor(sliderPosition 23010);

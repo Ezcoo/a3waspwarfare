@@ -50,7 +50,8 @@ switch (_args select 0) do {
 		_side = _args select 1;
 		_st = (_side call cti_CO_FNC_GetSideLogic) getVariable "cti_ai_supplytrucks";
 		{if (!isNull (driver _x)) then {driver _x setDammage 1};_x setDammage 1} forEach _st;
-		["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Supply Trucks were forced respawn.", str _side]] Call cti_CO_FNC_LogContent;
+		["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Supply Trucks were forced respawn.", str _side]] Call EZC_fnc_Functions_Common_LogContent
+;
 	};
 
 	case "uav": {
@@ -82,7 +83,8 @@ switch (_args select 0) do {
 		_base = _args select 2;
 		_target = _args select 3;
 		_playerTeam = _args select 4;
-		["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an ICBM Nuke.", str _side, _playerTeam, name (leader _playerTeam)]] Call cti_CO_FNC_LogContent;
+		["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an ICBM Nuke.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent
+;
 		if (isNull _target || !alive _target) exitWith {};
 		_dropPosX = getPos _base select 0;
 		_dropPosY = getPos _base select 1;
@@ -102,7 +104,8 @@ switch (_args select 0) do {
 		_uid = getPlayerUID _hc;
 		if(isNil "headlessClients")then{headlessClients = [];};
 
-		["INFORMATION", Format["Server_HandleSpecial.sqf: Headless client is now connected [%1] [%2] with Owner ID [%3].", _hc, _uid, _id]] Call cti_CO_FNC_LogContent;
+		["INFORMATION", Format["Server_HandleSpecial.sqf: Headless client is now connected [%1] [%2] with Owner ID [%3].", _hc, _uid, _id]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 		if (_id != 0) then {
 			//--- Add the Headless client to our candidates.
@@ -110,7 +113,8 @@ switch (_args select 0) do {
 			missionNamespace setVariable [Format["cti_HEADLESS_%1", _uid], group _hc];
 			missionNamespace setVariable ["cti_HEADLESSCLIENTS_ID", (missionNamespace getVariable "cti_HEADLESSCLIENTS_ID") + [group _hc]];
 		} else {
-			["WARNING", Format["Server_HandleSpecial.sqf: Headless client [%1] Owner ID is [0], it is server controlled.",_hc]] Call cti_CO_FNC_LogContent;
+			["WARNING", Format["Server_HandleSpecial.sqf: Headless client [%1] Owner ID is [0], it is server controlled.",_hc]] Call EZC_fnc_Functions_Common_LogContent
+;
 		};
 	};
 	case "track-playerobject": {

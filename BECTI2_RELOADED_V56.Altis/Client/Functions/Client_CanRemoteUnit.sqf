@@ -1,7 +1,7 @@
 /*
   # HEADER #
 	Script: 		Client\Functions\Client_CanRemoteUnit.sqf
-	Alias:			CTI_CL_FNC_CanRemoteUnit
+	Alias:			EZC_fnc_Functions_Client_AddRemoteActionsToUnit
 	Description:	Function to be used to determine if a unit can be controlled by the Player
 	Author: 		JEDMario
 	Creation Date:	07-01-2018
@@ -14,13 +14,13 @@
 	[BOOLEAN]: 
 	
   # SYNTAX #
-	[OBJECT] call CTI_CL_FNC_CanRemoteUnit
+	[OBJECT] call EZC_fnc_Functions_Client_AddRemoteActionsToUnit
 	
   # DEPENDENCIES #
 	None
 	
   # EXAMPLE #
-    _unit call CTI_CL_FNC_CanRemoteUnit;
+    _unit call EZC_fnc_Functions_Client_AddRemoteActionsToUnit;
 */
 
 params ["_unit"];

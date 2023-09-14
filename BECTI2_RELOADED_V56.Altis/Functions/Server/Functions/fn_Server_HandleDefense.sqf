@@ -51,7 +51,8 @@ while {alive _defense} do {
 
 			[str _side,'UnitsCreated',1] Call cti_CO_FNC_UpdateStatistics;
 
-			["INFORMATION", Format ["Server_HandleDefense.sqf: [%1] Unit has been dispatched to a [%2] defense.", str _side,_type]] Call cti_CO_FNC_LogContent;
+			["INFORMATION", Format ["Server_HandleDefense.sqf: [%1] Unit has been dispatched to a [%2] defense.", str _side,_type]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 			//--- Calculate the average time in function of the distance and the speed.
 			sleep ((((_soldier distance _defense)/(14*1000))*3600)+20);
@@ -62,7 +63,8 @@ while {alive _defense} do {
 			};
 			// [_soldier] joinSilent ( group leader _commander);
 		} else {
-			["INFORMATION", "Server_HandleDefense.sqf: Canceled auto manning, the barracks is destroyed."] Call cti_CO_FNC_LogContent;
+			["INFORMATION", "Server_HandleDefense.sqf: Canceled auto manning, the barracks is destroyed."] Call EZC_fnc_Functions_Common_LogContent
+;
 		};
 	};
 	sleep 420;

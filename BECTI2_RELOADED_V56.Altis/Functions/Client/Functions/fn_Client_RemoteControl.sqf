@@ -1,7 +1,7 @@
 /*
   # HEADER #
 	Script: 		Client\Functions\Client_RemoteControl.sqf
-	Alias:			CTI_CL_FNC_RemoteControl
+	Alias:			EZC_fnc_Functions_Client_RemoteControl
 	Description:	
 	Author: 		JEDMario
 	Creation Date:	07-01-2018
@@ -14,13 +14,13 @@
 	None
 	
   # SYNTAX #
-	[OBJECT] call CTI_CL_FNC_CanRemoteUnit
+	[OBJECT] call EZC_fnc_Functions_Client_AddRemoteActionsToUnit
 	
   # DEPENDENCIES #
 	None
 	
   # EXAMPLE #
-    _this call CTI_CL_FNC_CanRemoteUnit;
+    _this call EZC_fnc_Functions_Client_AddRemoteActionsToUnit;
 */
 	
 params ["_unit"];

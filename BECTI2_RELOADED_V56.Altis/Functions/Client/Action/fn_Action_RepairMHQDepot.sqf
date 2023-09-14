@@ -22,12 +22,12 @@ if!(isNil '_get')then {
 if (cti_Client_Logic getVariable "cti_hq_repairing") exitWith {hint (localize "STR_WF_INFO_Repair_MHQ_BeingRepaired")};
 
 _repairPrice = (missionNameSpace getVariable "cti_C_BASE_HQ_REPAIR_PRICE_CASH") * (1+0.05*((cti_Client_Logic getVariable "cti_hq_repair_count")-1));
-_currency = Call cti_CL_FNC_GetPlayerFunds;
+_currency = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 _currencySym = "$";
 
 if (_currency < _repairPrice) exitWith {hint Format [localize "STR_WF_INFO_Repair_MHQ_Funds",_currencySym,_repairPrice - _currency]};
 
--(_repairPrice) Call cti_CL_FNC_ChangePlayerFunds;
+-(_repairPrice) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 
 [cti_Client_SideJoined] remoteExecCall ["cti_SE_PVF_RequestMHQRepair",2];
 

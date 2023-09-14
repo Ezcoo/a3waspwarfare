@@ -46,7 +46,7 @@ while {cti_RespawnTime > 0 && dialog && alive player && !cti_GameOver} do
 		_spawn_last_get = time;
 		
 		//--- Return the available spawn locations
-		_spawn_locations = [cti_Client_SideJoined, cti_DeathLocation] Call cti_CL_FNC_GetRespawnAvailable;
+		_spawn_locations = [cti_Client_SideJoined, cti_DeathLocation] Call EZC_fnc_Functions_Client_GetRespawnAvailable;
 
 		//---No spawn available at frist? get one!
 		if (isNull _spawn_at_current) then {
@@ -135,7 +135,7 @@ if(cti_GameOver) then
 	titleCut["","BLACK IN",1];
 	
 	//--- Reload the overlay if enabled.
-	[currentFX] Spawn cti_CL_FNC_FX;
+	[currentFX] Spawn EZC_fnc_Functions_Client_FX;
 	
 	cti_MarkerTracking = nil;
 	{deleteMarkerLocal _x} forEach _spawn_markers;
@@ -181,7 +181,7 @@ else
 					titleCut["","BLACK IN",1];
 					
 					//--- Reload the overlay if enabled.
-					[currentFX] Spawn cti_CL_FNC_FX;
+					[currentFX] Spawn EZC_fnc_Functions_Client_FX;
 				};
 			};
 		} else {
@@ -206,7 +206,7 @@ else
 			titleCut["","BLACK IN",1];
 			
 			//--- Reload the overlay if enabled.
-			[currentFX] Spawn cti_CL_FNC_FX;
+			[currentFX] Spawn EZC_fnc_Functions_Client_FX;
 		};
 	} else {
 		//--- Died while respawning.
@@ -224,7 +224,7 @@ else
 		"colorCorrections" ppEffectEnable false;
 		
 		//--- Reload the overlay if enabled.
-		[currentFX] Spawn cti_CL_FNC_FX;
+		[currentFX] Spawn EZC_fnc_Functions_Client_FX;
 	};
 
 	cti_MarkerTracking = nil;

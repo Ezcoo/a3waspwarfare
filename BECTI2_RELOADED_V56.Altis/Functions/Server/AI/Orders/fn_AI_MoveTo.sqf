@@ -9,6 +9,7 @@ _team setBehaviour "COMBAT";
 _team setFormation _formation;
 _team setSpeedMode "NORMAL";
 
-["INFORMATION", Format ["AI_MoveTo.sqf: [%1] Team [%2] is heading to [%3].", side _team,_team,_destination]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["AI_MoveTo.sqf: [%1] Team [%2] is heading to [%3].", side _team,_team,_destination]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 [_team,true,[ [_destination, _mission, _radius, 20, "", []] ]] Call cti_SE_FNC_AIWPAdd;

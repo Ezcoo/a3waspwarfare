@@ -7,7 +7,8 @@ _sideID = _side Call cti_CO_FNC_GetSideID;
 _starttime = time;
 _parachute = "B_parachute";
 
-["INFORMATION", Format["Support_Paratroopers.sqf : [%1] Team [%2] has requested paratroopers.", _side, _playerTeam]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format["Support_Paratroopers.sqf : [%1] Team [%2] has requested paratroopers.", _side, _playerTeam]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 //--- Determine a random spawn location.
 _ranPos = [];
@@ -32,11 +33,13 @@ _currentLevel = _currentUpgrades select cti_UP_PARATROOPERS;
 _units = missionNamespace getVariable Format ["cti_%1PARACHUTELEVEL%2", str _side, _currentLevel];
 _vehicle_model = missionNamespace getVariable Format ["cti_%1PARACARGO", str _side];
 
-if (isNil '_units' || isNil '_vehicle_model') exitWith {["ERROR", Format["Support_Paratroopers.sqf : [%1] Paratrooping vehicle or units are not defined.", _side]] Call cti_CO_FNC_LogContent};
+if (isNil '_units' || isNil '_vehicle_model') exitWith {["ERROR", Format["Support_Paratroopers.sqf : [%1] Paratrooping vehicle or units are not defined.", _side]] Call EZC_fnc_Functions_Common_LogContent
+};
 
 //--- Determine how many vehicles do we need.
 _vehicle_cargo = getNumber(configFile >> 'CfgVehicles' >> _vehicle_model >> 'transportSoldier');
-if (_vehicle_cargo == 0) exitWith {["ERROR", Format["Support_Paratroopers.sqf : [%1] Paratrooping vehicle [%2] has no cargo capacity.", _side, _vehicle_model]] Call cti_CO_FNC_LogContent};
+if (_vehicle_cargo == 0) exitWith {["ERROR", Format["Support_Paratroopers.sqf : [%1] Paratrooping vehicle [%2] has no cargo capacity.", _side, _vehicle_model]] Call EZC_fnc_Functions_Common_LogContent
+};
 _vehicle_count = ceil((count _units) / _vehicle_cargo);
 
 //--- Create the vehicles.

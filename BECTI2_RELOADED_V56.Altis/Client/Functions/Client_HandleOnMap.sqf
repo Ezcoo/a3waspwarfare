@@ -5,7 +5,8 @@ paramBoundariesRunning = true;
 
 while {true} do {
 	sleep 1;
-	_isOnMap = Call cti_CL_FNC_BoundariesIsOnMap;
+	_isOnMap = Call EZC_fnc_Functions_Client_IsOnMap
+;
 	if !(_isOnMap) then {
 		hint parseText(Format[localize 'STR_WF_INFO_OffmapWarning',_timeToKill]);
 		_timeToKill = _timeToKill - 1;

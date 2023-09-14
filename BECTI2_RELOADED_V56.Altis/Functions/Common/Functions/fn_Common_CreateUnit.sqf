@@ -70,6 +70,7 @@ _unit addEventHandler ['Killed', Format ['[_this select 0,_this select 1,%1] Spa
 
 _unit setSkill 1;
 
-["INFORMATION", Format ["Common_CreateUnit.sqf: [%1] Unit [%2] was created at [%3] and has been assigned to team [%4]", _side Call cti_CO_FNC_GetSideFromID, _type, _position, _group]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["Common_CreateUnit.sqf: [%1] Unit [%2] was created at [%3] and has been assigned to team [%4]", _side Call cti_CO_FNC_GetSideFromID, _type, _position, _group]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 _unit

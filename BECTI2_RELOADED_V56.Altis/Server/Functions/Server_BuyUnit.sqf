@@ -12,11 +12,14 @@ _sideText = str _side;
 if (!(alive _building)||(isPlayer (leader _team))) exitWith {
 	_gbq = (_team getVariable "cti_queue") - _id;
 	_team setVariable ["cti_queue",_gbq];
-	if !(alive _building) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call cti_CO_FNC_LogContent};
-	if (isPlayer (leader _team)) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] has been canceled, player [%2] has replace the ai.", _unitType, name (leader _team)]] Call cti_CO_FNC_LogContent};
+	if !(alive _building) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call EZC_fnc_Functions_Common_LogContent
+};
+	if (isPlayer (leader _team)) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] has been canceled, player [%2] has replace the ai.", _unitType, name (leader _team)]] Call EZC_fnc_Functions_Common_LogContent
+};
 };
 
-["INFORMATION", Format ["Server_BuyUnit.sqf: [%1] Team [%2] has purchased [%3].", _side,_team,_unitType]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["Server_BuyUnit.sqf: [%1] Team [%2] has purchased [%3].", _side,_team,_unitType]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 _queu = _building getVariable "queu";
 if (isNil "_queu") then {_queu = []};
@@ -51,8 +54,10 @@ while {_id select 0 != _queu select 0} do {
 		_index = _queu find (_queu select 0);
 		if(_index > -1)then{_queu deleteAt _index};
 		_building setVariable ["queu",_queu,true];
-		if !(alive _building) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call cti_CO_FNC_LogContent};
-		if (isPlayer (leader _team)) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] has been canceled, player [%2] has replace the ai.", _unitType, name (leader _team)]] Call cti_CO_FNC_LogContent};
+		if !(alive _building) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call EZC_fnc_Functions_Common_LogContent
+};
+		if (isPlayer (leader _team)) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] has been canceled, player [%2] has replace the ai.", _unitType, name (leader _team)]] Call EZC_fnc_Functions_Common_LogContent
+};
 	};
 	
 	if (_queu select 0 == _queu2 select 0) then {
@@ -81,8 +86,10 @@ _building setVariable ["queu",_queu,true];
 if (!(alive _building)||(isPlayer (leader _team))) exitWith {
 	_gbq = (_team getVariable "cti_queue") - _id;
 	_team setVariable ["cti_queue",_gbq];
-	if !(alive _building) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call cti_CO_FNC_LogContent};
-	if (isPlayer (leader _team)) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] has been canceled, player [%2] has replace the ai.", _unitType, name (leader _team)]] Call cti_CO_FNC_LogContent};
+	if !(alive _building) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call EZC_fnc_Functions_Common_LogContent
+};
+	if (isPlayer (leader _team)) then {["INFORMATION", Format ["Server_BuyUnit.sqf: Unit [%1] has been canceled, player [%2] has replace the ai.", _unitType, name (leader _team)]] Call EZC_fnc_Functions_Common_LogContent
+};
 };
 
 if (_unitType isKindOf "Man") then {

@@ -26,7 +26,8 @@ _teams = [];
 for '_i' from 0 to count(_groups)-1 do {
 	_position = _positions select _i;
 
-	["INFORMATION", Format["Common_CreateUnitForstaticDefence.sqf: [%1] will create a team template %2 at %3", _side, _groups select _i,_position]] Call cti_CO_FNC_LogContent;
+	["INFORMATION", Format["Common_CreateUnitForstaticDefence.sqf: [%1] will create a team template %2 at %3", _side, _groups select _i,_position]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 	_sideID = (_side) Call cti_CO_FNC_GetSideID;
 	_unit = [_groups select _i, _team, _position, _sideID] Call cti_CO_FNC_CreateUnit;
@@ -44,4 +45,5 @@ for '_i' from 0 to count(_groups)-1 do {
 
 if (_built > 0) then {[str _side,'UnitsCreated',_built] call cti_CO_FNC_UpdateStatistics};
 
-["INFORMATION", Format["Common_CreateUnitForstaticDefence.sqf:  [%1] was activated witha total of [%3] units.", _side, _built]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format["Common_CreateUnitForstaticDefence.sqf:  [%1] was activated witha total of [%3] units.", _side, _built]] Call EZC_fnc_Functions_Common_LogContent
+;

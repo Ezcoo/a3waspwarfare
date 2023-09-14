@@ -9,9 +9,12 @@ _radius = _this select 3;
 _index = _this select 4;
 _gunner = gunner _artillery;
 
-if (_index == -1) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: No artillery types were found for [%1].", _artillery]] Call cti_CO_FNC_LogContent};
-if (isNull _gunner) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: Artillery [%1] gunner is null.", _artillery]] Call cti_CO_FNC_LogContent};
-if (isPlayer _gunner) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: Artillery [%1] gunner is a player", _artillery]] Call cti_CO_FNC_LogContent};
+if (_index == -1) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: No artillery types were found for [%1].", _artillery]] Call EZC_fnc_Functions_Common_LogContent
+};
+if (isNull _gunner) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: Artillery [%1] gunner is null.", _artillery]] Call EZC_fnc_Functions_Common_LogContent
+};
+if (isPlayer _gunner) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: Artillery [%1] gunner is a player", _artillery]] Call EZC_fnc_Functions_Common_LogContent
+};
 if (_index == 0) then {
 
 _allNAMES= missionNamespace getVariable Format ["cti_%1_ARTILLERY_CLASSNAMES",_side];

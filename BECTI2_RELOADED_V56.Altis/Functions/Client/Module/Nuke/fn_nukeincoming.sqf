@@ -5,7 +5,7 @@ _nukeMarker = _this select 1;
 
 ['TacticalLaunch'] remoteExecCall ["cti_CL_FNC_LocalizeMessage"];
 
-//if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call cti_CL_FNC_CommandChatMessage};
+//if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call EZC_fnc_Functions_Client_CommandChatMessage};
 
 sleep (missionNamespace getVariable "cti_C_INCOME_TIME_OF_ICBM");
 

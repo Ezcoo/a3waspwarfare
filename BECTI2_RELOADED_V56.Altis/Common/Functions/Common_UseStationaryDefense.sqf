@@ -4,7 +4,8 @@ _units = _this select 0;
 _range = _this select 1;
 
 _total = count _units;
-if (_total < 1) exitWith {["ERROR", "Common_UseStationaryDefense.sqf: No units were specified"] Call cti_CO_FNC_LogContent};
+if (_total < 1) exitWith {["ERROR", "Common_UseStationaryDefense.sqf: No units were specified"] Call EZC_fnc_Functions_Common_LogContent
+};
 
 _defenseTypes = missionNamespace getVariable Format["cti_%1DEFENSENAMES",side leader group (_units select 0)];
 _defenses = (leader group (_units select 0)) nearEntities[_defenseTypes,_range];

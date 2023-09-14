@@ -86,7 +86,7 @@ while {alive player && dialog} do {
 		if (_ui_lnb_sel != -1) then {
 			_id = lnbValue[504001, [_ui_lnb_sel, 0]];
 			_upgrade_current = _upgrades select _id;
-			_funds = call cti_CL_FNC_GetPlayerFunds;
+			_funds = callEZC_fnc_Functions_Client_GetPlayerFunds;
 			_supply = (cti_Client_SideJoined) call cti_CO_FNC_GetSideSupply;
 			_html = "";
 			_html2 = "<t color='#42b6ff' size='1.2' underline='1' shadow='1'>Dependencies:</t><br /><br />";
@@ -128,7 +128,7 @@ while {alive player && dialog} do {
 		if (_ui_lnb_sel != -1) then {
 			_id = lnbValue[504001, [_ui_lnb_sel, 0]];
 			_upgrade_current = _upgrades select _id;
-			_funds = call cti_CL_FNC_GetPlayerFunds;
+			_funds = callEZC_fnc_Functions_Client_GetPlayerFunds;
 			_supply = (cti_Client_SideJoined) call cti_CO_FNC_GetSideSupply;
 			if !(cti_Client_Logic getVariable "cti_upgrading") then {
 				if (_upgrade_current < (_upgrade_levels select _id)) then {
@@ -151,7 +151,7 @@ while {alive player && dialog} do {
 							};
 						};
 						if !(_link_needed) then {
-							-(_upgrade_price) Call cti_CL_FNC_ChangePlayerFunds;
+							-(_upgrade_price) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 							[cti_Client_SideJoined, -(_upgrade_supply)] Call cti_CO_FNC_ChangeSideSupply;
 							//--- todo check conditions., deduce cash etc
 							[cti_Client_SideJoined, _id, _upgrade_current, true] remoteExecCall ["cti_SE_PVF_RequestUpgrade",2];

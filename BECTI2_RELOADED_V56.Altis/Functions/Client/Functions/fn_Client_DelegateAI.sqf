@@ -17,7 +17,8 @@ _dir = _this select 4;
 _special = if(count _this > 5) then{_this select 5};
 
 
-["INFORMATION", Format["Client_DelegateAI.sqf: Received a delegation request from the server for [%1].", _side]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format["Client_DelegateAI.sqf: Received a delegation request from the server for [%1].", _side]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 sleep (random 1); //--- Delay a bit to prevent a bandwidth congestion.
 

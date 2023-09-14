@@ -27,7 +27,7 @@ while {alive player && dialog} do {
 	ctrlEnable [11007,commandInRange]; //--- Upgrade Menu
 
 	//--- Uptime.
-	_uptime = Call cti_CL_FNC_GetTime; //added-MrNiceGuy
+	_uptime = Call EZC_fnc_Functions_Client_GetTime; //added-MrNiceGuy
 	ctrlSetText [11015,Format[localize 'STR_WF_MAIN_Uptime',_uptime select 0,_uptime select 1,_uptime select 2, _uptime select 3]];
 
 	//--- Buy Units.

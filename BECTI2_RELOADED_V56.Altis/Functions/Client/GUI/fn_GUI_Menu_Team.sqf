@@ -5,7 +5,7 @@ WF_MenuAction = -1;
 
 _currentVD = viewDistance;
 _currentOD = getObjectViewDistance select 0;
-_funds = Call cti_CL_FNC_GetPlayerFunds;
+_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 
 if (votePopUp) then {
 	ctrlSetText[13019, localize "STR_WF_VOTING_PopUpOffButton"];
@@ -17,7 +17,7 @@ ctrlSetText [13101, Format [localize "STR_WF_TEAM_ObjectDistanceLabel",_currentO
 ctrlSetText [13002, Format [localize "STR_WF_TEAM_ViewDistanceLabel",_currentVD]];
 //ctrlSetText [13004, Format [localize "STR_WF_TEAM_TerrainGridLabel",currentTG]];
 ctrlSetText [13006, Format [localize "STR_WF_TEAM_MoneyTransfer",0]];
-ctrlSetText [13010, Format [localize "STR_WF_Income",Call cti_CL_FNC_GetPlayerFunds,(cti_Client_SideJoined) Call cti_CL_FNC_GetIncome]];
+ctrlSetText [13010, Format [localize "STR_WF_Income",CallEZC_fnc_Functions_Client_GetPlayerFunds,(cti_Client_SideJoined) Call EZC_fnc_Functions_Client_GetIncome]];
 
 SliderSetRange[130039, 1, missionNamespace getVariable "cti_C_OBJECT_MAX_VIEW"];
 SliderSetRange[13003, 1, missionNamespace getVariable "cti_C_ENVIRONMENT_MAX_VIEW"];
@@ -79,8 +79,8 @@ while {alive player && dialog} do {
 		WF_MenuAction = -1;
 		if ((_transferAmount != 0)&&((cti_Client_Teams select _curSel) != group player)) then {
 			[(cti_Client_Teams select _curSel),_transferAmount] Call cti_CO_FNC_ChangeTeamFunds;
-			-_transferAmount Call cti_CL_FNC_ChangePlayerFunds;
-			_funds = Call cti_CL_FNC_GetPlayerFunds;
+			-_transferAmount Call EZC_fnc_Functions_Client_ChangePlayerFunds;
+			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			if (isPlayer leader (cti_Client_Teams select _curSel)) then {
 				['FundsTransfer',_transferAmount,name player] remoteExecCall ["cti_CL_FNC_LocalizeMessage", leader (cti_Client_Teams select _curSel)];
 			};
@@ -123,7 +123,7 @@ while {alive player && dialog} do {
 	if (WF_MenuAction == 6) then {
 		WF_MenuAction = -1;
 		currentFX = lbCurSel 13018;
-		[currentFX] Spawn cti_CL_FNC_FX;
+		[currentFX] Spawn EZC_fnc_Functions_Client_FX;
 	};
 	
 	//--- Vote Pop-Up //added-MrNiceGuy
@@ -165,7 +165,7 @@ while {alive player && dialog} do {
 	_lastvd = _currentVD;
 	//_lasttg = currentTG;
 	
-	if (_timer > 2) then {ctrlSetText [13010, Format [localize "STR_WF_Income",Call cti_CL_FNC_GetPlayerFunds,(cti_Client_SideJoined) Call cti_CL_FNC_GetIncome]];_timer = 0};
+	if (_timer > 2) then {ctrlSetText [13010, Format [localize "STR_WF_Income",CallEZC_fnc_Functions_Client_GetPlayerFunds,(cti_Client_SideJoined) Call EZC_fnc_Functions_Client_GetIncome]];_timer = 0};
 	_timer = _timer + 0.05;
 	
 	//--- Back Button.

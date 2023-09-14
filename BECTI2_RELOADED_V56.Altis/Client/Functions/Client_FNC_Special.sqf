@@ -93,7 +93,8 @@ cti_CL_FNC_Reveal_UAV = {
 	_uav = _this select 0;
 	_target = _this select 1;
 
-	if (typeName _uav != 'OBJECT' || typeName _target != 'OBJECT') exitWith {["ERROR", Format ["uav-reveal: An object is expected for both parameters given (UAV: [%1]  Target: [%2]).",_uav,_target]] Call cti_CO_FNC_LogContent};
+	if (typeName _uav != 'OBJECT' || typeName _target != 'OBJECT') exitWith {["ERROR", Format ["uav-reveal: An object is expected for both parameters given (UAV: [%1]  Target: [%2]).",_uav,_target]] Call EZC_fnc_Functions_Common_LogContent
+};
 
 	_size = round((_uav distance _target) / 16);
 	_marker = Format["cti_UAV_SPOTTED_%1",unitMarker];
@@ -113,7 +114,7 @@ cti_CL_FNC_Upgrade_Started = {
 	_upgrade = _this select 0;
 	_level = _this select 1;
 
-	(Format [Localize "STR_WF_CHAT_Upgrade_Started_Message",(missionNamespace getVariable "cti_C_UPGRADES_LABELS") select _upgrade, _level]) Call cti_CL_FNC_CommandChatMessage;
+	(Format [Localize "STR_WF_CHAT_Upgrade_Started_Message",(missionNamespace getVariable "cti_C_UPGRADES_LABELS") select _upgrade, _level]) Call EZC_fnc_Functions_Client_CommandChatMessage;
 };
 
 cti_CL_FNC_Upgrade_Complete = {
@@ -121,7 +122,7 @@ cti_CL_FNC_Upgrade_Complete = {
 	_upgrade = _this select 0;
 	_level = _this select 1;
 
-	(Format [Localize "STR_WF_CHAT_Upgrade_Complete_Message",(missionNamespace getVariable "cti_C_UPGRADES_LABELS") select _upgrade, _level]) Call cti_CL_FNC_CommandChatMessage;
+	(Format [Localize "STR_WF_CHAT_Upgrade_Complete_Message",(missionNamespace getVariable "cti_C_UPGRADES_LABELS") select _upgrade, _level]) Call EZC_fnc_Functions_Client_CommandChatMessage;
 
 	if !(isNull commanderTeam) then { //--- Commander reward (if the player is the commander)
 		if (commanderTeam == group player) then {

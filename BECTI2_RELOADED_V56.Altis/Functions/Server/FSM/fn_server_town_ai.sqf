@@ -3,7 +3,8 @@ Private["_town","_range_detect_active","_position","_groups","_town_camps","_tow
 for "_j" from 0 to ((count towns) - 1) step 1 do
 {
 	_loc = towns select _j;
-	["INITIALIZATION",Format ["server_town_ai.sqf : Initialized for [%1].", _loc getVariable "name"]] Call cti_CO_FNC_LogContent;
+	["INITIALIZATION",Format ["server_town_ai.sqf : Initialized for [%1].", _loc getVariable "name"]] Call EZC_fnc_Functions_Common_LogContent
+;
 	sleep 0.01;
 };
 
@@ -84,7 +85,8 @@ while {!cti_GameOver} do {
                         };
                     };
                     //// start of creation
-                    ["INFORMATION", Format ["server_town_ai.fsm: Town [%1] has been activated, creating defensive units for [%2].", _town, _side]] Call cti_CO_FNC_LogContent;
+                    ["INFORMATION", Format ["server_town_ai.fsm: Town [%1] has been activated, creating defensive units for [%2].", _town, _side]] Call EZC_fnc_Functions_Common_LogContent
+;
 
                     if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side,"HostilesDetectedNear",_town] Spawn cti_SE_FNC_SideMessage};
 

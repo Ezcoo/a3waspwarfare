@@ -13,9 +13,11 @@ _sideID = (_side) Call cti_CO_FNC_GetSideID;
 
 _sideText = str _side;
 
-if !(alive _building) exitWith {["INFORMATION", Format ["Server_ResBuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call cti_CO_FNC_LogContent};
+if !(alive _building) exitWith {["INFORMATION", Format ["Server_ResBuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call EZC_fnc_Functions_Common_LogContent
+};
 
-["INFORMATION", Format ["Server_ResBuyUnit.sqf: [%1] Team has purchased a [%1] unit.",_team, _unitType]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format ["Server_ResBuyUnit.sqf: [%1] Team has purchased a [%1] unit.",_team, _unitType]] Call EZC_fnc_Functions_Common_LogContent
+;
 
 _type = typeOf _building;
 
@@ -28,7 +30,8 @@ _direction = (missionNamespace getVariable Format["cti_%1STRUCTUREDIRECTIONS",st
 _position = [getPos _building,_distance,getDir _building + _direction] Call cti_CO_FNC_GetPositionFrom;
 _longest = missionNamespace getVariable Format ["cti_LONGEST%1BUILDTIME",_factoryType];
 
-if !(alive _building) exitWith {["INFORMATION", Format ["Server_ResBuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call cti_CO_FNC_LogContent};
+if !(alive _building) exitWith {["INFORMATION", Format ["Server_ResBuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call EZC_fnc_Functions_Common_LogContent
+};
 
 _HC = missionNamespace getVariable "cti_HEADLESSCLIENTS_ID";
 _factoryPosition = getPosATL _building;

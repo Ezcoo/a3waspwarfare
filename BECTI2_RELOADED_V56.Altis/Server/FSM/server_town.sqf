@@ -24,7 +24,8 @@ _isTimeToUpdateSuppluys = false;
 for "_j" from 0 to ((count towns) - 1) step 1 do
 {
 	_loc = towns select _j;
-	["INITIALIZATION",Format ["server_town.sqf : Initialized for [%1].", _loc getVariable "name"]] Call cti_CO_FNC_LogContent;
+	["INITIALIZATION",Format ["server_town.sqf : Initialized for [%1].", _loc getVariable "name"]] Call EZC_fnc_Functions_Common_LogContent
+;
 	sleep 0.01;
 };
 
@@ -191,7 +192,8 @@ while {!cti_GameOver} do {
             };
 
             if(_captured) then {
-			["INFORMATION", Format ["server_town.sqf: Town [%1] was captured by [%2] From [%3].", _location, _newSide, _side]] Call cti_CO_FNC_LogContent;
+			["INFORMATION", Format ["server_town.sqf: Town [%1] was captured by [%2] From [%3].", _location, _newSide, _side]] Call EZC_fnc_Functions_Common_LogContent
+;
 
                 if (_sideID != cti_C_UNKNOWN_ID) then {
                     if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side, "Lost", _location] Spawn cti_SE_FNC_SideMessage};

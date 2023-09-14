@@ -10,7 +10,8 @@ if (typeName _team == "ARRAY") then {
 		_x setCombatMode (_args select 2);
 		_x setFormation (_args select 3);
 		_x setSpeedMode (_args select 4);
-		["INFORMATION", Format ["RequestTeamUpdate.sqf: Team [%1] properties were updated.", _x]] Call cti_CO_FNC_LogContent;
+		["INFORMATION", Format ["RequestTeamUpdate.sqf: Team [%1] properties were updated.", _x]] Call EZC_fnc_Functions_Common_LogContent
+;
 	} forEach _team;
 };
 
@@ -22,5 +23,6 @@ if (typeName _team == "SIDE") then {
 		_x setFormation (_args select 3);
 		_x setSpeedMode (_args select 4);
 	} forEach (missionNamespace getVariable Format["cti_%1TEAMS",str _team]);
-	["INFORMATION", Format ["RequestTeamUpdate.sqf: [%1] Teams properties were updated.", _team]] Call cti_CO_FNC_LogContent;
+	["INFORMATION", Format ["RequestTeamUpdate.sqf: [%1] Teams properties were updated.", _team]] Call EZC_fnc_Functions_Common_LogContent
+;
 };

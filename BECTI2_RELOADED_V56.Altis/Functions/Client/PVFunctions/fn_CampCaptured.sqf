@@ -37,8 +37,9 @@ if (cti_Client_SideID == _sideID_new) then {
 				hint parseText Format["<t color='#42b6ff' size='1.2' underline='1' shadow='1'>Information:</t><br /><br /><t>Your squad has captured a camp near <t color='#B6F563'>%1</t> and has been rewarded with <t color='#EAD267'>$%2.</t></t>",_town getVariable "name",missionNamespace getVariable "cti_C_CAMPS_CAPTURE_BOUNTY"];
 				[player,score player + (missionNamespace getVariable 'cti_C_PLAYERS_SCORE_CAPTURE_CAMP')] remoteExecCall ["cti_SE_PVF_RequestChangeScore",2];
 				
-				(missionNamespace getVariable "cti_C_CAMPS_CAPTURE_BOUNTY") Call cti_CL_FNC_ChangePlayerFunds;
-				["INFORMATION", Format ["Player %1 has captured camp in town: %2).", name player, _town getVariable "name"]] Call cti_CO_FNC_LogContent;
+				(missionNamespace getVariable "cti_C_CAMPS_CAPTURE_BOUNTY") Call EZC_fnc_Functions_Client_ChangePlayerFunds;
+				["INFORMATION", Format ["Player %1 has captured camp in town: %2).", name player, _town getVariable "name"]] Call EZC_fnc_Functions_Common_LogContent
+;
 			};
 		// };
 	// };

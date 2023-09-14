@@ -53,9 +53,9 @@ if (!isNil 'cti_P_CurrentGear' && !cti_RespawnDefaultGear && _allowCustom) then 
 			};
 
 			//--- Charge if possible.
-			_funds = Call cti_CL_FNC_GetPlayerFunds;
+			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			if (_funds >= _price && _charge) then {
-				-(_price) Call cti_CL_FNC_ChangePlayerFunds;
+				-(_price) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 				(Format[localize 'STR_WF_CHAT_Gear_RespawnCharge',_price]) Call cti_CL_FNC_GroupChatMessage;
 			};
 

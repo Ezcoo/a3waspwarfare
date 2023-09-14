@@ -59,4 +59,5 @@ if ((!isNull _killer) && (isPlayer _killer)) then
     };
 };
 
-["INFORMATION", Format["Server_OnHQKilled.sqf : [%1] HQ [%2] has been destroyed by [%3], Teamkill? [%4], Side Teamkill? [%5]", _side, _structure_kind, name _killer, _teamkill, side _killer]] Call cti_CO_FNC_LogContent;
+["INFORMATION", Format["Server_OnHQKilled.sqf : [%1] HQ [%2] has been destroyed by [%3], Teamkill? [%4], Side Teamkill? [%5]", _side, _structure_kind, name _killer, _teamkill, side _killer]] Call EZC_fnc_Functions_Common_LogContent
+;
