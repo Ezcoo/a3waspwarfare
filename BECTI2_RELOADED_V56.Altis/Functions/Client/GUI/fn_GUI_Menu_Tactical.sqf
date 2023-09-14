@@ -334,7 +334,7 @@ _artyarray = missionNamespace getVariable Format ["cti_%1_ARTILLERY_CLASSNAMES",
 	//--- Request Fire Mission.
 	if (WF_MenuAction == 2) then {
 		WF_MenuAction = -1;
-		_units = [_artygroup,false,lbCurSel(17008),cti_Client_SideJoinedText] Call cti_CO_FNC_GetTeamArtillery;
+		_units = [_artygroup,false,lbCurSel(17008),cti_Client_SideJoinedText] Call EZC_fnc_Functions_Common_GetTeamArtillery;
 		if (Count _units > 0) then {
 			fireMissionTime = time;
 			[GetMarkerPos "artilleryMarker",lbCurSel(17008),_artygroup] Spawn EZC_fnc_Functions_Client_RequestFireMission;
@@ -355,7 +355,7 @@ _artyarray = missionNamespace getVariable Format ["cti_%1_ARTILLERY_CLASSNAMES",
 		
 		
 		
-		_trackingArray = [_artygroup,true,lbCurSel(17008),cti_Client_SideJoined] Call cti_CO_FNC_GetTeamArtillery;
+		_trackingArray = [_artygroup,true,lbCurSel(17008),cti_Client_SideJoined] Call EZC_fnc_Functions_Common_GetTeamArtillery;
 		
 						
 				
@@ -397,7 +397,7 @@ _artyarray = missionNamespace getVariable Format ["cti_%1_ARTILLERY_CLASSNAMES",
 		//--- No need to update the list all the time.
 		if (time - _lastArtyUpdate > 5) then {
 			_lastArtyUpdate = time;
-			_trackingArray = [_artygroup,true,lbCurSel(17008),cti_Client_SideJoined] Call cti_CO_FNC_GetTeamArtillery;
+			_trackingArray = [_artygroup,true,lbCurSel(17008),cti_Client_SideJoined] Call EZC_fnc_Functions_Common_GetTeamArtillery;
 		};
 		
 		//--- Clear & Fill;
@@ -478,7 +478,7 @@ _artyarray = missionNamespace getVariable Format ["cti_%1_ARTILLERY_CLASSNAMES",
 			//--- No need to update the marker all the time.
 			if (time - _lastArtyUpdate > 5) then {
 				_lastArtyUpdate = time;
-				_trackingArray = [_artygroup,true,lbCurSel(17008),cti_Client_SideJoined] Call cti_CO_FNC_GetTeamArtillery;
+				_trackingArray = [_artygroup,true,lbCurSel(17008),cti_Client_SideJoined] Call EZC_fnc_Functions_Common_GetTeamArtillery;
 			};
 			
 			//--- Live Feed.

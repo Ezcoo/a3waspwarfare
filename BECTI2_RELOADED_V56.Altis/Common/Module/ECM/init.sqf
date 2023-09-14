@@ -44,7 +44,7 @@ EZC_fnc_Module_Common_HandleIncomingMissileECM = Compile preprocessFileLineNumbe
 EZC_fnc_Module_Common_HandleIncomingMissile = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissile.sqf";
 EZC_fnc_Module_Common_HandleDamageObject = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleDamageObject.sqf";
 
-cti_CO_MDL_ECM_FNC_preInitECM_Object = Compile preprocessFileLineNumbers "Functions\Common_preInit_ECMObject.sqf";
+EZC_fnc_Module_Common_preInit_ECMobject = Compile preprocessFileLineNumbers "Functions\Common_preInit_ECMObject.sqf";
 
 
 /* EDITOR INIT

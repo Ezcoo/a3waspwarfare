@@ -33,8 +33,8 @@ while {alive _defense} do {
 							[_groups, missionNamespace getVariable Format ["cti_%1SOLDIER", _side]] call EZC_fnc_Functions_Common_ArrayPush;
 							_positions = [];
 							[_positions, _position] call EZC_fnc_Functions_Common_ArrayPush;
-							//[_side, _groups, _positions, _teams, _defense] Call cti_CO_FNC_DelegateAIStaticDefenceHeadless;
-							[_side, _groups, _positions, _team, _defense, false] Call cti_CO_FNC_DelegateAIStaticDefenceHeadless;
+							//[_side, _groups, _positions, _teams, _defense] Call EZC_fnc_Functions_Server_DelegateAIStaticDefenceHeadless;
+							[_side, _groups, _positions, _team, _defense, false] Call EZC_fnc_Functions_Server_DelegateAIStaticDefenceHeadless;
 							_use_server = false;
 						};
 					};

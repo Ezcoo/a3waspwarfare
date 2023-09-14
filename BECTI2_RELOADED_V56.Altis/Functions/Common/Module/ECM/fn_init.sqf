@@ -42,9 +42,9 @@ OUTSIDE_SYNC_ECM_AREA_VEHICLES=[];
 
 EZC_fnc_Module_Common_HandleIncomingMissileECM = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissileECM.sqf";
 EZC_fnc_Module_Common_HandleIncomingMissile = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissile.sqf";
-cti_CO_FNC_HandleDamage_Object = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleDamageObject.sqf";
+EZC_fnc_Module_Common_HandleDamageObject = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleDamageObject.sqf";
 
-cti_CO_MDL_ECM_FNC_preInitECM_Object = Compile preprocessFileLineNumbers "Functions\Common_preInit_ECMObject.sqf";
+EZC_fnc_Module_Common_preInit_ECMobject = Compile preprocessFileLineNumbers "Functions\Common_preInit_ECMObject.sqf";
 
 
 /* EDITOR INIT
@@ -59,7 +59,7 @@ _OBJECTid=_varname+"id";
 _OBJECTid_damage=_OBJECTid+"damage";
 private _CHECKVALUE= missionNamespace getVariable _OBJECTid_damage;
 if (isNil "_CHECKVALUE") then {
-_x addEventHandler ['HitPart', {_this Spawn cti_CO_FNC_HandleDamage_Object}];
+_x addEventHandler ['HitPart', {_this Spawn EZC_fnc_Module_Common_HandleDamageObject}];
 
 _CHECKVALUE=[0,_OBJECTid_damage];
 missionNamespace setVariable [_OBJECTid_damage, _CHECKVALUE];

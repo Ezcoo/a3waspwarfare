@@ -1,7 +1,7 @@
 /*
   # HEADER #
 	Script: 		Common\Module\ECM\Functions\Common_preInit_ECMobject.sqf
-	Alias:			cti_CO_MDL_ECM_FNC_preInitECM_Object
+	Alias:			EZC_fnc_Module_Common_preInit_ECMobject
 	Description:	Attach the ECM Module to object
 					Note that this command is often used by a PVF
 	Author: 		0=1
@@ -16,14 +16,14 @@
 	None
 	
   # SYNTAX #
-	_this call cti_CO_MDL_ECM_FNC_preInitECM_Object
+	_this call EZC_fnc_Module_Common_preInit_ECMobject
 	
 	
   # DEPENDENCIES #
 	Depends an object to attach functions
 	
   # EXAMPLE #
-    _this call cti_CO_MDL_ECM_FNC_preInitECM_Object
+    _this call EZC_fnc_Module_Common_preInit_ECMobject
 	
 	  -> _this object will be an ECM-object
 	  

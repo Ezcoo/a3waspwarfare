@@ -119,7 +119,7 @@ switch (_action) do {
 			call CTI_UI_Gear_UpdatePrice;
 			(_gear) call CTI_UI_Gear_DisplayInventory;
 		} else {
-			_gear = (_target) call CTI_CO_FNC_GetVehicleCargo;
+			_gear = (_target) call EZC_fnc_Functions_Client_GetVehicleCargoSize;
 
 			//--- Calculate the initial mass
 			_maxmass = getNumber(configFile >> "CfgVehicles" >> typeOf _target >> "maximumLoad");

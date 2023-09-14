@@ -19,7 +19,7 @@
 
 	
   # DEPENDENCIES #
-	Common Function: CTI_CO_FNC_GetSideCommanderTeam
+	Common Function: EZC_fnc_Functions_Client_IsPlayerCommander
 	
   # EXAMPLE #
     call EZC_fnc_Functions_Client_IsPlayerCommander
