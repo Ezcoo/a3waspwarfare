@@ -37,7 +37,7 @@ while {!cti_GameOver} do {
 		_startingSupplyValue = _location getVariable "startingSupplyValue";
 		_maxSupplyValue = _location getVariable "maxSupplyValue";
         _sideID = _location getVariable "sideID";
-        _side = (_sideID) Call cti_CO_FNC_GetSideFromID;
+        _side = (_sideID) Call EZC_fnc_Functions_Common_GetSideFromID;
         _objects = (_location nearEntities[["Man","Car","Motorcycle","Tank","Air","Ship"], 	_town_capture_range]) unitsBelowHeight 10;
 
         _west = west countSide _objects;
@@ -169,7 +169,7 @@ while {!cti_GameOver} do {
 
             if !(_skip) then {
                 _newSID = switch (true) do {case (_west > 0): {cti_C_WEST_ID}; case (_east > 0): {cti_C_EAST_ID}; case (_resistance > 0): {cti_C_GUER_ID};};
-                _newSide = (_newSID) Call cti_CO_FNC_GetSideFromID;
+                _newSide = (_newSID) Call EZC_fnc_Functions_Common_GetSideFromID;
                 _rate = _town_capture_rate * (([_location,_newSide] Call cti_CO_FNC_GetTotalCampsOnSide) / (_location Call cti_CO_FNC_GetTotalCamps)) * _town_camps_capture_rate;
                 if (_rate < 1) then {_rate = 1};
 

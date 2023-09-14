@@ -21,7 +21,7 @@ _town_capture_mode = missionNamespace getVariable "cti_C_TOWNS_CAPTURE_MODE";
 _update = false;
 
 while {!cti_GameOver} do {
-	_nearest = [player,towns] Call cti_CO_FNC_GetClosestEntity;
+	_nearest = [player,towns] Call EZC_fnc_Functions_Common_GetClosestEntity;
 	waitUntil {sleep 0.25;!(isNil "_nearest")};
 	_update = if (player distance _nearest < (_nearest getVariable "range") && alive player) then {true} else {false};
 	

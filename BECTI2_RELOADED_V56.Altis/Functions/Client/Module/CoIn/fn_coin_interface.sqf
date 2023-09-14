@@ -15,7 +15,7 @@ _tooFar = false;
 if ((missionNamespace getVariable "cti_C_BASE_AREA") > 0) then {
 	if (_source == _hq) then {
 		if (count(cti_Client_Logic getVariable "cti_basearea") >= (missionNamespace getVariable "cti_C_BASE_AREA")) then {
-			_startpos = [_startPos,cti_Client_Logic getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity;
+			_startpos = [_startPos,cti_Client_Logic getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity;
 			if (_source distance _startpos > (missionNamespace getVariable "cti_C_BASE_HQ_BUILD_RANGE")) exitWith {_tooFar = true};
 		};
 	};
@@ -259,7 +259,7 @@ BIS_CONTROL_CAM_Handler = {
 							_closest setVariable ['sold',true];
 							_price = _get select QUERYUNITPRICE;
 							round(_price/2.5) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-							_area = [getPos (_closest),((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2;
+							_area = [getPos (_closest),((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity2;
 							_get = _area getVariable 'avail';
 
 							if (!isNull _area && _get < missionNamespace getVariable "cti_C_BASE_AV_STRUCTURES") then {
@@ -459,7 +459,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 			if (typename _itemcost == "ARRAY") then {_itemcash = _itemcost select 0; _itemcost = _itemcost select 1};
 			_funds = _logic getVariable "BIS_COIN_funds";
 			if (typename _funds == "ARRAY") then {
-				_a = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply;
+				_a = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply;
 				_b = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 				_funds = [_a]+[_b];
 			} else {
@@ -781,7 +781,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 						[cti_Client_SideJoined,_itemclass,_pos,_dir,manningDefense] remoteExecCall ["cti_SE_PVF_RequestDefense",2];
 
 						lastBuilt = _par;
-						_area = [_pos,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2;
+						_area = [_pos,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity2;
 						_get = _area getVariable 'avail';
 						if (!isNull _area && _get > 0) then {
 							_commanderTeam =(cti_Client_SideJoined) Call cti_CO_FNC_GetCommanderTeam;
@@ -954,7 +954,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 		//--- Amount of funds changed
 		_funds = _logic getVariable "BIS_COIN_funds";
 		if (typename _funds == "ARRAY") then {
-			_a = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply;
+			_a = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply;
 			_b = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			_funds = [_a]+[_b];
 		} else {

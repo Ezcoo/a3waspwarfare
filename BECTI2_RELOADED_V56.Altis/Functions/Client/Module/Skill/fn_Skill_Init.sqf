@@ -7,7 +7,7 @@
 cti_SK_V_Root = 'Client\Module\Skill\Skill_';
 
 /* Functions */
-//cti_SK_FNC_Apply = Compile preprocessFile "Client\Module\Skill\Skill_Apply.sqf";
+//EZC_fnc_Module_Skill_Apply = Compile preprocessFile "Client\Module\Skill\Skill_Apply.sqf";
 
 /* Define which classname belong to which skill group */
 

@@ -14,7 +14,7 @@ if ((missionNamespace getVariable Format ["cti_%1UAV",cti_Client_SideJoinedText]
 _buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 _checks = [cti_Client_SideJoined,missionNamespace getVariable Format ["cti_%1COMMANDCENTERTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
 _closest = objNull;
-if (count _checks > 0) then { _closest = [player,_checks] Call cti_CO_FNC_GetClosestEntity; };
+if (count _checks > 0) then { _closest = [player,_checks] Call EZC_fnc_Functions_Common_GetClosestEntity; };
 
 if (isNull _closest) exitWith {};
 

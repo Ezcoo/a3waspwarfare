@@ -93,7 +93,7 @@
 					if !(_isCommander) exitWith {};
 					_position = _map posScreenToWorld[mouseX,mouseY];
 					_structures = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
-					_closest = [_position,_structures] Call cti_CO_FNC_GetClosestEntity;
+					_closest = [_position,_structures] Call EZC_fnc_Functions_Common_GetClosestEntity;
 					if (!isNull _closest) then {
 						//--- 100 meters close only.
 						if (_closest distance _position < 100 && isNil {_closest getVariable "cti_SOLD"}) then {

@@ -9,7 +9,7 @@ _closest = objNull;
 
 _checks = [_side,missionNamespace getVariable Format ["cti_%1%2",str _side,_buildingType],_buildings] Call cti_CO_FNC_GetFactories;
 if (count _checks > 0) then {
-	_closest = [_unit,_checks] Call cti_CO_FNC_GetClosestEntity;
+	_closest = [_unit,_checks] Call EZC_fnc_Functions_Common_GetClosestEntity;
 	if (_unit distance _closest > _range) then {_closest = objNull};
 };
 

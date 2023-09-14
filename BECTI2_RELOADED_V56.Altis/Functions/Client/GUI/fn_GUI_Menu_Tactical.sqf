@@ -193,7 +193,7 @@ while {alive player && dialog} do {
 			};
 			case "UAV": {
 				closeDialog 0;
-				call WFVE_fnc_uav;
+				call EZC_fnc_Module_uav;
 			};
 			case "UAV_Destroy": {
 				if !(isNull playerUAV) then {
@@ -204,7 +204,7 @@ while {alive player && dialog} do {
 			};
 			case "UAV_Remote_Control": {
 				closeDialog 0;
-				call WFVE_fnc_uav;
+				call EZC_fnc_Module_uav;
 			};
 			case "Units_Camera": {
 				closeDialog 0;
@@ -238,7 +238,7 @@ while {alive player && dialog} do {
 			if (!surfaceIsWater _callPos) then {
 				lastParaCall = time;
 				-(_currentFee) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-				["Paratroops",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+				["Paratroops",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 				hint (localize "STR_WF_INFO_Paratroop_Info");
 			};
 		};
@@ -268,7 +268,7 @@ while {alive player && dialog} do {
 			lastSupplyCall = time;
 			-_currentFee Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
-			["ParaVehi",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+			["ParaVehi",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 		};
 		//--- Ammo Paradrop.
 		if (WF_MenuAction == 10) then {
@@ -279,7 +279,7 @@ while {alive player && dialog} do {
 			lastSupplyCall = time;
 			-_currentFee Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
-			["ParaAmmo",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+			["ParaAmmo",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 		};
 	};
 	

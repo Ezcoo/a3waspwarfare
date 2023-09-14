@@ -18,7 +18,7 @@ if(!(isNil "_unit") && (alive _unit))then{
 	if (count _camps == 0) exitWith {_result = false};
 
 	//--- Get the closest camp then.
-	_camp = [_unit, _camps] Call cti_CO_FNC_GetClosestEntity;
+	_camp = [_unit, _camps] Call EZC_fnc_Functions_Common_GetClosestEntity;
 	if (!isNil "_camp")  exitwith {
 		_result = true;
 	};

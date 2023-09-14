@@ -19,7 +19,7 @@ cti_CL_FNC_OnFiredSatchel = {
 	_side_structures = (cti_Client_SideJoined Call EZC_fnc_Functions_Common_GetSideStructures) + [cti_Client_SideJoined Call EZC_fnc_Functions_Common_GetSideHQ];
 
 	//--- Get the closest structure.
-	_closest = [_unit, _side_structures] Call cti_CO_FNC_GetClosestEntity;
+	_closest = [_unit, _side_structures] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 	//--- Check the distance between the _unit and the closest friendly building.
 	if (_closest distance _unit < 30) then {

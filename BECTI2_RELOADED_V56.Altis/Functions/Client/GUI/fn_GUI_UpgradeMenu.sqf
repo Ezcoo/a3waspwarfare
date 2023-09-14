@@ -87,7 +87,7 @@ while {alive player && dialog} do {
 			_id = lnbValue[504001, [_ui_lnb_sel, 0]];
 			_upgrade_current = _upgrades select _id;
 			_funds = callEZC_fnc_Functions_Client_GetPlayerFunds;
-			_supply = (cti_Client_SideJoined) call cti_CO_FNC_GetSideSupply;
+			_supply = (cti_Client_SideJoined) call EZC_fnc_Functions_Common_GetSideSupply;
 			_html = "";
 			_html2 = "<t color='#42b6ff' size='1.2' underline='1' shadow='1'>Dependencies:</t><br /><br />";
 			if (_upgrade_current < (_upgrade_levels select _id)) then {
@@ -129,7 +129,7 @@ while {alive player && dialog} do {
 			_id = lnbValue[504001, [_ui_lnb_sel, 0]];
 			_upgrade_current = _upgrades select _id;
 			_funds = callEZC_fnc_Functions_Client_GetPlayerFunds;
-			_supply = (cti_Client_SideJoined) call cti_CO_FNC_GetSideSupply;
+			_supply = (cti_Client_SideJoined) call EZC_fnc_Functions_Common_GetSideSupply;
 			if !(cti_Client_Logic getVariable "cti_upgrading") then {
 				if (_upgrade_current < (_upgrade_levels select _id)) then {
 					_upgrade_supply = ((_upgrade_costs select _id) select _upgrade_current) select 0;

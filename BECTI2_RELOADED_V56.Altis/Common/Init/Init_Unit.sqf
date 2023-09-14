@@ -12,7 +12,7 @@ if !(alive _unit) exitWith {}; //--- Abort if the unit is null or dead.
 
 if(isNil 'commonInitComplete')then{ commonInitComplete = false; };
 waitUntil {commonInitComplete}; //--- Wait for the common part.
-_side = (_sideID) Call cti_CO_FNC_GetSideFromID;
+_side = (_sideID) Call EZC_fnc_Functions_Common_GetSideFromID;
 _logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 

@@ -241,7 +241,7 @@ while {alive player && dialog} do {
 			default {
 				_buildings = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 				_factories = [CTI_Client_SideJoined,missionNamespace getVariable Format ['CTI_%1%2TYPE',CTI_Client_SideJoinedText,_type],_buildings] Call CTI_CO_FNC_GetFactories;
-				_sorted = [vehicle player,_factories] Call CTI_CO_FNC_SortByDistance;
+				_sorted = [vehicle player,_factories] Call EZC_fnc_Functions_Common_SortByDistance;
 				_closest = _sorted select 0;
 				_countAlive = count _factories;
 			};
@@ -250,7 +250,7 @@ while {alive player && dialog} do {
 		//--- Refresh the Factory DropDown list.
 		lbClear 12018;
 		{
-			_nearTown = ([_x, towns] Call CTI_CO_FNC_GetClosestEntity) getVariable 'name';
+			_nearTown = ([_x, towns] Call EZC_fnc_Functions_Common_GetClosestEntity) getVariable 'name';
 			_txt = _type + ' ' + _nearTown + ' ' + str (round((vehicle player) distance _x)) + 'M';
 			lbAdd[12018,_txt];
 		} forEach _sorted;

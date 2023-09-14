@@ -41,7 +41,7 @@ while {true} do {
 			_objects = [];
 			{if (!(_x isKindOf "Man") && side _x != cti_Client_SideJoined) then {if (count (crew _x) == 0) then {_objects = _objects - [_x]}};if (side _x == cti_Client_SideJoined) then {_objects = _objects + [_x]}} forEach _list;
 			if (count _objects > 0) then {
-				_currentUnit = ([_near,_objects] Call cti_CO_FNC_GetClosestEntity) Call cti_CO_FNC_GetUnitVehicle;
+				_currentUnit = ([_near,_objects] Call EZC_fnc_Functions_Common_GetClosestEntity) Call cti_CO_FNC_GetUnitVehicle;
 				_cameraSwap = true;
 			};
 		};

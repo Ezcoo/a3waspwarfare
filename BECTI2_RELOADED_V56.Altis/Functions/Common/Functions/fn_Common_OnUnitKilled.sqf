@@ -18,7 +18,7 @@ Private ["_get","_killed","_killed_isplayer","_killed_group","_killed_isman","_k
 
 _killed = _this select 0;
 _killer = _this select 1;
-_killed_side = (_this select 2) Call cti_CO_FNC_GetSideFromID;
+_killed_side = (_this select 2) Call EZC_fnc_Functions_Common_GetSideFromID;
 _type=typeOf _killed;
 
 

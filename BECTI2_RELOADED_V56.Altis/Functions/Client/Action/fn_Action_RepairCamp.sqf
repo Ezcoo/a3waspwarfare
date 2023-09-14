@@ -40,7 +40,7 @@ if ((missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") > 0) then {
 };
 	
 //--- Get the closest camp then.
-_camp = [_vehicle, _camps] Call cti_CO_FNC_GetClosestEntity;
+_camp = [_vehicle, _camps] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 hint (localize "STR_WF_Repair_Camp_IsBeingRepaired");
 

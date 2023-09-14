@@ -64,7 +64,7 @@ cti_CL_FNC_EndGame = {
 	_sideValue = _this select 0;
 	cti_GameOver = true;
 
-	(_sideValue Call cti_CO_FNC_GetSideFromID) ExecVM "Client\Client_EndGame.sqf";
+	(_sideValue Call EZC_fnc_Functions_Common_GetSideFromID) ExecVM "Client\Client_EndGame.sqf";
 };
 
 cti_CL_FNC_HQ_SetStatus = {

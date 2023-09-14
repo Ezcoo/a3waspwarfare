@@ -7,7 +7,7 @@
 Private["_can_upgrade","_cost","_funds","_level","_logik","_path","_side","_to_upgrade","_upgrade","_upgrades"];
 
 _side = _this;
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 _path = missionNamespace getVariable Format ["cti_C_UPGRADES_%1_AI_ORDER", _side];
 _upgrades = _logik getVariable "cti_upgrades";
@@ -40,7 +40,7 @@ if (count _to_upgrade > 0) then {
         _can_upgrade = false;
 
         _funds = _side Call cti_SE_FNC_GetAICommanderFunds;
-        if ((_side Call cti_CO_FNC_GetSideSupply) >= (_cost select 0) && _funds >= (_cost select 1)) then {_can_upgrade = true;};
+        if ((_side Call EZC_fnc_Functions_Common_GetSideSupply) >= (_cost select 0) && _funds >= (_cost select 1)) then {_can_upgrade = true;};
 
         //--- Roll on!
         if (_can_upgrade) then {

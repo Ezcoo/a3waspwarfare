@@ -50,7 +50,7 @@ while {cti_RespawnTime > 0 && dialog && alive player && !cti_GameOver} do
 
 		//---No spawn available at frist? get one!
 		if (isNull _spawn_at_current) then {
-			_spawn_at_current = [cti_DeathLocation, _spawn_locations] Call cti_CO_FNC_GetClosestEntity;
+			_spawn_at_current = [cti_DeathLocation, _spawn_locations] Call EZC_fnc_Functions_Common_GetClosestEntity;
 		};
 		
 		//--- Remove some old spawn location if needed.
@@ -65,7 +65,7 @@ while {cti_RespawnTime > 0 && dialog && alive player && !cti_GameOver} do
 				_x setVariable ['cti_respawn_marker', nil];
 				if (_x == _spawn_at_current && !_found) then {
 					_found = true;
-					_spawn_at_current = [cti_DeathLocation, _spawn_locations] Call cti_CO_FNC_GetClosestEntity;
+					_spawn_at_current = [cti_DeathLocation, _spawn_locations] Call EZC_fnc_Functions_Common_GetClosestEntity;
 				};
 			};
 		} forEach _spawn_locations_last;
@@ -110,7 +110,7 @@ while {cti_RespawnTime > 0 && dialog && alive player && !cti_GameOver} do
 		mouseButtonUp = -1;
 		//--- Attempt to get the nearest respawn of the click.
 		_clicked_at = ((uiNamespace getVariable "cti_display_respawn") displayCtrl 511001) ctrlMapScreenToWorld [mouseX, mouseY];
-		_nearest = [_clicked_at, _spawn_locations] Call cti_CO_FNC_GetClosestEntity;
+		_nearest = [_clicked_at, _spawn_locations] Call EZC_fnc_Functions_Common_GetClosestEntity;
 		if (_nearest distance _clicked_at < 500) then {_spawn_at_current = _nearest};
 	};
 

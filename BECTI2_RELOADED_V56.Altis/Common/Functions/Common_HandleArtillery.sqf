@@ -46,7 +46,7 @@ if (_ammo in _ammoList) then {
 		if (_ammo in (missionNamespace getVariable Format ["cti_%1_ARTILLERY_AMMO_LASER",_side])) then {
 			_nearLaser = _destination nearEntities ['LaserTarget',missionNamespace getVariable 'cti_C_ARTILLERY_AMMO_RANGE_LASER'];
 			if (count _nearLaser > 0) then {
-				_nearLaser = getPos ([_destination, _nearLaser] Call cti_CO_FNC_GetClosestEntity);
+				_nearLaser = getPos ([_destination, _nearLaser] Call EZC_fnc_Functions_Common_GetClosestEntity);
 				_landDestination = [(_nearLaser select 0)+(((random _dispersion)-(random _dispersion))/4),(_nearLaser select 1)+(((random _dispersion)-(random _dispersion))/4),0];
 			};
 		};

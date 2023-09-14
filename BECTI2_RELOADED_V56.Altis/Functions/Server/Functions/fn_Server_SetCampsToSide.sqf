@@ -19,7 +19,7 @@ _startingSV = _town getVariable "startingSupplyValue";
 	_x setVariable ["sideID", _side_new, true];
 	_x setVariable ["supplyValue", _startingSV, true];
 
-	(_x getVariable "cti_flag") setFlagTexture (missionNamespace getVariable Format["cti_%1FLAG", (_side_new) Call cti_CO_FNC_GetSideFromID]);
+	(_x getVariable "cti_flag") setFlagTexture (missionNamespace getVariable Format["cti_%1FLAG", (_side_new) Call EZC_fnc_Functions_Common_GetSideFromID]);
 } forEach _camps;
 
 ["INFORMATION",Format ["Server_SetCampsToSide.sqf : [%1] Camps [%2] were set to [%3], previously owned by [%4].", _town getVariable "name", count _camps, _side_new, _side_old]] Call EZC_fnc_Functions_Common_LogContent;

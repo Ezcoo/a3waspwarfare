@@ -34,7 +34,7 @@ switch (_type) do {
 	//--- Assign the closest town to the player.
 	case "TownAssignClosest": {
 		sleep 4;
-		_next = [player,cti_Client_SideJoined] Call cti_CO_FNC_GetClosestLocationBySide;
+		_next = [player,cti_Client_SideJoined] Call EZC_fnc_Functions_Common_GetClosestLocationBySide;
 		if !(isNull _next) then {
 			["TownHintNew",_next] Spawn EZC_fnc_Functions_Client_TaskSystem;
 			_task = (_next getVariable 'taskLink');

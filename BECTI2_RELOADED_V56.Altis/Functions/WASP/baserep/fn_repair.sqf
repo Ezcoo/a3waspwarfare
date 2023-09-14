@@ -4,7 +4,7 @@ _dr = 100 - _dam;
 
 sleep 1;
 _currentSupply = 0;
-_currentSupply = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply;
+_currentSupply = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply;
 if (_currentSupply > 5) then {
 for "_j" from 0 to 1 do 
  {

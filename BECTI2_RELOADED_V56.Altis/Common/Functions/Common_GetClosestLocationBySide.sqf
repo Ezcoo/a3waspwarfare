@@ -8,7 +8,7 @@ _enemyTowns = towns - ((_side) Call cti_CO_FNC_GetSideTowns);
 _nearest = objNull;
 
 if (count _enemyTowns > 0) then {
-	_nearests = [_object,_enemyTowns] Call cti_CO_FNC_SortByDistance;
+	_nearests = [_object,_enemyTowns] Call EZC_fnc_Functions_Common_SortByDistance;
 	if (_cvar != "") then {
 		for '_i' from 0 to count(_nearests)-1 do {
 			if ((_nearests select _i) getVariable _cvar) exitWith {_nearest = (_nearests select _i)};

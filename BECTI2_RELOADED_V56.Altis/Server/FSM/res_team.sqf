@@ -36,13 +36,13 @@ while{!_end}do{
 		_WestMHQ = (west) Call EZC_fnc_Functions_Common_GetSideHQ;
 		_EastMHQ = (east) Call EZC_fnc_Functions_Common_GetSideHQ;
 		_buildings = (_WestBaseStructures) + (_EastBaseStructures) + [_EastMHQ,_WestMHQ];
-		_near = [_barrack, _buildings] Call cti_CO_FNC_SortByDistance;
+		_near = [_barrack, _buildings] Call EZC_fnc_Functions_Common_SortByDistance;
 		_target = _near select 0;
 		[_inf_group, true, [[_target, 'SAD', 100, 60, "", []]]] Call cti_SE_FNC_AIWPAdd;
 	}else{
 		if (_orderComplete) then {
 			_orderComplete = false;
-			_destination = [leader _inf_group, [_barrack]] Call cti_CO_FNC_GetClosestEntity;
+			_destination = [leader _inf_group, [_barrack]] Call EZC_fnc_Functions_Common_GetClosestEntity;
 			[_inf_group,_destination,400] Call cti_SE_FNC_AIPatrol;
 		};
 	};

@@ -15,7 +15,7 @@ _sv = _town getVariable "supplyValue";
 //--- Make sure that the client is concerned by the capture either by capturing or having a town captured.
 if !(cti_Client_SideID in [_town_side_value,_town_side_value_new]) exitWith {};
 
-_side_captured = (_town_side_value_new) Call cti_CO_FNC_GetSideFromID;
+_side_captured = (_town_side_value_new) Call EZC_fnc_Functions_Common_GetSideFromID;
 
 //--- Color the town depending on the side which captured.
 _color = missionNamespace getVariable (Format ["cti_C_%1_COLOR", _side_captured]);
@@ -37,7 +37,7 @@ if (isNil '_task') then {_task = objNull};
 //--- Client side capture.
 if (_town_side_value_new == cti_Client_SideID) then {
 	//--- Retrieve the closest unit of the town.
-	_closest = [_town, (units group player) Call cti_CO_FNC_GetLiveUnits] Call cti_CO_FNC_GetClosestEntity;
+	_closest = [_town, (units group player) Call cti_CO_FNC_GetLiveUnits] Call EZC_fnc_Functions_Common_GetClosestEntity;
 	
 	//--- Client reward.
 	if !(isNull _closest) then {

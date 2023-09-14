@@ -131,7 +131,7 @@ class FSM
        "_westStructuresNames = missionNamespace getVariable ""cti_WESTSTRUCTURENAMES"";" \n
        "" \n
        "_hqCanMove = false;" \n
-       "_hqDeployAt = [_hq, startingLocations] Call cti_CO_FNC_GetClosestEntity;" \n
+       "_hqDeployAt = [_hq, startingLocations] Call EZC_fnc_Functions_Common_GetClosestEntity;" \n
        "_hqDeployRange = missionNamespace getVariable ""cti_C_STRUCTURES_HQ_RANGE_DEPLOYED"";" \n
        "_hqType = missionNamespace getVariable Format[""cti_%1HEADQUARTERSTYPE"",_sideText];" \n
        "" \n
@@ -421,7 +421,7 @@ class FSM
        "	if (count _pos < 1) then {_pos = [_pos,((missionNamespace getVariable 'cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED') select 0)+50] Call cti_CO_FNC_GetSafePlace};" \n
        "	if (count _pos < 1) then {_pos = getPos (_logik getVariable ""cti_startpos"")};" \n
        "	_dir = getDir _hq;" \n
-       "	_currency = (_side) Call cti_CO_FNC_GetSideSupply;" \n
+       "	_currency = (_side) Call EZC_fnc_Functions_Common_GetSideSupply;" \n
        "" \n
        "	//--- Ensure that we have the supply required to deploy the HQ." \n
        "	if (_currency >= (_costs select _hqType)) then {" \n
@@ -603,7 +603,7 @@ class FSM
        "" \n
        "//--- Check for construction etc." \n
        "for '_i' from 0 to count(_content)-1 do {" \n
-       "	_currency = (_side) Call cti_CO_FNC_GetSideSupply;" \n
+       "	_currency = (_side) Call EZC_fnc_Functions_Common_GetSideSupply;" \n
        "	_currentStructure = _content select _i;" \n
        "	_isInProgress = _baseInProgress select _i;" \n
        "	_isAlive = _baseAlive select _i;" \n

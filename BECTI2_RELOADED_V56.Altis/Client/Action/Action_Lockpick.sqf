@@ -17,7 +17,7 @@ if (isNil "cti_SK_V_LockpickChance") then {
 
 //if (vehicle player != player)exitWith {};
 
-_vehicle = [player,_vehicles] Call cti_CO_FNC_GetClosestEntity;
+_vehicle = [player,_vehicles] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 if (locked _vehicle == 0) exitWith {};
 

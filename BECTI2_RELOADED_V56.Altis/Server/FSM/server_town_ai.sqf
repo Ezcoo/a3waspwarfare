@@ -41,7 +41,7 @@ while {!cti_GameOver} do {
 
 		_town = towns select _i;
 		_sideID = _town getVariable "sideID";
-		_side = (_sideID) Call cti_CO_FNC_GetSideFromID;
+		_side = (_sideID) Call EZC_fnc_Functions_Common_GetSideFromID;
 
 		if(_sideID != cti_C_UNKNOWN_ID) then {
 

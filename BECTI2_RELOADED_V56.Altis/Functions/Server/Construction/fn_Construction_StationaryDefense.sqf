@@ -9,7 +9,7 @@ _isAIQuery = _this select 5;
 _manRange = if (count _this > 6) then {_this select 6} else {missionNamespace getVariable "cti_C_BASE_DEFENSE_MANNING_RANGE"};
 _sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
-_area = [_position,((_side) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity4;// hintsilent format ["%1",_area];
+_area = [_position,((_side) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity4;// hintsilent format ["%1",_area];
 _availweapons = _area getVariable "weapons";
 
 _defense = createVehicle [_type, _position, [], 0, "NONE"];

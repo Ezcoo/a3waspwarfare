@@ -30,7 +30,7 @@ _nearLogic = objNull;
 if ((missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 0) then {
 	//--- Grab the logic.
 	_nearLogic = _position nearEntities [["LocationArea_F"],15];
-	_nearLogic = [_position, _nearLogic] Call cti_CO_FNC_GetClosestEntity;
+	_nearLogic = [_position, _nearLogic] Call EZC_fnc_Functions_Common_GetClosestEntity;
 	
 	if (isNull _nearLogic) exitWith {};
 	
@@ -44,7 +44,7 @@ if ((missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 0) th
 } else {
 	//--- Grab the logic.
 	_nearLogic = _position nearEntities [["LocationArea_F"],15];
-	_nearLogic = [_position, _nearLogic] Call cti_CO_FNC_GetClosestEntity;
+	_nearLogic = [_position, _nearLogic] Call EZC_fnc_Functions_Common_GetClosestEntity;
 	
 	if (isNull _nearLogic) exitWith {};
 	

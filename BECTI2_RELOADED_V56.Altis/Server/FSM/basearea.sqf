@@ -50,7 +50,7 @@ while {!cti_GameOver} do {
 		_areas = _logik getVariable "cti_basearea";
 
 		{
-			_structure = [_x, _buildings] Call cti_CO_FNC_GetClosestEntity;
+			_structure = [_x, _buildings] Call EZC_fnc_Functions_Common_GetClosestEntity;
 			if (!isNull _structure) then {
 				if (_structure distance _x > (_brr + _mbr)) then {
 					//--- On deletion, remove the statics/defenses later.

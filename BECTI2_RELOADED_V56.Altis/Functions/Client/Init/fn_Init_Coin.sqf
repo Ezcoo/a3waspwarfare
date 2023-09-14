@@ -17,7 +17,7 @@ missionNamespace setVariable ["cti_C_STRUCTURES_PLACEMENT_METHOD",{
     _eside = if (side commanderTeam == west) then {east} else {west};
     _affected = ["Warfare_HQ_base_unfolded","Base_WarfareBBarracks","Base_WarfareBLightFactory","Base_WarfareBHeavyFactory",
                         "Base_WarfareBAircraftFactory","Base_WarfareBUAVterminal","Base_WarfareBVehicleServicePoint","BASE_WarfareBAntiAirRadar"];
-    _area = [_preview,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2;
+    _area = [_preview,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity2;
 
     if(_area getVariable 'avail' <= 0) then { _color = _colorRed };
     if (surfaceIsWater(position _preview)) then { _color = _colorRed };
@@ -26,7 +26,7 @@ missionNamespace setVariable ["cti_C_STRUCTURES_PLACEMENT_METHOD",{
         Private["_building","_sort","_strs","_lax","_lay"];
         _strs = ((position _preview) nearObjects ["House",25]) - [_preview];
         if (count _strs == 0) exitWith {};
-        _sort = [_preview,_strs] Call cti_CO_FNC_SortByDistance;
+        _sort = [_preview,_strs] Call EZC_fnc_Functions_Common_SortByDistance;
         _building = _sort select 0;
         _lax=((boundingBox _building) select 1) select 0;
         _lay=((boundingBox _building) select 1) select 1;
@@ -88,7 +88,7 @@ missionNamespace setVariable ["cti_C_STRUCTURES_PLACEMENT_METHOD",{
         if ((count _entities > 0) && {side _x != cti_Client_SideJoined} count _entities !=0) then {_color = _colorRed};
         _factories = nearestObjects[_preview,["Warfare_HQ_base_unfolded","WarfareBBaseStructure","Base_WarfareBContructionSite"],25];
         if (count _factories == 0) exitWith {};
-        _sorted = [_preview,_factories] Call cti_CO_FNC_SortByDistance;
+        _sorted = [_preview,_factories] Call EZC_fnc_Functions_Common_SortByDistance;
         _factory = _sorted select 0;
         _type=typeOf _factory;
         _lx=((boundingbox _factory) select 1) select 0;
@@ -137,7 +137,7 @@ missionNamespace setVariable ["cti_C_STRUCTURES_PLACEMENT_METHOD",{
         if ((count _entities > 0) && {side _x != cti_Client_SideJoined} count _entities !=0) then {_color = _colorRed};
         _factories = nearestObjects[_preview,["Warfare_HQ_base_unfolded","WarfareBBaseStructure","Base_WarfareBContructionSite"],25];
         if (count _factories == 0) exitWith {};
-        _sorted = [_preview,_factories] Call cti_CO_FNC_SortByDistance;
+        _sorted = [_preview,_factories] Call EZC_fnc_Functions_Common_SortByDistance;
         _factory = _sorted select 0;
         _type=typeOf _factory;
         _lx=((boundingbox _factory) select 1) select 0;
@@ -188,12 +188,12 @@ missionNamespace setVariable ["cti_C_STRUCTURES_PLACEMENT_METHOD",{
 	
 	};
 	
-    if (typeOf _preview == "Sign_Danger" && !isNull ([_preview,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2)) then {
+    if (typeOf _preview == "Sign_Danger" && !isNull ([_preview,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity2)) then {
         _color = _colorRed;
         hintsilent "Minefields are not allowed at base!";
     };
 	
-	 if (typeOf _preview == "Sign_DangerMines_ACR" && !isNull ([_preview,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2)) then {
+	 if (typeOf _preview == "Sign_DangerMines_ACR" && !isNull ([_preview,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity2)) then {
         _color = _colorRed;
         hintsilent "Minefields are not allowed at base!";
     };
@@ -209,9 +209,9 @@ missionNamespace setVariable ["cti_C_STRUCTURES_PLACEMENT_METHOD",{
 /*original
     if ((typeOf _preview) iskindOf "Warfare_HQ_base_unfolded") then {
         Private ["_town","_townside","_eArea"];
-        _town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+        _town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea) then {
                 _color = _colorRed;
@@ -226,7 +226,7 @@ missionNamespace setVariable ["cti_C_STRUCTURES_PLACEMENT_METHOD",{
 
 _builded_bunker = nearestObjects[_preview,_HIGHdistanceLIST,25];
 if (count _builded_bunker > 0) then {
-        _sorted = [_preview,_builded_bunker] Call cti_CO_FNC_SortByDistance;
+        _sorted = [_preview,_builded_bunker] Call EZC_fnc_Functions_Common_SortByDistance;
         _builded_bunker = _sorted select 0;
 };
  if ((typeOf _preview) iskindOf "Warfare_HQ_base_unfolded") then {
@@ -234,9 +234,9 @@ if (count _builded_bunker > 0) then {
         
 		//if(_preview distance _builded_bunker < 25) then {_color = _colorRed};
 		
-		_town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+		_town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea
 			||_preview distance _town < 30) then {
@@ -255,9 +255,9 @@ if (count _builded_bunker > 0) then {
 		
 		
 		
-        _town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+        _town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea
 			||_preview distance _town < 30) then {
@@ -276,9 +276,9 @@ if (count _builded_bunker > 0) then {
 		
 		
 		
-        _town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+        _town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea
 			||_preview distance _town < 30) then {
@@ -299,9 +299,9 @@ if (count _builded_bunker > 0) then {
 		
 		
 		
-        _town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+        _town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea
 			||_preview distance _town < 30) then {
@@ -324,9 +324,9 @@ if ((typeOf _preview) iskindOf "Base_WarfareBHeavyFactory") then {
 		
 		
 		
-        _town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+        _town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea
 			||_preview distance _town < 30) then {
@@ -345,9 +345,9 @@ if ((typeOf _preview) iskindOf "Base_WarfareBAircraftFactory") then {
         Private ["_town","_townside","_eArea"];
 		
 		
-        _town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+        _town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea
 			||_preview distance _town < 30) then {
@@ -366,9 +366,9 @@ if ((typeOf _preview) iskindOf "Base_WarfareBUAVterminal") then {
 		
 		
 		
-        _town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+        _town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea
 			||_preview distance _town < 30) then {
@@ -388,9 +388,9 @@ if ((typeOf _preview) iskindOf "Base_WarfareBVehicleServicePoint") then {
 		
 		
 		
-        _town = [_preview] Call cti_CO_FNC_GetClosestLocation;
-        _townside =  (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID;
-        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity3;
+        _town = [_preview] Call EZC_fnc_Functions_Common_GetClosestLocation;
+        _townside =  (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID;
+        _eArea = [_preview,((_eside) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity3;
         if!(isNil "_townside")then{
             if ((_preview distance _town < 600 && _townside != cti_Client_SideJoined) || !isNull _eArea
 			||_preview distance _town < 30) then {
@@ -446,7 +446,7 @@ if (typeOf _preview =="M2StaticMGPreview") then { _color = _colorGreen; };
 _coin setVariable ["BIS_COIN_areasize", _area];
 _coin setVariable ["BIS_COIN_fundsDescription",["$"]];
 if (_extra == "") then {
-	_coin setVariable ["BIS_COIN_funds",[(cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply, CallEZC_fnc_Functions_Client_GetPlayerFunds]];
+	_coin setVariable ["BIS_COIN_funds",[(cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply, CallEZC_fnc_Functions_Client_GetPlayerFunds]];
 	_coin setVariable ["BIS_COIN_fundsDescription",["S ","$ "]];
 };
 

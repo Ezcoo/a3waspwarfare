@@ -194,7 +194,7 @@ if (isServer) then {
 
         //--- Prepare the default defenses (if needed and if occupation or defender is present).
         if ((_town getVariable "sideID") != cti_C_UNKNOWN_ID && ((missionNamespace getVariable "cti_C_TOWNS_DEFENDER") > 0 || (missionNamespace getVariable "cti_C_TOWNS_OCCUPATION") > 0)) then {
-            [_town, (_town getVariable "sideID") Call cti_CO_FNC_GetSideFromID, -1] Spawn cti_SE_FNC_ManageTownDefenses;
+            [_town, (_town getVariable "sideID") Call EZC_fnc_Functions_Common_GetSideFromID, -1] Spawn cti_SE_FNC_ManageTownDefenses;
         };
     };
 

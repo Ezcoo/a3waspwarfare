@@ -32,7 +32,7 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 		_a = (_dir_to + (_angle*_i)) mod 360;
 		_nodes_a = _nodes_a + [[(_wp_dest select 0) + _distance_node * sin(_a),(_wp_dest select 1) + _distance_node * cos(_a)]];
 	};
-	_nodes_a = [_wp_origin, _nodes_a] Call cti_CO_FNC_SortByDistance;
+	_nodes_a = [_wp_origin, _nodes_a] Call EZC_fnc_Functions_Common_SortByDistance;
 	_max_hops = (missionNamespace getVariable "cti_C_AI_TOWN_ATTACK_HOPS_WP")-2;
 	
 	//--- First WP
@@ -60,7 +60,7 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 	for '_i' from 0 to _nodes-1 do {
 		if (_i >= _max_hops || random 100 < 50) exitWith {};
 		_nodes_a deleteAt 0;
-		_nodes_a = [_select, _nodes_a] Call cti_CO_FNC_SortByDistance;
+		_nodes_a = [_select, _nodes_a] Call EZC_fnc_Functions_Common_SortByDistance;
 		if !([_select, _nodes_a select 0, 10] Call cti_SE_FNC_AI_SetTownAttackPath_PathIsSafe) exitWith {};
 		_select = _nodes_a select 0;
 		_a_safe = [_select, _side, _town_assigned] Call cti_SE_FNC_AI_SetTownAttackPath_PosIsSafe;
@@ -78,7 +78,7 @@ _wp_sel = [];
 if (random 100 > 50) then {
 	Private ["_behaviour","_camps"];
 	_camps = _town_assigned getVariable "camps";
-	_camps = [_select, _camps] Call cti_CO_FNC_SortByDistance;
+	_camps = [_select, _camps] Call EZC_fnc_Functions_Common_SortByDistance;
 	_behaviour = ["AWARE","","VEE","NORMAL"];
 	{
 		_wp_sel pushBack [([_x, 10, 35] Call cti_CO_FNC_GetRandomPosition), 'SAD', 40, 20, [], [], _behaviour];

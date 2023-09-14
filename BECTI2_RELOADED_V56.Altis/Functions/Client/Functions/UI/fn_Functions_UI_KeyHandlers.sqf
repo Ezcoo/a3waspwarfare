@@ -83,7 +83,7 @@ CTI_UI_KeyHandler_SatelitteCamera_MouseButtonDown = {
 	switch (_button) do {
 		case 0: { //--- Left clicked
 			_position = screenToWorld [_coord_x, _coord_y];
-			_nearestObjects = [_position, _position nearEntities [["AllVehicles"], 40]] call CTI_CO_FNC_SortByDistance;
+			_nearestObjects = [_position, _position nearEntities [["AllVehicles"], 40]] call EZC_fnc_Functions_Common_SortByDistance;
 			
 			_swapto = objNull;
 			_groups = uiNamespace getVariable "cti_dialog_ui_satcam_groups";
@@ -171,7 +171,7 @@ CTI_UI_KeyHandler_UnitsCam_MouseButtonDown = {
 	switch (_button) do { 
 		case 0: { //--- Left clicked
 			_position = screenToWorld [_coord_x, _coord_y];
-			_nearestObjects = [_position, _position nearEntities [["AllVehicles"], 40]] call CTI_CO_FNC_SortByDistance;
+			_nearestObjects = [_position, _position nearEntities [["AllVehicles"], 40]] call EZC_fnc_Functions_Common_SortByDistance;
 			
 			_swapto = objNull;
 			_groups = uiNamespace getVariable "cti_dialog_ui_unitscam_groups";

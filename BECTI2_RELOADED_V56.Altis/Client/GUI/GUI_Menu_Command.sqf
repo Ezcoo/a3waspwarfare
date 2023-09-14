@@ -101,7 +101,7 @@ lbAdd[14025,"Default"];
 
 {
 	if (typeName _x == "OBJECT") then {
-		_nearTown = ([_x,towns] Call cti_CO_FNC_GetClosestEntity) getVariable 'name';
+		_nearTown = ([_x,towns] Call EZC_fnc_Functions_Common_GetClosestEntity) getVariable 'name';
 		_type = [typeOf _x, 'displayName'] Call cti_CO_FNC_GetConfigInfo;
 		_lbl = _type + ' ' + _nearTown + ' ' + str (round(player distance _x)) + 'M';
 		_structuresLbl = _structuresLbl + [_lbl];

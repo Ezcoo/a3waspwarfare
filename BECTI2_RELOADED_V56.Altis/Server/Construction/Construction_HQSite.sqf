@@ -53,7 +53,7 @@ if (!_deployed) then {
 	if ((missionNamespace getVariable "cti_C_BASE_AREA") > 0) then {
 		_update = true;
 		_areas = _logik getVariable "cti_basearea";
-		_near = [_position,_areas] Call cti_CO_FNC_GetClosestEntity;
+		_near = [_position,_areas] Call EZC_fnc_Functions_Common_GetClosestEntity;
 		if (!isNull _near) then {
 			if (_near distance _position < ((missionNamespace getVariable "cti_C_BASE_AREA_RANGE") + (missionNamespace getVariable "cti_C_BASE_HQ_BUILD_RANGE"))) then {_update = false};
 		};

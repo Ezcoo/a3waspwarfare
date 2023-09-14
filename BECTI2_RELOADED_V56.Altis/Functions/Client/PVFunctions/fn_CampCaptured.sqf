@@ -30,7 +30,7 @@ if (cti_Client_SideID == _sideID_new) then {
 		// if ((cti_Client_Team getVariable "cti_task_position") == _town) then {
 			Private ["_closest"];
 			//--- Get the closest unit from the player group near the camp.
-			_closest = [_camp, units group player] Call cti_CO_FNC_GetClosestEntity;
+			_closest = [_camp, units group player] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 			//--- If the closest unit is in range, then award the player's group.
 			if (_closest distance _camp < (missionNamespace getVariable "cti_C_CAMPS_RANGE")) then {
@@ -45,6 +45,6 @@ if (cti_Client_SideID == _sideID_new) then {
 } else {
 	//--- Did the client side lost a known camp?
 	if (cti_Client_SideID in [(_town getVariable "sideID"), _sideID_old]) then {
-		(_camp getVariable "cti_camp_marker") setMarkerColorLocal (missionNamespace getVariable Format ["cti_C_%1_COLOR",(_sideID_new) Call cti_CO_FNC_GetSideFromID]);
+		(_camp getVariable "cti_camp_marker") setMarkerColorLocal (missionNamespace getVariable Format ["cti_C_%1_COLOR",(_sideID_new) Call EZC_fnc_Functions_Common_GetSideFromID]);
 	};
 };

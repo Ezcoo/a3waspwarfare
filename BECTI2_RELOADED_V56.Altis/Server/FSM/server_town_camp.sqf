@@ -76,8 +76,8 @@ while {!cti_GameOver} do {
 					};
 				};
 				if(_captured)then{
-					_newSide = (_newSID) Call cti_CO_FNC_GetSideFromID;
-					_side = (_sideID) Call cti_CO_FNC_GetSideFromID;
+					_newSide = (_newSID) Call EZC_fnc_Functions_Common_GetSideFromID;
+					_side = (_sideID) Call EZC_fnc_Functions_Common_GetSideFromID;
 
 					if (_sideID != cti_C_UNKNOWN_ID) then {
 						if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side,"LostAt",["Strongpoint",_town]] Spawn cti_SE_FNC_SideMessage};

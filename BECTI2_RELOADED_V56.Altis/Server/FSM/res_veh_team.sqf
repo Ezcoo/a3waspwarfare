@@ -63,7 +63,7 @@ while{!_end}do{
 
     _nearTowns = [];
     _near = [];
-    _allSortedTownsByDistance = [getPosATL (leader _inf_group),towns] Call cti_CO_FNC_SortByDistance;
+    _allSortedTownsByDistance = [getPosATL (leader _inf_group),towns] Call EZC_fnc_Functions_Common_SortByDistance;
     for [{_i = 0},{_i < 4},{_i = _i + 1}] do { _near pushBack (_allSortedTownsByDistance select _i) };
 
     if (count _near > 0) then {

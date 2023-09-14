@@ -11,7 +11,7 @@ _lifter setVariable ["Attached",false];
 
 _vehicles = _lifter nearObjects ["LandVehicle", 15];
 if (count _vehicles < 1) exitWith {};
-_vehicle = [_lifter,_vehicles] Call CTI_CO_FNC_GetClosestEntity;
+_vehicle = [_lifter,_vehicles] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 
 _vehicle attachTo [_lifter,[0,0,-8.5]];

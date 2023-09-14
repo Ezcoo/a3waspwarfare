@@ -13,7 +13,7 @@ switch (missionNamespace getVariable "cti_C_TOWNS_STARTING_MODE") do {
 		_nearTownsW = [];
 		_nearTownsE = [];
 		
-		_near = [_wStart,towns] Call cti_CO_FNC_SortByDistance;
+		_near = [_wStart,towns] Call EZC_fnc_Functions_Common_SortByDistance;
 		if (count _near > 0) then {
 			for [{_z = 0},{_z < _half},{_z = _z + 1}] do {_nearTownsW pushBack (near select _z)};
 		};
@@ -41,12 +41,12 @@ switch (missionNamespace getVariable "cti_C_TOWNS_STARTING_MODE") do {
 		_nearTownsW = [];
 		_nearTownsE = [];
 		
-		_near = [_wStart,towns] Call cti_CO_FNC_SortByDistance;
+		_near = [_wStart,towns] Call EZC_fnc_Functions_Common_SortByDistance;
 		if (count _near > 0) then {
 			for [{_z = 0},{_z < _limit},{_z = _z + 1}] do {_nearTownsW pushBack (_near select _z)};
 		};
 		
-		_near = [_eStart,(towns - _nearTownsW)] Call cti_CO_FNC_SortByDistance;
+		_near = [_eStart,(towns - _nearTownsW)] Call EZC_fnc_Functions_Common_SortByDistance;
 		if (count _near > 0) then {
 			for [{_z = 0},{_z < _limit},{_z = _z + 1}] do {_nearTownsE pushBack (_near select _z)};
 		};

@@ -25,12 +25,12 @@ _track = [];
 		_logik = (_x) Call EZC_fnc_Functions_Common_GetSideLogic;
 		_hq = _logik getVariable "cti_hq";
 		_track_hq = _track_hq + [_hq];
-		_track = _track + ([_hq, (_x) Call EZC_fnc_Functions_Common_GetSideStructures] Call cti_CO_FNC_SortByDistance);
+		_track = _track + ([_hq, (_x) Call EZC_fnc_Functions_Common_GetSideStructures] Call EZC_fnc_Functions_Common_SortByDistance);
 	};
 } forEach ([west,east,resistance] - [_side]);
 
 _hq = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;
-_blist = [_hq] + _track_hq + ([_hq, (_side) Call EZC_fnc_Functions_Common_GetSideStructures] Call cti_CO_FNC_SortByDistance) + _track;
+_blist = [_hq] + _track_hq + ([_hq, (_side) Call EZC_fnc_Functions_Common_GetSideStructures] Call EZC_fnc_Functions_Common_SortByDistance) + _track;
 
 //--- Safety Pos.
 _hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;

@@ -7,7 +7,7 @@ Private ['_dammages','_skip','_vehicle','_vehicles','_z'];
 _vehicles = player nearEntities [["Car","Motorcycle","Tank","Ship","Air"],5];
 if (count _vehicles < 1) exitWith {};
 
-_vehicle = [player,_vehicles] Call cti_CO_FNC_GetClosestEntity;
+_vehicle = [player,_vehicles] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 _dammages = getDammage _vehicle;
 

@@ -11,13 +11,13 @@ _enemySide = sideEnemy;
 switch (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") do {
 	case 1: {
 		/* Classic Respawn */
-		_town = [_deathLoc] Call cti_CO_FNC_GetClosestLocation;
+		_town = [_deathLoc] Call EZC_fnc_Functions_Common_GetClosestLocation;
 		if !(isNull _town) then {
 			if (_town distance _deathLoc  < (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_RANGE")) then {
 				_camps = [_town,_side,true] Call cti_CO_FNC_GetFriendlyCamps;
 				if (count _camps > 0) then {
 					if (_respawnCampsRuleMode > 0) then {
-						_closestCamp = [_deathLoc,_camps] Call cti_CO_FNC_GetClosestEntity;
+						_closestCamp = [_deathLoc,_camps] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 						_enemySide = if (_side == west) then {[east]} else {[west]};
 						if (_respawnCampsRuleMode == 2) then {_enemySide pushBack (resistance)};

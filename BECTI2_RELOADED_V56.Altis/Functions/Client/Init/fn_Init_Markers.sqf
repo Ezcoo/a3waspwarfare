@@ -14,7 +14,7 @@ scriptName "Client\Init\Init_Markers.sqf";
 	//--- Determine the coloration method.
 	_townColor = missionNamespace getVariable "cti_C_UNKNOWN_COLOR";
 	if (_townSide == cti_Client_SideID) then {
-		_townColor = missionNamespace getVariable (Format ["cti_C_%1_COLOR",(_townSide) Call cti_CO_FNC_GetSideFromID]);
+		_townColor = missionNamespace getVariable (Format ["cti_C_%1_COLOR",(_townSide) Call EZC_fnc_Functions_Common_GetSideFromID]);
 	};
 
 	//--- Place a marker over the logic.
@@ -44,7 +44,7 @@ scriptName "Client\Init\Init_Markers.sqf";
 		// --- Determine the coloration method.
 		_campColor = missionNamespace getVariable "cti_C_UNKNOWN_COLOR";
 		if (_townSide == cti_Client_SideID) then {
-			_campColor = missionNamespace getVariable (Format ["cti_C_%1_COLOR",(_campSide) Call cti_CO_FNC_GetSideFromID]);
+			_campColor = missionNamespace getVariable (Format ["cti_C_%1_COLOR",(_campSide) Call EZC_fnc_Functions_Common_GetSideFromID]);
 		};
 
 		//--- Place a marker over the logic.

@@ -17,7 +17,7 @@ if (count _found > 0 && typeName _sort in ["OBJECT","POSITION"]) then {
 		{ if (_x distance _sort <= _distance) then { _temp pushBack _x } } forEach _found;
 		_found = _temp;
 	};
-	_found = [_sort, _found] call cti_CO_FNC_SortByDistance;
+	_found = [_sort, _found] call EZC_fnc_Functions_Common_SortByDistance;
 };
 
 _found

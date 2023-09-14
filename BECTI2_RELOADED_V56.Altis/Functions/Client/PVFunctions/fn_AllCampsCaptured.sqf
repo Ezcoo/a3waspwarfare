@@ -16,6 +16,6 @@ _side_new = _this select 2;
 if !(cti_Client_SideID in [_side_old,_side_new]) exitWith {};
 
 _camps = _town getVariable "camps";
-_color = missionNamespace getVariable (Format ["cti_C_%1_COLOR",(_side_new) Call cti_CO_FNC_GetSideFromID]);
+_color = missionNamespace getVariable (Format ["cti_C_%1_COLOR",(_side_new) Call EZC_fnc_Functions_Common_GetSideFromID]);
 
 {(_x getVariable "cti_camp_marker") setMarkerColorLocal _color} forEach _camps;

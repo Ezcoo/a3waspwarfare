@@ -1,6 +1,6 @@
 _location = _this select 0;
 _sideID = _this select 1;
-_side = (_sideID) Call cti_CO_FNC_GetSideFromID;
+_side = (_sideID) Call EZC_fnc_Functions_Common_GetSideFromID;
 
 _team_job = "patrol";
 _team_target = objNull;
@@ -44,7 +44,7 @@ while {!cti_GameOver || _team_alive} do {
 			};
 
 			//--- Get the closest location which is available to the patrol while excluding previously visited towns.
-			_team_target = [_location, towns - _towns_visited] Call cti_CO_FNC_GetClosestEntity;
+			_team_target = [_location, towns - _towns_visited] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 			//--- Tell our patrol to move to the depot.
 			[_team, getPos _team_target, 'MOVE', 25] Spawn EZC_fnc_Functions_Common_WaypointSimple;

@@ -37,10 +37,10 @@ _csp = objNull;
 _sp = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1SERVICEPOINTTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
 
 if (count _sp > 0) then {
-	//_csp = [vehicle player,_sp] Call cti_CO_FNC_GetClosestEntity;
+	//_csp = [vehicle player,_sp] Call EZC_fnc_Functions_Common_GetClosestEntity;
 //getConnectedUAVUnit player
-		_csp = [vehicle player,_sp] Call cti_CO_FNC_GetClosestEntity;
-		//_csp2 =[getConnectedUAVUnit player,_sp] Call cti_CO_FNC_GetClosestEntity;
+		_csp = [vehicle player,_sp] Call EZC_fnc_Functions_Common_GetClosestEntity;
+		//_csp2 =[getConnectedUAVUnit player,_sp] Call EZC_fnc_Functions_Common_GetClosestEntity;
 		
 //add UAV TO LIST
 _rangeGET=(missionNamespace getVariable "cti_C_UNITS_SUPPORT_RANGE");
@@ -91,7 +91,7 @@ _i = 0;
 	
 	//--- Service Point.
 	if (count _sp > 0) then {
-		_closestSP = [_x,_sp] Call cti_CO_FNC_GetClosestEntity;
+		_closestSP = [_x,_sp] Call EZC_fnc_Functions_Common_GetClosestEntity;
 		if !(isNull _closestSP) then {
 			if (_x distance _closestSP < (missionNamespace getVariable "cti_C_UNITS_SUPPORT_RANGE")) then {
 				_add = true;

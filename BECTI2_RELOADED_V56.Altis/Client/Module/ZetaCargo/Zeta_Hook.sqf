@@ -32,7 +32,7 @@ _vehicles=_vehicles1+_vehicles2+_vehicles3;
 
 if (count _vehicles < 1) exitWith {};
 
-_vehicle = [_lifter,_vehicles] Call CTI_CO_FNC_GetClosestEntity;
+_vehicle = [_lifter,_vehicles] Call EZC_fnc_Functions_Common_GetClosestEntity;
 
 if ((typeOf _vehicle in _ehq) && (!(alive _vehicle)) && (side _caller == WEST)) exitWith {hint "You can't airlift ennemy HQ wreck because someone thought it was a bit too much"};
 if ((typeOf _vehicle in _whq) && (!(alive _vehicle)) && (side _caller == EAST)) exitWith {hint "You can't airlift ennemy HQ wreck because someone thought it was a bit too much"};

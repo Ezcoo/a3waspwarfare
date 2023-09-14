@@ -107,7 +107,7 @@ while {true} do {
 		//SUPPLY
 		_textControl7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1355;
 		_textControl7 ctrlShow true;
-		_textControl7 ctrlSetTextColor [1, 0.8831, 0, 1];_textControl7 ctrlSetText Format ["%1",(cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply];
+		_textControl7 ctrlSetTextColor [1, 0.8831, 0, 1];_textControl7 ctrlSetText Format ["%1",(cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply];
 		_textControl8 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1357;
 		_textControl8 ctrlShow true;
 		_textControl8 ctrlSetTextColor [1, 0.6831, 0, 1];_textControl8 ctrlSetText Format ["+ %1", cti_Client_SideJoined Call cti_CO_FNC_GetTotalSupplyValue];

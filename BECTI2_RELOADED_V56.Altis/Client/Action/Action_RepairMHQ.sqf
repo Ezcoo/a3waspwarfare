@@ -9,7 +9,7 @@ if (alive _hq || (_hq distance _vehicle > 30)) exitWith {hint (localize "STR_WF_
 if (cti_Client_Logic getVariable "cti_hq_repairing") exitWith {hint (localize "STR_WF_INFO_Repair_MHQ_BeingRepaired")};
 
 _repairPrice = (missionNamespace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE') * (1+0.05*((cti_Client_Logic getVariable "cti_hq_repair_count")-1));
-_currency = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideSupply;
+_currency = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply;
 _currencySym = "S";
 if (_currency < _repairPrice) exitWith {hint Format [localize "STR_WF_INFO_Repair_MHQ_Funds",_currencySym,_repairPrice - _currency]};
 
