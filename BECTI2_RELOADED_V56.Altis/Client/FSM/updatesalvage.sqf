@@ -33,7 +33,7 @@ while {!cti_GameOver || !(alive _vehicle)} do {
 				};
 		
 				_overAllCost = _overAllCost + _salvageCost;
-				(Format [localize 'STR_WF_CHAT_Salvaged_Unit',_salvageCost,[typeOf _x,'displayName'] Call cti_CO_FNC_GetConfigInfo]) Call EZC_fnc_Functions_Client_GroupChatMessage;
+				(Format [localize 'STR_WF_CHAT_Salvaged_Unit',_salvageCost,[typeOf _x,'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo]) Call EZC_fnc_Functions_Client_GroupChatMessage;
 		
 				deleteVehicle _x;
 			};

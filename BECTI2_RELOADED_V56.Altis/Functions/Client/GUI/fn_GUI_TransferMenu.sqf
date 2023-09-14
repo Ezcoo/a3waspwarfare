@@ -17,7 +17,7 @@ cti_MenuAction = -1;
 while {alive player && dialog} do {
 	if (cti_MenuAction == 2) then {cti_MenuAction = -1; _update_slider = true};
 
-	_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+	_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 
 	if (time - _last_update > 1) then {
 		_last_update = time;
@@ -47,13 +47,13 @@ while {alive player && dialog} do {
 					if (_selected != group player) then {
 						hint parseText format [localize "STR_WF_INFO_Funds_Sent", _funds_transfering, name leader _selected];
 						-(_funds_transfering) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-						[_selected, _funds_transfering] Call cti_CO_FNC_ChangeTeamFunds;
+						[_selected, _funds_transfering] Call EZC_fnc_Functions_Common_ChangeTeamFunds;
 						if (isPlayer leader _selected) then {
 								['FundsTransfer',_funds_transfering,name player] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", leader _selected];
 								
 								["INFORMATION", Format ["Player %1 has sent cash to player %2).", name player, name leader _selected]] Call EZC_fnc_Functions_Common_LogContent;
 						};
-						_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+						_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 						_last_update = -1;
 					} else {
 						hint parseText localize "STR_WF_INFO_Funds_Self";

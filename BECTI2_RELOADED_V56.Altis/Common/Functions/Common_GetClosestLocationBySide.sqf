@@ -4,7 +4,7 @@ _object = _this select 0;
 _side = _this select 1;
 _cvar = if (count _this > 2) then {_this select 2} else {""};
 
-_enemyTowns = towns - ((_side) Call cti_CO_FNC_GetSideTowns);
+_enemyTowns = towns - ((_side) Call EZC_fnc_Functions_Common_GetSideTowns);
 _nearest = objNull;
 
 if (count _enemyTowns > 0) then {

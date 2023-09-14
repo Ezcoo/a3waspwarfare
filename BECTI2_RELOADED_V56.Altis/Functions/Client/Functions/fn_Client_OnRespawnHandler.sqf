@@ -21,7 +21,7 @@ if (_typeof in (missionNamespace getVariable Format ["cti_%1AMBULANCES",cti_Clie
 	if (_spawn emptyPositions "cargo" > 0 && (locked _spawn in [0, 1])) then {_unit moveInCargo _spawn;_spawnInside = true};
 };
 
-if !(_spawnInside) then {_unit setPos ([getPos _spawn,10,20] Call cti_CO_FNC_GetRandomPosition)};
+if !(_spawnInside) then {_unit setPos ([getPos _spawn,10,20] Call EZC_fnc_Functions_Common_GetRandomPosition)};
 
 //--Disable fatigue--
 if ((missionNamespace getVariable "cti_C_GAMEPLAY_FATIGUE_ENABLED") == 0) then {_unit enableFatigue false;};
@@ -53,7 +53,7 @@ if (!isNil 'cti_P_CurrentGear' && !cti_RespawnDefaultGear && _allowCustom) then 
 			};
 
 			//--- Charge if possible.
-			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+			_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 			if (_funds >= _price && _charge) then {
 				-(_price) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 				(Format[localize 'STR_WF_CHAT_Gear_RespawnCharge',_price]) Call EZC_fnc_Functions_Client_GroupChatMessage;

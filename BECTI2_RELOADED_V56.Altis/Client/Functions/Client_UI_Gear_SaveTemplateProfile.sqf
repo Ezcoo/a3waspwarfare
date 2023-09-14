@@ -8,7 +8,7 @@ _profile_templates = [];
 
 _templates = missionNamespace getVariable Format ["cti_%1_Template", cti_Client_SideJoinedText];
 _side_equipment = missionNamespace getVariable Format ["cti_%1_All", cti_Client_SideJoinedText];
-_upgrades = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades;
+_upgrades = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 
 _upgrade_barracks = _upgrades select cti_UP_BARRACKS;
 _upgrade_gear = _upgrades select cti_UP_GEAR;

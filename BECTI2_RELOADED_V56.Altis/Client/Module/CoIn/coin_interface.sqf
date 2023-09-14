@@ -223,7 +223,7 @@ BIS_CONTROL_CAM_Handler = {
 		if ((_key in (actionKeys "BuldTurbo")) && count lastBuilt > 0) then {
 			_deployed = true;
 			if (cti_COIN_Root == "HQ") then {_deployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus};
-			_currentCash = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+			_currentCash = call EZC_fnc_Functions_Client_GetPlayerFunds;
 			if (_currentCash > (lastBuilt select 2) select 1 && _deployed) then {
 				showCommandingMenu '';
 				_logic setVariable ["BIS_COIN_params",lastBuilt];
@@ -263,7 +263,7 @@ BIS_CONTROL_CAM_Handler = {
 							_get = _area getVariable 'avail';
 
 							if (!isNull _area && _get < missionNamespace getVariable "cti_C_BASE_AV_STRUCTURES") then {
-							_commanderTeam =(cti_Client_SideJoined) Call cti_CO_FNC_GetCommanderTeam;
+							_commanderTeam =(cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 							_area setVariable [ "avail" ,_get +1];
 							hintSilent parseText format ["Available Items : " +"<t color='#00FF00'>"+" %1"+"</t>", _area getVariable 'avail'];
 							['Available', _area getVariable 'avail'] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", leader commanderTeam];
@@ -460,10 +460,10 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 			_funds = _logic getVariable "BIS_COIN_funds";
 			if (typename _funds == "ARRAY") then {
 				_a = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply;
-				_b = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+				_b = call EZC_fnc_Functions_Client_GetPlayerFunds;
 				_funds = [_a]+[_b];
 			} else {
-				_funds = [CallEZC_fnc_Functions_Client_GetPlayerFunds];
+				_funds = [call EZC_fnc_Functions_Client_GetPlayerFunds];
 			};
 			_itemFunds = _funds select _itemcash;
 			_itemname = if (count _params > 3) then {_params select 3} else {getText (configFile >> "CfgVehicles" >> _itemclass >> "displayName")};
@@ -514,7 +514,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 					[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call EZC_fnc_Init_Init_Coin;
 
 					_structuresCosts = missionNamespace getVariable Format["cti_%1STRUCTURECOSTS",cti_Client_SideJoinedText];
-					[cti_Client_SideJoined,-(_structuresCosts select _index)] Call cti_CO_FNC_ChangeSideSupply;
+					[cti_Client_SideJoined,-(_structuresCosts select _index)] Call EZC_fnc_Functions_Common_ChangeSideSupply;
 
 					startLoadingScreen [localize "str_coin_exit" + " " + localize "str_coin_name","RscDisplayLoadMission"];
 
@@ -573,7 +573,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 				if (_itemclass in _greenList && _index != -1) then {
 					_distance = (missionNamespace getVariable Format ["cti_%1STRUCTUREDISTANCES",cti_Client_SideJoinedText]) select _index;
 					_direction = (missionNamespace getVariable Format ["cti_%1STRUCTUREDIRECTIONS",cti_Client_SideJoinedText]) select _index;
-					_npos = [getPos _preview,_distance,getDir _preview + _direction] Call cti_CO_FNC_GetPositionFrom;
+					_npos = [getPos _preview,_distance,getDir _preview + _direction] Call EZC_fnc_Functions_Common_GetPositionFrom;
 					_helper = "Sign_Danger" createVehicleLocal _npos;
 					_helper setPos _npos;
 					_helper setDir (_direction+65);
@@ -592,7 +592,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 				if (_itemclass in _greenList && _index != -1) then {
 					_distance = (missionNamespace getVariable Format ["cti_%1STRUCTUREDISTANCES",cti_Client_SideJoinedText]) select _index;
 					_direction = (missionNamespace getVariable Format ["cti_%1STRUCTUREDIRECTIONS",cti_Client_SideJoinedText]) select _index;
-					_npos = [getPos _preview,_distance,getDir _preview + _direction] Call cti_CO_FNC_GetPositionFrom;
+					_npos = [getPos _preview,_distance,getDir _preview + _direction] Call EZC_fnc_Functions_Common_GetPositionFrom;
 					_helper = "Sign_Danger" createVehicleLocal _npos;
 					_helper setPos _npos;
 					_helper setDir (_direction+65);
@@ -738,7 +738,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 					_index = _structures find _itemclass;
 					if (_index != -1) then {
 						_price = _costs select _index;
-						[cti_Client_SideJoined, -_price] Call cti_CO_FNC_ChangeSideSupply;
+						[cti_Client_SideJoined, -_price] Call EZC_fnc_Functions_Common_ChangeSideSupply;
 
 						if (_index == 0) then {
 							_hqDeployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;
@@ -784,7 +784,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 						_area = [_pos,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity2;
 						_get = _area getVariable 'avail';
 						if (!isNull _area && _get > 0) then {
-							_commanderTeam =(cti_Client_SideJoined) Call cti_CO_FNC_GetCommanderTeam;
+							_commanderTeam =(cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 							_area setVariable [ "avail" ,_get -1];
 							//hintSilent parseText format ["Available Items : " +"<t color='#00FF00'>"+" %1"+"</t>", _area getVariable 'avail'];
 							[_area getVariable 'avail'] remoteExecCall ["EZC_fnc_PVFunctions_Available",leader _commanderTeam];
@@ -955,10 +955,10 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 		_funds = _logic getVariable "BIS_COIN_funds";
 		if (typename _funds == "ARRAY") then {
 			_a = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply;
-			_b = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+			_b = call EZC_fnc_Functions_Client_GetPlayerFunds;
 			_funds = [_a]+[_b];
 		} else {
-			_funds = [CallEZC_fnc_Functions_Client_GetPlayerFunds];
+			_funds = [call EZC_fnc_Functions_Client_GetPlayerFunds];
 		};
 		_fundsDescription = _logic getVariable "BIS_COIN_fundsDescription";
 		_cashValues = [];
@@ -991,7 +991,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 
 
 		//--- Ammo Upgrade.
-			_upgrades = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades;
+			_upgrades = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 			if (_upgrades select cti_UP_AMMOCOIN < 1) then {_categories = _categories - [localize 'STR_WF_Ammo']};
 
 //--- Defense Upgrades.

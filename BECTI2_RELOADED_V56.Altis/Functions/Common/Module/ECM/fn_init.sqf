@@ -40,8 +40,8 @@ ECM_SYNC_AREA_UNITS=[];
 ECM_SYNC_AREA_VEHICLES=[];
 OUTSIDE_SYNC_ECM_AREA_VEHICLES=[];
 
-cti_CO_FNC_HandleIncomingMissileECM = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissileECM.sqf";
-cti_CO_FNC_HandleIncomingMissile = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissile.sqf";
+EZC_fnc_Module_Common_HandleIncomingMissileECM = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissileECM.sqf";
+EZC_fnc_Module_Common_HandleIncomingMissile = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissile.sqf";
 cti_CO_FNC_HandleDamage_Object = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleDamageObject.sqf";
 
 cti_CO_MDL_ECM_FNC_preInitECM_Object = Compile preprocessFileLineNumbers "Functions\Common_preInit_ECMObject.sqf";

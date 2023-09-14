@@ -1,13 +1,13 @@
 private["_lastCommanderTeam","_changeCommander","_timer"];
 
-commanderTeam = (cti_Client_SideJoined) Call cti_CO_FNC_GetCommanderTeam;
+commanderTeam = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 
 _lastCommanderTeam = commanderTeam;
 _changeCommander = false;
 
 while {!cti_GameOver} do {
 	
-	commanderTeam = (cti_Client_SideJoined) Call cti_CO_FNC_GetCommanderTeam;
+	commanderTeam = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 	if (IsNull commanderTeam && !IsNull _lastCommanderTeam) then {_changeCommander = true};
 	if (!IsNull commanderTeam && IsNull _lastCommanderTeam) then {_changeCommander = true};
 	if (!isNull commanderTeam && !isNull _lastCommanderTeam) then {
@@ -44,13 +44,13 @@ while {!cti_GameOver} do {
 				};
 				HQAction = leader(group player) addAction [localize "STR_WF_BuildMenu","Client\Action\Action_Build.sqf", [_MHQ], 1000, false, true, "", "hqInRange && canBuildWHQ && (_target == player)"];
 				Bulldozer = leader(group player) addAction ["<t color='#504315'>" + ('Bulldozer') + "</t>","Client\Action\Action_Bulldozer.sqf", [_MHQ], 995, false, true, "", "hqInRange && canBuildWHQ && (_target == player)"];
-				//BuyHQ = leader(group player) addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1, false, true, "", "(!(alive ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ)))&&(leader  (cti_Client_SideJoined call cti_CO_FNC_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];
+				//BuyHQ = leader(group player) addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1, false, true, "", "(!(alive ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ)))&&(leader  (cti_Client_SideJoined call EZC_fnc_Functions_Common_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];
 
 				
 				
 				[Localize "STR_WF_CHAT_PlayerCommander"] Call EZC_fnc_Functions_Client_TitleTextMessage;
 				["INFORMATION", Format ["Player %1 has become a new commander in %2 team).", name player, side player]] Call EZC_fnc_Functions_Common_LogContent;
-				//player addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1001, false, true, "", "(!(alive ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ)))&&(leader  (cti_Client_SideJoined call cti_CO_FNC_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];
+				//player addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1001, false, true, "", "(!(alive ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ)))&&(leader  (cti_Client_SideJoined call EZC_fnc_Functions_Common_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];
 			} else {
 				if (!isNil "HQAction") then {player removeAction HQAction};
 				if (!isNil "Bulldozer") then {player removeAction Bulldozer};

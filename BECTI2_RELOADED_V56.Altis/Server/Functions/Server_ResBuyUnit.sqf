@@ -26,7 +26,7 @@ _factoryType = (missionNamespace getVariable Format ["cti_%1STRUCTURES",_sideTex
 
 _waitTime = (missionNamespace getVariable _unitType) select QUERYUNITTIME;
 _direction = (missionNamespace getVariable Format["cti_%1STRUCTUREDIRECTIONS",str _side]) select _index;
-_position = [getPos _building,_distance,getDir _building + _direction] Call cti_CO_FNC_GetPositionFrom;
+_position = [getPos _building,_distance,getDir _building + _direction] Call EZC_fnc_Functions_Common_GetPositionFrom;
 _longest = missionNamespace getVariable Format ["cti_LONGEST%1BUILDTIME",_factoryType];
 
 if !(alive _building) exitWith {["INFORMATION", Format ["Server_ResBuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call EZC_fnc_Functions_Common_LogContent
@@ -44,7 +44,7 @@ if (_unitType isKindOf "Man") then {
 
 		[_side, _unitType, _position, _team, _dir] Call cti_SE_FNC_DelegateAIHeadless;
 	}else{
-	    _soldier = [_unitType,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+	    _soldier = [_unitType,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
         //--- Infantry can use the team vehicles as cargo.
         _vehicle = [_team,true] Call cti_CO_FNC_GetTeamVehicles;
         {_team addVehicle _x} forEach _vehicle;
@@ -71,14 +71,14 @@ if (_unitType isKindOf "Man") then {
 		if (_unitType isKindOf "Air") then {_crew = missionNamespace getVariable Format ["cti_%1RESPILOT",_sideText]};
 
         _special = if (_unitType isKindOf "Air") then {"FLY"} else {"NONE"};
-        _vehicle = [_unitType, _position, _sideID, _dir, true, true, true, _special] Call cti_CO_FNC_CreateVehicle;
+        _vehicle = [_unitType, _position, _sideID, _dir, true, true, true, _special] Call EZC_fnc_Functions_Common_CreateVehicle;
 
         /* Clear the vehicle */
-        (_vehicle) call cti_CO_FNC_ClearVehicleCargo;
+        (_vehicle) call EZC_fnc_Functions_Common_ClearVehicleCargo;
 
         emptyQueu pushBack _vehicle;
         [_vehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
-        _soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+        _soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
         _soldier  spawn {_this allowDamage false; sleep 10; _this allowDamage true};
         [_soldier] allowGetIn true;
         [_soldier] orderGetIn true;
@@ -87,7 +87,7 @@ if (_unitType isKindOf "Man") then {
 
         _built = 1;
         if (_vehiSlots select 1) then {
-            _soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+            _soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
             _soldier  spawn {_this allowDamage false; sleep 10; _this allowDamage true};
             [_soldier] allowGetIn true;
             [_soldier] orderGetIn true;
@@ -96,7 +96,7 @@ if (_unitType isKindOf "Man") then {
             _built = _built + 1;
         };
         if (_vehiSlots select 2) then {
-            _soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+            _soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
             _soldier  spawn {_this allowDamage false; sleep 10; _this allowDamage true};
             [_soldier] allowGetIn true;
             [_soldier] orderGetIn true;
@@ -112,7 +112,7 @@ if (_unitType isKindOf "Man") then {
             if(_additionalSlotsAmount > 0)then{
                 for "_i" from 0 to _additionalSlotsAmount - 1 do {
                     if (isNull (_vehicle turretUnit (_turrets select _i))) then {
-                        _soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+                        _soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
                         [_soldier] allowGetIn true;
                         _soldier moveInTurret [_vehicle, (_turrets select _i)];
                         _built = _built + 1;
@@ -121,7 +121,7 @@ if (_unitType isKindOf "Man") then {
             } else {
                 {
                     if (isNull (_vehicle turretUnit _x)) then {
-                        _soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+                        _soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
                         [_soldier] allowGetIn true;
                         _soldier moveInTurret [_vehicle, _x];
                         _built = _built + 1;

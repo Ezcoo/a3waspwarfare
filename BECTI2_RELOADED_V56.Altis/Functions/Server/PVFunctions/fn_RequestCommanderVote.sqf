@@ -7,7 +7,7 @@ _logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 if ((_logik getVariable "cti_votetime") <= 0) then {
 	_team = -1;
-	_commanderTeam = (_side) Call cti_CO_FNC_GetCommanderTeam;
+	_commanderTeam = (_side) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 
 	if (!isNull _commanderTeam) then {
 		_team = (_logik getVariable "cti_teams") find _commanderTeam;

@@ -13,7 +13,7 @@ _currency = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply;
 _currencySym = "S";
 if (_currency < _repairPrice) exitWith {hint Format [localize "STR_WF_INFO_Repair_MHQ_Funds",_currencySym,_repairPrice - _currency]};
 
-[cti_Client_SideJoined,-_repairPrice] Call cti_CO_FNC_ChangeSideSupply;
+[cti_Client_SideJoined,-_repairPrice] Call EZC_fnc_Functions_Common_ChangeSideSupply;
 
 
 [cti_Client_SideJoined] remoteExecCall ["cti_SE_PVF_RequestMHQRepair",2];

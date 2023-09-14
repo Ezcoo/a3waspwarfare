@@ -12,11 +12,11 @@ while {!cti_GameOver} do {
 			_side = _x;
 			_hq = (_x) Call EZC_fnc_Functions_Common_GetSideHQ;
 			_structures = (_x) Call EZC_fnc_Functions_Common_GetSideStructures;
-			_towns = (_x) Call cti_CO_FNC_GetTownsHeld;
+			_towns = (_x) Call EZC_fnc_Functions_Common_GetTownsHeld;
 	
 			_factories = 0;
 			{
-				_factories = _factories + count([_side,missionNamespace getVariable Format ["cti_%1%2TYPE",_side,_x], _structures] Call cti_CO_FNC_GetFactories);
+				_factories = _factories + count([_side,missionNamespace getVariable Format ["cti_%1%2TYPE",_side,_x], _structures] Call EZC_fnc_Functions_Common_GetFactories);
 			} forEach ["BARRACKS","LIGHT","HEAVY","AIRCRAFT"];
 
 			if (!(alive _hq)  && _factories == 0 || _towns == _total && !cti_GameOver) then {

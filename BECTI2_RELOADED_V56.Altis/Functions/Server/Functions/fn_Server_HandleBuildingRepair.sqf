@@ -64,7 +64,7 @@ while {true} do {
 						_site addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call cti_SE_FNC_BuildingHandleDamages}];
 					
 					Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn cti_SE_FNC_BuildingKilled}];",_type];
-						[_side, -round((_buildingsCosts select _index)/2)] Call cti_CO_FNC_ChangeSideSupply;
+						[_side, -round((_buildingsCosts select _index)/2)] Call EZC_fnc_Functions_Common_ChangeSideSupply;
 					
 				};
 				

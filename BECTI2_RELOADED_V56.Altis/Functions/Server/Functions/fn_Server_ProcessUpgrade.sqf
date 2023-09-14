@@ -37,7 +37,7 @@ if (_upgrade_isplayer) then {
 	sleep _upgrade_time;
 };
 
-_upgrades = +(_side Call cti_CO_FNC_GetSideUpgrades);
+_upgrades = +(_side Call EZC_fnc_Functions_Common_GetSideUpgrades);
 _upgrades set [_upgrade_id, (_upgrades select _upgrade_id) + 1];
 
 _logic = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;

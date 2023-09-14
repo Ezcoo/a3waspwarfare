@@ -224,7 +224,7 @@ setTerrainGrid 1;//nobody want see flying stones, so now we play all with max te
 //--- Position the client on the temp spawn (Common is not yet init'd so we call is straigh away).
 player setPos ([getMarkerPos Format["%1TempRespawnMarker",cti_Client_SideJoinedText],1,10] call EZC_fnc_Functions_Common_GetRandomPosition);
 //now localized in init_common (mapmarkerfix)
-//cti_CL_FNC_GetStructureMarkerLabel = Compile preprocessFile "Client\Functions\Client_GetStructureMarkerLabel.sqf";
+//EZC_fnc_Functions_Client_GetStructureMarkerLabel = Compile preprocessFile "Client\Functions\Client_GetStructureMarkerLabel.sqf";
 
 //ofps ucam
 //call compile preprocessFile "Client\Functions\UI\Functions_UI_KeyHandlers.sqf";
@@ -539,7 +539,7 @@ if (time < 30) then {
 ["INITIALIZATION", Format["Init_Client.sqf: Client spawn location has been determined at [%1].", _base]] Call EZC_fnc_Functions_Common_LogContent;
 
 /* Position the client at the previously defined location */
-player setPos ([_base,20,30] Call cti_CO_FNC_GetRandomPosition);
+player setPos ([_base,20,30] Call EZC_fnc_Functions_Common_GetRandomPosition);
 
 /* HQ Building Init. */
 waitUntil {!isNil {cti_Client_Logic getVariable "cti_hq_deployed"}};

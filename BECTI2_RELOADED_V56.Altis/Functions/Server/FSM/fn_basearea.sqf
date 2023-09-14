@@ -42,10 +42,10 @@ while {!cti_GameOver} do {
 		_side = _x;
 		_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 		_buildings = (_side Call EZC_fnc_Functions_Common_GetSideStructures) + [_side Call EZC_fnc_Functions_Common_GetSideHQ];
-		_command=[_side,missionNamespace getVariable Format["cti_%1COMMANDCENTERTYPE",str _side],_buildings] Call cti_CO_FNC_GetFactories;
-		_service=[_side,missionNamespace getVariable Format["cti_%1SERVICEPOINTTYPE",str _side],_buildings] Call cti_CO_FNC_GetFactories;
-		_aar = [_side,missionNamespace getVariable Format["cti_%1AARADARTYPE",str _side],_buildings] Call cti_CO_FNC_GetFactories;
-		_arr = [_side,missionNamespace getVariable Format["cti_%1ArtyRadarTYPE",str _side],_buildings] Call cti_CO_FNC_GetFactories;
+		_command=[_side,missionNamespace getVariable Format["cti_%1COMMANDCENTERTYPE",str _side],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
+		_service=[_side,missionNamespace getVariable Format["cti_%1SERVICEPOINTTYPE",str _side],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
+		_aar = [_side,missionNamespace getVariable Format["cti_%1AARADARTYPE",str _side],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
+		_arr = [_side,missionNamespace getVariable Format["cti_%1ArtyRadarTYPE",str _side],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 		_buildings = _buildings - _command - _service - _aar - _arr;
 		_areas = _logik getVariable "cti_basearea";
 

@@ -12,7 +12,7 @@ if (isNil {missionNamespace getVariable Format ["cti_%1UAV",cti_Client_SideJoine
 if ((missionNamespace getVariable Format ["cti_%1UAV",cti_Client_SideJoinedText]) == "") exitWith {};
 
 _buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
-_checks = [cti_Client_SideJoined,missionNamespace getVariable Format ["cti_%1COMMANDCENTERTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
+_checks = [cti_Client_SideJoined,missionNamespace getVariable Format ["cti_%1COMMANDCENTERTYPE",cti_Client_SideJoinedText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 _closest = objNull;
 if (count _checks > 0) then { _closest = [player,_checks] Call EZC_fnc_Functions_Common_GetClosestEntity; };
 
@@ -26,7 +26,7 @@ Call Compile Format ["_uav addEventHandler ['Killed',{[_this select 0,_this sele
 removeAllWeapons _uav;
 
 _group = createGroup [cti_Client_SideJoined, true];
-_driver = [missionNamespace getVariable Format ["cti_%1SOLDIER",cti_Client_SideJoinedText],_group,getPos _uav,cti_Client_SideID] Call cti_CO_FNC_CreateUnit;
+_driver = [missionNamespace getVariable Format ["cti_%1SOLDIER",cti_Client_SideJoinedText],_group,getPos _uav,cti_Client_SideID] Call EZC_fnc_Functions_Common_CreateUnit;
 _driver moveInDriver _uav;
 
 //--- Disable targetting.
@@ -35,7 +35,7 @@ _driver moveInDriver _uav;
 _built = 1;
 //--- OPFOR Uav has no gunner slot.
 if (cti_Client_SideJoined == west) then {
-	_gunner = [missionNamespace getVariable Format ["cti_%1SOLDIER",cti_Client_SideJoinedText],_group,getPos _uav,cti_Client_SideID] Call cti_CO_FNC_CreateUnit;
+	_gunner = [missionNamespace getVariable Format ["cti_%1SOLDIER",cti_Client_SideJoinedText],_group,getPos _uav,cti_Client_SideID] Call EZC_fnc_Functions_Common_CreateUnit;
 	_gunner MoveInGunner _uav;
 	_built = _built + 1;
 };

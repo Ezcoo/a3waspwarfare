@@ -337,7 +337,7 @@ emptyQueu = [];
 		_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
 		//--- HQ init.
-		_hq = [missionNamespace getVariable Format["cti_%1MHQNAME", _side], [1,1,1], _sideID, getDir _pos, true, false, true] Call cti_CO_FNC_CreateVehicle;
+		_hq = [missionNamespace getVariable Format["cti_%1MHQNAME", _side], [1,1,1], _sideID, getDir _pos, true, false, true] Call EZC_fnc_Functions_Common_CreateVehicle;
 		
 		_hq  spawn {_this allowDamage false; sleep 10; _this allowDamage true};
 		_hq setPos (getPos _pos);
@@ -425,10 +425,10 @@ emptyQueu = [];
 
 		//--- Starting vehicles.
 		{
-			_pos = [getPosATL _hq, 60] call cti_CO_FNC_GetSafePlace;
-			_vehicle = [_x, _pos, _sideID, 0, false] Call cti_CO_FNC_CreateVehicle;
+			_pos = [getPosATL _hq, 60] call EZC_fnc_Functions_Common_GetSafePlace;
+			_vehicle = [_x, _pos, _sideID, 0, false] Call EZC_fnc_Functions_Common_CreateVehicle;
 			_vehicle setVariable ["cti_Taxi_Prohib", true];
-			(_vehicle) call cti_CO_FNC_ClearVehicleCargo;
+			(_vehicle) call EZC_fnc_Functions_Common_ClearVehicleCargo;
 			emptyQueu pushback _vehicle;
 			[_vehicle] spawn cti_SE_FNC_HandleEmptyVehicle;
 		} forEach (missionNamespace getVariable Format ['cti_%1STARTINGVEHICLES', _side]);
@@ -438,8 +438,8 @@ emptyQueu = [];
 			case west: {
 				call _wasptmpFun;
 				_tVeh = WEST_StartVeh select floor(random (count WEST_StartVeh));
-				_pos = [getPosATL _hq, 60] call cti_CO_FNC_GetSafePlace;
-				_vehicle = [_tVeh,_pos, west, 0, false] Call cti_CO_FNC_CreateVehicle;
+				_pos = [getPosATL _hq, 60] call EZC_fnc_Functions_Common_GetSafePlace;
+				_vehicle = [_tVeh,_pos, west, 0, false] Call EZC_fnc_Functions_Common_CreateVehicle;
 				_vehicle setVariable ["cti_Taxi_Prohib", true];
 				clearWeaponCargoGlobal _vehicle;
 				clearMagazineCargoGlobal _vehicle;
@@ -454,8 +454,8 @@ emptyQueu = [];
 			case east:{
 				call _wasptmpFun;
 				_tVeh = EAST_StartVeh select floor(random (count EAST_StartVeh));
-				_pos = [getPosATL _hq, 60] call cti_CO_FNC_GetSafePlace;
-				_vehicle = [_tVeh, _pos, east, 0, false] Call cti_CO_FNC_CreateVehicle;
+				_pos = [getPosATL _hq, 60] call EZC_fnc_Functions_Common_GetSafePlace;
+				_vehicle = [_tVeh, _pos, east, 0, false] Call EZC_fnc_Functions_Common_CreateVehicle;
 				_vehicle setVariable ["cti_Taxi_Prohib", true];
 				clearWeaponCargoGlobal _vehicle;
 				clearMagazineCargoGlobal _vehicle;

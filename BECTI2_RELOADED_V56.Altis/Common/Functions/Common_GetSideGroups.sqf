@@ -1,7 +1,7 @@
 /*
   # HEADER #
 	Script: 		Common\Functions\Common_GetSideGroups.sqf
-	Alias:			CTI_CO_FNC_GetSideGroups
+	Alias:			EZC_fnc_Functions_Common_GetSideGroups
 	Description:	Return all CTI Groups of a side
 	Author: 		Benny
 	Creation Date:	18-09-2013
@@ -14,13 +14,13 @@
 	[Array]: The current CTI Groups
 	
   # SYNTAX #
-	(SIDE) call CTI_CO_FNC_GetSideGroups
+	(SIDE) call EZC_fnc_Functions_Common_GetSideGroups
 	
   # DEPENDENCIES #
 	Common Function: EZC_fnc_Functions_Common_GetSideLogic
 	
   # EXAMPLE #
-    _groups = (West) call CTI_CO_FNC_GetSideGroups
+    _groups = (West) call EZC_fnc_Functions_Common_GetSideGroups
 	  -> Return the west CTI Groups
 */
 

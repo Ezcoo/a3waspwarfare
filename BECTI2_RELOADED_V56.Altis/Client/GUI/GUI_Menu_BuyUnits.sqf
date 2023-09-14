@@ -103,7 +103,7 @@ while {alive player && dialog} do {
 			_currentCost = _currentCost + ((missionNamespace getVariable "CTI_C_UNITS_CREW_COST") * _extra);
 		};
 		if ((_currentRow) != -1) then {
-			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+			_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 			_skip = false;
 			if (_funds < _currentCost) then {
 			    _skip = true;
@@ -116,9 +116,9 @@ while {alive player && dialog} do {
 				if (_totalCamps != _campsSide) then {_skip = true; hint parseText(localize 'STR_WF_INFO_Camps_Purchase')};
 			};
 			if !(_skip) then {
-				_size = Count ((Units (group player)) Call CTI_CO_FNC_GetLiveUnits);
+				_size = Count ((Units (group player)) Call EZC_fnc_Functions_Common_GetLiveUnits);
 				//--- Get the infantry limit based off the infantry upgrade.
-				_realSize = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CTI_UP_BARRACKS;
+				_realSize = ((CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select CTI_UP_BARRACKS;
 				switch (_realSize) do {
 					case 0: {_realSize = round(_mbu / 3)};
 					case 1: {_realSize = round(_mbu / 4)*2};
@@ -190,7 +190,7 @@ while {alive player && dialog} do {
 	if (WF_MenuAction == 401) then {WF_MenuAction = -1;_isLocked = if (_isLocked) then {false} else {true};_updateDetails = true};
 	
 	//--- Player funds.
-	ctrlSetText [12019,Format [localize 'STR_WF_UNITS_Cash',CallEZC_fnc_Functions_Client_GetPlayerFunds]];
+	ctrlSetText [12019,Format [localize 'STR_WF_UNITS_Cash',call EZC_fnc_Functions_Client_GetPlayerFunds]];
 	
 	//--- Update tabs.
 	if (_update) then {
@@ -240,7 +240,7 @@ while {alive player && dialog} do {
 			//--- Factories
 			default {
 				_buildings = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
-				_factories = [CTI_Client_SideJoined,missionNamespace getVariable Format ['CTI_%1%2TYPE',CTI_Client_SideJoinedText,_type],_buildings] Call CTI_CO_FNC_GetFactories;
+				_factories = [CTI_Client_SideJoined,missionNamespace getVariable Format ['CTI_%1%2TYPE',CTI_Client_SideJoinedText,_type],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 				_sorted = [vehicle player,_factories] Call EZC_fnc_Functions_Common_SortByDistance;
 				_closest = _sorted select 0;
 				_countAlive = count _factories;
@@ -426,7 +426,7 @@ while {alive player && dialog} do {
 					if (_findAt == -1) then {
 						_classMags pushBack _x;
 						_classMagsAmount pushBack 1;
-						_MagsLabel pushBack ([_x,'displayName','CfgMagazines'] Call CTI_CO_FNC_GetConfigInfo);
+						_MagsLabel pushBack ([_x,'displayName','CfgMagazines'] Call EZC_fnc_Functions_Common_GetConfigInfo);
 					} else {
 						_classMagsAmount set [_findAt, (_classMagsAmount select _findAt) + 1];
 					};
@@ -437,7 +437,7 @@ while {alive player && dialog} do {
 				_txtta = "";
 				
 				for [{_i = 0},{_i < count _weapons},{_i = _i + 1}] do {
-					_txttg = _txttg + "<t color='#eee58b' shadow='2'>" + ([(_weapons select _i),'displayName','CfgWeapons'] Call CTI_CO_FNC_GetConfigInfo) + "</t>";
+					_txttg = _txttg + "<t color='#eee58b' shadow='2'>" + ([(_weapons select _i),'displayName','CfgWeapons'] Call EZC_fnc_Functions_Common_GetConfigInfo) + "</t>";
 					
 					if ((_i+1) < count _weapons) then {_txttg = _txttg + "<t color='#D3A119' shadow='2'>,</t> "}; 
 				};
@@ -641,7 +641,7 @@ if !(_isInfantry) then {
 	if (_lastCheck > 2 && _type != 'Depot' && _type != 'Airport') then {
 		_lastCheck = 0;
 		_buildings = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
-		_factories = [CTI_Client_SideJoined,missionNamespace getVariable Format ['CTI_%1%2TYPE',CTI_Client_SideJoinedText,_type],_buildings] Call CTI_CO_FNC_GetFactories;
+		_factories = [CTI_Client_SideJoined,missionNamespace getVariable Format ['CTI_%1%2TYPE',CTI_Client_SideJoinedText,_type],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 		if (count _factories != _countAlive) then {_updateList = true};
 	};
 	

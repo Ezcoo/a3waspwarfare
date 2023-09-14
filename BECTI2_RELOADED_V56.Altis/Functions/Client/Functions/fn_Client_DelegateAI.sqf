@@ -22,7 +22,7 @@ _special = if(count _this > 5) then{_this select 5};
 sleep (random 1); //--- Delay a bit to prevent a bandwidth congestion.
 
 if(isNil '_special')then{
-    [_side, _unitType, _position, _team, _dir] call cti_CO_FNC_CreateUnitsForResBases;
+    [_side, _unitType, _position, _team, _dir] call EZC_fnc_Functions_Common_CreateUnitsForResBases;
 } else {
-    [_side, _unitType, _position, _team, _dir, _special] call cti_CO_FNC_CreateUnitsForResBases;
+    [_side, _unitType, _position, _team, _dir, _special] call EZC_fnc_Functions_Common_CreateUnitsForResBases;
 };

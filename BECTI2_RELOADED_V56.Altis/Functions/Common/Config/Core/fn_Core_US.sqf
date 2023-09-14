@@ -1453,7 +1453,7 @@ for '_z' from 0 to (count _c)-1 do {
 	if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {
 		_get = missionNamespace getVariable (_c select _z);
 		if (isNil '_get') then {
-			if ((_i select _z) select 0 == '') then {(_i select _z) set [0, [_c select _z,'displayName'] Call cti_CO_FNC_GetConfigInfo]};
+			if ((_i select _z) select 0 == '') then {(_i select _z) set [0, [_c select _z,'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo]};
 			if (typeName ((_i select _z) select 4) == 'SCALAR') then {
 				if (((_i select _z) select 4) == -2) then {
 					_ret = (_c select _z) Call Compile preprocessFile "Common\Functions\Common_GetConfigVehicleCrewSlot.sqf";
@@ -1463,7 +1463,7 @@ for '_z' from 0 to (count _c)-1 do {
 			};
 			if (WF_Debug) then {(_i select _z) set [3,1]};
 			_p = if ((_c select _z) isKindOf 'Man') then {'portrait'} else {'picture'};
-			(_i select _z) set [1, [_c select _z,_p] Call cti_CO_FNC_GetConfigInfo];
+			(_i select _z) set [1, [_c select _z,_p] Call EZC_fnc_Functions_Common_GetConfigInfo];
 			missionNamespace setVariable [_c select _z, _i select _z];
 		};
 	} else {

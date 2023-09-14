@@ -27,7 +27,7 @@ if !(isNil '_bd') then {
 };
 
 //--- Get the units and the air vehicle, exit if nil.
-_currentUpgrades = (_side) Call cti_CO_FNC_GetSideUpgrades;
+_currentUpgrades = (_side) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 _currentLevel = _currentUpgrades select cti_UP_PARATROOPERS;
 _units = missionNamespace getVariable Format ["cti_%1PARACHUTELEVEL%2", str _side, _currentLevel];
 _vehicle_model = missionNamespace getVariable Format ["cti_%1PARACARGO", str _side];
@@ -57,7 +57,7 @@ for '_i' from 1 to _vehicle_count do {
 	_vehicles pushBack _vehicle;
 	
 	//--- Spawn the pilot.
-	_pilot = [_vehicle_pilot, _grp, [100,12000,0], _sideID] Call cti_CO_FNC_CreateUnit;
+	_pilot = [_vehicle_pilot, _grp, [100,12000,0], _sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 	_pilot moveInDriver _vehicle;
 	_pilot doMove _destination;
 	_grp setBehaviour 'CARELESS';
@@ -79,7 +79,7 @@ _paratroopers = [];
 {
     if (_built_inf <= _vehicle_cargo) then {
         //--- Spawn the unit.
-        _unit = [_x, _grp, [100,12000,0], _sideID] Call cti_CO_FNC_CreateUnit;
+        _unit = [_x, _grp, [100,12000,0], _sideID] Call EZC_fnc_Functions_Common_CreateUnit;
         _unit moveInCargo _vehicle;
         _built_inf = _built_inf + 1;
         _paratroopers pushBack _unit;

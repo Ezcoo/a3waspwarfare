@@ -8,7 +8,7 @@ _hq = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;
 _position = getPos _hq;
 _direction = getDir _hq;
 
-_commanderTeam = (_side) Call cti_CO_FNC_GetCommanderTeam;
+_commanderTeam = (_side) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 _logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 if !(isNull _commanderTeam) then {
 	if (isPlayer (leader _commanderTeam)) then {
@@ -18,7 +18,7 @@ if !(isNull _commanderTeam) then {
 
 _logik setVariable ['cti_hq_repairing',true, true];
 
-_MHQ = [missionNamespace getVariable Format["cti_%1MHQNAME", _sideText], _position, _sideID, _direction, true, false] Call cti_CO_FNC_CreateVehicle;
+_MHQ = [missionNamespace getVariable Format["cti_%1MHQNAME", _sideText], _position, _sideID, _direction, true, false] Call EZC_fnc_Functions_Common_CreateVehicle;
 _MHQ setVariable ["cti_Taxi_Prohib", true];
 _MHQ setVariable ["cti_trashed", false];
 _MHQ setVariable ["cti_side", _side];
@@ -39,7 +39,7 @@ _logik setVariable ['cti_hq_deployed', false, true];
 _logik setVariable ['cti_hq_repairing',false, true];
 _logik setVariable ['cti_hq_repair_count', (_logik getVariable "cti_hq_repair_count") + 1, true];
 
- _commanderTeam = (_side) Call cti_CO_FNC_GetCommanderTeam;
+ _commanderTeam = (_side) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 ['auto-wall-constructing-changed', _MHQ] remoteExecCall ["EZC_fnc_PVFunctions_SetMHQLock", leader _commanderTeam];
 	
 [_side,"Mobilized", ["Base", _MHQ]] Spawn cti_SE_FNC_SideMessage;

@@ -33,7 +33,7 @@
 			if (side player != cti_Client_SideJoined) exitWith {closeDialog 0};
 			if !(dialog) exitWith {};
 			
-			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+			_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 			
 			//--- Income System.			
 			_currentPercent = floor(sliderPosition 23010);
@@ -119,7 +119,7 @@
 									_supplyB = (missionNamespace getVariable Format ["cti_%1STRUCTURECOSTS",cti_Client_SideJoinedText]) select _id;
 									_supplyB = round((_supplyB * (missionNamespace getVariable "cti_C_STRUCTURES_SALE_PERCENT")) / 100);
 								
-									[cti_Client_SideJoined, _supplyB] Call cti_CO_FNC_ChangeSideSupply;
+									[cti_Client_SideJoined, _supplyB] Call EZC_fnc_Functions_Common_ChangeSideSupply;
 								};
 								
 								//--- Inform the side.

@@ -236,7 +236,7 @@ class FSM
     class Commander_Check
     {
       name = "Commander_Check";
-      init = /*%FSM<STATEINIT""">*/"_commander = (_side) Call cti_CO_FNC_GetCommanderTeam;" \n
+      init = /*%FSM<STATEINIT""">*/"_commander = (_side) Call EZC_fnc_Functions_Common_GetCommanderTeam;" \n
        "" \n
        "_lastUpdate = time;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -353,12 +353,12 @@ class FSM
     {
       name = "Spawn___Lead";
       init = /*%FSM<STATEINIT""">*/"if !(alive(driver _hq)) then {" \n
-       "	_HQDriver = [_crew,(createGroup [_side, true]),getPos _hq,_sideID] Call cti_CO_FNC_CreateUnit;" \n
+       "	_HQDriver = [_crew,(createGroup [_side, true]),getPos _hq,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;" \n
        "	[_HQDriver] allowGetIn true;" \n
        "	_HQDriver moveInDriver _hq;" \n
        "	_HQDriver assignAsDriver _hq;" \n
        "	[_HQDriver] orderGetIn true;" \n
-       "	_HQDriver doMove ([GetPos _hqDeployAt,10,20] Call cti_CO_FNC_GetRandomPosition);" \n
+       "	_HQDriver doMove ([GetPos _hqDeployAt,10,20] Call EZC_fnc_Functions_Common_GetRandomPosition);" \n
        "};" \n
        "" \n
        "if (alive(driver _hq)) then {" \n
@@ -372,7 +372,7 @@ class FSM
        "	if (_lastHQMoveOrder > 40) then {" \n
        "		_lastHQMoveOrder = 0;" \n
        "		[_hq, getPos _hq, 50] Call cti_CO_FNC_PlaceSafe;" \n
-       "		(driver _hq) doMove ([GetPos _hqDeployAt,10,20] Call cti_CO_FNC_GetRandomPosition);" \n
+       "		(driver _hq) doMove ([GetPos _hqDeployAt,10,20] Call EZC_fnc_Functions_Common_GetRandomPosition);" \n
        "	};" \n
        "" \n
        "	_lastHQMovePos = getPos _hq;" \n
@@ -417,8 +417,8 @@ class FSM
        "" \n
        "	_pos = getPos _hq;" \n
        "	_pos set [2,0];" \n
-       "	_pos = [_pos,((missionNamespace getVariable 'cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED') select 0)+20] Call cti_CO_FNC_GetSafePlace;" \n
-       "	if (count _pos < 1) then {_pos = [_pos,((missionNamespace getVariable 'cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED') select 0)+50] Call cti_CO_FNC_GetSafePlace};" \n
+       "	_pos = [_pos,((missionNamespace getVariable 'cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED') select 0)+20] Call EZC_fnc_Functions_Common_GetSafePlace;" \n
+       "	if (count _pos < 1) then {_pos = [_pos,((missionNamespace getVariable 'cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED') select 0)+50] Call EZC_fnc_Functions_Common_GetSafePlace};" \n
        "	if (count _pos < 1) then {_pos = getPos (_logik getVariable ""cti_startpos"")};" \n
        "	_dir = getDir _hq;" \n
        "	_currency = (_side) Call EZC_fnc_Functions_Common_GetSideSupply;" \n
@@ -426,7 +426,7 @@ class FSM
        "	//--- Ensure that we have the supply required to deploy the HQ." \n
        "	if (_currency >= (_costs select _hqType)) then {" \n
        "		[(_names select _hqType),_side,_pos,_dir] spawn cti_SE_FNC_Server_Construction_HQSite;" \n
-       "		[_side, -(_costs select _hqType)] Call cti_CO_FNC_ChangeSideSupply;" \n
+       "		[_side, -(_costs select _hqType)] Call EZC_fnc_Functions_Common_ChangeSideSupply;" \n
        "		if (_isStartingFSM) then {_isStartingFSM = false};" \n
        "	};" \n
        "" \n
@@ -568,12 +568,12 @@ class FSM
        "_buildings = (_side) Call EZC_fnc_Functions_Common_GetSideStructures;" \n
        "" \n
        "//--- Get the buildings close of the HQ by type (repair if downed)." \n
-       "_barracks = ['BARRACKSTYPE',_buildings,750,_side,_hq] Call cti_CO_FNC_BuildingInRange;" \n
-       "_light = ['LIGHTTYPE',_buildings,750,_side,_hq] Call cti_CO_FNC_BuildingInRange;" \n
-       "_heavy = ['HEAVYTYPE',_buildings,750,_side,_hq] Call cti_CO_FNC_BuildingInRange;" \n
-       "_air = ['AIRCRAFTTYPE',_buildings,750,_side,_hq] Call cti_CO_FNC_BuildingInRange;" \n
-       "_servicePoint = ['SERVICEPOINTTYPE',_buildings,750,_side,_hq] Call cti_CO_FNC_BuildingInRange;" \n
-       "_commandCenter = ['COMMANDCENTERTYPE',_buildings,750,_side,_hq] Call cti_CO_FNC_BuildingInRange;" \n
+       "_barracks = ['BARRACKSTYPE',_buildings,750,_side,_hq] Call EZC_fnc_Functions_Common_BuildingInRange;" \n
+       "_light = ['LIGHTTYPE',_buildings,750,_side,_hq] Call EZC_fnc_Functions_Common_BuildingInRange;" \n
+       "_heavy = ['HEAVYTYPE',_buildings,750,_side,_hq] Call EZC_fnc_Functions_Common_BuildingInRange;" \n
+       "_air = ['AIRCRAFTTYPE',_buildings,750,_side,_hq] Call EZC_fnc_Functions_Common_BuildingInRange;" \n
+       "_servicePoint = ['SERVICEPOINTTYPE',_buildings,750,_side,_hq] Call EZC_fnc_Functions_Common_BuildingInRange;" \n
+       "_commandCenter = ['COMMANDCENTERTYPE',_buildings,750,_side,_hq] Call EZC_fnc_Functions_Common_BuildingInRange;" \n
        "" \n
        "//--- Get the building in progress." \n
        "_contentInProgress = [objNull,objNull,objNull,objNull,objNull,objNull];" \n
@@ -594,7 +594,7 @@ class FSM
        "} forEach _nearLogics;" \n
        "" \n
        "//--- Is there a CC at least." \n
-       "_check = [_side, missionNamespace getVariable Format [""cti_%1COMMANDCENTERTYPE"",_sideText],_buildings] Call cti_CO_FNC_GetFactories;" \n
+       "_check = [_side, missionNamespace getVariable Format [""cti_%1COMMANDCENTERTYPE"",_sideText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;" \n
        "_ccAvailable = if (count _check == 0) then {false} else {true};" \n
        "" \n
        "_content = [_barracks,_light,_commandCenter,_heavy,_air,_servicePoint];" \n
@@ -655,7 +655,7 @@ class FSM
        "				_max = 100;" \n
        "				while {true} do {" \n
        "					_newPos = [_pos,30,_max,10,0,50,0] Call BIS_fnc_findSafePos;" \n
-       "					_aiSpawnPos = [_newPos,_baseDistances select _i,_baseDirections select _i] Call cti_CO_FNC_GetPositionFrom;" \n
+       "					_aiSpawnPos = [_newPos,_baseDistances select _i,_baseDirections select _i] Call EZC_fnc_Functions_Common_GetPositionFrom;" \n
        "					_aiSpawnPos set [2,0];" \n
        "					_roads = _newPos nearRoads 30;" \n
        "					_roads2 = _aiSpawnPos nearRoads 30;" \n
@@ -691,7 +691,7 @@ class FSM
        "				};" \n
        "				" \n
        "				" \n
-       "				[_side, -_cost] Call cti_CO_FNC_ChangeSideSupply;" \n
+       "				[_side, -_cost] Call EZC_fnc_Functions_Common_ChangeSideSupply;" \n
        "				_baseInProgress set [_i, true];" \n
        "				_baseTimerCheck set [_i, time];" \n
        "				" \n

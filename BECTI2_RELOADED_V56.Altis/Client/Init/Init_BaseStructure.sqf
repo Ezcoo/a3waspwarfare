@@ -35,7 +35,7 @@ if (local player) then {
 	if (_hq) then {_type = "b_hq"};
 	_marker setMarkerTypeLocal _type;
 	_text = "HQ";
-	if (!_hq) then {_text = [_structure, _side] Call cti_CL_FNC_GetStructureMarkerLabel;_marker setMarkerSizeLocal [0.5,0.5]};
+	if (!_hq) then {_text = [_structure, _side] Call EZC_fnc_Functions_Client_GetStructureMarkerLabel;_marker setMarkerSizeLocal [0.5,0.5]};
 	if!(isNil '_text')then{
 	if (_text != "") then {_marker setMarkerTextLocal _text};
 	};

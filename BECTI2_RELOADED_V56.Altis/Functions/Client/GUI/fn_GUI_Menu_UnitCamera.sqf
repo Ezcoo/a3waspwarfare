@@ -12,7 +12,7 @@ lbSetCurSel[21002,_id];
 _currentUnit = (player) Call cti_CO_FNC_GetUnitVehicle;
 _currentMode = "Internal";
 _currentUnit switchCamera _currentMode;
-_units = (Units (group player) - [player]) Call cti_CO_FNC_GetLiveUnits;
+_units = (Units (group player) - [player]) Call EZC_fnc_Functions_Common_GetLiveUnits;
 {lbAdd[21004,Format["(%1) %2",getText (configFile >> "CfgVehicles" >> (typeOf (vehicle _x)) >> "displayName"),name _x]];_n = _n + 1} forEach _units;
 
 //--Don't check difficultyEnabled. Use three cam modes every time.--
@@ -53,7 +53,7 @@ while {true} do {
 		_selected = leader (cti_Client_Teams select (lbCurSel 21002));
 		_currentUnit = (_selected) Call cti_CO_FNC_GetUnitVehicle;
 		_n = 0;
-		_units = (Units (group _selected) - [_selected]) Call cti_CO_FNC_GetLiveUnits;
+		_units = (Units (group _selected) - [_selected]) Call EZC_fnc_Functions_Common_GetLiveUnits;
 		lbClear 21004;
 		{lbAdd[21004,Format["(%1) %2",GetText (configFile >> "CfgVehicles" >> (typeOf (vehicle _x)) >> "displayName"),name _x]];_n = _n + 1} forEach _units;
 		_cameraSwap = true;

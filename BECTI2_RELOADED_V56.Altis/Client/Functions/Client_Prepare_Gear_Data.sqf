@@ -9,10 +9,10 @@ private["_Side", "_Question", "_SideNum", "_Upgrades", "_PublicArray", "_PublicA
 _Side			= _this select 0;		// Player Side or String "All"
 _Question		= _this select 1;		// Gear Data Type
 
-_Upgrades = ((cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades) select cti_UP_GEAR;
+_Upgrades = ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select cti_UP_GEAR;
 
 //_Upgrades		= if (side Player == west) then {Public_UpgradesBF} else {Public_UpgradesOF};	// Upgrades Data
-//_upgrade_level = ((cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades) select cti_UP_GEAR;
+//_upgrade_level = ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select cti_UP_GEAR;
 //_PublicArray	= _Upgrades select 1;									// Public Upgrades
 _PublicIndex	= [];													// Public Upgrades Array only Names
 _NewGearData	= [];													// New Gear Data By Upgraded Level

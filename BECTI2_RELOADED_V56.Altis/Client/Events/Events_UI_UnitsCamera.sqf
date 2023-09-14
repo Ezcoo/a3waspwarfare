@@ -3,7 +3,7 @@ _action = _this select 0;
 true call CTI_CL_FNC_UpdateBaseVariables;
 switch (_action) do {
 	case "onLoad": {
-		_groups = (cti_Client_SideJoined) call CTI_CO_FNC_GetSideGroups;
+		_groups = (cti_Client_SideJoined) call EZC_fnc_Functions_Common_GetSideGroups;
 		
 		
 		
@@ -48,7 +48,7 @@ switch (_action) do {
 		
 		
 		
-		_groups = (cti_Client_SideJoined) call CTI_CO_FNC_GetSideGroups;
+		_groups = (cti_Client_SideJoined) call EZC_fnc_Functions_Common_GetSideGroups;
 		uiNamespace setVariable ["cti_dialog_ui_unitscam_groups", _groups];
 		
 		
@@ -118,7 +118,7 @@ switch (_action) do {
 		
 		/*no satelite key needed
 		//--- Sat cam available?
-		_upgrades = (cti_Client_SideJoined) call CTI_CO_FNC_GetSideUpgrades;
+		_upgrades = (cti_Client_SideJoined) call EZC_fnc_Functions_Common_GetSideUpgrades;
 		_enable = [false, true] select (CTI_Base_SatelliteInRange && _upgrades select CTI_UPGRADE_SATELLITE > 0);
 		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180014) ctrlEnable (if ((CTI_Base_SatelliteInRange && _upgrades select CTI_UPGRADE_SATELLITE > 0)) then {true} else {false});
 		if (_enable) then {((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180014) ctrlSetPosition [SafeZoneX + (SafeZoneW * 0.31), SafeZoneY + (SafeZoneH * 0.95), SafeZoneW * 0.14, SafeZoneH * 0.04]; ((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180014) ctrlCommit 0};
@@ -160,7 +160,7 @@ switch (_action) do {
 		if (isNil '_origin') then { _origin = objNull };
 		
 		//--- Load the AI Members
-		_ais = (units _group - [leader _group]) call CTI_CO_FNC_GetLiveUnits;
+		_ais = (units _group - [leader _group]) call EZC_fnc_Functions_Common_GetLiveUnits;
 		
 		uiNamespace setVariable ["cti_dialog_ui_unitscam_groups_ai", _ais];
 		{
@@ -274,7 +274,7 @@ switch (_action) do {
 		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180013) ctrlSetText _mode;
 	};
 	case "onSatelliteCameraJump": {
-		_upgrades = (cti_Client_SideJoined) call CTI_CO_FNC_GetSideUpgrades;		
+		_upgrades = (cti_Client_SideJoined) call EZC_fnc_Functions_Common_GetSideUpgrades;		
 		_track = uiNamespace getVariable "cti_dialog_ui_unitscam_focus";
 		if !(isNil '_track') then {
 			if (alive _track) then {
@@ -313,16 +313,16 @@ switch (_action) do {
 				_dropPoint = (_vehicle call CTI_CL_FNC_MarkParadropLocation);
 				if (!isNil "_dropPoint" && _vehicle == vehicle _this && alive _this) then {
 					_price = _this call CTI_UI_UnitsCam_CalculatePodCost;
-					if (callEZC_fnc_Functions_Client_GetPlayerFunds >= _price) then {
+					if (call EZC_fnc_Functions_Client_GetPlayerFunds >= _price) then {
 						{
 							_x setVariable ["cti_last_pos", [(_dropPoint) select 0, (_dropPoint) select 1, 0], true];
-							_x setVariable ["cti_last_town", _dropPoint call CTI_CO_FNC_GetClosestTown, true];
+							_x setVariable ["cti_last_town", _dropPoint call EZC_fnc_Functions_Common_GetClosestLocation, true];
 						} forEach crew vehicle _this;
 						
 						
-						[group player, - _price] call CTI_CO_FNC_ChangeFunds;
+						[group player, - _price] call EZC_fnc_Functions_Client_ChangePlayerFunds;
 						if (local _vehicle) then {
-							[_vehicle, _dropPoint] spawn CTI_CO_FNC_ParadropVehicle;
+							[_vehicle, _dropPoint] spawn EZC_fnc_Support_Support_ParaVehicles;
 						} else {
 							[_vehicle, _dropPoint] remoteExec ["CTI_PVF_CO_RequestParadropVehicle", _vehicle];
 						};

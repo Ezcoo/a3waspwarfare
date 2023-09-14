@@ -162,7 +162,7 @@ _artyINrange=[];
 _shortrange_in_range=[];
 };
 
-_UpArtytime = ((west) Call CTI_CO_FNC_GetSideUpgrades) select cti_UP_ARTYTIMEOUT;
+_UpArtytime = ((west) Call EZC_fnc_Functions_Common_GetSideUpgrades) select cti_UP_ARTYTIMEOUT;
 
 //systemChat str _UpArtytime;
 

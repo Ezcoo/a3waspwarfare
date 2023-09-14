@@ -243,8 +243,6 @@ if (isHostedServer || (!isHeadLessClient && !isDedicated)) then {
 
 missionNamespace setVariable ["cti_MAXPLAYERS", WF_MAXPLAYERS];
 missionNamespace setVariable ["cti_MISSIONNAME", WF_MISSIONNAME];
-EZC_fnc_Functions_Common_LogContent
- = Compile preprocessFileLineNumbers "Common\Functions\Common_LogContent.sqf"; //--- Define the log function earlier.
 cti_LogLevel = 0; //--- Logging level (0: Trivial, 1: Information, 2: Warnnings, 3: Errors).
 
 //--- Mission is starting.
@@ -262,11 +260,8 @@ if (isHeadLessClient) then {["INITIALIZATION", "initJIPCompatible.sqf: Detected 
 
 //--- Server JIP Information
 if ((isHostedServer || isDedicated) && !isHeadLessClient) then { //--- JIP Handler, handle connection & disconnection.
-	cti_SE_FNC_OnPlayerConnected = Compile preprocessFileLineNumbers "Server\Functions\Server_OnPlayerConnected.sqf";
-	cti_SE_FNC_OnPlayerDisconnected = Compile preprocessFileLineNumbers "Server\Functions\Server_OnPlayerDisconnected.sqf";
-
-	onPlayerConnected {[_uid, _name, _id] Spawn cti_SE_FNC_OnPlayerConnected};
-	onPlayerDisconnected {[_uid, _name, _id] Spawn cti_SE_FNC_OnPlayerDisconnected};
+	onPlayerConnected {[_uid, _name, _id] Spawn EZC_fnc_Functions_Server_OnPlayerConnected};
+	onPlayerDisconnected {[_uid, _name, _id] Spawn EZC_fnc_Functions_Server_OnPlayerDisconnected};
 };
 
 //--- Client initialization, either hosted or pure client. Part I
@@ -289,10 +284,10 @@ townInitServer = false;
 townInit = false;
 towns = [];
 
-if (isMultiplayer) then {Call Compile preprocessFileLineNumbers "Common\Init\Init_Parameters.sqf"}; //--- In MP, we get the parameters.
+if (isMultiplayer) then {Call EZC_fnc_Init_Init_Parameters}; //--- In MP, we get the parameters.
 cti_Parameters_Ready = true; //--- All parameters are set and ready.
 
-Call Compile preprocessFileLineNumbers "Common\Init\Init_CommonConstants.sqf"; //--- Set the constants and the parameters, skip the params if they're already defined.
+Call EZC_fnc_Init_Init_CommonConstants; //--- Set the constants and the parameters, skip the params if they're already defined.
 
 if (WF_Debug) then { //--- Debug.
 	missionNamespace setVariable ["cti_C_GAMEPLAY_UPGRADES_CLEARANCE", 7];

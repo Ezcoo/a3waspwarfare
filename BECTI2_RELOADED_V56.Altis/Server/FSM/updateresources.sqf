@@ -43,15 +43,15 @@ while {!cti_GameOver} do {
 			_income_commander = round(((_income * _incomeCoef) / 100) * _commanderPercent);			
 			
 			if (_income > 0) then {
-				[_x, _supply] Call cti_CO_FNC_ChangeSideSupply;
+				[_x, _supply] Call EZC_fnc_Functions_Common_ChangeSideSupply;
 
-				_comTeam = (_x) Call cti_CO_FNC_GetCommanderTeam;
+				_comTeam = (_x) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 				if (isNull _comTeam) then {_comTeam = grpNull};
 				{
 					if !(isNil '_x') then {
 						if(isPlayer (leader _x))then{
 							_paycheck = if (_comTeam != _x) then {_income_player} else {_income_commander};								
-							if (_paycheck != 0) then {[_x, _paycheck] call cti_CO_FNC_ChangeTeamFunds};
+							if (_paycheck != 0) then {[_x, _paycheck] call EZC_fnc_Functions_Common_ChangeTeamFunds};
 						};
 					};
 				} forEach (_logik getVariable "cti_teams");

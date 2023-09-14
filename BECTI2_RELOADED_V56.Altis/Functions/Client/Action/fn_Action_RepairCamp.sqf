@@ -33,7 +33,7 @@ if (count _camps == 0) exitWith {hint (localize "STR_WF_Repair_Camp_None_Dead")}
 //--- Check if the repair is free or if it need to be paid.
 if ((missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") > 0) then {
 	//--- Check that the player has enough funds for a repair.
-	if ((CallEZC_fnc_Functions_Client_GetPlayerFunds) < (missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE")) exitWith {hint Format [localize "STR_WF_Repair_Camp_NoFunds", (missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") - (CallEZC_fnc_Functions_Client_GetPlayerFunds)]};
+	if ((call EZC_fnc_Functions_Client_GetPlayerFunds) < (missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE")) exitWith {hint Format [localize "STR_WF_Repair_Camp_NoFunds", (missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") - (call EZC_fnc_Functions_Client_GetPlayerFunds)]};
 
 	//--- Purchase a repair.
 	-(missionNamespace getVariable "cti_C_CAMPS_REPAIR_PRICE") Call EZC_fnc_Functions_Client_ChangePlayerFunds;

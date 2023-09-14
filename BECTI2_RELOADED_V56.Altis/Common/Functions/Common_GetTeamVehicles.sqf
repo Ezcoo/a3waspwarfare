@@ -76,10 +76,10 @@ _vehicles
 	[Array]: The current side upgrades
 	
   # SYNTAX #
-	(SIDE) call CTI_CO_FNC_GetSideUpgrades
+	(SIDE) call EZC_fnc_Functions_Common_GetSideUpgrades
 	
   # EXAMPLE #
-    _upgrades = (West) call CTI_CO_FNC_GetSideUpgrades
+    _upgrades = (West) call EZC_fnc_Functions_Common_GetSideUpgrades
 	  -> Return the current west upgrades levels
 */
 /*

@@ -97,7 +97,7 @@ _ECM_AREA_VEHICLES= vehicles inAreaArray [_pos, 3000, 3000, 0, False, 3000];
 	};
 		
 	_x removeAllEventHandlers "incomingMissile";
-	_x addEventHandler ['incomingMissile', {_this Spawn cti_CO_FNC_HandleIncomingMissileECM}];
+	_x addEventHandler ['incomingMissile', {_this Spawn EZC_fnc_Module_Common_HandleIncomingMissileECM}];
 	sleep 1;
 	if !(_x in _OUTSIDE_ECM_AREA_VEHICLES)then {hintSilent "";};
 	
@@ -167,7 +167,7 @@ _OUTSIDE_ECM_AREA_VEHICLES =_vehicles - ECM_SYNC_AREA_VEHICLES;
 	};
 	
 	_x removeAllEventHandlers "incomingMissile";
-	_x addEventHandler ['incomingMissile', {_this Spawn cti_CO_FNC_HandleIncomingMissile}];
+	_x addEventHandler ['incomingMissile', {_this Spawn EZC_fnc_Module_Common_HandleIncomingMissile}];
 } forEach _OUTSIDE_ECM_AREA_VEHICLES;
 //__________________________________________________________________________________________________________
 
@@ -233,7 +233,7 @@ if !(_OUTSIDE_ECM_AREA_VEHICLES isEqualTypeArray []) then {
 
 {
 		_x removeAllEventHandlers "incomingMissile";
-		_x addEventHandler ['incomingMissile', {_this Spawn cti_CO_FNC_HandleIncomingMissile}];
+		_x addEventHandler ['incomingMissile', {_this Spawn EZC_fnc_Module_Common_HandleIncomingMissile}];
 
 		
 	if(_x == (vehicle player)) then {	

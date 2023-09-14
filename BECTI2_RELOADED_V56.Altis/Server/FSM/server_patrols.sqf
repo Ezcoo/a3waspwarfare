@@ -15,7 +15,7 @@ _team = objNull;
 if (count _group > 0) then {
 	_team_alive = true;
 	_team = createGroup [_side, true];
-	_position = ([getPos _location, 50, 500] Call cti_CO_FNC_GetRandomPosition);
+	_position = ([getPos _location, 50, 500] Call EZC_fnc_Functions_Common_GetRandomPosition);
 	_position = [_position, 50] Call cti_CO_FNC_GetEmptyPosition;
 	_lock = if (_side == cti_DEFENDER) then {_town_vehicle_lock_defender} else {true};
 	_retVal = [_group, _position, _side, _lock, _team] Call cti_CO_FNC_CreateTeam;
@@ -23,7 +23,7 @@ if (count _group > 0) then {
 
 while {!cti_GameOver || _team_alive} do {
 
-	_team_alive = if (count ((units _team) Call cti_CO_FNC_GetLiveUnits) == 0 || isNull _team) then {false} else {true};
+	_team_alive = if (count ((units _team) Call EZC_fnc_Functions_Common_GetLiveUnits) == 0 || isNull _team) then {false} else {true};
 	
 	if(_team_job == "capture" && !cti_GameOver && _team_alive) then {
 		if ((_team_target getVariable "sideID") == _sideID) then {

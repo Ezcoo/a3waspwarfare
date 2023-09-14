@@ -235,10 +235,10 @@ if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "cti
 	};
 
 	if (_manned) then {
-        _alives = (units _team) Call cti_CO_FNC_GetLiveUnits;
+        _alives = (units _team) Call EZC_fnc_Functions_Common_GetLiveUnits;
         if (count _alives < _availweapons || _isAIQuery) then {
             _buildings = (_side) Call EZC_fnc_Functions_Common_GetSideStructures;
-            _closest = ['BARRACKSTYPE',_buildings,_manRange,_side,_defense] Call cti_CO_FNC_BuildingInRange;
+            _closest = ['BARRACKSTYPE',_buildings,_manRange,_side,_defense] Call EZC_fnc_Functions_Common_BuildingInRange;
 
             //--- Manning Defenses.
             if (alive _closest) then { [_defense,_side,_team,_closest] spawn cti_SE_FNC_HandleDefense; };
@@ -247,7 +247,7 @@ if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "cti
 };
 
 /* Are we dealing with an artillery unit ? */
-_isArtillery = [_type,_side] Call cti_CO_FNC_IsArtillery;
-if (_isArtillery != -1) then {[_defense,_isArtillery,_side] Call cti_CO_FNC_EquipArtillery};
+_isArtillery = [_type,_side] Call EZC_fnc_Functions_Common_IsArtillery;
+if (_isArtillery != -1) then {[_defense,_isArtillery,_side] Call EZC_fnc_Functions_Common_EquipArtillery};
 
 _defense

@@ -430,7 +430,7 @@ switch (_action) do {
 	};
 
 	case "onPurchase": {
-		_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+		_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 		_cost = uiNamespace getVariable "CTI_dialog_ui_gear_tradein";
 		if (_funds >= _cost) then {
 			if (uiNamespace getVariable "CTI_dialog_ui_gear_target" isKindOf "Man") then {

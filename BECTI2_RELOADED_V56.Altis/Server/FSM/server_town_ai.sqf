@@ -99,9 +99,9 @@ while {!cti_GameOver} do {
                             _index = _camps find _camp;
                             if(_index > -1)then{_camps deleteAt _index};
 
-                            _position = ([getPosATL _camp, _spawn_radius] call cti_CO_FNC_GetSafePlace);
+                            _position = ([getPosATL _camp, _spawn_radius] call EZC_fnc_Functions_Common_GetSafePlace);
                         } else {
-                            _position = ([getPosATL _town, _spawn_radius] call cti_CO_FNC_GetSafePlace);
+                            _position = ([getPosATL _town, _spawn_radius] call EZC_fnc_Functions_Common_GetSafePlace);
                         };
                         _positions pushBack _position;
                         _spawn_radius = _spawn_radius + 15;
@@ -112,7 +112,7 @@ while {!cti_GameOver} do {
                     if (count(missionNamespace getVariable "cti_HEADLESSCLIENTS_ID") > 0) then {
                         [_town, _side, _groups, _positions] spawn cti_SE_FNC_DelegateAITownHeadless
                     }else {
-                        [_town, _side, _groups, _positions] spawn cti_CO_FNC_CreateTownUnits;
+                        [_town, _side, _groups, _positions] spawn EZC_fnc_Functions_Common_CreateTownUnits;
                     };
                     //// end of creating
                 };

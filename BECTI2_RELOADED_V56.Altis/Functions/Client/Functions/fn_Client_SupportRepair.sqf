@@ -7,7 +7,7 @@ _supportRange = missionNamespace getVariable "cti_C_UNITS_SUPPORT_RANGE";
 _repairRange = missionNamespace getVariable "cti_C_UNITS_REPAIR_TRUCK_RANGE";
 
 //--- Retrieve Informations.
-_name = [typeOf _veh, 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+_name = [typeOf _veh, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 _repTime = missionNamespace getVariable "cti_C_UNITS_SUPPORT_REPAIR_TIME";
 
 //--- SP?

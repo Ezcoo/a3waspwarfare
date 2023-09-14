@@ -3,7 +3,7 @@ private["_tcarm","_units"];
 _tcarm = missionNamespace getVariable "cti_C_PLAYERS_MARKER_TOWN_RANGE";
 
 while {!cti_GameOver} do {
-	_units = (Units Group player) Call cti_CO_FNC_GetLiveUnits;
+	_units = (Units Group player) Call EZC_fnc_Functions_Common_GetLiveUnits;
 
 	{
 		_town = _x;

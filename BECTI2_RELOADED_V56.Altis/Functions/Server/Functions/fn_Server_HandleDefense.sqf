@@ -17,7 +17,7 @@ while {alive _defense} do {
 			_index = (missionNamespace getVariable Format["cti_%1STRUCTURENAMES",str _side]) find _type;
 			_distance = (missionNamespace getVariable Format["cti_%1STRUCTUREDISTANCES",str _side]) select _index;
 			_direction = (missionNamespace getVariable Format["cti_%1STRUCTUREDIRECTIONS",str _side]) select _index;
-			_position = [getPos _closest,_distance,getDir (_closest) + _direction] Call cti_CO_FNC_GetPositionFrom;
+			_position = [getPos _closest,_distance,getDir (_closest) + _direction] Call EZC_fnc_Functions_Common_GetPositionFrom;
 
 			_type = missionNamespace getVariable Format ["cti_%1SOLDIER", _side];
 			_use_server = true;
@@ -30,9 +30,9 @@ while {alive _defense} do {
 						if (count _HC > 0) then {
 
 							_groups = [];
-							[_groups, missionNamespace getVariable Format ["cti_%1SOLDIER", _side]] call cti_CO_FNC_ArrayPush;
+							[_groups, missionNamespace getVariable Format ["cti_%1SOLDIER", _side]] call EZC_fnc_Functions_Common_ArrayPush;
 							_positions = [];
-							[_positions, _position] call cti_CO_FNC_ArrayPush;
+							[_positions, _position] call EZC_fnc_Functions_Common_ArrayPush;
 							//[_side, _groups, _positions, _teams, _defense] Call cti_CO_FNC_DelegateAIStaticDefenceHeadless;
 							[_side, _groups, _positions, _team, _defense, false] Call cti_CO_FNC_DelegateAIStaticDefenceHeadless;
 							_use_server = false;
@@ -42,7 +42,7 @@ while {alive _defense} do {
 			};
 
 			if(_use_server)then{
-				_soldier = [_type,_team,_position,_side] Call cti_CO_FNC_CreateUnit;
+				_soldier = [_type,_team,_position,_side] Call EZC_fnc_Functions_Common_CreateUnit;
 				[_soldier] allowGetIn true;
 				_soldier assignAsGunner _defense;
 				[_soldier] orderGetIn true;

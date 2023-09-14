@@ -12,7 +12,7 @@ _lastMode = "nil";
 
 _patrol_range = missionNamespace getVariable 'cti_C_TOWNS_PATROL_RANGE';
 _defense_range = missionNamespace getVariable 'cti_C_TOWNS_DEFENSE_RANGE';
-_aliveTeam = if (count ((units _team) Call cti_CO_FNC_GetLiveUnits) == 0 || isNull _team) then {false} else {true};
+_aliveTeam = if (count ((units _team) Call EZC_fnc_Functions_Common_GetLiveUnits) == 0 || isNull _team) then {false} else {true};
 
 
 //-------------------------added AI System---------------------------
@@ -25,12 +25,12 @@ if ((missionNamespace getVariable "cti_C_AI_SYSTEM") == 2) then {
 if (vehicle _leader != _leader) then { //CAR OR TANK SPAWN STAYS ON ROAD
 
  
-[_leader,getPosATL _leader, 600, 10] call cti_CO_FNC_Streetwaypoints;
+[_leader,getPosATL _leader, 600, 10] call EZC_fnc_Streetwaypoints;
 
 }else{
 
 
-[group _leader, getPosATL _leader] call cti_CO_FNC_taskDefend};
+[group _leader, getPosATL _leader] call EZC_fnc_improved_BIS_fn_taskDefend};
 
 };
 
@@ -42,12 +42,12 @@ if ((missionNamespace getVariable "cti_C_AI_SYSTEM") == 1) then {
 if (vehicle _leader != _leader) then { //CAR OR TANK SPAWN STAYS ON ROAD
 
  
-[_leader,getPosATL _leader, 600, 10] call cti_CO_FNC_Streetwaypoints;
+[_leader,getPosATL _leader, 600, 10] call EZC_fnc_Streetwaypoints;
 
 }else{
 
 
-[group _leader, getPosATL _leader] call cti_CO_FNC_taskDefend};
+[group _leader, getPosATL _leader] call EZC_fnc_improved_BIS_fn_taskDefend};
 
 };
 
@@ -64,7 +64,7 @@ while {!cti_GameOver || _aliveTeam} do {
 
 
 	
-	_aliveTeam = if (count ((units _team) Call cti_CO_FNC_GetLiveUnits) == 0 || isNull _team) then {false} else {true};
+	_aliveTeam = if (count ((units _team) Call EZC_fnc_Functions_Common_GetLiveUnits) == 0 || isNull _team) then {false} else {true};
 
 	_currentSV = _location getVariable 'supplyValue';
 	if (_currentSV < _lastSV || _currentSV < _startSV || _sideID != (_location getVariable 'sideID')) then {

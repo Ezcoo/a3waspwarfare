@@ -34,7 +34,7 @@ switch (_action) do {
                         }else{
                             _type = missionNamespace getVariable Format ["cti_%1SOLDIER", _side];
                             _sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
-                            _unit = [_type,_team, getPosATL _x, _sideID] Call cti_CO_FNC_CreateUnit;
+                            _unit = [_type,_team, getPosATL _x, _sideID] Call EZC_fnc_Functions_Common_CreateUnit;
                             [_unit] allowGetIn true;
                             _unit assignAsGunner _defense;
                             [_unit] orderGetIn true;

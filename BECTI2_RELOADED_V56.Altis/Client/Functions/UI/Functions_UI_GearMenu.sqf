@@ -388,7 +388,7 @@ CTI_UI_Gear_DisplayShoppingItems = {
         };
     };
 
-	_upgrades = (CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades;
+	_upgrades = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 	_upgrade_gear = _upgrades select CTI_UP_GEAR;
 	
 	if (_tab != CTI_GEAR_TAB_TEMPLATES) then { //--- Generic items
@@ -1736,7 +1736,7 @@ CTI_UI_Gear_ChangeCurrentMagazine = {
 CTI_UI_Gear_UpdateLinkedItems = {
 	private ["_config_type", "_get", "_item", "_magazines","_upgrade_gear", "_upgrades"];
 	_item = _this;
-   _upgrades = (CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades;
+   _upgrades = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
    _upgrade_gear = _upgrades select CTI_UP_GEAR;
 
 	_config_type = (_item) call CTI_UI_Gear_GetItemBaseConfig;
@@ -2494,7 +2494,7 @@ CTI_UI_Gear_UpdatePrice = {
 
 	_coloration = if (_trade_in > 0) then {"#F56363"} else {"#76F563"};
 
-	((uiNamespace getVariable "CTI_dialog_ui_gear") displayCtrl 70028) ctrlSetStructuredText parseText format ["<t align='left'>Trade-in: <t color='%3'>$%1</t><t><t align='right'>Resources: <t color='%4'>$%2</t><t>", _trade_in, callEZC_fnc_Functions_Client_GetPlayerFunds, _coloration, "#BAFF81"];
+	((uiNamespace getVariable "CTI_dialog_ui_gear") displayCtrl 70028) ctrlSetStructuredText parseText format ["<t align='left'>Trade-in: <t color='%3'>$%1</t><t><t align='right'>Resources: <t color='%4'>$%2</t><t>", _trade_in, call EZC_fnc_Functions_Client_GetPlayerFunds, _coloration, "#BAFF81"];
 };
 
 
@@ -2545,7 +2545,7 @@ CTI_UI_Gear_LoadAvailableUnits = {
 				};
 			};
 		};
-	} forEach ((units player) call CTI_CO_FNC_GetLiveUnits);
+	} forEach ((units player) call EZC_fnc_Functions_Common_GetLiveUnits);
 	
 	{
 		_manRange = missionNamespace getVariable "CTI_C_BASE_DEFENSE_MANNING_RANGE";

@@ -32,5 +32,5 @@ _target = _this select 0;
 		sleep 3;
 	};
 	//--- Radiations.
-	[_target] Spawn cti_CO_FNC_NukeRadiation;
+	[_target] Spawn EZC_fnc_Module_radiation;
 };

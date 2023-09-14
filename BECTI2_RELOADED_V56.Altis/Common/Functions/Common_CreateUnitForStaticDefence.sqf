@@ -29,7 +29,7 @@ for '_i' from 0 to count(_groups)-1 do {
 	["INFORMATION", Format["Common_CreateUnitForstaticDefence.sqf: [%1] will create a team template %2 at %3", _side, _groups select _i,_position]] Call EZC_fnc_Functions_Common_LogContent;
 
 	_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
-	_unit = [_groups select _i, _team, _position, _sideID] Call cti_CO_FNC_CreateUnit;
+	_unit = [_groups select _i, _team, _position, _sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 	_built  = _built + 1;
 
 	if(!((typeof _defence) in cti_C_ADV_AIR_DEFENCE)) then{

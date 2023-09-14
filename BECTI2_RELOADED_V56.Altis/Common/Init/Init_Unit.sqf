@@ -20,7 +20,7 @@ _logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 waitUntil {!isNil {_logik getVariable "cti_upgrades"}};
 
 
-_upgrades = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades;
+_upgrades = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 
 
 	
@@ -109,7 +109,7 @@ if (typeOf _unit in (missionNamespace getVariable Format["cti_%1ECMVEHICLE", _si
 		_OBJECTid_damage=_OBJECTid+"damage";
 		private _CHECKVALUE= missionNamespace getVariable _OBJECTid_damage;
 		if (isNil "_CHECKVALUE") then {
-		_unit addEventHandler ['HitPart', {_this Spawn cti_CO_FNC_HandleDamage_Object}];
+		_unit addEventHandler ['HitPart', {_this Spawn EZC_fnc_Module_Common_HandleDamageObject}];
 
 		_CHECKVALUE=[0,_OBJECTid_damage];
 		missionNamespace setVariable [_OBJECTid_damage, _CHECKVALUE];
@@ -286,7 +286,7 @@ if (_isMan) then { //--- Man.
 
 if !(_isMan) then { //--- Vehicle Specific.
 	if ((missionNamespace getVariable "cti_C_GAMEPLAY_MISSILES_RANGE") != 0) then { //--- Max missile range.
-		_unit addEventHandler ['incomingMissile', {_this Spawn cti_CO_FNC_HandleIncomingMissile}]; //--- Handle incoming missiles.
+		_unit addEventHandler ['incomingMissile', {_this Spawn EZC_fnc_Module_Common_HandleIncomingMissile}]; //--- Handle incoming missiles.
 	};
 };
 

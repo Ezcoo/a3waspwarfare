@@ -823,7 +823,7 @@ ctrlEnable[230007 , false];
 if(!(isNil '_oldpylons' ) ) then { 
 	if (count _oldpylons > 0) then {	
 		ctrlSetText [230006,"$" + str(round(_rearmPrice / 2))];
-		if(round(_rearmPrice / 2) <= CallEZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
+		if(round(_rearmPrice / 2) <= call EZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
 			ctrlEnable[230007, true];
 		}
 		else {
@@ -1214,7 +1214,7 @@ while {alive player && dialog} do {
 		_rearmPrice = round((_rearmPrice * (count _pylons)) / 2);		
 		ctrlSetText [230005,"$"+str(_rearmPrice)];
 		
-		if(_rearmPrice <= CallEZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
+		if(_rearmPrice <= call EZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
 			ctrlEnable[22004 , true];
 		}
 		else {
@@ -1223,7 +1223,7 @@ while {alive player && dialog} do {
 		
 		if(!(isNil '_oldpylons' ) ) then { 
 			if (count _oldpylons > 0) then {
-				if(round(_rearmPrice / 2) <= CallEZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
+				if(round(_rearmPrice / 2) <= call EZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
 					ctrlEnable[230007 , true];
 				}
 				else {
@@ -1283,7 +1283,7 @@ while {alive player && dialog} do {
 		
 		ctrlSetText [230005,"$"+str(_rearmPrice)];
 		
-		if(_rearmPrice <= CallEZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
+		if(_rearmPrice <= call EZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
 			ctrlEnable[22004 , true];
 		}
 		else {
@@ -1292,7 +1292,7 @@ while {alive player && dialog} do {
 		
 		if(!(isNil '_oldpylons' ) ) then { 
 			if (count _oldpylons > 0) then {
-				if(round(_rearmPrice / 2) <= CallEZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
+				if(round(_rearmPrice / 2) <= call EZC_fnc_Functions_Client_GetPlayerFunds && (count _pylons > 0)) then {
 					ctrlEnable[230007 , true];
 				}
 				else {

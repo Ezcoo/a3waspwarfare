@@ -240,7 +240,7 @@ EZC_fnc_Functions_Client_GetIncome = Compile preprocessFile "Client\Functions\Cl
 EZC_fnc_Functions_Client_GetPlayerFunds = Compile preprocessFile "Client\Functions\Client_GetPlayerFunds.sqf";
 EZC_fnc_Functions_Client_GetRespawnAvailable = Compile preprocessFile "Client\Functions\Client_GetRespawnAvailable.sqf";
 //now localized in init_common (mapmarkerfix)
-//cti_CL_FNC_GetStructureMarkerLabel = Compile preprocessFile "Client\Functions\Client_GetStructureMarkerLabel.sqf";
+//EZC_fnc_Functions_Client_GetStructureMarkerLabel = Compile preprocessFile "Client\Functions\Client_GetStructureMarkerLabel.sqf";
 EZC_fnc_Functions_Client_GetTime = Compile preprocessFile "Client\Functions\Client_GetTime.sqf";
 EZC_fnc_Functions_Client_GroupChatMessage = Compile preprocessFile "Client\Functions\Client_GroupChatMessage.sqf";
 EZC_fnc_Functions_Client_HandleHQAction = Compile preprocessFile "Client\Functions\Client_HandleHQAction.sqf";
@@ -628,7 +628,7 @@ if (time < 30) then {
 ["INITIALIZATION", Format["Init_Client.sqf: Client spawn location has been determined at [%1].", _base]] Call EZC_fnc_Functions_Common_LogContent;
 
 /* Position the client at the previously defined location */
-player setPos ([_base,20,30] Call cti_CO_FNC_GetRandomPosition);
+player setPos ([_base,20,30] Call EZC_fnc_Functions_Common_GetRandomPosition);
 
 /* HQ Building Init. */
 waitUntil {!isNil {cti_Client_Logic getVariable "cti_hq_deployed"}};

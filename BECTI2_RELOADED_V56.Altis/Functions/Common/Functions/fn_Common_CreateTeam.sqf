@@ -24,7 +24,7 @@ if(isNil "_team")then{
 {
 sleep 0.05;
 	if (_x isKindOf 'Man') then {
-		_unit = [_x,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+		_unit = [_x,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 		_units pushBack _unit;
 	} else {
 
@@ -33,7 +33,7 @@ sleep 0.05;
 			_position = getposatl (_roadList call BIS_fnc_selectRandom);
 		};
 		
-		_vehicle = [_x, _position, _sideID, 0, _lockVehicles, true, _global, "FORM"] Call cti_CO_FNC_CreateVehicle;
+		_vehicle = [_x, _position, _sideID, 0, _lockVehicles, true, _global, "FORM"] Call EZC_fnc_Functions_Common_CreateVehicle;
 		_type = if (_vehicle isKindOf 'Man') then {
 			missionNamespace getVariable Format ['cti_%1SOLDIER',_side]
 		} else {
@@ -45,17 +45,17 @@ sleep 0.05;
 		};
 
 		if (_vehicle emptyPositions 'driver' > 0) then {
-			_driver = [_type,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+			_driver = [_type,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 			_driver moveInDriver _vehicle;
 			_crews pushBack _driver
 		};
 		if (_vehicle emptyPositions 'gunner' > 0) then {
-			_gunner = [_type,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+			_gunner = [_type,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 			_gunner moveInGunner _vehicle;
 			_crews pushBack _gunner
 		};
 		if (_vehicle emptyPositions 'commander' > 0) then {
-			_commander = [_type,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+			_commander = [_type,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 			_commander moveInCommander _vehicle;
 			_crews pushBack _commander
 		};

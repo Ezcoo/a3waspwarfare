@@ -25,5 +25,5 @@ if(!(isNil { _vehicle getVariable "_pylons" } )) then {
 };
 
 //--- Are we dealing with an artillery unit ?.
-_isArtillery = [_type, _side] Call cti_CO_FNC_IsArtillery;
-if (_isArtillery != -1) then {[_vehicle, _isArtillery, _side] Call cti_CO_FNC_EquipArtillery};
+_isArtillery = [_type, _side] Call EZC_fnc_Functions_Common_IsArtillery;
+if (_isArtillery != -1) then {[_vehicle, _isArtillery, _side] Call EZC_fnc_Functions_Common_EquipArtillery};

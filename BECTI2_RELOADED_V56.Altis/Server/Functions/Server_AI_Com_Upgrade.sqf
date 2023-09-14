@@ -49,7 +49,7 @@ if (count _to_upgrade > 0) then {
 
             //--- Deduct.
             [_side,-(_cost select 0)] Call cti_SE_FNC_ChangeAICommanderFunds;
-            [_side,-(_cost select 1)] Call cti_CO_FNC_ChangeSideSupply;
+            [_side,-(_cost select 1)] Call EZC_fnc_Functions_Common_ChangeSideSupply;
         };
 
 	};

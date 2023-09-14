@@ -28,8 +28,8 @@ lnbClear _listBox;
 		};
 	};
 	
-	lnbAddRow [_listBox,[str(round(((getDammage _unit)*-100)+100)) + "%",_extra+"("+([typeOf _unit, 'displayName'] Call cti_CO_FNC_GetConfigInfo)+") "+name _x]];
-	_pic = if (_isVehicle) then {[typeOf _unit, 'picture'] Call cti_CO_FNC_GetConfigInfo} else {[typeOf _unit, 'portrait'] Call cti_CO_FNC_GetConfigInfo};
+	lnbAddRow [_listBox,[str(round(((getDammage _unit)*-100)+100)) + "%",_extra+"("+([typeOf _unit, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo)+") "+name _x]];
+	_pic = if (_isVehicle) then {[typeOf _unit, 'picture'] Call EZC_fnc_Functions_Common_GetConfigInfo} else {[typeOf _unit, 'portrait'] Call EZC_fnc_Functions_Common_GetConfigInfo};
 	lnbSetPicture [_listBox,[_i,1],_pic];
 
 	if (count _color > 0) then {

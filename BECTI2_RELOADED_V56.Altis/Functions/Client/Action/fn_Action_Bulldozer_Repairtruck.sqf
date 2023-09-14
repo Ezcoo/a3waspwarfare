@@ -1,6 +1,6 @@
 
 _BulldozerPrice = 1000;
-_currency = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+_currency = call EZC_fnc_Functions_Client_GetPlayerFunds;
 _currencySym = "$";
 
 if (_currency < _BulldozerPrice) exitWith {hint Format [localize "STR_WF_INFO_Bulldozer_Funds",_currencySym,_BulldozerPrice - _currency]};

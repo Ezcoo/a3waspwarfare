@@ -99,7 +99,7 @@ while {true} do {
 		//MONEY
 		_textControl2 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1351;
 		_textControl2 ctrlShow true;
-		_textControl2 ctrlSetTextColor [0, 0.825294, 0.449803, 1];_textControl2 ctrlSetText Format ["%1 $",CallEZC_fnc_Functions_Client_GetPlayerFunds];
+		_textControl2 ctrlSetTextColor [0, 0.825294, 0.449803, 1];_textControl2 ctrlSetText Format ["%1 $",call EZC_fnc_Functions_Client_GetPlayerFunds];
 		_textControl3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1353;
 		_textControl3 ctrlShow true;
 		_textControl3 ctrlSetTextColor [0, 0.825294, 0.449803, 1];_textControl3 ctrlSetText Format ["+ %1 $",cti_Client_SideJoined Call EZC_fnc_Functions_Client_GetIncome];
@@ -110,10 +110,10 @@ while {true} do {
 		_textControl7 ctrlSetTextColor [1, 0.8831, 0, 1];_textControl7 ctrlSetText Format ["%1",(cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideSupply];
 		_textControl8 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1357;
 		_textControl8 ctrlShow true;
-		_textControl8 ctrlSetTextColor [1, 0.6831, 0, 1];_textControl8 ctrlSetText Format ["+ %1", cti_Client_SideJoined Call cti_CO_FNC_GetTotalSupplyValue];
+		_textControl8 ctrlSetTextColor [1, 0.6831, 0, 1];_textControl8 ctrlSetText Format ["+ %1", cti_Client_SideJoined Call EZC_fnc_Functions_Common_GetTotalSupplyValue];
 		_textControl9 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1359;
 		_textControl9 ctrlShow true;
-		_textControl9 ctrlSetTextColor [0.1, 0.7, 0.9, 1];_textControl9 ctrlSetText Format ["%1 on %2", cti_Client_SideJoined Call cti_CO_FNC_GetTownsHeld, _total];
+		_textControl9 ctrlSetTextColor [0.1, 0.7, 0.9, 1];_textControl9 ctrlSetText Format ["%1 on %2", cti_Client_SideJoined Call EZC_fnc_Functions_Common_GetTownsHeld, _total];
 		
 		//SERVERFPS			
 		_textControl10 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1361;

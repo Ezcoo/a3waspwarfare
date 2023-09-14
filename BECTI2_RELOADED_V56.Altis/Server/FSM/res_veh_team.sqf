@@ -52,7 +52,7 @@ if(count _alives == 0) then{
 /*
 while{!_end}do{
 
-	_alives = (units _inf_group) Call cti_CO_FNC_GetLiveUnits;
+	_alives = (units _inf_group) Call EZC_fnc_Functions_Common_GetLiveUnits;
 	if(count _alives > 0)then{
 	    WF_Logic setVariable [_status,true];
 		_end = false;
@@ -87,4 +87,4 @@ while{!_end}do{
 
 _leader=leader _inf_group;
 
-[_leader,getPosATL _leader, 5000, 10] call cti_CO_FNC_Streetwaypoints;
+[_leader,getPosATL _leader, 5000, 10] call EZC_fnc_Streetwaypoints;

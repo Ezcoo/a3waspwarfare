@@ -20,7 +20,7 @@ _percentage_inf = 50;
 _groups_max = 0;
 _randomize = 0;
 
-_upgrades = (_side) Call cti_CO_FNC_GetSideUpgrades;
+_upgrades = (_side) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 
 _current_infantry_upgrade = _upgrades select cti_UP_BARRACKS;
 _current_light_upgrade = _upgrades select cti_UP_LIGHT;

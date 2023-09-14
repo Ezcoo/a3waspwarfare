@@ -99,7 +99,7 @@ while {alive player && dialog} do {
 	if (side player != cti_Client_SideJoined) exitWith {deleteMarkerLocal _marker;deleteMarkerLocal _area;{deleteMarkerLocal _x} forEach _markers;closeDialog 0};
 	if (!dialog) exitWith {deleteMarkerLocal _marker;deleteMarkerLocal _area;{deleteMarkerLocal _x} forEach _markers};
 	
-	_currentUpgrades = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades;
+	_currentUpgrades = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 	
 	_currentSel = lbCurSel(_listBox);
 	
@@ -116,7 +116,7 @@ while {alive player && dialog} do {
 		_forceReload = false;
 		_controlEnable = false;
 		
-		_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+		_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 		
 		//ctrlSetText[17021,Format ["%1: $%2",localize 'STR_WF_Price',_currentFee]]; //---old
 		ctrlSetText[17021,Format ["$%1",_currentFee]]; //---added-MrNiceGuy
@@ -257,7 +257,7 @@ while {alive player && dialog} do {
 			_nukeMarker setMarkerTextLocal "Nuclear Strike";
 			_nukeMarker setMarkerColorLocal "ColorRed";
 			
-			[_obj,_nukeMarker] Spawn cti_CO_FNC_NukeIncomming;
+			[_obj,_nukeMarker] Spawn EZC_fnc_Module_nukeIncomming;
 		};
 		//--- Vehicle Paradrop.
 		if (WF_MenuAction == 9) then {
@@ -419,8 +419,8 @@ _artyarray = missionNamespace getVariable Format ["cti_%1_ARTILLERY_CLASSNAMES",
 			_text = localize 'STR_WF_TACTICAL_ArtilleryInRange'; 																		//---changed-MrNiceGuy //"In Range";
 			if (_distance > _maxRange) then {_color = [0.875, 0, 0, 0.8];_text = localize 'STR_WF_TACTICAL_ArtilleryOutOfRange'}; 		 //---changed-MrNiceGuy //"Out of Range"};
 			if (_distance <= _minRange) then {_color = [0.875, 0.5, 0, 0.8];_text = localize 'STR_WF_TACTICAL_ArtilleryRangeTooClose'}; //---changed-MrNiceGuy //"Too close"};
-			lnbAddRow [17024,[[typeOf _x, 'displayName'] Call cti_CO_FNC_GetConfigInfo,_text]];
-			lnbSetPicture [17024,[_i,0],[typeOf _x, 'picture'] Call cti_CO_FNC_GetConfigInfo];
+			lnbAddRow [17024,[[typeOf _x, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo,_text]];
+			lnbSetPicture [17024,[_i,0],[typeOf _x, 'picture'] Call EZC_fnc_Functions_Common_GetConfigInfo];
 			
 			
 			

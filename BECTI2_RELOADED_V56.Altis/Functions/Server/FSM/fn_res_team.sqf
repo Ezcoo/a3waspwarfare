@@ -23,7 +23,7 @@ if(count _alives == 0) then{
 
 while{!_end}do{
 
-	_alives = (units _inf_group) Call cti_CO_FNC_GetLiveUnits;
+	_alives = (units _inf_group) Call EZC_fnc_Functions_Common_GetLiveUnits;
 	if(count _alives > 0)then{
 		_end = false;
 	} else {

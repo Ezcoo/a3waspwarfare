@@ -170,7 +170,7 @@ if(_factoryType isEqualTo "Aircraft")then{
 		_direction = missionNamespace getVariable "cti_C_HANGAR_BUY_DIR";
 		_factoryType = "Airport";
 	};
-	//_position = [getPos _building,_distance,getDir _building + _direction] Call cti_CO_FNC_GetPositionFrom;
+	//_position = [getPos _building,_distance,getDir _building + _direction] Call EZC_fnc_Functions_Common_GetPositionFrom;
 	_position = _building modelToWorld [(sin _direction * _distance), (cos _direction * _distance), 0];
 	_position set [2, .5];
 	_longest = missionNamespace getVariable Format ["cti_LONGEST%1BUILDTIME",_factoryType];
@@ -227,17 +227,17 @@ if (!alive _building || isNull _building) exitWith {
 };
 
 if (_isMan) then {
-	_soldier = [_unit,_group,_position,cti_Client_SideID] Call cti_CO_FNC_CreateUnit;
+	_soldier = [_unit,_group,_position,cti_Client_SideID] Call EZC_fnc_Functions_Common_CreateUnit;
 	
 	//--- Make sure that our unit is supposed to have a backpack.
 	if (getText(configFile >> 'CfgVehicles' >> _unit >> 'backpack') != "") then {
 		//--- Retrieve the unit gear config.
-		_gear_config = (_unit) Call cti_CO_FNC_GetUnitConfigGear;
+		_gear_config = (_unit) Call EZC_fnc_Functions_Common_GetUnitConfigGear;
 		_gear_backpack = _gear_config select 2;
 		_gear_backpack_content = _gear_config select 3;
 
 		//--- Backpack handling.
-		if (_gear_backpack != "") then {[_soldier, _gear_backpack, _gear_backpack_content] Call cti_CO_FNC_EquipBackpack};
+		if (_gear_backpack != "") then {[_soldier, _gear_backpack, _gear_backpack_content] Call EZC_fnc_Functions_Common_EquipBackpack};
 	};
 
 	[cti_Client_SideJoinedText,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
@@ -251,7 +251,7 @@ if (_isMan) then {
 	_factoryPosition = getPos _building;
 	_direction = -((((_position select 1) - (_factoryPosition select 1)) atan2 ((_position select 0) - (_factoryPosition select 0))) - 90);//--- model to world that later on.
 	
-	_vehicle = [_unit, _position, sideID, _direction, _locked, nil, nil, nil, _unitdescription, _unitskin] Call cti_CO_FNC_CreateVehicle;
+	_vehicle = [_unit, _position, sideID, _direction, _locked, nil, nil, nil, _unitdescription, _unitskin] Call EZC_fnc_Functions_Common_CreateVehicle;
 	
 	cti_Client_Team reveal _vehicle;
 	
@@ -269,7 +269,7 @@ if (_isMan) then {
 	if (isHostedServer) then {_vehicle setVariable ["cti_Taxi_Prohib", true]};
 
 	//--- Clear the vehicle.	
-	(_vehicle) call cti_CO_FNC_ClearVehicleCargo;
+	(_vehicle) call EZC_fnc_Functions_Common_ClearVehicleCargo;
 	
 	/* Section: Local Init (Client Only) */
 
@@ -281,11 +281,11 @@ if (_isMan) then {
 	if (_unit in (missionNamespace getVariable Format['cti_%1SALVAGETRUCK',cti_Client_SideJoinedText])) then {[_vehicle] spawn EZC_fnc_FSM_updatesalvage};
 
 	//--- Are we dealing with an artillery unit.
-	_isArtillery = [_unit,cti_Client_SideJoinedText] Call cti_CO_FNC_IsArtillery;
+	_isArtillery = [_unit,cti_Client_SideJoinedText] Call EZC_fnc_Functions_Common_IsArtillery;
 	
 	//systemchat str _vehicle;
 	
-	if (_isArtillery != -1) then {[_vehicle,_isArtillery,cti_Client_SideJoinedText] Call cti_CO_FNC_EquipArtillery;};	
+	if (_isArtillery != -1) then {[_vehicle,_isArtillery,cti_Client_SideJoinedText] Call EZC_fnc_Functions_Common_EquipArtillery;};	
 
 	
 
@@ -322,7 +322,7 @@ if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle add
 
 	//--- Driver.
 	if (_driver) then {
-		_soldier = [_crew,_group,_position,cti_Client_SideID] Call cti_CO_FNC_CreateUnit;
+		_soldier = [_crew,_group,_position,cti_Client_SideID] Call EZC_fnc_Functions_Common_CreateUnit;
 		//// add eventhandler
 
 		[_soldier] allowGetIn true;
@@ -331,14 +331,14 @@ if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle add
 	
 	//--- Gunner.
 	if (_gunner) then {
-		_soldier = [_crew,_group,_position,cti_Client_SideID] Call cti_CO_FNC_CreateUnit;
+		_soldier = [_crew,_group,_position,cti_Client_SideID] Call EZC_fnc_Functions_Common_CreateUnit;
 		[_soldier] allowGetIn true;
 		_soldier moveInGunner _vehicle;
 	};
 	
 	//--- Commander.
 	if (_commander) then {
-		_soldier = [_crew,_group,_position,cti_Client_SideID] Call cti_CO_FNC_CreateUnit;
+		_soldier = [_crew,_group,_position,cti_Client_SideID] Call EZC_fnc_Functions_Common_CreateUnit;
 		[_soldier] allowGetIn true;
 		_soldier moveInCommander _vehicle;
 	};
@@ -370,7 +370,7 @@ if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle add
 		//diag_log format ["_turrets: %1",_turrets];
 		{
 			if (isNull (_vehicle turretUnit _x)) then {
-				_soldier = [_crew,_group,_position,cti_Client_SideID] Call cti_CO_FNC_CreateUnit;
+				_soldier = [_crew,_group,_position,cti_Client_SideID] Call EZC_fnc_Functions_Common_CreateUnit;
 				[_soldier] allowGetIn true;
 				_soldier moveInTurret [_vehicle, _x];
 			};

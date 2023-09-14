@@ -12,7 +12,7 @@ _team = _this;
 
 _canUpdate = true;
 if !(isNil {_team getVariable "cti_persistent"}) then {
-	_commander = (side _team) Call cti_CO_FNC_GetCommanderTeam;
+	_commander = (side _team) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 	if !(isNull _commander) then {_canUpdate = false};
 };
 

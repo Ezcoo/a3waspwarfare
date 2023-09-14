@@ -21,7 +21,7 @@ for "_j" from 0 to 1 do
     ];
     hintSilent _text;
     if (_dam == 100 && _currentSupply == 0) exitWith {repairprocess = "no";};
-	[cti_Client_SideJoined, -15] Call cti_CO_FNC_ChangeSideSupply;
+	[cti_Client_SideJoined, -15] Call EZC_fnc_Functions_Common_ChangeSideSupply;
     _dam = _dam + (baseb select objnum select 3);
     _dam = 1 - (_dam/100);	
     obj setDamage _dam;

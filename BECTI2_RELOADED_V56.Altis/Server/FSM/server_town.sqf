@@ -67,7 +67,7 @@ while {!cti_GameOver} do {
                     _increaseOf = 1;
                     if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {
 
-                        _upgrades = (_side) Call cti_CO_FNC_GetSideUpgrades;
+                        _upgrades = (_side) Call EZC_fnc_Functions_Common_GetSideUpgrades;
                         _increaseOf = 2 * ((missionNamespace getVariable "cti_C_TOWNS_SUPPLY_LEVELS_TIME") select (_upgrades select cti_UP_SUPPLYRATE));
                     };
                     _supplyValue = _supplyValue + _increaseOf;

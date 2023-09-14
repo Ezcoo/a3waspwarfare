@@ -75,7 +75,7 @@ if (!_deployed) then {
 	_direction = getDir _HQ;
 	_HQName = missionNamespace getVariable Format["cti_%1MHQNAME",_sideText];
 	
-	_MHQ = [_HQName, [1,1,1], _sideID, _direction, true, false] Call cti_CO_FNC_CreateVehicle;
+	_MHQ = [_HQName, [1,1,1], _sideID, _direction, true, false] Call EZC_fnc_Functions_Common_CreateVehicle;
 	//_MHQ  spawn {_this allowDamage false; sleep 10; _this allowDamage true};
 	
 	_MHQ setVelocity [0,0,-1];

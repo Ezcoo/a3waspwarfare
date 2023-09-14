@@ -8,13 +8,13 @@ _sideText = str _side;
 _hq = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;
 _availableSpawn = [_hq];
 _buildings = (_side) Call EZC_fnc_Functions_Common_GetSideStructures;
-_checks = [_side,missionNamespace getVariable Format["cti_%1BARRACKSTYPE",_sideText],_buildings] Call cti_CO_FNC_GetFactories;
+_checks = [_side,missionNamespace getVariable Format["cti_%1BARRACKSTYPE",_sideText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 if (count _checks > 0) then {_availableSpawn = _availableSpawn + _checks};
-_checks = [_side,missionNamespace getVariable Format["cti_%1LIGHTTYPE",_sideText],_buildings] Call cti_CO_FNC_GetFactories;
+_checks = [_side,missionNamespace getVariable Format["cti_%1LIGHTTYPE",_sideText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 if (count _checks > 0) then {_availableSpawn = _availableSpawn + _checks};
-_checks = [_side,missionNamespace getVariable Format["cti_%1HEAVYTYPE",_sideText],_buildings] Call cti_CO_FNC_GetFactories;
+_checks = [_side,missionNamespace getVariable Format["cti_%1HEAVYTYPE",_sideText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 if (count _checks > 0) then {_availableSpawn = _availableSpawn + _checks};
-_checks = [_side,missionNamespace getVariable Format["cti_%1AIRCRAFTTYPE",_sideText],_buildings] Call cti_CO_FNC_GetFactories;
+_checks = [_side,missionNamespace getVariable Format["cti_%1AIRCRAFTTYPE",_sideText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 if (count _checks > 0) then {_availableSpawn = _availableSpawn + _checks};
 
 _base_respawn = _availableSpawn - [_hq];
@@ -26,7 +26,7 @@ if (!alive _hq && count _availableSpawn > 1) then {_availableSpawn = _availableS
 //--- Mobile respawn.
 if ((missionNamespace getVariable "cti_C_RESPAWN_MOBILE") > 0) then {
 	_mobileRespawns = missionNamespace getVariable Format["cti_%1AMBULANCES",_sideText];
-	_upgrades = (_side) Call cti_CO_FNC_GetSideUpgrades;
+	_upgrades = (_side) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 	_range = (missionNamespace getVariable "cti_C_RESPAWN_RANGES") select (_upgrades select cti_UP_RESPAWNRANGE);
 	_checks = _deathLoc nearEntities[_mobileRespawns,_range];
 	if (count _checks > 0) then {

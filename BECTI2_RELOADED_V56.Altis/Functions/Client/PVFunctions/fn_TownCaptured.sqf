@@ -37,7 +37,7 @@ if (isNil '_task') then {_task = objNull};
 //--- Client side capture.
 if (_town_side_value_new == cti_Client_SideID) then {
 	//--- Retrieve the closest unit of the town.
-	_closest = [_town, (units group player) Call cti_CO_FNC_GetLiveUnits] Call EZC_fnc_Functions_Common_GetClosestEntity;
+	_closest = [_town, (units group player) Call EZC_fnc_Functions_Common_GetLiveUnits] Call EZC_fnc_Functions_Common_GetClosestEntity;
 	
 	//--- Client reward.
 	if !(isNull _closest) then {

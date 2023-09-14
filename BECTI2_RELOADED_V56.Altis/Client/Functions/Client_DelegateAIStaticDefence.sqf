@@ -49,4 +49,4 @@ if (isNil '_team') then {
     };
 };
 
-[_side, _groups, _positions, _team, _defence, _moveInGunner] call cti_CO_FNC_CreateUnitForStaticDefence;
+[_side, _groups, _positions, _team, _defence, _moveInGunner] call EZC_fnc_Functions_Common_CreateUnitForStaticDefence;

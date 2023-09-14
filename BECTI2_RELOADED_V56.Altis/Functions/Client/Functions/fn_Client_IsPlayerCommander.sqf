@@ -27,4 +27,4 @@
 	  -> Returns true if the player is the current commander
 */
 
-(CTI_P_SideJoined call cti_CO_FNC_GetCommanderTeam) isEqualTo group player
+(CTI_P_SideJoined call EZC_fnc_Functions_Common_GetCommanderTeam) isEqualTo group player

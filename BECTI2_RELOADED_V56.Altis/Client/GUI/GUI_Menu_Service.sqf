@@ -9,7 +9,7 @@ _vehi = [group player,false] Call cti_CO_FNC_GetTeamVehicles;
 
 
 
-_alives = (units group player) Call cti_CO_FNC_GetLiveUnits;
+_alives = (units group player) Call EZC_fnc_Functions_Common_GetLiveUnits;
 
 
 {if (vehicle _x == _x) then {_vehi = _vehi + [_x]}} forEach _alives;
@@ -34,7 +34,7 @@ _buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStruct
 _csp = objNull;
 
 
-_sp = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1SERVICEPOINTTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
+_sp = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1SERVICEPOINTTYPE",cti_Client_SideJoinedText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 
 if (count _sp > 0) then {
 	//_csp = [vehicle player,_sp] Call EZC_fnc_Functions_Common_GetClosestEntity;
@@ -53,7 +53,7 @@ _vehi =_vehi + _vehi2;
 
 if ((missionNamespace getVariable "cti_C_MODULE_cti_EASA") > 0) then {
 	_enable = false;
-	_currentUpgrades = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades;
+	_currentUpgrades = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 	_easaLevel = _currentUpgrades select cti_UP_EASA;
 	
 	if (!(isNull _csp) && _easaLevel > 0) then {
@@ -118,11 +118,11 @@ _i = 0;
 	//--- Add the vehicle ?
 	if (_add) then {
 		_effective = _effective + [_x];
-		_desc = [typeOf _x, 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+		_desc = [typeOf _x, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 		_finalNumber = (_x) Call cti_CO_FNC_GetAIDigit;
 		_isInVehicle = "";
 		if (_x != vehicle _x) then {
-			_descVehi = [typeOf (vehicle _x), 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+			_descVehi = [typeOf (vehicle _x), 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 			_isInVehicle = " [" + _descVehi + "] ";
 		};
 		_txt = "["+_finalNumber+"] "+ _desc + _isInVehicle;
@@ -140,7 +140,7 @@ if (count _checks > 0) then {
 		if !(_x in _effective) then {
 			_effective = _effective + [_x];
 			_nearSupport set [_i,[_repair]];
-			_descVehi = [typeOf (vehicle _x), 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+			_descVehi = [typeOf (vehicle _x), 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 			lbAdd[20002,_descVehi];
 			
 			_i = _i + 1;
@@ -164,7 +164,7 @@ while {true} do {
 
 	if (_curSel != -1) then {
 		_veh = (vehicle (_effective select _curSel));
-		_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+		_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 		
 		if (_veh isKindOf "Man") then {
 			{ctrlEnable [_x,false]} forEach [20003,20004,20005];
@@ -180,7 +180,7 @@ while {true} do {
 			//--Check current selection, is it available for EASA--
 			if ((missionNamespace getVariable "cti_C_MODULE_cti_EASA") > 0) then {
 				_enable = false;
-				_currentUpgrades = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades;
+				_currentUpgrades = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 				_easaLevel = _currentUpgrades select cti_UP_EASA;
 				if (!(isNull _csp) && _easaLevel > 0) then {		
 					if (player distance _csp < (missionNamespace getVariable "cti_C_UNITS_SUPPORT_RANGE")) then {																	

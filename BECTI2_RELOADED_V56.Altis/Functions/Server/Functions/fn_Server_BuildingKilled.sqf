@@ -37,7 +37,7 @@ if ((!isNull _killer) && (isPlayer _killer)) then{
             ["HeadHunterReceiveBountyInSupplies", _side_killer, _type, _supplies, _side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side_killer];
             ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side_killer];
 
-            [_side_killer, _supplies] Call cti_CO_FNC_ChangeSideSupply;
+            [_side_killer, _supplies] Call EZC_fnc_Functions_Common_ChangeSideSupply;
          } else{
             ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side_killer];
          };

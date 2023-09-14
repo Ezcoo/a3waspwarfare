@@ -33,7 +33,7 @@ _radioLabel = ["All","Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","
 
 _templates = missionNamespace getVariable Format["cti_%1AITEAMTEMPLATEDESCRIPTIONS",cti_Client_SideJoinedText];
 _templates_upgrades = missionNamespace getVariable Format["cti_%1AITEAMUPGRADES",cti_Client_SideJoinedText];
-_upgrades = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideUpgrades;
+_upgrades = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 _u = 0;
 _i = 0;
 
@@ -102,7 +102,7 @@ lbAdd[14025,"Default"];
 {
 	if (typeName _x == "OBJECT") then {
 		_nearTown = ([_x,towns] Call EZC_fnc_Functions_Common_GetClosestEntity) getVariable 'name';
-		_type = [typeOf _x, 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+		_type = [typeOf _x, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 		_lbl = _type + ' ' + _nearTown + ' ' + str (round(player distance _x)) + 'M';
 		_structuresLbl = _structuresLbl + [_lbl];
 		lbAdd[14025,_lbl];
@@ -158,7 +158,7 @@ while {alive player && dialog} do {
 				{ctrlShow[_x,false]} forEach (_IDCTasks + _IDCTeam);
 				{ctrlShow[_x,true]} forEach _IDCDetails;
 				ctrlSetText[14030,localize "STR_WF_COMMAND_SquadManagmentLabel"];
-				_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call cti_CO_FNC_GetLiveUnits} else {[]};
+				_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call EZC_fnc_Functions_Common_GetLiveUnits} else {[]};
 				[_detailGroup,14041] Call EZC_fnc_Functions_Client_UIFillListTeamOrders;
 				_enable = if !(isPlayer leader _team) then {true} else {false};
 				ctrlEnable [14043,_enable];
@@ -221,7 +221,7 @@ while {alive player && dialog} do {
 			_updateRespawn = true;
 		};
 		if (_mode == 2) then {
-			_detailGroup = if !(_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call cti_CO_FNC_GetLiveUnits} else {[]};
+			_detailGroup = if !(_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call EZC_fnc_Functions_Common_GetLiveUnits} else {[]};
 			[_detailGroup,14041] Call EZC_fnc_Functions_Client_UIFillListTeamOrders;
 			_enable = if !(isPlayer leader _team) then {true} else {false};
 			ctrlEnable [14043,_enable];
@@ -452,7 +452,7 @@ while {alive player && dialog} do {
 			/*if ((getPos _unit select 2) < 5) then {
 				_unit setPos [getPos _unit select 0,getpos _unit select 1,0.5];
 				_unit setVelocity [0,0,-1];
-				_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call cti_CO_FNC_GetLiveUnits} else {[]};
+				_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call EZC_fnc_Functions_Common_GetLiveUnits} else {[]};
 				[_detailGroup,14041] Call EZC_fnc_Functions_Client_UIFillListTeamOrders;
 			};*/
 			_vehicle = vehicle _unit;			
@@ -469,7 +469,7 @@ while {alive player && dialog} do {
 		if (_iddx != -1) then {
 			_unit = _detailGroup select _iddx;
 			_unit setDamage 1;
-			_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call cti_CO_FNC_GetLiveUnits} else {[]};
+			_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call EZC_fnc_Functions_Common_GetLiveUnits} else {[]};
 			[_detailGroup,14041] Call EZC_fnc_Functions_Client_UIFillListTeamOrders;
 		};
 	};

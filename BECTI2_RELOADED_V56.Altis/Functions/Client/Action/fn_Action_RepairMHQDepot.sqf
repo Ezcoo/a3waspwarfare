@@ -1,6 +1,6 @@
 Private ["_currency","_currencySym","_hq","_repairPrice","_commander","_towns","_logik","_get"];
 
-_commander = (cti_Client_SideJoined) call cti_CO_FNC_GetCommanderTeam;
+_commander = (cti_Client_SideJoined) call EZC_fnc_Functions_Common_GetCommanderTeam;
 _logik = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic;
 _get = _logik getVariable "cashrepaired";
 _hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
@@ -22,7 +22,7 @@ if!(isNil '_get')then {
 if (cti_Client_Logic getVariable "cti_hq_repairing") exitWith {hint (localize "STR_WF_INFO_Repair_MHQ_BeingRepaired")};
 
 _repairPrice = (missionNameSpace getVariable "cti_C_BASE_HQ_REPAIR_PRICE_CASH") * (1+0.05*((cti_Client_Logic getVariable "cti_hq_repair_count")-1));
-_currency = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+_currency = call EZC_fnc_Functions_Client_GetPlayerFunds;
 _currencySym = "$";
 
 if (_currency < _repairPrice) exitWith {hint Format [localize "STR_WF_INFO_Repair_MHQ_Funds",_currencySym,_repairPrice - _currency]};
@@ -38,7 +38,7 @@ hint (localize "STR_WF_INFO_Repair_MHQ_Repair");
 /*
 _hq setPos [0,0,500];
 _hq spawn {_this allowDamage true;};
-_position = ([getPosATL player, 20] call cti_CO_FNC_GetSafePlace);
+_position = ([getPosATL player, 20] call EZC_fnc_Functions_Common_GetSafePlace);
 _hq setPos _position;
 
 */
@@ -50,7 +50,7 @@ _hq setPos [((getPos player) select 0) + 5, (getPos player) select 1,((getPos pl
 
 
 
-_towns =(cti_Client_SideJoined) call cti_CO_FNC_GetSideTowns;
+_towns =(cti_Client_SideJoined) call EZC_fnc_Functions_Common_GetSideTowns;
 
 {_x setVariable ["supplyvalue", 10, true]} forEach _towns;
 

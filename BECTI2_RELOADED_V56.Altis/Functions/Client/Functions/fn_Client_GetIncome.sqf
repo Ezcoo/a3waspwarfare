@@ -3,7 +3,7 @@ Private["_commanderTeam","_income","_incomeSystem","_side","_ply"];
 _side = _this;
 
 _income = (_side) Call cti_CO_FNC_GetTownsIncome;
-_commanderTeam = (_side) Call cti_CO_FNC_GetCommanderTeam;
+_commanderTeam = (_side) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 _income_commander = 0;
 _income_player = 0;
 _incomeCoef = missionNamespace getVariable "cti_C_ECONOMY_INCOME_COEF";

@@ -1,1 +1,1 @@
-[cti_Client_Team, _this] Call cti_CO_FNC_ChangeTeamFunds;
+[cti_Client_Team, _this] Call EZC_fnc_Functions_Common_ChangeTeamFunds;

@@ -36,7 +36,7 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 	_max_hops = (missionNamespace getVariable "cti_C_AI_TOWN_ATTACK_HOPS_WP")-2;
 	
 	//--- First WP
-	_wp_sel = [[([_nodes_a select 0, 20, 100] Call cti_CO_FNC_GetRandomPosition), 'MOVE', 40, 20, [], [], ["AWARE","","COLUMN","NORMAL"]]];
+	_wp_sel = [[([_nodes_a select 0, 20, 100] Call EZC_fnc_Functions_Common_GetRandomPosition), 'MOVE', 40, 20, [], [], ["AWARE","","COLUMN","NORMAL"]]];
 	
 	if (random 100 < 30) exitWith {};
 	
@@ -54,7 +54,7 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 	};
 	
 	for '_i' from 0 to 1 do {_nodes_a deleteAt _i};
-	_wp_sel pushBack [([_select, 20, 100] Call cti_CO_FNC_GetRandomPosition), 'MOVE', 40, 20, [], [], ["AWARE","","WEDGE","NORMAL"]];
+	_wp_sel pushBack [([_select, 20, 100] Call EZC_fnc_Functions_Common_GetRandomPosition), 'MOVE', 40, 20, [], [], ["AWARE","","WEDGE","NORMAL"]];
 
 	//--- Random Path
 	for '_i' from 0 to _nodes-1 do {
@@ -65,7 +65,7 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 		_select = _nodes_a select 0;
 		_a_safe = [_select, _side, _town_assigned] Call cti_SE_FNC_AI_SetTownAttackPath_PosIsSafe;
 		if !(_a_safe) exitWith {};
-		if (_a_safe) then {_wp_sel pushBack [([_select, 20, 100] Call cti_CO_FNC_GetRandomPosition), 'MOVE', 60, 30, [], [], []]};
+		if (_a_safe) then {_wp_sel pushBack [([_select, 20, 100] Call EZC_fnc_Functions_Common_GetRandomPosition), 'MOVE', 60, 30, [], [], []]};
 	};
 	[_team, false, _wp_sel] Call cti_CO_FNC_WaypointsAdd;
 };
@@ -81,14 +81,14 @@ if (random 100 > 50) then {
 	_camps = [_select, _camps] Call EZC_fnc_Functions_Common_SortByDistance;
 	_behaviour = ["AWARE","","VEE","NORMAL"];
 	{
-		_wp_sel pushBack [([_x, 10, 35] Call cti_CO_FNC_GetRandomPosition), 'SAD', 40, 20, [], [], _behaviour];
+		_wp_sel pushBack [([_x, 10, 35] Call EZC_fnc_Functions_Common_GetRandomPosition), 'SAD', 40, 20, [], [], _behaviour];
 		if (random 100 < 65) exitWith {};
 		_behaviour = [];
 	} forEach _camps;
 };
 
 //--- Depot SAD.
-_wp_sel pushBack [([_wp_dest, 10, 150] Call cti_CO_FNC_GetRandomPosition), 'SAD', 35, 25, [], [], ["AWARE","","FILE","NORMAL"]];
-_wp_sel pushBack [([_wp_dest, 5, 25] Call cti_CO_FNC_GetRandomPosition), 'MOVE', 35, 25, [], [], ["AWARE","","FILE","NORMAL"]];
+_wp_sel pushBack [([_wp_dest, 10, 150] Call EZC_fnc_Functions_Common_GetRandomPosition), 'SAD', 35, 25, [], [], ["AWARE","","FILE","NORMAL"]];
+_wp_sel pushBack [([_wp_dest, 5, 25] Call EZC_fnc_Functions_Common_GetRandomPosition), 'MOVE', 35, 25, [], [], ["AWARE","","FILE","NORMAL"]];
 
 [_team, false, _wp_sel] Call cti_CO_FNC_WaypointsAdd;

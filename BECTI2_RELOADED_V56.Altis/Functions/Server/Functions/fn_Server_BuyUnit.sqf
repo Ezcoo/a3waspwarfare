@@ -31,7 +31,7 @@ _distance = (missionNamespace getVariable Format ["cti_%1STRUCTUREDISTANCES",_si
 _direction = (missionNamespace getVariable Format ["cti_%1STRUCTUREDIRECTIONS",_sideText]) select _index;
 _factoryType = (missionNamespace getVariable Format ["cti_%1STRUCTURES",_sideText]) select _index;
 _waitTime = (missionNamespace getVariable _unitType) select QUERYUNITTIME;
-_position = [getPos _building,_distance,getDir _building + _direction] Call cti_CO_FNC_GetPositionFrom;
+_position = [getPos _building,_distance,getDir _building + _direction] Call EZC_fnc_Functions_Common_GetPositionFrom;
 _longest = missionNamespace getVariable Format ["cti_LONGEST%1BUILDTIME",_factoryType];
 
 _ret = 0;
@@ -92,7 +92,7 @@ if (!(alive _building)||(isPlayer (leader _team))) exitWith {
 };
 
 if (_unitType isKindOf "Man") then {
-	_soldier = [_unitType,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+	_soldier = [_unitType,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 	[_sideText,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 } else {
 	_factoryPosition = getPos _building;
@@ -103,16 +103,16 @@ if (_unitType isKindOf "Man") then {
 	if (_unitType isKindOf "Air") then {_crew = missionNamespace getVariable Format ["cti_%1PILOT",_sideText]};
 	
 	_special = if (_unitType isKindOf "Plane") then {"FLY"} else {"NONE"};
-	_vehicle = [_unitType, _position, _sideID, _dir, true, true, true, _special] Call cti_CO_FNC_CreateVehicle;
+	_vehicle = [_unitType, _position, _sideID, _dir, true, true, true, _special] Call EZC_fnc_Functions_Common_CreateVehicle;
 
 	emptyQueu pushBack (_vehicle);
 	[_vehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
 	if (_vehicle distance (leader _team) < 200) then {(units _team) allowGetIn true;_team addVehicle _vehicle};
 	
 	//--- Clear the vehicle.
-	(_vehicle) call cti_CO_FNC_ClearVehicleCargo;
+	(_vehicle) call EZC_fnc_Functions_Common_ClearVehicleCargo;
 	
-	_soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+	_soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 
 
 	[_soldier] allowGetIn true;
@@ -124,7 +124,7 @@ if (_unitType isKindOf "Man") then {
 	[_sideText,'VehiclesCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 	_built = 1;
 	if (_isVehicle select 1) then {
-		_soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+		_soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 		[_soldier] allowGetIn true;
 		[_soldier] orderGetIn true;
 		_soldier assignAsGunner _vehicle;
@@ -138,7 +138,7 @@ if (_unitType isKindOf "Man") then {
 			(leader _team) assignAsCommander _vehicle;
 			(leader _team) moveInCommander _vehicle;
 		} else {
-			_soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+			_soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 			[_soldier] allowGetIn true;
 			[_soldier] orderGetIn true;
 			_soldier assignAsCommander _vehicle;
@@ -154,7 +154,7 @@ if (_unitType isKindOf "Man") then {
 		
 		{
 			if (isNull (_vehicle turretUnit _x)) then {
-				_soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+				_soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 				[_soldier] allowGetIn true;
 				_soldier moveInTurret [_vehicle, _x];
 				_built = _built + 1;			

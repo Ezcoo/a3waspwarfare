@@ -24,7 +24,7 @@ _logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 //--- If HQ was mobibilized, spawn a dead hq.
 if ((_side) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus) then {
 	Private ["_hq"];
-	_hq = [missionNamespace getVariable Format["cti_%1MHQNAME", _side], getPos _structure, (_side) Call EZC_fnc_Functions_Common_GetSideID, getDir _structure, false, false, false] Call cti_CO_FNC_CreateVehicle;
+	_hq = [missionNamespace getVariable Format["cti_%1MHQNAME", _side], getPos _structure, (_side) Call EZC_fnc_Functions_Common_GetSideID, getDir _structure, false, false, false] Call EZC_fnc_Functions_Common_CreateVehicle;
 	_hq setPos (getPos _structure);
 	_hq setVariable ["cti_trashable", false];
 	_hq setVariable ["cti_side", _side];

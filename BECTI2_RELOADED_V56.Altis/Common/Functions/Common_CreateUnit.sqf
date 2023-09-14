@@ -27,7 +27,7 @@ _unit = _group createUnit [_type, _position, [], 5, _special];
 //if(side _unit == east && !(_unit hasWeapon "NVGoggles")) then { _unit addWeapon "NVGoggles"; };
 
 //NV ADD
- _UpBar = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CTI_UP_BARRACKS;
+ _UpBar = ((CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select CTI_UP_BARRACKS;
  if (_UpBar > 1)then { _unit linkItem "CUP_NVG_HMNVS";};
 
 

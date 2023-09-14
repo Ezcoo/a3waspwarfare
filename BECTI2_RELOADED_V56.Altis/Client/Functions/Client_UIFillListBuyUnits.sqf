@@ -11,10 +11,10 @@ _value = _this select 3;
 _u = 0;
 _i = 0;
 
-_UpAirlift = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CTI_UP_AIRLIFT;
+_UpAirlift = ((CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select CTI_UP_AIRLIFT;
 
 /*
-_currentUpgrades = (CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades;
+_currentUpgrades = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 _filter = missionNamespace getVariable Format["CTI_%1%2CURRENTFACTIONSELECTED",CTI_Client_SideJoinedText,_filler];
 if (isNil '_filter') then {_filter = "nil"} else {
 	if (_filter == 0) then {
@@ -37,10 +37,10 @@ lnbClear _listBox;
 	}
 }foreach _listNames;
 
-_UpBar = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CTI_UP_BARRACKS;
-_UpLight = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CTI_UP_LIGHT;
-_UpHeavy = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CTI_UP_HEAVY;
-_UpAirlift = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CTI_UP_AIRLIFT;
+_UpBar = ((CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select CTI_UP_BARRACKS;
+_UpLight = ((CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select CTI_UP_LIGHT;
+_UpHeavy = ((CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select CTI_UP_HEAVY;
+_UpAirlift = ((CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select CTI_UP_AIRLIFT;
 
 {
 	_addin = true;
@@ -111,7 +111,7 @@ _UpAirlift = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CT
 	
 } forEach _listNames;
 */
-_currentUpgrades = (CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades;
+_currentUpgrades = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 _filter = missionNamespace getVariable Format["CTI_%1%2CURRENTFACTIONSELECTED",CTI_Client_SideJoinedText,_filler];
 if (isNil '_filter') then {_filter = "nil"} else {
 	if (_filter == 0) then {
@@ -132,7 +132,7 @@ lnbClear _listBox;
 	_addit = false;
 		if(_filler == 'Depot') then
 		{
-		      _UpBar = ((CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideUpgrades) select CTI_UP_BARRACKS;
+		      _UpBar = ((CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideUpgrades) select CTI_UP_BARRACKS;
 
 			if ((_x in ['CUP_O_sla_Soldier_LAT', 'CUP_O_TK_Soldier_LAT', 'CUP_O_INS_Soldier_LAT', 'CUP_B_CDF_Soldier_RPG18_DST', 'CUP_B_CDF_Soldier_RPG18_SNW', 'CUP_B_HIL_Soldier_LAT_Res']) && _UpBar>=1)then{_addit  = true;};
 			if ((_x in ['CUP_B_HIL_MMG_Recon', 'CUP_B_CDF_Soldier_MG_SNW', 'CUP_B_HIL_MMG', 'CUP_O_INS_Soldier_MG', 'CUP_O_TK_Soldier_MG', 'CUP_O_TK_INS_Soldier_MG']) && _UpBar>=1)then{_addit = true;};

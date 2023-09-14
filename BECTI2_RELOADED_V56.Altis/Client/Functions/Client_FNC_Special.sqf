@@ -56,7 +56,7 @@ cti_CL_FNC_Display_ICBM = {
 
 	waitUntil {!alive _cruise};
 
-	[_obj] Spawn cti_CO_FNC_Nuke;
+	[_obj] Spawn EZC_fnc_Module_nuke;
 };
 
 cti_CL_FNC_EndGame = {

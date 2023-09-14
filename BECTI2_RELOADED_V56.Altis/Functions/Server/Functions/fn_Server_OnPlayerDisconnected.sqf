@@ -117,7 +117,7 @@ _team setVariable ["cti_uid", nil];
 _team setVariable ["cti_teamleader", nil];
 
 //--- If the player was the commander, we warn the team and sanitize the commander informations.
-_commander = (_side) Call cti_CO_FNC_GetCommanderTeam;
+_commander = (_side) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 if !(isNull (_commander)) then {
 	if (_team == _commander) then {
 		_logik setVariable ["cti_commander", objNull, true];

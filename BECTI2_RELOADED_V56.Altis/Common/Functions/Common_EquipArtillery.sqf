@@ -33,7 +33,7 @@ _sp=side player;
 
 
 //--- Retrieve the Artillery upgrade level.
-_currentUpgrades = ((_sp) Call cti_CO_FNC_GetSideUpgrades) select cti_UP_ARTYAMMO;
+_currentUpgrades = ((_sp) Call EZC_fnc_Functions_Common_GetSideUpgrades) select cti_UP_ARTYAMMO;
 
 
 

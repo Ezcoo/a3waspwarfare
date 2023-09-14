@@ -4,13 +4,13 @@ while { true } do {
 	
 	if (isNil {uiNamespace getVariable "cti_dialog_ui_gear"}) exitWith {}; //--- Menu is closed.
 	
-	_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+	_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 	
 	if (_last_funds != _funds) then {
 		
 		_trade_in = uiNamespace getVariable "cti_dialog_ui_gear_tradein";
 		_coloration = if (_trade_in > 0) then {"#F56363"} else {"#76F563"};
-		((uiNamespace getVariable "cti_dialog_ui_gear") displayCtrl 70025) ctrlSetStructuredText parseText format ["<t align='left'>Trade-in: <t color='%3'>$%1</t><t><t align='right'>Resources: <t color='%4'>$%2</t><t>", _trade_in, CallEZC_fnc_Functions_Client_GetPlayerFunds, _coloration, "#BAFF81"];
+		((uiNamespace getVariable "cti_dialog_ui_gear") displayCtrl 70025) ctrlSetStructuredText parseText format ["<t align='left'>Trade-in: <t color='%3'>$%1</t><t><t align='right'>Resources: <t color='%4'>$%2</t><t>", _trade_in, call EZC_fnc_Functions_Client_GetPlayerFunds, _coloration, "#BAFF81"];
 	};
 	
 	_last_funds = _funds;

@@ -90,7 +90,7 @@ switch (_args select 0) do {
 		_droppos1 = [_dropPosX + 4, _dropPosY + 4, _dropPosZ];
 		_droppos2 = [_dropPosX + 8, _dropPosY + 8, _dropPosZ];
 		waitUntil {!alive _target || isNull _target};
-		[_base] Spawn cti_CO_FNC_NukeDammage;
+		[_base] Spawn EZC_fnc_Module_damage;
 	};
 	case "process-killed-hq": {
 		(_args select 1) Spawn cti_SE_FNC_OnHQKilled;

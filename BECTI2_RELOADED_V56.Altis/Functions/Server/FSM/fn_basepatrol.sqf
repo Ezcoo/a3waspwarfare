@@ -10,7 +10,7 @@ while {!cti_GameOver} do {
 	if(alive _building) then {
 		if(_teams < _maxTeams) then {
 
-			_currentUpgrades = (_side) Call cti_CO_FNC_GetSideUpgrades;
+			_currentUpgrades = (_side) Call EZC_fnc_Functions_Common_GetSideUpgrades;
 			_currentLevel = _currentUpgrades select cti_UP_GEAR;
 			
 			[_building,_side,missionNamespace getVariable Format['cti_%1BASEPATROLS_%2',_side,_currentLevel]] Spawn {
@@ -23,7 +23,7 @@ while {!cti_GameOver} do {
 				_index = (missionNamespace getVariable Format["cti_%1STRUCTURENAMES",str _side]) find _type;
 				_distance = (missionNamespace getVariable Format["cti_%1STRUCTUREDISTANCES",str _side]) select _index;
 				_direction = (missionNamespace getVariable Format["cti_%1STRUCTUREDIRECTIONS",str _side]) select _index;
-				_position = [getPos _site,_distance,getDir _site + _direction] Call cti_CO_FNC_GetPositionFrom;
+				_position = [getPos _site,_distance,getDir _site + _direction] Call EZC_fnc_Functions_Common_GetPositionFrom;
 				
 				if!(isNil "headlessClients") then {					
 					_hc = headlessClients select 0;

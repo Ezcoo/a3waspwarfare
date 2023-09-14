@@ -5,7 +5,7 @@ WF_MenuAction = -1;
 
 _currentVD = viewDistance;
 _currentOD = getObjectViewDistance select 0;
-_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 
 if (votePopUp) then {
 	ctrlSetText[13019, localize "STR_WF_VOTING_PopUpOffButton"];
@@ -17,7 +17,7 @@ ctrlSetText [13101, Format [localize "STR_WF_TEAM_ObjectDistanceLabel",_currentO
 ctrlSetText [13002, Format [localize "STR_WF_TEAM_ViewDistanceLabel",_currentVD]];
 //ctrlSetText [13004, Format [localize "STR_WF_TEAM_TerrainGridLabel",currentTG]];
 ctrlSetText [13006, Format [localize "STR_WF_TEAM_MoneyTransfer",0]];
-ctrlSetText [13010, Format [localize "STR_WF_Income",CallEZC_fnc_Functions_Client_GetPlayerFunds,(cti_Client_SideJoined) Call EZC_fnc_Functions_Client_GetIncome]];
+ctrlSetText [13010, Format [localize "STR_WF_Income",call EZC_fnc_Functions_Client_GetPlayerFunds,(cti_Client_SideJoined) Call EZC_fnc_Functions_Client_GetIncome]];
 
 SliderSetRange[130039, 1, missionNamespace getVariable "cti_C_OBJECT_MAX_VIEW"];
 SliderSetRange[13003, 1, missionNamespace getVariable "cti_C_ENVIRONMENT_MAX_VIEW"];
@@ -40,14 +40,14 @@ _i = 1;
 } forEach cti_Client_Teams; 
 lbSetCurSel[13008,0];
 
-_units = ((units group player) Call cti_CO_FNC_GetLiveUnits);
+_units = ((units group player) Call EZC_fnc_Functions_Common_GetLiveUnits);
 _units = _units - [player];
 {
-	_desc = [typeOf _x, 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+	_desc = [typeOf _x, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 	_finalNumber = (_x) Call cti_CO_FNC_GetAIDigit;
 	_isInVehicle = "";
 	if (_x != vehicle _x) then {
-		_descVehi = [typeOf (vehicle _x), 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+		_descVehi = [typeOf (vehicle _x), 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 		_isInVehicle = " [" + _descVehi + "] ";
 	};
 	_txt = "["+_finalNumber+"] "+ _desc + _isInVehicle;
@@ -78,9 +78,9 @@ while {alive player && dialog} do {
 	if (WF_MenuAction == 1) then {
 		WF_MenuAction = -1;
 		if ((_transferAmount != 0)&&((cti_Client_Teams select _curSel) != group player)) then {
-			[(cti_Client_Teams select _curSel),_transferAmount] Call cti_CO_FNC_ChangeTeamFunds;
+			[(cti_Client_Teams select _curSel),_transferAmount] Call EZC_fnc_Functions_Common_ChangeTeamFunds;
 			-_transferAmount Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
+			_funds = call EZC_fnc_Functions_Client_GetPlayerFunds;
 			if (isPlayer leader (cti_Client_Teams select _curSel)) then {
 				['FundsTransfer',_transferAmount,name player] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", leader (cti_Client_Teams select _curSel)];
 			};
@@ -102,15 +102,15 @@ while {alive player && dialog} do {
 				};
 			} forEach _destroy;
 			
-			_units = (units group player) Call cti_CO_FNC_GetLiveUnits;
+			_units = (units group player) Call EZC_fnc_Functions_Common_GetLiveUnits;
 			_units = _units - [leader group player];
 			lbClear 13013;
 			{
-				_desc = [typeOf _x, 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+				_desc = [typeOf _x, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 				_finalNumber = (_x) Call cti_CO_FNC_GetAIDigit;
 				_isInVehicle = "";
 				if (_x != vehicle _x) then {
-					_descVehi = [typeOf (vehicle _x), 'displayName'] Call cti_CO_FNC_GetConfigInfo;
+					_descVehi = [typeOf (vehicle _x), 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
 					_isInVehicle = " [" + _descVehi + "] ";
 				};
 				_txt = "["+_finalNumber+"] "+ _desc + _isInVehicle;
@@ -165,7 +165,7 @@ while {alive player && dialog} do {
 	_lastvd = _currentVD;
 	//_lasttg = currentTG;
 	
-	if (_timer > 2) then {ctrlSetText [13010, Format [localize "STR_WF_Income",CallEZC_fnc_Functions_Client_GetPlayerFunds,(cti_Client_SideJoined) Call EZC_fnc_Functions_Client_GetIncome]];_timer = 0};
+	if (_timer > 2) then {ctrlSetText [13010, Format [localize "STR_WF_Income",call EZC_fnc_Functions_Client_GetPlayerFunds,(cti_Client_SideJoined) Call EZC_fnc_Functions_Client_GetIncome]];_timer = 0};
 	_timer = _timer + 0.05;
 	
 	//--- Back Button.

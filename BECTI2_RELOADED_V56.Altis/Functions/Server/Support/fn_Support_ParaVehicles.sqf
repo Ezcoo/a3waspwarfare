@@ -30,12 +30,12 @@ _vehicle = createVehicle [missionNamespace getVariable Format ["cti_%1PARAVEHI",
 
 [[[_vehicle,_sideID], "Common\Init\Init_Unit.sqf"], "BIS_fnc_execVM", false, false] call BIS_fnc_MP;
 
-//_vehicle = [missionNamespace getVariable Format ["cti_%1PARAVEHICARGO", _side], [0,0,50] ,_sideID, 0, false] Call cti_CO_FNC_CreateVehicle;
+//_vehicle = [missionNamespace getVariable Format ["cti_%1PARAVEHICARGO", _side], [0,0,50] ,_sideID, 0, false] Call EZC_fnc_Functions_Common_CreateVehicle;
 	
 
 [str _side,'VehiclesCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 [str _side,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
-_pilot = [missionNamespace getVariable Format ["cti_%1PILOT",str _side],_grp,[100,12000,0],_sideID] Call cti_CO_FNC_CreateUnit;
+_pilot = [missionNamespace getVariable Format ["cti_%1PILOT",str _side],_grp,[100,12000,0],_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 _pilot moveInDriver _vehicle;
 _pilot doMove (_args select 2);
 _grp setBehaviour 'CARELESS';
@@ -47,7 +47,7 @@ Call Compile Format ["_vehicle addEventHandler ['Killed',{[_this select 0,_this 
 
 _vehicle flyInHeight (300 + random(75));
 _cargo = (crew _vehicle) - [driver _vehicle, gunner _vehicle, commander _vehicle];
-_cargoVehicle = [missionNamespace getVariable Format ["cti_%1PARAVEHICARGO", _side], [0,0,50] ,_sideID, 0, false] Call cti_CO_FNC_CreateVehicle;
+_cargoVehicle = [missionNamespace getVariable Format ["cti_%1PARAVEHICARGO", _side], [0,0,50] ,_sideID, 0, false] Call EZC_fnc_Functions_Common_CreateVehicle;
 
 
 _cargoVehicle attachTo [_vehicle,[0,0,-2]];

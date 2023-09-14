@@ -65,8 +65,8 @@ while {!cti_GameOver} do {
 			hqInRange = if ((player distance _base < _mhqbr) && alive _base  && (side _base in [cti_Client_SideJoined,civilian])) then {true} else {false};
 		};
 
-		barracksInRange = if (isNull (['BARRACKSTYPE',_buildings,_purchaseRange,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange)) then {false} else {true};
-		gearInRange = if (isNull (['BARRACKSTYPE',_buildings,_pgr,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange)) then {false} else {true};
+		barracksInRange = if (isNull (['BARRACKSTYPE',_buildings,_purchaseRange,cti_Client_SideJoined,player] Call EZC_fnc_Functions_Common_BuildingInRange)) then {false} else {true};
+		gearInRange = if (isNull (['BARRACKSTYPE',_buildings,_pgr,cti_Client_SideJoined,player] Call EZC_fnc_Functions_Common_BuildingInRange)) then {false} else {true};
 		if !(gearInRange) then {
 		
 
@@ -85,22 +85,22 @@ while {!cti_GameOver} do {
 			
 		
 
-		lightInRange = if (isNull (['LIGHTTYPE',_buildings,_purchaseRange,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange)) then {false} else {true};
-		heavyInRange = if (isNull (['HEAVYTYPE',_buildings,_purchaseRange,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange)) then {false} else {true};
-		aircraftInRange = if (isNull (['AIRCRAFTTYPE',_buildings,_purchaseRange,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange)) then {false} else {true};
-		serviceInRange = if (isNull (['SERVICEPOINTTYPE',_buildings,_spr,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange)) then {false} else {true};
+		lightInRange = if (isNull (['LIGHTTYPE',_buildings,_purchaseRange,cti_Client_SideJoined,player] Call EZC_fnc_Functions_Common_BuildingInRange)) then {false} else {true};
+		heavyInRange = if (isNull (['HEAVYTYPE',_buildings,_purchaseRange,cti_Client_SideJoined,player] Call EZC_fnc_Functions_Common_BuildingInRange)) then {false} else {true};
+		aircraftInRange = if (isNull (['AIRCRAFTTYPE',_buildings,_purchaseRange,cti_Client_SideJoined,player] Call EZC_fnc_Functions_Common_BuildingInRange)) then {false} else {true};
+		serviceInRange = if (isNull (['SERVICEPOINTTYPE',_buildings,_spr,cti_Client_SideJoined,player] Call EZC_fnc_Functions_Common_BuildingInRange)) then {false} else {true};
 
 		if !(serviceInRange) then {
 			_checks = (getPos player) nearEntities[_typeRepair,_rptr];
 			if (count _checks > 0) then {serviceInRange = true;};
 		};
 
-		_checks = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1AARADARTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
+		_checks = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1AARADARTYPE",cti_Client_SideJoinedText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 		if (count _checks > 0) then {antiAirRadarInRange = true;} else {antiAirRadarInRange = false;};
 		
 		/* Disable ARR for now
 
-		_checks = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1ArtyRadarTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
+		_checks = [cti_Client_SideJoined, missionNamespace getVariable Format ["cti_%1ArtyRadarTYPE",cti_Client_SideJoinedText],_buildings] Call EZC_fnc_Functions_Common_GetFactories;
 		if (count _checks > 0) then {antiArtyRadarInRange = true;} else {antiArtyRadarInRange = false;};
 		*/
 		
@@ -108,7 +108,7 @@ while {!cti_GameOver} do {
 		depotInRange = if !(isNull ([vehicle player, _tcr] Call EZC_fnc_Functions_Client_GetClosestDepot)) then {true} else {false};
 		if (depotInRange) then {serviceInRange = true;};
 
-		_checks = ['COMMANDCENTERTYPE',_buildings,_ccr,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange;
+		_checks = ['COMMANDCENTERTYPE',_buildings,_ccr,cti_Client_SideJoined,player] Call EZC_fnc_Functions_Common_BuildingInRange;
 		commandInRange = if (isNull _checks) then {false} else {true};
 
 		//--- Airport.

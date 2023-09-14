@@ -37,7 +37,7 @@ _hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 _vehi = vehicle player;
 if (_vehi != player) then {player action ["EJECT", _vehi];_vehi = player};
 _vehi setVelocity [0,0,-0.1];
-_vehi setPos ([getPos _hq,20,30] Call cti_CO_FNC_GetRandomPosition);
+_vehi setPos ([getPos _hq,20,30] Call EZC_fnc_Functions_Common_GetRandomPosition);
 
 if (!isNil "DeathCamera") then {
 	DeathCamera cameraEffect["TERMINATE","BACK"];

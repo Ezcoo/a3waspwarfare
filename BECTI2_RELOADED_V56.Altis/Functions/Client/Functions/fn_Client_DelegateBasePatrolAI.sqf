@@ -14,7 +14,7 @@ cti_HC_BasePatrolTeams pushBack _group;
 	if (alive _site) then {
 		if (_x isKindOf 'Man') then {
 			_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
-			_soldier = [_x,_group,_position,_sideID] Call cti_CO_FNC_CreateUnit;
+			_soldier = [_x,_group,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
 			_created = _created + 1;
 		};
 	};
