@@ -1,4 +1,4 @@
-﻿#include "data.sqf";
-#include "viem.sqf"
+﻿#include "fn_data.sqf"
+#include "fn_viem.sqf"
 
 
