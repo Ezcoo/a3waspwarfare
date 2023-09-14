@@ -11,7 +11,8 @@ EtV_ChargeableVehicles = ["Air","Ship","LandVehicle","Car","Motorcycle","Tank","
 
 EtV_InteractRange = 5;
 
-CTI_ATTACH_BLACKLIST=[_unit];
+// WIP apparently, so commented this out
+// CTI_ATTACH_BLACKLIST=[_unit];
 
 EtV_ChargeCheck =
 {
