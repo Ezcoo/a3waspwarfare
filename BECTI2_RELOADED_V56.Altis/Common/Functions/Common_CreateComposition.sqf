@@ -4,6 +4,7 @@ _azi 	= _this select 0;
 _pos 	= _this select 1;
 _campObject = _this select 2;
 _town = _this select 3;
+// Definition of this variable is missing! Unuseable function for now.
 _objs   = missionNamespace getVariable "";
 _posX = _pos select 0;
 _posY = _pos select 1;

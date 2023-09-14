@@ -147,9 +147,9 @@ if (isServer) then {
 					_direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 					_campModel setDir (_direction);
 
-					[_direction, _camp_pos, _campModel, _town] call cti_CO_FNC_CreateComposition;
-					_x setDir (getDir _campModel);
-					_x setPosATL (getPosATL _campModel);
+					// [_direction, _camp_pos, _campModel, _town] call cti_CO_FNC_CreateComposition;
+					// _x setDir (getDir _campModel);
+					// _x setPosATL (getPosATL _campModel);
 				};
             };
 			_campModel setVectorUp surfaceNormal (getposATL _campModel);
