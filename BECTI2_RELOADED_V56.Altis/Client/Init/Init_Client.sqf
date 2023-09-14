@@ -378,7 +378,7 @@ cti_Client_IsRespawning = false;
 commanderTeam = objNull;
 buildingMarker = 0;
 CCMarker = 0;
-//currentTG = ['cti_PERSISTENT_CONST_TERRAIN_GRID', '1'] Call cti_CO_FNC_GetProfileVariable;
+//currentTG = ['cti_PERSISTENT_CONST_TERRAIN_GRID', '1'] Call EZC_fnc_Functions_Common_GetProfileVariable;
 //if (currentTG == 35) then {setTerrainGrid currentTG};
 //currentTG = 1;
 lastBuilt = [];

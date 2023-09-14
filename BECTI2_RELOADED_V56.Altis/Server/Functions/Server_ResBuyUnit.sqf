@@ -46,7 +46,7 @@ if (_unitType isKindOf "Man") then {
 	}else{
 	    _soldier = [_unitType,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
         //--- Infantry can use the team vehicles as cargo.
-        _vehicle = [_team,true] Call cti_CO_FNC_GetTeamVehicles;
+        _vehicle = [_team,true] Call EZC_fnc_Functions_Common_GetTeamVehicles;
         {_team addVehicle _x} forEach _vehicle;
 	};
 }else{

@@ -464,14 +464,14 @@ CTI_UI_Gear_DisplayShoppingItems = {
                 _current_upgrade_level = 0;
                 {
                     if(_upgrade == -1)then{
-                        _upgrade = (_x call CTI_CO_FNC_GetGearItemUpgradeLevel);
+                        _upgrade = (_x call EZC_fnc_Functions_Common_GetGearItemUpgradeLevel);
                     }else{
-                        _current_upgrade_level = (_x call CTI_CO_FNC_GetGearItemUpgradeLevel);
+                        _current_upgrade_level = (_x call EZC_fnc_Functions_Common_GetGearItemUpgradeLevel);
                         if(_upgrade < _current_upgrade_level)then{
                             _upgrade = _current_upgrade_level;
                         };
                     };
-                } forEach (_gear call CTI_CO_FNC_ConvertGearToFlat);
+                } forEach (_gear call EZC_fnc_Functions_Common_ConvertGearToFlat);
 
                 if(_upgrade > _upgrade_gear) then{
                     _template set [4, _upgrade];
@@ -969,12 +969,12 @@ CTI_UI_Gear_TryEquipAccessory = {
 			if (_do_check) then {
 				
 				/*old waspcode
-				_compatibleItems = (getArray(configFile >> 'CfgWeapons' >> (_x select 0) >> 'WeaponSlotsInfo' >> _config >> 'compatibleItems') call CTI_CO_FNC_ArrayToLower);
+				_compatibleItems = (getArray(configFile >> 'CfgWeapons' >> (_x select 0) >> 'WeaponSlotsInfo' >> _config >> 'compatibleItems') call EZC_fnc_Functions_Common_ArrayToLower);
 				{_compatibleItems pushBack toLower(configName _x)} forEach (configProperties[configfile >> "CfgWeapons" >> (_x select 0) >> "WeaponSlotsInfo" >> _config >> "compatibleItems", "true", true]);
 				*/
 				
 				_compatibleItems = (_x select 0) call BIS_fnc_compatibleItems;
-				_compatibleItems = (_compatibleItems) call CTI_CO_FNC_ArrayToLower;
+				_compatibleItems = (_compatibleItems) call EZC_fnc_Functions_Common_ArrayToLower;
 					
 					
 				
@@ -1062,7 +1062,7 @@ CTI_UI_Gear_CheckAccessories = {
 
 		for '_i' from 0 to 3 do {
 			
-			_compatibleItems = ([_item, ([101, 301, 201, 302] select _i)] call BIS_fnc_compatibleItems) call CTI_CO_FNC_ArrayToLower;
+			_compatibleItems = ([_item, ([101, 301, 201, 302] select _i)] call BIS_fnc_compatibleItems) call EZC_fnc_Functions_Common_ArrayToLower;
 
 			
 			if !(toLower((((_gear select 0) select _index) select 1) select _i) in _compatibleItems) then {
@@ -1091,8 +1091,8 @@ CTI_UI_Gear_CheckMagazines = {
 	_gear = uiNamespace getVariable "cti_dialog_ui_gear_target_gear";
 
 	/*
-	_magazines_old = (getArray(configFile >> 'CfgWeapons' >> _weapon_old >> 'magazines')) call CTI_CO_FNC_ArrayToLower;
-	_magazines = (getArray(configFile >> 'CfgWeapons' >> _weapon >> 'magazines')) call CTI_CO_FNC_ArrayToLower;
+	_magazines_old = (getArray(configFile >> 'CfgWeapons' >> _weapon_old >> 'magazines')) call EZC_fnc_Functions_Common_ArrayToLower;
+	_magazines = (getArray(configFile >> 'CfgWeapons' >> _weapon >> 'magazines')) call EZC_fnc_Functions_Common_ArrayToLower;
 	*/
 	
 	
@@ -1100,8 +1100,8 @@ CTI_UI_Gear_CheckMagazines = {
 	_bweapon= _weapon call BIS_fnc_baseWeapon;	
 
 	
-	_magazines_old = (getArray(configFile >> 'CfgWeapons' >> _weapon_old >> 'magazines')) call CTI_CO_FNC_ArrayToLower;
-	_magazines = (getArray(configFile >> 'CfgWeapons' >> _bweapon >> 'magazines')) call CTI_CO_FNC_ArrayToLower;
+	_magazines_old = (getArray(configFile >> 'CfgWeapons' >> _weapon_old >> 'magazines')) call EZC_fnc_Functions_Common_ArrayToLower;
+	_magazines = (getArray(configFile >> 'CfgWeapons' >> _bweapon >> 'magazines')) call EZC_fnc_Functions_Common_ArrayToLower;
 	
 
 	_replace = [];
@@ -1416,7 +1416,7 @@ CTI_UI_Gear_OnShoppingItemDrag = {
 						
 					
 					
-					//_magazines = (getArray(configFile >> 'CfgWeapons' >> (_gear_sub select 0) >> 'magazines')) call CTI_CO_FNC_ArrayToLower;
+					//_magazines = (getArray(configFile >> 'CfgWeapons' >> (_gear_sub select 0) >> 'magazines')) call EZC_fnc_Functions_Common_ArrayToLower;
 					
 					
 					_magazines = [];
@@ -1427,7 +1427,7 @@ CTI_UI_Gear_OnShoppingItemDrag = {
 			
 					if (getNumber(configFile >> "CfgWeapons" >> (_gear_sub select 0) >> "type") == 4 ) then {
 			
-					_lmag= (getArray(configFile >> 'CfgWeapons' >> (_gear_sub select 0) >> 'magazines')) call CTI_CO_FNC_ArrayToLower;
+					_lmag= (getArray(configFile >> 'CfgWeapons' >> (_gear_sub select 0) >> 'magazines')) call EZC_fnc_Functions_Common_ArrayToLower;
 				
 					_magazines = _magazines + _lmag;
 					
@@ -1435,7 +1435,7 @@ CTI_UI_Gear_OnShoppingItemDrag = {
 					if (_item in _magazines) then {	_idcs pushBack (77901+_i) };
 					} else {
 			
-					//_wmag= (getArray(configFile >> 'CfgWeapons' >> _bthis >> 'magazines')) call CTI_CO_FNC_ArrayToLower;
+					//_wmag= (getArray(configFile >> 'CfgWeapons' >> _bthis >> 'magazines')) call EZC_fnc_Functions_Common_ArrayToLower;
 					//_magazines = _magazines + _wmag;
 					
 					
@@ -1494,7 +1494,7 @@ CTI_UI_Gear_OnShoppingItemDrag = {
 								{
 									if ((_x select 0) != "") then { //--- Muzzle is an array
 																				
-										_compatibleItems = ([_x select 0, 101] call BIS_fnc_compatibleItems) call CTI_CO_FNC_ArrayToLower;
+										_compatibleItems = ([_x select 0, 101] call BIS_fnc_compatibleItems) call EZC_fnc_Functions_Common_ArrayToLower;
 	
 										if (_item in _compatibleItems) then {_idcs = _idcs + [_acc_idcs select _forEachIndex]};
 										};
@@ -1508,7 +1508,7 @@ CTI_UI_Gear_OnShoppingItemDrag = {
 									if ((_x select 0) != "") then { //--- Side is a subclass
 
 										
-										_compatibleItems = ([_x select 0, 301] call BIS_fnc_compatibleItems) call CTI_CO_FNC_ArrayToLower; 
+										_compatibleItems = ([_x select 0, 301] call BIS_fnc_compatibleItems) call EZC_fnc_Functions_Common_ArrayToLower; 
 										
 										
 										if (_item in _compatibleItems) then {_idcs = _idcs + [_acc_idcs select _forEachIndex]};
@@ -1521,7 +1521,7 @@ CTI_UI_Gear_OnShoppingItemDrag = {
 							{
 									if ((_x select 0) != "") then { //--- Optics is a subclass
 										
-										_compatibleItems = ([_x select 0, 201] call BIS_fnc_compatibleItems) call CTI_CO_FNC_ArrayToLower; // Might as well check it the same way it was put into the menu.
+										_compatibleItems = ([_x select 0, 201] call BIS_fnc_compatibleItems) call EZC_fnc_Functions_Common_ArrayToLower; // Might as well check it the same way it was put into the menu.
 										
 										
 										if (_item in _compatibleItems) then {_idcs = _idcs + [_acc_idcs select _forEachIndex]};
@@ -1534,11 +1534,11 @@ CTI_UI_Gear_OnShoppingItemDrag = {
 							{
 									if ((_x select 0) != "") then { //--- Optics is a subclass
 
-										//_compatibleItems = (getArray(configFile >> _config_type >> (_x select 0) >> 'WeaponSlotsInfo' >> 'UnderBarrelSlot' >> 'compatibleItems') call CTI_CO_FNC_ArrayToLower);
+										//_compatibleItems = (getArray(configFile >> _config_type >> (_x select 0) >> 'WeaponSlotsInfo' >> 'UnderBarrelSlot' >> 'compatibleItems') call EZC_fnc_Functions_Common_ArrayToLower);
 										//{_compatibleItems pushBack toLower(configName _x)} forEach (configProperties[configfile >> _config_type >> (_x select 0) >> "WeaponSlotsInfo" >> "UnderBarrelSlot" >> "compatibleItems", "true", true]);
 										
 										
-										_compatibleItems = ([_x select 0, 302] call BIS_fnc_compatibleItems) call CTI_CO_FNC_ArrayToLower; 
+										_compatibleItems = ([_x select 0, 302] call BIS_fnc_compatibleItems) call EZC_fnc_Functions_Common_ArrayToLower; 
 										
 										
 										if (_item in _compatibleItems) then {_idcs = _idcs + [_acc_idcs select _forEachIndex]};
@@ -1765,7 +1765,7 @@ CTI_UI_Gear_UpdateLinkedItems = {
 
 		/*dont worked
 		_magazines = [];
-		_magazines =_magazines + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'MuzzleSlot' >> 'compatibleMagazines')) call CTI_CO_FNC_ArrayToLower);
+		_magazines =_magazines + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'MuzzleSlot' >> 'compatibleMagazines')) call EZC_fnc_Functions_Common_ArrayToLower);
 		
 		{_magazines pushBack toLower(configName _x)} forEach (configProperties[configfile >> 'CfgWeapons' >> _item >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleMagazines", "true", true]);
 		---------------------------------------
@@ -1857,10 +1857,10 @@ CTI_UI_Gear_UpdateLinkedItems = {
 		
 		//--- Add the compatible accessories (bistery over here, one time the config 'compatibleItems' is property, one time it's an array, so fuck it, we add both).
 		_compatible_acc = [];
-		_compatible_acc = _compatible_acc + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'MuzzleSlot' >> 'compatibleItems')) call CTI_CO_FNC_ArrayToLower);
-		_compatible_acc = _compatible_acc + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'PointerSlot' >> 'compatibleItems')) call CTI_CO_FNC_ArrayToLower);
-		_compatible_acc = _compatible_acc + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'CowsSlot' >> 'compatibleItems')) call CTI_CO_FNC_ArrayToLower);
-		_compatible_acc = _compatible_acc + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'UnderBarrelSlot' >> 'compatibleItems')) call CTI_CO_FNC_ArrayToLower);
+		_compatible_acc = _compatible_acc + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'MuzzleSlot' >> 'compatibleItems')) call EZC_fnc_Functions_Common_ArrayToLower);
+		_compatible_acc = _compatible_acc + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'PointerSlot' >> 'compatibleItems')) call EZC_fnc_Functions_Common_ArrayToLower);
+		_compatible_acc = _compatible_acc + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'CowsSlot' >> 'compatibleItems')) call EZC_fnc_Functions_Common_ArrayToLower);
+		_compatible_acc = _compatible_acc + ((getArray(configFile >> 'CfgWeapons' >> _item >> 'WeaponSlotsInfo' >> 'UnderBarrelSlot' >> 'compatibleItems')) call EZC_fnc_Functions_Common_ArrayToLower);
 		
 		{_compatible_acc pushBack toLower(configName _x)} forEach (configProperties[configfile >> 'CfgWeapons' >> _item >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems", "true", true]);
 		{_compatible_acc pushBack toLower(configName _x)} forEach (configProperties[configfile >> 'CfgWeapons' >> _item >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems", "true", true]);
@@ -1896,7 +1896,7 @@ CTI_UI_Gear_UpdateLinkedItems = {
 				
 			};
 	
-		} forEach (_magazines call CTI_CO_FNC_ArrayToLower) + _compatible_acc;
+		} forEach (_magazines call EZC_fnc_Functions_Common_ArrayToLower) + _compatible_acc;
 	
 
 		} else {missionNamespace setVariable ["cti_dialog_ui_gear_linked_weapon_parent", ""];
@@ -1914,13 +1914,13 @@ CTI_UI_Gear_GetGearCostDelta = {
 
 
         if (uiNamespace getVariable "CTI_dialog_ui_gear_target" isKindOf "Man") then {
-		_gear_old = (_gear_old) call CTI_CO_FNC_ConvertGearToFlat;
-		_gear_new = (_gear_new) call CTI_CO_FNC_ConvertGearToFlat;
+		_gear_old = (_gear_old) call EZC_fnc_Functions_Common_ConvertGearToFlat;
+		_gear_new = (_gear_new) call EZC_fnc_Functions_Common_ConvertGearToFlat;
 	};
 
 	{
 		_find = _gear_new find _x;
-		_item_cost = (_x) call CTI_CO_FNC_GetGearItemCost;
+		_item_cost = (_x) call EZC_fnc_Functions_Common_GetGearItemCost;
 		if (_find != -1) then {
 			_gear_new deleteAt _find;
 		} else {
@@ -1929,7 +1929,7 @@ CTI_UI_Gear_GetGearCostDelta = {
 	} forEach _gear_old;
 
 	{
-		_item_cost = (_x) call CTI_CO_FNC_GetGearItemCost;
+		_item_cost = (_x) call EZC_fnc_Functions_Common_GetGearItemCost;
 		_cost = _cost + _item_cost;
 	} forEach _gear_new;
 
@@ -2528,19 +2528,19 @@ CTI_UI_Gear_LoadAvailableUnits = {
 	
 	{
 		_manRange = missionNamespace getVariable "CTI_C_BASE_DEFENSE_MANNING_RANGE";
-		_nearest = ['BARRACKSTYPE', _x, _structures, _manRange] call CTI_CO_FNC_GetClosestStructure;
+		_nearest = ['BARRACKSTYPE', _x, _structures, _manRange] call EZC_fnc_Functions_Common_GetClosestStructure;
 		
 		_fob_in_range = gearInRange;
 		
 		if (!isNull _nearest || _x == player || _fob_in_range) then {//todo add fob
 			_list pushBack _x;
-			((uiNamespace getVariable "CTI_dialog_ui_gear") displayCtrl 70201) lbAdd Format["[%1] %2", _x Call CTI_CO_FNC_GetAIDigit, getText(configFile >> "CfgVehicles" >> typeOf _x >> "displayName")];
+			((uiNamespace getVariable "CTI_dialog_ui_gear") displayCtrl 70201) lbAdd Format["[%1] %2", _x Call EZC_fnc_Functions_Common_GetAIDigit, getText(configFile >> "CfgVehicles" >> typeOf _x >> "displayName")];
 		};
 		if (vehicle _x != _x && !(vehicle _x in _vehicles)) then { //--- Vehicle check
 			if (getNumber(configFile >> "CfgVehicles" >> typeOf vehicle _x >> "maximumLoad") > 0) then {
 				if (!isNull _nearest || _fob_in_range) then {
 					_list pushBack vehicle _x;
-					((uiNamespace getVariable "CTI_dialog_ui_gear") displayCtrl 70201) lbAdd Format["[%1] %2", _x Call CTI_CO_FNC_GetAIDigit, getText(configFile >> "CfgVehicles" >> typeOf vehicle _x >> "displayName")];
+					((uiNamespace getVariable "CTI_dialog_ui_gear") displayCtrl 70201) lbAdd Format["[%1] %2", _x Call EZC_fnc_Functions_Common_GetAIDigit, getText(configFile >> "CfgVehicles" >> typeOf vehicle _x >> "displayName")];
 					_vehicles pushBack vehicle _x;
 				};
 			};
@@ -2549,7 +2549,7 @@ CTI_UI_Gear_LoadAvailableUnits = {
 	
 	{
 		_manRange = missionNamespace getVariable "CTI_C_BASE_DEFENSE_MANNING_RANGE";
-		_nearest = ['BARRACKSTYPE', _x, _structures, _manRange] call CTI_CO_FNC_GetClosestStructure;
+		_nearest = ['BARRACKSTYPE', _x, _structures, _manRange] call EZC_fnc_Functions_Common_GetClosestStructure;
 		
 		_fob_in_range = gearInRange;
 		

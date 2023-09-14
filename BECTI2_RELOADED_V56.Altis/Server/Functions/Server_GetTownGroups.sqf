@@ -169,8 +169,8 @@ if ((_total_infantry + _total_vehicles) == 0) exitWith {[]};
 if (_total_infantry == 0) then {_percentage_inf = 0};
 if (_total_vehicles == 0) then {_percentage_inf = 100};
 
-if (_total_infantry > 1) then {_unit_infantry = (_unit_infantry) Call cti_CO_FNC_ArrayShuffle};
-if (_total_vehicles > 1) then {_unit_vehicles = (_unit_vehicles) Call cti_CO_FNC_ArrayShuffle};
+if (_total_infantry > 1) then {_unit_infantry = (_unit_infantry) Call EZC_fnc_Functions_Common_ArrayShuffle};
+if (_total_vehicles > 1) then {_unit_vehicles = (_unit_vehicles) Call EZC_fnc_Functions_Common_ArrayShuffle};
 
 _total_infantry_p = round(_groups_max * (_percentage_inf / 100));
 _total_vehicles_p = round(_groups_max - _total_infantry_p);

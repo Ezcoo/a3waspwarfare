@@ -30,13 +30,13 @@ if (_ammo in _ammoList) then {
 	
 	//--- SADARM Rounds.
 	if (_ammo in (missionNamespace getVariable Format ["cti_%1_ARTILLERY_AMMO_SADARM",_side])) then {
-		[_projectile,_landDestination,_velocity] Spawn cti_CO_FNC_ARTY_HandleSADARM;
+		[_projectile,_landDestination,_velocity] Spawn EZC_fnc_Module_ARTY_HandleSADARM;
 		_keepShellAlive = false; //--- SADARM Destroy the original round.
 	};
 		
 	//--- ILLUM Rounds.
 	if (_ammo in (missionNamespace getVariable Format ["cti_%1_ARTILLERY_AMMO_ILLUMN",_side])) then {
-		[_projectile,_landDestination,_velocity] Spawn cti_CO_FNC_ARTY_HandleILLUM;
+		[_projectile,_landDestination,_velocity] Spawn EZC_fnc_Module_ARTY_HandleILLUM;
 		_keepShellAlive = false; //--- ILLUM Destroy the original round.
 	};
 	

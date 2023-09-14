@@ -14,4 +14,4 @@ _destination = _this select 1;
 _mission = _this select 2;
 _radius = if (count _this > 3) then {_this select 3} else {30};
 
-[_team,true,[[_destination, _mission, _radius, 20, [], [], []]]] Call cti_CO_FNC_WaypointsAdd;
+[_team,true,[[_destination, _mission, _radius, 20, [], [], []]]] Call EZC_fnc_Functions_Common_WaypointsAdd;

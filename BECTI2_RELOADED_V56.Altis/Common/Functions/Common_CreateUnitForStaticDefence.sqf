@@ -38,7 +38,7 @@ for '_i' from 0 to count(_groups)-1 do {
         _unit assignAsGunner _defence;
         [_unit] orderGetIn true;
          _unit moveInGunner _defence;
-        [_team, 1000, getPosATL _defence] spawn cti_CO_FNC_RevealArea;
+        [_team, 1000, getPosATL _defence] spawn EZC_fnc_Functions_Common_RevealArea;
     };
 };
 

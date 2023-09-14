@@ -11,7 +11,7 @@
 
 	WF_MenuAction = -1;
 
-	_income = (cti_Client_SideJoined) Call cti_CO_FNC_GetTownsIncome;
+	_income = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetTownsIncome;
 	_incomeCoef = missionNamespace getVariable "cti_C_ECONOMY_INCOME_COEF";
 	_incomeDividision = missionNamespace getVariable "cti_C_ECONOMY_INCOME_DIVIDED";
 	_supplySystem = missionNamespace getVariable "cti_C_ECONOMY_SUPPLY_SYSTEM";
@@ -43,7 +43,7 @@
 			
 			sliderSetPosition[23010, _currentPercent];
 			
-			_calInc = (cti_Client_SideJoined) Call cti_CO_FNC_GetTownsIncome;
+			_calInc = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetTownsIncome;
 			
 			if (_currentPercent != _income || _hasStarted) then {
 				if (_hasStarted) then {_hasStarted = false};

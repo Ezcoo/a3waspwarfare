@@ -439,7 +439,7 @@ switch (_action) do {
 				missionNamespace setVariable ["CTI_gear_lastpurchased", uiNamespace getVariable "CTI_dialog_ui_gear_target_gear"];
 				CTI_P_CurrentGear = (player) call EZC_fnc_Functions_Common_GetUnitLoadout;
 			} else {
-				[uiNamespace getVariable "CTI_dialog_ui_gear_target", uiNamespace getVariable "CTI_dialog_ui_gear_target_gear"] call CTI_CO_FNC_EquipVehicleCargo;
+				[uiNamespace getVariable "CTI_dialog_ui_gear_target", uiNamespace getVariable "CTI_dialog_ui_gear_target_gear"] call EZC_fnc_Functions_Common_EquipVehicleCargo;
 			};
 			uiNamespace setVariable ["CTI_dialog_ui_gear_target_staticgear", +(uiNamespace getVariable "CTI_dialog_ui_gear_target_gear")];
 			
@@ -507,19 +507,19 @@ switch (_action) do {
 			_upgrade = -1;
 			_current_upgrade_level = 0;
 			{
-					_cost = _cost + (_x call CTI_CO_FNC_GetGearItemCost);
-			} forEach (_gear call CTI_CO_FNC_ConvertGearToFlat);
+					_cost = _cost + (_x call EZC_fnc_Functions_Common_GetGearItemCost);
+			} forEach (_gear call EZC_fnc_Functions_Common_ConvertGearToFlat);
 			
 			{
 				if(_upgrade == -1)then{
-					_upgrade = (_x call CTI_CO_FNC_GetGearItemUpgradeLevel);
+					_upgrade = (_x call EZC_fnc_Functions_Common_GetGearItemUpgradeLevel);
 				}else{
-					_current_upgrade_level = (_x call CTI_CO_FNC_GetGearItemUpgradeLevel);
+					_current_upgrade_level = (_x call EZC_fnc_Functions_Common_GetGearItemUpgradeLevel);
 					if(_upgrade < _current_upgrade_level)then{
 						_upgrade = _current_upgrade_level;
 					};
 				};
-			} forEach (_gear call CTI_CO_FNC_ConvertGearToFlat);
+			} forEach (_gear call EZC_fnc_Functions_Common_ConvertGearToFlat);
 			
 			if (_cost != 0) then {
 				{

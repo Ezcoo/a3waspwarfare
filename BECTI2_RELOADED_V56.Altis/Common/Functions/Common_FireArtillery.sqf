@@ -42,7 +42,7 @@ _dispersion = (missionNamespace getVariable Format ["cti_%1_ARTILLERY_DISPERSION
 
 
 //--- Move function to global later on.
-if (local player) then {[_artillery] Call cti_CO_FNC_ARTY_Prep};
+if (local player) then {[_artillery] Call EZC_fnc_Module_ARTY_mobileMissionPrep};
 
 //--- Artillery Calculations.
 _position = getPos _artillery;
@@ -63,7 +63,7 @@ if (!(_getmag == "CUP_30Rnd_105mmLASER_M119_M" )&& !(_getmag == "CUP_30Rnd_122mm
 
 //____________________________________________________________
 
-_FEH = Call Compile Format ["_artillery addEventHandler ['Fired',{[_this select 4,_this select 6,%1,%2,%3,%4,%5,%6,%7,%8,%9] Spawn cti_CO_FNC_HandleArtillery}];",_ammo,_destination,_velocity,_dispersion,getPos _artillery,_distance,_radius,_maxRange,cti_Client_sideJoinedText];
+_FEH = Call Compile Format ["_artillery addEventHandler ['Fired',{[_this select 4,_this select 6,%1,%2,%3,%4,%5,%6,%7,%8,%9] Spawn EZC_fnc_Functions_Common_HandleArtillery}];",_ammo,_destination,_velocity,_dispersion,getPos _artillery,_distance,_radius,_maxRange,cti_Client_sideJoinedText];
 {_gunner disableAI _x} forEach ['ANIM','MOVE','TARGET','AUTOTARGET'];
 _watchPosition = [_destination select 0, _destination select 1, (_artillery distance _destination)/(tan(90-_angle))];
 (_gunner) doWatch _watchPosition;
@@ -91,7 +91,7 @@ sleep 10;
 if !(isNull _artillery) then {_artillery removeEventHandler ['Fired',_FEH]};
 sleep _reloadTime;
 if (alive (_gunner)) then {{_gunner enableAI _x} forEach ['MOVE','TARGET','AUTOTARGET']};
-if (local player) then {[_artillery] Call cti_CO_FNC_ARTY_Finish};
+if (local player) then {[_artillery] Call EZC_fnc_Module_ARTY_mobileMissionFinish};
 
 } else{
 sleep (10 + random 4);

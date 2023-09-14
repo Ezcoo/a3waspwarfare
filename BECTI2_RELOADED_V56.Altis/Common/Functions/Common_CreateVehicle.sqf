@@ -26,8 +26,8 @@ _vehicle setVectorUp surfaceNormal position _vehicle;
 	
 
 
-_vehicle call cti_CO_FNC_BalanceInit;
-_vehicle call cti_CO_FNC_Change_Vehicle_Texture;
+_vehicle call EZC_fnc_Functions_Common_BalanceInit;
+_vehicle call EZC_fnc_Functions_Common_ChangeVehicleTexture;
 
 
 //[_vehicle] execVM "Client\Module\IgiLoad\IgiLoad.sqf";
@@ -53,7 +53,7 @@ for "_x" from 0 to ((count cti_C_AIR_VEHICLE_TO_REQUIP) - 1) do
 {	
 	_currentElement = cti_C_AIR_VEHICLE_TO_REQUIP select _x;
 	if ((typeOf _vehicle) in _currentElement || _description in _currentElement) exitWith {		
-		[_vehicle, _currentElement select 1] call cti_CO_FNC_Requip_AIR_VEH;
+		[_vehicle, _currentElement select 1] call EZC_fnc_Functions_Common_Requip_AIR_VEH;
 	};	
 };
 
@@ -70,7 +70,7 @@ _vehicle setVectorUp surfaceNormal (getposATL _vehicle);
 if (_locked) then {_vehicle lock _locked};
 if (_bounty) then {
 	_vehicle addEventHandler ["killed", Format ['[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled', _side]];
-	_vehicle addEventHandler ["hit", {_this Spawn cti_CO_FNC_OnUnitHit}];
+	_vehicle addEventHandler ["hit", {_this Spawn EZC_fnc_Functions_Common_OnUnitHit}];
 };
 /*unused, i changed weapons to centurion radar weapon
 if(typeOf _vehicle in ['CUP_O_2S6M_RU','RHS_M6']) then {
@@ -79,7 +79,7 @@ if(typeOf _vehicle in ['CUP_O_2S6M_RU','RHS_M6']) then {
 */
 
 if(typeOf _vehicle in cti_C_COMBAT_JETS_WITH_BOMBS) then {
-	_vehicle addeventhandler ['Fired',{_this spawn cti_CO_FNC_HandleBombs}];
+	_vehicle addeventhandler ['Fired',{_this spawn EZC_fnc_Functions_Common_HandleBombs}];
 };
 
 if (_global) then {

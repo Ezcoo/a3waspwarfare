@@ -66,8 +66,8 @@ if (_killer_side == sideEnemy) then { //--- Make sure the killer is not renegade
 
 if (_killer_side == civilian) exitWith {}; //--- Side couldn't be determined? exit.
 
-if (isServer) then {_killed setVariable ["cti_trashed", true];	_killed Spawn cti_CO_FNC_TrashObject};
-if (_killed_isplayer) then {_killed setVariable ["cti_trashed", true];	_killed Spawn cti_CO_FNC_TrashObject};
+if (isServer) then {_killed setVariable ["cti_trashed", true];	_killed Spawn EZC_fnc_Functions_Common_TrashObject};
+if (_killed_isplayer) then {_killed setVariable ["cti_trashed", true];	_killed Spawn EZC_fnc_Functions_Common_TrashObject};
 
 
 if (_killed_side in cti_PRESENTSIDES) then { //--- Update the statistics if needed.

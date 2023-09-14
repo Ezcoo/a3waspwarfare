@@ -10,13 +10,13 @@ _new = (_gear select 0) select 0;
 
 _item = _new select 0;
 
-_accessories = (_new select 1) call cti_CO_FNC_ArrayToLower;
+_accessories = (_new select 1) call EZC_fnc_Functions_Common_ArrayToLower;
 _magazines = _new select 2;
 
 if (primaryWeapon _unit != _item && primaryWeapon _unit != "") then {_unit removeWeapon (primaryWeapon _unit)};
 if (primaryWeapon _unit != _item && _item != "") then {_unit addWeapon _item};
 if (_item != "") then {
-	_accessories_current = (primaryWeaponItems _unit) call cti_CO_FNC_ArrayToLower;
+	_accessories_current = (primaryWeaponItems _unit) call EZC_fnc_Functions_Common_ArrayToLower;
 	{if (!(_x in _accessories) && (_x != "")) then {_unit removePrimaryWeaponItem _x}} forEach _accessories_current;
 	{if (!(_x in _accessories_current) && (_x != "")) then {_unit addPrimaryWeaponItem _x}} forEach (_accessories + _magazines);
 	//ofps fix
@@ -28,13 +28,13 @@ if (_item != "") then {
 //--- Secondary
 _new = (_gear select 0) select 1;
 _item = _new select 0;
-_accessories = (_new select 1) call cti_CO_FNC_ArrayToLower;
+_accessories = (_new select 1) call EZC_fnc_Functions_Common_ArrayToLower;
 _magazines = _new select 2;
 
 if (secondaryWeapon _unit != _item && secondaryWeapon _unit != "") then {_unit removeWeapon (secondaryWeapon _unit)};
 if (secondaryWeapon _unit != _item && _item != "") then {_unit addWeapon _item};
 if (_item != "") then {
-	_accessories_current = (secondaryWeaponItems _unit) call cti_CO_FNC_ArrayToLower;
+	_accessories_current = (secondaryWeaponItems _unit) call EZC_fnc_Functions_Common_ArrayToLower;
 	{if (!(_x in _accessories) && (_x != "")) then {_unit removeSecondaryWeaponItem _x}} forEach _accessories_current;
 	{if (!(_x in _accessories_current) && (_x != "")) then {_unit addSecondaryWeaponItem _x}} forEach (_accessories + _magazines);
 //ofps fix
@@ -45,13 +45,13 @@ if (_item != "") then {
 //--- Handgun
 _new = (_gear select 0) select 2;
 _item = _new select 0;
-_accessories = (_new select 1) call cti_CO_FNC_ArrayToLower;
+_accessories = (_new select 1) call EZC_fnc_Functions_Common_ArrayToLower;
 _magazines = _new select 2;
 
 if (handgunWeapon _unit != _item && handgunWeapon _unit != "") then {_unit removeWeapon (handgunWeapon _unit)};
 if (handgunWeapon _unit != _item && _item != "") then {_unit addWeapon _item};
 if (_item != "") then {
-	_accessories_current = (handgunItems _unit) call cti_CO_FNC_ArrayToLower;
+	_accessories_current = (handgunItems _unit) call EZC_fnc_Functions_Common_ArrayToLower;
 	{if (!(_x in _accessories) && (_x != "")) then {_unit removeHandgunItem _x}} forEach _accessories_current;
 	{if (!(_x in _accessories_current) && (_x != "")) then {_unit addHandgunItem _x}} forEach (_accessories + _magazines);
 //ofps fix
@@ -72,14 +72,14 @@ if (_item != "") then {
 _new = _gear select 1;
 
 //--- Check if the containers are ok
-if (((_gear select 1) select 2) select 0 != backpack _unit || [((_gear select 1) select 2) select 1, backpackItems _unit] call cti_CO_FNC_ArrayDiffers) then {
-	[_unit, ((_gear select 1) select 2) select 0, ((_gear select 1) select 2) select 1] call cti_CO_FNC_EquipContainerBackpack;
+if (((_gear select 1) select 2) select 0 != backpack _unit || [((_gear select 1) select 2) select 1, backpackItems _unit] call EZC_fnc_Functions_Common_ArrayDiffers) then {
+	[_unit, ((_gear select 1) select 2) select 0, ((_gear select 1) select 2) select 1] call EZC_fnc_Functions_Common_EquipContainerBackpack;
 };
-if (((_gear select 1) select 1) select 0 != vest _unit || [((_gear select 1) select 1) select 1, vestItems _unit] call cti_CO_FNC_ArrayDiffers) then {
-	[_unit, ((_gear select 1) select 1) select 0, ((_gear select 1) select 1) select 1] call cti_CO_FNC_EquipContainerVest;
+if (((_gear select 1) select 1) select 0 != vest _unit || [((_gear select 1) select 1) select 1, vestItems _unit] call EZC_fnc_Functions_Common_ArrayDiffers) then {
+	[_unit, ((_gear select 1) select 1) select 0, ((_gear select 1) select 1) select 1] call EZC_fnc_Functions_Common_EquipContainerVest;
 };
-if (((_gear select 1) select 0) select 0 != uniform _unit || [((_gear select 1) select 0) select 1, uniformItems _unit] call cti_CO_FNC_ArrayDiffers) then {
-	[_unit, ((_gear select 1) select 0) select 0, ((_gear select 1) select 0) select 1] call cti_CO_FNC_EquipContainerUniform;
+if (((_gear select 1) select 0) select 0 != uniform _unit || [((_gear select 1) select 0) select 1, uniformItems _unit] call EZC_fnc_Functions_Common_ArrayDiffers) then {
+	[_unit, ((_gear select 1) select 0) select 0, ((_gear select 1) select 0) select 1] call EZC_fnc_Functions_Common_EquipContainerUniform;
 };
 
 

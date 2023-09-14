@@ -40,7 +40,7 @@ if ((missionNamespace getVariable "cti_C_RESPAWN_MOBILE") > 0) then {
 
 //--- Camps.
 if ((missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") > 0) then {
-	_availableSpawn = _availableSpawn + ([_deathLoc, _side] Call cti_CO_FNC_GetRespawnCamps);
+	_availableSpawn = _availableSpawn + ([_deathLoc, _side] Call EZC_fnc_Functions_Common_GetRespawnCamps);
 };
 
 _availableSpawn

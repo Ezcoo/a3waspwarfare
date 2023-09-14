@@ -1316,7 +1316,7 @@ while {alive player && dialog} do {
 			
 		if(count _pylons > 0) then {
 			_veh setVariable ["_pylons", _pylons, true];
-			[_veh, _pylons] call cti_CO_FNC_Requip_AIR_VEH;
+			[_veh, _pylons] call EZC_fnc_Functions_Common_Requip_AIR_VEH;
 		};
 		
 		if (WF_Debug) then {
@@ -1330,9 +1330,9 @@ while {alive player && dialog} do {
 		
 		-(round(_rearmPrice / 2)) Call EZC_fnc_Functions_Client_ChangePlayerFunds;		
 		
-		cti_CO_FNC_RearmVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_RearmVehicle.sqf";
+		EZC_fnc_Functions_Common_RearmVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_RearmVehicle.sqf";
 		_veh setVariable ["_pylons", nil]; 
-		[_veh, side player] Spawn cti_CO_FNC_RearmVehicle;
+		[_veh, side player] Spawn EZC_fnc_Functions_Common_RearmVehicle;
 	};
 };
 

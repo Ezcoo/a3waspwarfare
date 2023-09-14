@@ -4,31 +4,31 @@ _target = _this;
 
 //--- Uniform, Vest and backpack
 _uniform = toLower(uniform _target);
-_uniform_items = (uniformItems _target) call cti_CO_FNC_ArrayToLower;
+_uniform_items = (uniformItems _target) call EZC_fnc_Functions_Common_ArrayToLower;
 _vest = toLower(vest _target);
-_vest_items = (vestItems _target) call cti_CO_FNC_ArrayToLower;
+_vest_items = (vestItems _target) call EZC_fnc_Functions_Common_ArrayToLower;
 _backpack = toLower(backpack _target);
-_backpack_items = (backpackItems _target) call cti_CO_FNC_ArrayToLower;
+_backpack_items = (backpackItems _target) call EZC_fnc_Functions_Common_ArrayToLower;
 
 //--- Weapons
 _primary = toLower(primaryWeapon _target);
-_primary_accessories = (primaryWeaponItems _target) call cti_CO_FNC_ArrayToLower;
+_primary_accessories = (primaryWeaponItems _target) call EZC_fnc_Functions_Common_ArrayToLower;
 _secondary = toLower(secondaryWeapon _target);
-_secondary_accessories = (secondaryWeaponItems _target) call cti_CO_FNC_ArrayToLower;
+_secondary_accessories = (secondaryWeaponItems _target) call EZC_fnc_Functions_Common_ArrayToLower;
 _handgun = toLower(handgunWeapon _target);
-_handgun_accessories = (handgunItems _target) call cti_CO_FNC_ArrayToLower;
+_handgun_accessories = (handgunItems _target) call EZC_fnc_Functions_Common_ArrayToLower;
 
 //--- Currently loaded magazines
-_primary_current_magazine = (primaryWeaponMagazine _target) call cti_CO_FNC_ArrayToLower;
-_secondary_current_magazine = (secondaryWeaponMagazine _target) call cti_CO_FNC_ArrayToLower;
-_handgun_current_magazine = (handgunMagazine _target) call cti_CO_FNC_ArrayToLower;
+_primary_current_magazine = (primaryWeaponMagazine _target) call EZC_fnc_Functions_Common_ArrayToLower;
+_secondary_current_magazine = (secondaryWeaponMagazine _target) call EZC_fnc_Functions_Common_ArrayToLower;
+_handgun_current_magazine = (handgunMagazine _target) call EZC_fnc_Functions_Common_ArrayToLower;
 
 //--- Accessories
 _headgear = toLower(headgear _target);
 _goggles = toLower(goggles _target);
 
 //--- Items
-_allitems = ((assignedItems _target) call cti_CO_FNC_ArrayToLower) - [_headgear, _goggles];
+_allitems = ((assignedItems _target) call EZC_fnc_Functions_Common_ArrayToLower) - [_headgear, _goggles];
 _items = [["", ""], ["", "", "", "", ""]];
 
 {
@@ -48,7 +48,7 @@ _items = [["", ""], ["", "", "", "", ""]];
 	};
 	if (_slot select 0 != -1) then { (_items select (_slot select 0)) set [_slot select 1, _x] };
 } forEach _allitems;
-_items = [(_items select 0) call cti_CO_FNC_ArrayToLower, (_items select 1) call cti_CO_FNC_ArrayToLower];
+_items = [(_items select 0) call EZC_fnc_Functions_Common_ArrayToLower, (_items select 1) call EZC_fnc_Functions_Common_ArrayToLower];
 
 //--- Return the preformated gear
 [

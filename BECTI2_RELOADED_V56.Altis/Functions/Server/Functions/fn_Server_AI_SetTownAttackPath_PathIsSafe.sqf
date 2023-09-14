@@ -12,7 +12,7 @@ _posa = _this select 0;
 _posb = _this select 1;
 _steps = _this select 2;
 _distance = (_posa distance _posb) - _steps;
-_dir_to = [_posa, _posb] Call cti_CO_FNC_GetDirTo;
+_dir_to = [_posa, _posb] Call EZC_fnc_Functions_Common_GetDirTo;
 
 _safe = true;
 _current = _steps;

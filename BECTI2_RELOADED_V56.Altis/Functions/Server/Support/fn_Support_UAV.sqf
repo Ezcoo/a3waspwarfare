@@ -15,6 +15,6 @@ while {true} do {
 	if (!(isPlayer (leader _playerTeam)) || !alive _uav) exitWith {};
 };
 
-if (!isNull _driver) then {if (alive _driver) then {_driver setDammage 1};if (isNil {_driver getVariable "cti_trashed"}) then {_driver setVariable ["cti_trashed", true];_driver Spawn cti_CO_FNC_TrashObject}};
-if (!isNull _gunner) then {if (alive _gunner) then {_gunner setDammage 1};if (isNil {_gunner getVariable "cti_trashed"}) then {_gunner setVariable ["cti_trashed", true];_gunner Spawn cti_CO_FNC_TrashObject}};
-if (!isNull _uav) then {if (alive _uav) then {_uav setDammage 1};if (isNil {_uav getVariable "cti_trashed"}) then {_uav setVariable ["cti_trashed", true];_uav Spawn cti_CO_FNC_TrashObject}};
+if (!isNull _driver) then {if (alive _driver) then {_driver setDammage 1};if (isNil {_driver getVariable "cti_trashed"}) then {_driver setVariable ["cti_trashed", true];_driver Spawn EZC_fnc_Functions_Common_TrashObject}};
+if (!isNull _gunner) then {if (alive _gunner) then {_gunner setDammage 1};if (isNil {_gunner getVariable "cti_trashed"}) then {_gunner setVariable ["cti_trashed", true];_gunner Spawn EZC_fnc_Functions_Common_TrashObject}};
+if (!isNull _uav) then {if (alive _uav) then {_uav setDammage 1};if (isNil {_uav getVariable "cti_trashed"}) then {_uav setVariable ["cti_trashed", true];_uav Spawn EZC_fnc_Functions_Common_TrashObject}};

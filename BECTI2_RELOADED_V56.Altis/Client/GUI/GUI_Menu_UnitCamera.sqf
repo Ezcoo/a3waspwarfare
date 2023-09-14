@@ -9,7 +9,7 @@ _n = 1;
 {lbAdd[21002,Format["[%1] %2",_n,name (leader _x)]];_n = _n + 1} forEach cti_Client_Teams;
 _id = cti_Client_Teams find cti_Client_Team;
 lbSetCurSel[21002,_id];
-_currentUnit = (player) Call cti_CO_FNC_GetUnitVehicle;
+_currentUnit = (player) Call EZC_fnc_Functions_Common_GetUnitVehicle;
 _currentMode = "Internal";
 _currentUnit switchCamera _currentMode;
 _units = (Units (group player) - [player]) Call EZC_fnc_Functions_Common_GetLiveUnits;
@@ -41,7 +41,7 @@ while {true} do {
 			_objects = [];
 			{if (!(_x isKindOf "Man") && side _x != cti_Client_SideJoined) then {if (count (crew _x) == 0) then {_objects = _objects - [_x]}};if (side _x == cti_Client_SideJoined) then {_objects = _objects + [_x]}} forEach _list;
 			if (count _objects > 0) then {
-				_currentUnit = ([_near,_objects] Call EZC_fnc_Functions_Common_GetClosestEntity) Call cti_CO_FNC_GetUnitVehicle;
+				_currentUnit = ([_near,_objects] Call EZC_fnc_Functions_Common_GetClosestEntity) Call EZC_fnc_Functions_Common_GetUnitVehicle;
 				_cameraSwap = true;
 			};
 		};
@@ -51,7 +51,7 @@ while {true} do {
 	if (WF_MenuAction == 101) then {
 		WF_MenuAction = -1;
 		_selected = leader (cti_Client_Teams select (lbCurSel 21002));
-		_currentUnit = (_selected) Call cti_CO_FNC_GetUnitVehicle;
+		_currentUnit = (_selected) Call EZC_fnc_Functions_Common_GetUnitVehicle;
 		_n = 0;
 		_units = (Units (group _selected) - [_selected]) Call EZC_fnc_Functions_Common_GetLiveUnits;
 		lbClear 21004;
@@ -62,7 +62,7 @@ while {true} do {
 	//--- Leader commands AIs.
 	if (WF_MenuAction == 102) then {
 		WF_MenuAction = -1;
-		_currentUnit = (_units select (lbCurSel 21004)) Call cti_CO_FNC_GetUnitVehicle;
+		_currentUnit = (_units select (lbCurSel 21004)) Call EZC_fnc_Functions_Common_GetUnitVehicle;
 		_vehicle = vehicle _currentUnit;
 		_crew = crew _vehicle;		
 		{ 
@@ -99,7 +99,7 @@ while {true} do {
 	};
 	
 	if !(alive _currentUnit) then {
-		_currentUnit = (player) Call cti_CO_FNC_GetUnitVehicle;
+		_currentUnit = (player) Call EZC_fnc_Functions_Common_GetUnitVehicle;
 		_cameraSwap = true;
 	};
 	
@@ -113,4 +113,4 @@ while {true} do {
 };
 
 closeDialog 0;
-((player) Call cti_CO_FNC_GetUnitVehicle) switchCamera _currentMode;
+((player) Call EZC_fnc_Functions_Common_GetUnitVehicle) switchCamera _currentMode;

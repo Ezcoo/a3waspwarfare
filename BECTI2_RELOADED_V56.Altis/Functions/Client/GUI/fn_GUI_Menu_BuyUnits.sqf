@@ -111,8 +111,8 @@ while {alive player && dialog} do {
 			};
 			//--- Make sure that we own all camps before being able to purchase infantry.
 			if (_type == "Depot" && _isInfantry) then {
-				_totalCamps = _closest Call CTI_CO_FNC_GetTotalCamps;
-				_campsSide = [_closest,CTI_Client_SideJoined] Call CTI_CO_FNC_GetTotalCampsOnSide;
+				_totalCamps = _closest Call EZC_fnc_Functions_Common_GetTotalCamps;
+				_campsSide = [_closest,CTI_Client_SideJoined] Call EZC_fnc_Functions_Common_GetTotalCampsOnSide;
 				if (_totalCamps != _campsSide) then {_skip = true; hint parseText(localize 'STR_WF_INFO_Camps_Purchase')};
 			};
 			if !(_skip) then {

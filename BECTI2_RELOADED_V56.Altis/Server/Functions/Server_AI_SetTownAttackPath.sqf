@@ -16,14 +16,14 @@ _wp_dest = getPos _town_assigned;
 _select = _wp_origin;
 
 //--- Clear the AI waypoints
-(_team) Call cti_CO_FNC_WaypointsRemove;
+(_team) Call EZC_fnc_Functions_Common_WaypointsRemove;
 _distance_node = 700;
 _side = (_team getVariable "cti_side") Call EZC_fnc_Functions_Common_GetSideID;
 
 //--- If the leader is further than 550m we use a proper attack system.
 if (_wp_origin distance _wp_dest > _distance_node) then {
 	Private ["_a","_a_path_safe","_a_safe","_angle","_b_path_safe","_b_safe","_dir_to","_max_hops","_nodes","_nodes_a"];
-	_dir_to = [_town_assigned, _wp_origin] Call cti_CO_FNC_GetDirTo;
+	_dir_to = [_town_assigned, _wp_origin] Call EZC_fnc_Functions_Common_GetDirTo;
 	
 	_nodes_a = [];
 	_nodes = 8;
@@ -67,7 +67,7 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 		if !(_a_safe) exitWith {};
 		if (_a_safe) then {_wp_sel pushBack [([_select, 20, 100] Call EZC_fnc_Functions_Common_GetRandomPosition), 'MOVE', 60, 30, [], [], []]};
 	};
-	[_team, false, _wp_sel] Call cti_CO_FNC_WaypointsAdd;
+	[_team, false, _wp_sel] Call EZC_fnc_Functions_Common_WaypointsAdd;
 };
 
 // TODO CHECK THE COMBAT MODE / SPEED. (LIMITED & COMBAT)
@@ -91,4 +91,4 @@ if (random 100 > 50) then {
 _wp_sel pushBack [([_wp_dest, 10, 150] Call EZC_fnc_Functions_Common_GetRandomPosition), 'SAD', 35, 25, [], [], ["AWARE","","FILE","NORMAL"]];
 _wp_sel pushBack [([_wp_dest, 5, 25] Call EZC_fnc_Functions_Common_GetRandomPosition), 'MOVE', 35, 25, [], [], ["AWARE","","FILE","NORMAL"]];
 
-[_team, false, _wp_sel] Call cti_CO_FNC_WaypointsAdd;
+[_team, false, _wp_sel] Call EZC_fnc_Functions_Common_WaypointsAdd;

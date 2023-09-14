@@ -1,6 +1,6 @@
 WF_MenuAction = -1;
 
-_vehi = [group player,false] Call cti_CO_FNC_GetTeamVehicles;
+_vehi = [group player,false] Call EZC_fnc_Functions_Common_GetTeamVehicles;
 
 //if (typeOf _vehicle in cti_C_IS_UAV)then {
 //_rangeGET=(missionNamespace getVariable "cti_C_UNITS_SUPPORT_RANGE");
@@ -119,7 +119,7 @@ _i = 0;
 	if (_add) then {
 		_effective = _effective + [_x];
 		_desc = [typeOf _x, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
-		_finalNumber = (_x) Call cti_CO_FNC_GetAIDigit;
+		_finalNumber = (_x) Call EZC_fnc_Functions_Common_GetAIDigit;
 		_isInVehicle = "";
 		if (_x != vehicle _x) then {
 			_descVehi = [typeOf (vehicle _x), 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;

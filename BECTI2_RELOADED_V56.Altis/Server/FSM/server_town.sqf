@@ -154,23 +154,23 @@ while {!cti_GameOver} do {
 
                 if (!_resistanceDominion && !_westDominion && !_eastDominion) then {_west = 0; _east = 0; _resistance = 0};
 
-                _totalCamps = _location Call cti_CO_FNC_GetTotalCamps;
+                _totalCamps = _location Call EZC_fnc_Functions_Common_GetTotalCamps;
 
                 if (_west > 0 && west in cti_PRESENTSIDES) then {
-                    if (_totalCamps != ([_location,west] Call cti_CO_FNC_GetTotalCampsOnSide)) then {_skip = true};
+                    if (_totalCamps != ([_location,west] Call EZC_fnc_Functions_Common_GetTotalCampsOnSide)) then {_skip = true};
                 };
                 if (_east > 0 && east in cti_PRESENTSIDES) then {
-                    if (_totalCamps != ([_location,east] Call cti_CO_FNC_GetTotalCampsOnSide)) then {_skip = true};
+                    if (_totalCamps != ([_location,east] Call EZC_fnc_Functions_Common_GetTotalCampsOnSide)) then {_skip = true};
                 };
                 if (_resistance > 0 && resistance in cti_PRESENTSIDES) then {
-                    if (_totalCamps != ([_location,resistance] Call cti_CO_FNC_GetTotalCampsOnSide)) then {_skip = true};
+                    if (_totalCamps != ([_location,resistance] Call EZC_fnc_Functions_Common_GetTotalCampsOnSide)) then {_skip = true};
                 };
             };
 
             if !(_skip) then {
                 _newSID = switch (true) do {case (_west > 0): {cti_C_WEST_ID}; case (_east > 0): {cti_C_EAST_ID}; case (_resistance > 0): {cti_C_GUER_ID};};
                 _newSide = (_newSID) Call EZC_fnc_Functions_Common_GetSideFromID;
-                _rate = _town_capture_rate * (([_location,_newSide] Call cti_CO_FNC_GetTotalCampsOnSide) / (_location Call cti_CO_FNC_GetTotalCamps)) * _town_camps_capture_rate;
+                _rate = _town_capture_rate * (([_location,_newSide] Call EZC_fnc_Functions_Common_GetTotalCampsOnSide) / (_location Call EZC_fnc_Functions_Common_GetTotalCamps)) * _town_camps_capture_rate;
                 if (_rate < 1) then {_rate = 1};
 
                 if (_sideID != cti_C_UNKNOWN_ID) then {

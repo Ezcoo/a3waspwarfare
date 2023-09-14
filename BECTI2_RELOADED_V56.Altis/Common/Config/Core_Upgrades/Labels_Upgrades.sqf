@@ -80,7 +80,7 @@ missionNamespace setVariable [Format["cti_C_UPGRADES_DESCRIPTIONS"], [
 	localize 'STR_WF_UPGRADE_lightfactory_Desc',
 	localize 'STR_WF_UPGRADE_heavyfactory_Desc',
 	localize 'STR_WF_UPGRADE_aircraftfactory_Desc',
-	Format[localize 'STR_WF_UPGRADE_Paratroop_Desc', Format["<t color='#B6F563'>%1</t>",[configFile >> 'CfgVehicles' >> (missionNamespace getVariable Format["cti_%1PARACARGO", cti_Client_SideJoinedText]), "displayName"] Call cti_CO_FNC_GetConfigEntry], call _upgrade_paratroopers_xlabel],
+	Format[localize 'STR_WF_UPGRADE_Paratroop_Desc', Format["<t color='#B6F563'>%1</t>",[configFile >> 'CfgVehicles' >> (missionNamespace getVariable Format["cti_%1PARACARGO", cti_Client_SideJoinedText]), "displayName"] Call EZC_fnc_Functions_Common_GetConfigEntry], call _upgrade_paratroopers_xlabel],
 	localize 'STR_WF_UPGRADE_uav_Desc',
 	Format[localize 'STR_WF_UPGRADE_Supply_Desc', call _upgrade_supply_xlabel],
 	Format[localize 'STR_WF_UPGRADE_RespawnRange_Desc', call _upgrade_respawn_xlabel],

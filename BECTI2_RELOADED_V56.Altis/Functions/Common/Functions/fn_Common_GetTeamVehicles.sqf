@@ -59,7 +59,7 @@ _vehicles
 /*
   # HEADER #
 	Script: 		Common\Functions\Common_GetTeamVehicles.sqf
-	Alias:			CTI_CO_FNC_GetTeamVehicles
+	Alias:			EZC_fnc_Functions_Common_GetTeamVehicles
 	Description:	Get the vehicles in use by a group
 	Author: 		Benny, adapted from Mike Melvin
 	Creation Date:	18-09-2013

@@ -9,6 +9,6 @@ private ["_result", "_class"];
 _result = [];
 
 _class = configFile >> "CfgVehicles" >> ( switch (typeName _this) do { case "STRING" : {_this}; case "OBJECT" : {typeOf _this}; default {nil}}) >> "turrets";
-[_class, []] call cti_CO_FNC_FindTurretsRecursive;
+[_class, []] call EZC_fnc_Functions_Common_FindTurretsRecursive;
 
 _result

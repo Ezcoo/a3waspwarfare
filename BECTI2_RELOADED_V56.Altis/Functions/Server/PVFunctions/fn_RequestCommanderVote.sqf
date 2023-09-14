@@ -14,7 +14,7 @@ if ((_logik getVariable "cti_votetime") <= 0) then {
 	};
 
 	//--- Set the commander votes.
-	[_side, _team] Call cti_CO_FNC_SetCommanderVotes;
+	[_side, _team] Call EZC_fnc_Functions_Common_SetCommanderVotes;
 	
 	(_side) Spawn cti_SE_FNC_VoteForCommander;
 	[_side,"VotingForNewCommander"] Spawn cti_SE_FNC_SideMessage;

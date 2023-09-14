@@ -52,7 +52,7 @@ while {!cti_GameOver} do {
                 _detected = (_town nearEntities ["AllVehicles",_range_detect_active]) unitsBelowHeight 20;
             };
 
-            _enemies = [_detected, _side] Call cti_CO_FNC_GetAreaEnemiesCount;
+            _enemies = [_detected, _side] Call EZC_fnc_Functions_Common_GetAreaEnemiesCount;
 
             if(_enemies > 0)then{
 

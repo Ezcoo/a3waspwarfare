@@ -16,9 +16,9 @@ if (count _group > 0) then {
 	_team_alive = true;
 	_team = createGroup [_side, true];
 	_position = ([getPos _location, 50, 500] Call EZC_fnc_Functions_Common_GetRandomPosition);
-	_position = [_position, 50] Call cti_CO_FNC_GetEmptyPosition;
+	_position = [_position, 50] Call EZC_fnc_Functions_Common_GetEmptyPosition;
 	_lock = if (_side == cti_DEFENDER) then {_town_vehicle_lock_defender} else {true};
-	_retVal = [_group, _position, _side, _lock, _team] Call cti_CO_FNC_CreateTeam;
+	_retVal = [_group, _position, _side, _lock, _team] Call EZC_fnc_Functions_Common_CreateTeam;
 };
 
 while {!cti_GameOver || _team_alive} do {

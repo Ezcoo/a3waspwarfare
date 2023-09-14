@@ -445,7 +445,7 @@ emptyQueu = [];
 				clearMagazineCargoGlobal _vehicle;
 				emptyQueu pushBack _vehicle;
 				[_vehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
-				if ((missionNamespace getVariable "cti_C_UNITS_BALANCING") > 0) then {(_vehicle) Call cti_CO_FNC_BalanceInit};
+				if ((missionNamespace getVariable "cti_C_UNITS_BALANCING") > 0) then {(_vehicle) Call EZC_fnc_Functions_Common_BalanceInit};
 				
 				if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle addeventhandler ['Engine',{_this execVM "Client\Module\Engines\Engine.sqf"}];
 				
@@ -461,7 +461,7 @@ emptyQueu = [];
 				clearMagazineCargoGlobal _vehicle;
 				emptyQueu pushBack _vehicle;
 				[_vehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
-				if ((missionNamespace getVariable "cti_C_UNITS_BALANCING") > 0) then {(_vehicle) Call cti_CO_FNC_BalanceInit};
+				if ((missionNamespace getVariable "cti_C_UNITS_BALANCING") > 0) then {(_vehicle) Call EZC_fnc_Functions_Common_BalanceInit};
 
 				if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle addeventhandler ['Engine',{_this execVM "Client\Module\Engines\Engine.sqf"}];
 				
@@ -484,10 +484,10 @@ emptyQueu = [];
 					_group setVariable ["cti_queue", []];
 					_group setVariable ["cti_vote", -1, true];
 					
-					[_group, ""] Call cti_CO_FNC_SetTeamRespawn;
-					[_group, -1] Call cti_CO_FNC_SetTeamType;
-					[_group, "towns"] Call cti_CO_FNC_SetTeamMoveMode;
-					[_group, [0,0,0]] Call cti_CO_FNC_SetTeamMovePos;
+					[_group, ""] Call EZC_fnc_Functions_Common_SetTeamRespawn;
+					[_group, -1] Call EZC_fnc_Functions_Common_SetTeamType;
+					[_group, "towns"] Call EZC_fnc_Functions_Common_SetTeamMoveMode;
+					[_group, [0,0,0]] Call EZC_fnc_Functions_Common_SetTeamMovePos;
 					(leader _group) enableSimulationGlobal true;
 
 					["INITIALIZATION", Format["Init_Server.sqf: [%1] Team [%2] was initialized.", _side, _group]] Call EZC_fnc_Functions_Common_LogContent;

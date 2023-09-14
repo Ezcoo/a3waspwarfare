@@ -176,7 +176,7 @@ if (_unit isKindOf "Air") then { //--- Air units.
 
 	//--- AAR Tracking.
 	if (cti_Client_SideJoined != _side) then { //--- Track the unit via AAR System, skip if the unit side is the same as the player one.
-		[_unit, _side] call cti_CO_FNC_TRACK_AIR_TARGETS;
+		[_unit, _side] call EZC_fnc_Common_AARadarMarkerUpdate;
 	};
 
 	if (_unit isKindOf "Plane") then { //--- Planes.
@@ -215,7 +215,7 @@ if (_isMan) then { //--- Man.
 	_size = [0.5,0.5];
 	if (group _unit == group player) then {
 		_color = "ColorOrange";
-		_txt = (_unit) Call cti_CO_FNC_GetAIDigit;
+		_txt = (_unit) Call EZC_fnc_Functions_Common_GetAIDigit;
 	};
 	_params = [_type,_color,_size,_txt,_markerName,_unit,1,true,"waypoint",_color,false,_side,[1,1]];
 } else { //--- Vehicle.
@@ -290,4 +290,4 @@ if !(_isMan) then { //--- Vehicle Specific.
 	};
 };
 
-_params Spawn cti_CO_FNC_MarkerUpdate;
+_params Spawn EZC_fnc_Common_MarkerUpdate;

@@ -1,1 +1,1 @@
-(cti_Client_Team) Call cti_CO_FNC_GetTeamFunds
+(cti_Client_Team) Call EZC_fnc_Functions_Common_GetTeamFunds

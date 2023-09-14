@@ -9,7 +9,7 @@ while {!cti_GameOver} do {
 	gc_collector = gc_collector - [objNull];
 	{
 		if (isNil {_x getVariable "cti_trashable"} && !(_x in gc_collector)  && (_x != _whq) && (_x != _ehq)) then {
-			_x spawn cti_CO_FNC_TrashObject;
+			_x spawn EZC_fnc_Functions_Common_TrashObject;
 			gc_collector pushBack _x;
 		};
 	} forEach allDead;

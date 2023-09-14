@@ -17,7 +17,7 @@ while {!cti_GameOver} do {
 		_income_commander = 0; // declares money income for a commander
 		_supply = 0; // declares supplies
 
-		_supply =  (_x) Call cti_CO_FNC_GetTownsSupply;
+		_supply =  (_x) Call EZC_fnc_Functions_Common_GetTownsSupply;
 		//////
 		if(_supply  < _suppluy_max_limit) then {
 

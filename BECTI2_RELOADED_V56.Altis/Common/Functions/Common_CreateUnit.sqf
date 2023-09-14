@@ -36,7 +36,7 @@ if (typeName _side == "SIDE") then {_side = (_side) Call EZC_fnc_Functions_Commo
 //--Check the need for unit re-equip--
 for "_x" from 0 to ((count cti_C_INFANTRY_TO_REQUIP) - 1) do {
 	_currentElement = cti_C_INFANTRY_TO_REQUIP select _x;	
-	if ((typeOf _unit) in _currentElement) exitWith{(_unit) call cti_CO_FNC_Requip_AI;};	
+	if ((typeOf _unit) in _currentElement) exitWith{(_unit) call EZC_fnc_Functions_Common_Requip_AI;};	
 };
 
 if (_global) then {

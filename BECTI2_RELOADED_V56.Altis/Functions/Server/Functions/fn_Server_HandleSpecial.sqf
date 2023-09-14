@@ -24,7 +24,7 @@ switch (_args select 0) do {
 					
 				} else {
 					if (isNil {_group getVariable "cti_uid"}) then { //--- Ensure that the group is ai-controlled.
-						[_player, _group, _side] Call cti_CO_FNC_ChangeUnitGroup;
+						[_player, _group, _side] Call EZC_fnc_Functions_Common_ChangeUnitGroup;
 
 						//--- Tell the player that his request is granted.
 						["group-join-accept", _group] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _player];

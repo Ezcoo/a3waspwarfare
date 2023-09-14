@@ -2,7 +2,7 @@
 	Set the ammunition of a vehicle's turrets.
 	 Parameters:
 		- Vehicle
-		- Turrets (cti_CO_FNC_GetVehicleTurretsGear)
+		- Turrets (EZC_fnc_Functions_Common_GetVehicleTurretsGear)
 */
 
 Private ["_vehicle", "_turretPath", "_turretsData"];

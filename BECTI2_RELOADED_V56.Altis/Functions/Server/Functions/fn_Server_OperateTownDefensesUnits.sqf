@@ -39,7 +39,7 @@ switch (_action) do {
                             _unit assignAsGunner _defense;
                             [_unit] orderGetIn true;
                             _unit moveInGunner _defense;
-                           [_team, 450, getPosATL _x] spawn cti_CO_FNC_RevealArea;
+                           [_team, 450, getPosATL _x] spawn EZC_fnc_Functions_Common_RevealArea;
                             _x setVariable ["cti_defense_operator", _unit]; //--- Track the original gunner.
                         };
                     };

@@ -44,7 +44,7 @@ _units = ((units group player) Call EZC_fnc_Functions_Common_GetLiveUnits);
 _units = _units - [player];
 {
 	_desc = [typeOf _x, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
-	_finalNumber = (_x) Call cti_CO_FNC_GetAIDigit;
+	_finalNumber = (_x) Call EZC_fnc_Functions_Common_GetAIDigit;
 	_isInVehicle = "";
 	if (_x != vehicle _x) then {
 		_descVehi = [typeOf (vehicle _x), 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
@@ -107,7 +107,7 @@ while {alive player && dialog} do {
 			lbClear 13013;
 			{
 				_desc = [typeOf _x, 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
-				_finalNumber = (_x) Call cti_CO_FNC_GetAIDigit;
+				_finalNumber = (_x) Call EZC_fnc_Functions_Common_GetAIDigit;
 				_isInVehicle = "";
 				if (_x != vehicle _x) then {
 					_descVehi = [typeOf (vehicle _x), 'displayName'] Call EZC_fnc_Functions_Common_GetConfigInfo;
@@ -148,17 +148,17 @@ while {alive player && dialog} do {
 	if (_currentOD != _lastod) then {
 		setObjectViewDistance _currentOD;
 		setShadowDistance _currentOD;
-		if !(isNil 'cti_CO_FNC_SetProfileVariable') then {['cti_PERSISTENT_CONST_OBJECT_DISTANCE', _currentOD] Call cti_CO_FNC_SetProfileVariable; _need_save = true};
+		if !(isNil 'EZC_fnc_Functions_Common_SetProfileVariable') then {['cti_PERSISTENT_CONST_OBJECT_DISTANCE', _currentOD] Call EZC_fnc_Functions_Common_SetProfileVariable; _need_save = true};
 	};
 	
 	if (_currentVD != _lastvd) then {
 		setViewDistance _currentVD;
-		if !(isNil 'cti_CO_FNC_SetProfileVariable') then {['cti_PERSISTENT_CONST_VIEW_DISTANCE', _currentVD] Call cti_CO_FNC_SetProfileVariable; _need_save = true};
+		if !(isNil 'EZC_fnc_Functions_Common_SetProfileVariable') then {['cti_PERSISTENT_CONST_VIEW_DISTANCE', _currentVD] Call EZC_fnc_Functions_Common_SetProfileVariable; _need_save = true};
 	};
 	/*
 	if (currentTG != _lasttg) then {
 		setTerrainGrid currentTG;
-		if !(isNil 'cti_CO_FNC_SetProfileVariable') then {['cti_PERSISTENT_CONST_TERRAIN_GRID', currentTG] Call cti_CO_FNC_SetProfileVariable; _need_save = true};
+		if !(isNil 'EZC_fnc_Functions_Common_SetProfileVariable') then {['cti_PERSISTENT_CONST_TERRAIN_GRID', currentTG] Call EZC_fnc_Functions_Common_SetProfileVariable; _need_save = true};
 	};
 	*/
 	_lastod = _currentOD;
@@ -177,5 +177,5 @@ while {alive player && dialog} do {
 };
 
 if (_need_save) then {
-	if !(isNil 'cti_CO_FNC_SaveProfile') then {Call cti_CO_FNC_SaveProfile};
+	if !(isNil 'EZC_fnc_Functions_Common_SaveProfile') then {Call EZC_fnc_Functions_Common_SaveProfile};
 };

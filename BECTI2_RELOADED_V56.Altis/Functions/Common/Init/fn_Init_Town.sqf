@@ -101,7 +101,7 @@ if (isServer) then {
 						_direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 						_townModel setDir (_direction-90);
 
-						//[_direction, _depot_pos, _campModel, _town] call cti_CO_FNC_CreateComposition;
+						//[_direction, _depot_pos, _campModel, _town] call EZC_fnc_Functions_Common_CreateComposition;
 						//_x setDir (getDir _campModel);
 						//_x setPosATL (getPosATL _campModel);
 					};
@@ -147,7 +147,7 @@ if (isServer) then {
 					_direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 					_campModel setDir (_direction);
 
-					// [_direction, _camp_pos, _campModel, _town] call cti_CO_FNC_CreateComposition;
+					// [_direction, _camp_pos, _campModel, _town] call EZC_fnc_Functions_Common_CreateComposition;
 					// _x setDir (getDir _campModel);
 					// _x setPosATL (getPosATL _campModel);
 				};

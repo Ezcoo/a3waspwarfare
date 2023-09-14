@@ -63,4 +63,4 @@ for '_z' from 0 to _maxWaypoints do {
 	_wps pushBack [_pos,_type,_wpradius,_wpcompletionRadius, [], [], []];
 };
 
-[_team, true, _wps] Call cti_CO_FNC_WaypointsAdd;
+[_team, true, _wps] Call EZC_fnc_Functions_Common_WaypointsAdd;

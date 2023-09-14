@@ -28,4 +28,4 @@ for '_z' from 0 to _maxWaypoints do {
 	_wps pushBack [_pos,_type,35,40,[],[],_behaviours];
 };
 
-[_team, true, _wps] Call cti_CO_FNC_WaypointsAdd;
+[_team, true, _wps] Call EZC_fnc_Functions_Common_WaypointsAdd;

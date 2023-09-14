@@ -14,7 +14,7 @@ switch (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") do {
 		_town = [_deathLoc] Call EZC_fnc_Functions_Common_GetClosestLocation;
 		if !(isNull _town) then {
 			if (_town distance _deathLoc  < (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_RANGE")) then {
-				_camps = [_town,_side,true] Call cti_CO_FNC_GetFriendlyCamps;
+				_camps = [_town,_side,true] Call EZC_fnc_Functions_Common_GetFriendlyCamps;
 				if (count _camps > 0) then {
 					if (_respawnCampsRuleMode > 0) then {
 						_closestCamp = [_deathLoc,_camps] Call EZC_fnc_Functions_Common_GetClosestEntity;
@@ -22,7 +22,7 @@ switch (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") do {
 						_enemySide = if (_side == west) then {[east]} else {[west]};
 						if (_respawnCampsRuleMode == 2) then {_enemySide pushBack (resistance)};
 
-						_hostiles = [_closestCamp,_enemySide,_respawnMinRange] Call cti_CO_FNC_GetHostilesInArea;
+						_hostiles = [_closestCamp,_enemySide,_respawnMinRange] Call EZC_fnc_Functions_Common_GetHostilesInArea;
 						if (_deathLoc distance _closestCamp < _respawnMinRange && _hostiles > 0) then {
 							_index = _camps find _closestCamp;
 							if(_index > -1)then{_camps deleteAt _index};
@@ -48,7 +48,7 @@ switch (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") do {
 								_enemySide = if (_side == west) then {[east]} else {[west]};
 								if (_respawnCampsRuleMode == 2) then {_enemySide pushBack (resistance)};
 							};
-							_hostiles = [_x,_enemySide,_respawnMinRange] Call cti_CO_FNC_GetHostilesInArea;
+							_hostiles = [_x,_enemySide,_respawnMinRange] Call EZC_fnc_Functions_Common_GetHostilesInArea;
 							if (_hostiles == 0) then {_availableSpawn pushBack _x};
 						} else {
 							_availableSpawn pushBack (_x);
@@ -77,7 +77,7 @@ switch (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") do {
 								_enemySide = if (_side == west) then {[east]} else {[west]};
 								if (_respawnCampsRuleMode == 2) then {_enemySide pushBack (resistance)};
 							};
-							_hostiles = [_x,_enemySide,_respawnMinRange] Call cti_CO_FNC_GetHostilesInArea;
+							_hostiles = [_x,_enemySide,_respawnMinRange] Call EZC_fnc_Functions_Common_GetHostilesInArea;
 							if (_hostiles == 0) then {_availableSpawn pushBack _x};
 						} else {
 							_availableSpawn pushBack _x;

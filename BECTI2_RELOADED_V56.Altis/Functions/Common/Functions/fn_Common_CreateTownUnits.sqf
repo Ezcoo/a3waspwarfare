@@ -46,7 +46,7 @@ for '_i' from 0 to count(_groups)-1 do {
 	
 	["INFORMATION", Format["Common_CreateTownUnits.sqf: Town [%1] [%2] will create a team template %3 at %4", _town, _team, _groups select _i,_position]] Call EZC_fnc_Functions_Common_LogContent;
 
-	_retVal = [_groups select _i, _position, _side, _lock, _team, true, 90, _town] call cti_CO_FNC_CreateTeam;
+	_retVal = [_groups select _i, _position, _side, _lock, _team, true, 90, _town] call EZC_fnc_Functions_Common_CreateTeam;
 	_units = _retVal select 0;
 	_vehicles = _retVal select 1;
 	_built = _built + count _units;
@@ -56,7 +56,7 @@ for '_i' from 0 to count(_groups)-1 do {
        
 
 	   [_town, _team, _sideID] spawn EZC_fnc_Functions_Common_SetTownPatrol;
-       [_team, 300, _position] spawn cti_CO_FNC_RevealArea;
+       [_team, 300, _position] spawn EZC_fnc_Functions_Common_RevealArea;
 
    }else{
 
@@ -65,14 +65,14 @@ for '_i' from 0 to count(_groups)-1 do {
 
 
         [_town, _team, _sideID] spawn EZC_fnc_Functions_Common_SetTownPatrol;
-		[_team, 300, _position] spawn cti_CO_FNC_RevealArea;
+		[_team, 300, _position] spawn EZC_fnc_Functions_Common_RevealArea;
 
 			
 
 	  
     };
 	//[_town, _team, _sideID] spawn EZC_fnc_Functions_Common_SetTownPatrol;
-	//[_team, 175, _position] spawn cti_CO_FNC_RevealArea;
+	//[_team, 175, _position] spawn EZC_fnc_Functions_Common_RevealArea;
 
 	{ _town_vehicles pushBack _x; } forEach _vehicles;
 	_town_teams pushBack _team;

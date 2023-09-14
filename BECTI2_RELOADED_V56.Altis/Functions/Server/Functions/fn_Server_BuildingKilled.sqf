@@ -43,7 +43,7 @@ if ((!isNull _killer) && (isPlayer _killer)) then{
          };
 
         if(_side == resistance)then{
-            [_side, _structure] spawn cti_CO_FNC_CleanResBaseArea;
+            [_side, _structure] spawn EZC_fnc_Functions_Common_CleanResBaseArea;
         }
 	};
 };

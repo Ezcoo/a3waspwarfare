@@ -29,10 +29,10 @@ if(_sideJoined == _side)then{
 					_group setVariable ["cti_persistent", true];
 					_group setVariable ["cti_queue", []];
 					_group setVariable ["cti_vote", -1, true];
-					[_group, ""] Call cti_CO_FNC_SetTeamRespawn;
-					[_group, -1] Call cti_CO_FNC_SetTeamType;
-					[_group, "towns"] Call cti_CO_FNC_SetTeamMoveMode;
-					[_group, [0,0,0]] Call cti_CO_FNC_SetTeamMovePos;
+					[_group, ""] Call EZC_fnc_Functions_Common_SetTeamRespawn;
+					[_group, -1] Call EZC_fnc_Functions_Common_SetTeamType;
+					[_group, "towns"] Call EZC_fnc_Functions_Common_SetTeamMoveMode;
+					[_group, [0,0,0]] Call EZC_fnc_Functions_Common_SetTeamMovePos;
 					_group setVariable ["cti_uid", _uid];
 					_group setVariable ["cti_teamleader", leader _group];	
 				};

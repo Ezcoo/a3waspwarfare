@@ -74,5 +74,5 @@ while {true} do {
 
 //--- Rearm?
 if (_cts != 0) then {
-	[_veh,cti_Client_SideJoined] Spawn cti_CO_FNC_RearmVehicle;
+	[_veh,cti_Client_SideJoined] Spawn EZC_fnc_Functions_Common_RearmVehicle;
 };

@@ -219,7 +219,7 @@ if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "cti
 
 	if((typeOf _defense) in cti_C_ADV_AIR_DEFENCE) then{
 	    createVehicleCrew _defense;
-            [_team, 2000, getPosATL _defense] spawn cti_CO_FNC_RevealArea;
+            [_team, 2000, getPosATL _defense] spawn EZC_fnc_Functions_Common_RevealArea;
 	    if(_side == east) then {
 	        _defense addeventhandler ["fired", {(_this select 0) setvehicleammo 1}];
 	    };

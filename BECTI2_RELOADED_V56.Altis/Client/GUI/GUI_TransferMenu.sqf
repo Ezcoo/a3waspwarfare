@@ -5,7 +5,7 @@ uiNamespace setVariable ["cti_display_transfer", _this select 0];
 
 {
 	_name_leader = if (isNull leader _x) then {"No leader"} else {name leader _x};
-	lnbAddRow[505001, [Format ["$%1.",_x Call cti_CO_FNC_GetTeamFunds], _name_leader]];
+	lnbAddRow[505001, [Format ["$%1.",_x Call EZC_fnc_Functions_Common_GetTeamFunds], _name_leader]];
 } forEach cti_Client_Teams;
 
 _funds_last = -1;
@@ -22,7 +22,7 @@ while {alive player && dialog} do {
 	if (time - _last_update > 1) then {
 		_last_update = time;
 		for '_i' from 0 to cti_Client_Teams_Count-1 do {
-			_funds_team = (cti_Client_Teams select _i) Call cti_CO_FNC_GetTeamFunds;
+			_funds_team = (cti_Client_Teams select _i) Call EZC_fnc_Functions_Common_GetTeamFunds;
 			_name_leader = if (isNull(leader(cti_Client_Teams select _i))) then {"No leader"} else {name(leader(cti_Client_Teams select _i))};
 			if ((((uiNamespace getVariable "cti_display_transfer") displayCtrl 505001) lnbText [_i, 0]) != Format["$%1.",_funds_team]) then {lnbSetText [505001, [_i, 0], Format ["$%1.",_funds_team]]};
 			if ((((uiNamespace getVariable "cti_display_transfer") displayCtrl 505001) lnbText [_i, 1]) != _name_leader) then {lnbSetText [505001, [_i, 1], _name_leader]};

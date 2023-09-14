@@ -32,64 +32,64 @@ EZC_fnc_improved_BIS_fn_taskDefend = Compile preprocessFileLineNumbers "GLX_Syst
 // --- additional handlers
 EZC_fnc_Functions_Common_HandleArty = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleArty.sqf";
 EZC_fnc_Functions_Common_HandleAAMissiles = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleAAMissiles.sqf";
-cti_CO_FNC_HandleBombs = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleBombs.sqf";
-cti_CO_FNC_BalanceInit = Compile preprocessFileLineNumbers "Common\Functions\Common_BalanceInit.sqf";
-cti_CO_FNC_Requip_AI = Compile preprocessFileLineNumbers "Common\Functions\Common_Requip_AI.sqf";
-cti_CO_FNC_Requip_AIR_VEH = Compile preprocessFileLineNumbers "Common\Functions\Common_Requip_AIR_VEH.sqf";
+EZC_fnc_Functions_Common_HandleBombs = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleBombs.sqf";
+EZC_fnc_Functions_Common_BalanceInit = Compile preprocessFileLineNumbers "Common\Functions\Common_BalanceInit.sqf";
+EZC_fnc_Functions_Common_Requip_AI = Compile preprocessFileLineNumbers "Common\Functions\Common_Requip_AI.sqf";
+EZC_fnc_Functions_Common_Requip_AIR_VEH = Compile preprocessFileLineNumbers "Common\Functions\Common_Requip_AIR_VEH.sqf";
 EZC_fnc_Functions_Common_BuildingInRange = Compile preprocessFileLineNumbers "Common\Functions\Common_BuildingInRange.sqf";
 EZC_fnc_Functions_Common_ChangeSideSupply = Compile preprocessFileLineNumbers "Common\Functions\Common_ChangeSideSupply.sqf";
-cti_CO_FNC_EquipLoadout = Compile preprocessFileLineNumbers "Common\Functions\Common_EquipLoadout.sqf";
-cti_CO_FNC_GetAIDigit = Compile preprocessFileLineNumbers "Common\Functions\Common_GetAIDigit.sqf";
+EZC_fnc_Functions_Common_EquipLoadout = Compile preprocessFileLineNumbers "Common\Functions\Common_EquipLoadout.sqf";
+EZC_fnc_Functions_Common_GetAIDigit = Compile preprocessFileLineNumbers "Common\Functions\Common_GetAIDigit.sqf";
 EZC_fnc_Functions_Common_GetClosestLocation = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestLocation.sqf";
 EZC_fnc_Functions_Common_GetClosestLocationBySide = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestLocationBySide.sqf";
 EZC_fnc_Functions_Common_GetConfigInfo = Compile preprocessFileLineNumbers "Common\Functions\Common_GetConfigInfo.sqf";
 EZC_fnc_Functions_Common_GetFactories = Compile preprocessFileLineNumbers "Common\Functions\Common_GetFactories.sqf";
-cti_CO_FNC_GetFriendlyCamps = Compile preprocessFileLineNumbers "Common\Functions\Common_GetFriendlyCamps.sqf";
-cti_CO_FNC_GetHostilesInArea = Compile preprocessFileLineNumbers "Common\Functions\Common_GetHostilesInArea.sqf";
+EZC_fnc_Functions_Common_GetFriendlyCamps = Compile preprocessFileLineNumbers "Common\Functions\Common_GetFriendlyCamps.sqf";
+EZC_fnc_Functions_Common_GetHostilesInArea = Compile preprocessFileLineNumbers "Common\Functions\Common_GetHostilesInArea.sqf";
 EZC_fnc_Functions_Common_GetPositionFrom = Compile preprocessFileLineNumbers "Common\Functions\Common_GetPositionFrom.sqf";
-cti_CO_FNC_GetRespawnCamps = Compile preprocessFileLineNumbers "Common\Functions\Common_GetRespawnCamps.sqf";
-cti_CO_FNC_GetRespawnThreeway = Compile preprocessFileLineNumbers "Common\Functions\Common_GetRespawnThreeway.sqf";
+EZC_fnc_Functions_Common_GetRespawnCamps = Compile preprocessFileLineNumbers "Common\Functions\Common_GetRespawnCamps.sqf";
+EZC_fnc_Functions_Common_GetRespawnThreeway = Compile preprocessFileLineNumbers "Common\Functions\Common_GetRespawnThreeway.sqf";
 EZC_fnc_Functions_Common_GetSafePlace = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSafePlace.sqf";   // USE IT FOR RESPAWN OF VEHICLES IN CREATEVEHICLE.SQF
-cti_CO_FNC_GetTeamArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamArtillery.sqf";
-cti_CO_FNC_GetTeamMoveMode = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamMoveMode.sqf";
-cti_CO_FNC_GetTeamMovePos = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamMovePos.sqf";
-cti_CO_FNC_GetTeamRespawn = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamRespawn.sqf";
-cti_CO_FNC_GetTeamType = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamType.sqf";
-cti_CO_FNC_GetTeamVehicles = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamVehicles.sqf";
+EZC_fnc_Functions_Common_GetTeamArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamArtillery.sqf";
+EZC_fnc_Functions_Common_GetTeamMoveMode = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamMoveMode.sqf";
+EZC_fnc_Functions_Common_GetTeamMovePos = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamMovePos.sqf";
+EZC_fnc_Functions_Common_GetTeamRespawn = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamRespawn.sqf";
+EZC_fnc_Functions_Common_GetTeamType = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamType.sqf";
+EZC_fnc_Functions_Common_GetTeamVehicles = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamVehicles.sqf";
 EZC_fnc_Functions_Common_GetTotalSupplyValue = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTotalSupplyValue.sqf";
 EZC_fnc_Functions_Common_GetTownsHeld = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTownsHeld.sqf";
-cti_CO_FNC_GetTownsIncome = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTownsIncome.sqf";
-cti_CO_FNC_GetUnitVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_GetUnitVehicle.sqf";
+EZC_fnc_Functions_Common_GetTownsIncome = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTownsIncome.sqf";
+EZC_fnc_Functions_Common_GetUnitVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_GetUnitVehicle.sqf";
 EZC_fnc_Functions_Common_IsArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_IsArtillery.sqf";
-cti_CO_FNC_MarkerUpdate = Compile preprocessFileLineNumbers "Common\Common_MarkerUpdate.sqf";
-cti_CO_FNC_PlaceNear = Compile preprocessFileLineNumbers "Common\Functions\Common_PlaceNear.sqf";
-cti_CO_FNC_PlaceSafe = Compile preprocessFileLineNumbers "Common\Functions\Common_PlaceSafe.sqf";
-cti_CO_FNC_RearmVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_RearmVehicle.sqf";
-cti_CO_FNC_SetCommanderVotes = Compile preprocessFileLineNumbers "Common\Functions\Common_SetCommanderVotes.sqf";
-cti_CO_FNC_SetTeamRespawn = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamRespawn.sqf";
-cti_CO_FNC_SetTeamMoveMode = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamMoveMode.sqf";
-cti_CO_FNC_SetTeamMovePos = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamMovePos.sqf";
-cti_CO_FNC_SetTeamType = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamType.sqf";
+EZC_fnc_Common_MarkerUpdate = Compile preprocessFileLineNumbers "Common\Common_MarkerUpdate.sqf";
+EZC_fnc_Functions_Common_PlaceNear = Compile preprocessFileLineNumbers "Common\Functions\Common_PlaceNear.sqf";
+EZC_fnc_Functions_Common_PlaceSafe = Compile preprocessFileLineNumbers "Common\Functions\Common_PlaceSafe.sqf";
+EZC_fnc_Functions_Common_RearmVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_RearmVehicle.sqf";
+EZC_fnc_Functions_Common_SetCommanderVotes = Compile preprocessFileLineNumbers "Common\Functions\Common_SetCommanderVotes.sqf";
+EZC_fnc_Functions_Common_SetTeamRespawn = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamRespawn.sqf";
+EZC_fnc_Functions_Common_SetTeamMoveMode = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamMoveMode.sqf";
+EZC_fnc_Functions_Common_SetTeamMovePos = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamMovePos.sqf";
+EZC_fnc_Functions_Common_SetTeamType = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamType.sqf";
 EZC_fnc_Functions_Common_UpdateStatistics = Compile preprocessFileLineNumbers "Common\Functions\Common_UpdateStatistics.sqf";  // USE IT FOR GLOBAL STATISTIC COLLECTOR
-cti_CO_FNC_TrashObject = Compile preprocessFile "Common\Functions\Common_TrashObject.sqf";
-cti_CO_FNC_GetClosestStructure = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetClosestStructure.sqf";
+EZC_fnc_Functions_Common_TrashObject = Compile preprocessFile "Common\Functions\Common_TrashObject.sqf";
+EZC_fnc_Functions_Common_GetClosestStructure = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetClosestStructure.sqf";
 
 // Module: Arty
-cti_CO_FNC_ARTY_HandleILLUM = Compile preprocessFile "Common\Module\Arty\ARTY_HandleILLUM.sqf";
-cti_CO_FNC_ARTY_HandleSADARM = Compile preprocessFile "Common\Module\Arty\ARTY_HandleSADARM.sqf";
-cti_CO_FNC_ARTY_Prep = Compile preprocessFile "Common\Module\Arty\ARTY_mobileMissionPrep.sqf";
-cti_CO_FNC_ARTY_Finish = Compile preprocessFile "Common\Module\Arty\ARTY_mobileMissionFinish.sqf";
-cti_CO_FNC_TRACK_AIR_TARGETS = Compile preprocessFile "Common\Common_AARadarMarkerUpdate.sqf";
+EZC_fnc_Module_ARTY_HandleILLUM = Compile preprocessFile "Common\Module\Arty\ARTY_HandleILLUM.sqf";
+EZC_fnc_Module_ARTY_HandleSADARM = Compile preprocessFile "Common\Module\Arty\ARTY_HandleSADARM.sqf";
+EZC_fnc_Module_ARTY_mobileMissionPrep = Compile preprocessFile "Common\Module\Arty\ARTY_mobileMissionPrep.sqf";
+EZC_fnc_Module_ARTY_mobileMissionFinish = Compile preprocessFile "Common\Module\Arty\ARTY_mobileMissionFinish.sqf";
+EZC_fnc_Common_AARadarMarkerUpdate = Compile preprocessFile "Common\Common_AARadarMarkerUpdate.sqf";
 
 
-cti_CO_FNC_AreWaypointsComplete = Compile preprocessFileLineNumbers "Common\Functions\Common_AreWaypointsComplete.sqf";
-cti_CO_FNC_ArrayShift = Compile preprocessFileLineNumbers "Common\Functions\Common_ArrayShift.sqf";
-cti_CO_FNC_ArrayShuffle = Compile preprocessFileLineNumbers "Common\Functions\Common_ArrayShuffle.sqf";
+EZC_fnc_Functions_Common_AreWaypointsComplete = Compile preprocessFileLineNumbers "Common\Functions\Common_AreWaypointsComplete.sqf";
+EZC_fnc_Functions_Common_ArrayShift = Compile preprocessFileLineNumbers "Common\Functions\Common_ArrayShift.sqf";
+EZC_fnc_Functions_Common_ArrayShuffle = Compile preprocessFileLineNumbers "Common\Functions\Common_ArrayShuffle.sqf";
 EZC_fnc_Functions_Common_ChangeTeamFunds = Compile preprocessFileLineNumbers "Common\Functions\Common_ChangeTeamFunds.sqf";
 //EZC_fnc_Module_Common_HandleIncomingMissile = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleIncomingMissile.sqf";
-cti_CO_FNC_ChangeUnitGroup = Compile preprocessFileLineNumbers "Common\Functions\Common_ChangeUnitGroup.sqf";
+EZC_fnc_Functions_Common_ChangeUnitGroup = Compile preprocessFileLineNumbers "Common\Functions\Common_ChangeUnitGroup.sqf";
 EZC_fnc_Functions_Common_ClearVehicleCargo = Compile preprocessFileLineNumbers "Common\Functions\Common_ClearVehicleCargoOA.sqf";
-cti_CO_FNC_CreateTeam = Compile preprocessFileLineNumbers "Common\Functions\Common_CreateTeam.sqf";
+EZC_fnc_Functions_Common_CreateTeam = Compile preprocessFileLineNumbers "Common\Functions\Common_CreateTeam.sqf";
 EZC_fnc_Functions_Common_CreateTownUnits = Compile preprocessFileLineNumbers "Common\Functions\Common_CreateTownUnits.sqf";
 EZC_fnc_Functions_Common_CreateUnitForStaticDefence = Compile preprocessFileLineNumbers "Common\Functions\Common_CreateUnitForStaticDefence.sqf";
 EZC_fnc_Functions_Common_CreateUnitsForResBases = Compile preprocessFileLineNumbers "Common\Functions\Common_CreateUnitsForResBases.sqf";
@@ -97,19 +97,19 @@ EZC_fnc_Functions_Common_CreateVehicle = Compile preprocessFileLineNumbers "Comm
 EZC_fnc_Functions_Common_CreateUnit = Compile preprocessFileLineNumbers "Common\Functions\Common_CreateUnit.sqf";
 EZC_fnc_Functions_Common_EquipBackpack = Compile preprocessFileLineNumbers "Common\Functions\Common_EquipBackpack.sqf";
 EZC_fnc_Functions_Common_EquipUnit = Compile preprocessFileLineNumbers "Common\Functions\Common_EquipUnit.sqf";
-cti_CO_FNC_EquipVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_EquipVehicle.sqf";
-cti_CO_FNC_FindTurretsRecursive = Compile preprocessFileLineNumbers "Common\Functions\Common_FindTurretsRecursive.sqf";
-cti_CO_FNC_FireArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_FireArtillery.sqf";
-cti_CO_FNC_GetAreaEnemiesCount = Compile preprocessFileLineNumbers "Common\Functions\Common_GetAreaEnemiesCount.sqf";
+EZC_fnc_Functions_Common_EquipVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_EquipVehicle.sqf";
+EZC_fnc_Functions_Common_FindTurretsRecursive = Compile preprocessFileLineNumbers "Common\Functions\Common_FindTurretsRecursive.sqf";
+EZC_fnc_Functions_Common_FireArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_FireArtillery.sqf";
+EZC_fnc_Functions_Common_GetAreaEnemiesCount = Compile preprocessFileLineNumbers "Common\Functions\Common_GetAreaEnemiesCount.sqf";
 EZC_fnc_Functions_Common_GetCommanderTeam = Compile preprocessFileLineNumbers "Common\Functions\Common_GetCommanderTeam.sqf";
-cti_CO_FNC_GetClosestEnemyLocation = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestEnemyLocation.sqf";
+EZC_fnc_Functions_Common_GetClosestEnemyLocation = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestEnemyLocation.sqf";
 EZC_fnc_Functions_Common_GetClosestEntity = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestEntity.sqf";
 EZC_fnc_Functions_Common_GetClosestEntity2 = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestEntity2.sqf";
 EZC_fnc_Functions_Common_GetClosestEntity3 = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestEntity3.sqf";
 EZC_fnc_Functions_Common_GetClosestEntity4 = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestEntity4.sqf";
-cti_CO_FNC_GetConfigEntry = Compile preprocessFileLineNumbers "Common\Functions\Common_GetConfigEntry.sqf";
-cti_CO_FNC_GetDirTo = Compile preprocessFileLineNumbers "Common\Functions\Common_GetDirTo.sqf";
-cti_CO_FNC_GetEmptyPosition = Compile preprocessFileLineNumbers "Common\Functions\Common_GetEmptyPosition.sqf";
+EZC_fnc_Functions_Common_GetConfigEntry = Compile preprocessFileLineNumbers "Common\Functions\Common_GetConfigEntry.sqf";
+EZC_fnc_Functions_Common_GetDirTo = Compile preprocessFileLineNumbers "Common\Functions\Common_GetDirTo.sqf";
+EZC_fnc_Functions_Common_GetEmptyPosition = Compile preprocessFileLineNumbers "Common\Functions\Common_GetEmptyPosition.sqf";
 EZC_fnc_Functions_Common_GetLiveUnits = Compile preprocessFileLineNumbers "Common\Functions\Common_GetLiveUnits.sqf";
 EZC_fnc_Functions_Common_GetRandomPosition = Compile preprocessFileLineNumbers "Common\Functions\Common_GetRandomPosition.sqf";
 EZC_fnc_Functions_Common_GetSideFromID = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideFromID.sqf";
@@ -122,19 +122,19 @@ EZC_fnc_Functions_Common_GetSideSupply = Compile preprocessFileLineNumbers "Comm
 EZC_fnc_Functions_Common_GetSideStructures = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideStructures.sqf";
 EZC_fnc_Functions_Common_GetSideTowns = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideTowns.sqf";
 EZC_fnc_Functions_Common_GetSideUpgrades = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideUpgrades.sqf";
-cti_CO_FNC_GetTeamFunds = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamFunds.sqf";
-cti_CO_FNC_GetTotalCamps = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTotalCamps.sqf";
-cti_CO_FNC_GetTotalCampsOnSide = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTotalCampsOnSide.sqf";
-cti_CO_FNC_GetTownsSupply = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTownsSupply.sqf";
+EZC_fnc_Functions_Common_GetTeamFunds = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamFunds.sqf";
+EZC_fnc_Functions_Common_GetTotalCamps = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTotalCamps.sqf";
+EZC_fnc_Functions_Common_GetTotalCampsOnSide = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTotalCampsOnSide.sqf";
+EZC_fnc_Functions_Common_GetTownsSupply = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTownsSupply.sqf";
 EZC_fnc_Functions_Common_GetUnitConfigGear = Compile preprocessFileLineNumbers "Common\Functions\Common_GetUnitConfigGear.sqf";
-cti_CO_FNC_GetUnitsPerSide = Compile preprocessFileLineNumbers "Common\Functions\Common_GetUnitsPerSide.sqf";
-cti_CO_FNC_GetVehicleTurretsGear = Compile preprocessFileLineNumbers "Common\Functions\Common_GetVehicleTurretsGear.sqf";
-cti_CO_FNC_HandleArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleArtillery.sqf";
-cti_CO_FNC_OnUnitHit = Compile preprocessFileLineNumbers "Common\Functions\Common_OnUnitHit.sqf";
+EZC_fnc_Functions_Common_GetUnitsPerSide = Compile preprocessFileLineNumbers "Common\Functions\Common_GetUnitsPerSide.sqf";
+EZC_fnc_Functions_Common_GetVehicleTurretsGear = Compile preprocessFileLineNumbers "Common\Functions\Common_GetVehicleTurretsGear.sqf";
+EZC_fnc_Functions_Common_HandleArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleArtillery.sqf";
+EZC_fnc_Functions_Common_OnUnitHit = Compile preprocessFileLineNumbers "Common\Functions\Common_OnUnitHit.sqf";
 EZC_fnc_Functions_Common_OnUnitKilled = Compile preprocessFileLineNumbers "Common\Functions\Common_OnUnitKilled.sqf";
-cti_CO_FNC_RevealArea = Compile preprocessFileLineNumbers "Common\Functions\Common_RevealArea.sqf";
-cti_CO_FNC_RemoveCountermeasures = Compile preprocessFileLineNumbers "Common\Functions\Common_RemoveCountermeasures.sqf";
-cti_CO_FNC_SetTurretsMagazines = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTurretsMagazines.sqf";
+EZC_fnc_Functions_Common_RevealArea = Compile preprocessFileLineNumbers "Common\Functions\Common_RevealArea.sqf";
+EZC_fnc_Functions_Common_RemoveCountermeasures = Compile preprocessFileLineNumbers "Common\Functions\Common_RemoveCountermeasures.sqf";
+EZC_fnc_Functions_Common_SetTurretsMagazines = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTurretsMagazines.sqf";
 EZC_fnc_Functions_Common_SortByDistance = Compile preprocessFileLineNumbers "Common\Functions\Common_SortByDistance.sqf";
 
 if ((missionNamespace getVariable "cti_C_PLAYERS_RENDER_WAYPOINTS") == 0) then {
@@ -145,17 +145,17 @@ EZC_fnc_Functions_Common_WaypointSimple = Compile preprocessFileLineNumbers "Com
 EZC_fnc_Functions_Common_SetTownPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
 };
 
-cti_CO_FNC_WaypointsAdd = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsAdd.sqf";
-cti_CO_FNC_WaypointsRemove = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsRemove.sqf";
+EZC_fnc_Functions_Common_WaypointsAdd = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsAdd.sqf";
+EZC_fnc_Functions_Common_WaypointsRemove = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsRemove.sqf";
 EZC_fnc_Functions_Common_GetSideStructuresByType = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetSideStructuresByType.sqf";
-cti_CO_FNC_ConvertGearToFlat = compileFinal preprocessFileLineNumbers "Common\Functions\Common_ConvertGearToFlat.sqf";
-cti_CO_FNC_GetGearItemUpgradeLevel = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetGearItemUpgradeLevel.sqf";
-cti_CO_FNC_GetGearItemCost = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetGearItemCost.sqf";
-cti_CO_FNC_ArrayDiffers = compileFinal preprocessFileLineNumbers "Common\Functions\Common_ArrayDiffers.sqf";
-cti_CO_FNC_ArrayToLower = compileFinal preprocessFileLineNumbers "Common\Functions\Common_ArrayToLower.sqf";
-cti_CO_FNC_EquipContainerBackpack = compileFinal preprocessFileLineNumbers "Common\Functions\Common_EquipContainerBackpack.sqf";
-cti_CO_FNC_EquipContainerUniform = compileFinal preprocessFileLineNumbers "Common\Functions\Common_EquipContainerUniform.sqf";
-cti_CO_FNC_EquipContainerVest = compileFinal preprocessFileLineNumbers "Common\Functions\Common_EquipContainerVest.sqf";
+EZC_fnc_Functions_Common_ConvertGearToFlat = compileFinal preprocessFileLineNumbers "Common\Functions\Common_ConvertGearToFlat.sqf";
+EZC_fnc_Functions_Common_GetGearItemUpgradeLevel = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetGearItemUpgradeLevel.sqf";
+EZC_fnc_Functions_Common_GetGearItemCost = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetGearItemCost.sqf";
+EZC_fnc_Functions_Common_ArrayDiffers = compileFinal preprocessFileLineNumbers "Common\Functions\Common_ArrayDiffers.sqf";
+EZC_fnc_Functions_Common_ArrayToLower = compileFinal preprocessFileLineNumbers "Common\Functions\Common_ArrayToLower.sqf";
+EZC_fnc_Functions_Common_EquipContainerBackpack = compileFinal preprocessFileLineNumbers "Common\Functions\Common_EquipContainerBackpack.sqf";
+EZC_fnc_Functions_Common_EquipContainerUniform = compileFinal preprocessFileLineNumbers "Common\Functions\Common_EquipContainerUniform.sqf";
+EZC_fnc_Functions_Common_EquipContainerVest = compileFinal preprocessFileLineNumbers "Common\Functions\Common_EquipContainerVest.sqf";
 EZC_fnc_Functions_Common_GetUnitLoadout = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetUnitLoadout.sqf";
 EZC_fnc_Functions_Common_EquipArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_EquipArtillery.sqf";
 
@@ -163,10 +163,10 @@ EZC_fnc_Functions_Common_EquipArtillery = Compile preprocessFileLineNumbers "Com
 //EZC_fnc_Functions_Common_SetTownPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
 
 
-cti_CO_FNC_UPDATE_CLIENT_TEAMS = Compile preprocessFileLineNumbers "Common\Functions\Common_UpdateClientTeams.sqf";
-cti_CO_FNC_Change_Vehicle_Texture = Compile preprocessFile "Common\Functions\Common_ChangeVehicleTexture.sqf";
-cti_CO_FNC_CreateComposition = Compile preprocessFile "Common\Functions\Common_CreateComposition.sqf";
-cti_CO_FNC_CleanResBaseArea = Compile preprocessFile "Common\Functions\Common_CleanResBaseArea.sqf";
+EZC_fnc_Functions_Common_UpdateClientTeams = Compile preprocessFileLineNumbers "Common\Functions\Common_UpdateClientTeams.sqf";
+EZC_fnc_Functions_Common_ChangeVehicleTexture = Compile preprocessFile "Common\Functions\Common_ChangeVehicleTexture.sqf";
+EZC_fnc_Functions_Common_CreateComposition = Compile preprocessFile "Common\Functions\Common_CreateComposition.sqf";
+EZC_fnc_Functions_Common_CleanResBaseArea = Compile preprocessFile "Common\Functions\Common_CleanResBaseArea.sqf";
 ["INITIALIZATION", "Init_Common.sqf: Functions are initialized."] Call EZC_fnc_Functions_Common_LogContent;
 
 varQueu = random(10)+random(100)+random(1000); //clt, to remove with new sys later on.
@@ -175,9 +175,9 @@ unitMarker = 0;
 
 
 //--- Load the profile variables if needed (Requires at least version 1.62 build 97105).
-cti_CO_FNC_GetProfileVariable = Compile preprocessFileLineNumbers "Common\Functions\Common_GetProfileVariable.sqf";
-cti_CO_FNC_SaveProfile = Compile preprocessFileLineNumbers "Common\Functions\Common_SaveProfile.sqf";
-cti_CO_FNC_SetProfileVariable = Compile preprocessFileLineNumbers "Common\Functions\Common_SetProfileVariable.sqf";
+EZC_fnc_Functions_Common_GetProfileVariable = Compile preprocessFileLineNumbers "Common\Functions\Common_GetProfileVariable.sqf";
+EZC_fnc_Functions_Common_SaveProfile = Compile preprocessFileLineNumbers "Common\Functions\Common_SaveProfile.sqf";
+EZC_fnc_Functions_Common_SetProfileVariable = Compile preprocessFileLineNumbers "Common\Functions\Common_SetProfileVariable.sqf";
 
 
 /* Respawn Markers */
@@ -294,10 +294,10 @@ Call Compile preprocessFileLineNumbers "Common\Init\Init_Boundaries.sqf";
 
 //--- ICBM.
 if ((missionNamespace getVariable "cti_C_MODULE_cti_ICBM") > 0) then {
-	cti_CO_FNC_Nuke = Compile preprocessFile "Client\Module\Nuke\nuke.sqf";
+	EZC_fnc_Module_nuke = Compile preprocessFile "Client\Module\Nuke\nuke.sqf";
 	EZC_fnc_Module_damage = Compile preprocessFile "Client\Module\Nuke\damage.sqf";
 	EZC_fnc_Module_radiation = Compile preprocessFile "Client\Module\Nuke\radzone.sqf";
-	cti_CO_FNC_PostNuclearEffects = Compile preprocessFile "Client\Module\Nuke\post_nuclear_effects.sqf";
+	EZC_fnc_Module_post_nuclear_effects = Compile preprocessFile "Client\Module\Nuke\post_nuclear_effects.sqf";
 	EZC_fnc_Module_nukeincoming = Compile preprocessFile "Client\Module\Nuke\nukeincoming.sqf";
 }; 
 

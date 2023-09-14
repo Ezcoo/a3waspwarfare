@@ -63,11 +63,11 @@ _teams = [];
 _team = if (_curSel != 0) then {cti_Client_Teams select (_curSel - 1)} else {cti_Client_Teams select (_curSel + 1)};
 _team_old = _team;
 
-_index = (_team) Call cti_CO_FNC_GetTeamType;
+_index = (_team) Call EZC_fnc_Functions_Common_GetTeamType;
 if (_index == -1) then {_index = 1};
 lbSetCurSel [14010,[14010,_index] Call EZC_fnc_Functions_Client_UIFindLBValue];
 
-_txt = (_team) Call cti_CO_FNC_GetTeamMoveMode;
+_txt = (_team) Call EZC_fnc_Functions_Common_GetTeamMoveMode;
 if (_txt == "" || _txt == "towns") then {_txt = localize "STR_WF_COMMAND_Mission" + ": " + localize "STR_WF_COMMAND_TakeTowns"};
 if (_txt == "move") then {_txt = localize "STR_WF_COMMAND_Mission" + ": " + localize "STR_WF_COMMAND_Move"};
 if (_txt == "patrol") then {_txt = localize "STR_WF_COMMAND_Mission" + ": " + localize "STR_WF_COMMAND_Patrol"};
@@ -175,7 +175,7 @@ while {alive player && dialog} do {
 		_updateTab = false;
 	};
 	
-	_txt = (_team) Call cti_CO_FNC_GetTeamMoveMode;
+	_txt = (_team) Call EZC_fnc_Functions_Common_GetTeamMoveMode;
 	if (_txt == "" || _txt == "towns") then {_txt = localize "STR_WF_COMMAND_Mission" + ": " + localize "STR_WF_COMMAND_TakeTowns"};
 	if (_txt == "move") then {_txt = localize "STR_WF_COMMAND_Mission" + ": " + localize "STR_WF_COMMAND_Move"};
 	if (_txt == "patrol") then {_txt = localize "STR_WF_COMMAND_Mission" + ": " + localize "STR_WF_COMMAND_Patrol"};
@@ -183,15 +183,15 @@ while {alive player && dialog} do {
 	ctrlSetText [14013,_txt];
 	
 	//--- Team Funds.
-	ctrlSetText [14028,Format [localize 'STR_WF_COMMAND_Cash',str ((_team) Call cti_CO_FNC_GetTeamFunds)]];
+	ctrlSetText [14028,Format [localize 'STR_WF_COMMAND_Cash',str ((_team) Call EZC_fnc_Functions_Common_GetTeamFunds)]];
 	
 	if (WF_MenuAction == 1) then {
 		WF_MenuAction = -1;
 		activeAnimMarker = false;
 
-		_index = (_team) Call cti_CO_FNC_GetTeamType;
-		_currentCoord = (_team) Call cti_CO_FNC_GetTeamMovePos;
-		_currentMission = (_team) Call cti_CO_FNC_GetTeamMoveMode;
+		_index = (_team) Call EZC_fnc_Functions_Common_GetTeamType;
+		_currentCoord = (_team) Call EZC_fnc_Functions_Common_GetTeamMovePos;
+		_currentMission = (_team) Call EZC_fnc_Functions_Common_GetTeamMoveMode;
 		if (typeName _currentCoord == "ARRAY") then {
 			if (count _currentCoord > 0) then {
 				_position = _currentCoord;
@@ -251,9 +251,9 @@ while {alive player && dialog} do {
 	if (WF_MenuAction == 101) then {
 		WF_MenuAction = -1;
 		if (!_isAll) then {
-			[_team,'towns'] Call cti_CO_FNC_SetTeamMoveMode;
+			[_team,'towns'] Call EZC_fnc_Functions_Common_SetTeamMoveMode;
 		} else {
-			{[_x,'towns'] Call cti_CO_FNC_SetTeamMoveMode} forEach cti_Client_Teams;
+			{[_x,'towns'] Call EZC_fnc_Functions_Common_SetTeamMoveMode} forEach cti_Client_Teams;
 		};
 		activeAnimMarker = false;
 	};
@@ -294,14 +294,14 @@ while {alive player && dialog} do {
 					player kbTell [sideHQ, cti_V_HQTopicSide, "OrderSent",["1","",_sideTeam,[if (cti_Client_SideJoined == west) then {"blueTeam"} else {"redTeam"}]],["2","","moving to position",["HC_MovingToPosition"]],["3","","over.",["Over1"]],true];
 					{
 						_selected = cti_Client_Teams select (_x - 1);
-						[_selected,_position] Call cti_CO_FNC_SetTeamMovePos;
-						[_selected,_order] Call cti_CO_FNC_SetTeamMoveMode;
+						[_selected,_position] Call EZC_fnc_Functions_Common_SetTeamMovePos;
+						[_selected,_order] Call EZC_fnc_Functions_Common_SetTeamMoveMode;
 					} forEach _teams;
 				} else {
 					player kbTell [sideHQ, cti_V_HQTopicSide, "OrderSentAll",["1","","All",["all"]],["2","","moving to position",["HC_MovingToPosition"]],["3","","over.",["Over1"]],true];
 					{
-						[_x,_position] Call cti_CO_FNC_SetTeamMovePos;
-						[_x,_order] Call cti_CO_FNC_SetTeamMoveMode;
+						[_x,_position] Call EZC_fnc_Functions_Common_SetTeamMovePos;
+						[_x,_order] Call EZC_fnc_Functions_Common_SetTeamMoveMode;
 					} forEach cti_Client_Teams;			
 				};
 			};
@@ -348,10 +348,10 @@ while {alive player && dialog} do {
 			_team = _this select 0;
 			_units = Units _team;
 			if ((missionNamespace getVariable "cti_C_RESPAWN_MOBILE") > 0 || ((missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") > 0)) then {//--- Make sure that the unit won't spawn back at a camp/ambu.
-				[_team,"forceRespawn"] Call cti_CO_FNC_SetTeamRespawn;
+				[_team,"forceRespawn"] Call EZC_fnc_Functions_Common_SetTeamRespawn;
 				sleep 2;
 			};
-			_units = _units + ([_team,false] Call cti_CO_FNC_GetTeamVehicles);
+			_units = _units + ([_team,false] Call EZC_fnc_Functions_Common_GetTeamVehicles);
 			{_x setDammage 1} forEach _units;
 		};
 	};
@@ -370,10 +370,10 @@ while {alive player && dialog} do {
 		if (!_isAll) then {
 			{
 				_selected = cti_Client_Teams select (_x - 1);
-				[_selected,_curType] Call cti_CO_FNC_SetTeamType;
+				[_selected,_curType] Call EZC_fnc_Functions_Common_SetTeamType;
 			} forEach _teams;
 		} else {
-			{[_x,_curType] Call cti_CO_FNC_SetTeamType} forEach cti_Client_Teams;
+			{[_x,_curType] Call EZC_fnc_Functions_Common_SetTeamType} forEach cti_Client_Teams;
 		};
 	};	
 	
@@ -405,17 +405,17 @@ while {alive player && dialog} do {
 		if (!_isAll) then {
 			{
 				_selected = cti_Client_Teams select (_x - 1);
-				[_selected,(_structures select _curSel)] Call cti_CO_FNC_SetTeamRespawn;
+				[_selected,(_structures select _curSel)] Call EZC_fnc_Functions_Common_SetTeamRespawn;
 			} forEach _teams;
 		} else {
-			{[_x,(_structures select _curSel)] Call cti_CO_FNC_SetTeamRespawn} forEach cti_Client_Teams;
+			{[_x,(_structures select _curSel)] Call EZC_fnc_Functions_Common_SetTeamRespawn} forEach cti_Client_Teams;
 		};
 	};
 	
 	//--- Update the respawn info.
 	if (_updateRespawn) then {
 		_updateRespawn = false;
-		_respawn = (_team) Call cti_CO_FNC_GetTeamRespawn;
+		_respawn = (_team) Call EZC_fnc_Functions_Common_GetTeamRespawn;
 		_id = _structures find _respawn;
 		if (_id != -1) then {lbSetCurSel [14025,_id]} else {lbSetCurSel[14025,0]};
 	};

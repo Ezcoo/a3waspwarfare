@@ -117,7 +117,7 @@ if (_unitType isKindOf "Man") then {
 
 	[_soldier] allowGetIn true;
 	[_soldier] orderGetIn true;
-	//if ((missionNamespace getVariable "cti_C_UNITS_BALANCING") > 0) then {(_vehicle) Call cti_CO_FNC_BalanceInit};
+	//if ((missionNamespace getVariable "cti_C_UNITS_BALANCING") > 0) then {(_vehicle) Call EZC_fnc_Functions_Common_BalanceInit};
 	
 	_soldier assignAsDriver _vehicle;
 	_soldier moveInDriver _vehicle;

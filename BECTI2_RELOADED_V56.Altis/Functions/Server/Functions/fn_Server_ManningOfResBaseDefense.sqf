@@ -37,8 +37,8 @@ _side = resistance;
                 _unit assignAsGunner _defense;
                 [_unit] orderGetIn true;
                 _unit moveInGunner _defense;
-                [_unit, 350, _pos] Call cti_CO_FNC_RevealArea;
-                [group _unit, 175, getPos _defense] spawn cti_CO_FNC_RevealArea;
+                [_unit, 350, _pos] Call EZC_fnc_Functions_Common_RevealArea;
+                [group _unit, 175, getPos _defense] spawn EZC_fnc_Functions_Common_RevealArea;
                 _x setVariable ["cti_defense_operator", _unit]; //--- Track the original gunner.
             };
         };

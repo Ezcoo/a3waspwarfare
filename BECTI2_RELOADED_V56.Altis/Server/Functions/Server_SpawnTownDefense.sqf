@@ -23,7 +23,7 @@ if (count _kinds > 1) then {
 	while {true} do {
 		_random = floor(random count _kinds);
 		_kind = missionNamespace getVariable Format ["cti_%1_Defenses_%2", _side, _kinds select _random];
-		if !(isNil '_kind') then {_defense = _kind select floor(random count _kind);} else {_nils pushBack (_kinds select _random); _kinds = [_kinds, [_random]] Call cti_CO_FNC_ArrayShift;};
+		if !(isNil '_kind') then {_defense = _kind select floor(random count _kind);} else {_nils pushBack (_kinds select _random); _kinds = [_kinds, [_random]] Call EZC_fnc_Functions_Common_ArrayShift;};
 		if (count _kinds == 0 || _defense != "") exitWith {};
 	};
 } else {

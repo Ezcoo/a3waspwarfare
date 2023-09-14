@@ -12,7 +12,7 @@ _team = _this select 0;
 _clear = _this select 1;
 _waypoints = _this select 2;
 
-if (_clear) then {_team Call cti_CO_FNC_WaypointsRemove};
+if (_clear) then {_team Call EZC_fnc_Functions_Common_WaypointsRemove};
 
 {
 	_position = _x select 0;

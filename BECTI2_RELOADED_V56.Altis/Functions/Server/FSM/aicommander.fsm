@@ -371,7 +371,7 @@ class FSM
        "" \n
        "	if (_lastHQMoveOrder > 40) then {" \n
        "		_lastHQMoveOrder = 0;" \n
-       "		[_hq, getPos _hq, 50] Call cti_CO_FNC_PlaceSafe;" \n
+       "		[_hq, getPos _hq, 50] Call EZC_fnc_Functions_Common_PlaceSafe;" \n
        "		(driver _hq) doMove ([GetPos _hqDeployAt,10,20] Call EZC_fnc_Functions_Common_GetRandomPosition);" \n
        "	};" \n
        "" \n
@@ -829,7 +829,7 @@ class FSM
        "" \n
        "			//--- Keep the defense able to fire." \n
        "			if !(isNull(gunner _defense)) then {" \n
-       "				if !(someAmmo _defense) then {[_defense,_side] Call cti_CO_FNC_RearmVehicle};" \n
+       "				if !(someAmmo _defense) then {[_defense,_side] Call EZC_fnc_Functions_Common_RearmVehicle};" \n
        "			};" \n
        "		} else {" \n
        "			if (count(_template) > 0) then {" \n

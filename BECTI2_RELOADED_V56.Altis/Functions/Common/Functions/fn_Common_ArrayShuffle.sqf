@@ -14,7 +14,7 @@ for '_i' from 0 to _count do {
 	_ran = floor(random(count _array));
 	_selected = _array select _ran;
 	_shuffled set [_i, _selected];
-	_array = [_array, [_ran]] Call cti_CO_FNC_ArrayShift;
+	_array = [_array, [_ran]] Call EZC_fnc_Functions_Common_ArrayShift;
 };
 
 _shuffled

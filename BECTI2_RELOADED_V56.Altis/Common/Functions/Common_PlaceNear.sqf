@@ -21,7 +21,7 @@ if (_placeSafe) then {
 	_safeRadius = (_maxRadius - _minRadius) / 2;
 	if (_safeRadius < 5) then {_safeRadius = 5};
 	_destination = [(_position Select 0)+((sin _direction)*_radius),(_position Select 1)+((cos _direction)*_radius),(_position Select 2)+0.5];
-	[_object,_destination,_safeRadius] Call cti_CO_FNC_PlaceSafe;
+	[_object,_destination,_safeRadius] Call EZC_fnc_Functions_Common_PlaceSafe;
 } else {
 	_object SetPos [(_position Select 0)+((sin _direction)*_radius),(_position Select 1)+((cos _direction)*_radius),(_position Select 2)+0.5];
 };

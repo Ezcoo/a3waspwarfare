@@ -13,8 +13,8 @@ _formated = [];
 
 	
 	{
-		_cost = _cost + (_x call cti_CO_FNC_GetGearItemCost);
-	} forEach (_x call cti_CO_FNC_ConvertGearToFlat);
+		_cost = _cost + (_x call EZC_fnc_Functions_Common_GetGearItemCost);
+	} forEach (_x call EZC_fnc_Functions_Common_ConvertGearToFlat);
 	
 	{
 		if (_x select 0 != "") then {
@@ -41,7 +41,7 @@ missionNamespace setVariable ["cti_gear_list_templates", _formated];
 		} else {
 			_nils pushBack _x;
 		};
-	} forEach (_x call cti_CO_FNC_ConvertGearToFlat);
+	} forEach (_x call EZC_fnc_Functions_Common_ConvertGearToFlat);
 	
 	//--- Make sure that the template is ok
 	if (count _nils < 1) then {

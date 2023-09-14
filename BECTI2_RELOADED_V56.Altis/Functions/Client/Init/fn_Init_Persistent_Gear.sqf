@@ -2,7 +2,7 @@ _templates = profileNamespace getVariable format["cti_PERSISTENT_GEAR_TEMPLATE_%
 
 private _side_gear = [];
 {
-	_side_gear = _side_gear + ((missionNamespace getVariable _x) call CTI_CO_FNC_ArrayToLower);
+	_side_gear = _side_gear + ((missionNamespace getVariable _x) call EZC_fnc_Functions_Common_ArrayToLower);
 } forEach ["cti_gear_list_primary","cti_gear_list_secondary","cti_gear_list_pistol","cti_gear_list_magazines","cti_gear_list_accessories","cti_gear_list_misc","cti_gear_list_special","cti_gear_list_uniforms","cti_gear_list_vests","cti_gear_list_backpacks","cti_gear_list_headgear","cti_gear_list_glasses","cti_gear_list_explosives"];
 
 //--- Attempt to load the "proper" templates
@@ -30,8 +30,8 @@ if (_templates isEqualType []) then { //--- The variable itself is an array
 							if (_x isEqualType []) then {
 								if (count _x isEqualTo 3) then { //--- Make sure that we have the weapon/accessories/current magazine
 									private _weapon = toLowerANSI(_x select 0);
-									private _accessories = (_x select 1) call CTI_CO_FNC_ArrayToLower;
-									private _magazine = (_x select 2) call CTI_CO_FNC_ArrayToLower;
+									private _accessories = (_x select 1) call EZC_fnc_Functions_Common_ArrayToLower;
+									private _magazine = (_x select 2) call EZC_fnc_Functions_Common_ArrayToLower;
 
 									if (_weapon isEqualType "" && _accessories isEqualType [] && _magazine isEqualType []) then { //--- The data format is valid
 										if ((!isClass (configFile >> "CfgWeapons" >> _weapon) || !(_weapon in _side_gear)) && !(_weapon isEqualTo "")) exitWith {_flag_load = false; _err_reason = format["Weapon [%1] is either not a valid CfgWeapons class or does not belong to the player's side", _weapon]}; //--- Abort if: the weapon is invalid or if it's not within the side's owned templates
@@ -90,7 +90,7 @@ if (_templates isEqualType []) then { //--- The variable itself is an array
 										if (count _x isEqualTo 2) then { //--- Each array need to have the container and the items
 											if ((_x select 0) isEqualType "" && (_x select 1) isEqualType []) then { //--- The container is a string, the items are an array
 												private _container = toLowerANSI(_x select 0);
-												private _items = (_x select 1) call CTI_CO_FNC_ArrayToLower;
+												private _items = (_x select 1) call EZC_fnc_Functions_Common_ArrayToLower;
 
 												if !(_container isEqualTo "") then { //--- If the container is empty, we don't bother any further
 													switch (true) do {
@@ -216,11 +216,11 @@ if (_templates isEqualType []) then { //--- The variable itself is an array
 							};
 
 							if (_flag_load) then {
-								private _flat = (_x select 3) call CTI_CO_FNC_ConvertGearToFlat;
+								private _flat = (_x select 3) call EZC_fnc_Functions_Common_ConvertGearToFlat;
 								private _cost = 0;
 								private _upgrade_max = 0;
 								{
-									_cost = _cost + (_x call CTI_CO_FNC_GetGearItemCost); //--- Retrieve the item current cost
+									_cost = _cost + (_x call EZC_fnc_Functions_Common_GetGearItemCost); //--- Retrieve the item current cost
 									private _upgrade = ((missionNamespace getVariable [format["cti_%1", _x], [[0, 0]]]) select 0) select 0; //--- Retrieve the item current upgrade level
 									if (_upgrade > _upgrade_max) then {_upgrade_max = _upgrade}; //--- We retrieve the highest upgrade level needed for the template
 								} forEach _flat;

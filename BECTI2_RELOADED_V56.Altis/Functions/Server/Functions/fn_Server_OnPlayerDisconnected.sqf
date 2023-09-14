@@ -91,12 +91,12 @@ deleteVehicle _old_unit;
 //--- If we choose not to keep the current units during this session, then we simply remove them.
 ["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] units are now being removed for AI Team [%3].", _name, _uid, _team]] Call EZC_fnc_Functions_Common_LogContent;
 _units = units _team;
-_units = _units + ([_team,false] Call cti_CO_FNC_GetTeamVehicles) - [_hq];
+_units = _units + ([_team,false] Call EZC_fnc_Functions_Common_GetTeamVehicles) - [_hq];
 {if (!isPlayer _x && !(_x in playableUnits)) then {deleteVehicle _x}} forEach _units;
 
 
 //--- We save the disconnect client funds.
-_funds = _team Call cti_CO_FNC_GetTeamFunds;
+_funds = _team Call EZC_fnc_Functions_Common_GetTeamFunds;
 _get set [1,_funds];
 
 //_response = ["GET_PLAYER_FROM_CURRENT_GAME_MATCH", format["[game_guid=%1,GAME_MATCH_id=%2]",_uid,PERSISTANCE_CURRENT_MATCH_ID]] call persistent_fnc_callDatabase;
