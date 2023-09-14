@@ -58,11 +58,15 @@ cti_SK_V_Reload_Lockpick = 5;
 cti_SK_V_Reload_Spot = 8;
 
 // Find the player type 
+// Apparently not needed at this moment since the actions get added in Init_Client.sqf
+/*
 cti_SK_V_Type = "";
 if (playerType in cti_SK_V_Engineers) then {cti_SK_V_Type = 'Engineer'};
 if (playerType in cti_SK_V_TeamLeaders) then {cti_SK_V_Type = 'TeamLeader'};
 if (playerType in cti_SK_V_Medics) then {cti_SK_V_Type = 'Medic'};
 if (playerType in cti_SK_V_SpecsOps) then {cti_SK_V_Type = 'SpecOps'};
+*/
+
 
 /* Special one time init */
 /* The Officer and Spec Ops can hire more units than the others leader */
