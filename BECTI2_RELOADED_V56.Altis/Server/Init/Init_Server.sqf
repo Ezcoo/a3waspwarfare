@@ -185,9 +185,11 @@ _present_res = missionNamespace getVariable "cti_GUER_PRESENT";
 [] Call Compile preprocessFile 'Server\Init\Init_Defenses.sqf';
 
 //--- Weather.
-[] spawn cti_SE_FNC_Server_RunWeatherEnvironment;
-if(cti_C_ENVIRONMENT_WEATHER_SNOWFLAKES > 0) then {
-	null = [80,660,false,0,false,true,true,false,false,false] spawn cti_SE_FNC_Server_AL_SNOW;
+if (!(isNil "cti_SE_FNC_Server_RunWeatherEnvironment")) then {
+	[] spawn cti_SE_FNC_Server_RunWeatherEnvironment;
+	if(cti_C_ENVIRONMENT_WEATHER_SNOWFLAKES > 0) then {
+		null = [80,660,false,0,false,true,true,false,false,false] spawn cti_SE_FNC_Server_AL_SNOW;
+	};
 };
 
 ["INITIALIZATION", "Init_Server.sqf: Weather module is loaded."] Call cti_CO_FNC_LogContent;
