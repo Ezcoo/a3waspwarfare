@@ -394,7 +394,7 @@ while {alive player && dialog} do {
 				_to = _to + [_selected];
 			} foreach _teams;
 		};
-		[_to,_behavior,_combat,_formation,_speed] remoteExecCall ["cti_SE_PVF_RequestTeamUpdate",2];
+		[_to,_behavior,_combat,_formation,_speed] remoteExecCall ["EZC_fnc_PVFunctions_RequestTeamUpdate",2];
 	};	
 	
 	//--- Set respawn.

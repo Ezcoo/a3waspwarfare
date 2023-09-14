@@ -425,7 +425,7 @@ class FSM
        "" \n
        "	//--- Ensure that we have the supply required to deploy the HQ." \n
        "	if (_currency >= (_costs select _hqType)) then {" \n
-       "		[(_names select _hqType),_side,_pos,_dir] spawn cti_SE_FNC_Server_Construction_HQSite;" \n
+       "		[(_names select _hqType),_side,_pos,_dir] spawn EZC_fnc_Construction_fn_Construction_HQSite;" \n
        "		[_side, -(_costs select _hqType)] Call EZC_fnc_Functions_Common_ChangeSideSupply;" \n
        "		if (_isStartingFSM) then {_isStartingFSM = false};" \n
        "	};" \n
@@ -680,13 +680,13 @@ class FSM
        "				_selected = _scripts select _type;" \n
        "				switch(_selected)do{" \n
        "					case ""HQSite"":{" \n
-       "						[(_names select _type),_side,_newPos,0,_type] spawn cti_SE_FNC_Server_Construction_HQSite;" \n
+       "						[(_names select _type),_side,_newPos,0,_type] spawn EZC_fnc_Construction_fn_Construction_HQSite;" \n
        "					};" \n
        "					case ""SmallSite"":{" \n
-       "						[(_names select _type),_side,_newPos,0,_type] spawn cti_SE_FNC_Server_Construction_SmallSite;" \n
+       "						[(_names select _type),_side,_newPos,0,_type] spawn EZC_fnc_Construction_Construction_SmallSite;" \n
        "					};" \n
        "					case ""MediumSite"":{" \n
-       "						[(_names select _type),_side,_newPos,0,_type] spawn cti_SE_FNC_Server_Construction_MediumSite;" \n
+       "						[(_names select _type),_side,_newPos,0,_type] spawn EZC_fnc_Construction_Construction_MediumSite;" \n
        "					};" \n
        "				};" \n
        "				" \n
@@ -787,13 +787,13 @@ class FSM
        "			_defenses = _building getVariable 'cti_Walls';" \n
        "			if !(isNil ""_defenses"") then {_baseWalls set [_i,_defenses]};" \n
        "	" \n
-       "			_defenses = [_building,missionNamespace getVariable Format [""cti_NEURODEF_%1_WALLS"",_type],(_baseWalls select _i)] Call cti_SE_FNC_CreateDefenseTemplate;" \n
+       "			_defenses = [_building,missionNamespace getVariable Format [""cti_NEURODEF_%1_WALLS"",_type],(_baseWalls select _i)] Call EZC_fnc_Functions_Server_CreateDefenseTemplate;" \n
        "			_baseWalls set [_i ,_defenses];" \n
        "			_building setVariable ['cti_Walls', _defenses];" \n
        "		} else {" \n
        "			{" \n
        "				if !(alive _x) exitWith {" \n
-       "					_defenses = [_building,missionNamespace getVariable Format [""cti_NEURODEF_%1_WALLS"",_type],(_baseWalls select _i)] Call cti_SE_FNC_CreateDefenseTemplate;" \n
+       "					_defenses = [_building,missionNamespace getVariable Format [""cti_NEURODEF_%1_WALLS"",_type],(_baseWalls select _i)] Call EZC_fnc_Functions_Server_CreateDefenseTemplate;" \n
        "					_baseWalls set [_i ,_defenses];" \n
        "					_building setVariable ['cti_Walls', _defenses];" \n
        "				};" \n
@@ -819,7 +819,7 @@ class FSM
        "			{" \n
        "				if !(alive _x) exitWith {" \n
        "					_template = _baseDefensesTemplate select _i;" \n
-       "					_defenses = [_defense,missionNamespace getVariable Format [""cti_NEURODEF_%1"",_template select 3]] Call cti_SE_FNC_CreateDefenseTemplate;" \n
+       "					_defenses = [_defense,missionNamespace getVariable Format [""cti_NEURODEF_%1"",_template select 3]] Call EZC_fnc_Functions_Server_CreateDefenseTemplate;" \n
        "					_baseDefenses set [_i, [_defense,_defenses]];" \n
        "					missionNamespace setVariable [Format [""cti_Defenses_%1"",_sideText],_baseDefenses];" \n
        "					_overallDefenses set [_currentContent, _baseDefenses];" \n
@@ -845,7 +845,7 @@ class FSM
        "" \n
        "	//--- If string, it don't exist." \n
        "	if (typename _defense == ""STRING"") then {" \n
-       "		_aiComFunds = (_side) Call cti_SE_FNC_GetAICommanderFunds;" \n
+       "		_aiComFunds = (_side) Call EZC_fnc_Functions_Server_GetAICommanderFunds;" \n
        "		_template = _baseDefensesTemplate select _i;" \n
        "		_pool = _template select 0;" \n
        "		_picked = _pool select round(random((count _pool)-1));" \n
@@ -855,7 +855,7 @@ class FSM
        "		_price = if !(isNil '_details') then {_details select QUERYUNITPRICE} else {400};" \n
        "" \n
        "		if (_aiComFunds >= _price) then {" \n
-       "			[_side, -_price] Call cti_SE_FNC_ChangeAICommanderFunds;" \n
+       "			[_side, -_price] Call EZC_fnc_Functions_Server_ChangeAICommanderFunds;" \n
        "		" \n
        "			_pos = getPos _hq;" \n
        "			_x = _pos select 0;" \n
@@ -879,13 +879,13 @@ class FSM
        "				if (_attempts > 100 && _max == 100) then {_max = _max + 150};" \n
        "			};" \n
        "" \n
-       "			_created = [_picked,_side,_newPos,_template select 2,true,true,(missionNamespace getVariable ""cti_C_BASE_DEFENSE_MANNING_RANGE"")*3] Call cti_SE_FNC_ConstructDefense;" \n
+       "			_created = [_picked,_side,_newPos,_template select 2,true,true,(missionNamespace getVariable ""cti_C_BASE_DEFENSE_MANNING_RANGE"")*3] Call EZC_fnc_Construction_Construction_StationaryDefense;" \n
        "" \n
        "			//--- Extra?" \n
        "			_defenses = [];" \n
        "			_extra = _template select 3;" \n
        "			if (_extra != """") then {" \n
-       "				_defenses = [_created,missionNamespace getVariable Format [""cti_NEURODEF_%1"",_extra]] Call cti_SE_FNC_CreateDefenseTemplate;" \n
+       "				_defenses = [_created,missionNamespace getVariable Format [""cti_NEURODEF_%1"",_extra]] Call EZC_fnc_Functions_Server_CreateDefenseTemplate;" \n
        "			};" \n
        "" \n
        "			_baseDefenses set [_i, [_created,_defenses]];" \n
@@ -970,7 +970,7 @@ class FSM
       init = /*%FSM<STATEINIT""">*/"_lastUpdateUpgrades = time;" \n
        "" \n
        "if !(_logik getVariable ""cti_upgrading"") then {" \n
-       "	(_side) Spawn cti_SE_FNC_AI_Com_Upgrade; " \n
+       "	(_side) Spawn EZC_fnc_Functions_Server_AI_Com_Upgrade; " \n
        "};"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links

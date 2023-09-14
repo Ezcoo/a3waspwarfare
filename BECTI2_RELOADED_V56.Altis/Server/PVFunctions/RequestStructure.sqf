@@ -9,8 +9,8 @@ _index = (missionNamespace getVariable Format ["cti_%1STRUCTURENAMES",str _side]
 if (_index != -1) then {
 	_script = (missionNamespace getVariable Format ["cti_%1STRUCTURESCRIPTS",str _side]) select _index;
 	switch(_script)do{
-	    case "HQSite": {[_structureType,_side,_pos,_dir,_index] spawn cti_SE_FNC_Server_Construction_HQSite;};
-	    case "MediumSite": {[_structureType,_side,_pos,_dir,_index] spawn cti_SE_FNC_Server_Construction_MediumSite;};
-	    case "SmallSite": {[_structureType,_side,_pos,_dir,_index] spawn cti_SE_FNC_Server_Construction_SmallSite;};
+	    case "HQSite": {[_structureType,_side,_pos,_dir,_index] spawn EZC_fnc_Construction_fn_Construction_HQSite;};
+	    case "MediumSite": {[_structureType,_side,_pos,_dir,_index] spawn EZC_fnc_Construction_Construction_MediumSite;};
+	    case "SmallSite": {[_structureType,_side,_pos,_dir,_index] spawn EZC_fnc_Construction_Construction_SmallSite;};
 	};
 };

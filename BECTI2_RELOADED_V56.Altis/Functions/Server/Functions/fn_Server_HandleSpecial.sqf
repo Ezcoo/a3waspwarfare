@@ -34,15 +34,15 @@ switch (_args select 0) do {
 		};
 	};
 	case "Paratroops": {
-		_args spawn KAT_Paratroopers;
+		_args spawn EZC_fnc_Support_Support_Paratroopers;
 	};
 
 	case "ParaVehi": {
-		_args spawn KAT_ParaVehicles;
+		_args spawn EZC_fnc_Support_Support_ParaVehicles;
 	};
 
 	case "ParaAmmo": {
-		_args spawn KAT_ParaAmmo;
+		_args spawn EZC_fnc_Support_Support_ParaAmmo;
 	};
 
 	case "RespawnST": {
@@ -54,7 +54,7 @@ switch (_args select 0) do {
 	};
 
 	case "uav": {
-		_args spawn KAT_UAV;
+		_args spawn EZC_fnc_Support_Support_UAV;
 	};
 
 	case "upgrade-sync": {
@@ -93,7 +93,7 @@ switch (_args select 0) do {
 		[_base] Spawn EZC_fnc_Module_damage;
 	};
 	case "process-killed-hq": {
-		(_args select 1) Spawn cti_SE_FNC_OnHQKilled;
+		(_args select 1) Spawn EZC_fnc_Functions_Server_OnHQKilled;
 	};
 	case "connected-hc": {
 		Private ["_hc","_id","_uid"];
@@ -138,7 +138,7 @@ switch (_args select 0) do {
 		_townModel enableDynamicSimulation true;
 		_townModel setDir ((getDir _logic));
 		_townModel setPos (getPos _logic);
-		_townModel addEventHandler ["killed", {(_this select 0) Spawn cti_SE_FNC_OnBuildingKilled}];
+		_townModel addEventHandler ["killed", {(_this select 0) Spawn EZC_fnc_Functions_Server_BuildingKilled}];
 		_townModel addEventHandler ["handleDamage",{getDammage (_this select 0)+((_this select 2)/(missionNamespace getVariable "cti_C_CAMP_HEALTH_COEF"))}];
 		_logic setVariable ["cti_camp_bunker", _townModel, true];
 

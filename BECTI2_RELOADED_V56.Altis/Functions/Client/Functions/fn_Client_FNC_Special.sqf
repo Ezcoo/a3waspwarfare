@@ -126,7 +126,7 @@ cti_CL_FNC_Upgrade_Complete = {
 
 	if !(isNull commanderTeam) then { //--- Commander reward (if the player is the commander)
 		if (commanderTeam == group player) then {
-			[player, score player + (missionNamespace getVariable "cti_C_PLAYERS_COMMANDER_SCORE_UPGRADE")] remoteExecCall ["cti_SE_PVF_RequestChangeScore",2];
+			[player, score player + (missionNamespace getVariable "cti_C_PLAYERS_COMMANDER_SCORE_UPGRADE")] remoteExecCall ["EZC_fnc_PVFunctions_RequestChangeScore",2];
 		};
 	};
 };

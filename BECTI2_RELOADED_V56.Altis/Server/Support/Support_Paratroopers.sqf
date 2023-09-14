@@ -92,7 +92,7 @@ _paratroopers = [];
 [str _side,'UnitsCreated', _built] Call EZC_fnc_Functions_Common_UpdateStatistics;
 
 //--- Tell the group to move.
-[_grp, _destination, "MOVE", 10] Call cti_SE_FNC_AIMoveTo;
+[_grp, _destination, "MOVE", 10] Call EZC_fnc_AI_AI_MoveTo;
 
 //--- Loop until death or arrival.
 _greenlight = false;
@@ -141,7 +141,7 @@ if (_greenlight) then {
 	} forEach _vehicles;
 	
 	//--- Once done, the air units can fly back to their source.
-	[_grp, (_ranPos select _ran), "MOVE", 5] Call cti_SE_FNC_AIMoveTo;
+	[_grp, (_ranPos select _ran), "MOVE", 5] Call EZC_fnc_AI_AI_MoveTo;
 	
 	//--- Loop until death or arrival.
 	while {true} do {

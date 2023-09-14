@@ -29,7 +29,7 @@ if (_currency < _repairPrice) exitWith {hint Format [localize "STR_WF_INFO_Repai
 
 -(_repairPrice) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 
-[cti_Client_SideJoined] remoteExecCall ["cti_SE_PVF_RequestMHQRepair",2];
+[cti_Client_SideJoined] remoteExecCall ["EZC_fnc_PVFunctions_RequestMHQRepair",2];
 
 WF_Logic setVariable [Format ["%1MHQRepair",cti_Client_SideJoinedText],true,true];
 _logik setVariable ['cashrepaired',true,true];

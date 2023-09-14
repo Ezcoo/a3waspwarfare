@@ -7,5 +7,5 @@ _manned = _this select 4;
 
 _index = (missionNamespace getVariable Format["cti_%1DEFENSENAMES",str _side]) find _defenseType;
 if (_index != -1) then {
-	[_defenseType,_side,_pos,_dir,_manned,false] Call cti_SE_FNC_ConstructDefense;
+	[_defenseType,_side,_pos,_dir,_manned,false] Call EZC_fnc_Construction_Construction_StationaryDefense;
 };

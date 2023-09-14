@@ -7,7 +7,7 @@ while {!cti_GameOver} do {
 		if !(_x in emptyQueu) then {
 			_vehicles2 = WF_Logic getVariable "emptyVehicles";
 			emptyQueu pushBack _x;
-			[_x] Spawn cti_SE_FNC_HandleEmptyVehicle;
+			[_x] Spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
 			_reloaded = _vehicles2 - [_x] - [objNull];
 			WF_Logic setVariable ["emptyVehicles",_reloaded,true];
 		};

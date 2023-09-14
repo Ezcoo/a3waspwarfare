@@ -43,7 +43,7 @@ if(count _alives == 0) then{
                     _IDS pushBack _ran3;
                 };
             };
-			[_IDS,_building,_x,_side,_inf_group,_vehiSlots,_additionalSlotsAmount] call cti_SE_FNC_Server_ResBuyUnit;
+			[_IDS,_building,_x,_side,_inf_group,_vehiSlots,_additionalSlotsAmount] call EZC_fnc_Functions_Server_ResBuyUnit;
 		};
 	} forEach _template;
 };
@@ -79,7 +79,7 @@ while{!_end}do{
         };
     };
 
-    [_inf_group,_nearTowns,400,'LINE'] Call cti_SE_FNC_AITownPatrol;
+    [_inf_group,_nearTowns,400,'LINE'] Call EZC_fnc_AI_AI_TownPatrol;
 
 	sleep 60;
 };

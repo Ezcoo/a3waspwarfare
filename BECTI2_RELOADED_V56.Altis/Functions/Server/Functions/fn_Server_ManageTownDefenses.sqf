@@ -26,7 +26,7 @@ _sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 	};
 	
 	if (_spawn) then { //--- Spawn a defense according to the types (if it exists).
-		[_x, _side] Call cti_SE_FNC_SpawnTownDefense;
+		[_x, _side] Call EZC_fnc_Functions_Server_SpawnTownDefense;
 	};
 } forEach (_town getVariable "cti_town_defenses");
 

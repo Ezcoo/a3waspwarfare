@@ -1,1 +1,1 @@
-_this Spawn cti_SE_FNC_HandleSpecial;
+_this Spawn EZC_fnc_Functions_Server_HandleSpecial;

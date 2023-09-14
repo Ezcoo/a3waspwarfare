@@ -21,7 +21,7 @@ _rlType = _structures select (_structuresNames find _type);
 _startTime = time;
 _timeNextUpdate = _startTime + _time;
 
-_constructed = ([_position,_direction,cti_MEDIUM_SITE_1_OBJECTS] Call cti_SE_FNC_CreateObjectsFromArray);
+_constructed = ([_position,_direction,cti_MEDIUM_SITE_1_OBJECTS] Call EZC_fnc_Functions_Server_CreateObjectsFromArray);
 
 //--- Create the logic.
 (createGroup sideLogic) createUnit ["LocationArea_F",_position,[],0,"NONE"];
@@ -69,7 +69,7 @@ if ((missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 0) th
 	};
 };
 
-_constructed = _constructed + ([_position,_direction,cti_MEDIUM_SITE_2_OBJECTS] Call cti_SE_FNC_CreateObjectsFromArray);
+_constructed = _constructed + ([_position,_direction,cti_MEDIUM_SITE_2_OBJECTS] Call EZC_fnc_Functions_Server_CreateObjectsFromArray);
 
 if ((missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 0) then {
 	waitUntil {time >= _timeNextUpdate};
@@ -82,7 +82,7 @@ if ((missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 0) th
 	};
 };
 
-_constructed = _constructed + ([_position,_direction,cti_MEDIUM_SITE_3_OBJECTS] Call cti_SE_FNC_CreateObjectsFromArray);
+_constructed = _constructed + ([_position,_direction,cti_MEDIUM_SITE_3_OBJECTS] Call EZC_fnc_Functions_Server_CreateObjectsFromArray);
 
 if ((missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 0) then {
 	waitUntil {time >= _timeNextUpdate};
@@ -132,7 +132,7 @@ _list2 = nearestObjects [(getPos _site),
 
 //--Not for AAR construction--
 if(isAutoWallConstructingEnabled && !(_rlType in ["AARadar","ArtyRadar"]))then{
-_defenses = [_site, missionNamespace getVariable format ["cti_NEURODEF_%1_WALLS", _rlType]] call cti_SE_FNC_CreateDefenseTemplate;
+_defenses = [_site, missionNamespace getVariable format ["cti_NEURODEF_%1_WALLS", _rlType]] call EZC_fnc_Functions_Server_CreateDefenseTemplate;
 _site setVariable ["cti_Walls", _defenses];
 };
 
@@ -141,16 +141,16 @@ _site setVariable ["cti_Walls", _defenses];
 
 
 
-[_side, "Constructed", ["Base", _site]] Spawn cti_SE_FNC_SideMessage;
+[_side, "Constructed", ["Base", _site]] Spawn EZC_fnc_Functions_Server_SideMessage;
 
 if (!IsNull _site) then {
 	_logik setVariable ["cti_structures", (_logik getVariable "cti_structures") + [_site], true];
 	
 	[[[_site,false,_sideID], "Client\Init\Init_BaseStructure.sqf"], "BIS_fnc_execVM", true, true] call BIS_fnc_MP;
 	
-	_site addEventHandler ["hit",{_this Spawn cti_SE_FNC_BuildingDamaged}];
-	_site addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call cti_SE_FNC_BuildingHandleDamages}];
-	Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn cti_SE_FNC_BuildingKilled}];",_type];
+	_site addEventHandler ["hit",{_this Spawn EZC_fnc_Functions_Server_BuildingDamaged}];
+	_site addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call EZC_fnc_Functions_Server_BuildingHandleDamages}];
+	Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn EZC_fnc_Functions_Server_BuildingKilled}];",_type];
 	
 	["INFORMATION", Format ["Construction_MediumSite.sqf: [%1] Structure [%2] has been constructed.", str _side, _type]] Call EZC_fnc_Functions_Common_LogContent;
 };

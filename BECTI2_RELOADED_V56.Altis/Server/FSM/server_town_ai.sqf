@@ -66,9 +66,9 @@ while {!cti_GameOver} do {
                         _town setVariable ["cti_active", true];
 
                         if (_side == cti_DEFENDER) then {
-                            _groups = [_town, _side] Call cti_SE_FNC_GetTownGroupsDefender;
+                            _groups = [_town, _side] Call EZC_fnc_Functions_Server_GetTownGroupsDefender;
                         } else {
-                            _groups = [_town, _side] Call cti_SE_FNC_GetTownGroups;
+                            _groups = [_town, _side] Call EZC_fnc_Functions_Server_GetTownGroups;
                         };
                     };
 
@@ -77,16 +77,16 @@ while {!cti_GameOver} do {
                             _town setVariable ["cti_active_air", true];
 
                             if (_side == cti_DEFENDER) then {
-                                _groups = [_town, _side, true] Call cti_SE_FNC_GetTownGroupsDefender;
+                                _groups = [_town, _side, true] Call EZC_fnc_Functions_Server_GetTownGroupsDefender;
                             } else {
-                                _groups = [_town, _side, true] Call cti_SE_FNC_GetTownGroups;
+                                _groups = [_town, _side, true] Call EZC_fnc_Functions_Server_GetTownGroups;
                             };
                         };
                     };
                     //// start of creation
                     ["INFORMATION", Format ["server_town_ai.fsm: Town [%1] has been activated, creating defensive units for [%2].", _town, _side]] Call EZC_fnc_Functions_Common_LogContent;
 
-                    if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side,"HostilesDetectedNear",_town] Spawn cti_SE_FNC_SideMessage};
+                    if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side,"HostilesDetectedNear",_town] Spawn EZC_fnc_Functions_Server_SideMessage};
 
                     //--- Get the positions and create the groups
                     _camps = +(_town getVariable "camps");
@@ -107,10 +107,10 @@ while {!cti_GameOver} do {
                         _spawn_radius = _spawn_radius + 15;
                     };
 
-                    [_town, _side, "spawn"] spawn cti_SE_FNC_OperateTownDefensesUnits;
+                    [_town, _side, "spawn"] spawn EZC_fnc_Functions_Server_OperateTownDefensesUnits;
 
                     if (count(missionNamespace getVariable "cti_HEADLESSCLIENTS_ID") > 0) then {
-                        [_town, _side, _groups, _positions] spawn cti_SE_FNC_DelegateAITownHeadless
+                        [_town, _side, _groups, _positions] spawn EZC_fnc_Functions_Server_DelegateAITownHeadless
                     }else {
                         [_town, _side, _groups, _positions] spawn EZC_fnc_Functions_Common_CreateTownUnits;
                     };
@@ -126,7 +126,7 @@ while {!cti_GameOver} do {
                         if!(isNil "headlessClients") then {
                             if(count headlessClients > 0)then{
                                 _hc = headlessClients select 0;
-                                [_town getVariable "name"] remoteExecCall ["cti_CL_FNC_RemoveTownAI", _hc];
+                                [_town getVariable "name"] remoteExecCall ["EZC_fnc_Functions_HC_RemoveTownAI", _hc];
                             };
                         } else {
                             //--- Teams Units.
@@ -148,7 +148,7 @@ while {!cti_GameOver} do {
                             _town setVariable ['cti_active_vehicles', []];
                         };
                         //--- Despawn the town defenses unit.
-                        [_town, _side, "remove"] Call cti_SE_FNC_OperateTownDefensesUnits;
+                        [_town, _side, "remove"] Call EZC_fnc_Functions_Server_OperateTownDefensesUnits;
                         //// end of inner block
                     };
 			};

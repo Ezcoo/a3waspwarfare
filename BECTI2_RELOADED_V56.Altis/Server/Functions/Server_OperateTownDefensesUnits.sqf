@@ -30,7 +30,7 @@ switch (_action) do {
                         _groups pushBack (missionNamespace getVariable Format ["cti_%1SOLDIER", _side]);
 
                         if (count(missionNamespace getVariable "cti_HEADLESSCLIENTS_ID") > 0) then {
-                            [_side, _groups, _positions, _team, _defense, true] Call cti_SE_FNC_DelegateAIStaticDefenceHeadless;
+                            [_side, _groups, _positions, _team, _defense, true] Call EZC_fnc_Functions_Server_DelegateAIStaticDefenceHeadless;
                         }else{
                             _type = missionNamespace getVariable Format ["cti_%1SOLDIER", _side];
                             _sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;

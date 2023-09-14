@@ -39,7 +39,7 @@ if ((_side) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus) then {
 };
 
 //--- Spawn a radio message.
-[_side, "Destroyed", ["Base", _structure]] Spawn cti_SE_FNC_SideMessage;
+[_side, "Destroyed", ["Base", _structure]] Spawn EZC_fnc_Functions_Server_SideMessage;
 
 _teamkill = if (side _killer == _side) then {true} else {false};
 

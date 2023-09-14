@@ -41,10 +41,10 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 	if (random 100 < 30) exitWith {};
 	
 	//--- Determine the path to follow.
-	_a_safe = [_nodes_a select 1, _side, _town_assigned] Call cti_SE_FNC_AI_SetTownAttackPath_PosIsSafe;
-	_b_safe = [_nodes_a select 2, _side, _town_assigned] Call cti_SE_FNC_AI_SetTownAttackPath_PosIsSafe;
-	_a_path_safe = [_nodes_a select 0, _nodes_a select 1, 10] Call cti_SE_FNC_AI_SetTownAttackPath_PathIsSafe;
-	_b_path_safe = [_nodes_a select 0, _nodes_a select 2, 10] Call cti_SE_FNC_AI_SetTownAttackPath_PathIsSafe;
+	_a_safe = [_nodes_a select 1, _side, _town_assigned] Call EZC_fnc_Functions_Server_AI_SetTownAttackPath_PosIsSafe;
+	_b_safe = [_nodes_a select 2, _side, _town_assigned] Call EZC_fnc_Functions_Server_AI_SetTownAttackPath_PosIsSafe;
+	_a_path_safe = [_nodes_a select 0, _nodes_a select 1, 10] Call EZC_fnc_Functions_Server_AI_SetTownAttackPath_PathIsSafe;
+	_b_path_safe = [_nodes_a select 0, _nodes_a select 2, 10] Call EZC_fnc_Functions_Server_AI_SetTownAttackPath_PathIsSafe;
 	
 	if ((!_a_safe && !_b_safe) || (!_a_path_safe && !_b_path_safe)) exitWith {};
 	if (_a_safe && _b_safe) then {
@@ -61,9 +61,9 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 		if (_i >= _max_hops || random 100 < 50) exitWith {};
 		_nodes_a deleteAt 0;
 		_nodes_a = [_select, _nodes_a] Call EZC_fnc_Functions_Common_SortByDistance;
-		if !([_select, _nodes_a select 0, 10] Call cti_SE_FNC_AI_SetTownAttackPath_PathIsSafe) exitWith {};
+		if !([_select, _nodes_a select 0, 10] Call EZC_fnc_Functions_Server_AI_SetTownAttackPath_PathIsSafe) exitWith {};
 		_select = _nodes_a select 0;
-		_a_safe = [_select, _side, _town_assigned] Call cti_SE_FNC_AI_SetTownAttackPath_PosIsSafe;
+		_a_safe = [_select, _side, _town_assigned] Call EZC_fnc_Functions_Server_AI_SetTownAttackPath_PosIsSafe;
 		if !(_a_safe) exitWith {};
 		if (_a_safe) then {_wp_sel pushBack [([_select, 20, 100] Call EZC_fnc_Functions_Common_GetRandomPosition), 'MOVE', 60, 30, [], [], []]};
 	};

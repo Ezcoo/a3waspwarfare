@@ -69,7 +69,7 @@ if (_town_side_value_new == cti_Client_SideID) then {
 		
 		//--- Update the score necessary.
 		if (_score != -1) then {
-			[player,score player + _score] remoteExecCall ["cti_SE_PVF_RequestChangeScore",2];
+			[player,score player + _score] remoteExecCall ["EZC_fnc_PVFunctions_RequestChangeScore",2];
 		};
 	};
 	
@@ -78,7 +78,7 @@ if (_town_side_value_new == cti_Client_SideID) then {
 		if (commanderTeam == group player) then {
 			_bonus = (_town getVariable "startingSupplyValue") * (missionNamespace getVariable "cti_C_PLAYERS_COMMANDER_BOUNTY_CAPTURE_COEF");
 			(_bonus) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-			[player,score player + (missionNamespace getVariable "cti_C_PLAYERS_COMMANDER_SCORE_CAPTURE")] remoteExecCall ["cti_SE_PVF_RequestChangeScore",2];
+			[player,score player + (missionNamespace getVariable "cti_C_PLAYERS_COMMANDER_SCORE_CAPTURE")] remoteExecCall ["EZC_fnc_PVFunctions_RequestChangeScore",2];
 			Format[Localize "STR_WF_CHAT_Commander_Bounty_Town", _bonus, _town getVariable "name"] Call EZC_fnc_Functions_Client_CommandChatMessage;
 		};
 	};

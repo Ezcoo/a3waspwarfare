@@ -37,7 +37,7 @@ _grp setBehaviour 'CARELESS';
 _grp setCombatMode 'STEALTH';
 _pilot disableAI 'AUTOTARGET';
 _pilot disableAI 'TARGET';
-[_grp,(_args select 2),"MOVE",10] Call cti_SE_FNC_AIMoveTo;
+[_grp,(_args select 2),"MOVE",10] Call EZC_fnc_AI_AI_MoveTo;
 Call Compile Format ["_vehicle addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled}]",_sideID];
 [[[_vehicle,_sideID], "Common\Init\Init_Unit.sqf"], "BIS_fnc_execVM", false, false] call BIS_fnc_MP;
 _vehicle flyInHeight (200 + random(20));
@@ -95,7 +95,7 @@ while {true} do {
 	} forEach _ammos;
 };
 
-[_grp,(_ranPos select _ran),"MOVE",10] Call cti_SE_FNC_AIMoveTo;
+[_grp,(_ranPos select _ran),"MOVE",10] Call EZC_fnc_AI_AI_MoveTo;
 
 while {true} do {
 	sleep 1;
@@ -154,7 +154,7 @@ _grp setBehaviour 'CARELESS';
 _grp setCombatMode 'STEALTH';
 _pilot disableAI 'AUTOTARGET';
 _pilot disableAI 'TARGET';
-[_grp,(_args select 2),"MOVE",10] Call cti_SE_FNC_AIMoveTo;
+[_grp,(_args select 2),"MOVE",10] Call EZC_fnc_AI_AI_MoveTo;
 Call Compile Format ["_vehicle addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled}]",_sideID];
 
 _vehicle flyInHeight (300 + random(75));
@@ -166,7 +166,7 @@ _cargoVehicle attachTo [_vehicle,[0,0,-2]];
 
 
 emptyQueu pushBack (_cargoVehicle);
-[_cargoVehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
+[_cargoVehicle] Spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
 
 while {true} do {
 	sleep 1;
@@ -197,7 +197,7 @@ detach _cargoVehicle;
 	deleteVehicle _chute;
 };
 
-[_grp,(_ranPos select _ran),"MOVE",10] Call cti_SE_FNC_AIMoveTo;
+[_grp,(_ranPos select _ran),"MOVE",10] Call EZC_fnc_AI_AI_MoveTo;
 
 while {true} do {
 	sleep 1;

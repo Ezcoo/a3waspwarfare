@@ -12,5 +12,5 @@ _lock = if (locked _MHQ) then {false} else {true};
 if (local _MHQ) then {
 	_MHQ lock _lock;
 } else {
-	[_MHQ,_lock] remoteExecCall ["cti_SE_PVF_RequestVehicleLock",2];
+	[_MHQ,_lock] remoteExecCall ["EZC_fnc_PVFunctions_RequestVehicleLock",2];
 };

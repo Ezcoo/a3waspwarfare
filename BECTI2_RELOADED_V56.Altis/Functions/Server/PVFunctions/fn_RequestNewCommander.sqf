@@ -10,7 +10,7 @@ if ((_logik getVariable "cti_votetime") <= 0) then {
 
 	//--- Set the commander
 	_logik setVariable ["cti_commander", _assigned_commander, true];
-	[_side, _assigned_commander] Spawn cti_SE_FNC_AssignForCommander;
+	[_side, _assigned_commander] Spawn EZC_fnc_Functions_Server_AssignNewCommander;
 	["new-commander-assigned", _assigned_commander] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 
 };

@@ -43,7 +43,7 @@ while {alive player && dialog} do {
 			};
 		} forEach cti_Client_Teams;
 
-		[side player, _voted_commander] remoteExecCall ["cti_SE_PVF_RequestNewCommander",2];
+		[side player, _voted_commander] remoteExecCall ["EZC_fnc_PVFunctions_RequestNewCommander",2];
 		voted = true;
 		closeDialog 0;
 	};

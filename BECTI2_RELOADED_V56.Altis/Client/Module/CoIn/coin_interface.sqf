@@ -216,7 +216,7 @@ BIS_CONTROL_CAM_Handler = {
 				_text = "enabled";
 			};
 			(format ["Auto Wall Construction is: %1", _text]) Call EZC_fnc_Functions_Client_GroupChatMessage;
-			[_isAutoWallConstructingEnabled, player] remoteExecCall ["cti_SE_PVF_RequestAutoWallConstructinChange",2];
+			[_isAutoWallConstructingEnabled, player] remoteExecCall ["EZC_fnc_PVFunctions_RequestAutoWallConstructinChange",2];
 		};
 
 		//--- Last Built Defense (Custom Action #1).
@@ -509,7 +509,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 				if (_index == 0 && _hqDeployed) exitWith {
 					_mhq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 					(_mhq) Spawn EZC_fnc_Functions_Client_HandleHQAction;
-					[cti_Client_SideJoined,_itemclass,[0,0,0],0] remoteExecCall ["cti_SE_PVF_RequestStructure",2];
+					[cti_Client_SideJoined,_itemclass,[0,0,0],0] remoteExecCall ["EZC_fnc_PVFunctions_RequestStructure",2];
 
 					[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call EZC_fnc_Init_Init_Coin;
 
@@ -749,7 +749,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 							};
 							//_logic setVariable ["BIS_COIN_restart",true];
 						} else {
-							[player,score player + (missionNamespace getVariable "cti_C_PLAYERS_COMMANDER_SCORE_BUILD")] remoteExecCall ["cti_SE_PVF_RequestChangeScore",2];
+							[player,score player + (missionNamespace getVariable "cti_C_PLAYERS_COMMANDER_SCORE_BUILD")] remoteExecCall ["EZC_fnc_PVFunctions_RequestChangeScore",2];
 						};
 					};
 
@@ -774,11 +774,11 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 							cti_Client_Logic setVariable ["cti_structures_live", _current, true];
 						};
 
-						[cti_Client_SideJoined,_itemclass,_pos,_dir] remoteExecCall ["cti_SE_PVF_RequestStructure",2];
+						[cti_Client_SideJoined,_itemclass,_pos,_dir] remoteExecCall ["EZC_fnc_PVFunctions_RequestStructure",2];
 					};
 
 					if (_itemclass in _defenses) then {
-						[cti_Client_SideJoined,_itemclass,_pos,_dir,manningDefense] remoteExecCall ["cti_SE_PVF_RequestDefense",2];
+						[cti_Client_SideJoined,_itemclass,_pos,_dir,manningDefense] remoteExecCall ["EZC_fnc_PVFunctions_RequestDefense",2];
 
 						lastBuilt = _par;
 						_area = [_pos,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call EZC_fnc_Functions_Common_GetClosestEntity2;

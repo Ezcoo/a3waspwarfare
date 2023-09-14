@@ -44,10 +44,10 @@ if (!_deployed) then {
 	
 	[[[_site,true,_sideID], "Client\Init\Init_BaseStructure.sqf"], "BIS_fnc_execVM", true, true] call BIS_fnc_MP;
 	
-	[_side,"Deployed", ["Base", _site]] Spawn cti_SE_FNC_SideMessage;
-	_site addEventHandler ['killed', {_this Spawn cti_SE_FNC_OnHQKilled}];
-	_site addEventHandler ["hit",{_this Spawn cti_SE_FNC_BuildingDamaged}];
-	_site addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3, _this select 4] Call cti_SE_FNC_BuildingHandleDamages}];
+	[_side,"Deployed", ["Base", _site]] Spawn EZC_fnc_Functions_Server_SideMessage;
+	_site addEventHandler ['killed', {_this Spawn EZC_fnc_Functions_Server_OnHQKilled}];
+	_site addEventHandler ["hit",{_this Spawn EZC_fnc_Functions_Server_BuildingDamaged}];
+	_site addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3, _this select 4] Call EZC_fnc_Functions_Server_BuildingHandleDamages}];
 	
 	//--- base area limits.
 	if ((missionNamespace getVariable "cti_C_BASE_AREA") > 0) then {
@@ -83,19 +83,19 @@ if (!_deployed) then {
 	_MHQ setVariable ["cti_side", _side];
 	_MHQ setVariable ["cti_trashable", false];
 	_MHQ setVariable ["cti_structure_type", "Headquarters"];
-	_MHQ addEventHandler ["hit",{_this Spawn cti_SE_FNC_BuildingDamaged}];
+	_MHQ addEventHandler ["hit",{_this Spawn EZC_fnc_Functions_Server_BuildingDamaged}];
 	_logik setVariable ["cti_hq", _MHQ, true];
 	_logik setVariable ['cti_hq_deployed', false, true];
 	_MHQ setPos _position;
-	[_side,"Mobilized", ["Base", _MHQ]] Spawn cti_SE_FNC_SideMessage;
-	_MHQ addEventHandler ['killed', {_this Spawn cti_SE_FNC_OnHQKilled}]; //--- Killed EH fires localy, this is the server.
+	[_side,"Mobilized", ["Base", _MHQ]] Spawn EZC_fnc_Functions_Server_SideMessage;
+	_MHQ addEventHandler ['killed', {_this Spawn EZC_fnc_Functions_Server_OnHQKilled}]; //--- Killed EH fires localy, this is the server.
 	
 	if (isMultiplayer) then {
 		["set-hq-killed-eh", _mhq] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 		["set-hq-lock-unlock-actions", _mhq] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 	};
 
-	//_MHQ addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call cti_SE_FNC_BuildingHandleDamages}];
+	//_MHQ addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call EZC_fnc_Functions_Server_BuildingHandleDamages}];
 	["INFORMATION", Format ["Construction_HQSite.sqf: [%1] MHQ has been mobilized.", _sideText]] Call EZC_fnc_Functions_Common_LogContent;
 	_MHQ addAction [localize "STR_WF_Unlock_MHQ","Client\Action\Action_ToggleLock.sqf", [], 95, false, true, '', 'alive _target && (locked _target == 2)'];
     _MHQ addAction [localize "STR_WF_Lock_MHQ","Client\Action\Action_ToggleLock.sqf", [], 94, false, true, '', 'alive _target && (locked _target == 0)'];

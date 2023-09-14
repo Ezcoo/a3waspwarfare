@@ -16,7 +16,7 @@ if(count _alives == 0) then{
 		_buyFrom = _barrack;
 		if !(isNull _buyFrom) then {
 			_IDS = [];
-			[_IDS,_buyFrom,_x,_side,_inf_group] call cti_SE_FNC_Server_ResBuyUnit;
+			[_IDS,_buyFrom,_x,_side,_inf_group] call EZC_fnc_Functions_Server_ResBuyUnit;
 		};
 	} forEach _template;
 };
@@ -38,12 +38,12 @@ while{!_end}do{
 		_buildings = (_WestBaseStructures) + (_EastBaseStructures) + [_EastMHQ,_WestMHQ];
 		_near = [_barrack, _buildings] Call EZC_fnc_Functions_Common_SortByDistance;
 		_target = _near select 0;
-		[_inf_group, true, [[_target, 'SAD', 100, 60, "", []]]] Call cti_SE_FNC_AIWPAdd;
+		[_inf_group, true, [[_target, 'SAD', 100, 60, "", []]]] Call EZC_fnc_AI_AI_WPAdd;
 	}else{
 		if (_orderComplete) then {
 			_orderComplete = false;
 			_destination = [leader _inf_group, [_barrack]] Call EZC_fnc_Functions_Common_GetClosestEntity;
-			[_inf_group,_destination,400] Call cti_SE_FNC_AIPatrol;
+			[_inf_group,_destination,400] Call EZC_fnc_AI_AI_Patrol;
 		};
 	};
 	sleep 180;

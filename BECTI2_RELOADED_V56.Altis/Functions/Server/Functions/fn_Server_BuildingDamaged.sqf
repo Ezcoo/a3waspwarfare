@@ -11,7 +11,7 @@ if(!(isNil "_logik"))then{
     if ((getDammage _structure) + (_damage / (_redu)) < 1) then {
     	if (time - (_logik getVariable "cti_structure_lasthit") > 2 && _damage > 0.05) then {
     		_logik setVariable ["cti_structure_lasthit", time];
-    		[_side, "IsUnderAttack", ["Base", _structure]] Spawn cti_SE_FNC_SideMessage;
+    		[_side, "IsUnderAttack", ["Base", _structure]] Spawn EZC_fnc_Functions_Server_SideMessage;
     	};
     };
 };

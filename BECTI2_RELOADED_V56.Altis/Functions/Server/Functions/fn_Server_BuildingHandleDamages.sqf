@@ -12,7 +12,7 @@ _side = side _origin;
 if (_side in [_sideBuilding, sideEnemy]) then {
 	_dammages = false;
 } else {
-	_dammages = [_building, _dammages, _ammo] Call cti_SE_FNC_HandleBuildingDamage;
+	_dammages = [_building, _dammages, _ammo] Call EZC_fnc_Functions_Server_HandleBuildingDamage;
 };
 
 _dammages

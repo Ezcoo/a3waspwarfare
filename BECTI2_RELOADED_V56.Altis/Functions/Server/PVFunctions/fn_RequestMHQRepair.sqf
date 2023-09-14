@@ -1,1 +1,1 @@
-[_this] Spawn cti_SE_FNC_MHQRepair;
+[_this] Spawn EZC_fnc_Functions_Server_MHQRepair;

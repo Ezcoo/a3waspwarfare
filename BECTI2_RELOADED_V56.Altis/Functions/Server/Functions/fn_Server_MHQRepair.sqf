@@ -23,12 +23,12 @@ _MHQ setVariable ["cti_Taxi_Prohib", true];
 _MHQ setVariable ["cti_trashed", false];
 _MHQ setVariable ["cti_side", _side];
 _MHQ setVariable ["cti_structure_type", "Headquarters"];
-_MHQ addEventHandler ['killed', {_this Spawn cti_SE_FNC_OnHQKilled}];
+_MHQ addEventHandler ['killed', {_this Spawn EZC_fnc_Functions_Server_OnHQKilled}];
 _MHQ setVelocity [0,0,-1];
 _MHQ setVariable ["cti_trashable", false];
-_MHQ addEventHandler ["hit",{_this Spawn cti_SE_FNC_BuildingDamaged}];
+_MHQ addEventHandler ["hit",{_this Spawn EZC_fnc_Functions_Server_BuildingDamaged}];
 _logik setVariable ['cti_hq', _MHQ, true];
-//_MHQ addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call cti_SE_FNC_BuildingHandleDamages}];
+//_MHQ addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call EZC_fnc_Functions_Server_BuildingHandleDamages}];
 
 if (isMultiplayer) then {
 	["set-hq-killed-eh", _mhq] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
@@ -42,7 +42,7 @@ _logik setVariable ['cti_hq_repair_count', (_logik getVariable "cti_hq_repair_co
  _commanderTeam = (_side) Call EZC_fnc_Functions_Common_GetCommanderTeam;
 ['auto-wall-constructing-changed', _MHQ] remoteExecCall ["EZC_fnc_PVFunctions_SetMHQLock", leader _commanderTeam];
 	
-[_side,"Mobilized", ["Base", _MHQ]] Spawn cti_SE_FNC_SideMessage;
+[_side,"Mobilized", ["Base", _MHQ]] Spawn EZC_fnc_Functions_Server_SideMessage;
 deleteVehicle _hq;	
 		
 

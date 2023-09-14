@@ -106,7 +106,7 @@ if (_unitType isKindOf "Man") then {
 	_vehicle = [_unitType, _position, _sideID, _dir, true, true, true, _special] Call EZC_fnc_Functions_Common_CreateVehicle;
 
 	emptyQueu pushBack (_vehicle);
-	[_vehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
+	[_vehicle] Spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
 	if (_vehicle distance (leader _team) < 200) then {(units _team) allowGetIn true;_team addVehicle _vehicle};
 	
 	//--- Clear the vehicle.

@@ -215,7 +215,7 @@ if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "cti
         _area setVariable ["DefenseTeam", _team];
     };
 	emptyQueu pushBack _defense;
-	[_defense] Spawn cti_SE_FNC_HandleEmptyVehicle;
+	[_defense] Spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
 
 	if((typeOf _defense) in cti_C_ADV_AIR_DEFENCE) then{
 	    createVehicleCrew _defense;
@@ -241,7 +241,7 @@ if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "cti
             _closest = ['BARRACKSTYPE',_buildings,_manRange,_side,_defense] Call EZC_fnc_Functions_Common_BuildingInRange;
 
             //--- Manning Defenses.
-            if (alive _closest) then { [_defense,_side,_team,_closest] spawn cti_SE_FNC_HandleDefense; };
+            if (alive _closest) then { [_defense,_side,_team,_closest] spawn EZC_fnc_Functions_Server_HandleDefense; };
         };
 	};
 };

@@ -80,10 +80,10 @@ while {!cti_GameOver} do {
 					_side = (_sideID) Call EZC_fnc_Functions_Common_GetSideFromID;
 
 					if (_sideID != cti_C_UNKNOWN_ID) then {
-						if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side,"LostAt",["Strongpoint",_town]] Spawn cti_SE_FNC_SideMessage};
+						if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side,"LostAt",["Strongpoint",_town]] Spawn EZC_fnc_Functions_Server_SideMessage};
 					};
 
-					if (missionNamespace getVariable Format ["cti_%1_PRESENT",_newSide]) then {[_newSide,"CapturedNear",["Strongpoint",_town]] Spawn cti_SE_FNC_SideMessage};
+					if (missionNamespace getVariable Format ["cti_%1_PRESENT",_newSide]) then {[_newSide,"CapturedNear",["Strongpoint",_town]] Spawn EZC_fnc_Functions_Server_SideMessage};
 
 					_camp setVariable ["sideID",_newSID,true];
 					_flag setFlagTexture (missionNamespace getVariable Format["cti_%1FLAG",str _side]);

@@ -16,8 +16,8 @@ if ((_logik getVariable "cti_votetime") <= 0) then {
 	//--- Set the commander votes.
 	[_side, _team] Call EZC_fnc_Functions_Common_SetCommanderVotes;
 	
-	(_side) Spawn cti_SE_FNC_VoteForCommander;
-	[_side,"VotingForNewCommander"] Spawn cti_SE_FNC_SideMessage;
+	(_side) Spawn EZC_fnc_Functions_Server_VoteForCommander;
+	[_side,"VotingForNewCommander"] Spawn EZC_fnc_Functions_Server_SideMessage;
 	
 	["commander-vote-start", _name] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 };

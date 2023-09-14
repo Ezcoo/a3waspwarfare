@@ -96,12 +96,12 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 				};
 
 				if (isServer) then {
-					//['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn cti_SE_FNC_HandlePVF;
-					[leader _killer_group, (score leader _killer_group) + _points] call cti_SE_PVF_RequestChangeScore;
+					//['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn EZC_fnc_Functions_Server_HandlePVF;
+					[leader _killer_group, (score leader _killer_group) + _points] call EZC_fnc_PVFunctions_RequestChangeScore;
 
 
 				} else {
-					[leader _killer_group, (score leader _killer_group) + _points] remoteExecCall ["cti_SE_PVF_RequestChangeScore",2];
+					[leader _killer_group, (score leader _killer_group) + _points] remoteExecCall ["EZC_fnc_PVFunctions_RequestChangeScore",2];
 				};
 			};
 

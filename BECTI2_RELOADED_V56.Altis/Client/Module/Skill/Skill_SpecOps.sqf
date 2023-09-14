@@ -41,7 +41,7 @@ _ran = ((random 100)- cti_SK_V_LockpickChance);
 if (_ran >= _min) then {
 	//--- Unlocked, gain experience.
 	if (cti_SK_V_LockpickChance > -51) then {cti_SK_V_LockpickChance = cti_SK_V_LockpickChance - 1};
-	[_vehicle, false] remoteExecCall ["cti_SE_PVF_RequestVehicleLock",2];
+	[_vehicle, false] remoteExecCall ["EZC_fnc_PVFunctions_RequestVehicleLock",2];
 	
 	hint (localize "STR_WF_INFO_Lockpick_Succeed");
 } else {

@@ -39,16 +39,16 @@ if (count _to_upgrade > 0) then {
         //--- Validation.
         _can_upgrade = false;
 
-        _funds = _side Call cti_SE_FNC_GetAICommanderFunds;
+        _funds = _side Call EZC_fnc_Functions_Server_GetAICommanderFunds;
         if ((_side Call EZC_fnc_Functions_Common_GetSideSupply) >= (_cost select 0) && _funds >= (_cost select 1)) then {_can_upgrade = true;};
 
         //--- Roll on!
         if (_can_upgrade) then {
-            [_side, _upgrade, _upgrades select _upgrade, false] Spawn cti_SE_FNC_ProcessUpgrade;
+            [_side, _upgrade, _upgrades select _upgrade, false] Spawn EZC_fnc_Functions_Server_ProcessUpgrade;
             _logik setVariable ["cti_upgrading", true, true];
 
             //--- Deduct.
-            [_side,-(_cost select 0)] Call cti_SE_FNC_ChangeAICommanderFunds;
+            [_side,-(_cost select 0)] Call EZC_fnc_Functions_Server_ChangeAICommanderFunds;
             [_side,-(_cost select 1)] Call EZC_fnc_Functions_Common_ChangeSideSupply;
         };
 

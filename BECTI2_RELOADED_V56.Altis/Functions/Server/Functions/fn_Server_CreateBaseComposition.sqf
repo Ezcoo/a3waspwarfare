@@ -78,7 +78,7 @@ _afResBasePositions = _this select 3;
             	if(_type in cti_C_GARBAGE_OBJECTS)then{ _newObj enableSimulation false; };
 
             	if(_type == ((missionNamespace getVariable Format["cti_%1STRUCTURENAMES",str resistance]) select 2)) then {
-            	    [_newObj, resistance, _type, _i] spawn cti_SE_FNC_InitResLight
+            	    [_newObj, resistance, _type, _i] spawn EZC_fnc_FSM_server_init_res_light
             	};
 
             	_newObj setDir (_azi + _azimuth);
@@ -94,7 +94,7 @@ _afResBasePositions = _this select 3;
                     };
                 };
             };
-            [_defences, _pos] call cti_SE_FNC_ManningOfResBaseDefense;
+            [_defences, _pos] call EZC_fnc_Functions_Server_ManningOfResBaseDefense;
         };
     };
 };
@@ -168,7 +168,7 @@ _afResBasePositions = _this select 3;
                 };
 
                 if(_type == ((missionNamespace getVariable Format["cti_%1STRUCTURENAMES",str resistance]) select 4)) then {
-                    [_newObj, resistance, _type, _i] spawn cti_SE_FNC_InitResHeavy
+                    [_newObj, resistance, _type, _i] spawn EZC_fnc_FSM_server_init_res_heavy
                 };
 
                 _newObj setDir (_azi + _azimuth);
@@ -184,7 +184,7 @@ _afResBasePositions = _this select 3;
                     };
                 };
             };
-            [_defences, _pos] call cti_SE_FNC_ManningOfResBaseDefense;
+            [_defences, _pos] call EZC_fnc_Functions_Server_ManningOfResBaseDefense;
         };
     };
 };
@@ -259,7 +259,7 @@ _afResBasePositions = _this select 3;
                 };
 
                 if(_type == ((missionNamespace getVariable Format["cti_%1STRUCTURENAMES",str resistance]) select 5)) then {
-                    [_newObj, resistance, _type, _i] spawn cti_SE_FNC_InitResAir
+                    [_newObj, resistance, _type, _i] spawn EZC_fnc_FSM_server_init_res_air
                 };
 
                 _newObj setDir (_azi + _azimuth);
@@ -275,7 +275,7 @@ _afResBasePositions = _this select 3;
                     };
                 };
             };
-            [_defences, _pos] call cti_SE_FNC_ManningOfResBaseDefense;
+            [_defences, _pos] call EZC_fnc_Functions_Server_ManningOfResBaseDefense;
         };
     };
 };

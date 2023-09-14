@@ -9,7 +9,7 @@ _town_reuse = floor(totalTowns * 0.25);
 _town_vehicle_lock_defender = if ((missionNamespace getVariable "cti_C_TOWNS_VEHICLES_LOCK_DEFENDER") > 0) then {true} else {false};
 _towns_visited = [_location];
 
-_group = [_location, _side] Call cti_SE_FNC_GetTownPatrol;
+_group = [_location, _side] Call EZC_fnc_Functions_Server_GetTownPatrol;
 
 _team = objNull;
 if (count _group > 0) then {

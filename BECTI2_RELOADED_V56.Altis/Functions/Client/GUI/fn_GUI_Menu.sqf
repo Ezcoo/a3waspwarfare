@@ -89,7 +89,7 @@ while {alive player && dialog} do {
 				};
 
 				if !(_skip) exitWith {};
-				[cti_Client_SideJoined, name player] remoteExecCall ["cti_SE_PVF_RequestCommanderVote",2];
+				[cti_Client_SideJoined, name player] remoteExecCall ["EZC_fnc_PVFunctions_RequestCommanderVote",2];
 				voted = true;
 				waitUntil {(cti_Client_Logic getVariable "cti_votetime") > 0 || !dialog || !alive player};
 				if (!alive player || !dialog) exitWith {};
@@ -105,7 +105,7 @@ while {alive player && dialog} do {
 			};
 
 			if !(_skip) exitWith {};
-			[cti_Client_SideJoined, name player] remoteExecCall ["cti_SE_PVF_RequestCommanderVote",2];
+			[cti_Client_SideJoined, name player] remoteExecCall ["EZC_fnc_PVFunctions_RequestCommanderVote",2];
 			voted = true;
 			waitUntil {(cti_Client_Logic getVariable "cti_votetime") > 0 || !dialog || !alive player};
 			if (!alive player || !dialog) exitWith {};

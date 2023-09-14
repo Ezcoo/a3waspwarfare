@@ -27,7 +27,7 @@ while {!cti_GameOver} do {
 				
 				if!(isNil "headlessClients") then {					
 					_hc = headlessClients select 0;
-					[_site, _units, _position, _side, WF_Logic] remoteExecCall ["cti_CL_FNC_DelegateBasePatrolAI", _hc];
+					[_site, _units, _position, _side, WF_Logic] remoteExecCall ["EZC_fnc_Functions_Client_DelegateBasePatrolAI", _hc];
 
 				};
 			};
@@ -47,7 +47,7 @@ while {!cti_GameOver} do {
 		if!(isNil "headlessClients") then {
 		    if(count headlessClients > 0)then{
                 _hcr = headlessClients select 0;
-                [_nearby] remoteExecCall ["cti_HC_FNC_RemoveGroup", _hcr];
+                [_nearby] remoteExecCall ["EZC_fnc_Functions_HC_RemoveGroup", _hcr];
                 _teams = _teams - 1;
             };
 		};

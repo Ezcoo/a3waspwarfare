@@ -11,4 +11,4 @@ _team setSpeedMode "NORMAL";
 
 ["INFORMATION", Format ["AI_MoveTo.sqf: [%1] Team [%2] is heading to [%3].", side _team,_team,_destination]] Call EZC_fnc_Functions_Common_LogContent;
 
-[_team,true,[ [_destination, _mission, _radius, 20, "", []] ]] Call cti_SE_FNC_AIWPAdd;
+[_team,true,[ [_destination, _mission, _radius, 20, "", []] ]] Call EZC_fnc_AI_AI_WPAdd;

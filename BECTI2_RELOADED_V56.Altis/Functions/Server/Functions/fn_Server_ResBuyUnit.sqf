@@ -42,7 +42,7 @@ if (_unitType isKindOf "Man") then {
 		_positions = [];
 		_positions pushBack _position;
 
-		[_side, _unitType, _position, _team, _dir] Call cti_SE_FNC_DelegateAIHeadless;
+		[_side, _unitType, _position, _team, _dir] Call EZC_fnc_Functions_Server_DelegateAIHeadless;
 	}else{
 	    _soldier = [_unitType,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
         //--- Infantry can use the team vehicles as cargo.
@@ -54,7 +54,7 @@ if (_unitType isKindOf "Man") then {
         _groups = [];
         _groups pushBack (missionNamespace getVariable Format ["cti_%1SOLDIER", _side]);
         _special = if (_unitType isKindOf "Air") then {"FLY"} else {"NONE"};
-        [_side, _unitType, _position, _team, _dir, _special] Call cti_SE_FNC_DelegateAIHeadless;
+        [_side, _unitType, _position, _team, _dir, _special] Call EZC_fnc_Functions_Server_DelegateAIHeadless;
     }else{
         //_crew = missionNamespace getVariable Format["cti_%1RESSOLDIER",_sideText];
 		
@@ -77,7 +77,7 @@ if (_unitType isKindOf "Man") then {
         (_vehicle) call EZC_fnc_Functions_Common_ClearVehicleCargo;
 
         emptyQueu pushBack _vehicle;
-        [_vehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
+        [_vehicle] Spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
         _soldier = [_crew,_team,_position,_sideID] Call EZC_fnc_Functions_Common_CreateUnit;
         _soldier  spawn {_this allowDamage false; sleep 10; _this allowDamage true};
         [_soldier] allowGetIn true;

@@ -44,7 +44,7 @@ _logic = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 _logic setVariable ["cti_upgrades", _upgrades, true];
 _logic setVariable ["cti_upgrading", false, true];
 
-[_side, "NewIntelAvailable"] Spawn cti_SE_FNC_SideMessage;
+[_side, "NewIntelAvailable"] Spawn EZC_fnc_Functions_Server_SideMessage;
 
 ['upgrade-complete', _upgrade_id, _upgrade_level + 1] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 

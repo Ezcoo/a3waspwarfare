@@ -31,101 +31,101 @@ execVM (GLX_Path+"GLX_Initialize.sqf");
 //--- Client Functions.
 EZC_fnc_Functions_Client_DelegateTownAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateTownAI.sqf";
 EZC_fnc_Functions_Client_DelegateAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAI.sqf";
-cti_CL_FNC_DelegateBasePatrolAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateBasePatrolAI.sqf";
+EZC_fnc_Functions_Client_DelegateBasePatrolAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateBasePatrolAI.sqf";
 EZC_fnc_Functions_Client_DelegateAIStaticDefence = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAIStaticDefence.sqf";
 EZC_fnc_PVFunctions_HandleSpecial = Compile preprocessFileLineNumbers "Client\PVFunctions\HandleSpecial.sqf";
-cti_CL_FNC_GetSideID = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideID.sqf";
+EZC_fnc_Functions_Common_GetSideID = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideID.sqf";
 */
 
 
 
 
 // PVF
-cti_SE_PVF_RequestVehicleLock = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestVehicleLock.sqf";
-cti_SE_PVF_RequestChangeScore = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestChangeScore.sqf";
-cti_SE_PVF_RequestCommanderVote = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestCommanderVote.sqf";
-cti_SE_PVF_RequestNewCommander = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestNewCommander.sqf";
-cti_SE_PVF_RequestStructure = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestStructure.sqf";
-cti_SE_PVF_RequestDefense = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestDefense.sqf";
+EZC_fnc_PVFunctions_RequestVehicleLock = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestVehicleLock.sqf";
+EZC_fnc_PVFunctions_RequestChangeScore = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestChangeScore.sqf";
+EZC_fnc_PVFunctions_RequestCommanderVote = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestCommanderVote.sqf";
+EZC_fnc_PVFunctions_RequestNewCommander = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestNewCommander.sqf";
+EZC_fnc_PVFunctions_RequestStructure = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestStructure.sqf";
+EZC_fnc_PVFunctions_RequestDefense = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestDefense.sqf";
 EZC_fnc_PVFunctions_RequestJoin = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestJoin.sqf";
-cti_SE_PVF_RequestMHQRepair = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestMHQRepair.sqf";
+EZC_fnc_PVFunctions_RequestMHQRepair = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestMHQRepair.sqf";
 EZC_fnc_PVFunctions_RequestSpecial= Compile preprocessFileLineNumbers "Server\PVFunctions\RequestSpecial.sqf";
-cti_SE_PVF_RequestTeamUpdate = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestTeamUpdate.sqf";
-cti_SE_PVF_RequestUpgrade = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestUpgrade.sqf";
-cti_SE_PVF_RequestAutoWallConstructinChange = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestAutoWallConstructinChange.sqf";
+EZC_fnc_PVFunctions_RequestTeamUpdate = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestTeamUpdate.sqf";
+EZC_fnc_PVFunctions_RequestUpgrade = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestUpgrade.sqf";
+EZC_fnc_PVFunctions_RequestAutoWallConstructinChange = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestAutoWallConstructinChange.sqf";
 // END OF PVF
 
-cti_SE_FNC_AIMoveTo = Compile preprocessFile "Server\AI\Orders\AI_MoveTo.sqf";
-cti_SE_FNC_AIPatrol = Compile preprocessFile "Server\AI\Orders\AI_Patrol.sqf";
-cti_SE_FNC_AITownPatrol = Compile preprocessFile "Server\AI\Orders\AI_TownPatrol.sqf";
-cti_SE_FNC_AIWPAdd = Compile preprocessFile "Server\AI\Orders\AI_WPAdd.sqf";
-cti_SE_FNC_AIWPRemove = Compile preprocessFile "Server\AI\Orders\AI_WPRemove.sqf";
-cti_SE_FNC_BuildingDamaged = Compile preprocessFile "Server\Functions\Server_BuildingDamaged.sqf";
-cti_SE_FNC_BuildingHandleDamages = Compile preprocessFile "Server\Functions\Server_BuildingHandleDamages.sqf";
-cti_SE_FNC_BuildingKilled = Compile preprocessFile "Server\Functions\Server_BuildingKilled.sqf";
-cti_SE_FNC_CanUpdateTeam = Compile preprocessFile "Server\Functions\Server_CanUpdateTeam.sqf";
-cti_SE_FNC_ChangeAICommanderFunds = Compile preprocessFile "Server\Functions\Server_ChangeAICommanderFunds.sqf";
-cti_SE_FNC_ConstructDefense = Compile preprocessFile "Server\Construction\Construction_StationaryDefense.sqf";
-cti_SE_FNC_CreateDefenseTemplate = Compile preprocessFile "Server\Functions\Server_CreateDefenseTemplate.sqf";
-cti_SE_FNC_GetAICommanderFunds = Compile preprocessFile "Server\Functions\Server_GetAICommanderFunds.sqf";
-cti_SE_FNC_HandleBuildingDamage = Compile preprocessFile "Server\Functions\Server_HandleBuildingDamage.sqf";
-cti_SE_FNC_HandleDefense = Compile preprocessFile "Server\Functions\Server_HandleDefense.sqf";
-cti_SE_FNC_HandleSpecial = Compile preprocessFile "Server\Functions\Server_HandleSpecial.sqf";
-cti_SE_FNC_MHQRepair = Compile preprocessFile "Server\Functions\Server_MHQRepair.sqf";
-cti_SE_FNC_SideMessage = Compile preprocessFile "Server\Functions\Server_SideMessage.sqf";
-cti_SE_FNC_SetTownPatrols = compile preprocessfilelinenumbers "Server\FSM\server_patrols.sqf";
-cti_SE_FNC_UpdateTeam = Compile preprocessFile "Server\Functions\Server_UpdateTeam.sqf";
+EZC_fnc_AI_AI_MoveTo = Compile preprocessFile "Server\AI\Orders\AI_MoveTo.sqf";
+EZC_fnc_AI_AI_Patrol = Compile preprocessFile "Server\AI\Orders\AI_Patrol.sqf";
+EZC_fnc_AI_AI_TownPatrol = Compile preprocessFile "Server\AI\Orders\AI_TownPatrol.sqf";
+EZC_fnc_AI_AI_WPAdd = Compile preprocessFile "Server\AI\Orders\AI_WPAdd.sqf";
+EZC_fnc_AI_AI_WPRemove = Compile preprocessFile "Server\AI\Orders\AI_WPRemove.sqf";
+EZC_fnc_Functions_Server_BuildingDamaged = Compile preprocessFile "Server\Functions\Server_BuildingDamaged.sqf";
+EZC_fnc_Functions_Server_BuildingHandleDamages = Compile preprocessFile "Server\Functions\Server_BuildingHandleDamages.sqf";
+EZC_fnc_Functions_Server_BuildingKilled = Compile preprocessFile "Server\Functions\Server_BuildingKilled.sqf";
+EZC_fnc_Functions_Server_CanUpdateTeam = Compile preprocessFile "Server\Functions\Server_CanUpdateTeam.sqf";
+EZC_fnc_Functions_Server_ChangeAICommanderFunds = Compile preprocessFile "Server\Functions\Server_ChangeAICommanderFunds.sqf";
+EZC_fnc_Construction_Construction_StationaryDefense = Compile preprocessFile "Server\Construction\Construction_StationaryDefense.sqf";
+EZC_fnc_Functions_Server_CreateDefenseTemplate = Compile preprocessFile "Server\Functions\Server_CreateDefenseTemplate.sqf";
+EZC_fnc_Functions_Server_GetAICommanderFunds = Compile preprocessFile "Server\Functions\Server_GetAICommanderFunds.sqf";
+EZC_fnc_Functions_Server_HandleBuildingDamage = Compile preprocessFile "Server\Functions\Server_HandleBuildingDamage.sqf";
+EZC_fnc_Functions_Server_HandleDefense = Compile preprocessFile "Server\Functions\Server_HandleDefense.sqf";
+EZC_fnc_Functions_Server_HandleSpecial = Compile preprocessFile "Server\Functions\Server_HandleSpecial.sqf";
+EZC_fnc_Functions_Server_MHQRepair = Compile preprocessFile "Server\Functions\Server_MHQRepair.sqf";
+EZC_fnc_Functions_Server_SideMessage = Compile preprocessFile "Server\Functions\Server_SideMessage.sqf";
+EZC_fnc_FSM_server_patrols = compile preprocessfilelinenumbers "Server\FSM\server_patrols.sqf";
+EZC_fnc_Functions_Server_UpdateTeam = Compile preprocessFile "Server\Functions\Server_UpdateTeam.sqf";
 
 //--- Support Functions.
-KAT_ParaAmmo = Compile preprocessFile "Server\Support\Support_ParaAmmo.sqf";
-KAT_Paratroopers = Compile preprocessFile "Server\Support\Support_Paratroopers.sqf";
-KAT_ParaVehicles = Compile preprocessFile "Server\Support\Support_ParaVehicles.sqf";
-KAT_UAV = Compile preprocessFile "Server\Support\Support_UAV.sqf";
+EZC_fnc_Support_Support_ParaAmmo = Compile preprocessFile "Server\Support\Support_ParaAmmo.sqf";
+EZC_fnc_Support_Support_Paratroopers = Compile preprocessFile "Server\Support\Support_Paratroopers.sqf";
+EZC_fnc_Support_Support_ParaVehicles = Compile preprocessFile "Server\Support\Support_ParaVehicles.sqf";
+EZC_fnc_Support_Support_UAV = Compile preprocessFile "Server\Support\Support_UAV.sqf";
 
-cti_SE_FNC_AI_SetTownAttackPath = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath.sqf";
-cti_SE_FNC_AI_SetTownAttackPath_PathIsSafe = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath_PathIsSafe.sqf";
-cti_SE_FNC_AI_SetTownAttackPath_PosIsSafe = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath_PosIsSafe.sqf";
-cti_SE_FNC_AI_Com_Upgrade = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_Com_Upgrade.sqf";
-cti_SE_FNC_GetTownGroups = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownGroups.sqf";
-cti_SE_FNC_GetTownGroupsDefender = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownGroupsDefender.sqf";
-cti_SE_FNC_GetTownPatrol = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownPatrol.sqf";
-cti_SE_FNC_HandleEmptyVehicle = Compile preprocessFileLineNumbers "Server\Functions\Server_HandleEmptyVehicle.sqf";
-cti_SE_FNC_HandlePVF = Compile preprocessFileLineNumbers "Server\Functions\Server_HandlePVF.sqf";
-cti_SE_FNC_ManageTownDefenses = Compile preprocessFileLineNumbers "Server\Functions\Server_ManageTownDefenses.sqf";
-cti_SE_FNC_OnHQKilled = Compile preprocessFileLineNumbers "Server\Functions\Server_OnHQKilled.sqf";
-cti_SE_FNC_OperateTownDefensesUnits = Compile preprocessFileLineNumbers "Server\Functions\Server_OperateTownDefensesUnits.sqf";
-cti_SE_FNC_ProcessUpgrade = Compile preprocessFileLineNumbers "Server\Functions\Server_ProcessUpgrade.sqf";
-cti_SE_FNC_SetCampsToSide = Compile preprocessFileLineNumbers "Server\Functions\Server_SetCampsToSide.sqf";
+EZC_fnc_Functions_Server_AI_SetTownAttackPath = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath.sqf";
+EZC_fnc_Functions_Server_AI_SetTownAttackPath_PathIsSafe = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath_PathIsSafe.sqf";
+EZC_fnc_Functions_Server_AI_SetTownAttackPath_PosIsSafe = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath_PosIsSafe.sqf";
+EZC_fnc_Functions_Server_AI_Com_Upgrade = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_Com_Upgrade.sqf";
+EZC_fnc_Functions_Server_GetTownGroups = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownGroups.sqf";
+EZC_fnc_Functions_Server_GetTownGroupsDefender = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownGroupsDefender.sqf";
+EZC_fnc_Functions_Server_GetTownPatrol = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownPatrol.sqf";
+EZC_fnc_Functions_Server_HandleEmptyVehicle = Compile preprocessFileLineNumbers "Server\Functions\Server_HandleEmptyVehicle.sqf";
+EZC_fnc_Functions_Server_HandlePVF = Compile preprocessFileLineNumbers "Server\Functions\Server_HandlePVF.sqf";
+EZC_fnc_Functions_Server_ManageTownDefenses = Compile preprocessFileLineNumbers "Server\Functions\Server_ManageTownDefenses.sqf";
+EZC_fnc_Functions_Server_OnHQKilled = Compile preprocessFileLineNumbers "Server\Functions\Server_OnHQKilled.sqf";
+EZC_fnc_Functions_Server_OperateTownDefensesUnits = Compile preprocessFileLineNumbers "Server\Functions\Server_OperateTownDefensesUnits.sqf";
+EZC_fnc_Functions_Server_ProcessUpgrade = Compile preprocessFileLineNumbers "Server\Functions\Server_ProcessUpgrade.sqf";
+EZC_fnc_Functions_Server_SetCampsToSide = Compile preprocessFileLineNumbers "Server\Functions\Server_SetCampsToSide.sqf";
 //unused
 //cti_SE_FNC_SetLocalityOwner = Compile preprocessFileLineNumbers "Server\Functions\Server_SetLocalityOwner.sqf";
 
-cti_SE_FNC_SpawnTownDefense = Compile preprocessFileLineNumbers "Server\Functions\Server_SpawnTownDefense.sqf";
-cti_SE_FNC_VoteForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_VoteForCommander.sqf";
-cti_SE_FNC_AssignForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_AssignNewCommander.sqf";
-cti_SE_FNC_CreateObjectsFromArray = Compile preprocessFileLineNumbers "Server\Functions\Server_CreateObjectsFromArray.sqf";
-//cti_SE_FNC_Server_RunWeatherEnvironment = Compile preprocessFileLineNumbers "Server\Functions\Server_RunWeatherEnvironment.sqf";
+EZC_fnc_Functions_Server_SpawnTownDefense = Compile preprocessFileLineNumbers "Server\Functions\Server_SpawnTownDefense.sqf";
+EZC_fnc_Functions_Server_VoteForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_VoteForCommander.sqf";
+EZC_fnc_Functions_Server_AssignNewCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_AssignNewCommander.sqf";
+EZC_fnc_Functions_Server_CreateObjectsFromArray = Compile preprocessFileLineNumbers "Server\Functions\Server_CreateObjectsFromArray.sqf";
+//EZC_fnc_Functions_Server_RunWeatherEnvironment = Compile preprocessFileLineNumbers "Server\Functions\Server_RunWeatherEnvironment.sqf";
 
-cti_SE_FNC_Server_Construction_HQSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_HQSite.sqf";
-cti_SE_FNC_Server_Construction_MediumSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_MediumSite.sqf";
-cti_SE_FNC_Server_Construction_SmallSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_SmallSite.sqf";
+EZC_fnc_Construction_fn_Construction_HQSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_HQSite.sqf";
+EZC_fnc_Construction_Construction_MediumSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_MediumSite.sqf";
+EZC_fnc_Construction_Construction_SmallSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_SmallSite.sqf";
 
-cti_SE_FNC_Server_ResBuyUnit = Compile preprocessFile "Server\Functions\Server_ResBuyUnit.sqf";
+EZC_fnc_Functions_Server_ResBuyUnit = Compile preprocessFile "Server\Functions\Server_ResBuyUnit.sqf";
 
 //--- Define Headless Client functions (server ones).
-cti_SE_FNC_DelegateAITownHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAITownHeadless.sqf";
-cti_SE_FNC_DelegateAIHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIHeadless.sqf";
-cti_SE_FNC_DelegateAIStaticDefenceHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIStaticDefenceHeadless.sqf";
+EZC_fnc_Functions_Server_DelegateAITownHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAITownHeadless.sqf";
+EZC_fnc_Functions_Server_DelegateAIHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIHeadless.sqf";
+EZC_fnc_Functions_Server_DelegateAIStaticDefenceHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIStaticDefenceHeadless.sqf";
 
 
 if ((missionNamespace getVariable "cti_C_RESISTANCE_BASES_SWITCH") == 1) then {
 
-cti_SE_FNC_CreateBaseComposition = Compile preprocessFileLineNumbers "Server\Functions\Server_CreateBaseComposition.sqf";
-cti_SE_FNC_ManningOfResBaseDefense = Compile preprocessFileLineNumbers "Server\Functions\Server_ManningOfResBaseDefense.sqf";
-cti_SE_FNC_InitResLight = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_light.sqf";
-cti_SE_FNC_InitResHeavy = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_heavy.sqf";
-cti_SE_FNC_InitResAir = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_air.sqf";
-cti_SE_FNC_ResVehTeam = Compile preprocessFileLineNumbers "Server\FSM\res_veh_team.sqf";
-cti_SE_FNC_ResTeam = Compile preprocessFileLineNumbers "Server\FSM\res_team.sqf";
+EZC_fnc_Functions_Server_CreateBaseComposition = Compile preprocessFileLineNumbers "Server\Functions\Server_CreateBaseComposition.sqf";
+EZC_fnc_Functions_Server_ManningOfResBaseDefense = Compile preprocessFileLineNumbers "Server\Functions\Server_ManningOfResBaseDefense.sqf";
+EZC_fnc_FSM_server_init_res_light = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_light.sqf";
+EZC_fnc_FSM_server_init_res_heavy = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_heavy.sqf";
+EZC_fnc_FSM_server_init_res_air = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_air.sqf";
+EZC_fnc_FSM_res_veh_team = Compile preprocessFileLineNumbers "Server\FSM\res_veh_team.sqf";
+EZC_fnc_FSM_res_team = Compile preprocessFileLineNumbers "Server\FSM\res_team.sqf";
 
 };
 
@@ -185,8 +185,8 @@ _present_res = missionNamespace getVariable "cti_GUER_PRESENT";
 [] Call Compile preprocessFile 'Server\Init\Init_Defenses.sqf';
 
 //--- Weather.
-if (!(isNil "cti_SE_FNC_Server_RunWeatherEnvironment")) then {
-	[] spawn cti_SE_FNC_Server_RunWeatherEnvironment;
+if (!(isNil "EZC_fnc_Functions_Server_RunWeatherEnvironment")) then {
+	[] spawn EZC_fnc_Functions_Server_RunWeatherEnvironment;
 	if(cti_C_ENVIRONMENT_WEATHER_SNOWFLAKES > 0) then {
 		null = [80,660,false,0,false,true,true,false,false,false] spawn cti_SE_FNC_Server_AL_SNOW;
 	};
@@ -345,8 +345,8 @@ emptyQueu = [];
 		_hq setVariable ["cti_side", _side];
 		_hq setVariable ["cti_trashable", false];
 		_hq setVariable ["cti_structure_type", "Headquarters"];
-		_hq addEventHandler ['killed', {_this Spawn cti_SE_FNC_OnHQKilled}];
-		_hq addEventHandler ["hit",{_this Spawn cti_SE_FNC_BuildingDamaged}];
+		_hq addEventHandler ['killed', {_this Spawn EZC_fnc_Functions_Server_OnHQKilled}];
+		_hq addEventHandler ["hit",{_this Spawn EZC_fnc_Functions_Server_BuildingDamaged}];
        
 		//--- HQ Friendly Fire handler.
 		_hq addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call BuildingHandleDamages}];
@@ -430,7 +430,7 @@ emptyQueu = [];
 			_vehicle setVariable ["cti_Taxi_Prohib", true];
 			(_vehicle) call EZC_fnc_Functions_Common_ClearVehicleCargo;
 			emptyQueu pushback _vehicle;
-			[_vehicle] spawn cti_SE_FNC_HandleEmptyVehicle;
+			[_vehicle] spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
 		} forEach (missionNamespace getVariable Format ['cti_%1STARTINGVEHICLES', _side]);
 
 		//--- spawn of additional vehicles
@@ -444,7 +444,7 @@ emptyQueu = [];
 				clearWeaponCargoGlobal _vehicle;
 				clearMagazineCargoGlobal _vehicle;
 				emptyQueu pushBack _vehicle;
-				[_vehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
+				[_vehicle] Spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
 				if ((missionNamespace getVariable "cti_C_UNITS_BALANCING") > 0) then {(_vehicle) Call EZC_fnc_Functions_Common_BalanceInit};
 				
 				if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle addeventhandler ['Engine',{_this execVM "Client\Module\Engines\Engine.sqf"}];
@@ -460,7 +460,7 @@ emptyQueu = [];
 				clearWeaponCargoGlobal _vehicle;
 				clearMagazineCargoGlobal _vehicle;
 				emptyQueu pushBack _vehicle;
-				[_vehicle] Spawn cti_SE_FNC_HandleEmptyVehicle;
+				[_vehicle] Spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
 				if ((missionNamespace getVariable "cti_C_UNITS_BALANCING") > 0) then {(_vehicle) Call EZC_fnc_Functions_Common_BalanceInit};
 
 				if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle addeventhandler ['Engine',{_this execVM "Client\Module\Engines\Engine.sqf"}];
@@ -577,7 +577,7 @@ for [{_c = 0;},{_c < (count _start_location_array)},{_c = _c + 1;}] do {
 	};
 };
 
-[0, _lfResBasePositions, _hfResBasePositions, _afResBasePositions] spawn cti_SE_FNC_CreateBaseComposition;
+[0, _lfResBasePositions, _hfResBasePositions, _afResBasePositions] spawn EZC_fnc_Functions_Server_CreateBaseComposition;
 
 };
 
@@ -609,4 +609,4 @@ sleep 2;
 
 
 
-{_x Spawn cti_SE_FNC_VoteForCommander} forEach cti_PRESENTSIDES;
+{_x Spawn EZC_fnc_Functions_Server_VoteForCommander} forEach cti_PRESENTSIDES;

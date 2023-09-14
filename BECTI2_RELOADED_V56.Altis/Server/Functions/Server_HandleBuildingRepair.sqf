@@ -49,7 +49,7 @@ while {true} do {
 				_site setVariable ["cti_side", _side];
 				_site setVariable ["cti_structure_type", _buildingsType select _index];
 				
-				[_side, "Constructed", ["Base", _site]] Spawn cti_SE_FNC_SideMessage;
+				[_side, "Constructed", ["Base", _site]] Spawn EZC_fnc_Functions_Server_SideMessage;
 
 				//--- Site is created, we add the rest.
 				if !(isNull _site) then {
@@ -60,10 +60,10 @@ while {true} do {
 					
 					[_site,false,_sideID] remoteExec ["ExecVM 'Client\Init\Init_BaseStructure.sqf'", _side];
 					
-					_site addEventHandler ["hit",{_this Spawn cti_SE_FNC_BuildingDamaged}];
-						_site addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call cti_SE_FNC_BuildingHandleDamages}];
+					_site addEventHandler ["hit",{_this Spawn EZC_fnc_Functions_Server_BuildingDamaged}];
+						_site addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call EZC_fnc_Functions_Server_BuildingHandleDamages}];
 					
-					Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn cti_SE_FNC_BuildingKilled}];",_type];
+					Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn EZC_fnc_Functions_Server_BuildingKilled}];",_type];
 						[_side, -round((_buildingsCosts select _index)/2)] Call EZC_fnc_Functions_Common_ChangeSideSupply;
 					
 				};

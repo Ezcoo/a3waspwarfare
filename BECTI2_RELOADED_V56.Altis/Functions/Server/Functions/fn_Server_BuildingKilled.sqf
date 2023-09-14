@@ -65,7 +65,7 @@ if(_side != resistance)then{
 
     _logik setVariable ["cti_structures", (_logik getVariable "cti_structures") - [_structure, objNull], true];
 
-    [_side, "Destroyed", ["Base", _structure]] Spawn cti_SE_FNC_SideMessage;
+    [_side, "Destroyed", ["Base", _structure]] Spawn EZC_fnc_Functions_Server_SideMessage;
 };
 sleep 10;
 

@@ -80,7 +80,7 @@ for '_i' from 0 to count(_groups)-1 do {
 	if (isServer) then {
 		{
 			_town_vehicles pushBack _x;
-			[_x] spawn cti_SE_FNC_HandleEmptyVehicle;
+			[_x] spawn EZC_fnc_Functions_Server_HandleEmptyVehicle;
 			_x setVariable ["cti_Taxi_Prohib", true];
 		} forEach _vehicles;
 	};

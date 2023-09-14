@@ -2,4 +2,4 @@
 	A client request an upgrade
 */
 
-_this Spawn cti_SE_FNC_ProcessUpgrade;
+_this Spawn EZC_fnc_Functions_Server_ProcessUpgrade;

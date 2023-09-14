@@ -154,7 +154,7 @@ while {alive player && dialog} do {
 							-(_upgrade_price) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 							[cti_Client_SideJoined, -(_upgrade_supply)] Call EZC_fnc_Functions_Common_ChangeSideSupply;
 							//--- todo check conditions., deduce cash etc
-							[cti_Client_SideJoined, _id, _upgrade_current, true] remoteExecCall ["cti_SE_PVF_RequestUpgrade",2];
+							[cti_Client_SideJoined, _id, _upgrade_current, true] remoteExecCall ["EZC_fnc_PVFunctions_RequestUpgrade",2];
 							cti_Client_Logic setVariable ["cti_upgrading", true, true];
 							//todo spawn local upgrade thread & timer & hint
 							//--- Pure client, spawn an upgrade thread, which is local to the client in case the client tickrate is above the server tickrate.

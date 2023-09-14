@@ -174,7 +174,7 @@ while {!cti_GameOver} do {
                 if (_rate < 1) then {_rate = 1};
 
                 if (_sideID != cti_C_UNKNOWN_ID) then {
-                    if (_activeEnemies > 0 && time > _timeAttacked && (missionNamespace getVariable Format ["cti_%1_PRESENT",_side])) then {_timeAttacked = time + 60;[_side, "IsUnderAttack", ["Town", _location]] Spawn cti_SE_FNC_SideMessage};
+                    if (_activeEnemies > 0 && time > _timeAttacked && (missionNamespace getVariable Format ["cti_%1_PRESENT",_side])) then {_timeAttacked = time + 60;[_side, "IsUnderAttack", ["Town", _location]] Spawn EZC_fnc_Functions_Server_SideMessage};
                 };
 
                 _supplyValue = round(_supplyValue - (_resistance + _east + _west) * _rate);
@@ -194,19 +194,19 @@ while {!cti_GameOver} do {
 			["INFORMATION", Format ["server_town.sqf: Town [%1] was captured by [%2] From [%3].", _location, _newSide, _side]] Call EZC_fnc_Functions_Common_LogContent;
 
                 if (_sideID != cti_C_UNKNOWN_ID) then {
-                    if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side, "Lost", _location] Spawn cti_SE_FNC_SideMessage};
+                    if (missionNamespace getVariable Format ["cti_%1_PRESENT",_side]) then {[_side, "Lost", _location] Spawn EZC_fnc_Functions_Server_SideMessage};
                 };
 
-                if (missionNamespace getVariable Format ["cti_%1_PRESENT",_newSide]) then {[_newSide, "Captured", _location] Spawn cti_SE_FNC_SideMessage};
+                if (missionNamespace getVariable Format ["cti_%1_PRESENT",_newSide]) then {[_newSide, "Captured", _location] Spawn EZC_fnc_Functions_Server_SideMessage};
 
                 _location setVariable ["sideID",_newSID,true];
 
                 [_location, _sideID, _newSID] remoteExecCall ["EZC_fnc_PVFunctions_TownCaptured"];
 
-                [_location, _sideID, _newSID] Spawn cti_SE_FNC_SetCampsToSide;
+                [_location, _sideID, _newSID] Spawn EZC_fnc_Functions_Server_SetCampsToSide;
 
                 //--- Clear the town defenses, units first then replace the defenses if needed.
-                [_location, _side, "remove"] Call cti_SE_FNC_OperateTownDefensesUnits;
+                [_location, _side, "remove"] Call EZC_fnc_Functions_Server_OperateTownDefensesUnits;
 
                 //--- Check if the side is enabled in town and add defenses if needed.
                 _side_enabled = false;
@@ -217,7 +217,7 @@ while {!cti_GameOver} do {
                 };
 
                 //--- If the side is defined, we create the new side's defenses.
-                if (_side_enabled) then {[_location, _newSide, _sideID] Call cti_SE_FNC_ManageTownDefenses};
+                if (_side_enabled) then {[_location, _newSide, _sideID] Call EZC_fnc_Functions_Server_ManageTownDefenses};
             };
         };
         sleep 0.05;
