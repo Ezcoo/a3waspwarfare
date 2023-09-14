@@ -49,11 +49,9 @@ if ((!isNull _killer) && (isPlayer _killer)) then{
 };
 
 if (_teamkill) then{
-    ["INFORMATION", Format ["Server_BuildingKilled.sqf: [%1] [%2] has teamkilled a friendly structure.", name _killer, _killer_uid]] Call EZC_fnc_Functions_Common_LogContent
-;
+    ["INFORMATION", Format ["Server_BuildingKilled.sqf: [%1] [%2] has teamkilled a friendly structure.", name _killer, _killer_uid]] Call EZC_fnc_Functions_Common_LogContent;
 }else{
-    ["INFORMATION", Format ["Server_BuildingKilled.sqf: [%1] Structure [%2] has been destroyed by [%3].", str _side, _type, _killer]] Call EZC_fnc_Functions_Common_LogContent
-;
+    ["INFORMATION", Format ["Server_BuildingKilled.sqf: [%1] Structure [%2] has been destroyed by [%3].", str _side, _type, _killer]] Call EZC_fnc_Functions_Common_LogContent;
 };
 
 //--- Decrement building limit.

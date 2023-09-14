@@ -29,20 +29,16 @@ if ((missionNamespace getVariable "cti_C_GAMEPLAY_BOUNDARIES_ENABLED") > 0) then
  = nil;
 			EZC_fnc_Functions_Client_HandleOnMap = nil;
 		};
-		["INFORMATION", Format ["Init_Boundaries.sqf: There is no proper boundaries set for island [%1]", worldName]] Call EZC_fnc_Functions_Common_LogContent
-;
+		["INFORMATION", Format ["Init_Boundaries.sqf: There is no proper boundaries set for island [%1]", worldName]] Call EZC_fnc_Functions_Common_LogContent;
 	} else {
 		missionNamespace setVariable ['cti_BOUNDARIESXY',_boundariesXY];
-		["INFORMATION", Format ["Init_Boundaries.sqf: Boundaries [%1] found for island [%2]", _boundariesXY, worldName]] Call EZC_fnc_Functions_Common_LogContent
-;
+		["INFORMATION", Format ["Init_Boundaries.sqf: Boundaries [%1] found for island [%2]", _boundariesXY, worldName]] Call EZC_fnc_Functions_Common_LogContent;
 	};
 } else {
 	if (_boundariesXY == -1) then {
-		["INFORMATION", Format ["Init_Boundaries.sqf: There is no proper boundaries set for island [%1]", worldName]] Call EZC_fnc_Functions_Common_LogContent
-;
+		["INFORMATION", Format ["Init_Boundaries.sqf: There is no proper boundaries set for island [%1]", worldName]] Call EZC_fnc_Functions_Common_LogContent;
 	} else {
 		missionNamespace setVariable ['cti_BOUNDARIESXY',_boundariesXY];
-		["INFORMATION", Format ["Init_Boundaries.sqf: Boundaries [%1] found for island [%2] {Boundaries parameter is disabled}", _boundariesXY, worldName]] Call EZC_fnc_Functions_Common_LogContent
-;
+		["INFORMATION", Format ["Init_Boundaries.sqf: Boundaries [%1] found for island [%2] {Boundaries parameter is disabled}", _boundariesXY, worldName]] Call EZC_fnc_Functions_Common_LogContent;
 	};
 };

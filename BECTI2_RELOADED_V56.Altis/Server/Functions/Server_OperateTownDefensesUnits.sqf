@@ -45,8 +45,7 @@ switch (_action) do {
                     };
                 };
             } forEach (_allDefences);
-            ["INFORMATION", Format ["Server_OperateTownDefensesUnits.sqf : Town [%1] defenses were manned for [%2] defenses on [%3].", _town getVariable "name", count (_town getVariable "cti_town_defenses"),_side]] Call EZC_fnc_Functions_Common_LogContent
-;
+            ["INFORMATION", Format ["Server_OperateTownDefensesUnits.sqf : Town [%1] defenses were manned for [%2] defenses on [%3].", _town getVariable "name", count (_town getVariable "cti_town_defenses"),_side]] Call EZC_fnc_Functions_Common_LogContent;
         };
 	};
 	case "remove": {
@@ -69,7 +68,6 @@ switch (_action) do {
 			};
 		} forEach (_town getVariable "cti_town_defenses") + (_town getVariable "cti_town_defenses_composition");
 
-		["INFORMATION", Format ["Server_OperateTownDefensesUnits.sqf : Town [%1] defenses units were removed for [%2] defenses.", _town getVariable "name", count (_town getVariable "cti_town_defenses")]] Call EZC_fnc_Functions_Common_LogContent
-;
+		["INFORMATION", Format ["Server_OperateTownDefensesUnits.sqf : Town [%1] defenses units were removed for [%2] defenses.", _town getVariable "name", count (_town getVariable "cti_town_defenses")]] Call EZC_fnc_Functions_Common_LogContent;
 	};
 };

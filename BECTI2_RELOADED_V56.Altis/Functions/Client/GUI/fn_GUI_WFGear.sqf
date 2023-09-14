@@ -99,7 +99,7 @@ switch (_action) do {
 
 		if (_target isKindOf "Man") then {
 		//--- Get the target's equipment
-		_gear = (_target) call CTI_CO_FNC_GetUnitLoadout;
+		_gear = (_target) call EZC_fnc_Functions_Common_GetUnitLoadout;
 
 		//--- Calculate the initial mass
 		_mass = (_gear) call CTI_UI_Gear_GetTotalMass;
@@ -434,10 +434,10 @@ switch (_action) do {
 		_cost = uiNamespace getVariable "CTI_dialog_ui_gear_tradein";
 		if (_funds >= _cost) then {
 			if (uiNamespace getVariable "CTI_dialog_ui_gear_target" isKindOf "Man") then {
-				[uiNamespace getVariable "CTI_dialog_ui_gear_target", uiNamespace getVariable "CTI_dialog_ui_gear_target_gear"] call CTI_CO_FNC_EquipUnit; 
+				[uiNamespace getVariable "CTI_dialog_ui_gear_target", uiNamespace getVariable "CTI_dialog_ui_gear_target_gear"] call EZC_fnc_Functions_Common_EquipUnit; 
 				
 				missionNamespace setVariable ["CTI_gear_lastpurchased", uiNamespace getVariable "CTI_dialog_ui_gear_target_gear"];
-				CTI_P_CurrentGear = (player) call CTI_CO_FNC_GetUnitLoadout;
+				CTI_P_CurrentGear = (player) call EZC_fnc_Functions_Common_GetUnitLoadout;
 			} else {
 				[uiNamespace getVariable "CTI_dialog_ui_gear_target", uiNamespace getVariable "CTI_dialog_ui_gear_target_gear"] call CTI_CO_FNC_EquipVehicleCargo;
 			};

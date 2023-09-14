@@ -15,7 +15,6 @@ _side = _this select 1;
 _groups = _this select 2;
 _positions = _this select 3;
 
-["INFORMATION", Format["Client_DelegateTownAI.sqf: Received a town delegation request from the server for [%1] [%2].", _side, _town]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format["Client_DelegateTownAI.sqf: Received a town delegation request from the server for [%1] [%2].", _side, _town]] Call EZC_fnc_Functions_Common_LogContent;
 
 [_town, _side, _groups, _positions] spawn cti_CO_FNC_CreateTownUnits;

@@ -7,8 +7,7 @@ _sideID = _side Call EZC_fnc_Functions_Common_GetSideID;
 _starttime = time;
 _parachute = "B_parachute";
 
-["INFORMATION", Format["Support_Paratroopers.sqf : [%1] Team [%2] has requested paratroopers.", _side, _playerTeam]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format["Support_Paratroopers.sqf : [%1] Team [%2] has requested paratroopers.", _side, _playerTeam]] Call EZC_fnc_Functions_Common_LogContent;
 
 //--- Determine a random spawn location.
 _ranPos = [];

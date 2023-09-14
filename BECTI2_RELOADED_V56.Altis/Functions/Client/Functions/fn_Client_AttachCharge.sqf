@@ -90,7 +90,7 @@ EtV_TimedCharge =
 	
 };
 
-EtV_AttachCharge =
+EZC_fnc_Functions_Client_AttachCharge =
 {
 	private _array = _this select 3;
 	private _charge = _array select 0;

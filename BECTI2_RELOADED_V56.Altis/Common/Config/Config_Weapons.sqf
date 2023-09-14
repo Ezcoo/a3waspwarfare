@@ -46,22 +46,17 @@ for '_i' from 0 to count(_u)-1 do {
 				};
 				
 				_cpt = _cpt + 1;
-				["INITIALIZATION", Format["Config_Weapons.sqf : [%1] Weapon [%2], Belong to [%3]",_faction,_u select _i,_is]] Call EZC_fnc_Functions_Common_LogContent
-;
+				["INITIALIZATION", Format["Config_Weapons.sqf : [%1] Weapon [%2], Belong to [%3]",_faction,_u select _i,_is]] Call EZC_fnc_Functions_Common_LogContent;
 			} else {
-				["WARNING", Format["Config_Weapons.sqf : [%1] Weapon [%2] was not defined since it's gear emplacement is unknown (type)",_faction,_u select _i], 2] Call EZC_fnc_Functions_Common_LogContent
-;
+				["WARNING", Format["Config_Weapons.sqf : [%1] Weapon [%2] was not defined since it's gear emplacement is unknown (type)",_faction,_u select _i], 2] Call EZC_fnc_Functions_Common_LogContent;
 			};
 		} else {
 			_cpt = _cpt + 1;
-			["TRIVIAL", Format["Config_Weapons.sqf : [%1] Weapon [%2] has been skipped since it's already defined",_faction,_u select _i]] Call EZC_fnc_Functions_Common_LogContent
-;
+			["TRIVIAL", Format["Config_Weapons.sqf : [%1] Weapon [%2] has been skipped since it's already defined",_faction,_u select _i]] Call EZC_fnc_Functions_Common_LogContent;
 		};
 	} else {
-		["ERROR", Format["Config_Weapons.sqf : [%1] Weapon [%2] is not a valid class within <CfgWeapons>",_faction,_u select _i], 3] Call EZC_fnc_Functions_Common_LogContent
-;
+		["ERROR", Format["Config_Weapons.sqf : [%1] Weapon [%2] is not a valid class within <CfgWeapons>",_faction,_u select _i], 3] Call EZC_fnc_Functions_Common_LogContent;
 	};
 };
 
-["INFORMATION", Format ["Config_Weapons.sqf : [%1] [%2/%3] Entities were defined.", _faction, _cpt, count _u], 1] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Config_Weapons.sqf : [%1] [%2/%3] Entities were defined.", _faction, _cpt, count _u], 1] Call EZC_fnc_Functions_Common_LogContent;

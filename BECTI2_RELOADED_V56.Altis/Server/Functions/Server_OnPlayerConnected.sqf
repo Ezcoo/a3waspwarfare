@@ -13,8 +13,7 @@ _id = _this select 2;
 //--- Wait for a proper common & server initialization before going any further.
 waitUntil {commonInitComplete && serverInitFull};
 
-["INFORMATION", Format ["Server_PlayerConnected.sqf: Player [%1] [%2] has joined the game", _name, _uid]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_PlayerConnected.sqf: Player [%1] [%2] has joined the game", _name, _uid]] Call EZC_fnc_Functions_Common_LogContent;
 
 //--- Skip this script if the server is trying to run this.
 if (_name == '__SERVER__' || _uid == '' || local player) exitWith {};
@@ -59,8 +58,7 @@ _logic synchronizeObjectsAdd [leader _team];
 				[_group, [0,0,0]] Call cti_CO_FNC_SetTeamMovePos;
 				(leader _group) enableSimulationGlobal true;
 
-				["INITIALIZATION", Format["Init_Server.sqf: [%1] Team [%2] was initialized.", _sideJoined, _group]] Call EZC_fnc_Functions_Common_LogContent
-;
+				["INITIALIZATION", Format["Init_Server.sqf: [%1] Team [%2] was initialized.", _sideJoined, _group]] Call EZC_fnc_Functions_Common_LogContent;
 			};
 		};
 	};
@@ -74,8 +72,7 @@ _logic setVariable ["cti_teams_count", count _teams];
 _get = missionNamespace getVariable format["cti_JIP_USER%1",_uid];
 
 //--- If we choose not to keep the current units during this session, then we simply remove them.
-["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] units are now being removed for player [%1] [%2].", _team, _name, _uid]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] units are now being removed for player [%1] [%2].", _team, _name, _uid]] Call EZC_fnc_Functions_Common_LogContent;
 _units = units _team;
 _units = _units + ([_team,false] Call cti_CO_FNC_GetTeamVehicles);
 {if (!isPlayer _x && !(_x in playableUnits)) then {deleteVehicle _x}} forEach _units;
@@ -99,8 +96,7 @@ if (isNil '_get') exitWith {
 	missionNamespace setVariable [format["cti_JIP_USER%1",_uid], [_uid, 0, _sideJoined, _sideJoined,0]];
 
 	_team setVariable ["cti_funds", missionNamespace getVariable format ["cti_C_ECONOMY_FUNDS_START_%1", _sideJoined], true];
-	["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] Leader [%2] JIP Information have been stored for the first time.", _team, _uid]] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] Leader [%2] JIP Information have been stored for the first time.", _team, _uid]] Call EZC_fnc_Functions_Common_LogContent;
 };
 
 //--- The player has already joined the session previously, we just need to update the informations.

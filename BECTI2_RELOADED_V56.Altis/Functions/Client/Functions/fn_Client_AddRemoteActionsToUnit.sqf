@@ -28,7 +28,7 @@ private ["_firstAction", "_lastAction"];
 
 // --- Vehicle actions
 
-_firstAction =CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach AP Mine Charge", EtV_AttachCharge, ["APERSMine_Range_Mag",CTI_P_Controlled], 60, true, true, "","['APERSMine_Range_Mag',_target] call EtV_ChargeCheck",5];
+_firstAction =CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach AP Mine Charge", EZC_fnc_Functions_Client_AttachCharge, ["APERSMine_Range_Mag",CTI_P_Controlled], 60, true, true, "","['APERSMine_Range_Mag',_target] call EtV_ChargeCheck",5];
 
 
 
@@ -40,11 +40,11 @@ _firstAction =CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach AP Mi
 	};
 };
 
-CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach Claymore Charge", EtV_AttachCharge, ["ClaymoreDirectionalMine_Remote_Mag",CTI_P_Controlled], 59, true, true, "","['ClaymoreDirectionalMine_Remote_Mag',_target] call EtV_ChargeCheck",5];
-CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach M6 Charge", EtV_AttachCharge, ["SLAMDirectionalMine_Wire_Mag",CTI_P_Controlled], 58, true, true, "","['SLAMDirectionalMine_Wire_Mag',_target] call EtV_ChargeCheck",5];
-CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach C4 Charge", EtV_AttachCharge, ["DemoCharge_Remote_Mag",CTI_P_Controlled], 57, true, true, "","['DemoCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
-CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach BIG C4 Charge", EtV_AttachCharge, ["SatchelCharge_Remote_Mag",CTI_P_Controlled], 56, true, true, "","['SatchelCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
-CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach PipeBomb Charge", EtV_AttachCharge, ["CUP_PipeBomb_M",CTI_P_Controlled], 55, true, true, "","['CUP_PipeBomb_M',_target] call EtV_ChargeCheck",5];
+CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach Claymore Charge", EZC_fnc_Functions_Client_AttachCharge, ["ClaymoreDirectionalMine_Remote_Mag",CTI_P_Controlled], 59, true, true, "","['ClaymoreDirectionalMine_Remote_Mag',_target] call EtV_ChargeCheck",5];
+CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach M6 Charge", EZC_fnc_Functions_Client_AttachCharge, ["SLAMDirectionalMine_Wire_Mag",CTI_P_Controlled], 58, true, true, "","['SLAMDirectionalMine_Wire_Mag',_target] call EtV_ChargeCheck",5];
+CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach C4 Charge", EZC_fnc_Functions_Client_AttachCharge, ["DemoCharge_Remote_Mag",CTI_P_Controlled], 57, true, true, "","['DemoCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
+CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach BIG C4 Charge", EZC_fnc_Functions_Client_AttachCharge, ["SatchelCharge_Remote_Mag",CTI_P_Controlled], 56, true, true, "","['SatchelCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
+CTI_P_Controlled addAction ["<t color=""#FFE496"">" +"Attach PipeBomb Charge", EZC_fnc_Functions_Client_AttachCharge, ["CUP_PipeBomb_M",CTI_P_Controlled], 55, true, true, "","['CUP_PipeBomb_M',_target] call EtV_ChargeCheck",5];
 
 	CTI_P_Controlled addAction ["Deploy Tow Ropes", { 
 		[] call CTI_CL_FNC_EXT_SA_Take_Tow_Ropes_Action;

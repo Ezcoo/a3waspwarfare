@@ -67,7 +67,7 @@ if (!isNil 'cti_P_CurrentGear' && !cti_RespawnDefaultGear && _allowCustom) then 
 		if !(_skip) then {
 			
 			_respawn_gear = if (isNil 'cti_P_CurrentGear') then {missionNamespace getVariable format ["cti_AI_%1_DEFAULT_GEAR", cti_Client_SideJoined]} else {cti_P_CurrentGear};
-			[player, _respawn_gear] call cti_CO_FNC_EquipUnit; //--- Equip the equipment
+			[player, _respawn_gear] call EZC_fnc_Functions_Common_EquipUnit; //--- Equip the equipment
 			
 			_loadDefault = false;
 		};
@@ -168,5 +168,5 @@ _default = missionNamespace getVariable Format["cti_%1_DefaultGearUKSpecops", ct
 	
 	
 	
-	[player, _default] call cti_CO_FNC_EquipUnit;
+	[player, _default] call EZC_fnc_Functions_Common_EquipUnit;
 };

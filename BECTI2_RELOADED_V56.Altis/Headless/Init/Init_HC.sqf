@@ -1,6 +1,5 @@
 //--- Headless Client initialization...
-["INITIALIZATION", "Init_HC.sqf: Running the headless client initialization."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_HC.sqf: Running the headless client initialization."] Call EZC_fnc_Functions_Common_LogContent;
 
 
 

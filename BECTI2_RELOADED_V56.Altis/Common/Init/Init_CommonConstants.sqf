@@ -643,5 +643,4 @@ if (side player == west) then{
 	cti_C_TOWNS_ALL_SIDES = [west, east, resistance, sideEnemy];
 };
 
-["INITIALIZATION", "Init_CommonConstants.sqf: Constants are defined."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_CommonConstants.sqf: Constants are defined."] Call EZC_fnc_Functions_Common_LogContent;

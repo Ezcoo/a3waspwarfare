@@ -254,8 +254,7 @@ diag_log format ["## Mission Name: [%1]", WF_MISSIONNAME];
 diag_log format ["## Max players Defined: [%1]", WF_MAXPLAYERS];
 for '_i' from 0 to 3 do {diag_log "################################"};
 
-["INITIALIZATION", "initJIPCompatible.sqf: Starting JIP Initialization"] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "initJIPCompatible.sqf: Starting JIP Initialization"] Call EZC_fnc_Functions_Common_LogContent;
 cti_Client_SideJoined = civilian;
 
 if (isHeadLessClient) then {["INITIALIZATION", "initJIPCompatible.sqf: Detected an headless client."] Call EZC_fnc_Functions_Common_LogContent
@@ -272,11 +271,9 @@ if ((isHostedServer || isDedicated) && !isHeadLessClient) then { //--- JIP Handl
 
 //--- Client initialization, either hosted or pure client. Part I
 if (isHostedServer || (!isHeadLessClient && !isDedicated)) then {
-	["INITIALIZATION", "initJIPCompatible.sqf: Client detected... waiting for non null result..."] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "initJIPCompatible.sqf: Client detected... waiting for non null result..."] Call EZC_fnc_Functions_Common_LogContent;
 	waitUntil {!isNull player};
-	["INITIALIZATION", "initJIPCompatible.sqf: Client is not null..."] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "initJIPCompatible.sqf: Client is not null..."] Call EZC_fnc_Functions_Common_LogContent;
 };
 
 setObjectViewDistance 3000; //--- Server & Client default View Distance.
@@ -315,8 +312,7 @@ if (WF_Debug) then { //--- Debug.
 
 publicVariable "WSW_AdvDebugger";
 
-["INITIALIZATION", "initJIPCompatible.sqf: Headless client is supported."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "initJIPCompatible.sqf: Headless client is supported."] Call EZC_fnc_Functions_Common_LogContent;
 
 //--- Apply the time-environment (don't halt).
 [] Spawn {
@@ -331,8 +327,7 @@ ExecVM "Common\Init\Init_Towns.sqf"; //--- Execute the towns file.
 
 //--- Server initialization.
 if (isHostedServer || isDedicated) then { //--- Run the server's part.
-	["INITIALIZATION", "initJIPCompatible.sqf: Executing the Server Initialization."] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "initJIPCompatible.sqf: Executing the Server Initialization."] Call EZC_fnc_Functions_Common_LogContent;
 	ExecVM "Server\Init\Init_Server.sqf";
 };
 
@@ -345,8 +340,7 @@ if (isHostedServer || (!isHeadLessClient && !isDedicated)) then {
 		missionNamespace setVariable [Format["cti_%1TEAMS",_x], _logik getVariable "cti_teams"];
 	} forEach cti_PRESENTSIDES;
 
-	["INITIALIZATION", "initJIPCompatible.sqf: Executing the Client Initialization."] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "initJIPCompatible.sqf: Executing the Client Initialization."] Call EZC_fnc_Functions_Common_LogContent;
 
 	execVM "Client\Init\Init_Client.sqf";
 	waitUntil {clientInitComplete};

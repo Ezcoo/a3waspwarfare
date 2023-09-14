@@ -18,8 +18,7 @@ _team = _this select 3;
 _defence = _this select 4;
 _moveInGunner = _this select 5;
 
-["INFORMATION", Format["Client_DelegateAIStaticDefence.sqf: Received a delegation request from the server for [%1].", _side]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format["Client_DelegateAIStaticDefence.sqf: Received a delegation request from the server for [%1].", _side]] Call EZC_fnc_Functions_Common_LogContent;
 
 sleep (random 1); //--- Delay a bit to prevent a bandwidth congestion.
 

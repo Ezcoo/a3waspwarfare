@@ -17,8 +17,7 @@ waitUntil {commonInitComplete && serverInitFull};
 
 if (_name == '__SERVER__' || _uid == '' || local player) exitWith {};
 
-["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] has left the game", _name, _uid]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] has left the game", _name, _uid]] Call EZC_fnc_Functions_Common_LogContent;
 
 //--- Headless Clients disconnection?.
 _get = missionNamespace getVariable Format["cti_HEADLESS_%1", _uid];
@@ -73,8 +72,7 @@ if (isNil '_old_unit') then {
 
 if (isNull _old_unit) then {
 	_old_unit = leader _team;
-	["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] current team leader is dead or nil, using original team leader [%3].", _name, _uid, _team]] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] current team leader is dead or nil, using original team leader [%3].", _name, _uid, _team]] Call EZC_fnc_Functions_Common_LogContent;
 };
 _old_unit_group = group _old_unit;
 
@@ -91,8 +89,7 @@ if (vehicle _old_unit == _hq) then {_old_unit action ["EJECT", _hq]};
 deleteVehicle _old_unit;
 
 //--- If we choose not to keep the current units during this session, then we simply remove them.
-["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] units are now being removed for AI Team [%3].", _name, _uid, _team]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] units are now being removed for AI Team [%3].", _name, _uid, _team]] Call EZC_fnc_Functions_Common_LogContent;
 _units = units _team;
 _units = _units + ([_team,false] Call cti_CO_FNC_GetTeamVehicles) - [_hq];
 {if (!isPlayer _x && !(_x in playableUnits)) then {deleteVehicle _x}} forEach _units;

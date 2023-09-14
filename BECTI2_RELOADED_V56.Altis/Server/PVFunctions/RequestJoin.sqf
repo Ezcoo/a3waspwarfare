@@ -34,8 +34,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	        _canJoin = false;
 			missionNamespace setVariable [format["cti_JIP_USER%1",_uid], nil];
 			['Teamstack',_name,_uid,_side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _player];
-			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamstacking,joined side [%3].", _name,_uid,_side]] Call EZC_fnc_Functions_Common_LogContent
-;
+			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamstacking,joined side [%3].", _name,_uid,_side]] Call EZC_fnc_Functions_Common_LogContent;
 			_get set [4,0];
 		};
 
@@ -50,19 +49,16 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 			sleep 12;
 
-			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call EZC_fnc_Functions_Common_LogContent
-;
+			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call EZC_fnc_Functions_Common_LogContent;
 		}else {
 			_canJoin = true;
 		};
 	};
 
 } else {
-	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call EZC_fnc_Functions_Common_LogContent
-;
+	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call EZC_fnc_Functions_Common_LogContent;
 };
 
 
-["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call EZC_fnc_Functions_Common_LogContent;
 ['join-answer', _canJoin] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _player];

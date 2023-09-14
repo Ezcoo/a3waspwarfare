@@ -182,8 +182,7 @@ profilenamespace setvariable ['igui_grid_gaugestability_h',0.0];
 
 Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat'];
 
-["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent;
 
 
 call compile preprocessFile "Client\Functions\Client_RemoteTowVehicle.sqf";
@@ -209,8 +208,7 @@ _reqAddons = "";
 foreach cti_REQ_ADDONS;
 
 if(count (toArray(_reqAddons)) > 0) then { 
-	["WARNING", Format["Init_Client.sqf: Client [%1] have not required addons: [%2], and is now being sent back to the lobby.", name player, _reqAddons]] Call EZC_fnc_Functions_Common_LogContent
-;
+	["WARNING", Format["Init_Client.sqf: Client [%1] have not required addons: [%2], and is now being sent back to the lobby.", name player, _reqAddons]] Call EZC_fnc_Functions_Common_LogContent;
 	titleText [(localize "STR_WF_ReqAddons") + ": \n"+_reqAddons, "BLACK FADED", 20];
 	sleep 20;
 	failMission "END1";
@@ -433,8 +431,7 @@ Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Special.sqf'
 //--- Waiting for the common part to be executed.
 waitUntil {commonInitComplete};
 
-["INITIALIZATION", Format ["Init_Client.sqf: Common initialization is complete at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", Format ["Init_Client.sqf: Common initialization is complete at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent;
 
 
 cti_CL_FNC_UI_Gear_SaveTemplateProfile = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_SaveTemplateProfile.sqf";
@@ -534,19 +531,16 @@ if ((missionNamespace getVariable "cti_C_UNITS_TRACK_LEADERS") > 0) then {[] exe
 [] Spawn {
 	waitUntil {townInit};
 	/* Handle the capture GUI */
-	["INITIALIZATION", "Init_Client.sqf: Initializing the Town Capture FSM"] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "Init_Client.sqf: Initializing the Town Capture FSM"] Call EZC_fnc_Functions_Common_LogContent;
 	[] execVM "Client\FSM\client_title_capture.sqf";
 	/* Handle the map town markers */
-	["INITIALIZATION", "Init_Client.sqf: Initializing the Towns Marker FSM"] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "Init_Client.sqf: Initializing the Towns Marker FSM"] Call EZC_fnc_Functions_Common_LogContent;
 	[] execVM "Client\FSM\updatetownmarkers.sqf";
 	waitUntil {!isNil {cti_Client_Logic getVariable "cti_structures"}};
 	waitUntil {!isNil {cti_Client_Logic getVariable "cti_supply"}};
 
 	/* Handle the client actions */
-	["INITIALIZATION", "Init_Client.sqf: Initializing the Available Actions FSM"] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "Init_Client.sqf: Initializing the Available Actions FSM"] Call EZC_fnc_Functions_Common_LogContent;
 	[] execVM "Client\FSM\updateavailableactions.sqf";
 };
 
@@ -554,8 +548,7 @@ if ((missionNamespace getVariable "cti_C_UNITS_TRACK_LEADERS") > 0) then {[] exe
 	Private ["_commanderTeam"];
 	waitUntil {!isNil {cti_Client_Logic getVariable "cti_commander"}};
 	/* Commander Handling */
-	["INITIALIZATION", "Init_Client.sqf: Initializing the Commander Update FSM"] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "Init_Client.sqf: Initializing the Commander Update FSM"] Call EZC_fnc_Functions_Common_LogContent;
 	[] ExecVM "Client\FSM\updateclient.sqf";
 };
 
@@ -572,12 +565,10 @@ if ((missionNamespace getVariable "cti_C_UNITS_TRACK_LEADERS") > 0) then {[] exe
 //--- HQ Radio system.
 waitUntil {!isNil {cti_Client_Logic getVariable "cti_radio_hq"}};
 _HQRadio = cti_Client_Logic getVariable "cti_radio_hq";
-["INITIALIZATION", Format["Init_Client.sqf: Initialized the Radio Announcer [%1]", _HQRadio]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", Format["Init_Client.sqf: Initialized the Radio Announcer [%1]", _HQRadio]] Call EZC_fnc_Functions_Common_LogContent;
 waitUntil {!isNil {cti_Client_Logic getVariable "cti_radio_hq_id"}};
 cti_V_HQTopicSide = cti_Client_Logic getVariable "cti_radio_hq_id";
-["INITIALIZATION", Format["Init_Client.sqf: Initializing the Radio Announcer Identity [%1]", cti_V_HQTopicSide]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", Format["Init_Client.sqf: Initializing the Radio Announcer Identity [%1]", cti_V_HQTopicSide]] Call EZC_fnc_Functions_Common_LogContent;
 _HQRadio setIdentity cti_V_HQTopicSide;
 _HQRadio setRank "COLONEL";
 _HQRadio setGroupId ["HQ"];
@@ -585,8 +576,7 @@ _HQRadio kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{c
 player kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call compile preprocessFileLineNumbers "Client\kb\hq.sqf"}];
 sideHQ = _HQRadio;
 
-["INITIALIZATION", "Init_Client.sqf: Radio announcer is initialized."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Client.sqf: Radio announcer is initialized."] Call EZC_fnc_Functions_Common_LogContent;
 
 /* Wait for a valid signal (Teamswapping) with failover */
 if (isMultiplayer && time > 7) then {
@@ -607,15 +597,13 @@ if (isMultiplayer && time > 7) then {
 		_timelaps = _timelaps + 0.1;
 		if (_timelaps > 15) then {
 			_timelaps = 0;
-			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no ACK was received from the server, a new request will be submitted.",cti_Client_SideJoined,name player]] Call EZC_fnc_Functions_Common_LogContent
-;
+			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no ACK was received from the server, a new request will be submitted.",cti_Client_SideJoined,name player]] Call EZC_fnc_Functions_Common_LogContent;
 			[player, cti_Client_SideJoined] remoteExecCall ["EZC_fnc_PVFunctions_RequestJoin",2];
 		};
 	};
 
 	if !(_get) exitWith {
-		["WARNING", Format["Init_Client.sqf: [%1] Client [%2] has teamswapped/STACKED and is now being sent back to the lobby.",cti_Client_SideJoined,name player]] Call EZC_fnc_Functions_Common_LogContent
-;
+		["WARNING", Format["Init_Client.sqf: [%1] Client [%2] has teamswapped/STACKED and is now being sent back to the lobby.",cti_Client_SideJoined,name player]] Call EZC_fnc_Functions_Common_LogContent;
 
 		sleep 12;
 		failMission "END1";
@@ -623,8 +611,7 @@ if (isMultiplayer && time > 7) then {
 };
 
 /* Get the client starting location */
-["INITIALIZATION", "Init_Client.sqf: Retrieving the client spawn location."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Client.sqf: Retrieving the client spawn location."] Call EZC_fnc_Functions_Common_LogContent;
 _base = objNull;
 if (time < 30) then {
 	waitUntil {!isNil {cti_Client_Logic getVariable "cti_startpos"}};
@@ -638,8 +625,7 @@ if (time < 30) then {
 	if (count _buildings > 0) then {_base = _buildings select 0;};
 };
 
-["INITIALIZATION", Format["Init_Client.sqf: Client spawn location has been determined at [%1].", _base]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", Format["Init_Client.sqf: Client spawn location has been determined at [%1].", _base]] Call EZC_fnc_Functions_Common_LogContent;
 
 /* Position the client at the previously defined location */
 player setPos ([_base,20,30] Call cti_CO_FNC_GetRandomPosition);
@@ -647,8 +633,7 @@ player setPos ([_base,20,30] Call cti_CO_FNC_GetRandomPosition);
 /* HQ Building Init. */
 waitUntil {!isNil {cti_Client_Logic getVariable "cti_hq_deployed"}};
 
-["INITIALIZATION", "Init_Client.sqf: Initializing COIN Module."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Client.sqf: Initializing COIN Module."] Call EZC_fnc_Functions_Common_LogContent;
 _isDeployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;
 if (_isDeployed) then {
 	[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call EZC_fnc_Init_Init_Coin;
@@ -692,14 +677,12 @@ if (WF_Debug) then {
 
 /* JIP Handler */
 waitUntil {townInit};
-["INITIALIZATION", "Init_Client.sqf: Towns are initialized."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Client.sqf: Towns are initialized."] Call EZC_fnc_Functions_Common_LogContent;
 
 /* JIP System, initialize the camps and towns properly. */
 [] Spawn {
 	sleep 2;
-	["INITIALIZATION", "Init_Client.sqf: Updating JIP Markers."] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "Init_Client.sqf: Updating JIP Markers."] Call EZC_fnc_Functions_Common_LogContent;
 	Call Compile preprocessFileLineNumbers "Client\Init\Init_Markers.sqf";
 };
 
@@ -871,12 +854,12 @@ if (player in _allplayercontainer) then	{
 //player addAction ["<t color='#FF0000'>BISHALO","HALO.sqf"];
 
 
-player addAction ["<t color=""#FFE496"">" +"Attach AP Mine Charge", EtV_AttachCharge, ["APERSMine_Range_Mag",player], 60, true, true, "","['APERSMine_Range_Mag',_target] call EtV_ChargeCheck",5];
-player addAction ["<t color=""#FFE496"">" +"Attach Claymore Charge", EtV_AttachCharge, ["ClaymoreDirectionalMine_Remote_Mag",player], 59, true, true, "","['ClaymoreDirectionalMine_Remote_Mag',_target] call EtV_ChargeCheck",5];
-player addAction ["<t color=""#FFE496"">" +"Attach M6 Charge", EtV_AttachCharge, ["SLAMDirectionalMine_Wire_Mag",player], 58, true, true, "","['SLAMDirectionalMine_Wire_Mag',_target] call EtV_ChargeCheck",5];
-player addAction ["<t color=""#FFE496"">" +"Attach C4 Charge", EtV_AttachCharge, ["DemoCharge_Remote_Mag",player], 57, true, true, "","['DemoCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
-player addAction ["<t color=""#FFE496"">" +"Attach BIG C4 Charge", EtV_AttachCharge, ["SatchelCharge_Remote_Mag",player], 56, true, true, "","['SatchelCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
-player addAction ["<t color=""#FFE496"">" +"Attach PipeBomb Charge", EtV_AttachCharge, ["CUP_PipeBomb_M",player], 55, true, true, "","['CUP_PipeBomb_M',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach AP Mine Charge", EZC_fnc_Functions_Client_AttachCharge, ["APERSMine_Range_Mag",player], 60, true, true, "","['APERSMine_Range_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach Claymore Charge", EZC_fnc_Functions_Client_AttachCharge, ["ClaymoreDirectionalMine_Remote_Mag",player], 59, true, true, "","['ClaymoreDirectionalMine_Remote_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach M6 Charge", EZC_fnc_Functions_Client_AttachCharge, ["SLAMDirectionalMine_Wire_Mag",player], 58, true, true, "","['SLAMDirectionalMine_Wire_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach C4 Charge", EZC_fnc_Functions_Client_AttachCharge, ["DemoCharge_Remote_Mag",player], 57, true, true, "","['DemoCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach BIG C4 Charge", EZC_fnc_Functions_Client_AttachCharge, ["SatchelCharge_Remote_Mag",player], 56, true, true, "","['SatchelCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach PipeBomb Charge", EZC_fnc_Functions_Client_AttachCharge, ["CUP_PipeBomb_M",player], 55, true, true, "","['CUP_PipeBomb_M',_target] call EtV_ChargeCheck",5];
 
 player addAction ["<img image='\a3\ui_f\data\gui\cfg\Hints\ammo_ap_ca.paa' />", "Client\Module\Jumper\Earplugtoogle.sqf", [], 100, FALSE, FALSE, "", ""];
 
@@ -1075,15 +1058,14 @@ if (player == BTeamleader5)then{missionNamespace getVariable Format["cti_%1_Defa
 
 
 
-[player, _roleDefaultGear] call cti_CO_FNC_EquipUnit;
-cti_P_CurrentGear = (player) call cti_CO_FNC_GetUnitLoadout;
+[player, _roleDefaultGear] call EZC_fnc_Functions_Common_EquipUnit;
+cti_P_CurrentGear = (player) call EZC_fnc_Functions_Common_GetUnitLoadout;
 
 [] execVM "WASP\actions\AddActions.sqf";
 
 
 /* Vote System, define whether a vote is already running or not */
-["INITIALIZATION", "Init_Client.sqf: Vote system is initialized."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Client.sqf: Vote system is initialized."] Call EZC_fnc_Functions_Common_LogContent;
 if ((cti_Client_Logic getVariable "cti_votetime") > 0) then {createDialog "cti_VoteMenu"};
 
 /* Towns Task System */
@@ -1137,5 +1119,4 @@ if(!WF_Skip_Intro)then{
 _igiload = execVM "Client\Module\IgiLoad\IgiLoadInit.sqf";
 
 
-["INITIALIZATION", Format ["Init_Client.sqf: Client initialization ended at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", Format ["Init_Client.sqf: Client initialization ended at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent;

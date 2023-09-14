@@ -38,8 +38,7 @@ if (cti_Client_SideID == _sideID_new) then {
 				[player,score player + (missionNamespace getVariable 'cti_C_PLAYERS_SCORE_CAPTURE_CAMP')] remoteExecCall ["cti_SE_PVF_RequestChangeScore",2];
 				
 				(missionNamespace getVariable "cti_C_CAMPS_CAPTURE_BOUNTY") Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-				["INFORMATION", Format ["Player %1 has captured camp in town: %2).", name player, _town getVariable "name"]] Call EZC_fnc_Functions_Common_LogContent
-;
+				["INFORMATION", Format ["Player %1 has captured camp in town: %2).", name player, _town getVariable "name"]] Call EZC_fnc_Functions_Common_LogContent;
 			};
 		// };
 	// };

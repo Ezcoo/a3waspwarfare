@@ -128,7 +128,6 @@ if(isHeadLessClient)then{
     WF_Logic setVariable ["emptyVehicles",_emptyVehicles,true]
 };
 
-["INFORMATION", Format ["Common_CreateVehicle.sqf: [%1] Vehicle [%2] was created at [%3].", _side Call cti_CO_FNC_GetSideFromID, _type, _position]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Common_CreateVehicle.sqf: [%1] Vehicle [%2] was created at [%3].", _side Call cti_CO_FNC_GetSideFromID, _type, _position]] Call EZC_fnc_Functions_Common_LogContent;
 
 _vehicle

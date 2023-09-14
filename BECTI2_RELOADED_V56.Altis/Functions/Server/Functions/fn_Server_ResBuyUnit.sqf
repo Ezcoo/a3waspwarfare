@@ -16,8 +16,7 @@ _sideText = str _side;
 if !(alive _building) exitWith {["INFORMATION", Format ["Server_ResBuyUnit.sqf: Unit [%1] construction has been stopped due to factory destruction.", _unitType]] Call EZC_fnc_Functions_Common_LogContent
 };
 
-["INFORMATION", Format ["Server_ResBuyUnit.sqf: [%1] Team has purchased a [%1] unit.",_team, _unitType]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_ResBuyUnit.sqf: [%1] Team has purchased a [%1] unit.",_team, _unitType]] Call EZC_fnc_Functions_Common_LogContent;
 
 _type = typeOf _building;
 

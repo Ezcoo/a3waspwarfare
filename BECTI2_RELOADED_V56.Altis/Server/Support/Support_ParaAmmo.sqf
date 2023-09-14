@@ -7,8 +7,7 @@ _side = _args select 1;
 _sideID = _side Call EZC_fnc_Functions_Common_GetSideID;
 
 _playerTeam = (_args select 3);
-["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent;
 _ranPos = [];
 _ranDir = [];
 
@@ -118,8 +117,7 @@ _side = _args select 1;
 _sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
 _playerTeam = (_args select 3);
-["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent;
 _ranPos = [];
 _ranDir = [];
 

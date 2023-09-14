@@ -21,5 +21,4 @@ for '_i' from 0 to count(_c)-1 do {
 
 for '_i' from 0 to (count _def_kinds)-1 do {missionNamespace setVariable [Format ["cti_%1_Defenses_%2", _side,_def_kinds select _i], _def_kinds_content select _i]};
 
-["INFORMATION", Format ["Config_Defenses_Towns.sqf : [%1] [%2] Category defined.", _side, count _def_kinds]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Config_Defenses_Towns.sqf : [%1] [%2] Category defined.", _side, count _def_kinds]] Call EZC_fnc_Functions_Common_LogContent;

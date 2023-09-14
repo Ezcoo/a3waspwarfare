@@ -41,8 +41,7 @@ if (isNil '_killed_side') then {
 	_killed_side = side _killed;
 };
 
-["INFORMATION", Format ["Common_OnUnitKilled.sqf: [%1] [%2] has been killed by [%3].", _killed_side, _killed, _killer]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Common_OnUnitKilled.sqf: [%1] [%2] has been killed by [%3].", _killed_side, _killed, _killer]] Call EZC_fnc_Functions_Common_LogContent;
 
 if !(alive _killer) exitWith {}; //--- Killer is null or dead, nothing to see here.
 

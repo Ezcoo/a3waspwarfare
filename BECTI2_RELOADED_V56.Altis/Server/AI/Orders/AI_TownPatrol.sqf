@@ -24,7 +24,6 @@ for [{_z=0},{_z<=(count _destinations)-1},{_z=_z+1}] do {
 	_wps pushBack ([_pos,_type,35,40,"",[]]);
 };
 
-["INFORMATION", Format ["AI_Patrol.sqf: [%1] Team [%2] is patrolling at [%3].", side _team,_team,_destination]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["AI_Patrol.sqf: [%1] Team [%2] is patrolling at [%3].", side _team,_team,_destination]] Call EZC_fnc_Functions_Common_LogContent;
 
 [_team, true, _wps] Call cti_SE_FNC_AIWPAdd;

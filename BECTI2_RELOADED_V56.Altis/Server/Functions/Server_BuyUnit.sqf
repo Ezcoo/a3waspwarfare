@@ -18,8 +18,7 @@ if (!(alive _building)||(isPlayer (leader _team))) exitWith {
 };
 };
 
-["INFORMATION", Format ["Server_BuyUnit.sqf: [%1] Team [%2] has purchased [%3].", _side,_team,_unitType]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_BuyUnit.sqf: [%1] Team [%2] has purchased [%3].", _side,_team,_unitType]] Call EZC_fnc_Functions_Common_LogContent;
 
 _queu = _building getVariable "queu";
 if (isNil "_queu") then {_queu = []};

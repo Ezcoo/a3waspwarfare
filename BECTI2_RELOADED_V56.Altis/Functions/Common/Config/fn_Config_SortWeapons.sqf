@@ -31,12 +31,10 @@ if (isNil '_getall') then {_getall = []};
 				};
 			};
 		} else {
-			["ERROR", Format["Config_SortWeapons.sqf : [%1] Weapon [%2] does not belong to any known pool.", _side, _x]] Call EZC_fnc_Functions_Common_LogContent
-;
+			["ERROR", Format["Config_SortWeapons.sqf : [%1] Weapon [%2] does not belong to any known pool.", _side, _x]] Call EZC_fnc_Functions_Common_LogContent;
 		};
 	} else {
-		["ERROR", Format["Config_SortWeapons.sqf : [%1] Weapon [%2] is not defined inside the Gear files.", _side, _x]] Call EZC_fnc_Functions_Common_LogContent
-;
+		["ERROR", Format["Config_SortWeapons.sqf : [%1] Weapon [%2] is not defined inside the Gear files.", _side, _x]] Call EZC_fnc_Functions_Common_LogContent;
 	};
 } forEach _w;
 

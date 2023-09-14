@@ -162,5 +162,4 @@ switch (missionNamespace getVariable "cti_C_TOWNS_STARTING_MODE") do {
 
 townInitServer = true;
 
-["INITIALIZATION", "Init_Server.sqf: Town starting mode is done."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Server.sqf: Town starting mode is done."] Call EZC_fnc_Functions_Common_LogContent;

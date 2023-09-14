@@ -137,13 +137,11 @@ if (!isNull _site) then {
 
 	Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn cti_SE_FNC_BuildingKilled}];",_type];
 	
-	["INFORMATION", Format ["Construction_SmallSite.sqf: [%1] Structure [%2] has been constructed.", str _side, _type]] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INFORMATION", Format ["Construction_SmallSite.sqf: [%1] Structure [%2] has been constructed.", str _side, _type]] Call EZC_fnc_Functions_Common_LogContent;
 };
 
 //--- Base Patrols.
 if (_rlType == "Barracks" && (missionNamespace getVariable "cti_C_BASE_PATROLS_INFANTRY") > 0) then {
 	[_site, _side] ExecVM 'Server\FSM\basepatrol.sqf';
-	["INFORMATION", Format ["Construction_SmallSite.sqf: [%1] Base patrol has been triggered upon Barrack creation.", str _side]] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INFORMATION", Format ["Construction_SmallSite.sqf: [%1] Base patrol has been triggered upon Barrack creation.", str _side]] Call EZC_fnc_Functions_Common_LogContent;
 };

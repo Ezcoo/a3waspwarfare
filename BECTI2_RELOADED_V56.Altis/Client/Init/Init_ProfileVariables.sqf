@@ -45,5 +45,4 @@ if !(isNil '_profile_var') then {
 	};
 };
 
-["INITIALIZATION", "Init_ProfileVariables.sqf: Possible profile variables were defined."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_ProfileVariables.sqf: Possible profile variables were defined."] Call EZC_fnc_Functions_Common_LogContent;

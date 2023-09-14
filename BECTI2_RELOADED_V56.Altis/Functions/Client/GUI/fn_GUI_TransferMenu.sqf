@@ -51,8 +51,7 @@ while {alive player && dialog} do {
 						if (isPlayer leader _selected) then {
 								['FundsTransfer',_funds_transfering,name player] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", leader _selected];
 								
-								["INFORMATION", Format ["Player %1 has sent cash to player %2).", name player, name leader _selected]] Call EZC_fnc_Functions_Common_LogContent
-;
+								["INFORMATION", Format ["Player %1 has sent cash to player %2).", name player, name leader _selected]] Call EZC_fnc_Functions_Common_LogContent;
 						};
 						_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 						_last_update = -1;

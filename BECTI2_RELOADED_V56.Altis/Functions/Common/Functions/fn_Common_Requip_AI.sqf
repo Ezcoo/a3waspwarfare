@@ -91,7 +91,7 @@ switch (typeOf _this) do
 	*/
 };
 
-//[_this, _gear] call cti_CO_FNC_EquipUnit;
+//[_this, _gear] call EZC_fnc_Functions_Common_EquipUnit;
 
 
 

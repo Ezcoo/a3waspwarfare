@@ -46,5 +46,4 @@ _logik setVariable ['cti_hq_repair_count', (_logik getVariable "cti_hq_repair_co
 deleteVehicle _hq;	
 		
 
-["INFORMATION", Format ["Server_MHQRepair.sqf: [%1] MHQ has been repaired.", _sideText]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INFORMATION", Format ["Server_MHQRepair.sqf: [%1] MHQ has been repaired.", _sideText]] Call EZC_fnc_Functions_Common_LogContent;

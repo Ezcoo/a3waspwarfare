@@ -9,5 +9,4 @@ for '_i' from 0 to (count (missionConfigFile >> "Params"))-1 do {
 	missionNamespace setVariable [_paramName, _value];
 };
 
-["INITIALIZATION", "Init_Parameters.sqf: Parameters are defined."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Parameters.sqf: Parameters are defined."] Call EZC_fnc_Functions_Common_LogContent;

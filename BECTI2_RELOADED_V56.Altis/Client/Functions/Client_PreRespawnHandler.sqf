@@ -16,19 +16,19 @@ _allplayercontainer = [OTeamleader1,OTeamleader2,OTeamleader3,OTeamleader4,OTeam
 if (player in _allplayercontainer) then	{
 //player addAction ["<t color='#FF0000'>BISHALO","HALO.sqf"];
 
-player addAction ["<t color=""#FFE496"">" +"Attach AP Mine Charge", EtV_AttachCharge, ["APERSMine_Range_Mag",player], 1, true, true, "","['APERSMine_Range_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach AP Mine Charge", EZC_fnc_Functions_Client_AttachCharge, ["APERSMine_Range_Mag",player], 1, true, true, "","['APERSMine_Range_Mag',_target] call EtV_ChargeCheck",5];
 
 
-player addAction ["<t color=""#FFE496"">" +"Attach Claymore Charge", EtV_AttachCharge, ["ClaymoreDirectionalMine_Remote_Mag",player], 1, true, true, "","['ClaymoreDirectionalMine_Remote_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach Claymore Charge", EZC_fnc_Functions_Client_AttachCharge, ["ClaymoreDirectionalMine_Remote_Mag",player], 1, true, true, "","['ClaymoreDirectionalMine_Remote_Mag',_target] call EtV_ChargeCheck",5];
 
-player addAction ["<t color=""#FFE496"">" +"Attach M6 Charge", EtV_AttachCharge, ["SLAMDirectionalMine_Wire_Mag",player], 1, true, true, "","['SLAMDirectionalMine_Wire_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach M6 Charge", EZC_fnc_Functions_Client_AttachCharge, ["SLAMDirectionalMine_Wire_Mag",player], 1, true, true, "","['SLAMDirectionalMine_Wire_Mag',_target] call EtV_ChargeCheck",5];
 
 
-player addAction ["<t color=""#FFE496"">" +"Attach C4 Charge", EtV_AttachCharge, ["DemoCharge_Remote_Mag",player], 1, true, true, "","['DemoCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach C4 Charge", EZC_fnc_Functions_Client_AttachCharge, ["DemoCharge_Remote_Mag",player], 1, true, true, "","['DemoCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
 
-player addAction ["<t color=""#FFE496"">" +"Attach BIG C4 Charge", EtV_AttachCharge, ["SatchelCharge_Remote_Mag",player], 1, true, true, "","['SatchelCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach BIG C4 Charge", EZC_fnc_Functions_Client_AttachCharge, ["SatchelCharge_Remote_Mag",player], 1, true, true, "","['SatchelCharge_Remote_Mag',_target] call EtV_ChargeCheck",5];
 
-player addAction ["<t color=""#FFE496"">" +"Attach PipeBomb Charge", EtV_AttachCharge, ["CUP_PipeBomb_M",player], 1, true, true, "","['CUP_PipeBomb_M',_target] call EtV_ChargeCheck",5];
+player addAction ["<t color=""#FFE496"">" +"Attach PipeBomb Charge", EZC_fnc_Functions_Client_AttachCharge, ["CUP_PipeBomb_M",player], 1, true, true, "","['CUP_PipeBomb_M',_target] call EtV_ChargeCheck",5];
 
 
 player addAction ["Deploy Tow Ropes", {
