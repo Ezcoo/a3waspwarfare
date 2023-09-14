@@ -31,7 +31,7 @@ _unit = _group createUnit [_type, _position, [], 5, _special];
  if (_UpBar > 1)then { _unit linkItem "CUP_NVG_HMNVS";};
 
 
-if (typeName _side == "SIDE") then {_side = (_side) Call cti_CO_FNC_GetSideID;};
+if (typeName _side == "SIDE") then {_side = (_side) Call EZC_fnc_Functions_Common_GetSideID;};
 
 //--Check the need for unit re-equip--
 for "_x" from 0 to ((count cti_C_INFANTRY_TO_REQUIP) - 1) do {
@@ -65,7 +65,7 @@ _unit 	addEventHandler ["HandleDamage", {
 };
 
 
-_unit addEventHandler ['Killed', Format ['[_this select 0,_this select 1,%1] Spawn cti_CO_FNC_OnUnitKilled', _side]];
+_unit addEventHandler ['Killed', Format ['[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled', _side]];
 
 
 _unit setSkill 1;

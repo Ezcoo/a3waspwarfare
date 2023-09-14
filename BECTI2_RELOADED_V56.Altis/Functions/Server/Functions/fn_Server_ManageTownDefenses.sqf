@@ -10,7 +10,7 @@ Private ["_defense","_side","_side_old","_sideID","_spawn","_town"];
 _town = _this select 0;
 _side = _this select 1;
 _sideID_old = _this select 2;
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
 //--- Browse all the defenses of the town.
 {

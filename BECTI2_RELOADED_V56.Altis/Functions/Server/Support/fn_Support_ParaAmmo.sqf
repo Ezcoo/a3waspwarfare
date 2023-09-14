@@ -4,7 +4,7 @@ Private['_args','_bd','_cargo','_grp','_pilot','_playerTeam','_positionCoord','_
 
 _args = _this;
 _side = _args select 1;
-_sideID = _side Call cti_CO_FNC_GetSideID;
+_sideID = _side Call EZC_fnc_Functions_Common_GetSideID;
 
 _playerTeam = (_args select 3);
 ["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent
@@ -31,15 +31,15 @@ _ran = round(random((count _ranPos)-1));
 _grp = createGroup [_side, true];
 _vehicle = createVehicle [missionNamespace getVariable Format ["cti_%1PARAVEHI",str _side],(_ranPos select _ran), [], (_ranDir select _ran), "FLY"];
 _pilot = [missionNamespace getVariable Format ["cti_%1PILOT",str _side],_grp,[100,12000,0],_sideID] Call cti_CO_FNC_CreateUnit;
-[str _side,'VehiclesCreated',1] Call cti_CO_FNC_UpdateStatistics;
-[str _side,'UnitsCreated',1] Call cti_CO_FNC_UpdateStatistics;
+[str _side,'VehiclesCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
+[str _side,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 _pilot moveInDriver _vehicle;
 _grp setBehaviour 'CARELESS';
 _grp setCombatMode 'STEALTH';
 _pilot disableAI 'AUTOTARGET';
 _pilot disableAI 'TARGET';
 [_grp,(_args select 2),"MOVE",10] Call cti_SE_FNC_AIMoveTo;
-Call Compile Format ["_vehicle addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn cti_CO_FNC_OnUnitKilled}]",_sideID];
+Call Compile Format ["_vehicle addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled}]",_sideID];
 [[[_vehicle,_sideID], "Common\Init\Init_Unit.sqf"], "BIS_fnc_execVM", false, false] call BIS_fnc_MP;
 _vehicle flyInHeight (200 + random(20));
 _cargo = (crew _vehicle) - [driver _vehicle, gunner _vehicle, commander _vehicle];
@@ -85,7 +85,7 @@ while {true} do {
 			deleteVehicle _ammo;
 			_ammo = _type createVehicle _pos;
 			
-			Call Compile Format ["_ammo addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn cti_CO_FNC_OnUnitKilled}]",_sideID];
+			Call Compile Format ["_ammo addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled}]",_sideID];
 			
 			sleep 5;
 			
@@ -115,7 +115,7 @@ Private['_args','_bd','_cargo','_cargoVehicle','_grp','_pilot','_playerTeam','_p
 
 _args = _this;
 _side = _args select 1;
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
 _playerTeam = (_args select 3);
 ["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] called in an Ammo Paradrop.", str _side, _playerTeam, name (leader _playerTeam)]] Call EZC_fnc_Functions_Common_LogContent
@@ -147,8 +147,8 @@ _vehicle = createVehicle [missionNamespace getVariable Format ["cti_%1PARAVEHI",
 
 	
 
-[str _side,'VehiclesCreated',1] Call cti_CO_FNC_UpdateStatistics;
-[str _side,'UnitsCreated',1] Call cti_CO_FNC_UpdateStatistics;
+[str _side,'VehiclesCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
+[str _side,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 _pilot = [missionNamespace getVariable Format ["cti_%1PILOT",str _side],_grp,[100,12000,0],_sideID] Call cti_CO_FNC_CreateUnit;
 _pilot moveInDriver _vehicle;
 _pilot doMove (_args select 2);
@@ -157,7 +157,7 @@ _grp setCombatMode 'STEALTH';
 _pilot disableAI 'AUTOTARGET';
 _pilot disableAI 'TARGET';
 [_grp,(_args select 2),"MOVE",10] Call cti_SE_FNC_AIMoveTo;
-Call Compile Format ["_vehicle addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn cti_CO_FNC_OnUnitKilled}]",_sideID];
+Call Compile Format ["_vehicle addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled}]",_sideID];
 
 _vehicle flyInHeight (300 + random(75));
 _cargo = (crew _vehicle) - [driver _vehicle, gunner _vehicle, commander _vehicle];

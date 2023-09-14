@@ -4,7 +4,7 @@ _town = _this Select 0;
 _side = _this Select 1;
 _lives = if (count _this > 2) then {_this select 2} else {false};
 
-_sideID = _side Call cti_CO_FNC_GetSideID;
+_sideID = _side Call EZC_fnc_Functions_Common_GetSideID;
 _friendlyCamps = [];
 
 {

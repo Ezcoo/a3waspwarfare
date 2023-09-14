@@ -10,8 +10,8 @@ while {!cti_GameOver} do {
 	if (_victory == 0) then {
 		{
 			_side = _x;
-			_hq = (_x) Call cti_CO_FNC_GetSideHQ;
-			_structures = (_x) Call cti_CO_FNC_GetSideStructures;
+			_hq = (_x) Call EZC_fnc_Functions_Common_GetSideHQ;
+			_structures = (_x) Call EZC_fnc_Functions_Common_GetSideStructures;
 			_towns = (_x) Call cti_CO_FNC_GetTownsHeld;
 	
 			_factories = 0;
@@ -20,7 +20,7 @@ while {!cti_GameOver} do {
 			} forEach ["BARRACKS","LIGHT","HEAVY","AIRCRAFT"];
 
 			if (!(alive _hq)  && _factories == 0 || _towns == _total && !cti_GameOver) then {
-				["endgame", (_x) Call cti_CO_FNC_GetSideID] remoteExecCall ["cti_CL_FNC_HandleSpecial"];
+				["endgame", (_x) Call EZC_fnc_Functions_Common_GetSideID] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial"];
 				WF_Logic setVariable ["WF_Winner", _x];
 				cti_GameOver = true;
 			};

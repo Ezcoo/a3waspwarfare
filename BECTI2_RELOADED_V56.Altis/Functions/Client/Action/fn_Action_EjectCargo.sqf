@@ -10,13 +10,13 @@ _cargo = (crew _vehicle) - [driver _vehicle, gunner _vehicle, commander _vehicle
 		if (local _x) then {
 			//--- Dealing with a local unit, probably an AI.
 			
-			[_x,true,false] call cti_CL_FNC_HALO_JUMP;
+			[_x,true,false] call EZC_fnc_Functions_Client_HaloJump;
 					
 			
 		} else {
 			//--- Dealing with a player or a non local unit.
 			if (isPlayer(leader (group _x))) then {
-				["action-perform", _x, "EJECT", _vehicle] remoteExecCall ["cti_CL_FNC_HandleSpecial", leader(group _x)];
+				["action-perform", _x, "EJECT", _vehicle] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", leader(group _x)];
 			};
 		};
 	};

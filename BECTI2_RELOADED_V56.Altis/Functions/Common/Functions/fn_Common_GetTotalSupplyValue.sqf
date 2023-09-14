@@ -1,7 +1,7 @@
 Private["_side","_sideID","_totalSupply"];
 
 _side = _this;
-_sideID = _side Call cti_CO_FNC_GetSideID;
+_sideID = _side Call EZC_fnc_Functions_Common_GetSideID;
 _totalSupply = 0;
 
 {

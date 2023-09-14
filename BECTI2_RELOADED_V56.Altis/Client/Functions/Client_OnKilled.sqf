@@ -29,7 +29,7 @@ if(!cti_GameOver) then
 	waitUntil {alive player};
 
 	//--- Update the player.
-	["update-teamleader", cti_Client_Team, player] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+	["update-teamleader", cti_Client_Team, player] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 	//--- Make sure that player is always the leader (of his group).
 	if (group player == cti_Client_Team) then {
 		if (leader(group player) != player) then {(group player) selectLeader player};
@@ -38,10 +38,10 @@ if(!cti_GameOver) then
 	titleCut["","BLACK IN",1];
 
 	//--- Re-add the KEH to the client.
-	cti_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn cti_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn cti_CO_FNC_OnUnitKilled}];
+	cti_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn EZC_fnc_Functions_Client_OnKilled; [_this select 0,_this select 1, sideID] Spawn EZC_fnc_Functions_Common_OnUnitKilled}];
 
 	//--- Call the pre respawn routine.
-	(player) Call cti_CL_FNC_PreRespawnHandler;
+	(player) Call EZC_fnc_Functions_Client_PreRespawnHandler;
 
 	//--- Camera & PP thread
 	[] Spawn {

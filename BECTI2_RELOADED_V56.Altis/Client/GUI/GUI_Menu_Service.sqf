@@ -28,7 +28,7 @@ _lastVeh = objNull;
 _lastDmg = 0;
 _lastFue = 0;
 
-_buildings = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideStructures;
+_buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 
 //--- Service Point.
 _csp = objNull;
@@ -101,7 +101,7 @@ _i = 0;
 	};
 	
 	//--- Depots.
-	_nObject = [_x, (missionNamespace getVariable "cti_C_UNITS_SUPPORT_RANGE")] Call cti_CL_FNC_GetClosestDepot;
+	_nObject = [_x, (missionNamespace getVariable "cti_C_UNITS_SUPPORT_RANGE")] Call EZC_fnc_Functions_Client_GetClosestDepot;
 	
 	if !(isNull _nObject) then {
 		_add = true;
@@ -286,7 +286,7 @@ while {true} do {
 			-_rearmPrice Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			
 			//--- Spawn a Rearm thread.
-			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn cti_CL_FNC_SupportRearm;
+			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn EZC_fnc_Functions_Client_SupportRearm;
 		};	
 		
 		//--- Repair.
@@ -295,7 +295,7 @@ while {true} do {
 			-_repairPrice Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			
 			//--- Spawn a Repair thread.
-			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn cti_CL_FNC_SupportRepair;
+			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn EZC_fnc_Functions_Client_SupportRepair;
 		};
 		
 		//--- Refuel.
@@ -304,7 +304,7 @@ while {true} do {
 			-_refuelPrice Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			
 			//--- Spawn a Refuel thread.
-			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn cti_CL_FNC_SupportRefuel;
+			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn EZC_fnc_Functions_Client_SupportRefuel;
 		};
 		
 		//--- Heal.
@@ -313,7 +313,7 @@ while {true} do {
 			-_healPrice Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			
 			//--- Spawn a Healing thread.
-			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn cti_CL_FNC_SupportHeal;
+			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn EZC_fnc_Functions_Client_SupportHeal;
 		};
 		
 		//--- Texture.

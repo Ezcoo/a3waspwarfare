@@ -28,7 +28,7 @@ switch (_type) do {
 			_town setVariable ['taskLink',_task];
 		};
 		
-		["TownAssignClosest"] Spawn cti_CL_FNC_TaskSystem;
+		["TownAssignClosest"] Spawn EZC_fnc_Functions_Client_TaskSystem;
 	};
 	
 	//--- Assign the closest town to the player.
@@ -36,7 +36,7 @@ switch (_type) do {
 		sleep 4;
 		_next = [player,cti_Client_SideJoined] Call cti_CO_FNC_GetClosestLocationBySide;
 		if !(isNull _next) then {
-			["TownHintNew",_next] Spawn cti_CL_FNC_TaskSystem;
+			["TownHintNew",_next] Spawn EZC_fnc_Functions_Client_TaskSystem;
 			_task = (_next getVariable 'taskLink');
 			/* Keep the commander order ! */
 			if (!isNull comTask) then {

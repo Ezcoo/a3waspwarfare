@@ -1,9 +1,9 @@
 Private ["_currency","_currencySym","_hq","_repairPrice","_commander","_towns","_logik","_get"];
 
 _commander = (cti_Client_SideJoined) call cti_CO_FNC_GetCommanderTeam;
-_logik = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideLogic;
+_logik = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic;
 _get = _logik getVariable "cashrepaired";
-_hq = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
+_hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 
 if (alive _hq ) exitWith {hint (localize "STR_WF_INFO_Repair_MHQ_None")};
 

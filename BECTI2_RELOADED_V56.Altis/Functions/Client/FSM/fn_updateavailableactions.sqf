@@ -44,8 +44,8 @@ while {!cti_GameOver} do {
 	
 	while {time - _lastUpdate > 5 || cti_ForceUpdate} do {
 		
-		_buildings = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideStructures;
-		_base = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
+		_buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
+		_base = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 		_purchaseRange = if (commandInRange) then {_ccr} else {_pur};
 
 		//--- Boundaries are limited ?
@@ -71,7 +71,7 @@ while {!cti_GameOver} do {
 		
 
 								_nObject = objNull;
-								_nObject = [vehicle player, _gear_field_range] Call cti_CL_FNC_GetClosestCamp;
+								_nObject = [vehicle player, _gear_field_range] Call EZC_fnc_Functions_Client_GetClosestCamp;
 								gearInRange = if !(isNull _nObject) then {true} else {false};
 			};
 			
@@ -105,14 +105,14 @@ while {!cti_GameOver} do {
 		*/
 		
 		//--- Town Depot.
-		depotInRange = if !(isNull ([vehicle player, _tcr] Call cti_CL_FNC_GetClosestDepot)) then {true} else {false};
+		depotInRange = if !(isNull ([vehicle player, _tcr] Call EZC_fnc_Functions_Client_GetClosestDepot)) then {true} else {false};
 		if (depotInRange) then {serviceInRange = true;};
 
 		_checks = ['COMMANDCENTERTYPE',_buildings,_ccr,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange;
 		commandInRange = if (isNull _checks) then {false} else {true};
 
 		//--- Airport.
-		hangarInRange = if !(isNull ([vehicle player, _pura] Call cti_CL_FNC_GetClosestAirport)) then {true} else {false};
+		hangarInRange = if !(isNull ([vehicle player, _pura] Call EZC_fnc_Functions_Client_GetClosestAirport)) then {true} else {false};
 
 		_usable = [hqInRange,barracksInRange,gearInRange,lightInRange,heavyInRange,aircraftInRange,hangarInRange,serviceInRange,serviceInRange,commandInRange,antiAirRadarInRange];
 

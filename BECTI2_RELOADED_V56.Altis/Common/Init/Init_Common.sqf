@@ -71,7 +71,7 @@ cti_CO_FNC_SetTeamRespawn = Compile preprocessFileLineNumbers "Common\Functions\
 cti_CO_FNC_SetTeamMoveMode = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamMoveMode.sqf";
 cti_CO_FNC_SetTeamMovePos = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamMovePos.sqf";
 cti_CO_FNC_SetTeamType = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTeamType.sqf";
-cti_CO_FNC_UpdateStatistics = Compile preprocessFileLineNumbers "Common\Functions\Common_UpdateStatistics.sqf";  // USE IT FOR GLOBAL STATISTIC COLLECTOR
+EZC_fnc_Functions_Common_UpdateStatistics = Compile preprocessFileLineNumbers "Common\Functions\Common_UpdateStatistics.sqf";  // USE IT FOR GLOBAL STATISTIC COLLECTOR
 cti_CO_FNC_TrashObject = Compile preprocessFile "Common\Functions\Common_TrashObject.sqf";
 cti_CO_FNC_GetClosestStructure = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetClosestStructure.sqf";
 
@@ -114,13 +114,13 @@ cti_CO_FNC_GetEmptyPosition = Compile preprocessFileLineNumbers "Common\Function
 cti_CO_FNC_GetLiveUnits = Compile preprocessFileLineNumbers "Common\Functions\Common_GetLiveUnits.sqf";
 cti_CO_FNC_GetRandomPosition = Compile preprocessFileLineNumbers "Common\Functions\Common_GetRandomPosition.sqf";
 cti_CO_FNC_GetSideFromID = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideFromID.sqf";
-cti_CO_FNC_GetSideHQDeployStatus = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideHQDeployStatus.sqf";
-cti_CO_FNC_GetSideHQ = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideHQ.sqf";
-cti_CO_FNC_GetSideID = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideID.sqf";
+EZC_fnc_Functions_Common_GetSideHQDeployStatus = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideHQDeployStatus.sqf";
+EZC_fnc_Functions_Common_GetSideHQ = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideHQ.sqf";
+EZC_fnc_Functions_Common_GetSideID = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideID.sqf";
 CTI_CO_FNC_GetSideGroups = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetSideGroups.sqf";
-cti_CO_FNC_GetSideLogic = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideLogic.sqf";
+EZC_fnc_Functions_Common_GetSideLogic = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideLogic.sqf";
 cti_CO_FNC_GetSideSupply = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideSupply.sqf";
-cti_CO_FNC_GetSideStructures = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideStructures.sqf";
+EZC_fnc_Functions_Common_GetSideStructures = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideStructures.sqf";
 cti_CO_FNC_GetSideTowns = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideTowns.sqf";
 cti_CO_FNC_GetSideUpgrades = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideUpgrades.sqf";
 cti_CO_FNC_GetTeamFunds = Compile preprocessFileLineNumbers "Common\Functions\Common_GetTeamFunds.sqf";
@@ -132,7 +132,7 @@ cti_CO_FNC_GetUnitsPerSide = Compile preprocessFileLineNumbers "Common\Functions
 cti_CO_FNC_GetVehicleTurretsGear = Compile preprocessFileLineNumbers "Common\Functions\Common_GetVehicleTurretsGear.sqf";
 cti_CO_FNC_HandleArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleArtillery.sqf";
 cti_CO_FNC_OnUnitHit = Compile preprocessFileLineNumbers "Common\Functions\Common_OnUnitHit.sqf";
-cti_CO_FNC_OnUnitKilled = Compile preprocessFileLineNumbers "Common\Functions\Common_OnUnitKilled.sqf";
+EZC_fnc_Functions_Common_OnUnitKilled = Compile preprocessFileLineNumbers "Common\Functions\Common_OnUnitKilled.sqf";
 cti_CO_FNC_RevealArea = Compile preprocessFileLineNumbers "Common\Functions\Common_RevealArea.sqf";
 cti_CO_FNC_RemoveCountermeasures = Compile preprocessFileLineNumbers "Common\Functions\Common_RemoveCountermeasures.sqf";
 cti_CO_FNC_SetTurretsMagazines = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTurretsMagazines.sqf";
@@ -140,15 +140,15 @@ cti_CO_FNC_SortByDistance = Compile preprocessFileLineNumbers "Common\Functions\
 
 if ((missionNamespace getVariable "cti_C_PLAYERS_RENDER_WAYPOINTS") == 0) then {
 
-cti_CO_FNC_WaypointPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrol.sqf";
-cti_CO_FNC_WaypointPatrolTown = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrolTown.sqf";
-cti_CO_FNC_WaypointSimple = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointSimple.sqf";
-cti_CO_FNC_SetPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
+EZC_fnc_Functions_Common_WaypointPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrol.sqf";
+EZC_fnc_Functions_Common_WaypointPatrolTown = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrolTown.sqf";
+EZC_fnc_Functions_Common_WaypointSimple = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointSimple.sqf";
+EZC_fnc_Functions_Common_SetTownPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
 };
 
 cti_CO_FNC_WaypointsAdd = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsAdd.sqf";
 cti_CO_FNC_WaypointsRemove = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsRemove.sqf";
-cti_CO_FNC_GetSideStructuresByType = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetSideStructuresByType.sqf";
+EZC_fnc_Functions_Common_GetSideStructuresByType = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetSideStructuresByType.sqf";
 cti_CO_FNC_ConvertGearToFlat = compileFinal preprocessFileLineNumbers "Common\Functions\Common_ConvertGearToFlat.sqf";
 cti_CO_FNC_GetGearItemUpgradeLevel = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetGearItemUpgradeLevel.sqf";
 cti_CO_FNC_GetGearItemCost = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetGearItemCost.sqf";
@@ -161,7 +161,7 @@ cti_CO_FNC_GetUnitLoadout = compileFinal preprocessFileLineNumbers "Common\Funct
 cti_CO_FNC_EquipArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_EquipArtillery.sqf";
 
 
-//cti_CO_FNC_SetPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
+//EZC_fnc_Functions_Common_SetTownPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
 
 
 cti_CO_FNC_UPDATE_CLIENT_TEAMS = Compile preprocessFileLineNumbers "Common\Functions\Common_UpdateClientTeams.sqf";
@@ -265,7 +265,7 @@ cti_PRESENTSIDES = _presents;
 cti_ISTHREEWAY = false;
 
 cti_DEFENDER = resistance;
-cti_DEFENDER_ID = (cti_DEFENDER) Call cti_CO_FNC_GetSideID;
+cti_DEFENDER_ID = (cti_DEFENDER) Call EZC_fnc_Functions_Common_GetSideID;
 
 //--- Import the desired global side variables.
 

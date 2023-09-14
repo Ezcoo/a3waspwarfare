@@ -162,7 +162,7 @@ while {alive player && dialog} do {
 								_upgrade_time = (_upgrade_times select _id) select _upgrade_current;
 								[_id, _upgrade_current, _upgrade_time] spawn {
 									sleep (_this select 2);
-									["upgrade-sync", cti_Client_SideJoined, _this select 0, _this select 1] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+									["upgrade-sync", cti_Client_SideJoined, _this select 0, _this select 1] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 								};
 							};
 							hint parseText(Format["<t color='#42b6ff' size='1.2' underline='1' shadow='1'>Information:</t><br /><br /><t>Upgrading <t color='#B6F563'>%1</t> to level <t color='#F5D363'>%2</t></t>",_upgrade_labels select _id,_upgrade_current + 1]);

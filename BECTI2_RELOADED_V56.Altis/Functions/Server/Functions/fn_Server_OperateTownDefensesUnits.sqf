@@ -11,7 +11,7 @@ Private ["_action","_defense","_side","_spawn","_town","_units","_sideID"];
 _town = _this select 0;
 _side = _this select 1;
 _action = _this select 2;
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
 if (_sideID != cti_C_GUER_ID) exitWith {};
 switch (_action) do {
@@ -33,7 +33,7 @@ switch (_action) do {
                             [_side, _groups, _positions, _team, _defense, true] Call cti_SE_FNC_DelegateAIStaticDefenceHeadless;
                         }else{
                             _type = missionNamespace getVariable Format ["cti_%1SOLDIER", _side];
-                            _sideID = (_side) Call cti_CO_FNC_GetSideID;
+                            _sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
                             _unit = [_type,_team, getPosATL _x, _sideID] Call cti_CO_FNC_CreateUnit;
                             [_unit] allowGetIn true;
                             _unit assignAsGunner _defense;

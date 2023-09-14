@@ -5,8 +5,8 @@ _side = _this select 1;
 _position = _this select 2;
 _direction = _this select 3;
 _sideText = _side;
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 if (typeName _position == "OBJECT") then {_position = position _position};
 
@@ -14,8 +14,8 @@ if (typeName _position == "OBJECT") then {_position = position _position};
 waitUntil {!(_logik getVariable "cti_hqinuse")};
 _logik setVariable ["cti_hqinuse", true];
 
-_HQ = (_side) Call cti_CO_FNC_GetSideHQ;
-_deployed = (_side) Call cti_CO_FNC_GetSideHQDeployStatus;
+_HQ = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;
+_deployed = (_side) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;
 
 if (!_deployed) then {
 	_HQ setPos [1,1,1];
@@ -63,7 +63,7 @@ if (!_deployed) then {
 			_logic setVariable ["DefenseTeam", createGroup [_side, true]];
             (_logic getVariable "DefenseTeam") setVariable ["cti_persistent", true];
 	        _logic setVariable ["weapons",missionNamespace getVariable "cti_C_BASE_DEFENSE_MAX_AI"];
-			[_logic, _position,_side,_logik,_areas] remoteExecCall ["cti_CL_FNC_RequestBaseArea",_side];
+			[_logic, _position,_side,_logik,_areas] remoteExecCall ["EZC_fnc_PVFunctions_RequestBaseArea",_side];
 		};
 	};
 	
@@ -92,8 +92,8 @@ if (!_deployed) then {
 	_MHQ addEventHandler ['killed', {_this Spawn cti_SE_FNC_OnHQKilled}]; //--- Killed EH fires localy, this is the server.
 	
 	if (isMultiplayer) then {
-		["set-hq-killed-eh", _mhq] remoteExecCall ["cti_CL_FNC_HandleSpecial", _side];
-		["set-hq-lock-unlock-actions", _mhq] remoteExecCall ["cti_CL_FNC_HandleSpecial", _side];
+		["set-hq-killed-eh", _mhq] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
+		["set-hq-lock-unlock-actions", _mhq] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 	};
 
 	//_MHQ addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call cti_SE_FNC_BuildingHandleDamages}];

@@ -20,7 +20,7 @@ if (_upgrade_isplayer) then {
 	
 	
 	
-	['upgrade-started', _upgrade_id, _upgrade_level + 1] remoteExecCall ["cti_CL_FNC_HandleSpecial", _side];
+	['upgrade-started', _upgrade_id, _upgrade_level + 1] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 	
 	//--- Store the sync.
 	missionNamespace setVariable [Format["cti_upgrade_%1_%2_%3_sync", str _side, _upgrade_id, _upgrade_level], false];
@@ -40,13 +40,13 @@ if (_upgrade_isplayer) then {
 _upgrades = +(_side Call cti_CO_FNC_GetSideUpgrades);
 _upgrades set [_upgrade_id, (_upgrades select _upgrade_id) + 1];
 
-_logic = (_side) Call cti_CO_FNC_GetSideLogic;
+_logic = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 _logic setVariable ["cti_upgrades", _upgrades, true];
 _logic setVariable ["cti_upgrading", false, true];
 
 [_side, "NewIntelAvailable"] Spawn cti_SE_FNC_SideMessage;
 
-['upgrade-complete', _upgrade_id, _upgrade_level + 1] remoteExecCall ["cti_CL_FNC_HandleSpecial", _side];
+['upgrade-complete', _upgrade_id, _upgrade_level + 1] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 
 
 

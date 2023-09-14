@@ -10,9 +10,9 @@ _act = _this select 2;
 _caller action ["EJECT",_vehicle];
 _caller setVelocity [0,0,0];
 //original
-//[_caller,true,true] call cti_CL_FNC_HALO_JUMP;
+//[_caller,true,true] call EZC_fnc_Functions_Client_HaloJump;
 
-[_caller,false,false] call cti_CL_FNC_HALO_JUMP;
+[_caller,false,false] call EZC_fnc_Functions_Client_HaloJump;
 
 /*
 

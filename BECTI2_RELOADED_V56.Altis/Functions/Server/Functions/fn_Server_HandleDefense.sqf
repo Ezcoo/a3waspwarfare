@@ -49,7 +49,7 @@ while {alive _defense} do {
 			};
 
 
-			[str _side,'UnitsCreated',1] Call cti_CO_FNC_UpdateStatistics;
+			[str _side,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 
 			["INFORMATION", Format ["Server_HandleDefense.sqf: [%1] Unit has been dispatched to a [%2] defense.", str _side,_type]] Call EZC_fnc_Functions_Common_LogContent
 ;

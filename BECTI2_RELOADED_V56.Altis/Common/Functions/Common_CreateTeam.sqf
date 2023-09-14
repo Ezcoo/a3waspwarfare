@@ -3,7 +3,7 @@ Private ['_canCreate','_commander','_crews','_driver','_firstDone','_global','_g
 _list = _this select 0;
 _position = _this select 1;
 _side = _this select 2;
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 _lockVehicles = _this select 3;
 _team = _this select 4;
 _global = if (count _this > 5) then {_this select 5} else {true};

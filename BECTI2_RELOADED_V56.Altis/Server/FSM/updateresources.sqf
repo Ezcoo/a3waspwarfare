@@ -11,7 +11,7 @@ _divisor = missionNamespace getVariable "cti_C_ECONOMY_INCOME_DIVIDED";
 
 while {!cti_GameOver} do {
 	{		
-		_logik = (_x) Call cti_CO_FNC_GetSideLogic;
+		_logik = (_x) Call EZC_fnc_Functions_Common_GetSideLogic;
 		_income = 0; // declares money
 		_income_player = 0; // declares money income for a player
 		_income_commander = 0; // declares money income for a commander

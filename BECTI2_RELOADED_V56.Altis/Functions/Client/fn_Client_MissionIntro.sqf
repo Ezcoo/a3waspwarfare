@@ -1,4 +1,4 @@
-_hq = (side player) Call cti_CO_FNC_GetSideHQ;
+_hq = (side player) Call EZC_fnc_Functions_Common_GetSideHQ;
 sleep 5;
 _hqPos = getPosATL _hq;
 
@@ -46,7 +46,7 @@ _camera cameraEffect ["Terminate","back"];
 
 WSW_EndIntro = true;
 
-_logic = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideLogic;
+_logic = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic;
 _sleepTime = 3;
 
 if(!isNil {_logic getVariable "cti_votetime"}) then {

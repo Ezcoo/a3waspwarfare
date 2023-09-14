@@ -1,1 +1,1 @@
-(_this Call cti_CO_FNC_GetSideLogic) getVariable "cti_aicom_funds"
+(_this Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_aicom_funds"

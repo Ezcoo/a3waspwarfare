@@ -17,7 +17,7 @@ _position = _this select 2;
 _team = _this select 3;
 _dir = _this select 4;
 _special = if(count _this > 5) then{_this select 5}else{"FORM"};
-_sideID = (_side) call cti_CO_FNC_GetSideID;
+_sideID = (_side) call EZC_fnc_Functions_Common_GetSideID;
 
 _built = 0;
 _builtveh = 0;
@@ -28,7 +28,7 @@ for '_i' from 0 to count(_groups)-1 do {
 	["INFORMATION", Format["Common_CreateUnitForstaticForResBases.sqf: [%1] will create a team template %2 at %3", _side, _groups select _i,_position]] Call EZC_fnc_Functions_Common_LogContent
 ;
 
-	_sideID = (_side) Call cti_CO_FNC_GetSideID;
+	_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 	if((_groups select _i) isKindOf "Man")then{
 	    _unit = [_groups select _i, _team, _position, _sideID] Call cti_CO_FNC_CreateUnit;
         _built  = _built + 1;
@@ -63,7 +63,7 @@ for '_i' from 0 to count(_groups)-1 do {
 	};
 };
 
-if (_built > 0) then {[str _side,'UnitsCreated',_built] call cti_CO_FNC_UpdateStatistics};
+if (_built > 0) then {[str _side,'UnitsCreated',_built] call EZC_fnc_Functions_Common_UpdateStatistics};
 
 ["INFORMATION", Format["Common_CreateUnitForstaticForResBases.sqf:  [%1] was activated witha total of [%3] units.", _side, _built]] Call EZC_fnc_Functions_Common_LogContent
 ;

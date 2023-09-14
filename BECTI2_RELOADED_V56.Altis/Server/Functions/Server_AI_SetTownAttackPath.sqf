@@ -18,7 +18,7 @@ _select = _wp_origin;
 //--- Clear the AI waypoints
 (_team) Call cti_CO_FNC_WaypointsRemove;
 _distance_node = 700;
-_side = (_team getVariable "cti_side") Call cti_CO_FNC_GetSideID;
+_side = (_team getVariable "cti_side") Call EZC_fnc_Functions_Common_GetSideID;
 
 //--- If the leader is further than 550m we use a proper attack system.
 if (_wp_origin distance _wp_dest > _distance_node) then {

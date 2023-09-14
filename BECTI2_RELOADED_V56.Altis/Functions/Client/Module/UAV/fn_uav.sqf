@@ -5,13 +5,13 @@ if (!isNull playerUAV) then {if (!alive playerUAV) then {playerUAV = objNull}};
 if (!isNull playerUAV) exitWith {
 	//--- Disable targetting.
 	{(driver playerUAV) disableAI _x} forEach ["TARGET","AUTOTARGET"];
-	call WFVE_fnc_uav_interface;
+	call EZC_fnc_Module_uav_interface;
 };
 
 if (isNil {missionNamespace getVariable Format ["cti_%1UAV",cti_Client_SideJoinedText]}) exitWith {};
 if ((missionNamespace getVariable Format ["cti_%1UAV",cti_Client_SideJoinedText]) == "") exitWith {};
 
-_buildings = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideStructures;
+_buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 _checks = [cti_Client_SideJoined,missionNamespace getVariable Format ["cti_%1COMMANDCENTERTYPE",cti_Client_SideJoinedText],_buildings] Call cti_CO_FNC_GetFactories;
 _closest = objNull;
 if (count _checks > 0) then { _closest = [player,_checks] Call cti_CO_FNC_GetClosestEntity; };
@@ -20,7 +20,7 @@ if (isNull _closest) exitWith {};
 
 _uav = createVehicle [missionNamespace getVariable Format ["cti_%1UAV",cti_Client_SideJoinedText],getPos _closest, [], 0, "FLY"];
 playerUAV = _uav;
-Call Compile Format ["_uav addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn cti_CO_FNC_OnUnitKilled}]",sideID];
+Call Compile Format ["_uav addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled}]",sideID];
 
 [[[_uav,cti_Client_SideJoined], "Common\Init\Init_Unit.sqf"], "BIS_fnc_execVM", true, true] call BIS_fnc_MP;
 removeAllWeapons _uav;
@@ -39,12 +39,12 @@ if (cti_Client_SideJoined == west) then {
 	_gunner MoveInGunner _uav;
 	_built = _built + 1;
 };
-[cti_Client_SideJoinedText,'UnitsCreated',_built] Call cti_CO_FNC_UpdateStatistics;
-[cti_Client_SideJoinedText,'VehiclesCreated',1] Call cti_CO_FNC_UpdateStatistics;
+[cti_Client_SideJoinedText,'UnitsCreated',_built] Call EZC_fnc_Functions_Common_UpdateStatistics;
+[cti_Client_SideJoinedText,'VehiclesCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 
 -12500 Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 
-["uav",cti_Client_SideJoined,_uav,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+["uav",cti_Client_SideJoined,_uav,cti_Client_Team] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 
 sleep 0.02;
 
@@ -58,8 +58,8 @@ _dir = 0;
 if !(isNil "_lastWP") then {deleteWaypoint _lastWP};
 
 //--- No need to preprocess those.
-call WFVE_fnc_uav_interface;
-[_uav] spawn WFVE_fnc_uav_spotter;
+call EZC_fnc_Module_uav_interface;
+[_uav] spawn EZC_fnc_Module_uav_spotter;
 
 _spawn = [] spawn {};
 while {alive _uav} do {

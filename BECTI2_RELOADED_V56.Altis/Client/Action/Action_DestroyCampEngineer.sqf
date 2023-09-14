@@ -66,7 +66,7 @@ if (! (alive (_camp getVariable 'cti_camp_bunker'))) exitWith {
 };
 
 //--- Repair order is sent to the server.
-["destroy-camp", _camp, cti_Client_SideID] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+["destroy-camp", _camp, cti_Client_SideID] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 
 sleep 4;
 

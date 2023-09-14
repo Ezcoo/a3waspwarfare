@@ -224,28 +224,9 @@ setTerrainGrid 1;//nobody want see flying stones, so now we play all with max te
 
 
 //--- Position the client on the temp spawn (Common is not yet init'd so we call is straigh away).
-player setPos ([getMarkerPos Format["%1TempRespawnMarker",cti_Client_SideJoinedText],1,10] Call Compile preprocessFile "Common\Functions\Common_GetRandomPosition.sqf");
+player setPos ([getMarkerPos Format["%1TempRespawnMarker",cti_Client_SideJoinedText],1,10] call EZC_fnc_Functions_Common_GetRandomPosition);
 //now localized in init_common (mapmarkerfix)
 //cti_CL_FNC_GetStructureMarkerLabel = Compile preprocessFile "Client\Functions\Client_GetStructureMarkerLabel.sqf";
-EZC_fnc_Functions_Client_GetTime = Compile preprocessFile "Client\Functions\Client_GetTime.sqf";
-cti_CL_FNC_GroupChatMessage = Compile preprocessFile "Client\Functions\Client_GroupChatMessage.sqf";
-cti_CL_FNC_HandleHQAction = Compile preprocessFile "Client\Functions\Client_HandleHQAction.sqf";
-cti_CL_FNC_MarkerAnim = Compile preprocessFile "Client\Functions\Client_MarkerAnim.sqf";
-cti_CL_FNC_OnRespawnHandler = Compile preprocessFile "Client\Functions\Client_OnRespawnHandler.sqf";
-cti_CL_FNC_PreRespawnHandler = Compile preprocessFile "Client\Functions\Client_PreRespawnHandler.sqf";
-cti_CL_FNC_RequestFireMission = Compile preprocessFile "Client\Functions\Client_RequestFireMission.sqf";
-
-
-
-cti_CL_FNC_SetControlFadeAnim = Compile preprocessFile "Client\Functions\Client_SetControlFadeAnim.sqf";
-cti_CL_FNC_SetControlFadeAnimStop = Compile preprocessFile "Client\Functions\Client_SetControlFadeAnimStop.sqf";
-cti_CL_FNC_SupportHeal = Compile preprocessFile "Client\Functions\Client_SupportHeal.sqf";
-cti_CL_FNC_SupportRearm = Compile preprocessFile "Client\Functions\Client_SupportRearm.sqf";
-cti_CL_FNC_SupportRefuel = Compile preprocessFile "Client\Functions\Client_SupportRefuel.sqf";
-cti_CL_FNC_SupportRepair = Compile preprocessFile "Client\Functions\Client_SupportRepair.sqf";
-cti_CL_FNC_TaskSystem = Compile preprocessFile "Client\Functions\Client_TaskSystem.sqf";
-cti_CL_FNC_TitleTextMessage = Compile preprocessFile "Client\Functions\Client_TitleTextMessage.sqf";
-cti_CL_FNC_SetMHQLock = Compile preprocessFileLineNumbers "Client\PVFunctions\SetMHQLock.sqf";
 
 //ofps ucam
 //call compile preprocessFile "Client\Functions\UI\Functions_UI_KeyHandlers.sqf";
@@ -255,32 +236,13 @@ CTI_P_Controlled = player; // Whatever unit the player is controlling. Changes w
 
 //// Dialog scripts
 // Dialog: gear
-cti_CL_FNC_GUI_WFGear	  = Compile preprocessFileLineNumbers "Client\GUI\GUI_WFGear.sqf";
-cti_CL_FNC_UIChangeComboBuyUnits = Compile preprocessFile "Client\Functions\Client_UIChangeComboBuyUnits.sqf";
-cti_CL_FNC_UIFillListBuyUnits = Compile preprocessFile "Client\Functions\Client_UIFillListBuyUnits.sqf";
-cti_CL_FNC_UIFillListTeamOrders = Compile preprocessFile "Client\Functions\Client_UIFillListTeamOrders.sqf";
-cti_CL_FNC_UIFindLBValue = Compile preprocessFile "Client\Functions\Client_UIFindLBValue.sqf";
 
 // UAV
-WFVE_fnc_uav_interface = compileFinal preprocessfilelinenumbers "Client\Module\UAV\uav_interface.sqf";
-WFVE_fnc_uav_spotter = compileFinal preprocessfilelinenumbers "Client\Module\UAV\uav_spotter.sqf";
-WFVE_fnc_uav = compileFinal preprocessfilelinenumbers "Client\Module\UAV\uav.sqf";
 
 //// PVF
-cti_CL_FNC_HandleSpecial = Compile preprocessFileLineNumbers "Client\PVFunctions\HandleSpecial.sqf";
-cti_CL_FNC_SetTask = Compile preprocessFileLineNumbers "Client\PVFunctions\SetTask.sqf";
-cti_CL_FNC_TownCaptured = Compile preprocessFileLineNumbers "Client\PVFunctions\TownCaptured.sqf";
-cti_CL_FNC_LocalizeMessage = Compile preprocessFileLineNumbers "Client\PVFunctions\LocalizeMessage.sqf";
-cti_CL_FNC_CampCaptured = Compile preprocessFileLineNumbers "Client\PVFunctions\CampCaptured.sqf";
-cti_CL_FNC_AwardBountyPlayer = Compile preprocessFileLineNumbers "Client\PVFunctions\AwardBountyPlayer.sqf";
-cti_CL_FNC_AwardBounty = Compile preprocessFileLineNumbers "Client\PVFunctions\AwardBounty.sqf";
-cti_CL_FNC_RequestBaseArea = Compile preprocessFileLineNumbers "Client\PVFunctions\RequestBaseArea.sqf";
-cti_CL_FNC_ChangeScore = Compile preprocessFileLineNumbers "Client\PVFunctions\ChangeScore.sqf";
-cti_CL_FNC_Available = Compile preprocessFileLineNumbers "Client\PVFunctions\Available.sqf";
-cti_CL_FNC_AllCampsCaptured = Compile preprocessFileLineNumbers "Client\PVFunctions\AllCampsCaptured.sqf";
 
 //--- Call the UI Functions
-call compile preprocessFile "Client\Functions\UI\Functions_UI_GearMenu.sqf";
+call EZC_fnc_Functions_Functions_UI_GearMenu;
 //call compile preprocessFile "Client\Functions\UI\Functions_UI_KeyHandlers.sqf";
 
 //--- Namespace related (GUI).
@@ -295,11 +257,7 @@ BIS_FNC_GUIget = {UInamespace getVariable (_this select 0)};
 
 //for CLASSICMODE
 if ((missionNamespace getVariable "cti_C_PLAYERS_RENDER_WAYPOINTS") == 1) then {
-
-cti_CO_FNC_WaypointPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrol.sqf";
-cti_CO_FNC_WaypointPatrolTown = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrolTown.sqf";
-cti_CO_FNC_WaypointSimple = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointSimple.sqf";
-cti_CO_FNC_SetPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
+// moved to CfgFunctions.hpp
 };
 
 
@@ -307,36 +265,7 @@ cti_CO_FNC_SetPatrol = Compile preprocessFileLineNumbers "Common\Functions\Commo
 
 
 //--- New Fnc.
-cti_CL_FNC_DelegateTownAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateTownAI.sqf";
-cti_CL_FNC_DelegateAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAI.sqf";
-cti_CL_FNC_DelegateAIStaticDefence = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAIStaticDefence.sqf";
-cti_CL_FNC_GetAIID = Compile preprocessFileLineNumbers "Client\Functions\Client_GetAIID.sqf";
-cti_CL_FNC_GetBackpackContent = Compile preprocessFileLineNumbers "Client\Functions\Client_GetBackpackContent.sqf";
-cti_CL_FNC_GetClosestAirport = Compile preprocessFileLineNumbers "Client\Functions\Client_GetClosestAirport.sqf";
-cti_CL_FNC_GetClosestCamp = Compile preprocessFileLineNumbers "Client\Functions\Client_GetClosestCamp.sqf";
-cti_CL_FNC_GetClosestDepot = Compile preprocessFileLineNumbers "Client\Functions\Client_GetClosestDepot.sqf";
-cti_CL_FNC_GetGearCargoSize = Compile preprocessFileLineNumbers "Client\Functions\Client_GetGearCargoSize.sqf";
-cti_CL_FNC_GetMagazinesSize = Compile preprocessFileLineNumbers "Client\Functions\Client_GetMagazinesSize.sqf";
-cti_CL_FNC_GetParsedGear = Compile preprocessFileLineNumbers "Client\Functions\Client_GetParsedGear.sqf";
-cti_CL_FNC_GetVehicleCargoSize = Compile preprocessFileLineNumbers "Client\Functions\Client_GetVehicleCargoSize.sqf";
-cti_CL_FNC_GetVehicleContent = Compile preprocessFileLineNumbers "Client\Functions\Client_GetVehicleContent.sqf";
-cti_CL_FNC_GetUnitBackpack = Compile preprocessFileLineNumbers "Client\Functions\Client_GetUnitBackpack.sqf";
-cti_CL_FNC_OnKilled = Compile preprocessFileLineNumbers "Client\Functions\Client_OnKilled.sqf";
-cti_CL_FNC_OperateCargoGear = Compile preprocessFileLineNumbers "Client\Functions\Client_OperateCargoGear.sqf";
-cti_CL_FNC_ReplaceMagazinesGear = Compile preprocessFileLineNumbers "Client\Functions\Client_ReplaceMagazinesGear.sqf";
-cti_CL_FNC_RemoveMagazineGear = Compile preprocessFileLineNumbers "Client\Functions\Client_RemoveMagazineGear.sqf";
-cti_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
-cti_CL_FNC_Client_GetNearestCamp = Compile preprocessFileLineNumbers "Client\Functions\Client_GetNearestCamp.sqf";
-cti_CL_FNC_UpdateActions = Compile preprocessFileLineNumbers "Client\FSM\updateactions.sqf";
-cti_CL_FNC_TRACK_ARTY = Compile preprocessFileLineNumbers "Client\Functions\Client_ARRadarMarkerUpdate.sqf";
-cti_CL_FNC_HALO_JUMP = Compile preprocessFileLineNumbers "Client\Functions\Client_HaloJump.sqf";
-cti_CL_FNC_SetVehicleLock = Compile preprocessFileLineNumbers "Client\PVFunctions\SetVehicleLock.sqf";
-cti_CL_FNC_Update_Salvage = Compile preprocessFileLineNumbers "Client\FSM\updatesalvage.sqf";
 
-
-cti_CL_FNC_Init_Coin = Compile preprocessFileLineNumbers "Client\Init\Init_Coin.sqf";
-
-cti_CL_FNC_MissionIntro = Compile preprocessFileLineNumbers "Client\Client_MissionIntro.sqf";
 //// GEAR INIT
 //--- Gear: Config sub ID
 cti_SUBTYPE_ITEM = 0;
@@ -387,29 +316,29 @@ if (!(visibleMap) && (isNil "BIS_CONTROL_CAM")) then {Local_GUIWorking=true; 136
 
 
 //BUYABLE GEAR PART
-if (cti_Client_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
-if (cti_Client_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
+if (cti_Client_SideJoined == west) then {(west) call EZC_fnc_Config_Gear_West};
+if (cti_Client_SideJoined == east) then {(east) call EZC_fnc_Config_Gear_East};
 
 //SELL ENEMY GEAR PART
-if (cti_Client_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
-if (cti_Client_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
+if (cti_Client_SideJoined == east) then {(east) call EZC_fnc_Config_Gear_West};
+if (cti_Client_SideJoined == west) then {(west) call EZC_fnc_Config_Gear_East};
 
  
 
-if (cti_Client_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Common.sqf"};
-if (cti_Client_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Common.sqf"};
+if (cti_Client_SideJoined == west) then {(west) call EZC_fnc_Config_Gear_Common};
+if (cti_Client_SideJoined == east) then {(east) call EZC_fnc_Config_Gear_Common};
 
 
 if (isNil {profileNamespace getVariable format["cti_PERSISTENT_GEAR_TEMPLATE_%1", cti_Client_SideJoined]}) then {
-	call cti_UI_Gear_InitializeProfileTemplates
+	call cti_UI_Gear_InitializeProfileTemplates;
 };
 
 if !(isNil {profileNamespace getVariable format["cti_PERSISTENT_GEAR_TEMPLATE_%1", cti_Client_SideJoined]}) then {
 	execVM "Client\Init\Init_Persistent_Gear.sqf";
 };
 
-Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_OnFired.sqf'; //--- FUNCTIONS: onFired EH.
-Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Special.sqf'; //--- FUNCTIONS: Specials.
+Call EZC_fnc_Functions_Client_FNC_OnFired; //--- FUNCTIONS: onFired EH.
+Call EZC_fnc_Functions_Client_FNC_Special; //--- FUNCTIONS: Specials.
 
 //--- UI Namespace release from previous possible games (only on titles dialog!).
 {uiNamespace setVariable [_x, displayNull]} forEach ["cti_title_capture"];
@@ -417,12 +346,9 @@ Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Special.sqf'
 //--- Waiting for the common part to be executed.
 waitUntil {commonInitComplete};
 
-["INITIALIZATION", Format ["Init_Client.sqf: Common initialization is complete at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", Format ["Init_Client.sqf: Common initialization is complete at [%1]", time]] Call EZC_fnc_Functions_Common_LogContent;
 
-
-cti_CL_FNC_UI_Gear_SaveTemplateProfile = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_SaveTemplateProfile.sqf";
-Call Compile preprocessFileLineNumbers "Client\Init\Init_ProfileVariables.sqf";
+Call EZC_fnc_Init_Init_ProfileVariables;
 
 
 //--- Queue Protection.
@@ -440,10 +366,10 @@ missionNamespace setVariable ['cti_C_QUEUE_DEPOT',0];
 missionNamespace setVariable ['cti_C_QUEUE_DEPOT_MAX',4];
 
 //--- Global Client Variables.
-sideID = cti_Client_SideJoined Call cti_CO_FNC_GetSideID;
+sideID = cti_Client_SideJoined Call EZC_fnc_Functions_Common_GetSideID;
 paramBoundariesRunning = false;
 execVM "WASP\global_marking_monitor.sqf";
-cti_Client_Logic = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideLogic;
+cti_Client_Logic = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic;
 cti_Client_SideID = sideID;
 cti_Client_Color = switch (cti_Client_SideJoined) do { case west: {missionNamespace getVariable "cti_C_WEST_COLOR"}; case east: {missionNamespace getVariable "cti_C_EAST_COLOR"}; case resistance: {missionNamespace getVariable "cti_C_GUER_COLOR"};};
 cti_Client_Team = group player;
@@ -501,7 +427,7 @@ ExecVM "Common\Config\Core_Upgrades\Labels_Upgrades.sqf";
 
 //--- Update the player.
 if (isMultiplayer) then {
-	["update-teamleader", cti_Client_Team, player] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+	["update-teamleader", cti_Client_Team, player] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 };
 
 //--- Disable Artillery Computer.
@@ -512,7 +438,7 @@ if (isNil { missionNamespace getVariable "cti_commander_percent"}) then { missio
 
 /* Exec SQF|FSM Misc stuff. */
 if ((missionNamespace getVariable "cti_C_UNITS_TRACK_LEADERS") > 0) then {[] execVM "Client\FSM\updateteamsmarkers.sqf"};
-[] spawn cti_CL_FNC_UpdateActions;
+[] spawn EZC_fnc_FSM_updateactions;
 
 /* Don't pause the client initialization process. */
 [] Spawn {
@@ -565,12 +491,11 @@ cti_V_HQTopicSide = cti_Client_Logic getVariable "cti_radio_hq_id";
 _HQRadio setIdentity cti_V_HQTopicSide;
 _HQRadio setRank "COLONEL";
 _HQRadio setGroupId ["HQ"];
-_HQRadio kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call compile preprocessFileLineNumbers "Client\kb\hq.sqf"}];
-player kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call compile preprocessFileLineNumbers "Client\kb\hq.sqf"}];
+_HQRadio kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call EZC_fnc_kb_hq}];
+player kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call EZC_fnc_kb_hq}];
 sideHQ = _HQRadio;
 
-["INITIALIZATION", "Init_Client.sqf: Radio announcer is initialized."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Client.sqf: Radio announcer is initialized."] Call EZC_fnc_Functions_Common_LogContent;
 
 /* Wait for a valid signal (Teamswapping) with failover */
 if (isMultiplayer && time > 7) then {
@@ -579,7 +504,7 @@ if (isMultiplayer && time > 7) then {
 
 	sleep (random 0.1);
 
-	[player, cti_Client_SideJoined] remoteExecCall ["cti_SE_PVF_RequestJoin",2];
+	[player, cti_Client_SideJoined] remoteExecCall ["EZC_fnc_PVFunctions_RequestJoin",2];
 	
 	_timelaps = 0;
 	while {true} do {
@@ -593,7 +518,7 @@ if (isMultiplayer && time > 7) then {
 			_timelaps = 0;
 			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no ACK was received from the server, a new request will be submitted.",cti_Client_SideJoined,name player]] Call EZC_fnc_Functions_Common_LogContent
 ;
-			[player, cti_Client_SideJoined] remoteExecCall ["cti_SE_PVF_RequestJoin",2];
+			[player, cti_Client_SideJoined] remoteExecCall ["EZC_fnc_PVFunctions_RequestJoin",2];
 		};
 	};
 
@@ -607,8 +532,7 @@ if (isMultiplayer && time > 7) then {
 };
 
 /* Get the client starting location */
-["INITIALIZATION", "Init_Client.sqf: Retrieving the client spawn location."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Client.sqf: Retrieving the client spawn location."] Call EZC_fnc_Functions_Common_LogContent;
 _base = objNull;
 if (time < 30) then {
 	waitUntil {!isNil {cti_Client_Logic getVariable "cti_startpos"}};
@@ -616,14 +540,13 @@ if (time < 30) then {
 } else {
 	waitUntil {!isNil {cti_Client_Logic getVariable "cti_hq"}};
 	waitUntil {!isNil {cti_Client_Logic getVariable "cti_structures"}};
-	_base = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
-	_buildings = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideStructures;
+	_base = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
+	_buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 
 	if (count _buildings > 0) then {_base = _buildings select 0;};
 };
 
-["INITIALIZATION", Format["Init_Client.sqf: Client spawn location has been determined at [%1].", _base]] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", Format["Init_Client.sqf: Client spawn location has been determined at [%1].", _base]] Call EZC_fnc_Functions_Common_LogContent;
 
 /* Position the client at the previously defined location */
 player setPos ([_base,20,30] Call cti_CO_FNC_GetRandomPosition);
@@ -631,21 +554,20 @@ player setPos ([_base,20,30] Call cti_CO_FNC_GetRandomPosition);
 /* HQ Building Init. */
 waitUntil {!isNil {cti_Client_Logic getVariable "cti_hq_deployed"}};
 
-["INITIALIZATION", "Init_Client.sqf: Initializing COIN Module."] Call EZC_fnc_Functions_Common_LogContent
-;
-_isDeployed = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQDeployStatus;
+["INITIALIZATION", "Init_Client.sqf: Initializing COIN Module."] Call EZC_fnc_Functions_Common_LogContent;
+_isDeployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;
 if (_isDeployed) then {
-	[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call cti_CL_FNC_Init_Coin;
+	[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call EZC_fnc_Init_Init_Coin;
 } else {
-	[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call cti_CL_FNC_Init_Coin;
+	[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call EZC_fnc_Init_Init_Coin;
 };
 
 //--- Add Killed EH to the HQ on each client if needed (JIP), skip LAN host.
 if (!isServer && !_isDeployed) then {
 	[] spawn {
 		waitUntil {!isNil {cti_Client_Logic getVariable "cti_hq"}};
-		(cti_Client_SideJoined Call cti_CO_FNC_GetSideHQ) addEventHandler ["killed", {
-				["process-killed-hq", _this] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+		(cti_Client_SideJoined Call EZC_fnc_Functions_Common_GetSideHQ) addEventHandler ["killed", {
+				["process-killed-hq", _this] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 		}];
 	};
 };
@@ -672,33 +594,31 @@ if (WF_Debug) then {
 //if ((missionNamespace getVariable "cti_C_MODULE_cti_EASA") > 0) then {Call Compile preprocessFileLineNumbers "Client\Module\EASA\EASA_Init.sqf"}; //--- EASA.
 
 /* Key Binding */
-[] Call Compile preprocessFile "Client\Init\Init_Keybind.sqf";
+[] Call EZC_fnc_Init_Init_Keybind;
 
 /* JIP Handler */
 waitUntil {townInit};
-["INITIALIZATION", "Init_Client.sqf: Towns are initialized."] Call EZC_fnc_Functions_Common_LogContent
-;
+["INITIALIZATION", "Init_Client.sqf: Towns are initialized."] Call EZC_fnc_Functions_Common_LogContent;
 
 /* JIP System, initialize the camps and towns properly. */
 [] Spawn {
 	sleep 2;
-	["INITIALIZATION", "Init_Client.sqf: Updating JIP Markers."] Call EZC_fnc_Functions_Common_LogContent
-;
+	["INITIALIZATION", "Init_Client.sqf: Updating JIP Markers."] Call EZC_fnc_Functions_Common_LogContent;
 	Call Compile preprocessFileLineNumbers "Client\Init\Init_Markers.sqf";
 };
 
 /* Repair Truck CoIn Handling. */
-[missionNamespace getVariable "cti_C_BASE_COIN_AREA_REPAIR",false,RCoin,"REPAIR"] Call cti_CL_FNC_Init_Coin;
+[missionNamespace getVariable "cti_C_BASE_COIN_AREA_REPAIR",false,RCoin,"REPAIR"] Call EZC_fnc_Init_Init_Coin;
 
 /* A new player come to reinforce the battlefield */
-[cti_Client_SideJoinedText,'UnitsCreated',1] Call cti_CO_FNC_UpdateStatistics;
+[cti_Client_SideJoinedText,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 
 /* Client death handler. */
-cti_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn cti_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn cti_CO_FNC_OnUnitKilled}];
+cti_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn EZC_fnc_Functions_Client_OnKilled; [_this select 0,_this select 1, sideID] Spawn EZC_fnc_Functions_Common_OnUnitKilled}];
 
 //--- Valhalla init.
 [] Spawn {
-	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
+	[] Call EZC_fnc_Module_Init_Valhalla;
 };
 
 //--Disable fatigue--
@@ -712,46 +632,46 @@ if ((getPlayerUID player in cti_RESERVEDUIDS)) then {
 	HINT ("YOU CAN USE ZEUS MODULE!");
 };
 //--skill system--
-[] Call Compile preprocessFile "Client\Module\Skill\Skill_Init.sqf";
+[] Call EZC_fnc_Module_Skill_Init;
 
-(player) Call cti_SK_FNC_Apply;
+(player) Call EZC_fnc_Module_Skill_Apply;
 
 
 
 
 
 //camp repair
-OMedic1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OMedic2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OMedic3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OMedic4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OMedic5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+OMedic1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OMedic2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OMedic3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OMedic4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OMedic5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 //camp destroy
-OEngineer1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OEngineer2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OEngineer3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OEngineer4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OEngineer5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+OEngineer1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OEngineer2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OEngineer3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OEngineer4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OEngineer5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 //light repair
 OMachinegunner1_1 addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_LR > CTI_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"];
 OMachinegunner1_2 addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_LR > CTI_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"];
@@ -1071,7 +991,7 @@ cti_P_CurrentGear = (player) call cti_CO_FNC_GetUnitLoadout;
 if ((cti_Client_Logic getVariable "cti_votetime") > 0) then {createDialog "cti_VoteMenu"};
 
 /* Towns Task System */
-["TownAddComplete"] Spawn cti_CL_FNC_TaskSystem;
+["TownAddComplete"] Spawn EZC_fnc_Functions_Client_TaskSystem;
 
 
  //Zeta Cargo Lifter.

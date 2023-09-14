@@ -2,7 +2,7 @@ Private ["_currency","_currencySym","_hq","_repairPrice","_vehicle"];
 
 _vehicle = _this select 0;
 
-_hq = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
+_hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 if (alive _hq || (_hq distance _vehicle > 30)) exitWith {hint (localize "STR_WF_INFO_Repair_MHQ_None")};
 
 //--- Is HQ already being fixed?

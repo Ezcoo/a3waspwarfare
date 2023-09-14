@@ -2,11 +2,11 @@ Private ["_logic", "_side", "_commander"];
 
 _side = _this;
 _commander = _this select 1;
-_logic = (_side) Call cti_CO_FNC_GetSideLogic;
+_logic = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 
 //--- Notify the clients.
-["new-commander-assigned", _commander] remoteExecCall ["cti_CL_FNC_HandleSpecial", _side];
+["new-commander-assigned", _commander] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 
 //--- Process the AI Commander FSM if it's not running.
 if !(isNull _commander) then {

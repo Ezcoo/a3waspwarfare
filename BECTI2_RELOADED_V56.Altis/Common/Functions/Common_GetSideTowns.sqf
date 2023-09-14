@@ -1,6 +1,6 @@
 Private ['_sideID','_towns'];
 
-_sideID = (_this) Call cti_CO_FNC_GetSideID;
+_sideID = (_this) Call EZC_fnc_Functions_Common_GetSideID;
 _towns = [];
 
 {

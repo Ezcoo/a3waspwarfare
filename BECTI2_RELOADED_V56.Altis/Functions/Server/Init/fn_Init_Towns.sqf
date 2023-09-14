@@ -7,8 +7,8 @@ switch (missionNamespace getVariable "cti_C_TOWNS_STARTING_MODE") do {
 	//--- 50-50.
 	case 1: {
 		_half = round(count towns)/2;
-		_wStart = (west Call cti_CO_FNC_GetSideLogic) getVariable "cti_startpos";
-		_eStart = (east Call cti_CO_FNC_GetSideLogic) getVariable "cti_startpos";
+		_wStart = (west Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_startpos";
+		_eStart = (east Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_startpos";
 
 		_nearTownsW = [];
 		_nearTownsE = [];
@@ -35,8 +35,8 @@ switch (missionNamespace getVariable "cti_C_TOWNS_STARTING_MODE") do {
 	//--- Nearby Towns.
 	case 2: {
 		_total = count towns;
-		_wStart = (west Call cti_CO_FNC_GetSideLogic) getVariable "cti_startpos";
-		_eStart = (east Call cti_CO_FNC_GetSideLogic) getVariable "cti_startpos";
+		_wStart = (west Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_startpos";
+		_eStart = (east Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_startpos";
 		_limit = floor(_total / 6);
 		_nearTownsW = [];
 		_nearTownsE = [];

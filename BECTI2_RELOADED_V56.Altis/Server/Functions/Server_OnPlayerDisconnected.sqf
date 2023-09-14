@@ -47,7 +47,7 @@ _team = grpNull;
 	{
 		if !(isNil {_x getVariable "cti_uid"}) then {if ((_x getVariable "cti_uid") == _uid) then {_team = _x}};
 		if !(isNull _team) exitWith {};
-	} forEach ((_x Call cti_CO_FNC_GetSideLogic) getVariable "cti_teams");
+	} forEach ((_x Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_teams");
 	if !(isNull _team) exitWith {};
 } forEach cti_PRESENTSIDES;
 
@@ -55,7 +55,7 @@ if (isNull _team) exitWith {["WARNING", Format ["Server_PlayerDisconnected.sqf: 
 };
 
 //[[[_team,_side,false], "Common\Functions\Common_UpdateClientTeams.sqf"], "BIS_fnc_execVM", true, true] call BIS_fnc_MP;
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 _teams = _logik getVariable "cti_teams";
 
 _teams = _teams - [_team];
@@ -86,7 +86,7 @@ if !(isNull(assignedVehicle _old_unit)) then {
 };
 
 //--- Eject the unit if it's in the HQ.
-_hq = (_side) Call cti_CO_FNC_GetSideHQ;
+_hq = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;
 if (vehicle _old_unit == _hq) then {_old_unit action ["EJECT", _hq]};
 deleteVehicle _old_unit;
 
@@ -124,7 +124,7 @@ _commander = (_side) Call cti_CO_FNC_GetCommanderTeam;
 if !(isNull (_commander)) then {
 	if (_team == _commander) then {
 		_logik setVariable ["cti_commander", objNull, true];
-		['CommanderDisconnected'] remoteExecCall ["cti_CL_FNC_LocalizeMessage", _side];
+		['CommanderDisconnected'] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side];
 	};
 };
 

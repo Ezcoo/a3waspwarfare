@@ -22,18 +22,18 @@ _track_hq = [];
 _track = [];
 {
 	if (missionNamespace getVariable Format["cti_%1_PRESENT", _x]) then {
-		_logik = (_x) Call cti_CO_FNC_GetSideLogic;
+		_logik = (_x) Call EZC_fnc_Functions_Common_GetSideLogic;
 		_hq = _logik getVariable "cti_hq";
 		_track_hq = _track_hq + [_hq];
-		_track = _track + ([_hq, (_x) Call cti_CO_FNC_GetSideStructures] Call cti_CO_FNC_SortByDistance);
+		_track = _track + ([_hq, (_x) Call EZC_fnc_Functions_Common_GetSideStructures] Call cti_CO_FNC_SortByDistance);
 	};
 } forEach ([west,east,resistance] - [_side]);
 
-_hq = (_side) Call cti_CO_FNC_GetSideHQ;
-_blist = [_hq] + _track_hq + ([_hq, (_side) Call cti_CO_FNC_GetSideStructures] Call cti_CO_FNC_SortByDistance) + _track;
+_hq = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;
+_blist = [_hq] + _track_hq + ([_hq, (_side) Call EZC_fnc_Functions_Common_GetSideStructures] Call cti_CO_FNC_SortByDistance) + _track;
 
 //--- Safety Pos.
-_hq = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
+_hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 _vehi = vehicle player;
 if (_vehi != player) then {player action ["EJECT", _vehi];_vehi = player};
 _vehi setVelocity [0,0,-0.1];

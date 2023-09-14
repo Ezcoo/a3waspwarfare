@@ -25,8 +25,8 @@ switch (cti_SK_V_Type) do {
 			"time - cti_SK_V_LastUse_Repair > cti_SK_V_Reload_Repair"
 		];
 		
-		//_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', '[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf', [], 97, false, true, '', '[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+		//_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', '[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf', [], 97, false, true, '', '[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 	};
 	case 'SpecOps': {
 		// Lockpicking Ability 
@@ -53,7 +53,7 @@ switch (cti_SK_V_Type) do {
 			"(time - cti_SK_V_LastUse_LR > cti_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"
 		];
 		
-		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', '[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', '[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 		
 		_unit addAction [
 			("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Spot'+ "</t>"),
@@ -70,7 +70,7 @@ switch (cti_SK_V_Type) do {
 	};
 	case 'Medic': {
 	
-		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', '[player] call cti_CL_FNC_Client_GetNearestCamp'];
+		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', '[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 		
 		_unit addAction [
 			(localize "STR_WASP_actions_fastrep"),
@@ -88,7 +88,7 @@ switch (cti_SK_V_Type) do {
          missionNamespace setVariable ['CTI_C_PLAYERS_AI_MAX',ceil (1.5*(missionNamespace getVariable "CTI_C_PLAYERS_AI_MAX"))];
 		
 		
-		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', '[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', '[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 		
 		
 		_unit addAction [

@@ -203,7 +203,7 @@ while {!cti_GameOver} do {
 
                 _location setVariable ["sideID",_newSID,true];
 
-                [_location, _sideID, _newSID] remoteExecCall ["cti_CL_FNC_TownCaptured"];
+                [_location, _sideID, _newSID] remoteExecCall ["EZC_fnc_PVFunctions_TownCaptured"];
 
                 [_location, _sideID, _newSID] Spawn cti_SE_FNC_SetCampsToSide;
 

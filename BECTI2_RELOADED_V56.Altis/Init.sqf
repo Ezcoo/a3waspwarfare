@@ -340,7 +340,7 @@ if (isHostedServer || isDedicated) then { //--- Run the server's part.
 if (isHostedServer || (!isHeadLessClient && !isDedicated)) then {
 	waitUntil {!isNil 'cti_PRESENTSIDES'}; //--- Await for teams to be set before processing the client init.
 	{
-		_logik = (_x) Call cti_CO_FNC_GetSideLogic;
+		_logik = (_x) Call EZC_fnc_Functions_Common_GetSideLogic;
 		waitUntil {!isNil {_logik getVariable "cti_teams"}};
 		missionNamespace setVariable [Format["cti_%1TEAMS",_x], _logik getVariable "cti_teams"];
 	} forEach cti_PRESENTSIDES;
@@ -351,7 +351,7 @@ if (isHostedServer || (!isHeadLessClient && !isDedicated)) then {
 	execVM "Client\Init\Init_Client.sqf";
 	waitUntil {clientInitComplete};
 	if!(WF_Skip_Intro)then{
-	    [] spawn cti_CL_FNC_MissionIntro;
+	    [] spawn EZC_fnc_Client_MissionIntro;
         waitUntil {WSW_EndIntro};
 	}else{
 	    12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];

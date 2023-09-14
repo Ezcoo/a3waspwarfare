@@ -30,11 +30,11 @@ execVM (GLX_Path+"GLX_Initialize.sqf");
 /*
 //hc part
 //--- Client Functions.
-cti_CL_FNC_DelegateTownAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateTownAI.sqf";
-cti_CL_FNC_DelegateAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAI.sqf";
+EZC_fnc_Functions_Client_DelegateTownAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateTownAI.sqf";
+EZC_fnc_Functions_Client_DelegateAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAI.sqf";
 cti_CL_FNC_DelegateBasePatrolAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateBasePatrolAI.sqf";
-cti_CL_FNC_DelegateAIStaticDefence = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAIStaticDefence.sqf";
-cti_CL_FNC_HandleSpecial = Compile preprocessFileLineNumbers "Client\PVFunctions\HandleSpecial.sqf";
+EZC_fnc_Functions_Client_DelegateAIStaticDefence = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAIStaticDefence.sqf";
+EZC_fnc_PVFunctions_HandleSpecial = Compile preprocessFileLineNumbers "Client\PVFunctions\HandleSpecial.sqf";
 cti_CL_FNC_GetSideID = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideID.sqf";
 */
 
@@ -48,9 +48,9 @@ cti_SE_PVF_RequestCommanderVote = Compile preprocessFileLineNumbers "Server\PVFu
 cti_SE_PVF_RequestNewCommander = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestNewCommander.sqf";
 cti_SE_PVF_RequestStructure = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestStructure.sqf";
 cti_SE_PVF_RequestDefense = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestDefense.sqf";
-cti_SE_PVF_RequestJoin = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestJoin.sqf";
+EZC_fnc_PVFunctions_RequestJoin = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestJoin.sqf";
 cti_SE_PVF_RequestMHQRepair = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestMHQRepair.sqf";
-cti_SE_PVF_RequestSpecial = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestSpecial.sqf";
+EZC_fnc_PVFunctions_RequestSpecial= Compile preprocessFileLineNumbers "Server\PVFunctions\RequestSpecial.sqf";
 cti_SE_PVF_RequestTeamUpdate = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestTeamUpdate.sqf";
 cti_SE_PVF_RequestUpgrade = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestUpgrade.sqf";
 cti_SE_PVF_RequestAutoWallConstructinChange = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestAutoWallConstructinChange.sqf";
@@ -340,8 +340,8 @@ emptyQueu = [];
 	//--- Only use those variable if the side logic is present in the editor.
 	if (_x select 0) then {
 		_pos = _x select 2;
-		_logik = (_side) Call cti_CO_FNC_GetSideLogic;
-		_sideID = (_side) Call cti_CO_FNC_GetSideID;
+		_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
+		_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
 		//--- HQ init.
 		_hq = [missionNamespace getVariable Format["cti_%1MHQNAME", _side], [1,1,1], _sideID, getDir _pos, true, false, true] Call cti_CO_FNC_CreateVehicle;

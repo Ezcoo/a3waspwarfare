@@ -40,8 +40,8 @@ _onAreaRemoved = {
 while {!cti_GameOver} do {
 	{
 		_side = _x;
-		_logik = (_side) Call cti_CO_FNC_GetSideLogic;
-		_buildings = (_side Call cti_CO_FNC_GetSideStructures) + [_side Call cti_CO_FNC_GetSideHQ];
+		_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
+		_buildings = (_side Call EZC_fnc_Functions_Common_GetSideStructures) + [_side Call EZC_fnc_Functions_Common_GetSideHQ];
 		_command=[_side,missionNamespace getVariable Format["cti_%1COMMANDCENTERTYPE",str _side],_buildings] Call cti_CO_FNC_GetFactories;
 		_service=[_side,missionNamespace getVariable Format["cti_%1SERVICEPOINTTYPE",str _side],_buildings] Call cti_CO_FNC_GetFactories;
 		_aar = [_side,missionNamespace getVariable Format["cti_%1AARADARTYPE",str _side],_buildings] Call cti_CO_FNC_GetFactories;

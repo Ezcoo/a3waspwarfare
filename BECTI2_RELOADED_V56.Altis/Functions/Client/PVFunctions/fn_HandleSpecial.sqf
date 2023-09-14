@@ -9,8 +9,8 @@ switch (_request) do {
 	case "commander-vote": {_args spawn cti_CL_FNC_Commander_VoteEnd};
 	case "commander-vote-start": {_args spawn cti_CL_FNC_Commander_VoteStart};
 	case "new-commander-assigned": {_args spawn cti_CL_FNC_Commander_Assigned};
-	case "delegate-ai": {_args spawn cti_CL_FNC_DelegateAI};
-	case "delegate-ai-static-defence": {_args spawn cti_CL_FNC_DelegateAIStaticDefence};
+	case "delegate-ai": {_args spawn EZC_fnc_Functions_Client_DelegateAI};
+	case "delegate-ai-static-defence": {_args spawn EZC_fnc_Functions_Client_DelegateAIStaticDefence};
 	case "endgame": {_args spawn cti_CL_FNC_EndGame};
 	case "hq-setstatus": {_args spawn cti_CL_FNC_HQ_SetStatus};
 	case "icbm-display": {_args spawn cti_CL_FNC_Display_ICBM};
@@ -19,7 +19,7 @@ switch (_request) do {
 	case "upgrade-started": {_args spawn cti_CL_FNC_Upgrade_Started};
 	case "upgrade-complete": {_args spawn cti_CL_FNC_Upgrade_Complete};
 	case "set-hq-killed-eh": {if !(isServer) then {(_args select 0) addEventHandler ["killed", {
-								["process-killed-hq", _this] remoteExecCall ["cti_SE_PVF_RequestSpecial",2]
+								["process-killed-hq", _this] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2]
 							}]};};
 	case "auto-wall-constructing-changed":{ isAutoWallConstructingEnabled = (_args select 0);};
 	case "set-hq-lock-unlock-actions":{

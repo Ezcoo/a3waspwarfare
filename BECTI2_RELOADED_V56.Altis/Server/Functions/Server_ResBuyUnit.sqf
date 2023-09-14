@@ -8,7 +8,7 @@ _team = _this select 4;
 _vehiSlots = _this select 5;
 _additionalSlotsAmount = if (count _this > 6) then {_this select 6} else {-1};
 
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
 
 _sideText = str _side;

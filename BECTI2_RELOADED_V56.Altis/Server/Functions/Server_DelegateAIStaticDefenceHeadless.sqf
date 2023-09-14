@@ -23,7 +23,7 @@ for '_i' from 0 to count(_groups) -1 do {
 	if!(isNil "headlessClients") then {
 		if(count headlessClients > 0)then{
 			_hc = headlessClients select 0;
-			['delegate-ai-static-defence', _side, [_groups select _i], [_positions select _i], _team, _defence, _moveInGunner] remoteExecCall ["cti_CL_FNC_HandleSpecial", _hc];
+			['delegate-ai-static-defence', _side, [_groups select _i], [_positions select _i], _team, _defence, _moveInGunner] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _hc];
 		};
 	};
 };

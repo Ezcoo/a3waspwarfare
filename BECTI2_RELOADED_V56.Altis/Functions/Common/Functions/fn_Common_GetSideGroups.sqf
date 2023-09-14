@@ -17,7 +17,7 @@
 	(SIDE) call CTI_CO_FNC_GetSideGroups
 	
   # DEPENDENCIES #
-	Common Function: CTI_CO_FNC_GetSideLogic
+	Common Function: EZC_fnc_Functions_Common_GetSideLogic
 	
   # EXAMPLE #
     _groups = (West) call CTI_CO_FNC_GetSideGroups
@@ -28,7 +28,7 @@ private ["_logic", "_teams"];
 
 if !(typeName _this isEqualTo "SIDE") exitWith {[]};
 
-_logic = (_this) call CTI_CO_FNC_GetSideLogic;
+_logic = (_this) call EZC_fnc_Functions_Common_GetSideLogic;
 
 _teams = [];
 if !(isNull _logic) then {

@@ -12,7 +12,7 @@ _description = if (count _this > 8) then { if(!(isnil {_this select 8})) then {_
 _skin = if (count _this > 9) then { if(!(isnil {_this select 9})) then {_this select 9} else { 0 }; } else { 0 };
 
 if (typeName _position == "OBJECT") then {_position = getPos _position};
-if (typeName _side == "SIDE") then {_side = (_side) Call cti_CO_FNC_GetSideID};
+if (typeName _side == "SIDE") then {_side = (_side) Call EZC_fnc_Functions_Common_GetSideID};
 
 _vehicle = createVehicle [_type, _position, [], 7, _special];
 
@@ -69,7 +69,7 @@ _vehicle setVectorUp surfaceNormal (getposATL _vehicle);
 
 if (_locked) then {_vehicle lock _locked};
 if (_bounty) then {
-	_vehicle addEventHandler ["killed", Format ['[_this select 0,_this select 1,%1] Spawn cti_CO_FNC_OnUnitKilled', _side]];
+	_vehicle addEventHandler ["killed", Format ['[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled', _side]];
 	_vehicle addEventHandler ["hit", {_this Spawn cti_CO_FNC_OnUnitHit}];
 };
 /*unused, i changed weapons to centurion radar weapon

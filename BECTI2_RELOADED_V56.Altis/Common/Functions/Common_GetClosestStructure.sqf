@@ -6,7 +6,7 @@ _structures = _this select 2;
 _distance = if (count _this > 3) then { _this select 3 } else { 0 };
 
 _closest = objNull;
-_structures = [_type, _structures] call cti_CO_FNC_GetSideStructuresByType;
+_structures = [_type, _structures] call EZC_fnc_Functions_Common_GetSideStructuresByType;
 
 if (count _structures > 0) then { _closest = [_center, _structures] call cti_CO_FNC_GetClosestEntity };
 

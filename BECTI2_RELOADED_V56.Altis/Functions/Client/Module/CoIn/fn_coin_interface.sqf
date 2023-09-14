@@ -8,7 +8,7 @@ if !(alive _source) exitWith {};
 
 //--- Area limits.
 _root = "REPAIR";
-_hq = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
+_hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 if (_source == _hq) then {_root = "HQ"};
 
 _tooFar = false;
@@ -215,14 +215,14 @@ BIS_CONTROL_CAM_Handler = {
 				_isAutoWallConstructingEnabled = true;
 				_text = "enabled";
 			};
-			(format ["Auto Wall Construction is: %1", _text]) Call cti_CL_FNC_GroupChatMessage;
+			(format ["Auto Wall Construction is: %1", _text]) Call EZC_fnc_Functions_Client_GroupChatMessage;
 			[_isAutoWallConstructingEnabled, player] remoteExecCall ["cti_SE_PVF_RequestAutoWallConstructinChange",2];
 		};
 
 		//--- Last Built Defense (Custom Action #1).
 		if ((_key in (actionKeys "BuldTurbo")) && count lastBuilt > 0) then {
 			_deployed = true;
-			if (cti_COIN_Root == "HQ") then {_deployed = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQDeployStatus};
+			if (cti_COIN_Root == "HQ") then {_deployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus};
 			_currentCash = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			if (_currentCash > (lastBuilt select 2) select 1 && _deployed) then {
 				showCommandingMenu '';
@@ -259,14 +259,14 @@ BIS_CONTROL_CAM_Handler = {
 							_closest setVariable ['sold',true];
 							_price = _get select QUERYUNITPRICE;
 							round(_price/2.5) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-							_area = [getPos (_closest),((cti_Client_SideJoined) Call cti_CO_FNC_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2;
+							_area = [getPos (_closest),((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2;
 							_get = _area getVariable 'avail';
 
 							if (!isNull _area && _get < missionNamespace getVariable "cti_C_BASE_AV_STRUCTURES") then {
 							_commanderTeam =(cti_Client_SideJoined) Call cti_CO_FNC_GetCommanderTeam;
 							_area setVariable [ "avail" ,_get +1];
 							hintSilent parseText format ["Available Items : " +"<t color='#00FF00'>"+" %1"+"</t>", _area getVariable 'avail'];
-							['Available', _area getVariable 'avail'] remoteExecCall ["cti_CL_FNC_HandleSpecial", leader commanderTeam];
+							['Available', _area getVariable 'avail'] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", leader commanderTeam];
 							}
 							
 							;
@@ -504,14 +504,14 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 					deleteVehicle _get;
 					_logic setVariable ['cti_Helper',nil];
 				};
-				_hqDeployed = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQDeployStatus;
+				_hqDeployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;
 				_index = _bns find _itemclass;
 				if (_index == 0 && _hqDeployed) exitWith {
-					_mhq = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
-					(_mhq) Spawn cti_CL_FNC_HandleHQAction;
+					_mhq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
+					(_mhq) Spawn EZC_fnc_Functions_Client_HandleHQAction;
 					[cti_Client_SideJoined,_itemclass,[0,0,0],0] remoteExecCall ["cti_SE_PVF_RequestStructure",2];
 
-					[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call cti_CL_FNC_Init_Coin;
+					[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call EZC_fnc_Init_Init_Coin;
 
 					_structuresCosts = missionNamespace getVariable Format["cti_%1STRUCTURECOSTS",cti_Client_SideJoinedText];
 					[cti_Client_SideJoined,-(_structuresCosts select _index)] Call cti_CO_FNC_ChangeSideSupply;
@@ -741,11 +741,11 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 						[cti_Client_SideJoined, -_price] Call cti_CO_FNC_ChangeSideSupply;
 
 						if (_index == 0) then {
-							_hqDeployed = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQDeployStatus;
+							_hqDeployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;
 							if (_hqDeployed) then {
-								[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call cti_CL_FNC_Init_Coin;
+								[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call EZC_fnc_Init_Init_Coin;
 							} else {
-								[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call cti_CL_FNC_Init_Coin;
+								[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call EZC_fnc_Init_Init_Coin;
 							};
 							//_logic setVariable ["BIS_COIN_restart",true];
 						} else {
@@ -761,7 +761,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 					};
 
 					//--- Execute designer defined code On Construct
-					_deployed = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQDeployStatus;
+					_deployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;
 					_structures = missionNamespace getVariable Format["cti_%1STRUCTURENAMES",cti_Client_SideJoinedText];
 					_defenses = missionNamespace getVariable Format["cti_%1DEFENSENAMES",cti_Client_SideJoinedText];
 
@@ -781,13 +781,13 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 						[cti_Client_SideJoined,_itemclass,_pos,_dir,manningDefense] remoteExecCall ["cti_SE_PVF_RequestDefense",2];
 
 						lastBuilt = _par;
-						_area = [_pos,((cti_Client_SideJoined) Call cti_CO_FNC_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2;
+						_area = [_pos,((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity2;
 						_get = _area getVariable 'avail';
 						if (!isNull _area && _get > 0) then {
 							_commanderTeam =(cti_Client_SideJoined) Call cti_CO_FNC_GetCommanderTeam;
 							_area setVariable [ "avail" ,_get -1];
 							//hintSilent parseText format ["Available Items : " +"<t color='#00FF00'>"+" %1"+"</t>", _area getVariable 'avail'];
-							[_area getVariable 'avail'] remoteExecCall ["cti_CL_FNC_Available",leader _commanderTeam];
+							[_area getVariable 'avail'] remoteExecCall ["EZC_fnc_PVFunctions_Available",leader _commanderTeam];
 						}
 						;
 					};

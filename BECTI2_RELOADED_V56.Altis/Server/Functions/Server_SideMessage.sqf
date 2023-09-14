@@ -4,7 +4,7 @@ _side = _this select 0;
 _message = _this select 1;
 _parameters = if (count _this > 2) then {_this select 2} else {[]};
 
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 _speaker = _logik getVariable "cti_radio_hq";
 _receiver = _logik getVariable "cti_radio_hq_rec";

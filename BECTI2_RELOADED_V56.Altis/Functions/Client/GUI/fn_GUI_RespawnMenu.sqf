@@ -30,7 +30,7 @@ cti_MenuAction = -1;mouseButtonDown = -1;mouseButtonUp = -1;
 
 //--- Start the tracker.
 cti_MarkerTracking = objNull;
-[] Spawn cti_CL_FNC_UI_Respawn_Selector;
+[] Spawn EZC_fnc_Functions_Client_UI_Respawn_Selector;
 
 while {cti_RespawnTime > 0 && dialog && alive player && !cti_GameOver} do 
 {
@@ -165,7 +165,7 @@ else
 					cti_RespawnTime = nil;
 					
 					//--- Execute actions on respawn.
-					[player,_this] Call cti_CL_FNC_OnRespawnHandler;
+					[player,_this] Call EZC_fnc_Functions_Client_OnRespawnHandler;
 					
 					//--- Destroy the camera.
 					if !(isNil 'cti_DeathCamera') then {
@@ -190,7 +190,7 @@ else
 			cti_RespawnTime = nil;
 			
 			//--- Execute actions on respawn.
-			[player,_spawn_at_current] Call cti_CL_FNC_OnRespawnHandler;
+			[player,_spawn_at_current] Call EZC_fnc_Functions_Client_OnRespawnHandler;
 			
 			//--- Destroy the camera.
 			if !(isNil 'cti_DeathCamera') then {

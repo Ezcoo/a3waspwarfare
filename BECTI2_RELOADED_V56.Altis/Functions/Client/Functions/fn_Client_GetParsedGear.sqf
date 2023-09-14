@@ -50,6 +50,6 @@ _get_mag_seco = [];
 } forEach _magazines;
 
 _get_backpack_content = [[[],[]],[[],[]]];
-if (!isNull _unit && _get_backpack != "") then {_get_backpack_content = (_unit) Call cti_CL_FNC_GetBackpackContent};
+if (!isNull _unit && _get_backpack != "") then {_get_backpack_content = (_unit) Call EZC_fnc_Functions_Client_GetBackpackContent};
 
 [_get_prim,_get_seco,_get_hand,_get_backpack,_get_spec,_get_misc,_get_mag_main,_get_mag_seco,_get_backpack_content]

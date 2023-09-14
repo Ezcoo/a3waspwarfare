@@ -34,7 +34,7 @@ while {isNull _team} do {
 	if (isNull _team) then {sleep 0.5};
 };
 
-_logic = _sideJoined Call cti_CO_FNC_GetSideLogic;
+_logic = _sideJoined Call EZC_fnc_Functions_Common_GetSideLogic;
 _teams = _logic getVariable "cti_teams";
 
 

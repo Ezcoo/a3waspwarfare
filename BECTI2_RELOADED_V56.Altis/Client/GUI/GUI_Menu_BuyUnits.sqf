@@ -196,7 +196,7 @@ while {alive player && dialog} do {
 	if (_update) then {
 		_listUnits = missionNamespace getVariable Format ['CTI_%1%2UNITS',CTI_Client_SideJoinedText,_type];
 
-		[_comboFaction,_type] Call CTI_CL_FNC_UIChangeComboBuyUnits;
+		[_comboFaction,_type] Call EZC_fnc_Functions_Client_UIChangeComboBuyUnits;
 
 		{
 			_un = _x;
@@ -211,7 +211,7 @@ while {alive player && dialog} do {
 			}
 		}foreach _listUnits;
 		
-		[_listUnits,_type,_listBox,_val] Call CTI_CL_FNC_UIFillListBuyUnits;
+		[_listUnits,_type,_listBox,_val] Call EZC_fnc_Functions_Client_UIFillListBuyUnits;
 		
 		lnbSortByValue [_listBox, 1, false];
 		
@@ -232,14 +232,14 @@ while {alive player && dialog} do {
 		switch (_type) do {
 			//--- Specials.
 			case 'Depot': {
-				_sorted = [[vehicle player, missionNamespace getVariable "CTI_C_TOWNS_PURCHASE_RANGE"] Call CTI_CL_FNC_GetClosestDepot];
+				_sorted = [[vehicle player, missionNamespace getVariable "CTI_C_TOWNS_PURCHASE_RANGE"] Call EZC_fnc_Functions_Client_GetClosestDepot];
 			};
 			case 'Airport': {
-				_sorted = [[vehicle player, missionNamespace getVariable "CTI_C_UNITS_PURCHASE_HANGAR_RANGE"] Call CTI_CL_FNC_GetClosestAirport];
+				_sorted = [[vehicle player, missionNamespace getVariable "CTI_C_UNITS_PURCHASE_HANGAR_RANGE"] Call EZC_fnc_Functions_Client_GetClosestAirport];
 			};
 			//--- Factories
 			default {
-				_buildings = (CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideStructures;
+				_buildings = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 				_factories = [CTI_Client_SideJoined,missionNamespace getVariable Format ['CTI_%1%2TYPE',CTI_Client_SideJoinedText,_type],_buildings] Call CTI_CO_FNC_GetFactories;
 				_sorted = [vehicle player,_factories] Call CTI_CO_FNC_SortByDistance;
 				_closest = _sorted select 0;
@@ -640,7 +640,7 @@ if !(_isInfantry) then {
 	_lastCheck = _lastCheck + 0.1;
 	if (_lastCheck > 2 && _type != 'Depot' && _type != 'Airport') then {
 		_lastCheck = 0;
-		_buildings = (CTI_Client_SideJoined) Call CTI_CO_FNC_GetSideStructures;
+		_buildings = (CTI_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 		_factories = [CTI_Client_SideJoined,missionNamespace getVariable Format ['CTI_%1%2TYPE',CTI_Client_SideJoinedText,_type],_buildings] Call CTI_CO_FNC_GetFactories;
 		if (count _factories != _countAlive) then {_updateList = true};
 	};

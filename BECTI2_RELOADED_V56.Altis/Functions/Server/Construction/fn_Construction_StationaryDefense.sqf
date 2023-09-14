@@ -7,9 +7,9 @@ _direction = _this select 3;
 _manned = _this select 4;
 _isAIQuery = _this select 5;
 _manRange = if (count _this > 6) then {_this select 6} else {missionNamespace getVariable "cti_C_BASE_DEFENSE_MANNING_RANGE"};
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
-_area = [_position,((_side) Call cti_CO_FNC_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity4;// hintsilent format ["%1",_area];
+_area = [_position,((_side) Call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_basearea"] Call cti_CO_FNC_GetClosestEntity4;// hintsilent format ["%1",_area];
 _availweapons = _area getVariable "weapons";
 
 _defense = createVehicle [_type, _position, [], 0, "NONE"];
@@ -197,7 +197,7 @@ if (_type == 'pook_M777') then {
 
 _defense setVariable ["cti_defense", true]; //--- This is one of our defenses.
 
-Call Compile Format ["_defense addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn cti_CO_FNC_OnUnitKilled}]",_sideID];
+Call Compile Format ["_defense addEventHandler ['Killed',{[_this select 0,_this select 1,%1] Spawn EZC_fnc_Functions_Common_OnUnitKilled}]",_sideID];
 
 if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "cti_C_BASE_DEFENSE_MAX_AI") > 0) || _isAIQuery)) then {
 	Private ["_alives","_check","_closest","_team"];
@@ -238,7 +238,7 @@ if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "cti
 	if (_manned) then {
         _alives = (units _team) Call cti_CO_FNC_GetLiveUnits;
         if (count _alives < _availweapons || _isAIQuery) then {
-            _buildings = (_side) Call cti_CO_FNC_GetSideStructures;
+            _buildings = (_side) Call EZC_fnc_Functions_Common_GetSideStructures;
             _closest = ['BARRACKSTYPE',_buildings,_manRange,_side,_defense] Call cti_CO_FNC_BuildingInRange;
 
             //--- Manning Defenses.

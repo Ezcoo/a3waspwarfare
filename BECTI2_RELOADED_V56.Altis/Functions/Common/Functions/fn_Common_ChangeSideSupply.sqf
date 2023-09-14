@@ -10,4 +10,4 @@ _change = _currentSupply + _amount;
 if (_change < 0) then {_change = _currentSupply - _amount};
 if (_change >= _maxSupplyLimit) then {_change = _maxSupplyLimit};
 
-(_side Call cti_CO_FNC_GetSideLogic) setVariable ["cti_supply", _change, true];
+(_side Call EZC_fnc_Functions_Common_GetSideLogic) setVariable ["cti_supply", _change, true];

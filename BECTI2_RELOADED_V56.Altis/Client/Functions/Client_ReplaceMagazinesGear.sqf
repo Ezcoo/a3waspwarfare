@@ -49,8 +49,8 @@ if (count _replaced > 0) then {
 	_outter = [];
 	{_mag = _x;	if ({_x == _mag} count _replaced == 0) then {_outter pushBack _mag}} forEach _mags;
 	
-	_currentSize = (_mags) Call cti_CL_FNC_GetMagazinesSize;//
-	_size = (_outter) Call cti_CL_FNC_GetMagazinesSize;
+	_currentSize = (_mags) Call EZC_fnc_Functions_Client_GetMagazinesSize;//
+	_size = (_outter) Call EZC_fnc_Functions_Client_GetMagazinesSize;
 	
 	for '_i' from 0 to count(_mags)-1 do {
 		if ((_mags select _i) in _replaced && _size < _pool_max) then {_mags set [_i, _replace_with];_size = _size + _replace_size;};

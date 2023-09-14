@@ -82,7 +82,7 @@ while {alive player && dialog} do {
 			-_transferAmount Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			if (isPlayer leader (cti_Client_Teams select _curSel)) then {
-				['FundsTransfer',_transferAmount,name player] remoteExecCall ["cti_CL_FNC_LocalizeMessage", leader (cti_Client_Teams select _curSel)];
+				['FundsTransfer',_transferAmount,name player] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", leader (cti_Client_Teams select _curSel)];
 			};
 			sliderSetRange[13007,0,_funds];
 		};

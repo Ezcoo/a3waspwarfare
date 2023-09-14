@@ -13,7 +13,7 @@ cti_HC_BasePatrolTeams pushBack _group;
 {
 	if (alive _site) then {
 		if (_x isKindOf 'Man') then {
-			_sideID = (_side) Call cti_CO_FNC_GetSideID;
+			_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 			_soldier = [_x,_group,_position,_sideID] Call cti_CO_FNC_CreateUnit;
 			_created = _created + 1;
 		};
@@ -24,6 +24,6 @@ if (_created > 0) then {
 	_built = _WF_Logic getVariable Format ["%1UnitsCreated",str _side];
 	_built = _built + 1;
 	_WF_Logic setVariable [Format["%1UnitsCreated",str _side],_built,true];
-	[str _side,'UnitsCreated',_built] Call cti_CO_FNC_UpdateStatistics;
+	[str _side,'UnitsCreated',_built] Call EZC_fnc_Functions_Common_UpdateStatistics;
 	[_group,_site,missionNamespace getVariable "cti_C_AI_PATROL_RANGE"] Spawn cti_SE_FNC_AIPatrol;
 };

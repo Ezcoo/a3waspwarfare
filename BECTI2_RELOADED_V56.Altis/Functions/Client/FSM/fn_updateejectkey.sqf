@@ -19,7 +19,7 @@ if !(_veh isKindOf "ParachuteBase") then {
 			
 			
 			
-[player,true,false] call cti_CL_FNC_HALO_JUMP;
+[player,true,false] call EZC_fnc_Functions_Client_HaloJump;
 
 
 			

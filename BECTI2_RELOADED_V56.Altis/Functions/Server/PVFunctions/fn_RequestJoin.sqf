@@ -33,7 +33,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 		if(_players_difference > 2) then {
 	        _canJoin = false;
 			missionNamespace setVariable [format["cti_JIP_USER%1",_uid], nil];
-			['Teamstack',_name,_uid,_side] remoteExecCall ["cti_CL_FNC_LocalizeMessage", _player];
+			['Teamstack',_name,_uid,_side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _player];
 			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamstacking,joined side [%3].", _name,_uid,_side]] Call EZC_fnc_Functions_Common_LogContent
 ;
 			_get set [4,0];
@@ -44,7 +44,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 			_canJoin = false;
 
-			['Teamswap',_name,_uid,_sideOrigin,_side] remoteExecCall ["cti_CL_FNC_LocalizeMessage"];
+			['Teamswap',_name,_uid,_sideOrigin,_side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage"];
 
 			[14000, ["\n \n" + (localize 'STR_WF_Teamswap'), "PLAIN", 10]] remoteExec ["cutText", _player];
 
@@ -65,4 +65,4 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call EZC_fnc_Functions_Common_LogContent
 ;
-['join-answer', _canJoin] remoteExecCall ["cti_CL_FNC_HandleSpecial", _player];
+['join-answer', _canJoin] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _player];

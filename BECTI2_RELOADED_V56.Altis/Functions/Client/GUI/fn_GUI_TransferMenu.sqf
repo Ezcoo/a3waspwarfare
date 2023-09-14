@@ -49,7 +49,7 @@ while {alive player && dialog} do {
 						-(_funds_transfering) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 						[_selected, _funds_transfering] Call cti_CO_FNC_ChangeTeamFunds;
 						if (isPlayer leader _selected) then {
-								['FundsTransfer',_funds_transfering,name player] remoteExecCall ["cti_CL_FNC_LocalizeMessage", leader _selected];
+								['FundsTransfer',_funds_transfering,name player] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", leader _selected];
 								
 								["INFORMATION", Format ["Player %1 has sent cash to player %2).", name player, name leader _selected]] Call EZC_fnc_Functions_Common_LogContent
 ;

@@ -14,7 +14,7 @@ _side = _this select 1;
 		_col = "ColorRed";
 		_radar_range = missionNamespace getVariable "cti_C_STRUCTURES_ANTIARTYRADAR_DETECTION";
 
-		_buildings = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideStructures;
+		_buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 		_artyRadarInRange = if (isNull (['ArtyRadarTYPE',_buildings,_radar_range,cti_Client_SideJoined,player] Call cti_CO_FNC_BuildingInRange)) then {false} else {true};
 
 

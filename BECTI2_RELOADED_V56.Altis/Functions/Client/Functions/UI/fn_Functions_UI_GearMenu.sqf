@@ -2519,7 +2519,7 @@ CTI_UI_Gear_EquipTemplate = {
 
 
 CTI_UI_Gear_LoadAvailableUnits = {
-	_structures = (CTI_Client_SideJoined) call CTI_CO_FNC_GetSideStructures;
+	_structures = (CTI_Client_SideJoined) call EZC_fnc_Functions_Common_GetSideStructures;
 	_list = [];
 	
 	_vehicles = [];

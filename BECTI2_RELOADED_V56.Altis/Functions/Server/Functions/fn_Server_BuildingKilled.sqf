@@ -6,7 +6,7 @@ _type = _this select 2;
 _side = _structure getVariable "cti_side";
 if(isNil '_side')then{_side = resistance;};
 if(_side != resistance)then{
-  _logik = (_side) Call cti_CO_FNC_GetSideLogic;
+  _logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 };
 //--- Teamkill?
 _teamkill = if (side _killer == _side) then {true} else {false};
@@ -15,7 +15,7 @@ _killer_uid = getPlayerUID _killer;
 
 if ((!isNull _killer) && (isPlayer _killer)) then{
     if (_teamkill) then{
-		["BuildingTeamkill", name _killer, _killer_uid, _type] remoteExecCall ["cti_CL_FNC_LocalizeMessage", _side];
+		["BuildingTeamkill", name _killer, _killer_uid, _type] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side];
     }else{
         _supplies = 0;
             _bounty = if(_side != resistance)then{
@@ -34,12 +34,12 @@ if ((!isNull _killer) && (isPlayer _killer)) then{
          if(typeof _structure == "Gue_WarfareBBarracks")then{
             _bounty = 3000;
             _supplies = 500;
-            ["HeadHunterReceiveBountyInSupplies", _side_killer, _type, _supplies, _side] remoteExecCall ["cti_CL_FNC_LocalizeMessage", _side_killer];
-            ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side] remoteExecCall ["cti_CL_FNC_LocalizeMessage", _side_killer];
+            ["HeadHunterReceiveBountyInSupplies", _side_killer, _type, _supplies, _side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side_killer];
+            ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side_killer];
 
             [_side_killer, _supplies] Call cti_CO_FNC_ChangeSideSupply;
          } else{
-            ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side] remoteExecCall ["cti_CL_FNC_LocalizeMessage", _side_killer];
+            ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side_killer];
          };
 
         if(_side == resistance)then{

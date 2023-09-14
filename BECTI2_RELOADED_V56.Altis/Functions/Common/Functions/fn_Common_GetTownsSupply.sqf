@@ -1,6 +1,6 @@
 Private ["_income","_side"];
 
-_side = (_this) Call cti_CO_FNC_GetSideID;
+_side = (_this) Call EZC_fnc_Functions_Common_GetSideID;
 
 _income = 0;
 {

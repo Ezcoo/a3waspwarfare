@@ -12,7 +12,7 @@ waitUntil {commonInitComplete};
 
 if(_sideJoined == _side)then{
 	while {isNil "_logic"} do {
-		_logic = _sideJoined Call cti_CO_FNC_GetSideLogic; 
+		_logic = _sideJoined Call EZC_fnc_Functions_Common_GetSideLogic; 
 		if (isNil "_logic") then {sleep 1};
 	};
 	

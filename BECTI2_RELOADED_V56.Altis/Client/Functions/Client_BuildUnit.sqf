@@ -240,7 +240,7 @@ if (_isMan) then {
 		if (_gear_backpack != "") then {[_soldier, _gear_backpack, _gear_backpack_content] Call cti_CO_FNC_EquipBackpack};
 	};
 
-	[cti_Client_SideJoinedText,'UnitsCreated',1] Call cti_CO_FNC_UpdateStatistics;
+	[cti_Client_SideJoinedText,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 } else {
 	_driver = _vehi select 0;
 	_gunner = _vehi select 1;
@@ -278,7 +278,7 @@ if (_isMan) then {
 	_vehicle addAction [localize "STR_WF_Lock","Client\Action\Action_ToggleLock.sqf", [], 94, false, true, '', 'alive _target && (locked _target == 0)'];
 
 	//--- Salvage Truck.
-	if (_unit in (missionNamespace getVariable Format['cti_%1SALVAGETRUCK',cti_Client_SideJoinedText])) then {[_vehicle] spawn cti_CL_FNC_Update_Salvage};
+	if (_unit in (missionNamespace getVariable Format['cti_%1SALVAGETRUCK',cti_Client_SideJoinedText])) then {[_vehicle] spawn EZC_fnc_FSM_updatesalvage};
 
 	//--- Are we dealing with an artillery unit.
 	_isArtillery = [_unit,cti_Client_SideJoinedText] Call cti_CO_FNC_IsArtillery;
@@ -291,7 +291,7 @@ if (_isMan) then {
 
 	/* Section: Creation */
 
-	[cti_Client_SideJoinedText,'VehiclesCreated',1] Call cti_CO_FNC_UpdateStatistics;
+	[cti_Client_SideJoinedText,'VehiclesCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 	
 	_built = 0;
 	_group addVehicle _vehicle;
@@ -379,7 +379,7 @@ if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle add
 
 	};
 
-	[cti_Client_SideJoinedText,'UnitsCreated',_cpt] Call cti_CO_FNC_UpdateStatistics;
+	[cti_Client_SideJoinedText,'UnitsCreated',_cpt] Call EZC_fnc_Functions_Common_UpdateStatistics;
 };
 
 unitQueu = unitQueu - _cpt;

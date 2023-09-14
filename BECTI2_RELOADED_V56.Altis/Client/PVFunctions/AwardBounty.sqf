@@ -35,9 +35,9 @@ _bounty = switch  (true) do {
 //--- Are we dealing with a kill assist or a full kill.
 if (_assist) then {
 	_bounty = _bounty * (missionNamespace getVariable "cti_C_UNITS_BOUNTY_ASSISTANCE_COEF");
-	Format[Localize "STR_WF_CHAT_Award_Bounty_Assist", _bounty, _name] Call cti_CL_FNC_GroupChatMessage;
+	Format[Localize "STR_WF_CHAT_Award_Bounty_Assist", _bounty, _name] Call EZC_fnc_Functions_Client_GroupChatMessage;
 } else {
-	Format[Localize "STR_WF_CHAT_Award_Bounty", _bounty, _name] Call cti_CL_FNC_GroupChatMessage;
+	Format[Localize "STR_WF_CHAT_Award_Bounty", _bounty, _name] Call EZC_fnc_Functions_Client_GroupChatMessage;
 };
 
 (_bounty) Call EZC_fnc_Functions_Client_ChangePlayerFunds;

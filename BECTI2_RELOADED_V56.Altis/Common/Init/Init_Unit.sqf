@@ -13,7 +13,7 @@ if !(alive _unit) exitWith {}; //--- Abort if the unit is null or dead.
 if(isNil 'commonInitComplete')then{ commonInitComplete = false; };
 waitUntil {commonInitComplete}; //--- Wait for the common part.
 _side = (_sideID) Call cti_CO_FNC_GetSideFromID;
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 
 
@@ -79,7 +79,7 @@ if (_unit_kind in (missionNamespace getVariable "cti_REPAIRTRUCKS")) then { //--
 	
 	//_unit addAction ["<t color='#504315'>" + ('Bulldozer 1000$') + "</t>",'Client\Action\Action_Bulldozer_Repairtruck.sqf', [], 995, false,true, '', "((alive _target) && (player distance _target <= 5))"];
 	
-	_unit addAction [localize 'STR_WF_Repair_Camp','Client\Action\Action_RepairCamp.sqf', [], 97, false, true, '', '[_unit] call cti_CL_FNC_Client_GetNearestCamp'];
+	_unit addAction [localize 'STR_WF_Repair_Camp','Client\Action\Action_RepairCamp.sqf', [], 97, false, true, '', '[_unit] call EZC_fnc_Functions_Client_GetNearestCamp'];
 
 	if ((missionNamespace getVariable "cti_C_GAMEPLAY_VICTORY_CONDITION") != 1) then { //--- Repair HQ Ability.
 		//--- Repair MHQ action.
@@ -279,7 +279,7 @@ if (_isMan) then { //--- Man.
 	
 	
 	_params = [_type,_color,_size,_txt,_markerName,_unit,1,true,"waypoint",_color,false,_side,[2,2]];
-        if (_unit == ((_side) Call cti_CO_FNC_GetSideHQ)) then {_color = "ColorOrange";_params = ['b_hq',_color,[1,1],'HQ','HQUndeployed',_unit,0.2,false,'','',false,_side];};//--- HQ.
+        if (_unit == ((_side) Call EZC_fnc_Functions_Common_GetSideHQ)) then {_color = "ColorOrange";_params = ['b_hq',_color,[1,1],'HQ','HQUndeployed',_unit,0.2,false,'','',false,_side];};//--- HQ.
 
 
 };

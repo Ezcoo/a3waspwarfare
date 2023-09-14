@@ -3,7 +3,7 @@ Private ["_hq","_unit"];
 _unit = _this;
 [] execVM "WASP\actions\OnKilled.sqf";
 
-(player) Call cti_SK_FNC_Apply;
+(player) Call EZC_fnc_Module_Skill_Apply;
 
 
 _allplayercontainer = [OTeamleader1,OTeamleader2,OTeamleader3,OTeamleader4,OTeamleader5,BTeamleader1,BTeamleader2,BTeamleader3,BTeamleader4,BTeamleader5,
@@ -125,11 +125,11 @@ _unit addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '
 };
 
 if (_unit in _EngineerContainer) then	{
-_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 _unit addAction [("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Repair'+ "</t>"),(CTI_SK_V_Root + 'Engineer' + '.sqf'), [], 80, false, true, "", "time - CTI_SK_V_LastUse_Repair > CTI_SK_V_Reload_Repair"];
 };
 if (_unit in _UKEngineerContainer) then	{
-_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 _unit addAction [("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Repair'+ "</t>"),(CTI_SK_V_Root + 'Engineer' + '.sqf'), [], 80, false, true, "", "time - CTI_SK_V_LastUse_Repair > CTI_SK_V_Reload_Repair"];
 };
 
@@ -146,17 +146,17 @@ _unit setUnitRecoilCoefficient 0.25;
 
 if (_unit in _MedicContainer) then	{
 _unit addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_LR > CTI_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"];
-_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 };
 if (_unit in _UKMedicContainer) then	{
 _unit addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_LR > CTI_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"];
-_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 };
 
 
 if (_unit in _SpecsOpsContainer) then	{
 _unit addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_LR > CTI_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"];
-_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 _unit addAction [("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Lockpick'+ "</t>"),(CTI_SK_V_Root + 'SpecOps' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_Lockpick > CTI_SK_V_Reload_Lockpick && vehicle player == player)"];
 _unit addAction [("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Spot'+ "</t>"),(CTI_SK_V_Root + 'Sniper' + '.sqf'), [], 80, false, true, "", "time - CTI_SK_V_LastUse_Spot > CTI_SK_V_Reload_Spot"];
 //_unit setUnitTrait [""UAVHacker"",true];
@@ -165,7 +165,7 @@ _unit addAction [("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Spot'+ "</t>")
 };
 if (_unit in _UKSpecsOpsContainer) then	{
 _unit addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_LR > CTI_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"];
-_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 _unit addAction [("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Lockpick'+ "</t>"),(CTI_SK_V_Root + 'SpecOps' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_Lockpick > CTI_SK_V_Reload_Lockpick && vehicle player == player)"];
 _unit addAction [("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Spot'+ "</t>"),(CTI_SK_V_Root + 'Sniper' + '.sqf'), [], 80, false, true, "", "time - CTI_SK_V_LastUse_Spot > CTI_SK_V_Reload_Spot"];
 //_unit setUnitTrait [""UAVHacker"",true];
@@ -177,26 +177,26 @@ _unit addAction [("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Spot'+ "</t>")
 /*
 
 //camp repair
-OMedic1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OMedic2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OMedic3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OMedic4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OMedic5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BMedic5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OSpecOps5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BSpecOps5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+OMedic1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OMedic2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OMedic3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OMedic4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OMedic5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BMedic5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OSpecOps5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BSpecOps5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 //uav hack
 OSpecOps1 setUnitTrait [""UAVHacker"",true];
 OSpecOps2 setUnitTrait [""UAVHacker"",true];
@@ -211,16 +211,16 @@ BSpecOps5 setUnitTrait [""UAVHacker"",true];
 
 
 //camp destroy
-OEngineer1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OEngineer2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OEngineer3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OEngineer4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-OEngineer5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
-BEngineer5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call CTI_CL_FNC_Client_GetNearestCamp'];
+OEngineer1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OEngineer2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OEngineer3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OEngineer4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+OEngineer5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer1 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer2 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer3 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer4 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
+BEngineer5 addAction ["<t color='#11ec52'>" + localize 'STR_WF_Destroy_Camp' + "</t>",'Client\Action\Action_DestroyCampEngineer.sqf',[],97,false,true,'','[player] call EZC_fnc_Functions_Client_GetNearestCamp'];
 //light repair
 OMachinegunner1_1 addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_LR > CTI_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"];
 OMachinegunner1_2 addAction [(localize "STR_WASP_actions_fastrep"),(CTI_SK_V_Root + 'LR' + '.sqf'), [], 80, false, true, "", "(time - CTI_SK_V_LastUse_LR > CTI_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"];
@@ -331,17 +331,17 @@ BMachinegunner5_2 setUnitRecoilCoefficient 0.25;
 
 */
 
-[] spawn cti_CL_FNC_UpdateActions;
+[] spawn EZC_fnc_FSM_updateactions;
 
 Options = _unit addAction ["<t color='#42b6ff'>" + (localize "STR_WF_Options") + "</t>","Client\Action\Action_Menu.sqf", "", 999, false, true, "", "_target == player"];
 
 if (!isNull commanderTeam) then {
-	_hq = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
+	_hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 	if (commanderTeam == group _unit) then {HQAction = _unit addAction [localize "STR_WF_BuildMenu","Client\Action\Action_Build.sqf", [_hq], 1000, false, true, "", "hqInRange && canBuildWHQ && (_target == player)"];};
    if (commanderTeam == group _unit) then {Bulldozer = leader(group player) addAction ["<t color='#504315'>" + ('Bulldozer') + "</t>","Client\Action\Action_Bulldozer.sqf", [_MHQ], 995, false, true, "", "hqInRange && canBuildWHQ && (_target == player)"];};
-   //if (commanderTeam == group _unit) then {BuyHQ = leader(group player) addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1001, false, true, "", "(!(alive ((cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ)))&&(leader  (cti_Client_SideJoined call cti_CO_FNC_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];};
+   //if (commanderTeam == group _unit) then {BuyHQ = leader(group player) addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1001, false, true, "", "(!(alive ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ)))&&(leader  (cti_Client_SideJoined call cti_CO_FNC_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];};
 
-  // player addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1, false, true, "", "(!(alive ((cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ)))&&(leader  (cti_Client_SideJoined call cti_CO_FNC_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];
+  // player addAction ["<t color='#FF0000'>"+ "RECOVER HQ" + "  " + str (missionNameSpace getVariable 'cti_C_BASE_HQ_REPAIR_PRICE_CASH') +"$" +"</t>", "Client\Action\Action_RepairMHQDepot.sqf", [], 1, false, true, "", "(!(alive ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ)))&&(leader  (cti_Client_SideJoined call cti_CO_FNC_GetCommanderTeam) == leader (vehicle player))&&(typeOf cursorTarget in ['Fort_CAmp','cti_C_DEPOT'])&&(cursorTarget distance player < 100)"];
 };
 
 // adjusting fatigue
@@ -351,4 +351,4 @@ if ((missionNamespace getVariable "cti_C_GAMEPLAY_FATIGUE_ENABLED") == 1) then {
     player enablestamina false;
 };
 
-[cti_Client_SideJoinedText,'UnitsCreated',1] Call cti_CO_FNC_UpdateStatistics;
+[cti_Client_SideJoinedText,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;

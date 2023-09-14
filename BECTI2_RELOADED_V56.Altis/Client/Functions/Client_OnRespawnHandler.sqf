@@ -48,15 +48,15 @@ if (!isNil 'cti_P_CurrentGear' && !cti_RespawnDefaultGear && _allowCustom) then 
 			//--- Are we charging only on mobile respawn?
 			_charge = true;
 			if (_mode == 5) then {
-				_buildings = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideStructures;
-				if (_spawn in _buildings || _spawn == ((cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ)) then {_charge = false};
+				_buildings = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
+				if (_spawn in _buildings || _spawn == ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ)) then {_charge = false};
 			};
 
 			//--- Charge if possible.
 			_funds = CallEZC_fnc_Functions_Client_GetPlayerFunds;
 			if (_funds >= _price && _charge) then {
 				-(_price) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-				(Format[localize 'STR_WF_CHAT_Gear_RespawnCharge',_price]) Call cti_CL_FNC_GroupChatMessage;
+				(Format[localize 'STR_WF_CHAT_Gear_RespawnCharge',_price]) Call EZC_fnc_Functions_Client_GroupChatMessage;
 			};
 
 			//--- Check that the player has enough funds.

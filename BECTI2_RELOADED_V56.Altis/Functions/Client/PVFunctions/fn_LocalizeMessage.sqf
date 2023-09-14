@@ -76,5 +76,5 @@ switch (_localize) do {
 if (_commandChat) then {
 	_txt Call EZC_fnc_Functions_Client_CommandChatMessage;
 } else {
-	_txt Call cti_CL_FNC_GroupChatMessage;
+	_txt Call EZC_fnc_Functions_Client_GroupChatMessage;
 };

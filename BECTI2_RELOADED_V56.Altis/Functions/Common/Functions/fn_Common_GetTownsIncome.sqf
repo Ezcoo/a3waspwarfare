@@ -1,5 +1,5 @@
 Private ["_income","_incomeCoef","_incomeSystem","_side"];
-_side = (_this) Call cti_CO_FNC_GetSideID;
+_side = (_this) Call EZC_fnc_Functions_Common_GetSideID;
 
 _income = 0;
 _incomeCoef = 0;

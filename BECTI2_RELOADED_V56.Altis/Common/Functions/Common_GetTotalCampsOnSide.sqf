@@ -10,7 +10,7 @@ Private ["_camps","_side","_sideID","_total","_town"];
 _town = _this select 0;
 _side = _this select 1;
 
-_sideID = _side Call cti_CO_FNC_GetSideID;
+_sideID = _side Call EZC_fnc_Functions_Common_GetSideID;
 
 _camps = _town getVariable "camps";
 if (count _camps == 0) exitWith {1};

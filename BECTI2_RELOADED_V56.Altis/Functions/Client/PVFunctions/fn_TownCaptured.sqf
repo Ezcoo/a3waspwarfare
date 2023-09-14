@@ -24,7 +24,7 @@ _townMarker setMarkerColorLocal _color;
 
 //--- Display a title message.
 _side_label = switch (_side_captured) do {case west: {localize "STR_WF_PARAMETER_Side_West"}; case east: {localize "STR_WF_PARAMETER_Side_East"}; case resistance: {localize "STR_WF_Side_Resistance"};	default {"Civilian"}};
-[Format[Localize "STR_WF_CHAT_Town_Captured", _town getVariable "name", _side_label]] Call cti_CL_FNC_TitleTextMessage;
+[Format[Localize "STR_WF_CHAT_Town_Captured", _town getVariable "name", _side_label]] Call EZC_fnc_Functions_Client_TitleTextMessage;
 
 //--- Task.
 _task = _town getVariable 'taskLink';
@@ -32,7 +32,7 @@ _ptask = currentTask player;
 if (isNil '_task') then {_task = objNull};
 
 //--- Taskman
-["TownUpdate", _town] Spawn cti_CL_FNC_TaskSystem;
+["TownUpdate", _town] Spawn EZC_fnc_Functions_Client_TaskSystem;
 
 //--- Client side capture.
 if (_town_side_value_new == cti_Client_SideID) then {
@@ -93,7 +93,7 @@ Call Compile preprocessFileLineNumbers 'Common\Config\Core_Units\Units_RU.sqf';
 	//--- Taskman
 	if !(isNull _task) then {
 		if (_ptask == _task) then {
-			["TownAssignClosest"] Spawn cti_CL_FNC_TaskSystem;
+			["TownAssignClosest"] Spawn EZC_fnc_Functions_Client_TaskSystem;
 		};
 	};
 };

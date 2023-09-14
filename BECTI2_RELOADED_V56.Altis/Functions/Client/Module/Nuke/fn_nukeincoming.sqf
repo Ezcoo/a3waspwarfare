@@ -3,7 +3,7 @@ Private ['_cruise','_dropPosition','_dropPosX','_dropPosY','_dropPosZ','_misFlar
 _target = _this select 0;
 _nukeMarker = _this select 1;
 
-['TacticalLaunch'] remoteExecCall ["cti_CL_FNC_LocalizeMessage"];
+['TacticalLaunch'] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage"];
 
 //if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call EZC_fnc_Functions_Client_CommandChatMessage};
 
@@ -20,11 +20,11 @@ _cruise setSpeedMode "FULL";
 _perSecondsChecks = 100;
 _missileSpeed = 500;
 
-["ICBM",cti_Client_SideJoined,_target,_cruise,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+["ICBM",cti_Client_SideJoined,_target,_cruise,cti_Client_Team] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 
 sleep 1.5;
 
-["icbm-display", _target, _cruise] remoteExecCall ["cti_CL_FNC_HandleSpecial"];
+["icbm-display", _target, _cruise] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial"];
 
 //create missile and setting pos
 _pos = [(_dropPosition select 0) - 4000, (_dropPosition select 1) - 4000, 13000];

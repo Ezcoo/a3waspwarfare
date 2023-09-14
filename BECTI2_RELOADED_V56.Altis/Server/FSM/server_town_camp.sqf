@@ -88,7 +88,7 @@ while {!cti_GameOver} do {
 					_camp setVariable ["sideID",_newSID,true];
 					_flag setFlagTexture (missionNamespace getVariable Format["cti_%1FLAG",str _side]);
 
-					[_camp,_newSID,_sideID] remoteExecCall ["cti_CL_FNC_CampCaptured"];
+					[_camp,_newSID,_sideID] remoteExecCall ["EZC_fnc_PVFunctions_CampCaptured"];
 				};
 			};
 		}else{};

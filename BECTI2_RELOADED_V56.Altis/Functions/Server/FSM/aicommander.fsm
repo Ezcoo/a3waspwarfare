@@ -103,9 +103,9 @@ class FSM
       name = "Init";
       init = /*%FSM<STATEINIT""">*/"_side = _this select 0;" \n
        "_sideText = Str _side;" \n
-       "_sideID = (_side) Call cti_CO_FNC_GetSideID;" \n
-       "_hq = (_side) Call cti_CO_FNC_GetSideHQ;" \n
-       "_logik = (_side) Call cti_CO_FNC_GetSideLogic;" \n
+       "_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;" \n
+       "_hq = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;" \n
+       "_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;" \n
        "_maxplayers = _logik getVariable ""cti_teams_count"";" \n
        "" \n
        "_lastHQMoveOrder = 0;" \n
@@ -269,7 +269,7 @@ class FSM
     class Check_HQ
     {
       name = "Check_HQ";
-      init = /*%FSM<STATEINIT""">*/"_hq = (_side) Call cti_CO_FNC_GetSideHQ;"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_hq = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -290,7 +290,7 @@ class FSM
     class Check_HQ_Status
     {
       name = "Check_HQ_Status";
-      init = /*%FSM<STATEINIT""">*/"_hqDeployed = (_side) Call cti_CO_FNC_GetSideHQDeployStatus;"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_hqDeployed = (_side) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -565,7 +565,7 @@ class FSM
       name = "Update_Base";
       init = /*%FSM<STATEINIT""">*/"_lastUpdateBase = time;" \n
        "" \n
-       "_buildings = (_side) Call cti_CO_FNC_GetSideStructures;" \n
+       "_buildings = (_side) Call EZC_fnc_Functions_Common_GetSideStructures;" \n
        "" \n
        "//--- Get the buildings close of the HQ by type (repair if downed)." \n
        "_barracks = ['BARRACKSTYPE',_buildings,750,_side,_hq] Call cti_CO_FNC_BuildingInRange;" \n

@@ -8,7 +8,7 @@
 Private ["_defense","_defense_logic","_kind","_kinds","_nils","_random","_side","_sideID"];
 _defense_logic = _this select 0;
 _side = _this select 1;
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 _defense = "";
 
 //--- Retrieve the possible kinds.
@@ -49,7 +49,7 @@ if (_defense != "") then {
 		_entitie setVectorUp surfaceNormal (getposATL _entitie);
 
 		
-		_entitie addEventHandler ['killed', Format ["[_this select 0, _this select 1, %1] Spawn cti_CO_FNC_OnUnitKilled;", _sideID]];
+		_entitie addEventHandler ['killed', Format ["[_this select 0, _this select 1, %1] Spawn EZC_fnc_Functions_Common_OnUnitKilled;", _sideID]];
 		_defense_logic setVariable ["cti_defense", _entitie];
 	//};
 };

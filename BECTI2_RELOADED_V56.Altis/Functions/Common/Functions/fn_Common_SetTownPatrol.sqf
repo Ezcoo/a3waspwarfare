@@ -87,7 +87,7 @@ while {!cti_GameOver || _aliveTeam} do {
 				//[_team, 300, _location, _location, 300, "AWARE", 100, "LIMITED", "FILE", 0, 0]  spawn cti_SE_ULTRASIMPELPATROLSCRIPT;
 	
 
-				[_team,_location,_patrol_range] Spawn cti_CO_FNC_WaypointPatrolTown;
+				[_team,_location,_patrol_range] Spawn EZC_fnc_Functions_Common_WaypointPatrolTown;
 			} else {
 				
 				
@@ -96,14 +96,14 @@ while {!cti_GameOver || _aliveTeam} do {
 				//[group this,getpos this,50] call BIS_fnc_taskPatrol;
 				//[_team, 300, _location, _location, 75, "AWARE", 100, "LIMITED", "FILE", 0, 0]  spawn cti_SE_ULTRASIMPELPATROLSCRIPT;
 	
-				[_team,_focus,_patrol_range/4] call cti_CO_FNC_WaypointPatrol;
+				[_team,_focus,_patrol_range/4] call EZC_fnc_Functions_Common_WaypointPatrol;
 			};
 		} else {
 			
 			//[group _team,[getPos nearestLocation [getPos _team, "CityCenter"]],200] call BIS_fnc_taskPatrol;
 
 			
-			[_team,getPos _location,'SAD',_defense_range] Spawn cti_CO_FNC_WaypointSimple;
+			[_team,getPos _location,'SAD',_defense_range] Spawn EZC_fnc_Functions_Common_WaypointSimple;
 		
 		
 		};

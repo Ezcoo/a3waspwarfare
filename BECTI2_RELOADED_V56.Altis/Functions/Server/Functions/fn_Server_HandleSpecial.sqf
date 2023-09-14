@@ -20,14 +20,14 @@ switch (_args select 0) do {
 			if (alive leader _group) then {
 				if (isPlayer leader _group) then {
 					//--- Player, forward the request.
-					['group-join-request', _player] remoteExecCall ["cti_CL_FNC_HandleSpecial", leader _group];
+					['group-join-request', _player] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", leader _group];
 					
 				} else {
 					if (isNil {_group getVariable "cti_uid"}) then { //--- Ensure that the group is ai-controlled.
 						[_player, _group, _side] Call cti_CO_FNC_ChangeUnitGroup;
 
 						//--- Tell the player that his request is granted.
-						["group-join-accept", _group] remoteExecCall ["cti_CL_FNC_HandleSpecial", _player];
+						["group-join-accept", _group] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _player];
 					};
 				};
 			};
@@ -48,7 +48,7 @@ switch (_args select 0) do {
 	case "RespawnST": {
 		Private ["_side","_st"];
 		_side = _args select 1;
-		_st = (_side call cti_CO_FNC_GetSideLogic) getVariable "cti_ai_supplytrucks";
+		_st = (_side call EZC_fnc_Functions_Common_GetSideLogic) getVariable "cti_ai_supplytrucks";
 		{if (!isNull (driver _x)) then {driver _x setDammage 1};_x setDammage 1} forEach _st;
 		["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Supply Trucks were forced respawn.", str _side]] Call EZC_fnc_Functions_Common_LogContent
 ;
@@ -153,7 +153,7 @@ switch (_args select 0) do {
 			_logic setVariable ["sideID", _repairSideID, true];
 
 			//--- Notify / update map if needed.
-			[_logic, _repairSideID, _camp_sideID, true] remoteExecCall ["cti_CL_FNC_CampCaptured"];
+			[_logic, _repairSideID, _camp_sideID, true] remoteExecCall ["EZC_fnc_PVFunctions_CampCaptured"];
 		};
 	};
 	case "destroy-camp": {

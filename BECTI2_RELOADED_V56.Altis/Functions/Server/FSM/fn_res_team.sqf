@@ -33,8 +33,8 @@ while{!_end}do{
 	if(_action_type == "moveto")then{
 		_WestBaseStructures = missionNamespace getVariable Format["cti_%1STRUCTURES",west];
 		_EastBaseStructures = missionNamespace getVariable Format["cti_%1STRUCTURES",east];
-		_WestMHQ = (west) Call cti_CO_FNC_GetSideHQ;
-		_EastMHQ = (east) Call cti_CO_FNC_GetSideHQ;
+		_WestMHQ = (west) Call EZC_fnc_Functions_Common_GetSideHQ;
+		_EastMHQ = (east) Call EZC_fnc_Functions_Common_GetSideHQ;
 		_buildings = (_WestBaseStructures) + (_EastBaseStructures) + [_EastMHQ,_WestMHQ];
 		_near = [_barrack, _buildings] Call cti_CO_FNC_SortByDistance;
 		_target = _near select 0;

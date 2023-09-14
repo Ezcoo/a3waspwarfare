@@ -8,7 +8,7 @@ Private ["_logic", "_side", "_voteTime"];
 
 _side = _this;
 _voteTime = (missionNamespace getVariable 'cti_C_GAMEPLAY_VOTE_TIME');
-_logic = (_side) Call cti_CO_FNC_GetSideLogic;
+_logic = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 //--- Vote countdown.
 while {_voteTime > -1} do {_voteTime = _voteTime - 1;_logic setVariable ["cti_votetime", _voteTime, true];sleep 1};
@@ -49,7 +49,7 @@ if !(isNull _commander) then {if !(isPlayer leader _commander) then {_commander 
 _logic setVariable ["cti_commander", _commander, true];
 
 //--- Notify the clients.
-["commander-vote", _commander] remoteExecCall ["cti_CL_FNC_HandleSpecial", _side];
+["commander-vote", _commander] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _side];
 
 //--- Process the AI Commander FSM if it's not running.
 if (isNull _commander) then {

@@ -1,8 +1,8 @@
 private["_whq","_ehq"];
 
 while {!cti_GameOver} do {
-	_whq = (west) Call cti_CO_FNC_GetSideHQ;
-	_ehq = (east) Call cti_CO_FNC_GetSideHQ;
+	_whq = (west) Call EZC_fnc_Functions_Common_GetSideHQ;
+	_ehq = (east) Call EZC_fnc_Functions_Common_GetSideHQ;
 
 	if (isNil "gc_collector") then { gc_collector = []; };
 

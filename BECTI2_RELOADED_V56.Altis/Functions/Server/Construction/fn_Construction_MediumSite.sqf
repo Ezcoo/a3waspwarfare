@@ -7,8 +7,8 @@ _side = _this select 1;
 _position = _this select 2;
 _direction = _this select 3;
 _index = _this select 4;
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 
 _time = ((missionNamespace getVariable Format ["cti_%1STRUCTURETIMES",str _side]) select _index) / 2;
 

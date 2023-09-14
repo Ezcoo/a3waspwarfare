@@ -7,4 +7,4 @@ _oldScore = score _playerChanged;
 _playerChanged addScore -_oldScore;
 _playerChanged addScore _newScore;
 
-[_playerChanged,_newScore] remoteExecCall ["cti_CL_FNC_ChangeScore"];
+[_playerChanged,_newScore] remoteExecCall ["EZC_fnc_PVFunctions_ChangeScore"];

@@ -36,7 +36,7 @@ while {!cti_GameOver} do {
 	};
 	
 	if(isNull _building || !(alive _building)) then {
-		_buildings = (_side) Call cti_CO_FNC_GetSideStructures;
+		_buildings = (_side) Call EZC_fnc_Functions_Common_GetSideStructures;
 		_sorted = [_posBuilding, _buildings] Call cti_CO_FNC_GetClosestEntity;
 
 		_nearby = false;

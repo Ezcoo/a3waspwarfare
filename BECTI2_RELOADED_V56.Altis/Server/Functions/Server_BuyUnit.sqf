@@ -3,7 +3,7 @@ _id = _this select 0;
 _building = _this select 1;
 _unitType = _this select 2;
 _side = _this select 3;
-_sideID = (_side) Call cti_CO_FNC_GetSideID;
+_sideID = (_side) Call EZC_fnc_Functions_Common_GetSideID;
 _team = _this select 4;
 _isVehicle = _this select 5;
 
@@ -94,7 +94,7 @@ if (!(alive _building)||(isPlayer (leader _team))) exitWith {
 
 if (_unitType isKindOf "Man") then {
 	_soldier = [_unitType,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
-	[_sideText,'UnitsCreated',1] Call cti_CO_FNC_UpdateStatistics;
+	[_sideText,'UnitsCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 } else {
 	_factoryPosition = getPos _building;
 	_dir = -((((_position select 1) - (_factoryPosition select 1)) atan2 ((_position select 0) - (_factoryPosition select 0))) - 90);
@@ -122,7 +122,7 @@ if (_unitType isKindOf "Man") then {
 	
 	_soldier assignAsDriver _vehicle;
 	_soldier moveInDriver _vehicle;
-	[_sideText,'VehiclesCreated',1] Call cti_CO_FNC_UpdateStatistics;
+	[_sideText,'VehiclesCreated',1] Call EZC_fnc_Functions_Common_UpdateStatistics;
 	_built = 1;
 	if (_isVehicle select 1) then {
 		_soldier = [_crew,_team,_position,_sideID] Call cti_CO_FNC_CreateUnit;
@@ -164,7 +164,7 @@ if (_unitType isKindOf "Man") then {
 	};
 
 _vehicle allowCrewInImmobile true;
-	[_sideText,'UnitsCreated',_built] Call cti_CO_FNC_UpdateStatistics;
+	[_sideText,'UnitsCreated',_built] Call EZC_fnc_Functions_Common_UpdateStatistics;
 };
 
 _gbq = (_team getVariable "cti_queue") - _id;

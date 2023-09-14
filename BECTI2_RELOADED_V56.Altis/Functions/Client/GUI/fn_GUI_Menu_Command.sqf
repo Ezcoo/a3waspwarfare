@@ -65,7 +65,7 @@ _team_old = _team;
 
 _index = (_team) Call cti_CO_FNC_GetTeamType;
 if (_index == -1) then {_index = 1};
-lbSetCurSel [14010,[14010,_index] Call cti_CL_FNC_UIFindLBValue];
+lbSetCurSel [14010,[14010,_index] Call EZC_fnc_Functions_Client_UIFindLBValue];
 
 _txt = (_team) Call cti_CO_FNC_GetTeamMoveMode;
 if (_txt == "" || _txt == "towns") then {_txt = localize "STR_WF_COMMAND_Mission" + ": " + localize "STR_WF_COMMAND_TakeTowns"};
@@ -93,9 +93,9 @@ _speeds = ["LIMITED","FULL","NORMAL"];
 {lbAdd [14020, _x]} forEach _speeds;
 
 _structures = [""];
-_hq = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQ;
+_hq = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQ;
 if (alive _hq) then {_structures = _structures + [_hq]};
-_structures = _structures + ((cti_Client_SideJoined) Call cti_CO_FNC_GetSideStructures);
+_structures = _structures + ((cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures);
 _structuresLbl = ["Default"];
 lbAdd[14025,"Default"];
 
@@ -159,7 +159,7 @@ while {alive player && dialog} do {
 				{ctrlShow[_x,true]} forEach _IDCDetails;
 				ctrlSetText[14030,localize "STR_WF_COMMAND_SquadManagmentLabel"];
 				_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call cti_CO_FNC_GetLiveUnits} else {[]};
-				[_detailGroup,14041] Call cti_CL_FNC_UIFillListTeamOrders;
+				[_detailGroup,14041] Call EZC_fnc_Functions_Client_UIFillListTeamOrders;
 				_enable = if !(isPlayer leader _team) then {true} else {false};
 				ctrlEnable [14043,_enable];
 				_enable = if !(isPlayer (vehicle leader _team) && vehicle leader _team != leader _team) then {true} else {false};
@@ -195,13 +195,13 @@ while {alive player && dialog} do {
 		if (typeName _currentCoord == "ARRAY") then {
 			if (count _currentCoord > 0) then {
 				_position = _currentCoord;
-				if (_currentMission == "move") then {["TempAnim",_position,"selector_selectedMission",1,"ColorOrange",1,1.2] Spawn cti_CL_FNC_MarkerAnim};
-				if (_currentMission == "patrol") then {["TempAnim",_position,"selector_selectedMission",1,"ColorYellow",1,1.2,"areaPatrol"] Spawn cti_CL_FNC_MarkerAnim};
-				if (_currentMission == "defense") then {["TempAnim",_position,"selector_selectedMission",1,"ColorRed",1,1.2] Spawn cti_CL_FNC_MarkerAnim};
+				if (_currentMission == "move") then {["TempAnim",_position,"selector_selectedMission",1,"ColorOrange",1,1.2] Spawn EZC_fnc_Functions_Client_MarkerAnim};
+				if (_currentMission == "patrol") then {["TempAnim",_position,"selector_selectedMission",1,"ColorYellow",1,1.2,"areaPatrol"] Spawn EZC_fnc_Functions_Client_MarkerAnim};
+				if (_currentMission == "defense") then {["TempAnim",_position,"selector_selectedMission",1,"ColorRed",1,1.2] Spawn EZC_fnc_Functions_Client_MarkerAnim};
 			};
 		};
 		if (typeName _currentCoord == "OBJECT") then {
-			if (_currentMission == "towns") then {["TempAnim",getPos _currentCoord,"selector_selectedMission",1,"ColorBlue",1,1.2] Spawn cti_CL_FNC_MarkerAnim};
+			if (_currentMission == "towns") then {["TempAnim",getPos _currentCoord,"selector_selectedMission",1,"ColorBlue",1,1.2] Spawn EZC_fnc_Functions_Client_MarkerAnim};
 		};
 		
 		_enable = if (isPlayer(leader _team)) then {false} else {true};
@@ -215,14 +215,14 @@ while {alive player && dialog} do {
             ctrlEnable [14014,false];
 		};
 		if (_index == -1) then {_index = 1};
-		lbSetCurSel [14010,[14010,_index] Call cti_CL_FNC_UIFindLBValue];
+		lbSetCurSel [14010,[14010,_index] Call EZC_fnc_Functions_Client_UIFindLBValue];
 		if (_mode == 0) then {
 			_updateProperties = true;
 			_updateRespawn = true;
 		};
 		if (_mode == 2) then {
 			_detailGroup = if !(_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call cti_CO_FNC_GetLiveUnits} else {[]};
-			[_detailGroup,14041] Call cti_CL_FNC_UIFillListTeamOrders;
+			[_detailGroup,14041] Call EZC_fnc_Functions_Client_UIFillListTeamOrders;
 			_enable = if !(isPlayer leader _team) then {true} else {false};
 			ctrlEnable [14043,_enable];
 		};
@@ -308,7 +308,7 @@ while {alive player && dialog} do {
 
 			activeAnimMarker = false;
 			_array = if (_isAdded == "") then {["TempAnim",_position,"selector_selectedMission",1,_color,1,1.2]} else {["TempAnim",_position,"selector_selectedMission",1,_color,1,1.2,_isAdded]};
-			_array Spawn cti_CL_FNC_MarkerAnim;
+			_array Spawn EZC_fnc_Functions_Client_MarkerAnim;
 		};
 
 		//--- Set a Task.
@@ -330,12 +330,12 @@ while {alive player && dialog} do {
 				{
 					_selected = cti_Client_Teams select (_x - 1);
 					if (alive (leader _selected) && isPlayer(leader _selected)) then {
-						[_taskType,_taskTime,_taskTimeLabel,_position] remoteExecCall ["cti_CL_FNC_SetTask"];
+						[_taskType,_taskTime,_taskTimeLabel,_position] remoteExecCall ["EZC_fnc_PVFunctions_SetTask"];
 					};
 				} forEach _teams;
 			} else {
 				player kbTell [sideHQ, cti_V_HQTopicSide, "OrderSentAll",["1","","All",["all"]],["2","","moving to position",["HC_MovingToPosition"]],["3","","over.",["Over1"]],true];
-				[_taskType,_taskTime,_taskTimeLabel,_position] remoteExecCall ["cti_CL_FNC_SetTask",cti_Client_SideJoined];
+				[_taskType,_taskTime,_taskTimeLabel,_position] remoteExecCall ["EZC_fnc_PVFunctions_SetTask",cti_Client_SideJoined];
 			};
 		};
 	};
@@ -453,7 +453,7 @@ while {alive player && dialog} do {
 				_unit setPos [getPos _unit select 0,getpos _unit select 1,0.5];
 				_unit setVelocity [0,0,-1];
 				_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call cti_CO_FNC_GetLiveUnits} else {[]};
-				[_detailGroup,14041] Call cti_CL_FNC_UIFillListTeamOrders;
+				[_detailGroup,14041] Call EZC_fnc_Functions_Client_UIFillListTeamOrders;
 			};*/
 			_vehicle = vehicle _unit;			
 			
@@ -470,7 +470,7 @@ while {alive player && dialog} do {
 			_unit = _detailGroup select _iddx;
 			_unit setDamage 1;
 			_detailGroup = if (!_isAll) then {(units(cti_Client_Teams select (_curSel - 1))) Call cti_CO_FNC_GetLiveUnits} else {[]};
-			[_detailGroup,14041] Call cti_CL_FNC_UIFillListTeamOrders;
+			[_detailGroup,14041] Call EZC_fnc_Functions_Client_UIFillListTeamOrders;
 		};
 	};
 	

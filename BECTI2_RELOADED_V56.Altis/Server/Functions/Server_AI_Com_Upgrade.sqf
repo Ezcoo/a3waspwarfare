@@ -7,7 +7,7 @@
 Private["_can_upgrade","_cost","_funds","_level","_logik","_path","_side","_to_upgrade","_upgrade","_upgrades"];
 
 _side = _this;
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 
 _path = missionNamespace getVariable Format ["cti_C_UPGRADES_%1_AI_ORDER", _side];
 _upgrades = _logik getVariable "cti_upgrades";

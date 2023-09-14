@@ -18,13 +18,13 @@ while {isNil "_side"}do{
 	if(isNil "_side")then{sleep 1};
 };
 
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 //_logik setVariable ["cti_hq",_structure,true];
 
 //--- If HQ was mobibilized, spawn a dead hq.
-if ((_side) Call cti_CO_FNC_GetSideHQDeployStatus) then {
+if ((_side) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus) then {
 	Private ["_hq"];
-	_hq = [missionNamespace getVariable Format["cti_%1MHQNAME", _side], getPos _structure, (_side) Call cti_CO_FNC_GetSideID, getDir _structure, false, false, false] Call cti_CO_FNC_CreateVehicle;
+	_hq = [missionNamespace getVariable Format["cti_%1MHQNAME", _side], getPos _structure, (_side) Call EZC_fnc_Functions_Common_GetSideID, getDir _structure, false, false, false] Call cti_CO_FNC_CreateVehicle;
 	_hq setPos (getPos _structure);
 	_hq setVariable ["cti_trashable", false];
 	_hq setVariable ["cti_side", _side];
@@ -51,11 +51,11 @@ if ((!isNull _killer) && (isPlayer _killer)) then
 {
     if (_teamkill) then
     {
-		["BuildingTeamkill", name _killer, _killer_uid, _structure_kind] remoteExecCall ["cti_CL_FNC_LocalizeMessage", _side];
+		["BuildingTeamkill", name _killer, _killer_uid, _structure_kind] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _side];
     }
     else
     {
-		["HeadHunterReceiveBounty", (name _killer), 30000, _structure_kind, _side] remoteExecCall ["cti_CL_FNC_LocalizeMessage"];
+		["HeadHunterReceiveBounty", (name _killer), 30000, _structure_kind, _side] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage"];
     };
 };
 

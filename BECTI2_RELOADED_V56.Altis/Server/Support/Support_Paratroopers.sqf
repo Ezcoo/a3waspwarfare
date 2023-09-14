@@ -3,7 +3,7 @@ Private['_bd','_built','_built_inf','_currentLevel','_currentUpgrades','_destina
 _side = _this select 1;
 _destination = _this select 2;
 _playerTeam = _this select 3;
-_sideID = _side Call cti_CO_FNC_GetSideID;
+_sideID = _side Call EZC_fnc_Functions_Common_GetSideID;
 _starttime = time;
 _parachute = "B_parachute";
 
@@ -53,7 +53,7 @@ _dir = _ranDir select _ran;
 for '_i' from 1 to _vehicle_count do {
 	//--- Spawn the vehicle.
 	_vehicle = createVehicle [missionNamespace getVariable Format ["cti_%1PARACARGO",str _side],(_ranPos select _ran), [], _dir, "FLY"];
-	_vehicle addEventHandler ['killed', Format["[_this select 0, _this select 1, %1] Spawn cti_CO_FNC_OnUnitKilled",_sideID]];
+	_vehicle addEventHandler ['killed', Format["[_this select 0, _this select 1, %1] Spawn EZC_fnc_Functions_Common_OnUnitKilled",_sideID]];
 	[[[_vehicle,_sideID], "Common\Init\Init_Unit.sqf"], "BIS_fnc_execVM", false, false] call BIS_fnc_MP;
 	_vehicles pushBack _vehicle;
 	
@@ -70,7 +70,7 @@ for '_i' from 1 to _vehicle_count do {
 	_vehicle lockDriver true;
 };
 
-[str _side, 'VehiclesCreated', _built] Call cti_CO_FNC_UpdateStatistics;
+[str _side, 'VehiclesCreated', _built] Call EZC_fnc_Functions_Common_UpdateStatistics;
 
 //--- Create the units.
 _built_inf = 0;
@@ -90,7 +90,7 @@ _paratroopers = [];
     };
 } forEach _units;
 
-[str _side,'UnitsCreated', _built] Call cti_CO_FNC_UpdateStatistics;
+[str _side,'UnitsCreated', _built] Call EZC_fnc_Functions_Common_UpdateStatistics;
 
 //--- Tell the group to move.
 [_grp, _destination, "MOVE", 10] Call cti_SE_FNC_AIMoveTo;

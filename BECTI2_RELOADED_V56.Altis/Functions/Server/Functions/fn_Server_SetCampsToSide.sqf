@@ -26,5 +26,5 @@ _startingSV = _town getVariable "startingSupplyValue";
 ;
 
 if (count _camps > 0) then {
-	[_town, _side_old, _side_new] remoteExecCall ["cti_CL_FNC_AllCampsCaptured"];
+	[_town, _side_old, _side_new] remoteExecCall ["EZC_fnc_PVFunctions_AllCampsCaptured"];
 };

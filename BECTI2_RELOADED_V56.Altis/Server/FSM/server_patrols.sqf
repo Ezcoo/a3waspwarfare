@@ -47,7 +47,7 @@ while {!cti_GameOver || _team_alive} do {
 			_team_target = [_location, towns - _towns_visited] Call cti_CO_FNC_GetClosestEntity;
 
 			//--- Tell our patrol to move to the depot.
-			[_team, getPos _team_target, 'MOVE', 25] Spawn cti_CO_FNC_WaypointSimple;
+			[_team, getPos _team_target, 'MOVE', 25] Spawn EZC_fnc_Functions_Common_WaypointSimple;
 		};
 		if(!isNull _team_target) then {
 			if ((leader _team) distance _team_target < 200) then {

@@ -17,7 +17,7 @@ while {!cti_GameOver || !(alive _vehicle)} do {
 		} forEach _vehicles;
 
 		_hqs = [];
-		{_hqs = _hqs + [_x Call cti_CO_FNC_GetSideHQ]} forEach cti_PRESENTSIDES;
+		{_hqs = _hqs + [_x Call EZC_fnc_Functions_Common_GetSideHQ]} forEach cti_PRESENTSIDES;
 
 		_wrecks = _wrecks - _hqs;
 
@@ -33,7 +33,7 @@ while {!cti_GameOver || !(alive _vehicle)} do {
 				};
 		
 				_overAllCost = _overAllCost + _salvageCost;
-				(Format [localize 'STR_WF_CHAT_Salvaged_Unit',_salvageCost,[typeOf _x,'displayName'] Call cti_CO_FNC_GetConfigInfo]) Call cti_CL_FNC_GroupChatMessage;
+				(Format [localize 'STR_WF_CHAT_Salvaged_Unit',_salvageCost,[typeOf _x,'displayName'] Call cti_CO_FNC_GetConfigInfo]) Call EZC_fnc_Functions_Client_GroupChatMessage;
 		
 				deleteVehicle _x;
 			};

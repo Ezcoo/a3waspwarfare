@@ -72,7 +72,7 @@ if (_killed_isplayer) then {_killed setVariable ["cti_trashed", true];	_killed S
 
 
 if (_killed_side in cti_PRESENTSIDES) then { //--- Update the statistics if needed.
-	if (_killed_isman) then {[str _killed_side,'Casualties',1] Call cti_CO_FNC_UpdateStatistics} else {[str _killed_side,'VehiclesLost',1] Call cti_CO_FNC_UpdateStatistics};
+	if (_killed_isman) then {[str _killed_side,'Casualties',1] Call EZC_fnc_Functions_Common_UpdateStatistics} else {[str _killed_side,'VehiclesLost',1] Call EZC_fnc_Functions_Common_UpdateStatistics};
 };
 
 _get = missionNamespace getVariable _killed_type; //--- Get the killed informations.
@@ -108,15 +108,15 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 
 			//--- Award the bounty if needed.
 			if (_killed_isplayer && _killer_isplayer) then {
-				[_killed] remoteExecCall ["cti_CL_FNC_AwardBountyPlayer", _killer];
+				[_killed] remoteExecCall ["EZC_fnc_PVFunctions_AwardBountyPlayer", _killer];
 				
 			};
 
-			[_killed_type, false, _killer_award] remoteExecCall ["cti_CL_FNC_AwardBounty", leader _killer_group];
+			[_killed_type, false, _killer_award] remoteExecCall ["EZC_fnc_PVFunctions_AwardBounty", leader _killer_group];
 			if (vehicle _killed != _killed && alive _killed) then { //--- Kill assist (players in the same vehicle).
 				{
 					if (alive _x && isPlayer _x) then {
-						[_objectType, true] remoteExecCall ["cti_CL_FNC_AwardBounty", getPlayerUID(_x)];
+						[_objectType, true] remoteExecCall ["EZC_fnc_PVFunctions_AwardBounty", getPlayerUID(_x)];
 					}
 				} forEach ((crew (vehicle _killed)) - [_killer, player]);
 			};
@@ -125,7 +125,7 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 		if (isPlayer (leader _killer_group) && _killer != _killed && !(_killed_type isKindOf "Building")) then {
 
 		//--- Only applies to player groups.
-			['Teamkill'] remoteExecCall ["cti_CL_FNC_LocalizeMessage", _killer];
+			['Teamkill'] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", _killer];
 		};
 	};
 };

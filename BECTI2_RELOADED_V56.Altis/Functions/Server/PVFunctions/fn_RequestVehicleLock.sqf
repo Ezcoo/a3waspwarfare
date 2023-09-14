@@ -5,4 +5,4 @@ _locked = _this select 1;
 
 _vehicle lock _locked;
 
-[_vehicle,_locked] remoteExecCall ["cti_CL_FNC_SetVehicleLock",-2];
+[_vehicle,_locked] remoteExecCall ["EZC_fnc_PVFunctions_SetVehicleLock",-2];

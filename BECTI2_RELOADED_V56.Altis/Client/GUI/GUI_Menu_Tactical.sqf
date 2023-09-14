@@ -173,27 +173,27 @@ while {alive player && dialog} do {
 			case "ICBM": {
 				WF_MenuAction = 8;
 				if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-				_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ClickOnMap',10,"ff9900"] spawn cti_CL_FNC_SetControlFadeAnim;
+				_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ClickOnMap',10,"ff9900"] spawn EZC_fnc_Functions_Client_SetControlFadeAnim;
 			};
 			case "Paratroopers": {
 				WF_MenuAction = 3;
 				if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-				_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ClickOnMap',10,"ff9900"] spawn cti_CL_FNC_SetControlFadeAnim;
+				_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ClickOnMap',10,"ff9900"] spawn EZC_fnc_Functions_Client_SetControlFadeAnim;
 			};
 			case "Paradrop_Ammo": {
 				WF_MenuAction = 10;
 				if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-				_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ClickOnMap',10,"ff9900"] spawn cti_CL_FNC_SetControlFadeAnim;
+				_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ClickOnMap',10,"ff9900"] spawn EZC_fnc_Functions_Client_SetControlFadeAnim;
 			};
 			case "Paradrop_Vehicle": {
 				WF_MenuAction = 9;
 				
 				if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-				_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ClickOnMap',10,"ff9900"] spawn cti_CL_FNC_SetControlFadeAnim;
+				_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ClickOnMap',10,"ff9900"] spawn EZC_fnc_Functions_Client_SetControlFadeAnim;
 			};
 			case "UAV": {
 				closeDialog 0;
-				call WFVE_fnc_uav;
+				call EZC_fnc_Module_uav;
 			};
 			case "UAV_Destroy": {
 				if !(isNull playerUAV) then {
@@ -204,7 +204,7 @@ while {alive player && dialog} do {
 			};
 			case "UAV_Remote_Control": {
 				closeDialog 0;
-				call WFVE_fnc_uav;
+				call EZC_fnc_Module_uav;
 			};
 			case "Units_Camera": {
 				closeDialog 0;
@@ -233,12 +233,12 @@ while {alive player && dialog} do {
 			WF_MenuAction = -1;
 			_forceReload = true;
 			if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-			[17022] Call cti_CL_FNC_SetControlFadeAnimStop;
+			[17022] Call EZC_fnc_Functions_Client_SetControlFadeAnimStop;
 			_callPos = _map posScreenToWorld[mouseX,mouseY];
 			if (!surfaceIsWater _callPos) then {
 				lastParaCall = time;
 				-(_currentFee) Call EZC_fnc_Functions_Client_ChangePlayerFunds;
-				["Paratroops",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+				["Paratroops",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 				hint (localize "STR_WF_INFO_Paratroop_Info");
 			};
 		};
@@ -247,7 +247,7 @@ while {alive player && dialog} do {
 		if (WF_MenuAction == 8) then {
 			_forceReload = true;
 			if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-			[17022] Call cti_CL_FNC_SetControlFadeAnimStop;
+			[17022] Call EZC_fnc_Functions_Client_SetControlFadeAnimStop;
 			WF_MenuAction = -1;
 			-_currentFee Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
@@ -263,23 +263,23 @@ while {alive player && dialog} do {
 		if (WF_MenuAction == 9) then {
 			_forceReload = true;
 			if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-			[17022] Call cti_CL_FNC_SetControlFadeAnimStop;
+			[17022] Call EZC_fnc_Functions_Client_SetControlFadeAnimStop;
 			WF_MenuAction = -1;
 			lastSupplyCall = time;
 			-_currentFee Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
-			["ParaVehi",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+			["ParaVehi",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 		};
 		//--- Ammo Paradrop.
 		if (WF_MenuAction == 10) then {
 			_forceReload = true;
 			if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-			[17022] Call cti_CL_FNC_SetControlFadeAnimStop;
+			[17022] Call EZC_fnc_Functions_Client_SetControlFadeAnimStop;
 			WF_MenuAction = -1;
 			lastSupplyCall = time;
 			-_currentFee Call EZC_fnc_Functions_Client_ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
-			["ParaAmmo",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+			["ParaAmmo",cti_Client_SideJoined,_callPos,cti_Client_Team] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 		};
 	};
 	
@@ -337,7 +337,7 @@ _artyarray = missionNamespace getVariable Format ["cti_%1_ARTILLERY_CLASSNAMES",
 		_units = [_artygroup,false,lbCurSel(17008),cti_Client_SideJoinedText] Call cti_CO_FNC_GetTeamArtillery;
 		if (Count _units > 0) then {
 			fireMissionTime = time;
-			[GetMarkerPos "artilleryMarker",lbCurSel(17008),_artygroup] Spawn cti_CL_FNC_RequestFireMission;
+			[GetMarkerPos "artilleryMarker",lbCurSel(17008),_artygroup] Spawn EZC_fnc_Functions_Client_RequestFireMission;
 		} else {
 			hint (localize "STR_WF_INFO_NoArty");
 		};			
@@ -446,7 +446,7 @@ _artyarray = missionNamespace getVariable Format ["cti_%1_ARTILLERY_CLASSNAMES",
 		};
 		
 		if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
-		_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ArtilleryMinimapInfo',7,"ff9900"] spawn cti_CL_FNC_SetControlFadeAnim;
+		_textAnimHandler = [17022,localize 'STR_WF_TACTICAL_ArtilleryMinimapInfo',7,"ff9900"] spawn EZC_fnc_Functions_Client_SetControlFadeAnim;
 		
 		missionNamespace setVariable ['cti_V_ARTILLERYMINMAP',_mode];
 		

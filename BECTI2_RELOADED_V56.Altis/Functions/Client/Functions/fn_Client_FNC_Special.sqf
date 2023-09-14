@@ -12,11 +12,11 @@ cti_CL_FNC_Commander_Assigned = {
 		_text = Format[localize "STR_WF_CHAT_VoteForNewCommander",name (leader _commanderTeam)];
 		if (group player == _commanderTeam) then {_text = localize "STR_WF_CHAT_PlayerCommander"};
 	}else{
-		_logic = (side player) Call cti_CO_FNC_GetSideLogic;
+		_logic = (side player) Call EZC_fnc_Functions_Common_GetSideLogic;
 		_logic setVariable ["cti_commander", _commanderTeam, true];
 	};
 
-	[_text] Call cti_CL_FNC_TitleTextMessage;
+	[_text] Call EZC_fnc_Functions_Client_TitleTextMessage;
 };
 
 
@@ -29,9 +29,9 @@ cti_CL_FNC_Commander_VoteEnd = {
 		_text = Format[localize "STR_WF_CHAT_VoteForNewCommander",name (leader _commanderTeam)];
 		if (group player == _commanderTeam) then {_text = localize "STR_WF_CHAT_PlayerCommander"};
 	};
-	_logic = (side player) Call cti_CO_FNC_GetSideLogic;
+	_logic = (side player) Call EZC_fnc_Functions_Common_GetSideLogic;
     _logic setVariable ["cti_commander", _commanderTeam, true];
-	[_text] Call cti_CL_FNC_TitleTextMessage;
+	[_text] Call EZC_fnc_Functions_Client_TitleTextMessage;
 };
 
 cti_CL_FNC_Commander_VoteStart = {
@@ -46,7 +46,7 @@ cti_CL_FNC_Commander_VoteStart = {
 		if (voted) then {voted = false};
 	};
 
-	if (isMultiplayer) then {[Format[localize "STR_WF_CHAT_HasVotedForNewCommander", _name]] Call cti_CL_FNC_TitleTextMessage};
+	if (isMultiplayer) then {[Format[localize "STR_WF_CHAT_HasVotedForNewCommander", _name]] Call EZC_fnc_Functions_Client_TitleTextMessage};
 };
 
 cti_CL_FNC_Display_ICBM = {

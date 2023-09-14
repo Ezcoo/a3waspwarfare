@@ -5,9 +5,9 @@ _deathLoc = _this select 1;
 _sideText = str _side;
 
 //--- Base.
-_hq = (_side) Call cti_CO_FNC_GetSideHQ;
+_hq = (_side) Call EZC_fnc_Functions_Common_GetSideHQ;
 _availableSpawn = [_hq];
-_buildings = (_side) Call cti_CO_FNC_GetSideStructures;
+_buildings = (_side) Call EZC_fnc_Functions_Common_GetSideStructures;
 _checks = [_side,missionNamespace getVariable Format["cti_%1BARRACKSTYPE",_sideText],_buildings] Call cti_CO_FNC_GetFactories;
 if (count _checks > 0) then {_availableSpawn = _availableSpawn + _checks};
 _checks = [_side,missionNamespace getVariable Format["cti_%1LIGHTTYPE",_sideText],_buildings] Call cti_CO_FNC_GetFactories;

@@ -21,9 +21,9 @@ if!(isNil "headlessClients") then {
 	if(count headlessClients > 0)then{
 		_hc = headlessClients select 0;
 		if(isNil '_special')then{
-		    ['delegate-ai', _side, _unitType, _position, _team, _dir] remoteExecCall ["cti_CL_FNC_HandleSpecial", _hc];
+		    ['delegate-ai', _side, _unitType, _position, _team, _dir] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _hc];
 		} else {
-		    ['delegate-ai', _side, _unitType, _position, _team, _dir, _special] remoteExecCall ["cti_CL_FNC_HandleSpecial", _hc];
+		    ['delegate-ai', _side, _unitType, _position, _team, _dir, _special] remoteExecCall ["EZC_fnc_PVFunctions_HandleSpecial", _hc];
 		};
 	};
 };

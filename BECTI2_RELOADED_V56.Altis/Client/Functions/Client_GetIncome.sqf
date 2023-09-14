@@ -11,7 +11,7 @@ _divisor = missionNamespace getVariable "cti_C_ECONOMY_INCOME_DIVIDED";
 
 if (isNull _commanderTeam) then {_commanderTeam = grpNull};
 
-_logik = (_side) Call cti_CO_FNC_GetSideLogic;
+_logik = (_side) Call EZC_fnc_Functions_Common_GetSideLogic;
 _team_count = (_logik getVariable "cti_teams_count");
 					
 /*if(_team_count > 0) then {

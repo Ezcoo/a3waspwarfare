@@ -35,7 +35,7 @@ while {!cti_GameOver} do {
 		if(isNil "_curSV")then{_curSV = 1};
 		if(isNil "_maxSV")then{_maxSV = 1};
 
-		_camp = [vehicle player, 12, true] Call cti_CL_FNC_GetClosestCamp;
+		_camp = [vehicle player, 12, true] Call EZC_fnc_Functions_Client_GetClosestCamp;
 
 		if (_town_capture_mode != 0 && !isNull _camp) then {
 			if (alive (_camp getVariable "cti_camp_bunker")) then {

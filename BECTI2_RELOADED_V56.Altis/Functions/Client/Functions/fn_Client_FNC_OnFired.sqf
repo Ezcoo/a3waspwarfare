@@ -16,7 +16,7 @@ cti_CL_FNC_OnFiredSatchel = {
 	_projectile = _this select 1;
 
 	//--- Retrieve the side structures.
-	_side_structures = (cti_Client_SideJoined Call cti_CO_FNC_GetSideStructures) + [cti_Client_SideJoined Call cti_CO_FNC_GetSideHQ];
+	_side_structures = (cti_Client_SideJoined Call EZC_fnc_Functions_Common_GetSideStructures) + [cti_Client_SideJoined Call EZC_fnc_Functions_Common_GetSideHQ];
 
 	//--- Get the closest structure.
 	_closest = [_unit, _side_structures] Call cti_CO_FNC_GetClosestEntity;
@@ -29,7 +29,7 @@ cti_CL_FNC_OnFiredSatchel = {
 		_uid = getPlayerUID _unit;
 
 		//--- Notify about the TK attempt.
-		['StructureTK', name _unit, _uid, _closest, cti_Client_SideJoinedText] remoteExecCall ["cti_CL_FNC_LocalizeMessage"];
+		['StructureTK', name _unit, _uid, _closest, cti_Client_SideJoinedText] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage"];
 	};
 };
 

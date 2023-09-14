@@ -5,7 +5,7 @@
 
 	if(isNil "mouseButtonUp") then {mouseButtonUp = -1};
 
-	_hqDeployed = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQDeployStatus;
+	_hqDeployed = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideHQDeployStatus;
 	if (!_hqDeployed || (missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 0) then {ctrlEnable [23004, false];ctrlEnable [23006, false]};
 	if ((missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 0) then { ctrlSetText[23005, localize 'STR_WF_Disabled']};
 
@@ -77,7 +77,7 @@
 			//--- Respawn Supply Trucks.
 			if (WF_MenuAction == 4) then {
 				WF_MenuAction = -1;
-				["RespawnST",cti_Client_SideJoined] remoteExecCall ["cti_SE_PVF_RequestSpecial",2];
+				["RespawnST",cti_Client_SideJoined] remoteExecCall ["EZC_fnc_PVFunctions_RequestSpecial",2];
 				_lastUse = time;
 			};
 			
@@ -92,7 +92,7 @@
 					if (!isNull(commanderTeam)) then {if (commanderTeam == group player) then {_isCommander = true}};
 					if !(_isCommander) exitWith {};
 					_position = _map posScreenToWorld[mouseX,mouseY];
-					_structures = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideStructures;
+					_structures = (cti_Client_SideJoined) Call EZC_fnc_Functions_Common_GetSideStructures;
 					_closest = [_position,_structures] Call cti_CO_FNC_GetClosestEntity;
 					if (!isNull _closest) then {
 						//--- 100 meters close only.
@@ -106,7 +106,7 @@
 								_type = typeOf _closest;
 								
 								//--- Inform the side (before).
-								['StructureSell',_type,_delay] remoteExecCall ["cti_CL_FNC_LocalizeMessage", cti_Client_SideJoined];
+								['StructureSell',_type,_delay] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", cti_Client_SideJoined];
 								
 								sleep _delay;
 								
@@ -123,7 +123,7 @@
 								};
 								
 								//--- Inform the side.
-								['StructureSold',_type] remoteExecCall ["cti_CL_FNC_LocalizeMessage", cti_Client_SideJoined];
+								['StructureSold',_type] remoteExecCall ["EZC_fnc_PVFunctions_LocalizeMessage", cti_Client_SideJoined];
 								if ((missionNamespace getVariable "cti_C_STRUCTURES_CONSTRUCTION_MODE") == 1) then {_closest setVariable ["sold",true,true]};
 								_closest setDammage 1;
 							};

@@ -39,7 +39,7 @@ switch (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") do {
 		_nearestCamps = _deathLoc nearEntities [cti_Logic_Camp, (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_RANGE")];
 		{
 			if !(isNil {_x getVariable 'sideID'}) then {
-				if ((_side Call cti_CO_FNC_GetSideID) == (_x getVariable 'sideID') && alive(_x getVariable "cti_camp_bunker")) then {
+				if ((_side Call EZC_fnc_Functions_Common_GetSideID) == (_x getVariable 'sideID') && alive(_x getVariable "cti_camp_bunker")) then {
 					if (_respawnCampsRuleMode > 0) then {
 						if (_deathLoc distance _x < _respawnMinRange) then {
 							if (cti_ISTHREEWAY) then  {
@@ -68,7 +68,7 @@ switch (missionNamespace getVariable "cti_C_RESPAWN_CAMPS_MODE") do {
 			if !(isNil {_x getVariable 'sideID'}) then {
 				_town = _x getVariable 'town';
 				_townSID = _town getVariable 'sideID';
-				if ((_side Call cti_CO_FNC_GetSideID) == _townSID && (_x getVariable 'sideID') == _townSID && alive(_x getVariable "cti_camp_bunker")) then {
+				if ((_side Call EZC_fnc_Functions_Common_GetSideID) == _townSID && (_x getVariable 'sideID') == _townSID && alive(_x getVariable "cti_camp_bunker")) then {
 					if (_respawnCampsRuleMode > 0) then {
 						if (_deathLoc distance _x < _respawnMinRange) then {
 							if (cti_ISTHREEWAY) then  {
