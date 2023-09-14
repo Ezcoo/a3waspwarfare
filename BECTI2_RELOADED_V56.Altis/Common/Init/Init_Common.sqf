@@ -265,29 +265,29 @@ cti_DEFENDER_ID = (cti_DEFENDER) Call EZC_fnc_Functions_Common_GetSideID;
 
 //--- Import the desired global side variables.
 
-/*
-Call Compile preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf",_grpRes];
-Call Compile preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf", _team_west];
-Call Compile preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf", _team_east];
-*/
+
+Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf",_grpRes];
+Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf", _team_west];
+Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf", _team_east];
+
 
 //--- Import the desired defenses. (todo, Replace the old defense init by this one).
 
-/*
-Call Compile preprocessFileLineNumbers Format["Common\Config\Defenses\Defenses_%1.sqf",_grpWest];
-Call Compile preprocessFileLineNumbers Format["Common\Config\Defenses\Defenses_%1.sqf",_grpEast];
-Call Compile preprocessFileLineNumbers Format["Common\Config\Defenses\Defenses_%1.sqf",_grpRes];
-*/
+
+Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Defenses\Defenses_%1.sqf",_grpWest];
+Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Defenses\Defenses_%1.sqf",_grpEast];
+Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Defenses\Defenses_%1.sqf",_grpRes];
+
 
 //--- Server Exec.
 if (isServer) then {
 	//--- Import the desired town groups.
 
-	/*
-	Call Compile preprocessFileLineNumbers Format["Common\Config\Groups\Groups_%1.sqf",_grpWest];
-	Call Compile preprocessFileLineNumbers Format["Common\Config\Groups\Groups_%1.sqf",_grpEast];
-	Call Compile preprocessFileLineNumbers Format["Common\Config\Groups\Groups_%1.sqf",_grpRes];
-	*/
+	
+	Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Groups\Groups_%1.sqf",_grpWest];
+	Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Groups\Groups_%1.sqf",_grpEast];
+	Call CompileFinal preprocessFileLineNumbers Format["Common\Config\Groups\Groups_%1.sqf",_grpRes];
+	
 };
 
 //--- Airports Init.
