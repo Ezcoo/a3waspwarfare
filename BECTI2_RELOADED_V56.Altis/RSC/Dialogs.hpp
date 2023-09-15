@@ -538,7 +538,7 @@ class cti_BuyGearMenu
 	idd = 503000;
 	
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_gear', _this select 0];['onLoad'] execVM 'Client\GUI\GUI_WFGear.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_gear', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_gear', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 	
 	
 	class controlsBackground {
@@ -855,9 +855,9 @@ class cti_BuyGearMenu
 			
 			canDrag = 1;
 			
-			onLBDblClick = "['onShoppingListLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrag = "['onShoppingListLBDrag', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBSelChanged = "['onShoppingListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDblClick = "['onShoppingListLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrag = "['onShoppingListLBDrag', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBSelChanged = "['onShoppingListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Linked_Items : cti_Gear_Control_Items_Purchase {
 			idc = 70601;
@@ -867,9 +867,9 @@ class cti_BuyGearMenu
 			w = "SafeZoneW * 0.28";
 			h = "SafeZoneH * 0.395";
 			
-			onLBDblClick = "['onLinkedListLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrag = "['onShoppingListLBDrag', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBSelChanged = "['onLinkedListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDblClick = "['onLinkedListLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrag = "['onShoppingListLBDrag', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBSelChanged = "['onLinkedListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 
 			
 			//onLBSelChanged = "";
@@ -894,8 +894,8 @@ class cti_BuyGearMenu
 			itemSpacing = 0.001;
 			columns[] = {0.01, 0.4};
 			
-			onLBDblClick = "['onUnitItemsLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'ListItems', 77109, ((_this select 4) select 0) select 2, -1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDblClick = "['onUnitItemsLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'ListItems', 77109, ((_this select 4) select 0) select 2, -1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		
 		class cti_Gear_Control_Uniform: RscActiveTextGear {
@@ -920,10 +920,10 @@ class cti_BuyGearMenu
 			h = "SafeZoneH * 0.112";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_uniform_gs.paa";
-			action = "['onItemContainerClicked', 0, 77001] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onMouseButtonDown = "['onItemContainerMouseClicked', 0, 70001, _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onMouseButtonDblClick = "['onItemContainerMouseDblClicked', 0] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Container', 77001, ((_this select 4) select 0) select 2, 0] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemContainerClicked', 0, 77001] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onMouseButtonDown = "['onItemContainerMouseClicked', 0, 70001, _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onMouseButtonDblClick = "['onItemContainerMouseDblClicked', 0] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Container', 77001, ((_this select 4) select 0) select 2, 0] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Vest: cti_Gear_Control_Uniform {
 			idc = 70002;
@@ -931,10 +931,10 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.505)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_vest_gs.paa";
-			action = "['onItemContainerClicked', 1, 77002] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onMouseButtonDown = "['onItemContainerMouseClicked', 1, 70002, _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onMouseButtonDblClick = "['onItemContainerMouseDblClicked', 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Container', 77002, ((_this select 4) select 0) select 2, 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemContainerClicked', 1, 77002] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onMouseButtonDown = "['onItemContainerMouseClicked', 1, 70002, _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onMouseButtonDblClick = "['onItemContainerMouseDblClicked', 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Container', 77002, ((_this select 4) select 0) select 2, 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Backpack: cti_Gear_Control_Uniform {
 			idc = 70003;
@@ -942,10 +942,10 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.60)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_backpack_gs.paa";
-			action = "['onItemContainerClicked', 2, 77003] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onMouseButtonDown = "['onItemContainerMouseClicked', 2, 70003, _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onMouseButtonDblClick = "['onItemContainerMouseDblClicked', 2] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Container', 77003, ((_this select 4) select 0) select 2, 2] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemContainerClicked', 2, 77003] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onMouseButtonDown = "['onItemContainerMouseClicked', 2, 70003, _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onMouseButtonDblClick = "['onItemContainerMouseDblClicked', 2] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Container', 77003, ((_this select 4) select 0) select 2, 2] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Helm: cti_Gear_Control_Uniform {
 			idc = 70004;
@@ -955,8 +955,8 @@ class cti_BuyGearMenu
 			h = "SafeZoneH * 0.09";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_helmet_gs.paa";
-			action = "['onAccessoryClicked', 0, 70004, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_helmet_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'HeadAsset', 77004, ((_this select 4) select 0) select 2, [2,0]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onAccessoryClicked', 0, 70004, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_helmet_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'HeadAsset', 77004, ((_this select 4) select 0) select 2, [2,0]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 			onMouseButtonDown = "";
 			onMouseButtonDblClick = "";
 		};
@@ -966,8 +966,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.774)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_glasses_gs.paa";
-			action = "['onAccessoryClicked', 1, 70005, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_glasses_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'HeadAsset', 77005, ((_this select 4) select 0) select 2, [2,1]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onAccessoryClicked', 1, 70005, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_glasses_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'HeadAsset', 77005, ((_this select 4) select 0) select 2, [2,1]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_NVGoggles: cti_Gear_Control_Helm {
 			idc = 70006;
@@ -975,8 +975,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.847)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_nvg_gs.paa";
-			action = "['onItemClicked', [0,0], 70006, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_nvg_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Item', 77006, ((_this select 4) select 0) select 2, [3,0,0]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemClicked', [0,0], 70006, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_nvg_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Item', 77006, ((_this select 4) select 0) select 2, [3,0,0]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Binoculars: cti_Gear_Control_Helm {
 			idc = 70007;
@@ -984,8 +984,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.921)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_binocular_gs.paa";
-			action = "['onItemClicked', [0,1], 70007, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_binocular_gs.paa', [3,1]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Item', 77007, ((_this select 4) select 0) select 2, [3,0,1]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemClicked', [0,1], 70007, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_binocular_gs.paa', [3,1]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Item', 77007, ((_this select 4) select 0) select 2, [3,0,1]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Map: cti_Gear_Control_Uniform {
 			idc = 70008;
@@ -996,8 +996,8 @@ class cti_BuyGearMenu
 			h = "SafeZoneH * 0.07";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_map_gs.paa";
-			action = "['onItemClicked', [1,0], 70008, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_map_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Item', 77008, ((_this select 4) select 0) select 2, [3,1,0]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemClicked', [1,0], 70008, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_map_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Item', 77008, ((_this select 4) select 0) select 2, [3,1,0]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 			onMouseButtonDown = "";
 			onMouseButtonDblClick = "";
 		};
@@ -1007,8 +1007,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.759)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_gps_gs.paa";
-			action = "['onItemClicked', [1,1], 70009, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_gps_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Item', 77009, ((_this select 4) select 0) select 2, [3,1,1]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemClicked', [1,1], 70009, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_gps_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Item', 77009, ((_this select 4) select 0) select 2, [3,1,1]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Radio: cti_Gear_Control_Map {
 			idc = 70010;
@@ -1016,8 +1016,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.818)";
 		
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_radio_gs.paa";
-			action = "['onItemClicked', [1,2], 70010, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_radio_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Item', 77010, ((_this select 4) select 0) select 2, [3,1,2]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemClicked', [1,2], 70010, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_radio_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Item', 77010, ((_this select 4) select 0) select 2, [3,1,2]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Compass: cti_Gear_Control_Map {
 			idc = 70011;
@@ -1025,8 +1025,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.877)";
 
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_compass_gs.paa";
-			action = "['onItemClicked', [1,3], 70011, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_compass_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Item', 77011, ((_this select 4) select 0) select 2, [3,1,3]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemClicked', [1,3], 70011, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_compass_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Item', 77011, ((_this select 4) select 0) select 2, [3,1,3]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Clock: cti_Gear_Control_Map {
 			idc = 70012;
@@ -1034,8 +1034,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.936)";
 
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_watch_gs.paa";
-			action = "['onItemClicked', [1,4], 70012, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_watch_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Item', 77012, ((_this select 4) select 0) select 2, [3,1,4]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onItemClicked', [1,4], 70012, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_watch_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Item', 77012, ((_this select 4) select 0) select 2, [3,1,4]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		
 		class cti_Gear_Control_Primary: cti_Gear_Control_Uniform {
@@ -1049,8 +1049,8 @@ class cti_BuyGearMenu
 			colorDisabled[] = {1,1,1,0.3};
 
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_primary_gs.paa";
-			action = "['onWeaponClicked', 0] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Weapon', 77013, ((_this select 4) select 0) select 2, 0] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponClicked', 0] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Weapon', 77013, ((_this select 4) select 0) select 2, 0] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 			onMouseButtonDown = "";
 			onMouseButtonDblClick = "";
 		};
@@ -1062,8 +1062,8 @@ class cti_BuyGearMenu
 			w = "SafeZoneW * 0.054";
 
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa";
-			action = "['onWeaponAccessoryClicked', 0, 0, 70014, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77014, ((_this select 4) select 0) select 2, [0,0,1,0]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 0, 0, 70014, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77014, ((_this select 4) select 0) select 2, [0,0,1,0]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Primary_Side: cti_Gear_Control_Primary_Muzzle {
 			idc = 70015;
@@ -1071,8 +1071,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.7565)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa";
-			action = "['onWeaponAccessoryClicked', 0, 1, 70015, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77015, ((_this select 4) select 0) select 2, [0,0,1,1]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 0, 1, 70015, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77015, ((_this select 4) select 0) select 2, [0,0,1,1]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Primary_Optics: cti_Gear_Control_Primary_Muzzle {
 			idc = 70016;
@@ -1080,8 +1080,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.82)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa";
-			action = "['onWeaponAccessoryClicked', 0, 2, 70016, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77016, ((_this select 4) select 0) select 2, [0,0,1,2]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 0, 2, 70016, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77016, ((_this select 4) select 0) select 2, [0,0,1,2]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
         class cti_Gear_Control_Primary_Bipod: cti_Gear_Control_Primary_Muzzle {
 			idc = 70017;
@@ -1089,8 +1089,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.8795)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa";
-			action = "['onWeaponAccessoryClicked', 0, 3, 70017, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77017, ((_this select 4) select 0) select 2, [0,0,1,3]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 0, 3, 70017, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77017, ((_this select 4) select 0) select 2, [0,0,1,3]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Primary_CurrentMagazine: cti_Gear_Control_Primary_Muzzle {
 			idc = 70901;
@@ -1098,9 +1098,9 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.936)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_magazine_gs.paa";
-			action = "['onWeaponCurrentMagazineClicked', 0, 70901] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'CurrentMagazine', 77901, ((_this select 4) select 0) select 2, 0] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			//onLBDrop = "['onShoppingListLBDrop', 'CurrentMagazine', 77901, ((_this select 4) select 0) select 2, [0,0,1,4]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponCurrentMagazineClicked', 0, 70901] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'CurrentMagazine', 77901, ((_this select 4) select 0) select 2, 0] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			//onLBDrop = "['onShoppingListLBDrop', 'CurrentMagazine', 77901, ((_this select 4) select 0) select 2, [0,0,1,4]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		
 		};
 		
@@ -1111,8 +1111,8 @@ class cti_BuyGearMenu
 			y = "SafeZoneY + (SafezoneH * 0.42)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_secondary_gs.paa";
-			action = "['onWeaponClicked', 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Weapon', 77018, ((_this select 4) select 0) select 2, 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponClicked', 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Weapon', 77018, ((_this select 4) select 0) select 2, 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Secondary_Muzzle: cti_Gear_Control_Map {
 			idc = 70019;
@@ -1122,8 +1122,8 @@ class cti_BuyGearMenu
 			w = "SafeZoneW * 0.06775";
 
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa";
-			action = "['onWeaponAccessoryClicked', 1, 0, 70019, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77019, ((_this select 4) select 0) select 2, [0,1,1,0]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 1, 0, 70019, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77019, ((_this select 4) select 0) select 2, [0,1,1,0]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Secondary_Side: cti_Gear_Control_Secondary_Muzzle {
 			idc = 70020;
@@ -1131,8 +1131,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.775)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa";
-			action = "['onWeaponAccessoryClicked', 1, 1, 70020, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77020, ((_this select 4) select 0) select 2, [0,1,1,1]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 1, 1, 70020, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77020, ((_this select 4) select 0) select 2, [0,1,1,1]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Secondary_Optics: cti_Gear_Control_Secondary_Muzzle {
 			idc = 70021;
@@ -1140,8 +1140,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.845)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa";
-			action = "['onWeaponAccessoryClicked', 1, 2, 70021, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77021, ((_this select 4) select 0) select 2, [0,1,1,2]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 1, 2, 70021, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77021, ((_this select 4) select 0) select 2, [0,1,1,2]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
         class cti_Gear_Control_Secondary_Bipod: cti_Gear_Control_Secondary_Muzzle {
 			idc = 70022;
@@ -1149,8 +1149,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.845)+100";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa";
-			action = "['onWeaponAccessoryClicked', 1, 3, 70022, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77022, ((_this select 4) select 0) select 2, [0,1,1,3]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 1, 3, 70022, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77022, ((_this select 4) select 0) select 2, [0,1,1,3]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Secondary_CurrentMagazine: cti_Gear_Control_Secondary_Muzzle {
 			idc = 70902;
@@ -1158,8 +1158,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.92)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_magazine_gs.paa";
-			action = "['onWeaponCurrentMagazineClicked', 1, 70902] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'CurrentMagazine', 77902, ((_this select 4) select 0) select 2, 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponCurrentMagazineClicked', 1, 70902] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'CurrentMagazine', 77902, ((_this select 4) select 0) select 2, 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		
 		class cti_Gear_Control_Pistol: cti_Gear_Control_Primary {
@@ -1169,8 +1169,8 @@ class cti_BuyGearMenu
 			y = "SafeZoneY + (SafezoneH * 0.595)";
 
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_hgun_gs.paa";
-			action = "['onWeaponClicked', 2] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Weapon', 77023, ((_this select 4) select 0) select 2, 2] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponClicked', 2] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Weapon', 77023, ((_this select 4) select 0) select 2, 2] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Pistol_Muzzle: cti_Gear_Control_Map {
 			idc = 70024;
@@ -1180,8 +1180,8 @@ class cti_BuyGearMenu
 			w = "SafeZoneW * 0.06775";
 
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa";
-			action = "['onWeaponAccessoryClicked', 2, 0, 70024, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77024, ((_this select 4) select 0) select 2, [0,2,1,0]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 2, 0, 70024, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_muzzle_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77024, ((_this select 4) select 0) select 2, [0,2,1,0]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Pistol_Side: cti_Gear_Control_Pistol_Muzzle {
 			idc = 70025;
@@ -1189,8 +1189,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.775)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa";
-			action = "['onWeaponAccessoryClicked', 2, 1, 70025, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77025, ((_this select 4) select 0) select 2, [0,2,1,1]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 2, 1, 70025, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_side_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77025, ((_this select 4) select 0) select 2, [0,2,1,1]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Pistol_Optics: cti_Gear_Control_Pistol_Muzzle {
 			idc = 70026;
@@ -1198,8 +1198,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.845)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa";
-			action = "['onWeaponAccessoryClicked', 2, 2, 70026, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77026, ((_this select 4) select 0) select 2, [0,2,1,2]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 2, 2, 70026, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_top_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77026, ((_this select 4) select 0) select 2, [0,2,1,2]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
                 class cti_Gear_Control_Pistol_Bipod: cti_Gear_Control_Pistol_Muzzle {
 			idc = 70027;
@@ -1207,8 +1207,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.845)+100";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa";
-			action = "['onWeaponAccessoryClicked', 2, 3, 70027, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77027, ((_this select 4) select 0) select 2, [0,2,1,3]] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponAccessoryClicked', 2, 3, 70027, '\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_bipod_gs.paa'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'Accessory', 77027, ((_this select 4) select 0) select 2, [0,2,1,3]] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Pistol_CurrentMagazine: cti_Gear_Control_Pistol_Muzzle {
 			idc = 70903;
@@ -1216,8 +1216,8 @@ class cti_BuyGearMenu
 			x = "SafeZoneX + (SafeZoneW * 0.92)";
 			
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayGear\ui_gear_magazine_gs.paa";
-			action = "['onWeaponCurrentMagazineClicked', 2, 70903] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
-			onLBDrop = "['onShoppingListLBDrop', 'CurrentMagazine', 77903, ((_this select 4) select 0) select 2, 2] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onWeaponCurrentMagazineClicked', 2, 70903] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBDrop = "['onShoppingListLBDrop', 'CurrentMagazine', 77903, ((_this select 4) select 0) select 2, 2] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Combo_Target : RscComboGear {
 			idc = 70201;
@@ -1227,7 +1227,7 @@ class cti_BuyGearMenu
 			w = "SafeZoneW * 0.235";
 			h = "SafeZoneH * 0.037";
 			
-			onLBSelChanged = "['onUnitLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			onLBSelChanged = "['onUnitLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		
 		class cti_Gear_Uniform_Progress_Load : RscProgressGear {
@@ -1272,56 +1272,56 @@ class cti_BuyGearMenu
 			colorDisabled[] = {1,1,1,0.3};
 			
 			text = "Rsc\Pictures\icon_wf_gear_primary.paa";
-			action = "['onShoppingTabClicked', cti_GEAR_TAB_PRIMARY] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onShoppingTabClicked', cti_GEAR_TAB_PRIMARY] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Icon_Secondary : cti_Icon_Primary {
 			idc = 70502;
 			x = "SafeZoneX + (SafeZoneW * 0.071)";
 			
 			text = "Rsc\Pictures\icon_wf_gear_secondary.paa";
-			action = "['onShoppingTabClicked', cti_GEAR_TAB_SECONDARY] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onShoppingTabClicked', cti_GEAR_TAB_SECONDARY] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Icon_Handgun : cti_Icon_Primary {
 			idc = 70503;
 			x = "SafeZoneX + (SafeZoneW * 0.114)";
 			
 			text = "Rsc\Pictures\icon_wf_gear_handgun.paa";
-			action = "['onShoppingTabClicked', cti_GEAR_TAB_HANDGUN] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onShoppingTabClicked', cti_GEAR_TAB_HANDGUN] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Icon_Accessories : cti_Icon_Primary {
 			idc = 70504;
 			x = "SafeZoneX + (SafeZoneW * 0.157)";
 			
 			text = "Rsc\Pictures\icon_wf_gear_accessories.paa";
-			action = "['onShoppingTabClicked', cti_GEAR_TAB_ACCESSORIES] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onShoppingTabClicked', cti_GEAR_TAB_ACCESSORIES] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Icon_Ammunitions : cti_Icon_Primary {
 			idc = 70505;
 			x = "SafeZoneX + (SafeZoneW * 0.2)";
 			
 			text = "Rsc\Pictures\icon_wf_gear_ammunition.paa";
-			action = "['onShoppingTabClicked', cti_GEAR_TAB_AMMO] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onShoppingTabClicked', cti_GEAR_TAB_AMMO] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Icon_Misc : cti_Icon_Primary {
 			idc = 70506;
 			x = "SafeZoneX + (SafeZoneW * 0.243)";
 			
 			text = "Rsc\Pictures\icon_wf_gear_miscellaneous.paa";
-			action = "['onShoppingTabClicked', cti_GEAR_TAB_MISC] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onShoppingTabClicked', cti_GEAR_TAB_MISC] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Icon_Equipment : cti_Icon_Primary {
 			idc = 70507;
 			x = "SafeZoneX + (SafeZoneW * 0.286)";
 			
 			text = "Rsc\Pictures\icon_wf_gear_equipment.paa";
-			action = "['onShoppingTabClicked', cti_GEAR_TAB_EQUIPMENT] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onShoppingTabClicked', cti_GEAR_TAB_EQUIPMENT] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Icon_Template : cti_Icon_Primary {
 			idc = 70508;
 			x = "SafeZoneX + (SafeZoneW * 0.329)";
 			
 			text = "Rsc\Pictures\icon_wf_building_barracks.paa";
-			action = "['onShoppingTabClicked', cti_GEAR_TAB_TEMPLATES] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onShoppingTabClicked', cti_GEAR_TAB_TEMPLATES] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		
 		class cti_Gear_Control_CreateTemplate : RscButtonGear {
@@ -1334,7 +1334,7 @@ class cti_BuyGearMenu
 			
 			text = "Create Template";
 			tooltip = "Create a template of the current gear setup";
-			action = "['onTemplateCreation'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onTemplateCreation'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_DeleteTemplate : cti_Gear_Control_CreateTemplate {
 			idc = 70402;
@@ -1343,7 +1343,7 @@ class cti_BuyGearMenu
 			
 			text = "Delete Template";
 			tooltip = "Remove an existing template";
-			action = "['onTemplateDeletion', lnbCurSelRow 70108] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onTemplateDeletion', lnbCurSelRow 70108] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Buy : cti_Gear_Control_CreateTemplate {
 			idc = 70403;
@@ -1352,7 +1352,7 @@ class cti_BuyGearMenu
 			
 			text = "Buy";
 			tooltip = "Purchase the current gear setup";
-			action = "['onPurchase'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onPurchase'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Menu_Control_Info : RscStructuredTextGear {
 			idc = 70028;
@@ -1372,7 +1372,7 @@ class cti_BuyGearMenu
 			
 			text = "Clear";
 			tooltip = "Clear the gear of the existing target";
-			action = "['onInventoryClear'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onInventoryClear'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Gear_Control_Reload : cti_Gear_Control_Clear {
 			idc = 70030;
@@ -1380,7 +1380,7 @@ class cti_BuyGearMenu
 			
 			text = "Reload";
 			tooltip = "Reload the last purchased gear for this target";
-			action = "['onInventoryReload'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
+			action = "['onInventoryReload'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'";
 		};
 		class cti_Control_Exit : RscButtonGear {
 			idc = 22555;
@@ -1490,7 +1490,7 @@ class cti_BuyGearMenu
 		{
 			idc = 70401;
 			text = "Create Template"; //--- ToDo: Localize;
-			action = "['onTemplateCreation'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_GearMenu.sqf'";
+			action = "['onTemplateCreation'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_GearMenu.sqf'";
 
 
 			x = 0.70 * safezoneW + safezoneX;
@@ -1505,7 +1505,7 @@ class cti_BuyGearMenu
 		{
 			idc = 71121;
 			text = "Rename";
-			action = "['onTemplateRename', lnbCurSelRow 70108] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_GearMenu.sqf'";
+			action = "['onTemplateRename', lnbCurSelRow 70108] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_GearMenu.sqf'";
 			tooltip = "";
 			//--- We don't want people to see it even for a split second on load
 			
@@ -3629,7 +3629,7 @@ class RscMenu_Help {
 	movingEnable = 1;
 	idd = 508000;
 	onLoad = "uiNamespace setVariable ['dialog_HelpPanel', _this select 0];['onLoad'] execVM 'Client\GUI\GUI_Menu_Help.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_onlinehelpmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\GUI\GUI_Menu_Help.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_onlinehelpmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_Menu_Help.sqf'";
 	class controlsBackground {
 		class WF_Background : RscText {
 			x = "SafeZoneX + (SafeZoneW * 0.1)";
@@ -3696,7 +3696,7 @@ class RscMenu_Help {
 			colorDisabled[] = {1,1,1,0.3};
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
-			onLBSelChanged = "['onHelpLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_Menu_Help.sqf'";
+			onLBSelChanged = "['onHelpLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_Menu_Help.sqf'";
 		};
 		
 		class Menu_Help_ControlsGroup : RscControlsGroup {

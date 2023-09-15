@@ -6,7 +6,7 @@ class CTI_UCRscPurchaseMenu {
 	type = UCCT_COMBO;
 	idd = 110000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_purchasemenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_PurchaseMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_purchasemenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_purchasemenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background: UCRscText
@@ -215,7 +215,7 @@ class CTI_UCRscPurchaseMenu {
 			color[] = {0.75,0.75,0.75,0.7};
 			colorBackgroundSelected[] = {0.6,0.8392,0.4706,0.7};
 			colorFocused[] = {0,0,0,0};
-			action = "['onIconSet', 0, CTI_BARRACKS] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 0, CTI_BARRACKS] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_barracks.paa"; //--- ToDo: Localize;
 			x = 0.04625 * safezoneW + safezoneX;
@@ -228,7 +228,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Light: CTI_Icon_Barracks
 		{
 			idc = 110002;
-			action = "['onIconSet', 1, CTI_LIGHT] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 1, CTI_LIGHT] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_lvs.paa"; //--- ToDo: Localize;
 			x = 0.0926562 * safezoneW + safezoneX;
@@ -241,7 +241,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Heavy: CTI_Icon_Barracks
 		{
 			idc = 110003;
-			action = "['onIconSet', 2, CTI_HEAVY] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 2, CTI_HEAVY] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_hvs.paa"; //--- ToDo: Localize;
 			x = 0.139062 * safezoneW + safezoneX;
@@ -254,7 +254,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Air_Rotary: CTI_Icon_Barracks
 		{
 			idc = 110004;
-			action = "['onIconSet', 3, CTI_AIR_ROTARY] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 3, CTI_AIR_ROTARY] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_air_rotary.paa"; //--- ToDo: Localize;
 			x = 0.185469 * safezoneW + safezoneX;
@@ -267,7 +267,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Air_Fixed: CTI_Icon_Barracks
 		{
 			idc = 110021;
-			action = "['onIconSet', 4, CTI_AIR_FIXED] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 4, CTI_AIR_FIXED] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_air_fixed.paa"; //--- ToDo: Localize;
 			x = 0.231875 * safezoneW + safezoneX;
@@ -280,7 +280,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Repair: CTI_Icon_Barracks
 		{
 			idc = 110005;
-			action = "['onIconSet', 5, CTI_REPAIR] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 5, CTI_REPAIR] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_repair.paa"; //--- ToDo: Localize;
 			x = 0.278281 * safezoneW + safezoneX;
@@ -293,7 +293,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Ammo: CTI_Icon_Barracks
 		{
 			idc = 110006;
-			action = "['onIconSet', 6, CTI_AMMO] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 6, CTI_AMMO] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_ammo.paa"; //--- ToDo: Localize;
 			x = 0.324687 * safezoneW + safezoneX;
@@ -306,7 +306,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Naval: CTI_Icon_Barracks
 		{
 			idc = 110007;
-			action = "['onIconSet', 7, CTI_NAVAL] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 7, CTI_NAVAL] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_naval.paa"; //--- ToDo: Localize;
 			x = 0.371094 * safezoneW + safezoneX;
@@ -319,7 +319,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Depot: CTI_Icon_Barracks
 		{
 			idc = 110008;
-			action = "['onIconSet', 8, CTI_DEPOT] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIconSet', 8, CTI_DEPOT] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\icon_wf_building_depot.paa"; //--- ToDo: Localize;
 			x = 0.4175 * safezoneW + safezoneX;
@@ -335,7 +335,7 @@ class CTI_UCRscPurchaseMenu {
 			color[] = {0.258824,0.713726,1,1};
 			colorBackgroundSelected[] = {0.6,0.8392,0.4706,0.7};
 			colorFocused[] = {0,0,0,0};
-			action = "['onVehicleIconClicked', 'driver', 110100] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onVehicleIconClicked', 'driver', 110100] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\i_driver.paa"; //--- ToDo: Localize;
 			x = 0.29375 * safezoneW + safezoneX;
@@ -348,7 +348,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Gunner: CTI_Icon_Driver
 		{
 			idc = 110101;
-			action = "['onVehicleIconClicked', 'gunner', 110101] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onVehicleIconClicked', 'gunner', 110101] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\i_gunner.paa"; //--- ToDo: Localize;
 			x = 0.335 * safezoneW + safezoneX;
@@ -361,7 +361,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Commander: CTI_Icon_Driver
 		{
 			idc = 110102;
-			action = "['onVehicleIconClicked', 'commander', 110102] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onVehicleIconClicked', 'commander', 110102] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\i_commander.paa"; //--- ToDo: Localize;
 			x = 0.37625 * safezoneW + safezoneX;
@@ -374,7 +374,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Icon_Turrets: CTI_Icon_Driver
 		{
 			idc = 110103;
-			action = "['onVehicleIconClicked', 'turrets', 110103] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onVehicleIconClicked', 'turrets', 110103] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\i_turrets.paa"; //--- ToDo: Localize;
 			x = 0.4175 * safezoneW + safezoneX;
@@ -388,7 +388,7 @@ class CTI_UCRscPurchaseMenu {
 		{
 			idc = 110104;
 			color[] = {1,0.227451,0.227451,1};
-			action = "['onVehicleLockClicked'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onVehicleLockClicked'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "UCRsc\Pictures\i_lock.paa"; //--- ToDo: Localize;
 			x = 0.45875 * safezoneW + safezoneX;
@@ -404,8 +404,8 @@ class CTI_UCRscPurchaseMenu {
 			rowHeight = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			itemBackground[] = {1,1,1,0.1};
 			columns[] = {0.001,0.30,0.75,0.80,0.90};
-			onLBSelChanged = "['onUnitsLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
-			onLBDblClick = "['onPurchase', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			onLBSelChanged = "['onUnitsLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			onLBDblClick = "['onPurchase', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			x = 0.0410937 * safezoneW + safezoneX;
 			y = 0.346 * safezoneH + safezoneY;
@@ -417,7 +417,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Menu_ComboTeam: UCRscCombo
 		{
 			idc = 110016;
-			onLBSelChanged = "['onGroupLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			onLBSelChanged = "['onGroupLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			x = 0.654688 * safezoneW + safezoneX;
 			y = 0.082 * safezoneH + safezoneY;
@@ -428,7 +428,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Menu_ComboFactory: CTI_Menu_ComboTeam
 		{
 			idc = 110009;
-			onLBSelChanged = "['onFactoryLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			onLBSelChanged = "['onFactoryLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			x = 0.654688 * safezoneW + safezoneX;
 			y = 0.126 * safezoneH + safezoneY;
@@ -439,7 +439,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Menu_Control_Purchase: UCRscButton
 		{
 			idc = 100011;
-			action = "['onPurchase', lnbCurSelRow 111007] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onPurchase', lnbCurSelRow 111007] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "Purchase"; //--- ToDo: Localize;
 			x = 0.0410937 * safezoneW + safezoneX;
@@ -450,7 +450,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Menu_Control_CancelQueu: CTI_Menu_Control_Purchase
 		{
 			idc = 100012;
-			action = "['onQueueCancel', lbCurSel 110013] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onQueueCancel', lbCurSel 110013] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "Cancel Queue"; //--- ToDo: Localize;
 			x = 0.505156 * safezoneW + safezoneX;
@@ -461,7 +461,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Menu_Control_IndependentSalvager: CTI_Menu_Control_CancelQueu
 		{
 			idc = 100016;
-			action = "['onIndependentSalvagerPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			action = "['onIndependentSalvagerPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			text = "Buy Independent Salvager"; //--- ToDo: Localize;
 			x = 0.505156 * safezoneW + safezoneX;
@@ -473,7 +473,7 @@ class CTI_UCRscPurchaseMenu {
 		{
 			idc = 110013;
 			rowHeight = "1.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-			onLBDblClick = "['onQueueCancel', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			onLBDblClick = "['onQueueCancel', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			x = 0.0410937 * safezoneW + safezoneX;
 			y = 0.764 * safezoneH + safezoneY;
@@ -525,7 +525,7 @@ class CTI_UCRscPurchaseMenu {
 		class CTI_Menu_ComboFilter: CTI_Menu_ComboTeam
 		{
 			idc = 110017;
-			onLBSelChanged = "['onFilterLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+			onLBSelChanged = "['onFilterLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 
 			x = 0.04625 * safezoneW + safezoneX;
 			y = 0.291 * safezoneH + safezoneY;
@@ -582,7 +582,7 @@ class CTI_UCRscPurchaseMenu {
 					h = (SafezoneH  * 0.165);
 					colorBackground[] = {0,0,0,0};
 					sizeEx = "0.65 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-					onLBDblClick = "['copyClassnameToClipboard', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
+					onLBDblClick = "['copyClassnameToClipboard', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_PurchaseMenu.sqf'";
 					class Attributes {
 						font = "PuristaMedium";
 						color = "#E8F0FF";
@@ -613,7 +613,7 @@ class CTI_UCRscRespawnMenu {
 	movingEnable = 0;
 	idd = 120000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_respawnmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_RespawnMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_respawnmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_RespawnMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_respawnmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_RespawnMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -713,7 +713,7 @@ class CTI_UCRscRespawnMenu {
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 
-			onLBSelChanged = "['onSpawnLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_RespawnMenu.sqf'";
+			onLBSelChanged = "['onSpawnLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_RespawnMenu.sqf'";
 		};
 		class CTI_Menu_Respawn_Info : UCRscStructuredText {
 			idc = 120003;
@@ -732,7 +732,7 @@ class CTI_UCRscOptionsMenu {
 	movingEnable = 0;
 	idd = 130000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_optionsmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_OptionsMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_optionsmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_optionsmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -827,7 +827,7 @@ class CTI_UCRscOptionsMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Online Help";
-			action = "['onOnlineHelpPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onOnlineHelpPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_Video : CTI_Menu_Options_OnlineHelp {
 			idc = 130007;
@@ -835,7 +835,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.495)";
 
 			text = "Video Settings";
-			action = "['onVideoSettingsPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onVideoSettingsPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_Music : CTI_Menu_Options_OnlineHelp {
 			idc = 130008;
@@ -843,7 +843,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.545)";
 
 			text = "Play Music: Off";
-			action = "['onMusicPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onMusicPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_TransferFunds : CTI_Menu_Options_OnlineHelp {
 			idc = 130009;
@@ -851,7 +851,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.595)";
 
 			text = "Transfer Resources";
-			action = "['onTransferResourcesPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onTransferResourcesPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_Unflip : CTI_Menu_Options_OnlineHelp {
 			idc = 130010;
@@ -859,7 +859,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.645)";
 
 			text = "Unflip Nearest Vehicle";
-			action = "['onUnflipPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onUnflipPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_Service : CTI_Menu_Options_OnlineHelp {
 			idc = 130011;
@@ -867,7 +867,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.695)";
 
 			text = "Service Menu";
-			action = "['onServicePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onServicePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_AIMicro : CTI_Menu_Options_OnlineHelp {
 			idc = 130014;
@@ -875,7 +875,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.745)";
 
 			text = "AI Management";
-			action = "['onAIMicroPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onAIMicroPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_UnitsCam : CTI_Menu_Options_OnlineHelp { //--- Render out
 			idc = 130012;
@@ -883,7 +883,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 3.795)";
 
 			text = "Units Camera";
-			action = "['onUnitsCamPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onUnitsCamPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_SatCam : CTI_Menu_Options_OnlineHelp { //--- Render out
 			idc = 130013;
@@ -891,7 +891,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 3.845)";
 
 			text = "Satellite Camera";
-			action = "['onSatCamPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onSatCamPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Menu_Options_VoteMenu : CTI_Menu_Options_OnlineHelp {
 			idc = 130015;
@@ -899,7 +899,7 @@ class CTI_UCRscOptionsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.895)";
 
 			text = "Commander Vote";
-			action = "['onCommanderVotePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
+			action = "['onCommanderVotePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OptionsMenu.sqf'";
 		};
 		class CTI_Control_Exit : UCRscButton {
 			idc = 22555;
@@ -919,7 +919,7 @@ class CTI_UCRscTransferResourcesMenu {
 	movingEnable = 0;
 	idd = 140000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_transferresourcesmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_transferresourcesmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_transferresourcesmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -1048,8 +1048,8 @@ class CTI_UCRscTransferResourcesMenu {
 			// columns[] = {0.001, 0.26};
 			columns[] = {0.001, 0.3};
 
-			onLBDblClick = "['onGivePlayerPressed', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
-			onLBSelChanged = "['onGroupLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+			onLBDblClick = "['onGivePlayerPressed', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+			onLBSelChanged = "['onGroupLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
 		};
 		class CTI_Menu_Funds_MyResources : UCRscStructuredText {
 			idc = 140002;
@@ -1078,7 +1078,7 @@ class CTI_UCRscTransferResourcesMenu {
 			w = "SafeZoneW * 0.18";
 			h = "SafeZoneH * 0.03";
 
-			onSliderPosChanged = "['onFundSliderChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+			onSliderPosChanged = "['onFundSliderChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
 		};
 		class CTI_Menu_Funds_Box : UCRscEdit {
 			idc = 140009;
@@ -1100,7 +1100,7 @@ class CTI_UCRscTransferResourcesMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Give Player";
-			action = "['onGivePlayerPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+			action = "['onGivePlayerPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
 		};
 		class CTI_Menu_Funds_Commander : UCRscStructuredText {
 			idc = 140010;
@@ -1127,7 +1127,7 @@ class CTI_UCRscTransferResourcesMenu {
 			w = "SafeZoneW * 0.07";
 			h = "SafeZoneH * 0.04";
 
-			onLBSelChanged = "['onResourcesPoolLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+			onLBSelChanged = "['onResourcesPoolLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
 			sizeEx = "0.9 * (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		};
 		class CTI_Menu_Funds_AwardPool : CTI_Menu_Funds_ResourcesPool {
@@ -1135,7 +1135,7 @@ class CTI_UCRscTransferResourcesMenu {
 
 			y = "SafeZoneY + (SafezoneH * 0.605)";
 
-			onLBSelChanged = "['onAwardPoolLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+			onLBSelChanged = "['onAwardPoolLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
 		};
 		class CTI_Control_Exit : UCRscButton {
 			idc = 22555;
@@ -1154,7 +1154,7 @@ class CTI_UCRscTransferResourcesMenu {
 			x = "SafeZoneX + (SafeZoneW * 0.695)";
 
 			text = "<<";
-			action = "['onGoBack'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+			action = "['onGoBack'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
 		};
 	};
 };
@@ -1163,7 +1163,7 @@ class CTI_UCRscVideoSettingsMenu {
 	movingEnable = 0;
 	idd = 150000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_videosettingsmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_videosettingsmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_videosettingsmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -1237,7 +1237,7 @@ class CTI_UCRscVideoSettingsMenu {
 			w = "SafeZoneW * 0.26";
 			h = "SafeZoneH * 0.025";
 
-			onSliderPosChanged = "['onViewSliderChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
+			onSliderPosChanged = "['onViewSliderChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
 		};
 		class CTI_Menu_Video_ObjectDistanceLabel : CTI_Menu_Video_ViewDistanceLabel {
 			idc = 150003;
@@ -1250,7 +1250,7 @@ class CTI_UCRscVideoSettingsMenu {
 
 			y = "SafeZoneY + (SafezoneH * 0.375)";
 
-			onSliderPosChanged = "['onObjectSliderChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
+			onSliderPosChanged = "['onObjectSliderChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
 		};
 		class CTI_Menu_Video_ShadowsDistanceLabel : CTI_Menu_Video_ViewDistanceLabel {
 			idc = 150005;
@@ -1262,7 +1262,7 @@ class CTI_UCRscVideoSettingsMenu {
 			idc = 150006;
 
 			y = "SafeZoneY + (SafezoneH * 0.44)";
-			onSliderPosChanged = "['onShadowsSliderChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
+			onSliderPosChanged = "['onShadowsSliderChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
 		};
 
 		class CTI_Menu_Video_GridLabel : CTI_Menu_Video_ViewDistanceLabel {
@@ -1276,7 +1276,7 @@ class CTI_UCRscVideoSettingsMenu {
 
 			y = "SafeZoneY + (SafezoneH * 0.526)";
 
-			onSliderPosChanged = "['onGridSliderChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
+			onSliderPosChanged = "['onGridSliderChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
 		};
 		class CTI_Menu_Hints : UCRscButton {
 			idc = 150009;
@@ -1287,7 +1287,7 @@ class CTI_UCRscVideoSettingsMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "";
-			action = "['onHintsPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
+			action = "['onHintsPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_VideoSettingsMenu.sqf'";
 		};
 		class CTI_Control_Exit : UCRscButton {
 			idc = 22555;
@@ -1315,7 +1315,7 @@ class CTI_UCRscOnlineHelpMenu {
 	movingEnable = 0;
 	idd = 160000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_onlinehelpmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_OnlineHelpMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_onlinehelpmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OnlineHelpMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_onlinehelpmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OnlineHelpMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -1401,7 +1401,7 @@ class CTI_UCRscOnlineHelpMenu {
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 
-			onLBSelChanged = "['onHelpLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_OnlineHelpMenu.sqf'";
+			onLBSelChanged = "['onHelpLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_OnlineHelpMenu.sqf'";
 		};
 
 		class CTI_Menu_Help_ControlsGroup : UCRscControlsGroup {
@@ -1431,7 +1431,7 @@ class CTI_UCRscSatelitteCamera {
 	movingEnable = 0;
 	idd = 170000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_satcam', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_SatelitteCamera.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_satcam', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_satcam', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
 
 	class controlsBackground {
 		class CTI_MouseArea : UCRscText {
@@ -1504,7 +1504,7 @@ class CTI_UCRscSatelitteCamera {
 			w = "SafeZoneW * 0.19";
 
 			text = "";
-			action = "['onToggleGroup'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
+			action = "['onToggleGroup'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
 		};
 		class CTI_Menu_Control_ToggleMap : CTI_Menu_Control_ToggleGroups {
 			idc = 170008;
@@ -1512,7 +1512,7 @@ class CTI_UCRscSatelitteCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.95)";
 
 			text = "";
-			action = "['onToggleMap'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
+			action = "['onToggleMap'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
 		};
 		class CTI_Background_Map : CTI_Background { //--- Render out.
 			idc = 170009;
@@ -1560,7 +1560,7 @@ class CTI_UCRscSatelitteCamera {
 			x = "SafeZoneX + (SafeZoneW * 0.16)";
 
 			text = "";
-			action = "['onViewModeChanged'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
+			action = "['onViewModeChanged'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
 		};
 		class CTI_Menu_UnitCamJump : CTI_Menu_Control_Exit {
 			idc = 170014;
@@ -1568,7 +1568,7 @@ class CTI_UCRscSatelitteCamera {
 			x = "SafeZoneX + (SafeZoneW * 0.31)";
 
 			text = "Unit Camera";
-			action = "['onUnitCameraJump'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
+			action = "['onUnitCameraJump'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
 		};
 		class CTI_Menu_Control_ToggleInfo : CTI_Menu_Control_ToggleGroups {
 			idc = 170015;
@@ -1577,7 +1577,7 @@ class CTI_UCRscSatelitteCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.01)";
 
 			text = "";
-			action = "['onToggleInfo'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
+			action = "['onToggleInfo'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
 		};
 		class CTI_Background_Info : CTI_Background { //--- Render out.
 			idc = 170016;
@@ -1622,7 +1622,7 @@ class CTI_UCRscSatelitteCamera {
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 
-			onLBSelChanged = "['onUnitsLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
+			onLBSelChanged = "['onUnitsLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
 		};
 		class CTI_Menu_Control_UnitsAIList : CTI_Menu_Control_UnitsList { //--- Render out.
 			idc = 170101;
@@ -1630,7 +1630,7 @@ class CTI_UCRscSatelitteCamera {
 			y = "SafeZoneY + (SafeZoneH * 3.45)";
 			h = "SafeZoneH * 0.15";
 
-			onLBSelChanged = "['onUnitsAILBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
+			onLBSelChanged = "['onUnitsAILBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_SatelitteCamera.sqf'";
 		};
 	};
 };
@@ -1639,7 +1639,7 @@ class CTI_UCRscBaseCamera {
 	movingEnable = 0;
 	idd = 177000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_basecam', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_BaseCamera.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_basecam', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_BaseCamera.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_basecam', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_BaseCamera.sqf'";
 
 	class controlsBackground {
 		class CTI_MouseArea : UCRscText {
@@ -1665,7 +1665,7 @@ class CTI_UCRscBaseCamera {
 			w = "SafeZoneW * 0.19";
 
 			text = "";
-			action = "['onToggleMap'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_BaseCamera.sqf'";
+			action = "['onToggleMap'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_BaseCamera.sqf'";
 		};
 		class CTI_Background_Map : UCRscText { //--- Render out.
 			idc = 177009;
@@ -1704,7 +1704,7 @@ class CTI_UCRscBaseCamera {
 			x = "SafeZoneX + (SafeZoneW * 0.16)";
 
 			text = "";
-			action = "['onViewModeChanged'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_BaseCamera.sqf'";
+			action = "['onViewModeChanged'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_BaseCamera.sqf'";
 		};
 	};
 };
@@ -1713,7 +1713,7 @@ class CTI_UCRscUnitsCamera {
 	movingEnable = 0;
 	idd = 180000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_unitscam', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_UnitsCamera.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_unitscam', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_unitscam', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 
 	class controlsBackground {
 		class CTI_MouseArea : UCRscText {
@@ -1787,7 +1787,7 @@ class CTI_UCRscUnitsCamera {
 			w = "SafeZoneW * 0.19";
 
 			text = "";
-			action = "['onToggleGroup'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onToggleGroup'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		class CTI_Menu_Control_ToggleMap : CTI_Menu_Control_ToggleGroups {
 			idc = 180008;
@@ -1795,7 +1795,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.95)";
 
 			text = "";
-			action = "['onToggleMap'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onToggleMap'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		class CTI_Background_Map : CTI_Background { //--- Render out.
 			idc = 180009;
@@ -1842,7 +1842,7 @@ class CTI_UCRscUnitsCamera {
 			x = "SafeZoneX + (SafeZoneW * 0.16)";
 
 			text = "";
-			action = "['onViewModeChanged'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onViewModeChanged'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		/*no satelitekey needed
 		class CTI_Menu_UnitCamJump : CTI_Menu_Control_Exit { //--- Render out
@@ -1851,7 +1851,7 @@ class CTI_UCRscUnitsCamera {
 			x = "SafeZoneX + (SafeZoneW * 0.31)";
 
 			text = "";
-			action = "['onSatelliteCameraJump'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onSatelliteCameraJump'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		*/
 		/*not needed, we just use this great remote solution from ofps
@@ -1862,7 +1862,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.01)";
 
 			text = "";
-			action = "['onToggleInfo'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onToggleInfo'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		
 		class CTI_Background_Info : CTI_Background { //--- Render out.
@@ -1904,7 +1904,7 @@ class CTI_UCRscUnitsCamera {
 			w = "SafeZoneW * 0.14";
 
 			text = "Iron Sight";
-			action = "['onCamChange', 'ironsight'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onCamChange', 'ironsight'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		class CTI_Menu_Control_Internal : CTI_Menu_Control_IronSight {
 			idc = 180020;
@@ -1912,7 +1912,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.85)";
 
 			text = "Internal";
-			action = "['onCamChange', 'internal'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onCamChange', 'internal'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		class CTI_Menu_Control_External : CTI_Menu_Control_IronSight { //--- Render out.
 			idc = 180021;
@@ -1920,7 +1920,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.80)";
 
 			text = "External";
-			action = "['onCamChange', 'external'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onCamChange', 'external'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		/*unflip not needed
 		class CTI_Menu_Control_Unflip : CTI_Menu_Control_IronSight {
@@ -1929,7 +1929,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.75)";
 			
 			text = "";
-			action = "['onUnitUnflip'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onUnitUnflip'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		*/
 		class CTI_Menu_Control_Disband : CTI_Menu_Control_IronSight { //--- Render out.
@@ -1938,7 +1938,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.70)";
 
 			text = "Disband Unit";
-			action = "['onUnitDisband'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onUnitDisband'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		class CTI_Menu_Control_Remote : CTI_Menu_Control_IronSight {
 			idc = 180024;
@@ -1946,7 +1946,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.65)";
 
 			text = "Remote Control";
-			action = "['onRemote'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onRemote'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 	/*Removed in favor of HALO vehicle fast travel
 		class CTI_Menu_Paradrop : CTI_Menu_Control_IronSight {
@@ -1955,7 +1955,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.6)";
 
 			text = "Paradrop";
-			action = "['onParadrop'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			action = "['onParadrop'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 	*/
 		class CTI_Menu_Control_UnitsList : UCRscListBox { //--- Render out.
@@ -1972,7 +1972,7 @@ class CTI_UCRscUnitsCamera {
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 
-			onLBSelChanged = "['onUnitsLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			onLBSelChanged = "['onUnitsLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 		class CTI_Menu_Control_UnitsAIList : CTI_Menu_Control_UnitsList { //--- Render out.
 			idc = 180101;
@@ -1980,7 +1980,7 @@ class CTI_UCRscUnitsCamera {
 			y = "SafeZoneY + (SafeZoneH * 0.45)";
 			h = "SafeZoneH * 0.15";
 
-			onLBSelChanged = "['onUnitsAILBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
+			onLBSelChanged = "['onUnitsAILBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UnitsCamera.sqf'";
 		};
 	};
 };
@@ -1989,7 +1989,7 @@ class CTI_UCRscTeamsMenu {
 	movingEnable = 0;
 	idd = 190000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_teamsmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_TeamsMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_teamsmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_teamsmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -2144,7 +2144,7 @@ class CTI_UCRscTeamsMenu {
 			itemBackground[] = {1,1,1,0.1};
 			columns[] = {0.001, 0.25, 0.35, 0.48, 0.6, 0.8};
 
-			onLBSelChanged = "['onTeamListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			onLBSelChanged = "['onTeamListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_AIIndependent : UCRscButton {
 			idc = 190002;
@@ -2155,7 +2155,7 @@ class CTI_UCRscTeamsMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "All AI Independent";
-			action = "['onAllAIIndependentPressed', 0] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onAllAIIndependentPressed', 0] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_AINotIndependent : CTI_Control_Button_AIIndependent {
 			idc = 190003;
@@ -2163,7 +2163,7 @@ class CTI_UCRscTeamsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.79)";
 
 			text = "No AI Independent";
-			action = "['onAllAIIndependentPressed', 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onAllAIIndependentPressed', 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Menu_Control_Info : UCRscStructuredText {
 			idc = 190004;
@@ -2216,7 +2216,7 @@ class CTI_UCRscTeamsMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Set";
-			action = "['onSetTeamIndependentPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onSetTeamIndependentPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_SetRole : CTI_Control_Button_SetIndependent {
 			idc = 190009;
@@ -2224,7 +2224,7 @@ class CTI_UCRscTeamsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.8)";
 
 			text = "Set";
-			action = "['onSetRolePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onSetRolePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_Order : CTI_Control_Button_SetIndependent {
 			idc = 190010;
@@ -2232,7 +2232,7 @@ class CTI_UCRscTeamsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.85)";
 
 			text = "Order";
-			action = "['onOrderPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onOrderPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_SendFunds : CTI_Control_Button_SetIndependent {
 			idc = 190014;
@@ -2240,7 +2240,7 @@ class CTI_UCRscTeamsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.9)";
 
 			text = "Transfer";
-			action = "['onTransferFundsPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onTransferFundsPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_SetIndependentAll : CTI_Control_Button_SetIndependent {
 			idc = 190011;
@@ -2251,7 +2251,7 @@ class CTI_UCRscTeamsMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Set to All";
-			action = "['onSetAllTeamIndependentPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onSetAllTeamIndependentPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_SetRoleAll : CTI_Control_Button_SetIndependentAll {
 			idc = 190012;
@@ -2259,7 +2259,7 @@ class CTI_UCRscTeamsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.8)";
 
 			text = "Set to All";
-			action = "['onSetAllRolePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onSetAllRolePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_OrderAll : CTI_Control_Button_SetIndependentAll {
 			idc = 190015;
@@ -2267,7 +2267,7 @@ class CTI_UCRscTeamsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.85)";
 
 			text = "Order to All";
-			action = "['onOrderAllPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onOrderAllPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_TransferAll : CTI_Control_Button_SetIndependentAll {
 			idc = 190013;
@@ -2275,7 +2275,7 @@ class CTI_UCRscTeamsMenu {
 			y = "SafeZoneY + (SafezoneH * 0.9)";
 
 			text = "Transfer to All";
-			action = "['onTransferAllPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onTransferAllPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 		class CTI_Control_Button_Disbands : UCRscButton_Lesser {
 			idc = 190017;
@@ -2285,7 +2285,7 @@ class CTI_UCRscTeamsMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Disband Team";
-			action = "['onTeamDisband', lnbCurSelRow 190001] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
+			action = "['onTeamDisband', lnbCurSelRow 190001] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TeamsMenu.sqf'";
 		};
 	};
 };
@@ -2294,7 +2294,7 @@ class CTI_UCRscCommandMenu {
 	movingEnable = 0;
 	idd = 210000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_commandmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_CommandMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_commandmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_commandmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -2336,7 +2336,7 @@ class CTI_UCRscCommandMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Resources";
-			action = "['onResourcesPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
+			action = "['onResourcesPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
 		};
 		class CTI_Control_Teams : CTI_Control_Resources {
 			idc = 210003;
@@ -2344,7 +2344,7 @@ class CTI_UCRscCommandMenu {
 			y = "SafeZoneY + (SafezoneH * 3.32)"; //--- Render out
 
 			text = "Teams";
-			action = "['onTeamsPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
+			action = "['onTeamsPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
 		};
 		class CTI_Control_Map : CTI_Control_Resources {
 			idc = 210004;
@@ -2352,7 +2352,7 @@ class CTI_UCRscCommandMenu {
 			y = "SafeZoneY + (SafezoneH * 3.37)"; //--- Render out
 
 			text = "Map Commanding";
-			action = "['onMapPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
+			action = "['onMapPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
 		};
 		class CTI_Control_Upgrades : CTI_Control_Resources {
 			idc = 210005;
@@ -2360,7 +2360,7 @@ class CTI_UCRscCommandMenu {
 			y = "SafeZoneY + (SafezoneH * 3.42)"; //--- Render out
 
 			text = "Upgrades";
-			action = "['onUpgradesPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
+			action = "['onUpgradesPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
 		};
 		class CTI_Control_Workers : CTI_Control_Resources {
 			idc = 210006;
@@ -2368,7 +2368,7 @@ class CTI_UCRscCommandMenu {
 			y = "SafeZoneY + (SafezoneH * 3.47)"; //--- Render out
 
 			text = "Base Management";
-			action = "['onWorkersPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
+			action = "['onWorkersPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
 		};
 		class CTI_Control_RequestMenu : CTI_Control_Resources {
 			idc = 210008;
@@ -2376,7 +2376,7 @@ class CTI_UCRscCommandMenu {
 			y = "SafeZoneY + (SafezoneH * 3.52)"; //--- Render out
 
 			text = "Team Requests";
-			action = "['onRequestMenuPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
+			action = "['onRequestMenuPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
 		};
 		class CTI_Control_ArtilleryMenu : CTI_Control_Resources {
 			idc = 210009;
@@ -2384,7 +2384,7 @@ class CTI_UCRscCommandMenu {
 			y = "SafeZoneY + (SafezoneH * 3.57)"; //--- Render out
 
 			text = "Artillery";
-			action = "['onArtilleryMenuPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
+			action = "['onArtilleryMenuPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_CommandMenu.sqf'";
 		};
 		class CTI_Control_Exit : UCRscButton {
 			idc = 22555;
@@ -2404,7 +2404,7 @@ class CTI_UCRscMapCommandMenu {
 	movingEnable = 0;
 	idd = 220000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_mapcommandmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_MapCommandMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_mapcommandmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_mapcommandmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -2442,7 +2442,7 @@ class CTI_UCRscMapCommandMenu {
 			h = "SafeZoneH * 0.95";
 
 			// showCountourInterval = 1;
-			onMouseButtonDown = "['onMapButtonDown', _this] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+			onMouseButtonDown = "['onMapButtonDown', _this] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
 		};
 	};
 
@@ -2546,8 +2546,8 @@ class CTI_UCRscMapCommandMenu {
 			itemBackground[] = {1,1,1,0.1};
 			columns[] = {0.001, 0.4};
 
-			onLBDblClick = "['onUnitListLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
-			onLBSelChanged = "['onUnitListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+			onLBDblClick = "['onUnitListLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+			onLBSelChanged = "['onUnitListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
 		};
 		class CTI_Menu_Control_OrdersList : UCRscListBox {
 			idc = 220009;
@@ -2563,8 +2563,8 @@ class CTI_UCRscMapCommandMenu {
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 
-			onLBSelChanged = "['onOrdersListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
-			onLBDblClick = "['onOrdersListLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+			onLBSelChanged = "['onOrdersListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+			onLBDblClick = "['onOrdersListLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
 		};
 		class CTI_Menu_Control_OrdersParamList : CTI_Menu_Control_OrdersList {
 			idc = 220010;
@@ -2572,7 +2572,7 @@ class CTI_UCRscMapCommandMenu {
 			y = "SafeZoneY + (SafezoneH * 0.645)";
 			h = "SafeZoneH * 0.20";
 
-			onLBDblClick = "['onOrdersParamLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+			onLBDblClick = "['onOrdersParamLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
 			onLBSelChanged = "";
 		};
 
@@ -2587,7 +2587,7 @@ class CTI_UCRscMapCommandMenu {
 			sizeEx = "0.85 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 
 			text = "Set Order";
-			action = "['onSetOrderPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+			action = "['onSetOrderPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
 		};
 		class CTI_Menu_Control_SetMapOrder : CTI_Menu_Control_SetOrder {
 			idc = 220012;
@@ -2595,7 +2595,7 @@ class CTI_UCRscMapCommandMenu {
 			y = "SafeZoneY + (SafeZoneH * 0.91)";
 
 			text = "Set Order (Map Click)";
-			action = "['onSetMapOrderPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
+			action = "['onSetMapOrderPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_MapCommandMenu.sqf'";
 		};
 		class CTI_Menu_Control_IntelText : UCRscStructuredText {
 			idc = 220013;
@@ -2634,7 +2634,7 @@ class CTI_UCRscServiceMenu {
 	movingEnable = 0;
 	idd = 230000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_servicemenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_ServiceMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_servicemenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_servicemenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background: UCRscText
@@ -2752,7 +2752,7 @@ class CTI_UCRscServiceMenu {
 		class CTI_Menu_Control_Repair: UCRscButton
 		{
 			idc = 230001;
-			action = "['onRepairPressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
+			action = "['onRepairPressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
 
 			text = "Repair"; //--- ToDo: Localize;
 			x = 0.210034 * safezoneW + safezoneX;
@@ -2763,7 +2763,7 @@ class CTI_UCRscServiceMenu {
 		class CTI_Menu_Control_Rearm: CTI_Menu_Control_Repair
 		{
 			idc = 230002;
-			action = "['onRearmPressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
+			action = "['onRearmPressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
 
 			text = "Rearm"; //--- ToDo: Localize;
 			x = 0.210034 * safezoneW + safezoneX;
@@ -2774,7 +2774,7 @@ class CTI_UCRscServiceMenu {
 		class CTI_Menu_Control_Refuel: CTI_Menu_Control_Repair
 		{
 			idc = 230003;
-			action = "['onRefuelPressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
+			action = "['onRefuelPressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
 
 			text = "Refuel"; //--- ToDo: Localize;
 			x = 0.479951 * safezoneW + safezoneX;
@@ -2785,7 +2785,7 @@ class CTI_UCRscServiceMenu {
 		class CTI_Menu_Control_Heal: CTI_Menu_Control_Refuel
 		{
 			idc = 230004;
-			action = "['onHealPressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
+			action = "['onHealPressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
 
 			text = "Heal"; //--- ToDo: Localize;
 			x = 0.479951 * safezoneW + safezoneX;
@@ -2839,7 +2839,7 @@ class CTI_UCRscServiceMenu {
 			rowHeight = "1.3 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			itemBackground[] = {1,1,1,0.1};
 			columns[] = {0.001,0.5,0.65,0.8};
-			onLBSelChanged = "['onEntityListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
+			onLBSelChanged = "['onEntityListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
 
 			x = 0.212555 * safezoneW + safezoneX;
 			y = 0.313 * safezoneH + safezoneY;
@@ -2873,7 +2873,7 @@ class CTI_UCRscServiceMenu {
 		class CTI_Menu_Control_Loadout: UCRscButton
 		{
 			idc = 230006;
-			action = "['onLoadoutPressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
+			action = "['onLoadoutPressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
 
 			text = "Loadout"; //--- ToDo: Localize;
 			x = 0.210378 * safezoneW + safezoneX;
@@ -2894,7 +2894,7 @@ class CTI_UCRscServiceMenu {
 		class CTI_Menu_Control_Sell: UCRscButton
 		{
 			idc = 230008;
-			action = "['onSellPressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
+			action = "['onSellPressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ServiceMenu.sqf'";
 
 			text = "Sell"; //--- ToDo: Localize;
 			x = 0.479951 * safezoneW + safezoneX;
@@ -2918,7 +2918,7 @@ class CTI_UCRscUpgradeMenu {
 	movingEnable = 0;
 	idd = 250000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_upgrademenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_UpgradeMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_upgrademenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UpgradeMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_upgrademenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UpgradeMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -2987,7 +2987,7 @@ class CTI_UCRscUpgradeMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Upgrade";
-			action = "['onUpgradePressed', lnbCurSelRow 250002] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UpgradeMenu.sqf'";
+			action = "['onUpgradePressed', lnbCurSelRow 250002] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UpgradeMenu.sqf'";
 		};
 		class CTI_Menu_Control_UpgradeList : UCRscListNBox {
 			idc = 250002;
@@ -3006,8 +3006,8 @@ class CTI_UCRscUpgradeMenu {
 			// columns[] = {0.001, 0.26};
 			columns[] = {0.001, 0.18};
 
-			onLBDblClick = "['onUpgradePressed', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UpgradeMenu.sqf'";
-			onLBSelChanged = "['onUpgradeListSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_UpgradeMenu.sqf'";
+			onLBDblClick = "['onUpgradePressed', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UpgradeMenu.sqf'";
+			onLBSelChanged = "['onUpgradeListSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_UpgradeMenu.sqf'";
 		};
 		class CTI_Menu_Upgrade_Label : UCRscText {
 			idc = 250003;
@@ -3088,7 +3088,7 @@ class CTI_UCRscWorkersMenu {
 	movingEnable = 0;
 	idd = 260000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_workersmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_WorkersMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_workersmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_workersmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -3159,7 +3159,7 @@ class CTI_UCRscWorkersMenu {
 			h = "SafeZoneH * 0.38";
 
 			showCountourInterval = 0;
-			onMouseButtonDown = "['onMapButtonDown', _this] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
+			onMouseButtonDown = "['onMapButtonDown', _this] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
 		};
 		class CTI_Menu_Control_WorkersList : UCRscListNBox {
 			idc = 260002;
@@ -3177,7 +3177,7 @@ class CTI_UCRscWorkersMenu {
 			itemBackground[] = {1,1,1,0.1};
 			columns[] = {0.001, 0.35};
 
-			onLBSelChanged = "['onWorkersListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
+			onLBSelChanged = "['onWorkersListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
 		};
 		class CTI_Menu_Control_Disband : UCRscButton {
 			idc = 260003;
@@ -3188,7 +3188,7 @@ class CTI_UCRscWorkersMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Disband Worker";
-			action = "['onWorkerDisbandPressed', lnbCurSelRow 260002] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
+			action = "['onWorkerDisbandPressed', lnbCurSelRow 260002] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
 		};
 		class CTI_Menu_Control_Sell : CTI_Menu_Control_Disband {
 			idc = 260004;
@@ -3196,7 +3196,7 @@ class CTI_UCRscWorkersMenu {
 			y = "SafeZoneY + (SafezoneH * 0.5325)";
 
 			text = "Sell Structure";
-			action = "['onStructureSellPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
+			action = "['onStructureSellPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_WorkersMenu.sqf'";
 		};
 		class CTI_Control_Exit : UCRscButton {
 			idc = 22555;
@@ -3224,7 +3224,7 @@ class CTI_UCRscAIMicromanagementMenu {
 	movingEnable = 0;
 	idd = 270000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_aimicromenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_aimicromenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_aimicromenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -3262,7 +3262,7 @@ class CTI_UCRscAIMicromanagementMenu {
 			h = "SafeZoneH * 0.95";
 
 			// showCountourInterval = 1;
-			onMouseButtonDown = "['onMapButtonDown', _this] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			onMouseButtonDown = "['onMapButtonDown', _this] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 		};
 	};
 
@@ -3365,8 +3365,8 @@ class CTI_UCRscAIMicromanagementMenu {
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 
-			onLBDblClick = "['onUnitListLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
-			// onLBSelChanged = "['onUnitListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			onLBDblClick = "['onUnitListLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			// onLBSelChanged = "['onUnitListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 		};
 		class CTI_Menu_Control_OrdersList : UCRscListBox {
 			idc = 270009;
@@ -3382,8 +3382,8 @@ class CTI_UCRscAIMicromanagementMenu {
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 
-			onLBSelChanged = "['onOrdersListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
-			onLBDblClick = "['onOrdersListLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			onLBSelChanged = "['onOrdersListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			onLBDblClick = "['onOrdersListLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 		};
 		class CTI_Menu_Control_OrdersParamList : CTI_Menu_Control_OrdersList {
 			idc = 270010;
@@ -3391,7 +3391,7 @@ class CTI_UCRscAIMicromanagementMenu {
 			y = "SafeZoneY + (SafezoneH * 0.645)";
 			h = "SafeZoneH * 0.2";
 
-			// onLBDblClick = "['onOrdersParamLBDblClick', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			// onLBDblClick = "['onOrdersParamLBDblClick', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 			onLBSelChanged = "";
 		};
 
@@ -3406,7 +3406,7 @@ class CTI_UCRscAIMicromanagementMenu {
 			sizeEx = "0.85 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 
 			text = "Set Order";
-			action = "['onSetOrderPressed', lbCurSel 270009] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			action = "['onSetOrderPressed', lbCurSel 270009] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 		};
 		class CTI_Menu_Control_SetMapOrder : CTI_Menu_Control_SetOrder {
 			idc = 270012;
@@ -3414,7 +3414,7 @@ class CTI_UCRscAIMicromanagementMenu {
 			y = "SafeZoneY + (SafeZoneH * 0.91)";
 
 			text = "Set Order (Map Click)";
-			action = "['onSetMapOrderPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			action = "['onSetMapOrderPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 		};
 		class CTI_Menu_Control_Disband : CTI_Menu_Control_SetOrder {
 			idc = 270014;
@@ -3422,7 +3422,7 @@ class CTI_UCRscAIMicromanagementMenu {
 			y = "SafeZoneY + (SafeZoneH * 0.355)";
 
 			text = "Disband";
-			action = "['onUnitDisbandPressed', lbSelection ((uiNamespace getVariable 'cti_dialog_ui_aimicromenu') displayCtrl 270002)] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			action = "['onUnitDisbandPressed', lbSelection ((uiNamespace getVariable 'cti_dialog_ui_aimicromenu') displayCtrl 270002)] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 		};
 		class CTI_Menu_Control_IntelText : UCRscStructuredText {
 			idc = 270013;
@@ -3443,7 +3443,7 @@ class CTI_UCRscAIMicromanagementMenu {
 			h = "SafeZoneH * 0.0275";
 
 			text = "All";
-			action = "['onSelectAll'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
+			action = "['onSelectAll'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_AIMicromanagementMenu.sqf'";
 		};
 
 		class CTI_Control_Exit : UCRscButton {
@@ -3472,7 +3472,7 @@ class CTI_UCRscRequestMenu {
 	movingEnable = 0;
 	idd = 280000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_requestmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_RequestMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_requestmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_requestmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -3536,7 +3536,7 @@ class CTI_UCRscRequestMenu {
 			h = "SafeZoneH * 0.04";
 
 			text = "Accept";
-			action = "['onRequestAccept', lnbCurSelRow 280005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
+			action = "['onRequestAccept', lnbCurSelRow 280005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
 		};
 		class CTI_Menu_Control_Deny : CTI_Menu_Control_Accept {
 			idc = 280002;
@@ -3544,7 +3544,7 @@ class CTI_UCRscRequestMenu {
 			x = "SafeZoneX + (SafeZoneW * 0.525)";
 
 			text = "Deny";
-			action = "['onRequestDeny', lnbCurSelRow 280005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
+			action = "['onRequestDeny', lnbCurSelRow 280005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
 		};
 		class CTI_Menu_Map : UCRscMapControl {
 			idc = 280003;
@@ -3583,8 +3583,8 @@ class CTI_UCRscRequestMenu {
 			// columns[] = {0.001, 0.26};
 			columns[] = {0.001, 0.26};
 
-			onLBDblClick = "['onRequestAccept', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
-			onLBSelChanged = "['onRequestSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
+			onLBDblClick = "['onRequestAccept', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
+			onLBSelChanged = "['onRequestSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_RequestMenu.sqf'";
 		};
 		class CTI_Control_Exit : UCRscButton {
 			idc = 22555;
@@ -3622,7 +3622,7 @@ class CTI_UCRscRequestMenu {
 			// x = "SafeZoneX + (SafeZoneW * 0.695)";
 
 			// text = "<<";
-			// action = "['onGoBack'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
+			// action = "['onGoBack'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TransferResourcesMenu.sqf'";
 		// };
 	};
 };
@@ -3631,7 +3631,7 @@ class CTI_UCRscArtilleryMenu {
 	movingEnable = 0;
 	idd = 290000;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_artillerymenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_artillerymenu', nil];['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_artillerymenu', nil];['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
 
 	class controlsBackground {
 		class CTI_Background : UCRscText {
@@ -3669,7 +3669,7 @@ class CTI_UCRscArtilleryMenu {
 			h = "SafeZoneH * 0.95";
 
 			showCountourInterval = 1;
-			onMouseButtonDown = "['onMapButtonDown', _this] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
+			onMouseButtonDown = "['onMapButtonDown', _this] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
 		};
 	};
 
@@ -3730,7 +3730,7 @@ class CTI_UCRscArtilleryMenu {
 			h = "SafeZoneH * 0.035";
 
 			sizeEx = "0.8 * (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-			onLBSelChanged = "['onArtilleryTypeChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
+			onLBSelChanged = "['onArtilleryTypeChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
 		};
 		class CTI_Menu_FireMission_Magazine_Label : CTI_Menu_FireMission_Type_Label {
 			idc = 290008;
@@ -3743,7 +3743,7 @@ class CTI_UCRscArtilleryMenu {
 			idc = 290009;
 
 			y = "SafeZoneY + (SafezoneH * 0.195)";
-			onLBSelChanged = "['onArtilleryMagazineChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
+			onLBSelChanged = "['onArtilleryMagazineChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
 		};
 		class CTI_Menu_FireMission_BurUCST_Label : CTI_Menu_FireMission_Type_Label {
 			idc = 290010;
@@ -3801,7 +3801,7 @@ class CTI_UCRscArtilleryMenu {
 			sizeEx = "0.85 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 
 			text = "call Fire Mission";
-			action = "['onFireMissionCall'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
+			action = "['onFireMissionCall'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
 		};
 		class CTI_Menu_FireMission_SelectAll : CTI_Menu_FireMission_Call {
 			idc = 290016;
@@ -3809,7 +3809,7 @@ class CTI_UCRscArtilleryMenu {
 			y = "SafeZoneY + (SafeZoneH * 0.64)";
 
 			text = "Select All";
-			action = "['onSelectAll'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
+			action = "['onSelectAll'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_ArtilleryMenu.sqf'";
 		};
 		class CTI_Control_Exit : UCRscButton {
 			idc = 22555;
@@ -3888,7 +3888,7 @@ class CTI_UCRscVoteMenu {
 			itemBackground[] = {1,1,1,0.1};
 			columns[] = {0.01, 0.75};
 
-			onLBSelChanged = "['onVoteLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_VoteMenu.sqf'";
+			onLBSelChanged = "['onVoteLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_VoteMenu.sqf'";
 		};
 		class CTI_Menu_Vote_Time : UCRscText {
 			idc = 300002;
@@ -3924,7 +3924,7 @@ class CTI_UCRscVoteMenu {
 			h = "SafeZoneH * 0.04";
 			
 			text = "Confirm";
-			action = "closeDialog 0; ['onVoteConfirmPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_VoteMenu.sqf'";
+			action = "closeDialog 0; ['onVoteConfirmPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_VoteMenu.sqf'";
 		};
 		class CTI_Control_Exit : UCRscButton {
 			idc = 22555;
@@ -3953,7 +3953,7 @@ class CTI_UCRscTabletDialog
 	movingEnable=true;
 	enableSimulation=true;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_TabletMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 	class controls
 	{
 
@@ -4088,7 +4088,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Equipment: UCRscTabletButtonMenu
 		{
 			idc = 777101;
-			action = "['onEquipmentPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onEquipmentPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "EQUIPMENT"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4100,7 +4100,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Factory: UCRscTabletButtonMenu
 		{
 			idc = 777102;
-			action = "['onFactoryPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onFactoryPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "FACTORY"; //--- ToDo: Localize;
 			x = 0.431261 * safezoneW + safezoneX;
@@ -4112,7 +4112,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Build: UCRscTabletButtonMenu
 		{
 			idc = 777103;
-			action = "['onBuildPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onBuildPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "BUILD"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -4124,7 +4124,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Command: UCRscTabletButtonMenu
 		{
 			idc = 777104;
-			action = "['onCommandPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onCommandPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "COMMAND"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4136,7 +4136,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Options: UCRscTabletButtonMenu
 		{
 			idc = 777105;
-			action = "['onOptionsPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onOptionsPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "OPTIONS"; //--- ToDo: Localize;
 			x = 0.431261 * safezoneW + safezoneX;
@@ -4148,7 +4148,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Halo: UCRscTabletButtonMenu
 		{
 			idc = 777106;
-			action = "['onHaloPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onHaloPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "HALO"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -4160,7 +4160,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Close: UCRscTabletCloseButton
 		{
 			idc = 777300;
-			action = "['onClosePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onClosePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "CLOSE"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -4172,7 +4172,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Back: UCRscTabletBackButton
 		{
 			idc = 777301;
-			action = "['onBackPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onBackPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "BACK"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4184,7 +4184,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Home: UCRscTabletHomeButton
 		{
 			idc = 777302;
-			action = "['onHomePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onHomePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "HOME"; //--- ToDo: Localize;
 			x = 0.431261 * safezoneW + safezoneX;
@@ -4196,7 +4196,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Service: UCRscTabletServiceButton
 		{
 			idc = 777304;
-			action = "['onTransferPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onTransferPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "TRANSFER FUNDS"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4208,7 +4208,7 @@ class CTI_UCRscTabletDialog
 		class CTI_UCRscTabletMenu_Transfer: UCRscTabletTransferButton
 		{
 			idc = 777305;
-			action = "['onServicePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onServicePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "SERVICE"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -4226,7 +4226,7 @@ class CTI_UCRscTabletDialogWelcome
 	movingEnable=true;
 	enableSimulation=true;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_TabletMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 	class controls
 	{
 		class UCRscTabletFrameTablet_image: UCRscTabletPictureFrame
@@ -4334,7 +4334,7 @@ class CTI_UCRscTabletDialogWelcome
 		class CTI_UCRscTabletMenu_Close: UCRscTabletCloseButton
 		{
 			idc = 778300;
-			action = "['onClosePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onClosePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "CLOSE"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -4345,7 +4345,7 @@ class CTI_UCRscTabletDialogWelcome
 		class CTI_UCRscTabletMenu_Home: UCRscTabletHomeButton
 		{
 			idc = 778302;
-			action = "['onHomePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onHomePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "HOME"; //--- ToDo: Localize;
 			x = 0.431261 * safezoneW + safezoneX;
@@ -4362,7 +4362,7 @@ class CTI_UCRscTabletDialogOptions
 	movingEnable=true;
 	enableSimulation=true;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_TabletMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 	class controls
 	{
 		class UCRscTabletFrameTablet_image: UCRscTabletPictureFrame
@@ -4496,7 +4496,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_1: UCRscTabletButtonMenu
 		{
 			idc = 779101;
-			action = "['onUnflipPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onUnflipPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "UNFLIP NEAREST VEHICLE"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4508,7 +4508,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_2: UCRscTabletButtonMenu
 		{
 			idc = 779102;
-			action = "['onAIMicroPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onAIMicroPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "AI MANAGEMENT"; //--- ToDo: Localize;
 
@@ -4523,7 +4523,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_3: UCRscTabletButtonMenu
 		{
 			idc = 779103;
-			action = "['onUnitsCamPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onUnitsCamPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "UNITS CAM"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4536,7 +4536,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_4: UCRscTabletButtonMenu
 		{
 			idc = 779104;
-			action = "['onSatCamPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onSatCamPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "SAT CAM"; //--- ToDo: Localize;
 
@@ -4550,7 +4550,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_5: UCRscTabletButtonMenu
 		{
 			idc = 779105;
-			action = "['onCommanderVotePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onCommanderVotePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "CALL COMMANDER VOTE"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4562,7 +4562,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_6: UCRscTabletButtonMenu
 		{
 			idc = 779106;
-			action = "['onVideoSettingsPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onVideoSettingsPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "VIDEO SETTINGS"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4574,7 +4574,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_7: UCRscTabletButtonMenu
 		{
 			idc = 779107;
-			action = "['onOnlineHelpPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onOnlineHelpPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "ONLINE HELP"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4586,7 +4586,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_8: UCRscTabletButtonMenu
 		{
 			idc = 779108;
-			action = "['onMusicPressedonMusicPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onMusicPressedonMusicPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "Play Music: Off"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4598,7 +4598,7 @@ class CTI_UCRscTabletDialogOptions
 		/*class CTI_UCRscTabletMenu_9: UCRscTabletButtonMenu
 		{
 			idc = 779109;
-			action = "['onEquipmentPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onEquipmentPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "9"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4610,7 +4610,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_10: UCRscTabletButtonMenu
 		{
 			idc = 779110;
-			action = "['onEquipmentPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onEquipmentPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "10"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4622,7 +4622,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_Close: UCRscTabletCloseButton
 		{
 			idc = 779300;
-			action = "['onClosePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onClosePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "CLOSE"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -4634,7 +4634,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_Back: UCRscTabletBackButton
 		{
 			idc = 779301;
-			action = "['onBackPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onBackPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "BACK"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4646,7 +4646,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_Home: UCRscTabletHomeButton
 		{
 			idc = 779302;
-			action = "['onHomePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onHomePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "HOME"; //--- ToDo: Localize;
 			x = 0.431261 * safezoneW + safezoneX;
@@ -4658,7 +4658,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_Service: UCRscTabletServiceButton
 		{
 			idc = 779304;
-			action = "['onTransferPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onTransferPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "TRANSFER FUNDS"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4670,7 +4670,7 @@ class CTI_UCRscTabletDialogOptions
 		class CTI_UCRscTabletMenu_Transfer: UCRscTabletTransferButton
 		{
 			idc = 779305;
-			action = "['onServicePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onServicePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "SERVICE"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -4688,7 +4688,7 @@ class CTI_UCRscTabletCommandMenu
 	movingEnable=true;
 	enableSimulation=true;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_TabletMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_tabletmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 	class controls
 	{
 		class UCRscTabletFrameTablet_image: UCRscTabletPictureFrame
@@ -4822,7 +4822,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_1: UCRscTabletButtonMenu
 		{
 			idc = 780101;
-			action = "['onUpgradesPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onUpgradesPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "UPGRADES"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4834,7 +4834,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_2: UCRscTabletButtonMenu
 		{
 			idc = 780102;
-			action = "['onMapPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onMapPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "MAP COMMANDING"; //--- ToDo: Localize;
 
@@ -4849,7 +4849,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_3: UCRscTabletButtonMenu
 		{
 			idc = 780103;
-			action = "['onWorkersPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onWorkersPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "BASE MANAGEMENT"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4862,7 +4862,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_4: UCRscTabletButtonMenu
 		{
 			idc = 780104;
-			action = "['onDefensesPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onDefensesPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "DEFENSE MANAGEMENT"; //--- ToDo: Localize;
 
@@ -4876,7 +4876,7 @@ class CTI_UCRscTabletCommandMenu
 		/*class CTI_UCRscTabletMenu_5: UCRscTabletButtonMenu
 		{
 			idc = 780105;
-			//action = "['onCommanderVotePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			//action = "['onCommanderVotePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "5"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4888,7 +4888,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_6: UCRscTabletButtonMenu
 		{
 			idc = 780106;
-			action = "['onTeamsPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onTeamsPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "TEAMS"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4900,7 +4900,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_7: UCRscTabletButtonMenu
 		{
 			idc = 780107;
-			action = "['onRequestMenuPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onRequestMenuPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "TEAM REQUESTS"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4912,7 +4912,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_8: UCRscTabletButtonMenu
 		{
 			idc = 780108;
-			action = "['onArtilleryMenuPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onArtilleryMenuPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "ARTILLERY"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4924,7 +4924,7 @@ class CTI_UCRscTabletCommandMenu
 		/*class CTI_UCRscTabletMenu_9: UCRscTabletButtonMenu
 		{
 			idc = 780109;
-			//action = "['onEquipmentPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			//action = "['onEquipmentPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "9"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4936,7 +4936,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_10: UCRscTabletButtonMenu
 		{
 			idc = 780110;
-			//action = "['onEquipmentPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			//action = "['onEquipmentPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "10"; //--- ToDo: Localize;
 			x = 0.505728 * safezoneW + safezoneX;
@@ -4948,7 +4948,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_Close: UCRscTabletCloseButton
 		{
 			idc = 780300;
-			action = "['onClosePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onClosePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "CLOSE"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -4960,7 +4960,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_Back: UCRscTabletBackButton
 		{
 			idc = 780301;
-			action = "['onBackPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onBackPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "BACK"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4972,7 +4972,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_Home: UCRscTabletHomeButton
 		{
 			idc = 780302;
-			action = "['onHomePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onHomePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "HOME"; //--- ToDo: Localize;
 			x = 0.431261 * safezoneW + safezoneX;
@@ -4984,7 +4984,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_Service: UCRscTabletServiceButton
 		{
 			idc = 780304;
-			action = "['onTransferPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onTransferPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "TRANSFER FUNDS"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -4996,7 +4996,7 @@ class CTI_UCRscTabletCommandMenu
 		class CTI_UCRscTabletMenu_Transfer: UCRscTabletTransferButton
 		{
 			idc = 780305;
-			action = "['onServicePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onServicePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "SERVICE"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -5014,7 +5014,7 @@ class CTI_UCRscDefenseMenu
 	movingEnable=true;
 	enableSimulation=true;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_defensemenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_DefenseMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_defensemenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_DefenseMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_defensemenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_DefenseMenu.sqf'";
 	class controls
 	{
 		class UCRscTabletFrameTablet_image: UCRscTabletPictureFrame
@@ -5082,7 +5082,7 @@ class CTI_UCRscDefenseMenu
 		class CTI_UCRscTabletMenu_Close: UCRscTabletCloseButton
 		{
 			idc = 785300;
-			action = "['onClosePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onClosePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "CLOSE"; //--- ToDo: Localize;
 			x = 0.580196 * safezoneW + safezoneX;
@@ -5094,7 +5094,7 @@ class CTI_UCRscDefenseMenu
 		class CTI_UCRscTabletMenu_Back: UCRscTabletBackButton
 		{
 			idc = 785301;
-			action = "['onBackPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onBackPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "BACK"; //--- ToDo: Localize;
 			x = 0.282325 * safezoneW + safezoneX;
@@ -5106,7 +5106,7 @@ class CTI_UCRscDefenseMenu
 		class CTI_UCRscTabletMenu_Home: UCRscTabletHomeButton
 		{
 			idc = 785302;
-			action = "['onHomePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
+			action = "['onHomePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_TabletMenu.sqf'";
 
 			text = "HOME"; //--- ToDo: Localize;
 			x = 0.431261 * safezoneW + safezoneX;
@@ -5124,7 +5124,7 @@ class CTI_UCRscLoadoutMenu
 	movingEnable=true;
 	enableSimulation=true;
 	onLoad = "uiNamespace setVariable ['cti_dialog_ui_loadoutmenu', _this select 0];['onLoad'] execVM 'Client\Events\Events_UI_LoadoutMenu.sqf'";
-	onUnload = "uiNamespace setVariable ['cti_dialog_ui_loadoutmenu', nil]; ['onUnload'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+	onUnload = "uiNamespace setVariable ['cti_dialog_ui_loadoutmenu', nil]; ['onUnload'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 	class controls
 	{
 		class CTI_UCRscLoadoutMenu_bg: UCRscTabletScreen
@@ -5203,7 +5203,7 @@ class CTI_UCRscLoadoutMenu
 			idc = 790005;
 			rowHeight = "1.1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			itemBackground[] = {1,1,1,0.1};
-			onLBSelChanged = "['onPylonListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			onLBSelChanged = "['onPylonListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			x = 0.273125 * safezoneW + safezoneX;
 			y = 0.753 * safezoneH + safezoneY;
@@ -5233,7 +5233,7 @@ class CTI_UCRscLoadoutMenu
 			idc = 790007;
 			rowHeight = "1.1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			itemBackground[] = {1,1,1,0.1};
-			onLBSelChanged = "['onMagListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			onLBSelChanged = "['onMagListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			x = 0.439259 * safezoneW + safezoneX;
 			y = 0.83 * safezoneH + safezoneY;
@@ -5275,7 +5275,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Qty: UCRscEdit
 		{
 			idc = 790010;
-			onKeyUp = "['onQtyChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			onKeyUp = "['onQtyChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			x = 0.639219 * safezoneW + safezoneX;
 			y = 0.951 * safezoneH + safezoneY;
@@ -5285,7 +5285,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Camo: UCRscCombo
 		{
 			idc = 790111;
-			onLBSelChanged = "['onCamoLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			onLBSelChanged = "['onCamoLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			text = "Camo"; //--- ToDo: Localize;
 			x = 0.809375 * safezoneW + safezoneX;
@@ -5322,7 +5322,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Clear: UCRscButton
 		{
 			idc = 790014;
-			action = "['onClearPressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onClearPressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			text = "Clear/Refund All"; //--- ToDo: Localize;
 			x = 0.809375 * safezoneW + safezoneX;
@@ -5333,7 +5333,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Rearm: UCRscButton
 		{
 			idc = 790015;
-			action = "['onRearmPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onRearmPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			text = "Rearm All"; //--- ToDo: Localize;
 			x = 0.809375 * safezoneW + safezoneX;
@@ -5344,7 +5344,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Purchase: UCRscButton
 		{
 			idc = 790016;
-			action = "['onPurchasePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onPurchasePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			text = "Purchase Magazines"; //--- ToDo: Localize;
 			x = 0.809375 * safezoneW + safezoneX;
@@ -5355,7 +5355,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Exit: UCRscButton
 		{
 			idc = 790017;
-			action = "['onExitPressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onExitPressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			text = "EXIT"; //--- ToDo: Localize;
 			x = 0.0359375 * safezoneW + safezoneX;
@@ -5382,7 +5382,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_CurrentMag: UCRscListNBox
 		{
 			idc = 790020;
-			onLBSelChanged = "['onCurMagListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			onLBSelChanged = "['onCurMagListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 			rowHeight = "1.1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			itemBackground[] = {1,1,1,0.1};
 
@@ -5446,7 +5446,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Customizations: UCRscListNBox
 		{
 			idc = 790025;
-			onLBSelChanged = "['onCustomListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			onLBSelChanged = "['onCustomListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 			x = 0.0359375 * safezoneW + safezoneX;
 			y = 0.544 * safezoneH + safezoneY;
 			w = 0.232031 * safezoneW;
@@ -5463,7 +5463,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Custom_Clear: UCRscButton
 		{
 			idc = 790026;
-			action = "['onCustomClearPressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onCustomClearPressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			text = "Remove Customization"; //--- ToDo: Localize;
 			x = 0.0359375 * safezoneW + safezoneX;
@@ -5474,7 +5474,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Custom_Purchase: UCRscButton
 		{
 			idc = 790027;
-			action = "['onCustomPurchasePressed', lnbCurSelRow 230005] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onCustomPurchasePressed', lnbCurSelRow 230005] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 
 			text = "Purchase Customization"; //--- ToDo: Localize;
 			x = 0.159687 * safezoneW + safezoneX;
@@ -5494,7 +5494,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Templates: UCRscListNBox
 		{
 			idc = 790029;
-			onLBSelChanged = "['onTemplateListLBSelChanged', _this select 1] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			onLBSelChanged = "['onTemplateListLBSelChanged', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 			x = 0.0359375 * safezoneW + safezoneX;
 			y = 0.335 * safezoneH + safezoneY;
 			w = 0.232031 * safezoneW;
@@ -5511,7 +5511,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Template_Delete: UCRscButton
 		{
 			idc = 790030;
-			action = "['onTemplateDeletePressed', lnbCurSelRow 790029] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onTemplateDeletePressed', lnbCurSelRow 790029] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 			text = "Delete Template"; //--- ToDo: Localize;
 			x = 0.0359375 * safezoneW + safezoneX;
 			y = 0.489 * safezoneH + safezoneY;
@@ -5530,7 +5530,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Template_Create: UCRscButton
 		{
 			idc = 790032;
-			action = "['onTemplateCreatePressed'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onTemplateCreatePressed'] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 			text = "Create Template"; //--- ToDo: Localize;
 			x = 0.159687 * safezoneW + safezoneX;
 			y = 0.489 * safezoneH + safezoneY;
@@ -5540,7 +5540,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_Template_Rename: UCRscButton
 		{
 			idc = 790033;
-			action = "['onTemplateRenamePressed', lnbCurSelRow 790033] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onTemplateRenamePressed', lnbCurSelRow 790033] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 			text = "Rename Template"; //--- ToDo: Localize;
 			x = 0.159687 * safezoneW + safezoneX;
 			y = 0.28 * safezoneH + safezoneY;
@@ -5598,7 +5598,7 @@ class CTI_UCRscLoadoutMenu
 		class CTI_UCRscLoadoutMenu_ClearMag: UCRscButton
 		{
 			idc = 790038;
-			action = "['onClearMagPressed', lnbCurSelRow 790020] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
+			action = "['onClearMagPressed', lnbCurSelRow 790020] call compileFinal preprocessFileLineNumbers 'Client\Events\Events_UI_LoadoutMenu.sqf'";
 			text = "Clear/Refund Mag"; //--- ToDo: Localize;
 			x = 0.809375 * safezoneW + safezoneX;
 			y = 0.797 * safezoneH + safezoneY;
