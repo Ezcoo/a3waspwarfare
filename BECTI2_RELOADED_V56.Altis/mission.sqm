@@ -8,7 +8,11 @@ class EditorData
 	toggles=581;
 	class ItemIDProvider
 	{
-		nextID=578;
+		nextID=580;
+	};
+	class MarkerIDProvider
+	{
+		nextID=2;
 	};
 	class Camera
 	{
@@ -19,7 +23,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="BECTI2_RELOADED_V55";
+sourceName="BECTI2_RELOADED_V56";
 addons[]=
 {
 	"A3_Ui_F",
@@ -145,7 +149,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=495;
+		items=497;
 		class Item0
 		{
 			dataType="Marker";
@@ -11637,6 +11641,30 @@ class Mission
 			presence=0.19942845;
 			id=577;
 			type="LocationOutpost_F";
+		};
+		class Item495
+		{
+			dataType="Marker";
+			position[]={8470.9082,83.231003,25290.902};
+			name="marker_0_press_enter";
+			text="  Press 'ENTER' to continue";
+			type="mil_warning";
+			colorName="ColorKhaki";
+			id=578;
+			atlOffset=-0.00026702881;
+		};
+		class Item496
+		{
+			dataType="Marker";
+			position[]={8469.5586,55.082001,24880.563};
+			name="marker_1_discord_me";
+			text="  Join our Discord server! (Use browser like Chrome/Firefox):  discord.me/wfa3";
+			type="loc_Tourism";
+			colorName="ColorWEST";
+			a=1.5;
+			b=1.5;
+			id=579;
+			atlOffset=-0.00022125244;
 		};
 	};
 	class Connections
