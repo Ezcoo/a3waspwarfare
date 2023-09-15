@@ -35,7 +35,7 @@ disabledAI=0;
 
 loadScreen = "Rsc\Pictures\logo1.paa";
 
-joinUnassigned = 0;
+joinUnassigned = 1;
 
 DebugConsole = 1;
 
