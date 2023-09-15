@@ -4,7 +4,7 @@
 */
 
 /* DEBUG */
-//#define WF_DEBUG 1
+#define WF_DEBUG 1
 //#define WF_SKIP_INTRO 1
 
 /* Gameplay: Change the overall camo */

@@ -47,7 +47,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_GroupSizePlayer";
 		values[] = {2,4,6,8,10,12,14,16};
 		texts[] = {"2","4","6","8","10","12","14","16"};
-		default = 10;
+		default = 16;
 	};
 	class cti_C_ARTILLERY {
 		title = "$STR_WF_PARAMETER_Arty";
@@ -71,7 +71,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_AutoDefense_Range";
 		values[] = {50,100,150,200,250,300,350,400,450,500,600,700,800,900,1000};
 		texts[] = {"50m","100m","150m","200m","250m","300m","350m","400m","450m","500m","600m","700m","800m","900m","1000m"};
-		default = 300;
+		default = 400;
 	};
 	class cti_C_STRUCTURES_MAX {
 		title = "$STR_WF_PARAMETER_BuildingsLimit";
@@ -137,25 +137,25 @@ class Params {
 		title = "$STR_WF_PARAMETER_Funds_East";
 		values[] = {800,1600,2400,3200,4000,4800,6400,8000,12800,25600,51200,102400,204800,409600,819200};
 		texts[] = {"$ 800","$ 1600","$ 2400","$ 3200","$ 4000","$ 4800","$ 6400","$ 8000","$ 12800","$ 25600","$ 51200","$ 102400","$ 204800","$ 409600","$ 819200"};
-		default = 25600;
+		default = 102400;
 	};
 	class cti_C_ECONOMY_FUNDS_START_WEST {
 		title = "$STR_WF_PARAMETER_Funds_West";
 		values[] = {800,1600,2400,3200,4000,4800,6400,8000,12800,25600,51200,102400,204800,409600,819200};
 		texts[] = {"$ 800","$ 1600","$ 2400","$ 3200","$ 4000","$ 4800","$ 6400","$ 8000","$ 12800","$ 25600","$ 51200","$ 102400","$ 204800","$ 409600","$ 819200"};
-		default = 25600;
+		default = 102400;
 	};
 	class cti_C_ECONOMY_SUPPLY_START_EAST {
 		title = "$STR_WF_PARAMETER_Supply_East";
 		values[] = {1200,2400,3600,4800,6000,7200,8400,9600,19200,38400,76800};
 		texts[] = {"S 1200","S 2400","S 3600","S 4800","S 6000","S 7200","S 8400","S 9600","S 19200","S 38400","S 76800"};
-		default = 6000;
+		default = 38400;
 	};
 	class cti_C_ECONOMY_SUPPLY_START_WEST {
 		title = "$STR_WF_PARAMETER_Supply_West";
 		values[] = {1200,2400,3600,4800,6000,7200,8400,9600,19200,38400,76800};
 		texts[] = {"S 1200","S 2400","S 3600","S 4800","S 6000","S 7200","S 8400","S 9600","S 19200","S 38400","S 76800"};
-		default = 6000;
+		default = 38400;
 	};
 	
 
@@ -172,7 +172,7 @@ class Params {
 		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
 		texts[] = {"00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00",
 		"12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"};
-		default = 8;
+		default = 11;
 	};
 	class cti_C_ENVIRONMENT_STARTING_MONTH {
 		title = "$STR_WF_PARAMETER_Month";
@@ -325,7 +325,7 @@ class Params {
 		values[] = {10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90};
 		texts[] = {"10 Seconds","15 Seconds","20 Seconds","25 Seconds","30 Seconds","35 Seconds","40 Seconds","45 Seconds","50 Seconds",
 		"55 Seconds","60 Seconds","65 Seconds","70 Seconds","75 Seconds","80 Seconds","85 Seconds","90 Seconds"};
-		default = 30;
+		default = 20;
 	};
 	class cti_C_RESPAWN_MOBILE {
 		title = "$STR_WF_PARAMETER_MobileRespawn";
