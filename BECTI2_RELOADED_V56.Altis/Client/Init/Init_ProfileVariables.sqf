@@ -41,7 +41,7 @@ if !(isNil '_profile_var') then {
 _profile_var = profileNamespace getVariable Format["cti_PERSISTENT_%1_GEAR_TEMPLATE", cti_Client_SideJoinedText];
 if !(isNil '_profile_var') then {
 	if (typeName _profile_var == "ARRAY") then {
-		(_profile_var) Call Compile preprocessFileLineNumbers "Client\Init\Init_ProfileGear.sqf";
+		(_profile_var) Call compileFinal preprocessFileLineNumbers "Client\Init\Init_ProfileGear.sqf";
 	};
 };
 

@@ -155,17 +155,17 @@ if (local player) then {
 	//--- Default Faction (Buy Menu), this is the faction name defined in core_xxx.sqf files.
 	missionNamespace setVariable [Format["cti_%1DEFAULTFACTION", _side], 'US'];
 
-	//if ((missionNamespace getVariable "cti_C_MODULE_BIS_BAF") > 0) then {(_side) Call Compile preprocessFileLineNumbers "Common\Config\Loadout\Loadout_BAF.sqf"};
+	//if ((missionNamespace getVariable "cti_C_MODULE_BIS_BAF") > 0) then {(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Loadout\Loadout_BAF.sqf"};
 };
 
 //--- Artillery.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Artillery\Artillery_US.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Artillery\Artillery_US.sqf";
 //--- Units.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Units\Units_US.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Units\Units_US.sqf";
 //--- Structures.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Structures\Structures_US.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Structures\Structures_US.sqf";
 //--- Upgrades.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Upgrades\Upgrades_US.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Upgrades\Upgrades_US.sqf";
 
 
 

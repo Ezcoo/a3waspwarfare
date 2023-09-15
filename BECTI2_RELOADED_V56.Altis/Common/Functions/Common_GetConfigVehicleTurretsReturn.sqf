@@ -38,7 +38,7 @@ for "_i" from 0 to ((count _entry) - 1) do
 				//Include sub-turrets, if present.
 				if (isClass (_subEntry >> "Turrets")) then 
 				{
-					_turrets pushBack ([_subEntry >> "Turrets"] Call Compile preprocessFile "Common\Functions\Common_GetConfigVehicleTurretsReturn.sqf");
+					_turrets pushBack ([_subEntry >> "Turrets"] Call compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetConfigVehicleTurretsReturn.sqf");
 				} 
 				else 
 				{

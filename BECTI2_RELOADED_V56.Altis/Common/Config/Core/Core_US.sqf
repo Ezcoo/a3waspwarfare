@@ -1456,7 +1456,7 @@ for '_z' from 0 to (count _c)-1 do {
 			if ((_i select _z) select 0 == '') then {(_i select _z) set [0, [_c select _z,'displayName'] Call cti_CO_FNC_GetConfigInfo]};
 			if (typeName ((_i select _z) select 4) == 'SCALAR') then {
 				if (((_i select _z) select 4) == -2) then {
-					_ret = (_c select _z) Call Compile preprocessFile "Common\Functions\Common_GetConfigVehicleCrewSlot.sqf";
+					_ret = (_c select _z) Call compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetConfigVehicleCrewSlot.sqf";
 					(_i select _z) set [4, _ret select 0];
 					(_i select _z) set [9, _ret select 1];
 				};

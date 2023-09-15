@@ -69,9 +69,9 @@ cti_CL_FNC_EndGame = {
 
 cti_CL_FNC_HQ_SetStatus = {
 	if (_this select 0) then {
-		[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call Compile preprocessFile "Client\Init\Init_Coin.sqf";
+		[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call compileFinal preprocessFileLineNumbers "Client\Init\Init_Coin.sqf";
 	} else {
-		[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call Compile preprocessFile "Client\Init\Init_Coin.sqf";
+		[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call compileFinal preprocessFileLineNumbers "Client\Init\Init_Coin.sqf";
 	};
 };
 

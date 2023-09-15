@@ -185,7 +185,7 @@ Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeploye
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call cti_CO_FNC_LogContent;
 
 
-call compile preprocessFile "Client\Functions\Client_RemoteTowVehicle.sqf";
+call compileFinal preprocessFileLineNumbers "Client\Functions\Client_RemoteTowVehicle.sqf";
 CTI_CL_FNC_AddRemoteActionsToUnit = compileFinal preprocessFile "Client\Functions\Client_AddRemoteActionsToUnit.sqf";
 CTI_CL_FNC_CanRemoteUnit = compileFinal preprocessFile "Client\Functions\Client_CanRemoteUnit.sqf";
 CTI_CL_FNC_RemoteControl = compileFinal preprocessFile "Client\Functions\Client_RemoteControl.sqf";
@@ -227,52 +227,52 @@ setTerrainGrid 1;//nobody want see flying stones, so now we play all with max te
 
 
 //--- Position the client on the temp spawn (Common is not yet init'd so we call is straigh away).
-player setPos ([getMarkerPos Format["%1TempRespawnMarker",cti_Client_SideJoinedText],1,10] Call Compile preprocessFile "Common\Functions\Common_GetRandomPosition.sqf");
+player setPos ([getMarkerPos Format["%1TempRespawnMarker",cti_Client_SideJoinedText],1,10] Call compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetRandomPosition.sqf");
 
-cti_CL_FNC_BoundariesIsOnMap = Compile preprocessFile "Client\Functions\Client_IsOnMap.sqf";
-cti_CL_FNC_BoundariesHandleOnMap = Compile preprocessFile "Client\Functions\Client_HandleOnMap.sqf";
-cti_CL_FNC_BuildUnit = Compile preprocessFile "Client\Functions\Client_BuildUnit.sqf";
-cti_CL_FNC_ChangePlayerFunds = Compile preprocessFile "Client\Functions\Client_ChangePlayerFunds.sqf";
-cti_CL_FNC_CommandChatMessage = Compile preprocessFile "Client\Functions\Client_CommandChatMessage.sqf";
-cti_CL_FNC_FX = Compile preprocessFile "Client\Functions\Client_FX.sqf";
-cti_CL_FNC_GetIncome = Compile preprocessFile "Client\Functions\Client_GetIncome.sqf";
-cti_CL_FNC_GetPlayerFunds = Compile preprocessFile "Client\Functions\Client_GetPlayerFunds.sqf";
-cti_CL_FNC_GetRespawnAvailable = Compile preprocessFile "Client\Functions\Client_GetRespawnAvailable.sqf";
+cti_CL_FNC_BoundariesIsOnMap = compileFinal preprocessFileLineNumbers "Client\Functions\Client_IsOnMap.sqf";
+cti_CL_FNC_BoundariesHandleOnMap = compileFinal preprocessFileLineNumbers "Client\Functions\Client_HandleOnMap.sqf";
+cti_CL_FNC_BuildUnit = compileFinal preprocessFileLineNumbers "Client\Functions\Client_BuildUnit.sqf";
+cti_CL_FNC_ChangePlayerFunds = compileFinal preprocessFileLineNumbers "Client\Functions\Client_ChangePlayerFunds.sqf";
+cti_CL_FNC_CommandChatMessage = compileFinal preprocessFileLineNumbers "Client\Functions\Client_CommandChatMessage.sqf";
+cti_CL_FNC_FX = compileFinal preprocessFileLineNumbers "Client\Functions\Client_FX.sqf";
+cti_CL_FNC_GetIncome = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetIncome.sqf";
+cti_CL_FNC_GetPlayerFunds = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetPlayerFunds.sqf";
+cti_CL_FNC_GetRespawnAvailable = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetRespawnAvailable.sqf";
 //now localized in init_common (mapmarkerfix)
-//cti_CL_FNC_GetStructureMarkerLabel = Compile preprocessFile "Client\Functions\Client_GetStructureMarkerLabel.sqf";
-cti_CL_FNC_GetTime = Compile preprocessFile "Client\Functions\Client_GetTime.sqf";
-cti_CL_FNC_GroupChatMessage = Compile preprocessFile "Client\Functions\Client_GroupChatMessage.sqf";
-cti_CL_FNC_HandleHQAction = Compile preprocessFile "Client\Functions\Client_HandleHQAction.sqf";
-cti_CL_FNC_MarkerAnim = Compile preprocessFile "Client\Functions\Client_MarkerAnim.sqf";
-cti_CL_FNC_OnRespawnHandler = Compile preprocessFile "Client\Functions\Client_OnRespawnHandler.sqf";
-cti_CL_FNC_PreRespawnHandler = Compile preprocessFile "Client\Functions\Client_PreRespawnHandler.sqf";
-cti_CL_FNC_RequestFireMission = Compile preprocessFile "Client\Functions\Client_RequestFireMission.sqf";
+//cti_CL_FNC_GetStructureMarkerLabel = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetStructureMarkerLabel.sqf";
+cti_CL_FNC_GetTime = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetTime.sqf";
+cti_CL_FNC_GroupChatMessage = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GroupChatMessage.sqf";
+cti_CL_FNC_HandleHQAction = compileFinal preprocessFileLineNumbers "Client\Functions\Client_HandleHQAction.sqf";
+cti_CL_FNC_MarkerAnim = compileFinal preprocessFileLineNumbers "Client\Functions\Client_MarkerAnim.sqf";
+cti_CL_FNC_OnRespawnHandler = compileFinal preprocessFileLineNumbers "Client\Functions\Client_OnRespawnHandler.sqf";
+cti_CL_FNC_PreRespawnHandler = compileFinal preprocessFileLineNumbers "Client\Functions\Client_PreRespawnHandler.sqf";
+cti_CL_FNC_RequestFireMission = compileFinal preprocessFileLineNumbers "Client\Functions\Client_RequestFireMission.sqf";
 
 
 
-cti_CL_FNC_SetControlFadeAnim = Compile preprocessFile "Client\Functions\Client_SetControlFadeAnim.sqf";
-cti_CL_FNC_SetControlFadeAnimStop = Compile preprocessFile "Client\Functions\Client_SetControlFadeAnimStop.sqf";
-cti_CL_FNC_SupportHeal = Compile preprocessFile "Client\Functions\Client_SupportHeal.sqf";
-cti_CL_FNC_SupportRearm = Compile preprocessFile "Client\Functions\Client_SupportRearm.sqf";
-cti_CL_FNC_SupportRefuel = Compile preprocessFile "Client\Functions\Client_SupportRefuel.sqf";
-cti_CL_FNC_SupportRepair = Compile preprocessFile "Client\Functions\Client_SupportRepair.sqf";
-cti_CL_FNC_TaskSystem = Compile preprocessFile "Client\Functions\Client_TaskSystem.sqf";
-cti_CL_FNC_TitleTextMessage = Compile preprocessFile "Client\Functions\Client_TitleTextMessage.sqf";
-cti_CL_FNC_SetMHQLock = Compile preprocessFileLineNumbers "Client\PVFunctions\SetMHQLock.sqf";
+cti_CL_FNC_SetControlFadeAnim = compileFinal preprocessFileLineNumbers "Client\Functions\Client_SetControlFadeAnim.sqf";
+cti_CL_FNC_SetControlFadeAnimStop = compileFinal preprocessFileLineNumbers "Client\Functions\Client_SetControlFadeAnimStop.sqf";
+cti_CL_FNC_SupportHeal = compileFinal preprocessFileLineNumbers "Client\Functions\Client_SupportHeal.sqf";
+cti_CL_FNC_SupportRearm = compileFinal preprocessFileLineNumbers "Client\Functions\Client_SupportRearm.sqf";
+cti_CL_FNC_SupportRefuel = compileFinal preprocessFileLineNumbers "Client\Functions\Client_SupportRefuel.sqf";
+cti_CL_FNC_SupportRepair = compileFinal preprocessFileLineNumbers "Client\Functions\Client_SupportRepair.sqf";
+cti_CL_FNC_TaskSystem = compileFinal preprocessFileLineNumbers "Client\Functions\Client_TaskSystem.sqf";
+cti_CL_FNC_TitleTextMessage = compileFinal preprocessFileLineNumbers "Client\Functions\Client_TitleTextMessage.sqf";
+cti_CL_FNC_SetMHQLock = compileFinal preprocessFileLineNumbers "Client\PVFunctions\SetMHQLock.sqf";
 
 //ofps ucam
-//call compile preprocessFile "Client\Functions\UI\Functions_UI_KeyHandlers.sqf";
+//call compileFinal preprocessFileLineNumbers "Client\Functions\UI\Functions_UI_KeyHandlers.sqf";
 CTI_P_Controlled = player; // Whatever unit the player is controlling. Changes when the player controls one of their AI
 
 
 
 //// Dialog scripts
 // Dialog: gear
-cti_CL_FNC_GUI_WFGear	  = Compile preprocessFileLineNumbers "Client\GUI\GUI_WFGear.sqf";
-cti_CL_FNC_UIChangeComboBuyUnits = Compile preprocessFile "Client\Functions\Client_UIChangeComboBuyUnits.sqf";
-cti_CL_FNC_UIFillListBuyUnits = Compile preprocessFile "Client\Functions\Client_UIFillListBuyUnits.sqf";
-cti_CL_FNC_UIFillListTeamOrders = Compile preprocessFile "Client\Functions\Client_UIFillListTeamOrders.sqf";
-cti_CL_FNC_UIFindLBValue = Compile preprocessFile "Client\Functions\Client_UIFindLBValue.sqf";
+cti_CL_FNC_GUI_WFGear	  = compileFinal preprocessFileLineNumbers "Client\GUI\GUI_WFGear.sqf";
+cti_CL_FNC_UIChangeComboBuyUnits = compileFinal preprocessFileLineNumbers "Client\Functions\Client_UIChangeComboBuyUnits.sqf";
+cti_CL_FNC_UIFillListBuyUnits = compileFinal preprocessFileLineNumbers "Client\Functions\Client_UIFillListBuyUnits.sqf";
+cti_CL_FNC_UIFillListTeamOrders = compileFinal preprocessFileLineNumbers "Client\Functions\Client_UIFillListTeamOrders.sqf";
+cti_CL_FNC_UIFindLBValue = compileFinal preprocessFileLineNumbers "Client\Functions\Client_UIFindLBValue.sqf";
 
 // UAV
 WFVE_fnc_uav_interface = compileFinal preprocessfilelinenumbers "Client\Module\UAV\uav_interface.sqf";
@@ -280,21 +280,21 @@ WFVE_fnc_uav_spotter = compileFinal preprocessfilelinenumbers "Client\Module\UAV
 WFVE_fnc_uav = compileFinal preprocessfilelinenumbers "Client\Module\UAV\uav.sqf";
 
 //// PVF
-cti_CL_FNC_HandleSpecial = Compile preprocessFileLineNumbers "Client\PVFunctions\HandleSpecial.sqf";
-cti_CL_FNC_SetTask = Compile preprocessFileLineNumbers "Client\PVFunctions\SetTask.sqf";
-cti_CL_FNC_TownCaptured = Compile preprocessFileLineNumbers "Client\PVFunctions\TownCaptured.sqf";
-cti_CL_FNC_LocalizeMessage = Compile preprocessFileLineNumbers "Client\PVFunctions\LocalizeMessage.sqf";
-cti_CL_FNC_CampCaptured = Compile preprocessFileLineNumbers "Client\PVFunctions\CampCaptured.sqf";
-cti_CL_FNC_AwardBountyPlayer = Compile preprocessFileLineNumbers "Client\PVFunctions\AwardBountyPlayer.sqf";
-cti_CL_FNC_AwardBounty = Compile preprocessFileLineNumbers "Client\PVFunctions\AwardBounty.sqf";
-cti_CL_FNC_RequestBaseArea = Compile preprocessFileLineNumbers "Client\PVFunctions\RequestBaseArea.sqf";
-cti_CL_FNC_ChangeScore = Compile preprocessFileLineNumbers "Client\PVFunctions\ChangeScore.sqf";
-cti_CL_FNC_Available = Compile preprocessFileLineNumbers "Client\PVFunctions\Available.sqf";
-cti_CL_FNC_AllCampsCaptured = Compile preprocessFileLineNumbers "Client\PVFunctions\AllCampsCaptured.sqf";
+cti_CL_FNC_HandleSpecial = compileFinal preprocessFileLineNumbers "Client\PVFunctions\HandleSpecial.sqf";
+cti_CL_FNC_SetTask = compileFinal preprocessFileLineNumbers "Client\PVFunctions\SetTask.sqf";
+cti_CL_FNC_TownCaptured = compileFinal preprocessFileLineNumbers "Client\PVFunctions\TownCaptured.sqf";
+cti_CL_FNC_LocalizeMessage = compileFinal preprocessFileLineNumbers "Client\PVFunctions\LocalizeMessage.sqf";
+cti_CL_FNC_CampCaptured = compileFinal preprocessFileLineNumbers "Client\PVFunctions\CampCaptured.sqf";
+cti_CL_FNC_AwardBountyPlayer = compileFinal preprocessFileLineNumbers "Client\PVFunctions\AwardBountyPlayer.sqf";
+cti_CL_FNC_AwardBounty = compileFinal preprocessFileLineNumbers "Client\PVFunctions\AwardBounty.sqf";
+cti_CL_FNC_RequestBaseArea = compileFinal preprocessFileLineNumbers "Client\PVFunctions\RequestBaseArea.sqf";
+cti_CL_FNC_ChangeScore = compileFinal preprocessFileLineNumbers "Client\PVFunctions\ChangeScore.sqf";
+cti_CL_FNC_Available = compileFinal preprocessFileLineNumbers "Client\PVFunctions\Available.sqf";
+cti_CL_FNC_AllCampsCaptured = compileFinal preprocessFileLineNumbers "Client\PVFunctions\AllCampsCaptured.sqf";
 
 //--- Call the UI Functions
-call compile preprocessFile "Client\Functions\UI\Functions_UI_GearMenu.sqf";
-//call compile preprocessFile "Client\Functions\UI\Functions_UI_KeyHandlers.sqf";
+call compileFinal preprocessFileLineNumbers "Client\Functions\UI\Functions_UI_GearMenu.sqf";
+//call compileFinal preprocessFileLineNumbers "Client\Functions\UI\Functions_UI_KeyHandlers.sqf";
 
 //--- Namespace related (GUI).
 BIS_FNC_GUIset = {UInamespace setVariable [_this select 0, _this select 1]};
@@ -309,10 +309,10 @@ BIS_FNC_GUIget = {UInamespace getVariable (_this select 0)};
 //for CLASSICMODE
 if ((missionNamespace getVariable "cti_C_PLAYERS_RENDER_WAYPOINTS") == 1) then {
 
-cti_CO_FNC_WaypointPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrol.sqf";
-cti_CO_FNC_WaypointPatrolTown = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrolTown.sqf";
-cti_CO_FNC_WaypointSimple = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointSimple.sqf";
-cti_CO_FNC_SetPatrol = Compile preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
+cti_CO_FNC_WaypointPatrol = compileFinal preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrol.sqf";
+cti_CO_FNC_WaypointPatrolTown = compileFinal preprocessFileLineNumbers "Common\Functions\Common_WaypointPatrolTown.sqf";
+cti_CO_FNC_WaypointSimple = compileFinal preprocessFileLineNumbers "Common\Functions\Common_WaypointSimple.sqf";
+cti_CO_FNC_SetPatrol = compileFinal preprocessFileLineNumbers "Common\Functions\Common_SetTownPatrol.sqf";
 };
 
 
@@ -320,36 +320,36 @@ cti_CO_FNC_SetPatrol = Compile preprocessFileLineNumbers "Common\Functions\Commo
 
 
 //--- New Fnc.
-cti_CL_FNC_DelegateTownAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateTownAI.sqf";
-cti_CL_FNC_DelegateAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAI.sqf";
-cti_CL_FNC_DelegateAIStaticDefence = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAIStaticDefence.sqf";
-cti_CL_FNC_GetAIID = Compile preprocessFileLineNumbers "Client\Functions\Client_GetAIID.sqf";
-cti_CL_FNC_GetBackpackContent = Compile preprocessFileLineNumbers "Client\Functions\Client_GetBackpackContent.sqf";
-cti_CL_FNC_GetClosestAirport = Compile preprocessFileLineNumbers "Client\Functions\Client_GetClosestAirport.sqf";
-cti_CL_FNC_GetClosestCamp = Compile preprocessFileLineNumbers "Client\Functions\Client_GetClosestCamp.sqf";
-cti_CL_FNC_GetClosestDepot = Compile preprocessFileLineNumbers "Client\Functions\Client_GetClosestDepot.sqf";
-cti_CL_FNC_GetGearCargoSize = Compile preprocessFileLineNumbers "Client\Functions\Client_GetGearCargoSize.sqf";
-cti_CL_FNC_GetMagazinesSize = Compile preprocessFileLineNumbers "Client\Functions\Client_GetMagazinesSize.sqf";
-cti_CL_FNC_GetParsedGear = Compile preprocessFileLineNumbers "Client\Functions\Client_GetParsedGear.sqf";
-cti_CL_FNC_GetVehicleCargoSize = Compile preprocessFileLineNumbers "Client\Functions\Client_GetVehicleCargoSize.sqf";
-cti_CL_FNC_GetVehicleContent = Compile preprocessFileLineNumbers "Client\Functions\Client_GetVehicleContent.sqf";
-cti_CL_FNC_GetUnitBackpack = Compile preprocessFileLineNumbers "Client\Functions\Client_GetUnitBackpack.sqf";
-cti_CL_FNC_OnKilled = Compile preprocessFileLineNumbers "Client\Functions\Client_OnKilled.sqf";
-cti_CL_FNC_OperateCargoGear = Compile preprocessFileLineNumbers "Client\Functions\Client_OperateCargoGear.sqf";
-cti_CL_FNC_ReplaceMagazinesGear = Compile preprocessFileLineNumbers "Client\Functions\Client_ReplaceMagazinesGear.sqf";
-cti_CL_FNC_RemoveMagazineGear = Compile preprocessFileLineNumbers "Client\Functions\Client_RemoveMagazineGear.sqf";
-cti_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
-cti_CL_FNC_Client_GetNearestCamp = Compile preprocessFileLineNumbers "Client\Functions\Client_GetNearestCamp.sqf";
-cti_CL_FNC_UpdateActions = Compile preprocessFileLineNumbers "Client\FSM\updateactions.sqf";
-cti_CL_FNC_TRACK_ARTY = Compile preprocessFileLineNumbers "Client\Functions\Client_ARRadarMarkerUpdate.sqf";
-cti_CL_FNC_HALO_JUMP = Compile preprocessFileLineNumbers "Client\Functions\Client_HaloJump.sqf";
-cti_CL_FNC_SetVehicleLock = Compile preprocessFileLineNumbers "Client\PVFunctions\SetVehicleLock.sqf";
-cti_CL_FNC_Update_Salvage = Compile preprocessFileLineNumbers "Client\FSM\updatesalvage.sqf";
+cti_CL_FNC_DelegateTownAI = compileFinal preprocessFileLineNumbers "Client\Functions\Client_DelegateTownAI.sqf";
+cti_CL_FNC_DelegateAI = compileFinal preprocessFileLineNumbers "Client\Functions\Client_DelegateAI.sqf";
+cti_CL_FNC_DelegateAIStaticDefence = compileFinal preprocessFileLineNumbers "Client\Functions\Client_DelegateAIStaticDefence.sqf";
+cti_CL_FNC_GetAIID = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetAIID.sqf";
+cti_CL_FNC_GetBackpackContent = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetBackpackContent.sqf";
+cti_CL_FNC_GetClosestAirport = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetClosestAirport.sqf";
+cti_CL_FNC_GetClosestCamp = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetClosestCamp.sqf";
+cti_CL_FNC_GetClosestDepot = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetClosestDepot.sqf";
+cti_CL_FNC_GetGearCargoSize = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetGearCargoSize.sqf";
+cti_CL_FNC_GetMagazinesSize = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetMagazinesSize.sqf";
+cti_CL_FNC_GetParsedGear = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetParsedGear.sqf";
+cti_CL_FNC_GetVehicleCargoSize = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetVehicleCargoSize.sqf";
+cti_CL_FNC_GetVehicleContent = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetVehicleContent.sqf";
+cti_CL_FNC_GetUnitBackpack = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetUnitBackpack.sqf";
+cti_CL_FNC_OnKilled = compileFinal preprocessFileLineNumbers "Client\Functions\Client_OnKilled.sqf";
+cti_CL_FNC_OperateCargoGear = compileFinal preprocessFileLineNumbers "Client\Functions\Client_OperateCargoGear.sqf";
+cti_CL_FNC_ReplaceMagazinesGear = compileFinal preprocessFileLineNumbers "Client\Functions\Client_ReplaceMagazinesGear.sqf";
+cti_CL_FNC_RemoveMagazineGear = compileFinal preprocessFileLineNumbers "Client\Functions\Client_RemoveMagazineGear.sqf";
+cti_CL_FNC_UI_Respawn_Selector = compileFinal preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
+cti_CL_FNC_Client_GetNearestCamp = compileFinal preprocessFileLineNumbers "Client\Functions\Client_GetNearestCamp.sqf";
+cti_CL_FNC_UpdateActions = compileFinal preprocessFileLineNumbers "Client\FSM\updateactions.sqf";
+cti_CL_FNC_TRACK_ARTY = compileFinal preprocessFileLineNumbers "Client\Functions\Client_ARRadarMarkerUpdate.sqf";
+cti_CL_FNC_HALO_JUMP = compileFinal preprocessFileLineNumbers "Client\Functions\Client_HaloJump.sqf";
+cti_CL_FNC_SetVehicleLock = compileFinal preprocessFileLineNumbers "Client\PVFunctions\SetVehicleLock.sqf";
+cti_CL_FNC_Update_Salvage = compileFinal preprocessFileLineNumbers "Client\FSM\updatesalvage.sqf";
 
 
-cti_CL_FNC_Init_Coin = Compile preprocessFileLineNumbers "Client\Init\Init_Coin.sqf";
+cti_CL_FNC_Init_Coin = compileFinal preprocessFileLineNumbers "Client\Init\Init_Coin.sqf";
 
-cti_CL_FNC_MissionIntro = Compile preprocessFileLineNumbers "Client\Client_MissionIntro.sqf";
+cti_CL_FNC_MissionIntro = compileFinal preprocessFileLineNumbers "Client\Client_MissionIntro.sqf";
 //// GEAR INIT
 //--- Gear: Config sub ID
 cti_SUBTYPE_ITEM = 0;
@@ -400,17 +400,17 @@ if (!(visibleMap) && (isNil "BIS_CONTROL_CAM")) then {Local_GUIWorking=true; 136
 
 
 //BUYABLE GEAR PART
-if (cti_Client_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
-if (cti_Client_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
+if (cti_Client_SideJoined == west) then {(west) call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
+if (cti_Client_SideJoined == east) then {(east) call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
 
 //SELL ENEMY GEAR PART
-if (cti_Client_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
-if (cti_Client_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
+if (cti_Client_SideJoined == east) then {(east) call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
+if (cti_Client_SideJoined == west) then {(west) call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
 
  
 
-if (cti_Client_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Common.sqf"};
-if (cti_Client_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Common.sqf"};
+if (cti_Client_SideJoined == west) then {(west) call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Gear_Common.sqf"};
+if (cti_Client_SideJoined == east) then {(east) call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Gear_Common.sqf"};
 
 
 if (isNil {profileNamespace getVariable format["cti_PERSISTENT_GEAR_TEMPLATE_%1", cti_Client_SideJoined]}) then {
@@ -421,8 +421,8 @@ if !(isNil {profileNamespace getVariable format["cti_PERSISTENT_GEAR_TEMPLATE_%1
 	execVM "Client\Init\Init_Persistent_Gear.sqf";
 };
 
-Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_OnFired.sqf'; //--- FUNCTIONS: onFired EH.
-Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Special.sqf'; //--- FUNCTIONS: Specials.
+Call compileFinal preprocessFileLineNumbers 'Client\Functions\Client_FNC_OnFired.sqf'; //--- FUNCTIONS: onFired EH.
+Call compileFinal preprocessFileLineNumbers 'Client\Functions\Client_FNC_Special.sqf'; //--- FUNCTIONS: Specials.
 
 //--- UI Namespace release from previous possible games (only on titles dialog!).
 {uiNamespace setVariable [_x, displayNull]} forEach ["cti_title_capture"];
@@ -433,8 +433,8 @@ waitUntil {commonInitComplete};
 ["INITIALIZATION", Format ["Init_Client.sqf: Common initialization is complete at [%1]", time]] Call cti_CO_FNC_LogContent;
 
 
-cti_CL_FNC_UI_Gear_SaveTemplateProfile = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_SaveTemplateProfile.sqf";
-Call Compile preprocessFileLineNumbers "Client\Init\Init_ProfileVariables.sqf";
+cti_CL_FNC_UI_Gear_SaveTemplateProfile = compileFinal preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_SaveTemplateProfile.sqf";
+Call compileFinal preprocessFileLineNumbers "Client\Init\Init_ProfileVariables.sqf";
 
 
 //--- Queue Protection.
@@ -559,7 +559,7 @@ if ((missionNamespace getVariable "cti_C_UNITS_TRACK_LEADERS") > 0) then {[] exe
 };
 
 //--- Add the briefing (notes).
-[] Call Compile preprocessFile "briefing.sqf";
+[] Call compileFinal preprocessFileLineNumbers "briefing.sqf";
 
 //--- HQ Radio system.
 waitUntil {!isNil {cti_Client_Logic getVariable "cti_radio_hq"}};
@@ -571,8 +571,8 @@ cti_V_HQTopicSide = cti_Client_Logic getVariable "cti_radio_hq_id";
 _HQRadio setIdentity cti_V_HQTopicSide;
 _HQRadio setRank "COLONEL";
 _HQRadio setGroupId ["HQ"];
-_HQRadio kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call compile preprocessFileLineNumbers "Client\kb\hq.sqf"}];
-player kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call compile preprocessFileLineNumbers "Client\kb\hq.sqf"}];
+_HQRadio kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call compileFinal preprocessFileLineNumbers "Client\kb\hq.sqf"}];
+player kbAddTopic [cti_V_HQTopicSide,"Client\kb\hq.bikb","Client\kb\hq.fsm",{call compileFinal preprocessFileLineNumbers "Client\kb\hq.sqf"}];
 sideHQ = _HQRadio;
 
 ["INITIALIZATION", "Init_Client.sqf: Radio announcer is initialized."] Call cti_CO_FNC_LogContent;
@@ -668,10 +668,10 @@ if (WF_Debug) then {
 	player addEventHandler ["HandleDamage", {if (player != (_this select 3)) then {(_this select 3) setDammage 1}; false}]; //--- God-Slayer mode.
 };
 
-//if ((missionNamespace getVariable "cti_C_MODULE_cti_EASA") > 0) then {Call Compile preprocessFileLineNumbers "Client\Module\EASA\EASA_Init.sqf"}; //--- EASA.
+//if ((missionNamespace getVariable "cti_C_MODULE_cti_EASA") > 0) then {Call compileFinal preprocessFileLineNumbers "Client\Module\EASA\EASA_Init.sqf"}; //--- EASA.
 
 /* Key Binding */
-[] Call Compile preprocessFile "Client\Init\Init_Keybind.sqf";
+[] Call compileFinal preprocessFileLineNumbers "Client\Init\Init_Keybind.sqf";
 
 /* JIP Handler */
 waitUntil {townInit};
@@ -681,7 +681,7 @@ waitUntil {townInit};
 [] Spawn {
 	sleep 2;
 	["INITIALIZATION", "Init_Client.sqf: Updating JIP Markers."] Call cti_CO_FNC_LogContent;
-	Call Compile preprocessFileLineNumbers "Client\Init\Init_Markers.sqf";
+	Call compileFinal preprocessFileLineNumbers "Client\Init\Init_Markers.sqf";
 };
 
 /* Repair Truck CoIn Handling. */
@@ -695,7 +695,7 @@ cti_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 
 
 //--- Valhalla init.
 [] Spawn {
-	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
+	[] Call compileFinal preprocessFileLineNumbers "Client\Module\Valhalla\Init_Valhalla.sqf";
 };
 
 //--Disable fatigue--
@@ -709,7 +709,7 @@ if ((getPlayerUID player in cti_RESERVEDUIDS)) then {
 	HINT ("YOU CAN USE ZEUS MODULE!");
 };
 //--skill system--
-[] Call Compile preprocessFile "Client\Module\Skill\Skill_Init.sqf";
+[] Call compileFinal preprocessFileLineNumbers "Client\Module\Skill\Skill_Init.sqf";
 
 (player) Call cti_SK_FNC_Apply;
 
@@ -844,7 +844,7 @@ _allplayercontainer = [OTeamleader1,OTeamleader2,OTeamleader3,OTeamleader4,OTeam
 		OSpecOps1,OSpecOps2,OSpecOps3,OSpecOps4,OSpecOps5,BSpecOps1,BSpecOps2,BSpecOps3,BSpecOps4,BSpecOps5];
 
 //ATACH CHARGE 
-call compile preProcessFileLineNumbers "Client\Functions\Client_AttachCharge.sqf";
+call compileFinal preprocessFileLineNumbers "Client\Functions\Client_AttachCharge.sqf";
 
 
 
@@ -1071,8 +1071,8 @@ if ((cti_Client_Logic getVariable "cti_votetime") > 0) then {createDialog "cti_V
 
 
  //Zeta Cargo Lifter.
-//[] Call Compile preprocessFile "Client\Module\ZetaCargo\Zeta_Init.sqf";
-//Call Compile preprocessFile "Client\Module\ZetaCargo\Zeta_Init.sqf";
+//[] Call compileFinal preprocessFileLineNumbers "Client\Module\ZetaCargo\Zeta_Init.sqf";
+//Call compileFinal preprocessFileLineNumbers "Client\Module\ZetaCargo\Zeta_Init.sqf";
 
 
 player addAction ["Deploy Tow Ropes", {
@@ -1113,7 +1113,7 @@ if(!WF_Skip_Intro)then{
 	
 };
 
-// call compile preprocessFileLineNumbers 
+// call compileFinal preprocessFileLineNumbers 
 _igiload = execVM "Client\Module\IgiLoad\IgiLoadInit.sqf";
 
 

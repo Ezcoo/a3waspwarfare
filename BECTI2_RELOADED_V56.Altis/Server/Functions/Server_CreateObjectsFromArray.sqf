@@ -89,7 +89,7 @@ else
 //If the object array is in a script, call it.
 if (!isNil "_script") then 
 {
-	_objs = call (compile (preprocessFileLineNumbers _script));
+	_objs = call (compileFinal (preprocessFileLineNumbers _script));
 };
 
 //Make sure there are definitions in the final object array.

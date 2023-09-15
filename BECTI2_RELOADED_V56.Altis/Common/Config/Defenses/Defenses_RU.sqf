@@ -39,8 +39,8 @@ _k  pushBack  "AA";
 
 
 //--- Defenses management for towns.
-if (isServer) then {[_side, _c, _k] Call Compile preprocessFile "Common\Config\Config_Defenses_Towns.sqf"};
+if (isServer) then {[_side, _c, _k] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_Defenses_Towns.sqf"};
 
 //--- Fortitications and rest.
 
-// [_faction, _c, _n, _o, _t] Call Compile preprocessFile "Common\Config\Config_Defenses.sqf";
+// [_faction, _c, _n, _o, _t] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_Defenses.sqf";

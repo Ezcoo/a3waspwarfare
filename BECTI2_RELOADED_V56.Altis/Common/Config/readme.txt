@@ -14,16 +14,16 @@
 			  > Magazines properties are defined here [classname, picture, label, price, upgrade level].
 			  > Magazines labels may be changed (if != "").
 			  > Magazines pictures may be changed (if != "").
-			  > Each magazines list Calls "Common\Config\Config_Magazines.sqf" ([_faction, _u, _p, _n, _o, _z] Call Compile preprocessFile "Common\Config\Config_Magazines.sqf";)
+			  > Each magazines list Calls "Common\Config\Config_Magazines.sqf" ([_faction, _u, _p, _n, _o, _z] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_Magazines.sqf";)
 			  > Weapons properties are defined here [classname, picture, label, price, upgrade level, magazines].
 			  > Weapons labels may be changed (if != "").
 			  > Weapons pictures may be changed (if != "").
 			  > Weapons magazines may be changed (if != -1, like _m = _m + [["30Rnd_9x19_UZI","30Rnd_9x19_UZI_SD"]]), -1 will get the magazines from the config.
-			  > Each weapons list Calls "Common\Config\Config_Weapons.sqf" ([_faction, _u, _p, _n, _o, _z, _m] Call Compile preprocessFile "Common\Config\Config_Weapons.sqf";)
+			  > Each weapons list Calls "Common\Config\Config_Weapons.sqf" ([_faction, _u, _p, _n, _o, _z, _m] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_Weapons.sqf";)
 			  > Backpacks properties are defined here [classname, picture, label, price, upgrade level].
 			  > Backpacks labels may be changed (if != ""), using a "+" in front will add a custom text after the actual backpack config name like '+(Ammo SAW)' will give "Assault Backpack (Ammo SAW)"
 			  > Backpacks pictures may be changed (if != "").
-			  > Each backpacks list Calls "Common\Config\Config_Backpack.sqf" ([_faction, _u, _p, _n, _o, _z] Call Compile preprocessFile "Common\Config\Config_Backpack.sqf";)
+			  > Each backpacks list Calls "Common\Config\Config_Backpack.sqf" ([_faction, _u, _p, _n, _o, _z] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_Backpack.sqf";)
 			  
 	    > Core_Groups <
 			 Generic file which deals with groups which are being used in towns, only one Core_Groups may be called by side.
@@ -34,12 +34,12 @@
 	    > Loadout <
 			 Generic file which defines the loadouts to use in the Gear Menu, more than one Loadout file may be called per side like Loadout_US & Loadout_USMC, those files are commonly called in Core_Root ones.
 			  > Magazines classnames are defined here.
-			  > Magazines calls "Common\Config\Config_SortMagazines.sqf" (_m = [_m, _side] Call Compile preprocessFile "Common\Config\Config_SortMagazines.sqf";) which set or update the magazines, note that the returned values is a list of non-side-defined magazines used by SortWeapons.sqf (for the cti_%1_All).
+			  > Magazines calls "Common\Config\Config_SortMagazines.sqf" (_m = [_m, _side] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_SortMagazines.sqf";) which set or update the magazines, note that the returned values is a list of non-side-defined magazines used by SortWeapons.sqf (for the cti_%1_All).
 		  	  > Weapons classnames are defined here.
-			  > Weapons calls "Common\Config\Config_SortWeapons.sqf" ([_u, _m, _side] Call Compile preprocessFile "Common\Config\Config_SortWeapons.sqf";) which set or update the weapons. Note that _m is the non-side-defined magazines returned by SortMagazines.sqf
+			  > Weapons calls "Common\Config\Config_SortWeapons.sqf" ([_u, _m, _side] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_SortWeapons.sqf";) which set or update the weapons. Note that _m is the non-side-defined magazines returned by SortMagazines.sqf
 			  > Templates are defined here.
 			  > Only one template per side may be used by default, see below in order to add others.
-			  > Templates calls "Common\Config\Config_SetTemplates.sqf" ([_u, _side] Call Compile preprocessFile "Common\Config\Config_SetTemplates.sqf";), you may add an extra "false" parameter to allow multiple template usage in case of multiple Loadout_x files call per side.
+			  > Templates calls "Common\Config\Config_SetTemplates.sqf" ([_u, _side] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_SetTemplates.sqf";), you may add an extra "false" parameter to allow multiple template usage in case of multiple Loadout_x files call per side.
 		  	  
 	    > Core_Models <
 			 Generic file which deals with models, only one Core_Models may be called by a side.

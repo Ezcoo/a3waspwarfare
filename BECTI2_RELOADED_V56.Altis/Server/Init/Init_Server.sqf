@@ -29,103 +29,103 @@ execVM (GLX_Path+"GLX_Initialize.sqf");
 /*
 //hc part
 //--- Client Functions.
-cti_CL_FNC_DelegateTownAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateTownAI.sqf";
-cti_CL_FNC_DelegateAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAI.sqf";
-cti_CL_FNC_DelegateBasePatrolAI = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateBasePatrolAI.sqf";
-cti_CL_FNC_DelegateAIStaticDefence = Compile preprocessFileLineNumbers "Client\Functions\Client_DelegateAIStaticDefence.sqf";
-cti_CL_FNC_HandleSpecial = Compile preprocessFileLineNumbers "Client\PVFunctions\HandleSpecial.sqf";
-cti_CL_FNC_GetSideID = Compile preprocessFileLineNumbers "Common\Functions\Common_GetSideID.sqf";
+cti_CL_FNC_DelegateTownAI = compileFinal preprocessFileLineNumbers "Client\Functions\Client_DelegateTownAI.sqf";
+cti_CL_FNC_DelegateAI = compileFinal preprocessFileLineNumbers "Client\Functions\Client_DelegateAI.sqf";
+cti_CL_FNC_DelegateBasePatrolAI = compileFinal preprocessFileLineNumbers "Client\Functions\Client_DelegateBasePatrolAI.sqf";
+cti_CL_FNC_DelegateAIStaticDefence = compileFinal preprocessFileLineNumbers "Client\Functions\Client_DelegateAIStaticDefence.sqf";
+cti_CL_FNC_HandleSpecial = compileFinal preprocessFileLineNumbers "Client\PVFunctions\HandleSpecial.sqf";
+cti_CL_FNC_GetSideID = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetSideID.sqf";
 */
 
 
 
 
 // PVF
-cti_SE_PVF_RequestVehicleLock = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestVehicleLock.sqf";
-cti_SE_PVF_RequestChangeScore = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestChangeScore.sqf";
-cti_SE_PVF_RequestCommanderVote = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestCommanderVote.sqf";
-cti_SE_PVF_RequestNewCommander = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestNewCommander.sqf";
-cti_SE_PVF_RequestStructure = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestStructure.sqf";
-cti_SE_PVF_RequestDefense = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestDefense.sqf";
-cti_SE_PVF_RequestJoin = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestJoin.sqf";
-cti_SE_PVF_RequestMHQRepair = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestMHQRepair.sqf";
-cti_SE_PVF_RequestSpecial = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestSpecial.sqf";
-cti_SE_PVF_RequestTeamUpdate = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestTeamUpdate.sqf";
-cti_SE_PVF_RequestUpgrade = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestUpgrade.sqf";
-cti_SE_PVF_RequestAutoWallConstructinChange = Compile preprocessFileLineNumbers "Server\PVFunctions\RequestAutoWallConstructinChange.sqf";
+cti_SE_PVF_RequestVehicleLock = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestVehicleLock.sqf";
+cti_SE_PVF_RequestChangeScore = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestChangeScore.sqf";
+cti_SE_PVF_RequestCommanderVote = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestCommanderVote.sqf";
+cti_SE_PVF_RequestNewCommander = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestNewCommander.sqf";
+cti_SE_PVF_RequestStructure = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestStructure.sqf";
+cti_SE_PVF_RequestDefense = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestDefense.sqf";
+cti_SE_PVF_RequestJoin = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestJoin.sqf";
+cti_SE_PVF_RequestMHQRepair = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestMHQRepair.sqf";
+cti_SE_PVF_RequestSpecial = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestSpecial.sqf";
+cti_SE_PVF_RequestTeamUpdate = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestTeamUpdate.sqf";
+cti_SE_PVF_RequestUpgrade = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestUpgrade.sqf";
+cti_SE_PVF_RequestAutoWallConstructinChange = compileFinal preprocessFileLineNumbers "Server\PVFunctions\RequestAutoWallConstructinChange.sqf";
 // END OF PVF
 
-cti_SE_FNC_AIMoveTo = Compile preprocessFile "Server\AI\Orders\AI_MoveTo.sqf";
-cti_SE_FNC_AIPatrol = Compile preprocessFile "Server\AI\Orders\AI_Patrol.sqf";
-cti_SE_FNC_AITownPatrol = Compile preprocessFile "Server\AI\Orders\AI_TownPatrol.sqf";
-cti_SE_FNC_AIWPAdd = Compile preprocessFile "Server\AI\Orders\AI_WPAdd.sqf";
-cti_SE_FNC_AIWPRemove = Compile preprocessFile "Server\AI\Orders\AI_WPRemove.sqf";
-cti_SE_FNC_BuildingDamaged = Compile preprocessFile "Server\Functions\Server_BuildingDamaged.sqf";
-cti_SE_FNC_BuildingHandleDamages = Compile preprocessFile "Server\Functions\Server_BuildingHandleDamages.sqf";
-cti_SE_FNC_BuildingKilled = Compile preprocessFile "Server\Functions\Server_BuildingKilled.sqf";
-cti_SE_FNC_CanUpdateTeam = Compile preprocessFile "Server\Functions\Server_CanUpdateTeam.sqf";
-cti_SE_FNC_ChangeAICommanderFunds = Compile preprocessFile "Server\Functions\Server_ChangeAICommanderFunds.sqf";
-cti_SE_FNC_ConstructDefense = Compile preprocessFile "Server\Construction\Construction_StationaryDefense.sqf";
-cti_SE_FNC_CreateDefenseTemplate = Compile preprocessFile "Server\Functions\Server_CreateDefenseTemplate.sqf";
-cti_SE_FNC_GetAICommanderFunds = Compile preprocessFile "Server\Functions\Server_GetAICommanderFunds.sqf";
-cti_SE_FNC_HandleBuildingDamage = Compile preprocessFile "Server\Functions\Server_HandleBuildingDamage.sqf";
-cti_SE_FNC_HandleDefense = Compile preprocessFile "Server\Functions\Server_HandleDefense.sqf";
-cti_SE_FNC_HandleSpecial = Compile preprocessFile "Server\Functions\Server_HandleSpecial.sqf";
-cti_SE_FNC_MHQRepair = Compile preprocessFile "Server\Functions\Server_MHQRepair.sqf";
-cti_SE_FNC_SideMessage = Compile preprocessFile "Server\Functions\Server_SideMessage.sqf";
-cti_SE_FNC_SetTownPatrols = compile preprocessfilelinenumbers "Server\FSM\server_patrols.sqf";
-cti_SE_FNC_UpdateTeam = Compile preprocessFile "Server\Functions\Server_UpdateTeam.sqf";
+cti_SE_FNC_AIMoveTo = compileFinal preprocessFileLineNumbers "Server\AI\Orders\AI_MoveTo.sqf";
+cti_SE_FNC_AIPatrol = compileFinal preprocessFileLineNumbers "Server\AI\Orders\AI_Patrol.sqf";
+cti_SE_FNC_AITownPatrol = compileFinal preprocessFileLineNumbers "Server\AI\Orders\AI_TownPatrol.sqf";
+cti_SE_FNC_AIWPAdd = compileFinal preprocessFileLineNumbers "Server\AI\Orders\AI_WPAdd.sqf";
+cti_SE_FNC_AIWPRemove = compileFinal preprocessFileLineNumbers "Server\AI\Orders\AI_WPRemove.sqf";
+cti_SE_FNC_BuildingDamaged = compileFinal preprocessFileLineNumbers "Server\Functions\Server_BuildingDamaged.sqf";
+cti_SE_FNC_BuildingHandleDamages = compileFinal preprocessFileLineNumbers "Server\Functions\Server_BuildingHandleDamages.sqf";
+cti_SE_FNC_BuildingKilled = compileFinal preprocessFileLineNumbers "Server\Functions\Server_BuildingKilled.sqf";
+cti_SE_FNC_CanUpdateTeam = compileFinal preprocessFileLineNumbers "Server\Functions\Server_CanUpdateTeam.sqf";
+cti_SE_FNC_ChangeAICommanderFunds = compileFinal preprocessFileLineNumbers "Server\Functions\Server_ChangeAICommanderFunds.sqf";
+cti_SE_FNC_ConstructDefense = compileFinal preprocessFileLineNumbers "Server\Construction\Construction_StationaryDefense.sqf";
+cti_SE_FNC_CreateDefenseTemplate = compileFinal preprocessFileLineNumbers "Server\Functions\Server_CreateDefenseTemplate.sqf";
+cti_SE_FNC_GetAICommanderFunds = compileFinal preprocessFileLineNumbers "Server\Functions\Server_GetAICommanderFunds.sqf";
+cti_SE_FNC_HandleBuildingDamage = compileFinal preprocessFileLineNumbers "Server\Functions\Server_HandleBuildingDamage.sqf";
+cti_SE_FNC_HandleDefense = compileFinal preprocessFileLineNumbers "Server\Functions\Server_HandleDefense.sqf";
+cti_SE_FNC_HandleSpecial = compileFinal preprocessFileLineNumbers "Server\Functions\Server_HandleSpecial.sqf";
+cti_SE_FNC_MHQRepair = compileFinal preprocessFileLineNumbers "Server\Functions\Server_MHQRepair.sqf";
+cti_SE_FNC_SideMessage = compileFinal preprocessFileLineNumbers "Server\Functions\Server_SideMessage.sqf";
+cti_SE_FNC_SetTownPatrols = compileFinal preprocessFileLineNumbers "Server\FSM\server_patrols.sqf";
+cti_SE_FNC_UpdateTeam = compileFinal preprocessFileLineNumbers "Server\Functions\Server_UpdateTeam.sqf";
 
 //--- Support Functions.
-KAT_ParaAmmo = Compile preprocessFile "Server\Support\Support_ParaAmmo.sqf";
-KAT_Paratroopers = Compile preprocessFile "Server\Support\Support_Paratroopers.sqf";
-KAT_ParaVehicles = Compile preprocessFile "Server\Support\Support_ParaVehicles.sqf";
-KAT_UAV = Compile preprocessFile "Server\Support\Support_UAV.sqf";
+KAT_ParaAmmo = compileFinal preprocessFileLineNumbers "Server\Support\Support_ParaAmmo.sqf";
+KAT_Paratroopers = compileFinal preprocessFileLineNumbers "Server\Support\Support_Paratroopers.sqf";
+KAT_ParaVehicles = compileFinal preprocessFileLineNumbers "Server\Support\Support_ParaVehicles.sqf";
+KAT_UAV = compileFinal preprocessFileLineNumbers "Server\Support\Support_UAV.sqf";
 
-cti_SE_FNC_AI_SetTownAttackPath = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath.sqf";
-cti_SE_FNC_AI_SetTownAttackPath_PathIsSafe = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath_PathIsSafe.sqf";
-cti_SE_FNC_AI_SetTownAttackPath_PosIsSafe = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath_PosIsSafe.sqf";
-cti_SE_FNC_AI_Com_Upgrade = Compile preprocessFileLineNumbers "Server\Functions\Server_AI_Com_Upgrade.sqf";
-cti_SE_FNC_GetTownGroups = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownGroups.sqf";
-cti_SE_FNC_GetTownGroupsDefender = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownGroupsDefender.sqf";
-cti_SE_FNC_GetTownPatrol = Compile preprocessFileLineNumbers "Server\Functions\Server_GetTownPatrol.sqf";
-cti_SE_FNC_HandleEmptyVehicle = Compile preprocessFileLineNumbers "Server\Functions\Server_HandleEmptyVehicle.sqf";
-cti_SE_FNC_HandlePVF = Compile preprocessFileLineNumbers "Server\Functions\Server_HandlePVF.sqf";
-cti_SE_FNC_ManageTownDefenses = Compile preprocessFileLineNumbers "Server\Functions\Server_ManageTownDefenses.sqf";
-cti_SE_FNC_OnHQKilled = Compile preprocessFileLineNumbers "Server\Functions\Server_OnHQKilled.sqf";
-cti_SE_FNC_OperateTownDefensesUnits = Compile preprocessFileLineNumbers "Server\Functions\Server_OperateTownDefensesUnits.sqf";
-cti_SE_FNC_ProcessUpgrade = Compile preprocessFileLineNumbers "Server\Functions\Server_ProcessUpgrade.sqf";
-cti_SE_FNC_SetCampsToSide = Compile preprocessFileLineNumbers "Server\Functions\Server_SetCampsToSide.sqf";
+cti_SE_FNC_AI_SetTownAttackPath = compileFinal preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath.sqf";
+cti_SE_FNC_AI_SetTownAttackPath_PathIsSafe = compileFinal preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath_PathIsSafe.sqf";
+cti_SE_FNC_AI_SetTownAttackPath_PosIsSafe = compileFinal preprocessFileLineNumbers "Server\Functions\Server_AI_SetTownAttackPath_PosIsSafe.sqf";
+cti_SE_FNC_AI_Com_Upgrade = compileFinal preprocessFileLineNumbers "Server\Functions\Server_AI_Com_Upgrade.sqf";
+cti_SE_FNC_GetTownGroups = compileFinal preprocessFileLineNumbers "Server\Functions\Server_GetTownGroups.sqf";
+cti_SE_FNC_GetTownGroupsDefender = compileFinal preprocessFileLineNumbers "Server\Functions\Server_GetTownGroupsDefender.sqf";
+cti_SE_FNC_GetTownPatrol = compileFinal preprocessFileLineNumbers "Server\Functions\Server_GetTownPatrol.sqf";
+cti_SE_FNC_HandleEmptyVehicle = compileFinal preprocessFileLineNumbers "Server\Functions\Server_HandleEmptyVehicle.sqf";
+cti_SE_FNC_HandlePVF = compileFinal preprocessFileLineNumbers "Server\Functions\Server_HandlePVF.sqf";
+cti_SE_FNC_ManageTownDefenses = compileFinal preprocessFileLineNumbers "Server\Functions\Server_ManageTownDefenses.sqf";
+cti_SE_FNC_OnHQKilled = compileFinal preprocessFileLineNumbers "Server\Functions\Server_OnHQKilled.sqf";
+cti_SE_FNC_OperateTownDefensesUnits = compileFinal preprocessFileLineNumbers "Server\Functions\Server_OperateTownDefensesUnits.sqf";
+cti_SE_FNC_ProcessUpgrade = compileFinal preprocessFileLineNumbers "Server\Functions\Server_ProcessUpgrade.sqf";
+cti_SE_FNC_SetCampsToSide = compileFinal preprocessFileLineNumbers "Server\Functions\Server_SetCampsToSide.sqf";
 //unused
-//cti_SE_FNC_SetLocalityOwner = Compile preprocessFileLineNumbers "Server\Functions\Server_SetLocalityOwner.sqf";
+//cti_SE_FNC_SetLocalityOwner = compileFinal preprocessFileLineNumbers "Server\Functions\Server_SetLocalityOwner.sqf";
 
-cti_SE_FNC_SpawnTownDefense = Compile preprocessFileLineNumbers "Server\Functions\Server_SpawnTownDefense.sqf";
-cti_SE_FNC_VoteForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_VoteForCommander.sqf";
-cti_SE_FNC_AssignForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_AssignNewCommander.sqf";
-cti_SE_FNC_CreateObjectsFromArray = Compile preprocessFileLineNumbers "Server\Functions\Server_CreateObjectsFromArray.sqf";
-//cti_SE_FNC_Server_RunWeatherEnvironment = Compile preprocessFileLineNumbers "Server\Functions\Server_RunWeatherEnvironment.sqf";
+cti_SE_FNC_SpawnTownDefense = compileFinal preprocessFileLineNumbers "Server\Functions\Server_SpawnTownDefense.sqf";
+cti_SE_FNC_VoteForCommander = compileFinal preprocessFileLineNumbers "Server\Functions\Server_VoteForCommander.sqf";
+cti_SE_FNC_AssignForCommander = compileFinal preprocessFileLineNumbers "Server\Functions\Server_AssignNewCommander.sqf";
+cti_SE_FNC_CreateObjectsFromArray = compileFinal preprocessFileLineNumbers "Server\Functions\Server_CreateObjectsFromArray.sqf";
+//cti_SE_FNC_Server_RunWeatherEnvironment = compileFinal preprocessFileLineNumbers "Server\Functions\Server_RunWeatherEnvironment.sqf";
 
-cti_SE_FNC_Server_Construction_HQSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_HQSite.sqf";
-cti_SE_FNC_Server_Construction_MediumSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_MediumSite.sqf";
-cti_SE_FNC_Server_Construction_SmallSite = Compile preprocessFileLineNumbers "Server\Construction\Construction_SmallSite.sqf";
+cti_SE_FNC_Server_Construction_HQSite = compileFinal preprocessFileLineNumbers "Server\Construction\Construction_HQSite.sqf";
+cti_SE_FNC_Server_Construction_MediumSite = compileFinal preprocessFileLineNumbers "Server\Construction\Construction_MediumSite.sqf";
+cti_SE_FNC_Server_Construction_SmallSite = compileFinal preprocessFileLineNumbers "Server\Construction\Construction_SmallSite.sqf";
 
-cti_SE_FNC_Server_ResBuyUnit = Compile preprocessFile "Server\Functions\Server_ResBuyUnit.sqf";
+cti_SE_FNC_Server_ResBuyUnit = compileFinal preprocessFileLineNumbers "Server\Functions\Server_ResBuyUnit.sqf";
 
 //--- Define Headless Client functions (server ones).
-cti_SE_FNC_DelegateAITownHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAITownHeadless.sqf";
-cti_SE_FNC_DelegateAIHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIHeadless.sqf";
-cti_SE_FNC_DelegateAIStaticDefenceHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIStaticDefenceHeadless.sqf";
+cti_SE_FNC_DelegateAITownHeadless = compileFinal preprocessFileLineNumbers "Server\Functions\Server_DelegateAITownHeadless.sqf";
+cti_SE_FNC_DelegateAIHeadless = compileFinal preprocessFileLineNumbers "Server\Functions\Server_DelegateAIHeadless.sqf";
+cti_SE_FNC_DelegateAIStaticDefenceHeadless = compileFinal preprocessFileLineNumbers "Server\Functions\Server_DelegateAIStaticDefenceHeadless.sqf";
 
 
 if ((missionNamespace getVariable "cti_C_RESISTANCE_BASES_SWITCH") == 1) then {
 
-cti_SE_FNC_CreateBaseComposition = Compile preprocessFileLineNumbers "Server\Functions\Server_CreateBaseComposition.sqf";
-cti_SE_FNC_ManningOfResBaseDefense = Compile preprocessFileLineNumbers "Server\Functions\Server_ManningOfResBaseDefense.sqf";
-cti_SE_FNC_InitResLight = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_light.sqf";
-cti_SE_FNC_InitResHeavy = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_heavy.sqf";
-cti_SE_FNC_InitResAir = Compile preprocessFileLineNumbers "Server\FSM\server_init_res_air.sqf";
-cti_SE_FNC_ResVehTeam = Compile preprocessFileLineNumbers "Server\FSM\res_veh_team.sqf";
-cti_SE_FNC_ResTeam = Compile preprocessFileLineNumbers "Server\FSM\res_team.sqf";
+cti_SE_FNC_CreateBaseComposition = compileFinal preprocessFileLineNumbers "Server\Functions\Server_CreateBaseComposition.sqf";
+cti_SE_FNC_ManningOfResBaseDefense = compileFinal preprocessFileLineNumbers "Server\Functions\Server_ManningOfResBaseDefense.sqf";
+cti_SE_FNC_InitResLight = compileFinal preprocessFileLineNumbers "Server\FSM\server_init_res_light.sqf";
+cti_SE_FNC_InitResHeavy = compileFinal preprocessFileLineNumbers "Server\FSM\server_init_res_heavy.sqf";
+cti_SE_FNC_InitResAir = compileFinal preprocessFileLineNumbers "Server\FSM\server_init_res_air.sqf";
+cti_SE_FNC_ResVehTeam = compileFinal preprocessFileLineNumbers "Server\FSM\res_veh_team.sqf";
+cti_SE_FNC_ResTeam = compileFinal preprocessFileLineNumbers "Server\FSM\res_team.sqf";
 
 };
 
@@ -182,7 +182,7 @@ _present_west = missionNamespace getVariable "cti_WEST_PRESENT";
 _present_east = missionNamespace getVariable "cti_EAST_PRESENT";
 _present_res = missionNamespace getVariable "cti_GUER_PRESENT";
 
-[] Call Compile preprocessFile 'Server\Init\Init_Defenses.sqf';
+[] Call compileFinal preprocessFileLineNumbers 'Server\Init\Init_Defenses.sqf';
 
 //--- Weather.
 if (!(isNil "cti_SE_FNC_Server_RunWeatherEnvironment")) then {
@@ -328,7 +328,7 @@ emptyQueu = [];
 {
 	Private["_side","_wasptmpFun"];
 	_side = _x select 1;
-	_wasptmpFun = compile preprocessFile "Wasp\unsort\StartVeh.sqf";
+	_wasptmpFun = compileFinal preprocessFileLineNumbers "Wasp\unsort\StartVeh.sqf";
 	//--- Only use those variable if the side logic is present in the editor.
 	if (_x select 0) then {
 		_pos = _x select 2;
@@ -419,7 +419,7 @@ emptyQueu = [];
 		_radio_hq1 setIdentity _radio_hq_id;
 		_radio_hq1 setRank 'COLONEL';
 		_radio_hq1 setGroupId ["HQ"];
-		_radio_hq1 kbAddTopic [_radio_hq_id, "Client\kb\hq.bikb","Client\kb\hq.fsm", {call compile preprocessFileLineNumbers "Client\kb\hq.sqf"}];
+		_radio_hq1 kbAddTopic [_radio_hq_id, "Client\kb\hq.bikb","Client\kb\hq.fsm", {call compileFinal preprocessFileLineNumbers "Client\kb\hq.sqf"}];
 		_logik setVariable ["cti_radio_hq_id", _radio_hq_id, true];
 
 		//--- Starting vehicles.
@@ -520,7 +520,7 @@ if((missionNamespace getVariable "cti_DEBUG_DISABLE_TOWN_INIT") == 0)then{
 };
 
 if ((missionNamespace getVariable "cti_C_TOWNS_STARTING_MODE") != 0) then {
-	[] Call Compile preprocessFile "Server\Init\Init_Towns.sqf"
+	[] Call compileFinal preprocessFileLineNumbers "Server\Init\Init_Towns.sqf"
 } else {
 	townInitServer = true;
 };
@@ -559,7 +559,7 @@ if ((missionNamespace getVariable "cti_C_BASE_AREA") > 0) then {[] execVM "Serve
 
 if ((missionNamespace getVariable "cti_C_RESISTANCE_BASES_SWITCH") == 1) then {
 //// Resistance base spawning
-[] Call Compile preprocessFile "Server\Config\Config_GUE.sqf";
+[] Call compileFinal preprocessFileLineNumbers "Server\Config\Config_GUE.sqf";
 _start_location_array = [0,0,0] nearEntities [["LocationOutpost_F"], 100000];
 
 _lfResBasePositions = [];

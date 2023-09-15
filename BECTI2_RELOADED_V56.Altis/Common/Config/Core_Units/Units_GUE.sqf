@@ -145,7 +145,7 @@ _u pushBack 'cwr3_i_soldier_pilot_jet';
 
 
 missionNamespace setVariable [Format ["cti_%1BARRACKSUNITS", _side], _u];
-if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['BARRACKS', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 //uav
 _u 			= ['pook_AdunokM_GL_IND'];
 _u pushBack 'pook_AdunokM_DSHK_IND';
@@ -266,7 +266,7 @@ _u pushBack 'pook_ZSU_base_IND';
 
 
 missionNamespace setVariable [Format ["cti_%1LIGHTUNITS", _side], _u];
-if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['LIGHT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 _u 			= ['CUP_I_ZSU23_Afghan_AAF'];
 _u pushBack 'pook_ZSU57_base_IND';
@@ -294,7 +294,7 @@ _u pushBack 'CUP_I_BMP1_TK_GUE';
 
 
 missionNamespace setVariable [Format ["cti_%1HEAVYUNITS", _side], _u];
-if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['HEAVY', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 _u 			= ['pook_MIG21_INDFOR'];
 _u pushBack 'cwr3_i_l39_cap';
@@ -321,12 +321,12 @@ _u pushBack 'cwr3_i_an2';
 
 
 missionNamespace setVariable [Format ["cti_%1AIRCRAFTUNITS", _side], _u];
-if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['AIRCRAFT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
 
 missionNamespace setVariable [Format ["cti_%1AIRPORTUNITS", _side], _u];
-if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['AIRPORT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 _u 			= [];
 
@@ -335,4 +335,4 @@ if ((missionNamespace getVariable "cti_C_UNITS_TOWN_PURCHASE") > 0) then {
 };
 
 missionNamespace setVariable [Format ["cti_%1DEPOTUNITS", _side], _u];
-if (local player) then {['DEPOT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['DEPOT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};

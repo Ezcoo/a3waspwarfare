@@ -43,8 +43,8 @@ ctrlSetText[12025,localize 'STR_WF_UNITS_FactionChoiceLabel' + ":"]; // changed-
 //Townrandom need new Compile call
 _team_west = 'US';
 _team_east = 'RU';
-Call Compile preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf", _team_west];
-Call Compile preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf", _team_east];
+Call compileFinal preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf", _team_west];
+Call compileFinal preprocessFileLineNumbers Format["Common\Config\Core_Root\Root_%1.sqf", _team_east];
 
 
 

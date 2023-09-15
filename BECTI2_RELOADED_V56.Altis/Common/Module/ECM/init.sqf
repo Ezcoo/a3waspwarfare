@@ -34,17 +34,17 @@
 */
 
 
-//cti_CO_FNC_init_ECM = Compile preprocessFileLineNumbers "Functions\Init_ECMobject.sqf";
+//cti_CO_FNC_init_ECM = compileFinal preprocessFileLineNumbers "Functions\Init_ECMobject.sqf";
 
 ECM_SYNC_AREA_UNITS=[];
 ECM_SYNC_AREA_VEHICLES=[];
 OUTSIDE_SYNC_ECM_AREA_VEHICLES=[];
 
-cti_CO_FNC_HandleIncomingMissileECM = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissileECM.sqf";
-cti_CO_FNC_HandleIncomingMissile = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissile.sqf";
-cti_CO_FNC_HandleDamage_Object = Compile preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleDamageObject.sqf";
+cti_CO_FNC_HandleIncomingMissileECM = compileFinal preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissileECM.sqf";
+cti_CO_FNC_HandleIncomingMissile = compileFinal preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleIncomingMissile.sqf";
+cti_CO_FNC_HandleDamage_Object = compileFinal preprocessFileLineNumbers "Common\Module\ECM\Functions\Common_HandleDamageObject.sqf";
 
-cti_CO_MDL_ECM_FNC_preInitECM_Object = Compile preprocessFileLineNumbers "Functions\Common_preInit_ECMObject.sqf";
+cti_CO_MDL_ECM_FNC_preInitECM_Object = compileFinal preprocessFileLineNumbers "Functions\Common_preInit_ECMObject.sqf";
 
 
 /* EDITOR INIT

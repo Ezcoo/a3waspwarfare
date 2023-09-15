@@ -115,5 +115,5 @@ missionNamespace setVariable [Format["cti_C_UPGRADES_%1_TIMES", _side], [
 
 /*
 //--- Check potential missing definition.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Upgrades\Check_Upgrades.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Upgrades\Check_Upgrades.sqf";
 */

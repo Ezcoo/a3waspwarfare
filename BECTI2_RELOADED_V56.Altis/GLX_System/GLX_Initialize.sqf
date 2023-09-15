@@ -62,7 +62,7 @@ if (_bool) then
 	
 	call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Extension_F.sqf");
 	
-	call compile preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_Debug.sqf");
+	call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_Debug.sqf");
 	
 	call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Debug_F\GLX_Debug_F.sqf");
 	
@@ -88,17 +88,17 @@ if (_bool) then
 	
 	if (_bool) then
 	{
-		call compile preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_AI.sqf");
+		call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_AI.sqf");
 		
-		call compile preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_IQ.sqf");
+		call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_IQ.sqf");
 		
-		call compile preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_Radio.sqf");
+		call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_Radio.sqf");
 		
-		call compile preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_Tweak.sqf");
+		call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_Tweak.sqf");
 		
-		call compile preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_System.sqf");
+		call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_System.sqf");
 		
-		call compile preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_Feature.sqf");
+		call compileFinal preprocessFileLineNumbers (GLX_Path+"GLX\GLX_Database\GLX_Feature.sqf");
 		
 		if (GLX_System select 0) exitWith
 		{

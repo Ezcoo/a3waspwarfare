@@ -1690,9 +1690,9 @@ _i pushBack  "cwr3_backpack_m252"; 								_u pushBack  _us_level_4;	_p pushBack
 
 _i pushBack  "B_UAV_01_backpack_F"; 							_u pushBack  _blu_level_4;	_p pushBack  645;
 
-[_faction, _i, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf";
+[_faction, _i, _u, _p] call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf";
 
 //--- Templates (Those lines can be generated in the RPT on purchase by uncommenting the diag_log in Events_UI_GearMenu.sqf >> "onPurchase").
 _t = [];
 
-[_faction, _t] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template_Set.sqf"; 
+[_faction, _t] call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Gear_Template_Set.sqf"; 

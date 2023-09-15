@@ -4,12 +4,12 @@ _entry = configFile >> 'CfgVehicles' >> _this >> 'Turrets';
 
 vhasCommander = false;
 vhasGunner = false;
-_turrets = [_entry] Call Compile preprocessFile "Common\Functions\Common_GetConfigVehicleTurretsReturn.sqf";
+_turrets = [_entry] Call compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetConfigVehicleTurretsReturn.sqf";
 
 tmp_overall = [];
 
 if (count _turrets > 0) then {
-	[_turrets, []] Call Compile preprocessFile "Common\Functions\Common_GetConfigVehicleTurrets.sqf";
+	[_turrets, []] Call compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetConfigVehicleTurrets.sqf";
 };
 
 _turrestcount = count(tmp_overall);

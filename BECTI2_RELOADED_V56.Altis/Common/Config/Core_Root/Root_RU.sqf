@@ -98,13 +98,13 @@ if (local player) then {
 };
 
 //--- Artillery.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Artillery\Artillery_RU.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Artillery\Artillery_RU.sqf";
 //--- Units.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Units\Units_RU.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Units\Units_RU.sqf";
 //--- Structures.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Structures\Structures_RU.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Structures\Structures_RU.sqf";
 //--- Upgrades.
-(_side) Call Compile preprocessFileLineNumbers "Common\Config\Core_Upgrades\Upgrades_RU.sqf";
+(_side) Call compileFinal preprocessFileLineNumbers "Common\Config\Core_Upgrades\Upgrades_RU.sqf";
 
 
 

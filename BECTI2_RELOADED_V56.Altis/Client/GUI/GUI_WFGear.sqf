@@ -42,7 +42,7 @@ switch (_action) do {
 		_dragging = if (isNil{uiNamespace getVariable "CTI_dialog_ui_gear_dragging"}) then {false} else {uiNamespace getVariable "CTI_dialog_ui_gear_dragging"};
 		
 		if (_dragging) then {uiNamespace setVariable ["CTI_dialog_ui_gear_dragging", false]};
-		(findDisplay 503000) displaySetEventHandler ["mouseButtonUp", "_dragging = if (isNil{uiNamespace getVariable 'CTI_dialog_ui_gear_dragging'}) then {false} else {uiNamespace getVariable 'CTI_dialog_ui_gear_dragging'}; if (_dragging) then {['onShoppingListMouseUp', _this select 1] call compile preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'}"];
+		(findDisplay 503000) displaySetEventHandler ["mouseButtonUp", "_dragging = if (isNil{uiNamespace getVariable 'CTI_dialog_ui_gear_dragging'}) then {false} else {uiNamespace getVariable 'CTI_dialog_ui_gear_dragging'}; if (_dragging) then {['onShoppingListMouseUp', _this select 1] call compileFinal preprocessFileLineNumbers 'Client\GUI\GUI_WFGear.sqf'}"];
 	};
 	
 	

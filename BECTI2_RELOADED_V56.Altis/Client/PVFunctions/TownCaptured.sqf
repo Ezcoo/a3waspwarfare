@@ -85,9 +85,9 @@ if (_town_side_value_new == cti_Client_SideID) then {
 
 //Townrandom need new compile,without its 1 random at start and static after
 
-Call Compile preprocessFileLineNumbers 'Common\Config\Core_Units\Units_US.sqf';
+Call compileFinal preprocessFileLineNumbers 'Common\Config\Core_Units\Units_US.sqf';
 
-Call Compile preprocessFileLineNumbers 'Common\Config\Core_Units\Units_RU.sqf';
+Call compileFinal preprocessFileLineNumbers 'Common\Config\Core_Units\Units_RU.sqf';
 
 	
 	//--- Taskman

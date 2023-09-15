@@ -2,7 +2,7 @@
 	Script from Valhalla.
 */
 
-VALHALLA_FNC_LowGear = compile preprocessFileLineNumbers "Client\Module\Valhalla\Func_Client_LowGear.sqf";
+VALHALLA_FNC_LowGear = compileFinal preprocessFileLineNumbers "Client\Module\Valhalla\Func_Client_LowGear.sqf";
 
 Local_HighClimbingModeOn = false;
 Local_KeyPressedForward = false;

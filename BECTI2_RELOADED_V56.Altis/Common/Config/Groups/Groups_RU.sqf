@@ -367,4 +367,4 @@ _u = _u + [selectRandom["CUP_O_T90_RU","cwr3_o_t72b1","CUP_O_2S6M_RU"]];
 _l pushBack _u;
 
 
-[_k,_l,_side,_faction] Call Compile preprocessFile "Common\Config\Config_Groups.sqf";
+[_k,_l,_side,_faction] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_Groups.sqf";

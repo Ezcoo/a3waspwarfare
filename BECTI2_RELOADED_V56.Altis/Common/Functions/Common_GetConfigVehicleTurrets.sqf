@@ -10,7 +10,7 @@ while {_i < (count _turrets)} do {
 	
 	tmp_overall pushBack (_thisTurret);
 	
-	[([_turrets select (_i + 1), _thisTurret] Call Compile preprocessFile "Common\Functions\Common_GetConfigVehicleTurrets.sqf")];
+	[([_turrets select (_i + 1), _thisTurret] Call compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetConfigVehicleTurrets.sqf")];
 	
 	_i = _i + 2;
 };

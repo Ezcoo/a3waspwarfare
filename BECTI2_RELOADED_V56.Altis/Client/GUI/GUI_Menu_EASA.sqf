@@ -1330,7 +1330,7 @@ while {alive player && dialog} do {
 		
 		-(round(_rearmPrice / 2)) Call cti_CL_FNC_ChangePlayerFunds;		
 		
-		cti_CO_FNC_RearmVehicle = Compile preprocessFileLineNumbers "Common\Functions\Common_RearmVehicle.sqf";
+		cti_CO_FNC_RearmVehicle = compileFinal preprocessFileLineNumbers "Common\Functions\Common_RearmVehicle.sqf";
 		_veh setVariable ["_pylons", nil]; 
 		[_veh, side player] Spawn cti_CO_FNC_RearmVehicle;
 	};

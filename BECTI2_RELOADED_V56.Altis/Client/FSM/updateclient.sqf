@@ -38,9 +38,9 @@ while {!cti_GameOver} do {
 				};
 				_deployed = (cti_Client_SideJoined) Call cti_CO_FNC_GetSideHQDeployStatus;
 				if (_deployed) then {
-					[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call Compile PreprocessFile "Client\Init\Init_Coin.sqf";
+					[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_DEPLOYED",true,MCoin] Call compileFinal preprocessFileLineNumbers "Client\Init\Init_Coin.sqf";
 				} else {
-					[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call Compile PreprocessFile "Client\Init\Init_Coin.sqf";
+					[missionNamespace getVariable "cti_C_BASE_COIN_AREA_HQ_UNDEPLOYED",false,MCoin] Call compileFinal preprocessFileLineNumbers "Client\Init\Init_Coin.sqf";
 				};
 				HQAction = leader(group player) addAction [localize "STR_WF_BuildMenu","Client\Action\Action_Build.sqf", [_MHQ], 1000, false, true, "", "hqInRange && canBuildWHQ && (_target == player)"];
 				Bulldozer = leader(group player) addAction ["<t color='#504315'>" + ('Bulldozer') + "</t>","Client\Action\Action_Bulldozer.sqf", [_MHQ], 995, false, true, "", "hqInRange && canBuildWHQ && (_target == player)"];

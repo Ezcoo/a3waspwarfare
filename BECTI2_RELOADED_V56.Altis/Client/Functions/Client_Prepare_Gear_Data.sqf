@@ -25,7 +25,7 @@ _NewGearData	= [];													// New Gear Data By Upgraded Level
 
 //// Get Gear Data by Side and GearType
 ////////////////////////////////////////
-_GearDataByType = [_Side, _Question] call compile preprocessFileLineNumbers "Common\Config\Gear\Data_Gear.sqf";
+_GearDataByType = [_Side, _Question] call compileFinal preprocessFileLineNumbers "Common\Config\Gear\Data_Gear.sqf";
 
 //// Sort GearData by Upgraded Level
 /////////////////////////////////////

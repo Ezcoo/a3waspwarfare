@@ -367,7 +367,7 @@ _u = _u + [selectRandom["CUP_B_M1A1EP_TUSK_Woodland_USMC","CUP_B_M1A2SEP_TUSK_II
 _l pushBack _u;
 
 
-[_k,_l,_side,_faction] Call Compile preprocessFile "Common\Config\Config_Groups.sqf";
+[_k,_l,_side,_faction] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_Groups.sqf";
 
 
 
@@ -625,5 +625,5 @@ _u pushBack "rhsusf_m1a2sep1tuskiid_usarmy";
 _l pushBack _u;
 
 
-[_k,_l,_side,_faction] Call Compile preprocessFile "Common\Config\Config_Groups.sqf";
+[_k,_l,_side,_faction] Call compileFinal preprocessFileLineNumbers "Common\Config\Config_Groups.sqf";
 */

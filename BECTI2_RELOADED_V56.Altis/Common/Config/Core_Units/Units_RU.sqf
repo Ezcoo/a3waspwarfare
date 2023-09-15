@@ -122,7 +122,7 @@ _u pushBack 'CUP_O_RU_Soldier_TL_VDV';
 //SLOTUNITS LISTED FOR BOUNTY
 
 missionNamespace setVariable [Format ["cti_%1BARRACKSUNITS", _side], _u];
-if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['BARRACKS', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 //---------------LIGHT--------------
 
@@ -215,7 +215,7 @@ _u  pushBack 'CUP_O_BTR90_HQ_RU';
 
 
 missionNamespace setVariable [Format ["cti_%1LIGHTUNITS", _side], _u];
-if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['LIGHT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 
 //level 0
@@ -260,7 +260,7 @@ _u  pushBack 'CUP_O_2S6M_RU';
 
 
 missionNamespace setVariable [Format ["cti_%1HEAVYUNITS", _side], _u];
-if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['HEAVY', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 //level 0
 _u = ['CUP_O_Ka60_Grey_RU'];
@@ -315,7 +315,7 @@ _u  pushBack 'CUP_O_SU34_RU';
 
 
 missionNamespace setVariable [Format ["cti_%1AIRCRAFTUNITS", _side], _u];
-if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['AIRCRAFT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 
 //level 0
@@ -349,7 +349,7 @@ _u  pushBack 'CUP_O_SU34_RU';
 _u  pushBack 'CUP_O_Pchela1T_RU';
 
 missionNamespace setVariable [Format ["cti_%1AIRPORTUNITS", _side], _u];
-if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['AIRPORT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 //RANDOM TOWNUNITS WITH RANDOM CAMO AND RANDOM SPEECH,LIKE HIRE POPULATION IN TOWN 
 
@@ -406,4 +406,4 @@ _u = _u + [selectRandom["UK3CB_Civ_LandRover_Hard_Red_A","CUP_C_LR_Transport_CTK
 
 
 missionNamespace setVariable [Format ["cti_%1DEPOTUNITS", _side], _u];
-if (local player) then {['DEPOT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['DEPOT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};

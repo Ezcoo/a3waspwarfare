@@ -167,7 +167,7 @@ _u pushBack 'CUP_B_USMC_MARSOC';
 //SLOTUNITS LISTED FOR BOUNTY (could be useless for playerbounty but i keep it in list)
 
 missionNamespace setVariable [Format ["cti_%1BARRACKSUNITS", _side], _u];
-if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['BARRACKS', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 
 
@@ -320,7 +320,7 @@ _u pushBack 'UK3CB_BAF_LandRover_Panama_Green_A';
 //_u pushBack 'CUP_B_LAV25_HQ_USMC';
 
 missionNamespace setVariable [Format ["cti_%1LIGHTUNITS", _side], _u];
-if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['LIGHT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 
 
@@ -376,7 +376,7 @@ _u pushBack 'CUP_B_Challenger2_2CW_BAF';
 _u pushBack 'CUP_B_FV510_GB_W_SLAT';
 
 missionNamespace setVariable [Format ["cti_%1HEAVYUNITS", _side], _u];
-if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['HEAVY', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 
 
@@ -486,7 +486,7 @@ _u pushBack 'CUP_B_F35B_Stealth_BAF';
 _u pushBack 'FIR_F35B_RAF01';
 
 missionNamespace setVariable [Format ["cti_%1AIRCRAFTUNITS", _side], _u];
-if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['AIRCRAFT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 
 
@@ -546,7 +546,7 @@ _u pushBack 'CUP_B_F35B_Stealth_BAF';
 
 
 missionNamespace setVariable [Format ["cti_%1AIRPORTUNITS", _side], _u];
-if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['AIRPORT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
 
 
 //RANDOM TOWNUNITS WITH RANDOM CAMO AND RANDOM SPEECH,LIKE HIRE POPULATION IN TOWN 
@@ -603,4 +603,4 @@ _u = _u + [selectRandom["UK3CB_Civ_LandRover_Hard_Red_A","CUP_C_LR_Transport_CTK
 
 
 missionNamespace setVariable [Format ["cti_%1DEPOTUNITS", _side], _u];
-if (local player) then {['DEPOT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
+if (local player) then {['DEPOT', _side, _u] Call compileFinal preprocessFileLineNumbers 'Client\Init\Init_Faction.sqf'};
